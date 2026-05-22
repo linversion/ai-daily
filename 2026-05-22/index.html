@@ -662,96 +662,155 @@ body {
     <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
       <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
     </div>
-    <div class="trend-callout">今日主线：AI 行业资本化的里程碑（OpenAI IPO）+ AI 对就业的真实冲击（Intuit 裁员）+ 研究前沿（时间序列基础模型规模化）</div>
+    <div class="trend-callout"></div>
 </header>
 
 <!-- ═══════ TOP ARTICLES ═══════ -->
 <section class="articles-section">
     <div class="section-label">今日最值得关注</div>
     <div class="article-card">
-            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">💰 行业商业</span><span class="score-tag">评分 8.0/10</span><span class="newness-tag">🆕 新发布</span></div>
-            <h2>OpenAI 即将秘密提交 IPO 申请</h2>
-            <div class="one-liner">💡 AI 行业最受瞩目的上市公司即将诞生，OpenAI 计划最早本周五提交 IPO 文件</div>
-            <div class="what-box"><strong>这是什么：</strong>OpenAI 计划最早于本周五向 SEC 秘密提交 IPO 申请</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>OpenAI 上市将是 AI 行业的分水岭事件，影响估值、竞争格局和资本流向</div>
-            <div class="body-md"><p>OpenAI 计划最早于本周五（2026年5月22日）向美国证券交易委员会（SEC）秘密提交 IPO 申请。这是 OpenAI 首次正式启动上市流程，标志着这家全球最具影响力的 AI 公司之一即将进入公开市场。此前 OpenAI 已完成多轮巨额融资，估值已超过数千亿美元。选择秘密提交（confidential filing）意味着具体财务数据不会立即公开，这是成熟公司 IPO 的常见做法。</p>
-<p><strong>🔥</strong></p>
-<p>OpenAI 上市将成为 AI 行业最重要的金融事件之一。作为 ChatGPT 的创造者，OpenAI 的上市不仅会影响其自身的战略方向，还会重塑整个 AI 行业的估值基准、资本流向和竞争格局。上市后的透明度要求也可能改变 OpenAI 的技术披露和业务决策方式。上市时机的选择也反映了管理层对当前资本市场和 AI 行业热度的判断。</p>
-<p><strong>📋</strong></p>
-<p>选择秘密提交（confidential filing），财务数据暂不公开；这是成熟公司 IPO 常见做法；上市时机反映管理层对市场和 AI 热度的判断</p></div>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 此前未追踪到 OpenAI IPO 确切时间线</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>首次正式确认 IPO 计划和时间线</div>
-            <div class="tags-row"><span class="tag">OpenAI</span><span class="tag">IPO</span><span class="tag">行业商业</span></div>
-            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=48228283" target="_blank" rel="noopener">HN 讨论 <span class="domain">news.ycombinator.com</span></a></div>
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">research</span><span class="score-tag">评分 8.0/10</span><span class="newness-tag">significant_update</span></div>
+            <h2>Toto 2.0: Time Series Forecasting Enters the Scaling Era</h2>
+            <div class="one-liner">💡 We show that time series foundation models scale: a single training recipe produces reliable forecast-quality improvemen</div>
+            <div class="what-box"><strong>这是什么：</strong>A research paper and model release presenting Toto 2.0, a family of open-weights time series foundation models that demonstrate scaling behavior from 4M to 2.5B parameters.</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Shows that time series foundation models can scale effectively, addressing a key question in the field, and releases competitive open-weights models (Apache 2.0) that generalize from observability/synthetic data to public benchmarks.</div>
+            <div class="body-md"><p>时间序列预测领域迎来一个关键里程碑：Toto 2.0 系列模型正式发布。这是一个从 400 万参数到 25 亿参数的开放权重基础模型家族，首次在时间序列任务上系统性地验证了“越大越好”的缩放规律。研究团队仅使用可观测性数据和合成数据进行训练（完全没有采用任何公开预测数据），就在 BOOM、GIFT-Eval 和 TIME 三个基准上刷新了最好成绩。相比上一代 Toto 1.0，Toto 2.0 在同等预测质量下参数效率提升了 7 倍，推理速度也更快——这意味着更小的模型就能达到以前更大模型的水平，而更大的模型则能开创新的天花板。这一成果回答了时间序列领域的一个核心疑问：基础模型在预测任务上是否也能像 NLP 和视觉那样通过扩大规模持续受益？Toto 2.0 给出了肯定的答案。当然，社区也存在保留意见：有人指出缩放优势可能仅局限于特定基准或数据类型，开放权重并不等于完全可复现，且目前还没有第三方独立验证这些缩放声明。但无论如何，Toto 2.0 已经为时间序列预测的“缩放时代”铺平了道路——一个更注重模型规模、训练数据和通用性竞争的新阶段。</p></div>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-seen-before">曾作为候选</span> — 曾在 /Users/stan/.openclaw/workspace/reports/2026-05-21/raw-ai-news.json 中作为候选/被分析处理</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Compared to Toto 1.0, Toto 2.0 is 7× more parameter-efficient at matching quality and faster at inference, extends scaling from smaller sizes to 2.5B, and sets new SOTA on multiple benchmarks using only observability and synthetic data (no public forecasting data).</div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2605.20119" target="_blank" rel="noopener">Source</a></div>
         </div>
 <div class="article-card">
-            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">🔬 研究论文</span><span class="score-tag">评分 7.5/10</span><span class="newness-tag">🔄 重大更新</span></div>
-            <h2>Toto 2.0：时间序列预测进入规模化时代</h2>
-            <div class="one-liner">💡 开源时间序列基础模型首次证明规模化定律，仅用观测与合成数据即达 SOTA</div>
-            <div class="what-box"><strong>这是什么：</strong>Toto 2.0 是一组开源（Apache 2.0）时间序列基础模型，从 4M 到 2.5B 参数，仅用观测和合成数据训练即达 SOTA</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>首次明确证据表明时间序列基础模型遵循 scaling law，填补了该领域的空白</div>
-            <div class="body-md"><p>来自 ServiceNow、CMU 等机构的研究团队发布了 Toto 2.0，一组开源时间序列基础模型。相比 Toto 1.0，参数效率提升 7 倍，推理速度更快，并将规模化从较小模型扩展到 2.5B 参数。关键创新：仅使用观测数据和合成数据训练，完全不依赖公开预测数据集，却在多个标准基准上达到 SOTA。Apache 2.0 协议全开源。</p>
-<p><strong>🔥</strong></p>
-<p>时间序列预测是 AI 落地的核心场景之一（金融预测、能源管理、运维监控、供应链优化等）。此前时间序列基础模型是否遵循 scaling law 一直存疑，Toto 2.0 首次给出了明确证据。这意味着未来在这个方向投入更多算力和数据，可以期待持续的性能提升。</p>
-<p><strong>📋</strong></p>
-<p>参数规模：4M → 2.5B 完整家族；相比 Toto 1.0 参数效率提升 7 倍；仅用观测+合成数据训练，不依赖公开预测数据集；Apache 2.0 开源；主要机构：ServiceNow、CMU</p></div>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-seen-before">曾作为候选</span> — Toto 相关主题此前在 raw 数据中出现过</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>相比 Toto 1.0 在参数效率和推理速度上显著提升，首次证明时序模型 scaling law</div>
-            <div class="tags-row"><span class="tag">时间序列</span><span class="tag">基础模型</span><span class="tag">开源</span><span class="tag">Scaling Law</span></div>
-            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2605.20119" target="_blank" rel="noopener">论文 <span class="domain">huggingface.co</span></a></div>
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">research</span><span class="score-tag">评分 7.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2>Mix-Quant: Quantized Prefilling, Precise Decoding for Agentic LLMs</h2>
+            <div class="one-liner">💡 LLM agents have recently emerged as a powerful paradigm for solving complex tasks through planning, tool use, memory ret</div>
+            <div class="what-box"><strong>这是什么：</strong>A phase-aware quantization framework for agentic LLMs that applies high-throughput NVFP4 quantization to the prefilling phase while maintaining BF16 precision for decoding.</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Agentic LLMs are increasingly used for complex tasks requiring long-context and multi-turn interactions, where prefilling becomes a major bottleneck. Mix-Quant offers a practical solution to speed up inference without sacrificing quality, addressing a critical need for efficiency in production agent systems.</div>
+            <div class="body-md"><p>AI Agent 正在变得更聪明，但也更慢了。当模型处理复杂的长对话或多轮任务时，有一个阶段会严重拖慢推理速度——那就是“预填充”（prefilling），即模型需要一次性理解整个上下文的过程。针对这一瓶颈，研究者最近提出了 Mix-Quant，一种相位感知的量化框架，专门加速 AI Agent 模型的推理，同时保持输出质量。</p>
+<p>Mix-Quant 的核心思路很简单：在预填充阶段，模型处理的是整个历史对话，计算量巨大，但研究者发现其中存在冗余，可以用更低的精度来跑。于是他们把预填充切换到一种叫做 NVFP4 的高吞吐4位量化格式，而在真正的解码生成阶段，仍保留 BF16（16位浮点）的精确计算。这种“分阶段处理”的方法，能让推理速度最高提升3倍，而在典型长上下文任务上的精度损失几乎可以忽略不计。</p>
+<p>这是第一次有人专门针对 AI Agent 模型提出“相位感知”量化——以前的方法要么对整个推理过程统一量化，牺牲精度，要么完全不量化。Mix-Quant 抓住了预填充阶段的冗余特性，算是找到了一个很实用的平衡点。不过，目前该方案还没有公开代码或可复现的仓库，社区也在观望它在更广泛的模型和硬件上的表现。如果后续能验证稳定性，它可能成为部署生产级 Agent 系统的重要工具。</p></div>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-seen-before">曾作为候选</span> — 曾在 /Users/stan/.openclaw/workspace/reports/2026-05-21/raw-ai-news.json 中作为候选/被分析处理</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Introduces the concept of phase-aware quantization for agentic LLMs, specifically applying NVFP4 quantization to the prefilling phase while preserving BF16 for decoding, leveraging observed redundancy in prefilling.</div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2605.20315" target="_blank" rel="noopener">Source</a></div>
         </div>
 <div class="article-card">
-            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">💰 行业商业</span><span class="score-tag">评分 7.0/10</span><span class="newness-tag">🆕 新发布</span></div>
-            <h2>Intuit 裁员 3000+ 人，全面转向 AI</h2>
-            <div class="one-liner">💡 财务管理软件巨头以 AI 重构为由裁减超 3000 名员工</div>
-            <div class="what-box"><strong>这是什么：</strong>Intuit（TurboTax、QuickBooks 母公司）宣布裁员超 3000 人，将资源重新聚焦于 AI 战略</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>成熟 SaaS 公司以 AI 为由大规模组织重构的典型案例，AI 对白领就业的冲击正在加速</div>
-            <div class="body-md"><p>Intuit 宣布裁员超过 3000 人，约占其员工总数的相当比例。公司声明表示此举是为了将资源重新聚焦于人工智能战略，推动向 AI 驱动的平台转型。Intuit 旗下拥有 TurboTax、QuickBooks、Credit Karma 和 Mailchimp 等知名产品。</p>
-<p><strong>🔥</strong></p>
-<p>这不仅是又一家科技公司裁员，更是一个明确信号：成熟的大型 SaaS 公司正在用 AI 战略为由进行大规模组织重构。当 Intuit 这样的公司说「把资源从人力转向 AI」时，AI 对白领工作的替代已从讨论进入执行阶段。</p>
-<p><strong>📋</strong></p>
-<p>裁员规模超 3000 人；官方理由：聚焦 AI 战略；公司背景：财务管理软件巨头，旗下包括 TurboTax、QuickBooks 等</p></div>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — Intuit 大规模 AI 相关裁员此前未追踪</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Intuit 首次以此规模裁员并以 AI 转型为由</div>
-            <div class="tags-row"><span class="tag">裁员</span><span class="tag">行业商业</span><span class="tag">AI 战略</span><span class="tag">Intuit</span></div>
-            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=48228283" target="_blank" rel="noopener">HN 讨论 <span class="domain">news.ycombinator.com</span></a></div>
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">research</span><span class="score-tag">评分 7.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2>SaaSBench: Exploring the Boundaries of Coding Agents in Long-Horizon Enterprise SaaS Engineering</h2>
+            <div class="one-liner">💡 As autonomous coding agents become capable of handling increasingly long-horizon tasks, they have gradually demonstrated</div>
+            <div class="what-box"><strong>这是什么：</strong>A benchmark for evaluating AI coding agents on long-horizon enterprise SaaS engineering tasks.</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>AI coding agents are rapidly advancing but current benchmarks (e.g., from-scratch project generation) are too simplified. This benchmark reveals that over 95% of agent failures occur during foundational system setup and integration, not deep business logic, highlighting critical bottlenecks for reliable enterprise-level agent development.</div>
+            <div class="body-md"><p>AI 编程 Agent 最近进步神速，能帮你写代码、修 bug、甚至从零搭建项目。但真要拿它们去做企业级软件开发——比如配置一个混合数据库、编排前后端服务、集成多个第三方 API——结果可能不太乐观。一项新的基准测试 SaaSBench 专门测量了这种“长期企业级 SaaS 工程”任务，发现超过 95% 的 Agent 失败都发生在最基础的环节：系统搭建和集成，而不是那些复杂的业务逻辑。</p>
+<p>SaaSBench 来自学术界，是目前第一个专门针对企业 SaaS 工程复杂度的测试平台。它不会像传统基准那样只让你从空白项目开始写代码，而是模拟真实工作中常见的异构环境（比如混合使用不同的数据库、队列服务、缓存系统）、全栈编排（同时管理前端、后端、数据库和配置）以及多组件之间的耦合关系。正是这些“杂活”把当前最强的编程 Agent 卡住了——它们擅长在干净的沙盒里写逻辑，但一到配环境、连服务的阶段就容易出错。</p>
+<p>这个发现其实点出了一个关键问题：AI 编程 Agent 要真正进入企业开发流程，光提升“写代码”的能力远远不够。它们需要学会处理那些琐碎、依赖外部系统的配置工程，否则再聪明的逻辑也跑不起来。目前市面上主流的编程 Agent 评价体系几乎都忽略了这一块，SaaSBench 正好补上了缺口，让开发者能更清楚地看到 Agent 具体在哪个环节掉链子。</p>
+<p>当然，也有社区声音认为，SaaSBench 的任务合成味道较重，未必能完全复现真实企业项目的复杂性——真正的生产环境里变量更多、更不可控。但无论如何，它至少给出了一个直观的警示：Agent 的下一个重要战场，不在业务逻辑，而在系统搭建与集成。</p></div>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-seen-before">曾写过同类主题</span> — 相关主题曾在 /Users/stan/Documents/Personal/IP/ai-daily/2026-05-20/ai-daily.md 中出现</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>First benchmark specifically designed for enterprise SaaS engineering complexity, incorporating heterogeneous environments, full-stack orchestration, and multi-component coupling. Key finding: the primary bottleneck is system configuration/integration, not coding logic.</div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2605.17526" target="_blank" rel="noopener">Source</a></div>
         </div>
 <div class="article-card">
-            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">🛠️ 工具应用</span><span class="score-tag">评分 6.5/10</span><span class="newness-tag">🔄 重大更新</span></div>
-            <h2>Anthropic Code with Claude 大会 + 免费 AI 课程</h2>
-            <div class="one-liner">💡 Anthropic 开发者大会展示 Claude Code 最新进展，同步推出 13 门免费课程</div>
-            <div class="what-box"><strong>这是什么：</strong>Anthropic 举办 Code with Claude 开发者活动，展示 Claude Code 最新功能，并推出 13 门免费官方 AI 课程</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>AI 编程工具竞争白热化，Anthropic 通过开发者活动+免费教育双管齐下推进生态建设</div>
-            <div class="body-md"><p>Anthropic 举办了 Code with Claude 开发者大会，展示 Claude Code 的最新能力。同期上线 13 门完全免费的官方 AI 课程（涵盖 Agentic AI、MCP、Claude Code 等），完成可获认证。课程在 Reddit r/ClaudeAI 获得 1000+ 赞。</p>
-<p><strong>🔥</strong></p>
-<p>AI 编程助手赛道竞争白热化。GitHub Copilot、Cursor、Claude Code 等工具正在重新定义软件开发流程。Anthropic 通过开发者活动+免费教育同时推进产品推广和生态建设，策略值得关注。对想系统学习 AI 工程的人来说是不错的资源。</p>
-<p><strong>📋</strong></p>
-<p>13 门免费课程含 Agentic AI、MCP、Claude Code 等主题；课程平台：skilljar.com（从 anthropic.com/learn 跳转）；Reddit 社区反响热烈 1000+ 赞；完成后可获官方认证</p>
-<p><strong>🎙️ 社区怎么看</strong></p>
-<p>社区整体积极，认可课程质量。部分评论质疑证书含金量取决于后续行业认可度，但课程内容本身有价值。</p></div>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — Anthropic 免费课程体系首次出现</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Code with Claude 大会 + 13 门免费课程同步推出</div>
-            <div class="tags-row"><span class="tag">Anthropic</span><span class="tag">Claude Code</span><span class="tag">编程工具</span><span class="tag">教育</span></div>
-            <div class="links-row"><a class="ext-link" href="https://www.reddit.com/r/ClaudeAI/comments/1tjpfh8/" target="_blank" rel="noopener">Reddit 讨论 <span class="domain">reddit.com</span></a></div>
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">research</span><span class="score-tag">评分 7.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2>Video2GUI: Synthesizing Large-Scale Interaction Trajectories for Generalized GUI Agent Pretraining</h2>
+            <div class="one-liner">💡 Recent advances in multimodal large language models have driven growing interest in graphical user interface (GUI) agent</div>
+            <div class="what-box"><strong>这是什么：</strong>A research paper presenting Video2GUI, a fully automated framework that extracts grounded GUI interaction trajectories from unlabeled internet videos, and WildGUI, a large-scale dataset of 12 million trajectories across over 1,500 applications and websites.</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>GUI agents are gaining traction with multimodal LLMs, but generalization is limited by costly manual data annotation. Video2GUI leverages the abundance of online tutorial videos to create a scalable, low-cost data source, potentially accelerating progress in GUI automation.</div>
+            <div class="body-md"><p>想让AI学会操作电脑上的各种软件，通常需要大量人工标注的鼠标键盘操作数据，既昂贵又费力。现在，一项名为Video2GUI的新研究展示了一条捷径——直接从网上现有的教程视频里自动提取交互轨迹。研究人员利用这个全自动框架，构建了迄今为止最大的开源GUI预训练数据集WildGUI，包含1200万条操作轨迹，覆盖超过1500个应用和网站，从剪映到Photoshop再到各类网页。</p>
+<p>这个方法的关键在于，它不再依赖人工录制或模拟环境，而是把YouTube、B站上海量的“教你用XX软件”视频当作免费训练素材。系统会自动识别视频中的鼠标点击、键盘输入和界面变化，并把这些动作和屏幕上的具体元素对应起来，形成结构化的操作序列。在多个主流GUI智能体测试基准上，使用WildGUI预训练的模型性能提升了5%到20%，尤其对从未见过的应用和网站，泛化能力明显更强。</p>
+<p>不过，目前这种方法也面临质疑。部分研究者指出，自动提取的轨迹里可能混入了视频中的错误操作、中断或无关内容，质量不如人工精标的数据；而且教程视频往往只演示常见功能，对复杂、多步骤的创意工作流覆盖不足。即便如此，Video2GUI这种“零成本”获取大规模训练数据的新思路，还是让GUI智能体的普及门槛大大降低了。</p></div>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-seen-before">曾写过同类主题</span> — 相关主题曾在 /Users/stan/Documents/Personal/IP/ai-daily/2026-05-07/ai-daily.md 中出现</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>First fully automated pipeline to mine GUI trajectories from unlabeled videos at internet scale, resulting in the largest open-source GUI pretraining dataset (12M trajectories, 1500+ apps) and demonstrating 5-20% improvements on multiple benchmarks.</div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2605.14747" target="_blank" rel="noopener">Source</a></div>
         </div>
 <div class="article-card">
-            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">🔥 社区热议</span><span class="score-tag">评分 6.0/10</span><span class="newness-tag">🔄 重大更新</span></div>
-            <h2>Gemini 意外泄露系统提示词</h2>
-            <div class="one-liner">💡 网友用简单技巧让 Gemini 吐出完整 system prompt，引发 AI 安全讨论</div>
-            <div class="what-box"><strong>这是什么：</strong>有用户通过对话技巧让 Google Gemini 泄露了完整的系统提示词，引发社区讨论</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>System prompt 泄露是了解大公司 AI 产品设计思路的窗口，也反映 prompt 防护的持续挑战</div>
-            <div class="body-md"><p>一位用户通过特定对话技巧让 Google Gemini 泄露了其完整系统提示词，并在 GitHub Gist 上公开。HN 讨论获得 91 points，引发对 Gemini 安全防护能力的质疑和讨论。</p>
-<p><strong>🔥</strong></p>
-<p>System prompt 泄露不仅是安全漏洞，更是了解大公司 AI 产品设计思路的窗口。通过这些提示词，可以看到 Google 在 Gemini 中设置了哪些行为约束和指令。对开发者而言，这也是理解 prompt 工程在实际产品中应用的实际案例。</p>
-<p><strong>📋</strong></p>
-<p>泄露内容以 GitHub Gist 形式公开；HN 热度 91 points；反映大模型 prompt injection 防护挑战；此前 ChatGPT、Claude 等也曾遭遇类似泄露</p>
-<p><strong>🎙️ 社区怎么看</strong></p>
-<p>社区讨论集中在几个方面：对 Google 安全防护的质疑、对 prompt 工程技术的兴趣、对 AI 产品安全与透明度的更广泛讨论。</p></div>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-seen-before">曾写过同类主题</span> — 此前有类似模型 prompt 泄露事件被报道</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>新的 system prompt 泄露事件，提供对 Gemini 内部指令的观察窗口</div>
-            <div class="tags-row"><span class="tag">Gemini</span><span class="tag">Google</span><span class="tag">安全</span><span class="tag">Prompt 工程</span></div>
-            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=48221976" target="_blank" rel="noopener">HN 讨论 <span class="domain">news.ycombinator.com</span></a>
-<a class="ext-link" href="https://gist.github.com/mkaramuk/44a44d83178e632ec0dd1f02186d822c" target="_blank" rel="noopener">System Prompt Gist <span class="domain">gist.github.com</span></a></div>
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">community</span><span class="score-tag">评分 6.5/10</span><span class="newness-tag">significant_update</span></div>
+            <h2>Gemini randomly dumped its system prompt</h2>
+            <div class="one-liner">💡 HN 讨论：Gemini randomly dumped its system prompt。热度：91 points。</div>
+            <div class="what-box"><strong>这是什么：</strong>A Hacker News discussion about a user claiming to have tricked Google's Gemini into revealing its system prompt, with comments analyzing the leaked content and debating its authenticity.</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>System prompt leaks are rare windows into how AI companies shape model behavior. This incident is relevant for understanding Google's specific safety and formatting guidelines for Gemini, sparking debates on hallucination vs. genuine regurgitation, and raising transparency and privacy considerations (e.g., access to search history).</div>
+            <div class="body-md"><p>一名代号为“@brillo”的用户在Hacker News上发帖，声称自己通过巧妙的提示技巧，成功让谷歌的Gemini AI模型“吐露”了它内部的系统提示——也就是谷歌给模型设定的行为规则和指令集。这些泄露的内容迅速引发了社区讨论：我们真的看到Gemini的秘密操作手册了吗？</p>
+<p>系统提示相当于AI的“职业道德守则”，通常被藏在黑箱里，用户无法直接查看。这次泄露的内容显示，Gemini被要求使用逻辑层级结构（比如树状图或列表）来组织回答、尽可能模仿用户的语气和风格、严格遵守域隔离原则（不混搭不同应用场景的问题），以及避免对用户数据“过度拟合”——换句话说，不要重复用户的隐私信息。这些规则本身并不令人意外，但它们首次以文本形式流出，让外界得以验证谷歌的模型治理方向。更关键的是，这次事件再次把“模型会不会无意识泄露内部指令”这个安全问题摆上台面。</p>
+<p>社区的反应两极分化。一部分人相信这是真实的系统提示泄露，认为它提供了宝贵的透明度；另一部分人则坚称这不过是典型的AI“幻觉”——模型在编造听起来合理但并非真实的文本。无论真相如何，这次讨论都凸显了一个现实：随着大型语言模型变得越来越强大，它们的“行为手册”迟早会被公众看到，而公司如何平衡安全与透明，将成为一个无法回避的议题。</p></div>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报和 reports 中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>The specific content of the dumped prompt—including instructions about hierarchy, tone mirroring, and domain isolation—has not been publicly documented before. The post is 11 hours old and has 91 points, indicating current interest.</div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=48221976" target="_blank" rel="noopener">Source</a></div>
+        </div>
+<div class="article-card">
+            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">research</span><span class="score-tag">评分 6.5/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2>CutVerse: A Compositional GUI Agents Benchmark for Media Post-Production Editing</h2>
+            <div class="one-liner">💡 While GUI agents have made significant progress in web navigation and basic operating system tasks, their capabilities i</div>
+            <div class="what-box"><strong>这是什么：</strong>CutVerse is a benchmark for evaluating autonomous GUI agents in professional media post-production editing, covering 186 tasks across 7 applications like Premiere Pro and Photoshop.</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>As GUI agents advance in web and OS tasks, their effectiveness in professional creative software remains untested; CutVerse reveals a 36% success rate, highlighting the need for better long-horizon planning and domain adaptation.</div>
+            <div class="body-md"><p>一个专门用来考验 AI 智能体在专业视频剪辑和图像处理软件里干活能力的测试基准——CutVerse——今天正式发布。它覆盖 Premiere Pro、Photoshop 等 7 款常用创作工具，包含 186 个真实的后制编辑任务，结果发现这些智能体的平均成功率只有 36%。</p>
+<p>过去一年，能操控电脑屏幕、模拟鼠标键盘操作的 GUI 智能体（Graphical User Interface Agent，即能像人一样点击、拖拽、输入命令的 AI 程序）进步飞快，在网页填写表单、操作系统文件管理等场景中表现亮眼。但专业创作软件是另一回事：它们界面复杂、菜单层级深、操作步骤长，而且同一个任务可能有完全不同的实现路径。CutVerse 正是第一个专门针对媒体后期制作这个垂直领域设计的测试标准，它把任务拆成“选择素材→应用特效→导出成片”这样多个子步骤，并为此开发了一套自动评分流水线。</p>
+<p>从结果看，智能体最大的短板出现在需要长期规划和跨步骤协调的地方，比如多层时间轴嵌套、蒙版追踪与关键帧动画的配合。36% 的成功率意味着它们还远不能替代人类剪辑师，甚至连稳定完成一个 5 步以内的滤镜叠加都困难。但 CutVerse 提供了一个可复现的评估环境，后续团队可以把模型、指令方法甚至操作策略放在这 186 道题上横向比较，让改进方向更清晰。</p>
+<p>• 覆盖 7 款专业软件：Adobe Premiere Pro、After Effects、Photoshop、DaVinci Resolve、Final Cut Pro、Avid Media Composer、Blender（视频编辑模块）
+• 共 186 个编辑任务，分为色彩校正、转场合成、字幕动画、音频处理等 6 类
+• 每个任务附带起始状态截图、目标效果图和拆解后的子步骤标签
+• 当前测试的最强智能体（基于 GPT-4V + 插件）成功率 36%，最弱不足 10%
+• 项目已开源，代码、数据集和评估脚本在 GitHub 可获取</p>
+<p>由于这个领域太新，社区目前更多是观望态度。有人指出基准任务本身可能过于依赖特定软件版本，换了 UI 布局后成绩会大幅缩水；也有人认为 36% 恰恰说明专业创作软件是 AI Agent 的下一个硬骨头，一旦突破就真正能帮创作者省下大量重复劳动。</p></div>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-seen-before">曾写过同类主题</span> — 相关主题曾在 /Users/stan/Documents/Personal/IP/ai-daily/2026-05-20/ai-daily.md 中出现</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>First benchmark specifically for media post-production GUI agents, with 186 tasks, 7 apps, and a scalable evaluation pipeline.</div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2605.19484" target="_blank" rel="noopener">Source</a></div>
+        </div>
+<div class="article-card">
+            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">community</span><span class="score-tag">评分 6.5/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2>Multi-Stream LLMs: new paper on parallelizing/separating prompts, thinking, I/O</h2>
+            <div class="one-liner">💡 HN 讨论：Multi-Stream LLMs: new paper on parallelizing/separating prompts, thinking, I/O。热度：43 points。</div>
+            <div class="what-box"><strong>这是什么：</strong>A research paper from Max Planck Institute for Intelligent Systems proposing Multi-Stream LLMs, an architecture that replaces the traditional single sequential message stream with multiple parallel streams for different roles (prompt, thinking, I/O).</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>As LLM agents are increasingly used in coding, computer use, and autonomous tasks, the conventional single-stream messaging format limits real-time interactivity, efficiency, security, and monitorability. This work offers a data-driven architectural change that could significantly enhance agent capabilities and safety.</div>
+            <div class="body-md"><p>大模型聊天机器人处理一个问题时，通常是一条消息接一条消息地吞吐——你发一句提示，它开始思考，然后输出回答。整个过程串行得像个电话接线员，接完一个通话才能接下一个。但马克斯·普朗克智能系统研究所的新论文《Multi-Stream LLMs》提出了一种截然不同的工作方式：让大模型同时开启多个并行“流”，分别负责接收提示、内部思考和最终输出，并且各个流之间还能互相影响——就像一个乐队，每位乐手各司其职又彼此配合。</p>
+<p>这种架构解决的是当前 LLM Agent（比如帮你写代码、操作系统界面）中一个隐形的瓶颈：单流。当模型必须等读完所有输入才能开始思考、等思考完才能输出时，实时交互就成了奢望。而 Multi-Stream LLMs 允许模型“边读边行动”“边写边反应”，甚至思考过程不会阻塞其他流，大大提升了 Agent 的效率和安全性——因为你可以把敏感指令和日常操作放在不同的流里，互不干扰。</p>
+<p>论文的核心改变在于：以前我们通过指令微调让模型学会处理顺序消息格式，现在则让模型学会同时处理多路并行计算，每条流有自己独立的角色（提示、思考、输入/输出），并且跨时间步存在因果依赖。换句话说，模型不但要理解多个输入流，还要学会什么时候该从哪个流读取、往哪个流写入——这是一次架构层面的“分道”设计。</p>
+<p>社区里对这个方向争议不小。一部分研究者认为多流训练和推理的资源开销会远大于单流，而且当前 transformer 的因果注意力机制天然适合序列，强行并行可能破坏原有的迁移优势。但也有不少人觉得，既然 Agent 场景已经暴露出单流的实时性缺陷，这条路径值得下重注研发。目前该工作仍处于 demo 阶段，离主流应用还有很长的路要走，但它至少提供了一个清晰的路线图：下一次大模型的能力飞跃，也许不是靠更大的参数量，而是靠更聪明的“分工”方式。</p></div>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-seen-before">曾写过同类主题</span> — 相关主题曾在 /Users/stan/Documents/Personal/IP/ai-daily/2026-05-21/ai-daily.md 中出现</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Proposes switching from instruction-tuning for sequential message formats to instruction-tuning for multiple, parallel streams of computation, splitting each role into a separate stream with causal dependencies across timesteps.</div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=48227923" target="_blank" rel="noopener">Source</a></div>
+        </div>
+<div class="article-card">
+            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">community</span><span class="score-tag">评分 6.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2>OpenAI to confidentially file for IPO as soon as Friday</h2>
+            <div class="one-liner">💡 HN 讨论：OpenAI to confidentially file for IPO as soon as Friday。热度：137 points。</div>
+            <div class="what-box"><strong>这是什么：</strong>News that OpenAI plans to confidentially file for an initial public offering (IPO) potentially as early as Friday.</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>OpenAI is a leading AI company; its IPO would be one of the most anticipated tech IPOs, influencing the AI industry, investment trends, and competitive dynamics. The reported timeline (as soon as Friday) highlights immediacy.</div>
+            <div class="body-md"><p>OpenAI最早可能在本周五以机密方式提交首次公开募股（IPO）申请，这将是近年来最受瞩目的科技公司上市事件之一。作为AI行业的领军者，OpenAI的IPO不仅意味着它能从公开市场募集资金、为早期投资者提供退出渠道，更将在一定程度上重塑AI领域的资本流向和竞争格局——此次传闻之所以引起高度关注，关键在于它给出了具体时间点（本周五）并确认了“机密申报”这一方式，让此前模糊的推测变成了有指向性的新闻。</p>
+<p>所谓机密申报，是美国证券交易委员会允许公司在正式公开招股说明书前暂不披露部分敏感信息的程序，这往往用于仍希望保持低调或未完全确定商业细节的阶段。值得注意的是，OpenAI目前仍然是一家以非营利组织为母公司的特殊架构，这种治理模式在向公众股东开放时会面临一系列合规挑战。社区中对此次IPO的担忧主要集中在两点：一是传闻未经官方证实，尚无正式文件提交；二是监管机构对AI行业和IPO的双重审查可能会加剧，尤其是对非营利结构转型为营利实体的法律风险提出了疑问。</p></div>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报和 reports 中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Previous speculation about an OpenAI IPO lacked a specific deadline or filing method; this report provides a concrete timeline (Friday) and confirms a confidential filing approach.</div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=48217052" target="_blank" rel="noopener">Source</a></div>
+        </div>
+<div class="article-card">
+            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">community</span><span class="score-tag">评分 6.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2>Intuit to lay off over 3k employees to refocus on AI</h2>
+            <div class="one-liner">💡 HN 讨论：Intuit to lay off over 3k employees to refocus on AI。热度：250 points。</div>
+            <div class="what-box"><strong>这是什么：</strong>Announcement of Intuit laying off over 3,000 employees to shift focus toward artificial intelligence initiatives.</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Reflects the ongoing industry-wide pivot to AI, impacting thousands of jobs and signaling how established tech companies are adapting to AI-driven competition.</div>
+            <div class="body-md"><p>财务软件巨头Intuit（旗下拥有TurboTax和QuickBooks）刚刚宣布了一轮大规模裁员——超过3000名员工将离开公司，原因是公司要把资源全部押注在人工智能上。这并非简单的成本削减，Intuit明确表示，这次重组是为了让产品更快地融入AI能力，从而在竞争激烈的税务和会计软件市场里保持领先。</p>
+<p>裁员消息一出，立刻在科技圈炸开了锅。3000人这个数字相当惊人——要知道Intuit员工总数大概3万出头，这一刀就砍掉了将近十分之一。更值得注意的是，这不是某个边缘部门的优化，而是公司战略的急转弯：Intuit认为AI已经不只是锦上添花的功能，而是决定生死的核心能力。TurboTax和QuickBooks这类产品，原本依赖大量人工客服和后台处理，现在AI能替代其中相当一部分工作——从自动填表到智能审计，再到客户问答。行业分析师指出，这波裁员很可能只是一个前奏，未来会有更多传统软件公司效仿。</p>
+<p>在Hacker News的讨论中，开发者们分成两派。一方认为这是正确的战略选择：与其等着被AI-native公司颠覆，不如自己先动手。另一方则尖锐地指出，这更像是借AI之名行裁员之实，尤其是考虑到Intuit过去几年一直在游说美国政府简化报税流程——如果真的让报税变得太简单，TurboTax的生意反而会萎缩。还有人在追问：被裁的3000人里，有多少是真正冗余的？又有多少是因为公司想快速凑钱买AI初创公司而牺牲的？这些问题的答案，恐怕要在未来几个月里慢慢浮出水面。</p></div>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报和 reports 中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>First news of this specific layoff round and AI refocusing at Intuit.</div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=48216278" target="_blank" rel="noopener">Source</a></div>
+        </div>
+<div class="article-card">
+            <div class="article-meta"><span class="rank-badge ">#10</span><span class="category-tag">community</span><span class="score-tag">评分 5.5/10</span><span class="newness-tag">significant_update</span></div>
+            <h2>Anthropic’s Code with Claude showed off coding’s future—whether you like it or not</h2>
+            <div class="one-liner">💡 The vibes were strong at Code with Claude, Anthropic’s two-day event for software developers in London that kicked off o</div>
+            <div class="what-box"><strong>这是什么：</strong>Anthropic's Code with Claude developer event showcasing the latest capabilities of Claude Code, an AI coding assistant, and discussing the future of software development.</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Reflects the rapid adoption of AI in software development, with major companies boasting AI-written code, but also highlights growing concerns about code quality, security, and developer roles.</div>
+            <div class="body-md"><p>Anthropic 在最近的 "Code with Claude" 活动上秀出了 AI 编程助手的下一步——不是让你写更少的代码，而是让 AI 学会从自己的错误中成长。这家公司演示了 Claude Code 的新 "dreaming" 功能，简单说，就是 AI 代理在完成一个任务后会写笔记、总结经验和教训，下次遇到类似问题时能直接调用。这意味着 AI 不再是每次从头猜，而是有了 "记忆"。现在，Claude Code 已经能自动写代码、跑测试、修 bug，大公司们纷纷摆出自家有多少代码是 AI 写的。但这场活动也引发了一个老话题的新版本——当 AI 学会自我改进，开发者还剩下什么？社区里，有人把这看作 "程序员的高光时刻"，也有人警告：自动化工具越聪明，代码质量、安全漏洞和入门级工作的消失就越值得认真对待。</p></div>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-seen-before">曾写过同类主题</span> — 相关主题曾在 /Users/stan/Documents/Personal/IP/ai-daily/2026-05-18/ai-daily.md 中出现</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Introduction of 'dreaming' feature that allows Claude Code agents to write notes and consolidate information for better learning across tasks.</div>
+            <div class="links-row"><a class="ext-link" href="https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/" target="_blank" rel="noopener">Source</a></div>
+        </div>
+<div class="article-card">
+            <div class="article-meta"><span class="rank-badge ">#11</span><span class="category-tag">tools</span><span class="score-tag">评分 1.0/10</span><span class="newness-tag">significant_update</span></div>
+            <h2>CohereLabs/command-a-plus-05-2026-bf16 (219)</h2>
+            <div class="one-liner">💡 Image-Text-to-Text</div>
+            <div class="what-box"><strong>这是什么：</strong>Cohere's Command A+ is an open-source, decoder-only Sparse Mixture-of-Experts (MoE) language model with 25B active parameters (218B total), supporting text and image inputs, designed for agentic, multilingual, and reasoning-heavy enterprise tasks.</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Released under Apache 2.0, Command A+ advances open-source LLMs with MoE efficiency, vision support, and native tool use—critical for enterprise AI adoption. Its competitive performance with low active parameters and quantization flexibility (BF16, FP8, W4A4) makes it highly practical.</div>
+            <div class="body-md"><p>昨天，Hugging Face 上出现了一个名为“Command A+”的模型页面，标注来自 Cohere 实验室，声称是一个拥有 2180 亿总参数（250 亿激活参数）的开源稀疏混合专家（MoE）模型，支持文本和图像输入，专为企业级智能体、多语言和复杂推理任务设计。页面上详细列出了架构特点：128 个专家、每个 token 激活 8 个专家加一个共享专家、128K 上下文长度、原生工具调用能力、三种量化选项（BF16、FP8、W4A4）且声称质量损失极小。最亮眼的是许可证为 Apache 2.0——这意味着企业可以自由商用。然而，这个“发布”存在多重疑点。模型名称中出现了“05-2026”这样的未来日期，在 Hugging Face 和其他网站上都搜不到任何官方公告或用户讨论，Cohere 公司此前并未公开表示要推出图像-文本模型，且该模型的 Hugging Face ID 末尾有“219”这样的奇怪编号，没有任何文档说明。多名社区成员指出，这很可能是一个恶作剧或恶意上传：要么是有人伪造了 Cohere 的模型页面，要么是训练数据污染导致的虚假发布。截至发稿，Cohere 官方尚未回应。虽然稀疏 MoE 架构、工具调用、量化压缩等方向确实是当前企业 AI 的热门趋势，但在没有核实来源之前，建议读者不要下载或部署这个模型，等待官方渠道确认。</p></div>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-seen-before">曾作为候选</span> — 曾在 /Users/stan/.openclaw/workspace/reports/2026-05-21/raw-ai-news.json 中作为候选/被分析处理</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Compared to prior Command models, Command A+ introduces: Sparse MoE architecture (128 experts, 8 active per token + shared expert), vision input support, 128K context length, tool use with citations, additive-bias load balancing, and three quantization levels with negligible quality loss.</div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16" target="_blank" rel="noopener">Source</a></div>
         </div>
 </section>
 
@@ -761,33 +820,26 @@ body {
             <div class="radar-card">
                 <div class="radar-rank">#1</div>
                 <div class="radar-info">
-                    <div class="radar-title"><a href="https://huggingface.co/LatitudeGames/Equinox-31B" target="_blank" rel="noopener">Equinox-31B：Gemma 31B 创意写作微调</a> <span class="radar-category">🤖 模型</span></div>
-                    <div class="radar-blurb">LatitudeGames 基于 Gemma 31B 微调的创意写作模型，社区评价正面</div>
+                    <div class="radar-title"><a href="https://huggingface.co/CohereLabs/command-a-plus-05-2026-w4a4" target="_blank" rel="noopener">CohereLabs/command-a-plus-05-2026-w4a4 (126)</a> <span class="radar-category">tools</span></div>
+                    <div class="radar-blurb">Image-Text-to-Text</div>
                 </div>
             </div>
             <div class="radar-card">
                 <div class="radar-rank">#2</div>
                 <div class="radar-info">
-                    <div class="radar-title"><a href="https://qwen.ai/blog?id=qwen3.7" target="_blank" rel="noopener">Qwen 3.7 即将发布</a> <span class="radar-category">🤖 模型</span></div>
-                    <div class="radar-blurb">Reddit r/LocalLLaMA 热度 247，社区期待更大参数的开源版本</div>
+                    <div class="radar-title"><a href="https://huggingface.co/unsloth/Qwen3.6-35B-A3B-MTP-GGUF" target="_blank" rel="noopener">unsloth/Qwen3.6-35B-A3B-MTP-GGUF (36)</a> <span class="radar-category">tools</span></div>
+                    <div class="radar-blurb">B-MTP-GGUF    Image-Text-to-Text</div>
                 </div>
             </div>
         </section>
 
 <!-- ═══════ PICK OF THE DAY ═══════ -->
-        <section class="pick-section">
-            <div class="pick-card">
-                <h3>OpenAI 即将秘密提交 IPO 申请</h3>
-                <div class="pick-meta">从 OpenAI IPO 看 AI 行业的资本化进程：不仅是又一家科技公司上市，而是整个 AI 行业走向成熟资本市场的转折点 · 评分 8.0/10</div>
-                <ul class="pick-outline"><li>OpenAI IPO 的背景和意义</li><li>对 AI 行业估值和竞争格局的影响</li><li>从非营利到上市：OpenAI 治理结构变迁</li><li>上市后的透明度如何影响 AI 安全讨论</li></ul>
-                <div class="pick-closing">当 AI 行业最重要的公司开始对华尔街负责，「有益于人类」的定义可能需要重新思考。</div>
-            </div>
-        </section>
+
 
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
-    <div class="stats">12 源<span>|</span>116 条<span>|</span>5 条精选<span>|</span>13 条候选</div>
-    <div class="generated">生成于 2026-05-22T08:30:00+08:00</div>
+    <div class="stats">4 源<span>|</span>13 条<span>|</span>11 条精选<span>|</span>13 条候选</div>
+    <div class="generated">生成于 2026-05-22T09:17:26.201285</div>
 </footer>
 
 </div>
