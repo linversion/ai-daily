@@ -662,28 +662,189 @@ body {
     <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
       <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
     </div>
-    <div class="trend-callout"></div>
+    <div class="trend-callout">AI代理从实验室走向真实部署，长期性能衰退与环境攻击成必须攻克的工程难题。</div>
 </header>
 
 <!-- ═══════ TOP ARTICLES ═══════ -->
 <section class="articles-section">
     <div class="section-label">今日最值得关注</div>
-    <p style="color:var(--text-light);text-align:center;padding:40px 0;">今日无达标条目，宁缺毋滥</p>
+    <div class="article-card">
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">research</span><span class="score-tag">评分 8.0/10</span><span class="newness-tag">🆕 全新发布</span></div>
+            <h2><a href="https://huggingface.co/papers/2605.26302" target="_blank" rel="noopener">你的 AI 代理也会“衰老”：AgingBench 基准系统化诊断长期部署退化</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>一篇新研究论文发布了 AgingBench 基准，用于评估长期部署的 AI 代理因记忆管理不当导致的性能退化（代理老化）。它首次系统性定义了压缩老化、干扰老化、修订老化、维护老化四种故障模式，并基于 7 个场景、14 个模型和多种记忆策略，通过约 400 次运行（跨度 8 到 200 个会话）的数据，提供诊断工具来定位记忆管道中的具体失效阶段。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>越来越多的 AI 代理被部署到客服、自动化流程、个人助理等需要持续运行的真实场景中，而代理的性能会在几周或几个月内悄悄地、必然地下降，这已成为工程上必须正视的问题。以往评估只看短时表现，忽略了长期退化，AgingBench 第一次提供了标准化的检测手段和细颗粒度的归因分析，使得开发团队能主动发现并修复“老化”源头，而不只是被动地重新部署。同时，四种老化机制的划分将模糊的可靠性问题转化为可测试的具体假设。</div>
+            <div class="body-md"><p>如果你把 AI 代理放到客服、数据分析或自动化流程中长时间运行，你可能会发现它一开始表现很好，但几周后就开始犯低级错误——这就是代理的“衰老”现象。一篇新发布的预印论文正式定义了这个问题，并推出了专门评估代理长期可靠性的基准 AgingBench。</p>
+<p>论文把代理衰老的根源拆解成四种机制：压缩老化，即记忆随对话变长被不断压缩，逐渐丢失关键信息；干扰老化，新写入的检索内容覆盖了旧的相关记忆；修订老化，用户在对话中修改或纠正信息时，代理未能正确更新记忆；以及维护老化，记忆系统自身的同步、去重等后台操作引入的一致性错误。这四种机制共同作用，使得部署后的代理性能像沙漏一样随时间持续流失。</p>
+<p>过去我们衡量代理能力，大多只看单轮任务或短时间交互，但真实环境中的代理往往要扛过几十甚至上百个会话。AgingBench 为此设计了 7 个场景，横跨客服、知识问答、个人助理等，采用 14 个不同的底层模型，配上多种主流的记忆策略，在约 400 次运行中跟踪了从 8 到 200 个会话的长期表现曲线。更关键的是，它不只给出一个“老化了”的结论，还提供了时序依赖图和反事实探针这两套诊断工具，可以定位是记忆管道里哪个环节最先崩溃，比如到底是压缩算法过度裁剪了上下文，还是检索映射出现了漂移。</p>
+<p>社区对这项工作的评价中有一点保留：所有实验仍在合成代理任务上进行，还没有在生产环境的真实部署中验证。如果有一天这些诊断方法能直接连接到线上代理的观测数据，那么对代理可靠性的工程保障将迈出一大步。</p></div>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>首次系统性地定义代理老化的四种机制（压缩老化、干扰老化、修订老化、维护老化），并发布配套基准AgingBench，包含7个场景、14个模型、多种记忆策略，基于约400次运行（8-200会话）的数据。</div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2605.26302" target="_blank" rel="noopener">Source</a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AI Intelligence Briefing — May 27, 2026 • Buttondown</div>
+                        <div class="source-url"><a href="https://buttondown.com/pollak/archive/ai-intelligence-briefing-may-27-2026" target="_blank" rel="noopener">buttondown.com</a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">[2605.26302] Your Agents Are Aging Too: Agent Lifespan Engineering for Deployed Systems</div>
+                        <div class="source-url"><a href="https://arxiv.org/abs/2605.26302" target="_blank" rel="noopener">arxiv.org</a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Agent Lifespan Engineering for Deployed Systems</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2605.26302v1" target="_blank" rel="noopener">arxiv.org</a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Agentic Engineering: Closing the Gap Between AI Promises and Production Reality | Cole Medin posted on the topic | LinkedIn</div>
+                        <div class="source-url"><a href="https://www.linkedin.com/posts/cole-medin-727752184_2025-overpromised-on-ai-agents-2026-demands-activity-7414472389167841280-WDzs" target="_blank" rel="noopener">www.linkedin.com</a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Building Agents in 2026 (major updates!) - YouTube</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=D-d4Y6v-pDs" target="_blank" rel="noopener">www.youtube.com</a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card">
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">research</span><span class="score-tag">评分 7.5/10</span><span class="newness-tag">🆕 全新发布</span></div>
+            <h2><a href="https://huggingface.co/papers/2605.25707" target="_blank" rel="noopener">AgentHijack基准发布，首次评测AI代理面对弹窗等环境干扰的“抗压”能力</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>AgentHijack是一个专门评估多模态大语言模型代理在计算机操作场景中抗环境干扰能力的基准测试工具。它故意在日常任务中加入弹窗遮挡、屏幕分辨率变化、竞争应用抢占焦点等干扰，测量代理在“捣乱”条件下完成任务的稳定程度。论文于2025年5月27日发布，目前尚未公开代码仓库。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>现有GUI代理基准（如OSWorld、WebArena）几乎都在理想化环境下评估任务完成率，忽略了真实操作中无处不在的环境不确定性。AgentHijack首次将代理的鲁棒性问题标准化为可量化指标，让研究者和开发者能明确知道：当代理从实验室走进用户桌面后，面对突发的系统提示或显示异常，究竟会不会掉链子。这直接关系到代理能否从原型走向实际部署。</div>
+            <div class="body-md"><p>当AI代理替你操作电脑时，一个突然弹出的更新窗口或意外的分辨率变化，就可能让它“手足无措”。AgentHijack基准测试首次将这种困扰真实用户的问题搬进实验室，系统衡量多模态大模型代理在环境干扰下的鲁棒性。</p>
+<p>这个工具的名字本身就暗示了它的设计理念——“劫持”代理正常执行流程。它不像传统基准那样只测试理想条件下的任务完成率，而是故意加入弹窗遮挡、竞争应用抢焦点、屏幕分辨率缩放等常见干扰，看看代理是能从容应对还是直接崩溃。研究团队构建了涵盖多种操作系统场景的受控环境，让同一个任务在干净版本和“捣乱”版本下分别执行，通过对比得分来量化代理的抗干扰能力。</p>
+<p>此前5月发布的SimuWoB和CUA-Gym，一个侧重移动端任务合成，一个专注训练数据生成管道，而AgentHijack补上了该领域一个关键缺口：代理在非理想环境中的可靠性。这也是为什么尽管论文尚未公开代码，社区仍给予较高关注——随着GUI代理工具从实验室走向实际部署，环境鲁棒性正从锦上添花变成刚需。然而也有声音指出，研究所覆盖的干扰类型仍较有限，从受控实验到真实世界的混乱程度之间尚有距离。</p>
+<p>论文后续是否会开源测试环境、能否扩展至更多类别的环境噪声，将是判断该基准实际影响力的关键节点。</p></div>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-seen-before">曾作为核心条目</span> — 2026年5月27日日报中曾报道「SimuWoB: Simulating Real-World Mobile Ap」</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>首次提出AgentHijack基准测试，针对计算机使用代理的环境鲁棒性评估，填补了该领域空白</div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2605.25707" target="_blank" rel="noopener">Source</a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AgentHijack: Benchmarking Computer Use Agent Robustness to ...</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2605.25707v1" target="_blank" rel="noopener">arxiv.org</a></div>
+                        <div class="source-purpose">获取使用场景和案例</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge background">内容</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">[Literature Review] AgentHijack: Benchmarking Computer Use ...</div>
+                        <div class="source-url"><a href="https://www.themoonlight.io/review/agenthijack-benchmarking-computer-use-agent-robustness-to-common-environment-corruptions" target="_blank" rel="noopener">www.themoonlight.io</a></div>
+                        <div class="source-purpose">获取使用场景和案例</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge background">内容</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">[PDF] AgentHazard: A Benchmark for Evaluating Harmful Behavior ... - arXiv</div>
+                        <div class="source-url"><a href="https://arxiv.org/pdf/2604.02947" target="_blank" rel="noopener">arxiv.org</a></div>
+                        <div class="source-purpose">获取使用场景和案例</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge background">内容</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Bo Han</div>
+                        <div class="source-url"><a href="https://bhanml.github.io" target="_blank" rel="noopener">bhanml.github.io</a></div>
+                        <div class="source-purpose">获取使用场景和案例</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge background">内容</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">[2605.25707] AgentHijack: Benchmarking Computer Use Agent Robustness to Common Environment Corruptions</div>
+                        <div class="source-url"><a href="https://arxiv.org/abs/2605.25707" target="_blank" rel="noopener">arxiv.org</a></div>
+                        <div class="source-purpose">获取使用场景和案例</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge background">内容</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 </section>
 
 <!-- ═══════ RADAR SCAN ═══════ -->
         <section class="radar-section">
             <div class="radar-header">📡 雷达扫描</div>
-            <div class="radar-empty">今日无雷达发现</div>
+            <div class="radar-card">
+                <div class="radar-rank">#1</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://huggingface.co/papers/2605.19952" target="_blank" rel="noopener">Rethinking How to Remember: Beyond Atomic Facts in Lifelong LLM Agent Memory</a> <span class="radar-category">research</span></div>
+                    <div class="radar-blurb">To enable reliable long-term interaction, LLM agents require a memory system that can faithfully store, efficiently retr</div>
+                </div>
+            </div>
+            <div class="radar-card">
+                <div class="radar-rank">#2</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://huggingface.co/microsoft/Lens-Turbo" target="_blank" rel="noopener">microsoft/Lens-Turbo</a> <span class="radar-category">tools</span></div>
+                    <div class="radar-blurb">Lens-Turbo    Text-to-Image</div>
+                </div>
+            </div>
         </section>
 
 <!-- ═══════ PICK OF THE DAY ═══════ -->
-
+        <section class="pick-section">
+            <div class="pick-card">
+                <h3>Your Agents Are Aging Too: Agent Lifespan Engineering for Deployed Systems</h3>
+                <div class="pick-meta">「Your Agents Are Aging Too: Agent Lifespan Engineering for Deployed Systems」今日头条——该研究首次系统性地定义了代理老化的四种机制，并发布了配套的AgingBench基准，技术深度高，对长期部署的AI代理评估 · 评分 8.0/10</div>
+                <ul class="pick-outline"><li>一篇研究论文，提出AgingBench基准，用于评估和诊断长期部署AI代理的可靠性退化（代理老化）问题。</li></ul>
+                <div class="pick-closing">详情见正文分析。</div>
+            </div>
+        </section>
 
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
-    <div class="stats">1 源<span>|</span>20 条<span>|</span>0 条精选<span>|</span>0 条候选</div>
-    <div class="generated">生成于 2026-05-29T08:19:59.908627</div>
+    <div class="stats">12 源<span>|</span>96 条<span>|</span>2 条精选<span>|</span>6 条候选</div>
+    <div class="generated">生成于 2026-05-29T09:44:16.054902</div>
 </footer>
 
 </div>
