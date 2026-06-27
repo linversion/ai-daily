@@ -662,21 +662,93 @@ body {
     <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
       <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
     </div>
-    <div class="trend-callout">大厂加速自研芯片以摆脱英伟达依赖，同时AI模型竞争正从技术比拼转向政府审批与生态控制权争夺。</div>
+    <div class="trend-callout">政府干预与出口管制骤然收紧，AI 行业从技术竞争转向生存合规博弈。</div>
 </header>
 
 <!-- ═══════ TOP ARTICLES ═══════ -->
 <section class="articles-section">
     <div class="section-label">今日最值得关注</div>
     <div class="article-card">
-            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">tools</span><span class="score-tag">评分 8.8/10</span><span class="newness-tag">🆕 全新发布</span></div>
-            <h2><a href="https://techcrunch.com/podcast/openais-jalapeno-chip-is-big-techs-spiciest-move-away-from-nvidia/" target="_blank" rel="noopener">OpenAI 联手博通自研芯片 Jalapeño，欲摆脱英伟达依赖</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>OpenAI 首次公开其定制推理芯片计划，代号“Jalapeño”，与博通（Broadcom）合作开发，旨在减少对英伟达 GPU 的依赖，专注于 AI 推理任务。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>英伟达 GPU 几乎垄断 AI 芯片市场，价格高昂且供应紧张。OpenAI 自研芯片是夺回技术控制权和降低运营成本的关键一步，也标志着大厂“去英伟达化”趋势进一步加剧。</div>
-            <div class="body-md"><p>今天 TechCrunch 独家披露，OpenAI 正与芯片巨头博通（Broadcom）合作，秘密研发一款代号为“Jalapeño”的定制推理芯片。这不仅是 OpenAI 首次公开其自研芯片计划，也意味着硅谷大厂们“去英伟达化”的浪潮又多了一个重量级玩家。</p>
-<p>为什么一家做软件起家的 AI 公司要跑去造芯片？答案很简单——钱和命脉。英伟达的 GPU 几乎垄断了 AI 训练和推理市场，价格高昂且供不应求，OpenAI 每次扩容都等于给黄仁勋送上一张空白支票。更关键的是，依赖单一供应商等于把技术命脉交到别人手里。Jalapeño 的出现，就是 OpenAI 试图夺回控制权的第一步。</p>
-<p>但 OpenAI 走的不是完全自研的路线。与 Google 的 TPU 或亚马逊的 Inferentia 不同，OpenAI 选择与博通这个老牌芯片设计厂商合作，借助后者的工程经验来降低风险。目前已知的信息是，Jalapeño 将采用台积电 3nm 工艺，专注于推理任务——也就是模型训练完成后，实际回答用户问题时的计算。这很聪明，因为推理成本正在随着用户量激增而飙升，而训练芯片的门槛更高、周期更长。</p>
-<p>不过，别急着欢呼。Jalapeño 目前没有任何公开的基准测试成绩，量产时间表也模糊不清。定制芯片历史上翻车的案例比比皆是，成本超支、延期交付都是家常便饭。更何况，英伟达自己也在推定制芯片服务，等 Jalapeño 真正落地时，市场格局可能已经变了。社区里有人调侃：“这名字倒是挺贴切，毕竟等它量产，竞争对手可能已经辣得跳脚了。”</p></div>
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">tools</span><span class="score-tag">评分 9.5/10</span><span class="newness-tag">📌 旧闻重提</span></div>
+            <h2><a href="https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/" target="_blank" rel="noopener">OpenAI 被迫阉割 GPT-5.6 发布：美国政府要求仅限少数伙伴预览</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>OpenAI 发布 GPT-5.6 系列模型（Sol、Terra、Luna），但因美国政府要求，仅限少数受信任合作伙伴预览。公司公开表示这种限制不应成为常态。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这是美国政府首次直接干预 OpenAI 的模型分发范围，呼应了上周 G7 峰会上各国领导人对美国可能切断 AI 访问的担忧。技术层面，Terra 以 GPT-5.5 一半的价格提供同等性能，加上可预测提示缓存机制，本应是开发者降本增效的重要工具，但政治限制让这些进步暂时无法普惠。</div>
+            <div class="body-md"><p>今天 TechCrunch 和 Hacker News 同步报道了一个让人哭笑不得的消息：OpenAI 发布了新一代 GPT-5.6 系列模型，但应美国政府要求，这次发布被砍成了“有限预览”——只有少数受信任的合作伙伴能尝鲜。</p>
+<p>这个系列包含三个子模型：旗舰级的 Sol、均衡型的 Terra，以及主打低成本的 Luna。从技术指标看，Terra 的性能已经能媲美上一代 GPT-5.5，但价格直接砍半；Luna 则以最低成本提供“强大能力”——虽然 OpenAI 没说具体有多强，但定价策略明显是在向中小开发者示好。更值得关注的是，这次引入了可预测提示缓存机制，支持显式缓存断点和 30 分钟最小缓存生命周期，缓存写入按 1.25 倍非缓存输入费率计费，读取继续享受 90% 折扣。对高频调用场景来说，这意味着成本控制终于有了确定性。</p>
+<p>但讽刺的是，技术上的进步被政治现实泼了冷水。OpenAI 在声明中直言“这种限制不应成为常态”，显然对政府的干预颇为不满。这恰好呼应了上周 G7 峰会上法国总统马克龙和印度总理莫迪的公开批评——他们担心美国以国家安全为由切断 AI 模型访问，称这种依赖“不可接受”。现在 OpenAI 的遭遇证明，这种担忧不是杞人忧天：美国政府不仅在限制竞争对手的模型出口，连本国企业的正常商业发布都要插手。</p>
+<p>社区讨论集中在两个点上：一是这种“阉割式发布”会不会成为行业常态，二是 GPT-5.6 的技术指标是否真的能碾压 Anthropic 的 Claude Mythos 5——OpenAI 给出的基准对比图看起来很漂亮，但毕竟只有少数人能验证。有开发者调侃：“这就像餐厅发了新菜单，但告诉你只有 VIP 才能点菜，然后让你相信菜很好吃。”</p></div>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>6月18日报道的是G7峰会上各国领导人对美国可能切断AI模型访问的政治担忧，本次是OpenAI应美国政府要求限制GPT-5.6发布范围——同一故事的不同时间节点，核心主题（政府干预AI模型分发）高度重叠，不宜标全新发布</div>
+            <div class="links-row"><a class="ext-link" href="https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/" target="_blank" rel="noopener">Source</a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Previewing GPT-5.6 Sol: a next-generation model | OpenAI</div>
+                        <div class="source-url"><a href="https://openai.com/index/previewing-gpt-5-6-sol/" target="_blank" rel="noopener">openai.com</a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Found a flaw **AI Self-Critique Limitation Report** - Use cases and examples - OpenAI Developer Community</div>
+                        <div class="source-url"><a href="https://community.openai.com/t/found-a-flaw-ai-self-critique-limitation-report/1129718" target="_blank" rel="noopener">community.openai.com</a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Critical Feedback on OpenAI Plus Subscription Limits - ChatGPT - OpenAI Developer Community</div>
+                        <div class="source-url"><a href="https://community.openai.com/t/critical-feedback-on-openai-plus-subscription-limits/1133170" target="_blank" rel="noopener">community.openai.com</a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Quotation marks in API response breaking follow-up responses - API - OpenAI Developer Community</div>
+                        <div class="source-url"><a href="https://community.openai.com/t/quotation-marks-in-api-response-breaking-follow-up-responses/95893" target="_blank" rel="noopener">community.openai.com</a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">r/technology on Reddit: It Took Just 24 Hours of Complaints for OpenAI to Start Bringing Back Its Old Model | The GPT-5 rollout has been a disaster.</div>
+                        <div class="source-url"><a href="https://www.reddit.com/r/technology/comments/1mlm1s9/it_took_just_24_hours_of_complaints_for_openai_to/" target="_blank" rel="noopener">www.reddit.com</a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge community">社区讨论</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card">
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">tools</span><span class="score-tag">评分 8.8/10</span><span class="newness-tag">🆕 全新发布</span></div>
+            <h2><a href="https://techcrunch.com/podcast/openais-jalapeno-chip-is-big-techs-spiciest-move-away-from-nvidia/" target="_blank" rel="noopener">OpenAI 联手博通自研芯片 Jalapeño，科技巨头集体“戒断”英伟达</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>OpenAI 首次公开其定制推理芯片计划，代号“Jalapeño”，将与博通（Broadcom）合作开发，旨在摆脱对英伟达 GPU 的依赖，降低 AI 推理成本。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这标志着 OpenAI 从一家纯软件公司向掌控硬件供应链的方向迈出关键一步。在英伟达 GPU 供不应求、价格高昂的背景下，自研推理芯片能大幅降低 ChatGPT 等应用的运营成本，并在未来的供应链谈判中掌握主动权。</div>
+            <div class="body-md"><p>今天 TechCrunch 独家披露，OpenAI 正与芯片制造商博通（Broadcom）秘密联手，开发一款代号为“Jalapeño”的定制 AI 推理芯片。这可不是什么厨房里的墨西哥辣椒，而是 OpenAI 在硬件独立之路上扔出的一枚重磅炸弹——它标志着这家 AI 领头羊正式加入谷歌、苹果、亚马逊的行列，试图摆脱对英伟达 GPU 的绝对依赖。</p>
+<p>过去几年，英伟达的 A100 和 H100 芯片几乎成了训练大模型的“硬通货”，供不应求的盛况让黄仁勋赚得盆满钵满，也让下游的 AI 公司们苦不堪言。OpenAI 的 CEO 山姆·奥特曼曾多次公开抱怨 GPU 短缺拖慢了研发进度。现在，Jalapeño 的出现就是最直接的回应：与其排队等货、看人脸色，不如自己下厨。</p>
+<p>这颗芯片的特别之处在于，它专攻“推理”而非“训练”。简单说，训练芯片负责把模型“教”会，需要海量算力；推理芯片则负责让模型“干活”，回答用户的每一次提问。随着 ChatGPT 等应用用户量爆炸式增长，推理成本正成为一笔天文数字。用通用 GPU 跑推理，就像用一辆载重卡车去送一份外卖——能送到，但太浪费。Jalapeño 的目标就是造一辆专门送外卖的电动摩托，又快又省。</p>
+<p>选择博通作为搭档也颇有深意。博通是定制芯片（ASIC）领域的老手，曾帮谷歌打造了其 TPU 芯片。这种合作模式让 OpenAI 既能获得顶尖的芯片设计能力，又不用像特斯拉那样从零自建晶圆厂。据传，Jalapeño 将采用台积电 3 纳米工艺，预计 2026 年才能量产。虽然远水不解近渴，但这步棋的战略意义远大于短期收益——它让 OpenAI 在未来的供应链谈判桌上，手里多了一张王牌。</p>
+<p>社区对此反应热烈，有人调侃“Jalapeño”这个名字终于让 AI 芯片有了点辣味，也有人冷静指出，自研芯片是一场马拉松，谷歌的 TPU 走了近十年才成熟，OpenAI 能否后来居上仍是未知数。但无论如何，当一家公司开始自己造轮子，说明它已经准备好把方向盘牢牢握在自己手里了。</p></div>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
             <div class="history-note"><span class="label">📌 新增量：</span>OpenAI首次公开其定制推理芯片计划Jalapeño，并与Broadcom合作，加入Google、Apple等公司自研芯片行列。</div>
             <div class="links-row"><a class="ext-link" href="https://techcrunch.com/podcast/openais-jalapeno-chip-is-big-techs-spiciest-move-away-from-nvidia/" target="_blank" rel="noopener">Source</a></div>
@@ -740,85 +812,14 @@ body {
             </div>
         </div>
 <div class="article-card">
-            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">tools</span><span class="score-tag">评分 8.5/10</span><span class="newness-tag">⬆️ 显著更新</span></div>
-            <h2><a href="https://github.com/aws/agent-toolkit-for-aws" target="_blank" rel="noopener">AWS发布官方AI编码代理工具包，让AI替你管云资源还能被审计</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>AWS正式推出Agent Toolkit for AWS，一个官方支持的AI编码代理工具包。它通过统一的MCP服务器对接300多个AWS服务，让Claude Code、Cursor等AI编码助手能安全地管理云资源。相比2025年的AWS Labs实验版本，这次新增了四个分类插件（aws-core、aws-agents、aws-data-analytics、aws-agents-for-devsecops），支持更多编码代理，并引入了IAM条件键区分代理与人类操作，以及CloudWatch指标和CloudTrail审计日志实现操作监控与追溯。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>随着AI编码代理被广泛用于云资源部署，操作不透明和权限失控成为企业级应用的核心障碍。AWS此次通过官方工具包提供了标准化的安全层：IAM条件键让管理员能为AI代理设置独立权限边界，审计日志解决了“AI闯祸谁负责”的追溯难题。这降低了企业将AI代理引入生产环境的合规风险，可能成为AWS生态内AI代理操作的“标配安全组件”。</div>
-            <div class="body-md"><p>今天AWS正式推出了Agent Toolkit for AWS，一个让AI编码代理（比如Claude Code、Cursor这类帮你写代码的AI助手）能直接操作AWS云服务的官方工具包。这玩意儿的前身是2025年AWS Labs里的实验项目，现在转正了，还带来了四个分类插件、更细粒度的权限控制，以及一套完整的监控审计方案。</p>
-<p>为什么这事值得关注？因为现在用AI写代码部署到云上的人越来越多，但之前AI代理操作AWS资源时像个黑箱——你不知道它调了什么API、有没有越权、操作是否合规。AWS这次直接给了一套官方答案：通过统一的MCP服务器覆盖300多个AWS服务，AI代理不再需要每个服务单独对接；同时引入了IAM条件键，能区分“这个API调用是AI代理干的还是人类干的”，再配合CloudWatch指标和CloudTrail审计日志，代理的每一步操作都被记录在案，出问题能追溯、能告警。</p>
-<p>具体来说，这次新增的四个插件把能力做了场景化切分：aws-core负责基础资源管理，aws-agents面向代理本身的运维，aws-data-analytics处理数据分析类任务，aws-agents-for-devsecops则覆盖开发安全一体化流程。这些插件不是一股脑全装上，而是按需加载，避免代理臃肿。目前支持的编码代理除了Claude Code，还扩展到了Codex和Cursor，覆盖面更广。</p>
-<p>不过，这套工具包的成熟度还标着beta，项目刚起步可能会有频繁的破坏性更新。另外，它深度绑定AWS生态，如果你用的是多云或混合云架构，这套东西帮不上忙。社区目前还没有大规模讨论，但考虑到AWS在企业市场的统治地位，这个工具包很可能成为AI代理操作云资源的“标配安全层”——毕竟老板们最关心的不是AI多聪明，而是AI闯祸了谁能负责。</p></div>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>作为AWS Labs项目（2025年发布）的官方继承者，本次新增了四个分类插件（aws-core、aws-agents、aws-data-analytics、aws-agents-for-devsecops），支持更多编码代理（如Codex、Cursor），引入了IAM条件键区分代理与人类操作、CloudWatch指标和CloudTrail审计日志用于监控审计，以及经过端到端评估的技能包。</div>
-            <div class="links-row"><a class="ext-link" href="https://github.com/aws/agent-toolkit-for-aws" target="_blank" rel="noopener">Source</a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">GitHub - awslabs/mcp: Open source MCP Servers for AWS</div>
-                        <div class="source-url"><a href="https://github.com/awslabs/mcp" target="_blank" rel="noopener">github.com</a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge official">官方</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Agent Toolkit for AWS - GitHub</div>
-                        <div class="source-url"><a href="https://github.com/aws/agent-toolkit-for-aws" target="_blank" rel="noopener">github.com</a></div>
-                        <div class="source-purpose">了解背景和上下文</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge background">背景</span>
-                        <span class="badge official">官方</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Agent Plugins for AWS - GitHub</div>
-                        <div class="source-url"><a href="https://github.com/awslabs/agent-plugins" target="_blank" rel="noopener">github.com</a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge official">官方</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">build-on-aws/amazon-bedrock ... - GitHub</div>
-                        <div class="source-url"><a href="https://github.com/build-on-aws/amazon-bedrock-agents-quickstart" target="_blank" rel="noopener">github.com</a></div>
-                        <div class="source-purpose">获取使用场景和案例</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge background">内容</span>
-                        <span class="badge official">官方</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">The AWS MCP Server is now generally available - AWS</div>
-                        <div class="source-url"><a href="https://aws.amazon.com/about-aws/whats-new/2026/05/aws-mcp-server/" target="_blank" rel="noopener">aws.amazon.com</a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card">
-            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">tools</span><span class="score-tag">评分 8.3/10</span><span class="newness-tag">🆕 全新发布</span></div>
-            <h2><a href="https://techcrunch.com/2026/06/26/its-not-about-anthropic-vs-openai-anymore/" target="_blank" rel="noopener">AI 巨头不再互掐，美国政府成了它们共同的“产品经理”</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>TechCrunch 发布评论文章，指出美国政府正通过不透明的审批流程加强对 AI 模型发布的控制，Anthropic 的 Fable 和 Mythos 模型、OpenAI 的 GPT 5.6 均受波及，行业竞争焦点已从公司间对抗转向与监管者的博弈。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>文章揭示了一个结构性转变：AI 模型能否上市不再由技术或市场决定，而是取决于政府审批。这种不透明、无标准的流程可能成为行业发展的最大瓶颈，比商业竞争更具破坏性。作者呼吁行业集体行动，推动建立透明的评估框架，否则将重蹈社交媒体平台被动接受监管的覆辙。</div>
-            <div class="body-md"><p>TechCrunch 今天的一篇评论文章抛出了一个辛辣的观点：别再盯着 Anthropic 和 OpenAI 互撕了，现在它们面对的是同一个“甲方”——美国政府。文章指出，随着 AI 模型能力越来越强，华盛顿的监管之手也越伸越长，最近 Anthropic 的 Fable 和 Mythos 模型被政府拉去“喝茶”，OpenAI 的 GPT 5.6 也只能以受限预览的形式露面，这些都不是孤立事件，而是一种新常态。</p>
-<p>作者 Dean Ball 认为，这标志着一个危险的转折。过去我们担心的是巨头之间的商业竞争，但现在真正的瓶颈变成了政府审批流程——不透明、无标准、充满政治博弈。一个模型能不能发布、以什么形式发布，不再由技术成熟度或市场需求决定，而是取决于华盛顿某个办公室里的一纸批文。这对整个行业来说，比任何竞争对手都更难对付。</p>
-<p>文章的核心呼吁是“集体行动”。既然每家 AI 公司都在私下和政府周旋，不如联合起来推动一套透明、可预测的评估框架。Ball 甚至直接点名，说行业需要停止幻想监管会自动消失，而是主动参与规则制定，否则就会被规则碾过。这个逻辑听起来很耳熟——就像当年社交媒体平台从“我们只是技术公司”到被迫成立内容审核帝国的转变，只不过这次轮到了 AI 模型本身。</p>
-<p>当然，这篇文章本身也有硬伤。它没有引用任何具体数据或内部文件来证明政府审批确实在“阻碍创新”，更多是基于近期事件的推断。而且把复杂的国际地缘政治简化为“美国政府 vs AI 公司”的二元叙事，忽略了欧盟、中国等监管力量的影响。但作为一篇引发讨论的评论，它确实戳中了一个行业痛点：当你的最大竞争对手不再是同行，而是监管者时，游戏规则就彻底变了。</p></div>
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">tools</span><span class="score-tag">评分 8.8/10</span><span class="newness-tag">🆕 全新发布</span></div>
+            <h2><a href="https://techcrunch.com/2026/06/26/its-not-about-anthropic-vs-openai-anymore/" target="_blank" rel="noopener">政府开始“拉模型”审查，Anthropic 和 OpenAI 终于成了难兄难弟</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>TechCrunch 发布评论文章，指出美国政府正在通过非正式的“拉取请求”机制审查 Anthropic 的 Fable 和 Mythos 模型，以及 OpenAI 的 GPT 5.6 预览版，导致模型发布受阻，行业面临不透明监管困境。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这标志着 AI 监管从立法讨论进入实际操作阶段，但审批流程缺乏透明度和明确标准，可能导致行业发展被政治周期绑架。Anthropic 和 OpenAI 同时受挫，说明监管压力已不分公司大小，整个行业需要统一应对，否则创新节奏将完全取决于政府意志。</div>
+            <div class="body-md"><p>今天 TechCrunch 发了一篇评论，标题很直白——“现在不是 Anthropic 对 OpenAI 的问题了”。文章指出，美国政府正在悄悄收紧对 AI 模型发布的控制，Anthropic 的 Fable 和 Mythos 模型被政府“拉取”审查，OpenAI 的 GPT 5.6 也只能以受限预览形式露面。两家昔日的死对头，如今面对的是同一个看不见的审批委员会。</p>
+<p>这不是什么科幻情节。文章作者直言，监管流程既不透明也缺乏明确标准，模型能不能发布、什么时候发布，全凭政府一句话。对行业来说，这比技术瓶颈更致命——你甚至不知道自己在遵守什么规则。Anthropic 和 OpenAI 的遭遇只是冰山一角，更多中小公司可能连“被拉取”的资格都没有，直接胎死腹中。</p>
+<p>背景是，美国政府对 AI 的监管正从国会听证会的口水战，转向行政部门的实际操作。虽然没有正式立法，但通过“拉取请求”这种非正式手段，政府已经实质上获得了对模型发布的否决权。文章引用了 Dean Ball 的建议，认为行业需要建立统一的安全评估框架，用透明标准替代暗箱操作，否则整个 AI 发展节奏都会被政治周期绑架。</p>
+<p>社区对此反应复杂。有人觉得这是必要的刹车，防止模型能力失控；更多人担心这种不透明审批会成为创新的绞索，尤其是当审批标准可以随政治风向任意摇摆时。一个尖锐的评论写道：“昨天还在争论谁的模型更强，今天发现大家的模型都得先过同一道安检门——而安检员连手册都没写。”</p></div>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
             <div class="history-note"><span class="label">📌 新增量：</span>本文2026年6月26日发布，聚焦于政府近期拉取Anthropic的Fable和Mythos模型、OpenAI的GPT 5.6仅限预览等新事件，提出行业需要统一应对监管。</div>
             <div class="links-row"><a class="ext-link" href="https://techcrunch.com/2026/06/26/its-not-about-anthropic-vs-openai-anymore/" target="_blank" rel="noopener">Source</a></div>
@@ -882,24 +883,24 @@ body {
             </div>
         </div>
 <div class="article-card">
-            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">tools</span><span class="score-tag">评分 8.1/10</span><span class="newness-tag">📌 旧闻重提</span></div>
-            <h2><a href="https://techcrunch.com/video/why-everyone-from-openai-to-spacex-is-building-their-own-chips-and-turning-up-the-heat-on-nvidia/" target="_blank" rel="noopener">科技巨头集体“造芯”：从OpenAI到SpaceX，为何都在摆脱英伟达？</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>一篇TechCrunch播客文章梳理了OpenAI、Google、Apple、SpaceX等多家科技公司自研AI芯片的动向，核心案例是OpenAI与Broadcom合作开发的“Jalapeño”专用推理芯片，旨在降低对英伟达GPU的依赖。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这标志着AI算力市场正从英伟达一家独大转向多元化供给。企业通过定制芯片获得硬件控制权、优化特定工作负载性能并分散供应链风险，但同时也面临高昂的研发成本和英伟达CUDA软件生态的锁定效应。</div>
-            <div class="body-md"><p>今天TechCrunch的一篇播客文章把科技圈一个公开的秘密摆上了台面：OpenAI、Google、Apple，甚至SpaceX，都在悄悄搞自己的AI芯片。这不是什么新鲜事，但把这些玩家的动向放在一起看，一个清晰的趋势就浮现了——所有人都在试图挣脱英伟达的“算力枷锁”。</p>
-<p>文章的核心案例是OpenAI与Broadcom合作的“Jalapeño”推理芯片。这颗芯片专门为运行大模型而设计，目标是让推理成本降下来，同时把硬件控制权攥在自己手里。说白了，就是不想再把白花花的银子全塞进黄仁勋的口袋。Google有TPU，Apple有Neural Engine，Tesla有Dojo超算，现在连SpaceX都传出要为星链卫星定制AI芯片——这已经不是简单的商业竞争，而是一场算力主权的争夺战。</p>
-<p>为什么这些公司宁肯烧掉数十亿美元、承担高昂的研发和制造风险，也要自己造芯片？答案藏在英伟达的商业模式里。英伟达不仅卖GPU，还通过CUDA软件生态把开发者牢牢锁住，形成了一套“硬件+软件”的闭环。对于OpenAI这种每天要处理海量推理请求的公司来说，通用GPU的冗余设计意味着巨大的成本浪费。定制芯片可以像裁缝量体裁衣一样，针对Transformer架构做极致优化，省下的电费和机架空间就是真金白银。</p>
-<p>但这条路并不好走。文章也点出了风险：自研芯片周期长、失败率高，而且即便造出来了，还得面对英伟达每年迭代的恐怖节奏。更关键的是，CUDA生态的护城河远比想象中深——你有了芯片，开发者愿不愿意离开熟悉的CUDA环境为你重新写代码？这是所有挑战者必须回答的问题。</p>
-<p>社区对此的讨论也颇为分裂。一派认为这是必然趋势，英伟达的利润率不可能永远维持；另一派则提醒，历史上试图挑战Wintel联盟的厂商大多成了炮灰，英伟达的软硬件协同优势短期内难以撼动。不过有一点共识：当你的供应商同时也是你的竞争对手时，把鸡蛋放在多个篮子里，总比赌上全部身家要明智。</p></div>
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">tools</span><span class="score-tag">评分 8.7/10</span><span class="newness-tag">⬆️ 显著更新</span></div>
+            <h2><a href="https://github.com/aws/agent-toolkit-for-aws" target="_blank" rel="noopener">AWS 发布 AI 编码代理工具包，让 Claude Code 等代理安全操作 300+ 云服务</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>AWS 正式推出 Agent Toolkit for AWS，一个官方支持的 AI 编码代理工具包。它提供统一的 MCP 服务器（覆盖 300+ AWS 服务）、四个分类插件（aws-core、aws-agents、aws-data-analytics、aws-agents-for-devsecops），以及 IAM 条件键、CloudWatch 指标和 CloudTrail 审计日志，让 Claude Code、Codex、Cursor、Kiro 等 AI 代理能安全地在 AWS 上构建、部署和管理应用。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这是 AWS Labs 实验项目的官方继承者，标志着云服务商开始系统性地解决 AI 代理操作云资源的安全审计问题。新增的 IAM 条件键能区分代理操作和人类操作，解决了企业合规中的关键痛点——当 AI 能自主执行云资源变更时，审计追踪必须精确到“谁（或什么）在什么时候做了什么”。模块化插件设计也避免了给 AI 代理过度授权，符合最小权限原则。</div>
+            <div class="body-md"><p>AWS 今天正式推出了 Agent Toolkit for AWS，一个专为 AI 编码代理设计的官方工具包。简单说，就是给 Claude Code、Cursor、Codex 这类 AI 编程助手配了一把能安全打开 AWS 云服务大门的钥匙——而且这把钥匙还自带监控摄像头和权限锁。</p>
+<p>这个工具包的核心是一个统一的 MCP 服务器，覆盖了 300 多个 AWS 服务。AI 代理不再需要开发者手动配置一堆 API 密钥和权限，而是通过标准化的接口直接调用云资源。更关键的是，AWS 这次引入了 IAM 条件键，能精确区分“这个操作是 AI 代理干的还是人类干的”——这在企业合规场景里是个刚需。想象一下审计人员看到日志里写着“凌晨 3 点删除了生产数据库”，如果分不清是 AI 自动操作还是运维人员手动执行，那排查起来就是噩梦。</p>
+<p>工具包被拆成了四个插件：aws-core 处理基础云资源，aws-agents 负责代理本身的部署管理，aws-data-analytics 面向数据处理流水线，aws-agents-for-devsecops 则瞄准了安全开发运维场景。这种模块化设计让团队可以按需加载，而不是一次性塞给 AI 代理所有能力——权限最小化原则在 AI 时代依然适用。</p>
+<p>AWS 还配套提供了 CloudWatch 指标和 CloudTrail 审计日志，这意味着代理的每一次 API 调用都会被记录、可追踪。对于已经在用 AI 辅助开发但担心安全边界的企业来说，这套工具包相当于给 AI 代理戴上了“电子脚镣”——既能干活，又跑不出划定范围。</p>
+<p>社区目前对这个工具包的反应比较务实。有开发者指出，虽然官方支持降低了集成门槛，但实际效果取决于技能包的质量——AWS 宣称这些技能经过了端到端评估，但具体覆盖多少边缘场景还有待验证。另外，支持多代理（Claude Code、Codex、Cursor、Kiro）是个聪明的策略，避免了绑定单一 AI 工具的风险。</p></div>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>文章汇总了OpenAI、Google、Apple等多家公司自研芯片的已知动向，但未提供任何新的发布或技术细节，属于对现有趋势的综述性回顾，而非新进展报道。</div>
-            <div class="links-row"><a class="ext-link" href="https://techcrunch.com/video/why-everyone-from-openai-to-spacex-is-building-their-own-chips-and-turning-up-the-heat-on-nvidia/" target="_blank" rel="noopener">Source</a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>作为AWS Labs项目（2025年发布）的官方继承者，本次新增了四个分类插件（aws-core、aws-agents、aws-data-analytics、aws-agents-for-devsecops），支持更多编码代理（如Codex、Cursor），引入了IAM条件键区分代理与人类操作、CloudWatch指标和CloudTrail审计日志用于监控审计，以及经过端到端评估的技能包。</div>
+            <div class="links-row"><a class="ext-link" href="https://github.com/aws/agent-toolkit-for-aws" target="_blank" rel="noopener">Source</a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Google</div>
-                        <div class="source-url"><a href="https://www.google.com/" target="_blank" rel="noopener">www.google.com</a></div>
+                        <div class="source-title">GitHub - awslabs/mcp: Open source MCP Servers for AWS</div>
+                        <div class="source-url"><a href="https://github.com/awslabs/mcp" target="_blank" rel="noopener">github.com</a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -909,8 +910,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">OpenAI and Broadcom unveil LLM-optimized inference chip</div>
-                        <div class="source-url"><a href="https://openai.com/index/openai-broadcom-jalapeno-inference-chip/" target="_blank" rel="noopener">openai.com</a></div>
+                        <div class="source-title">Agent Toolkit for AWS - GitHub</div>
+                        <div class="source-url"><a href="https://github.com/aws/agent-toolkit-for-aws" target="_blank" rel="noopener">github.com</a></div>
                         <div class="source-purpose">了解背景和上下文</div>
                     </div>
                     <div class="source-badges">
@@ -920,57 +921,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Identifying and scaling AI use cases | OpenAI</div>
-                        <div class="source-url"><a href="https://openai.com/business/guides-and-resources/identifying-and-scaling-ai-use-cases/" target="_blank" rel="noopener">openai.com</a></div>
-                        <div class="source-purpose">获取使用场景和案例</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge background">内容</span>
-                        <span class="badge official">官方</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">OpenAI unveils its first custom chip, built by Broadcom - TechCrunch</div>
-                        <div class="source-url"><a href="https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/" target="_blank" rel="noopener">techcrunch.com</a></div>
-                        <div class="source-purpose">了解背景和上下文</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge background">背景</span>
-                        <span class="badge media">媒体报道</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">OpenAI, Broadcom Unveil Chip to Run Models Faster, Cheaper</div>
-                        <div class="source-url"><a href="https://www.bloomberg.com/news/articles/2026-06-24/openai-and-broadcom-unveil-ai-chip-to-run-models-faster-cheaper" target="_blank" rel="noopener">www.bloomberg.com</a></div>
-                        <div class="source-purpose">了解背景和上下文</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge background">背景</span>
-                        <span class="badge media">媒体报道</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card">
-            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">community</span><span class="score-tag">评分 7.5/10</span><span class="newness-tag">📌 旧闻重提</span></div>
-            <h2><a href="https://news.ycombinator.com/item?id=48692058" target="_blank" rel="noopener">开放权重模型追了两年，编码能力终于咬住闭源模型的尾巴</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>一篇 Hacker News 热帖分析了开放权重 LLM 与闭源 LLM 的性能差距，用 Artificial Analysis 的 18 个基准指标绘制箱线图，显示开放模型整体落后约 5 个月，但编码基准的差距已大幅缩小至接近持平</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这次分析把追赶曲线可视化后，暴露了衡量 LLM 能力的根本困境——不同基准测出的差距能差几个月，选哪个基准直接决定叙事方向。编码领域差距缩小有具体原因（代码训练数据公开可得），但推理和数学领域的高质量数据仍被闭源厂商垄断，这决定了追赶不会是匀速的</div>
-            <div class="body-md"><p>Hacker News 上今天有一篇分析文章被顶得很高，讲的是开放权重 LLM 和闭源 LLM 之间的性能差距到底还有多大。作者用 Artificial Analysis 的 18 个基准指标画了一组箱线图，结论挺直白：整体上开放模型还落后闭源模型大约 5 个月，但编码这个细分领域，差距已经缩到几乎可以忽略。</p>
-<p>这事有意思的地方不在于数据本身——Artificial Analysis 的基准一直在跑，谁都能看——而在于它把追赶曲线可视化之后，暴露了一个尴尬的事实：我们衡量 LLM 能力的方式本身就不太靠谱。不同基准测出来的差距能差出几个月，选哪个基准、怎么加权，直接决定了你讲的故事是"开源快追上了"还是"闭源遥遥领先"。文章底下有人吐槽，很多基准的题目早就被训练数据污染了，拿高分不代表真聪明，只代表背题背得好。</p>
-<p>具体到数据上，编码基准的追赶速度确实亮眼。两年前开放模型在 HumanEval 这类测试上被 Claude、GPT-4 甩开一大截，现在差距缩小到个位数百分点。但推理、数学、长上下文这些维度，开放模型还在吭哧吭哧追。有评论指出，这跟训练数据的可获得性有关——GitHub 上的代码是公开的，高质量推理链和数学推导数据可没那么多。</p>
-<p>讨论里还扯到了中美 AI 竞争的老话题。有人担心开源模型进展太快会让出口管制形同虚设，也有人反驳说真正顶尖的闭源模型（比如最新的 Claude Opus 4.6）在复杂任务上的稳定性，开放模型短期内根本追不上。一个获得不少赞同的观点是：别老盯着基准分数，企业用户要的是不出幺蛾子的生产环境表现，这方面闭源 API 的 SLA 和安全性是开放权重模型给不了的。</p></div>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>历史查重未匹配，但精读结论明确指出这是对已有公开数据的深入解读，没有引入新模型或新基准，属于对已知趋势的再分析而非新发现</div>
-            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=48692058" target="_blank" rel="noopener">Source</a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">RainbowNebula/robot-paper-daily ... - GitHub</div>
-                        <div class="source-url"><a href="https://github.com/RainbowNebula/robot-paper-daily" target="_blank" rel="noopener">github.com</a></div>
+                        <div class="source-title">Agent Plugins for AWS - GitHub</div>
+                        <div class="source-url"><a href="https://github.com/awslabs/agent-plugins" target="_blank" rel="noopener">github.com</a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -980,8 +932,68 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Best AI Models April 2026: Ranked by Benchmarks</div>
-                        <div class="source-url"><a href="https://www.buildfastwithai.com/blogs/best-ai-models-april-2026" target="_blank" rel="noopener">www.buildfastwithai.com</a></div>
+                        <div class="source-title">build-on-aws/amazon-bedrock ... - GitHub</div>
+                        <div class="source-url"><a href="https://github.com/build-on-aws/amazon-bedrock-agents-quickstart" target="_blank" rel="noopener">github.com</a></div>
+                        <div class="source-purpose">获取使用场景和案例</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge background">内容</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">The AWS MCP Server is now generally available - AWS</div>
+                        <div class="source-url"><a href="https://aws.amazon.com/about-aws/whats-new/2026/05/aws-mcp-server/" target="_blank" rel="noopener">aws.amazon.com</a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card">
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">tools</span><span class="score-tag">评分 7.5/10</span><span class="newness-tag">⬆️ 显著更新</span></div>
+            <h2><a href="https://www.theverge.com/ai-artificial-intelligence/957327/anthropic-mythos-fable-ai-trump-administration-negotiations" target="_blank" rel="noopener">Anthropic最强模型下线两周谈判无果，特朗普出口管制令冲击硅谷</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Anthropic因特朗普政府出口管制令被迫下线其最强AI模型Mythos和Fable后，与白宫的谈判已进入第二周仍无结果。公司更换首席谈判官为联合创始人Tom Brown，安全专家Katie Moussouris公开质疑政府所称漏洞的严重性被夸大，而Anthropic近40%营收来源被切断，IPO计划实质性推迟，OpenAI的GPT-5.5也可能面临类似限制。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这是美国AI行业首次遭遇如此高调的出口管制强制执行，暴露了政府监管框架的致命缺陷——没有清晰的技术标准、没有明确的国别清单，仅凭模糊的行政命令就能让一家头部AI公司的核心产品停摆。如果僵局持续，不仅Anthropic的IPO和营收遭受重创，整个美国AI产业的商业化进程和全球竞争力都将受到连锁冲击，OpenAI等同行已开始担忧成为下一个目标。</div>
+            <div class="body-md"><p>Anthropic的麻烦正在滚雪球。The Verge今天披露，自特朗普政府以出口管制为由要求Anthropic下线其最强AI模型Mythos和Fable以来，已经过去整整两周，但这家AI明星公司与白宫的谈判仍陷僵局，看不到任何解禁迹象。</p>
+<p>谈判卡在了最根本的问题上——美国政府至今拿不出一套清晰的出口管制框架。Anthropic方面想知道：到底什么级别的模型算“敏感”？哪些国家在限制名单上？漏洞严重性如何评估？但白宫给出的答案始终模糊。更耐人寻味的是，Anthropic悄悄更换了首席谈判代表，由联合创始人Tom Brown亲自接手。这位技术出身的核心人物走上前台，说明公司已经意识到这不仅是合规问题，而是关乎生死的政治博弈。</p>
+<p>安全专家Katie Moussouris的评论给这场危机添了一把火。她直言，政府声称Fable 5存在的“越狱漏洞”被严重夸大，更像是政治操弄而非技术判断。如果她的说法成立，那么Anthropic可能并非因为真正的安全威胁被禁，而是成了特朗普政府展示对华强硬姿态的靶子。这对一家正在筹备IPO的公司来说，打击是毁灭性的——据内部人士透露，下线Mythos和Fable直接切断了Anthropic近40%的预期营收来源，IPO时间表已经实质性推迟。</p>
+<p>更让硅谷不安的是连锁反应。OpenAI的GPT-5.5同样踩在出口管制的模糊地带，如果Anthropic的僵局无法打破，下一个被要求下线的可能就是它。整个美国AI行业的商业化进程，正在被一纸缺乏细则的行政命令拖入泥潭。</p></div>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-seen-before">曾作为核心条目</span> — 2026年6月11日日报中曾报道「[AINews] Anthropic Claude Fable 5 — Myth」</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>更新了谈判进入第二周仍无结果、首席谈判官更换为Tom Brown、安全专家Katie Moussouris认为漏洞被夸大、以及OpenAI可能面临类似限制等新进展</div>
+            <div class="links-row"><a class="ext-link" href="https://www.theverge.com/ai-artificial-intelligence/957327/anthropic-mythos-fable-ai-trump-administration-negotiations" target="_blank" rel="noopener">Source</a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Inside the fight over Claude Mythos 5 | The Verge</div>
+                        <div class="source-url"><a href="https://www.theverge.com/ai-artificial-intelligence/950412/anthropic-trump-adminstration-claude-mythos-fable-5-export-controls" target="_blank" rel="noopener">www.theverge.com</a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge media">媒体报道</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Claude Mythos: The Model Anthropic is Too Scared to Release - Reddit</div>
+                        <div class="source-url"><a href="https://www.reddit.com/r/Anthropic/comments/1sfk639/claude_mythos_the_model_anthropic_is_too_scared/" target="_blank" rel="noopener">www.reddit.com</a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge community">社区讨论</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Anthropic 與白宮就Claude Fable 5 的出口管制爭議仍未解決。重點如下</div>
+                        <div class="source-url"><a href="https://www.threads.com/@cyh.289/post/DZpPoAAE2KE/" target="_blank" rel="noopener">www.threads.com</a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -991,8 +1003,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Claude Opus 4.6, Sonnet 4.6, Haiku 4.5: Полное Сравнение | 2026</div>
-                        <div class="source-url"><a href="https://aibot.direct/blog/claude-modeli-2026" target="_blank" rel="noopener">aibot.direct</a></div>
+                        <div class="source-title">"Fable 5" - Results on X | Live Posts & Updates</div>
+                        <div class="source-url"><a href="https://x.com/search" target="_blank" rel="noopener">x.com</a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1002,19 +1014,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Лучшие LLM API для России 2026: бесплатные и доступные сервисы</div>
-                        <div class="source-url"><a href="https://airassvet.ru/articles/besplatnye-llm-api-2026" target="_blank" rel="noopener">airassvet.ru</a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">AI Leaderboard 2026: Compare & Rank 300+ Top AI Models by...</div>
-                        <div class="source-url"><a href="https://llm-stats.com/" target="_blank" rel="noopener">llm-stats.com</a></div>
+                        <div class="source-title">科技FreeStyle (@techfreestyle) • Instagram photos and videos</div>
+                        <div class="source-url"><a href="https://www.instagram.com/techfreestyle/" target="_blank" rel="noopener">www.instagram.com</a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1050,9 +1051,9 @@ Abstract: Interpreting and controlling model behaviors through activation steeri
 <!-- ═══════ PICK OF THE DAY ═══════ -->
         <section class="pick-section">
             <div class="pick-card">
-                <h3>OpenAI’s Jalapeño chip is Big Tech’s spiciest move away from Nvidia</h3>
-                <div class="pick-meta">「OpenAI’s Jalapeño chip is Big Tech’s spiciest move away from Nvidia」今日头条——OpenAI自研芯片Jalapeño与Broadcom合作，标志摆脱Nvidia依赖的关键一步，重大发布且来源可靠，虽然 · 评分 8.8/10</div>
-                <ul class="pick-outline"><li>OpenAI宣布与Broadcom合作开发名为Jalapeño的定制推理芯片，旨在减少对Nvidia芯片的依赖。</li></ul>
+                <h3>OpenAI limits GPT-5.6 rollout after government request, says restrictions shouldn’t be the norm</h3>
+                <div class="pick-meta">「OpenAI limits GPT-5.6 rollout after government request, says restrictions shouldn’t be the norm」今日头条——GPT-5.6系列模型发布并受美国政府限制，兼具突破性与重大新闻价值，HN热度675，技术深度深，信息完整，保留为Top · 评分 9.5/10</div>
+                <ul class="pick-outline"><li>OpenAI发布新一代GPT-5.6系列模型（Sol、Terra、Luna），但应美国政府要求仅限少量信任伙伴预览，公司对此限制表示不满。</li></ul>
                 <div class="pick-closing">详情见正文分析。</div>
             </div>
         </section>
@@ -1060,7 +1061,7 @@ Abstract: Interpreting and controlling model behaviors through activation steeri
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
     <div class="stats">12 源<span>|</span>87 条<span>|</span>5 条精选<span>|</span>17 条候选</div>
-    <div class="generated">生成于 2026-06-26T23:25:53.207728</div>
+    <div class="generated">生成于 2026-06-27T12:56:49.333451</div>
 </footer>
 
 </div>
