@@ -416,6 +416,48 @@ body {
 .history-note .verdict-not-seen { color: var(--score-high); }
 .history-note .verdict-seen-before { color: var(--score-mid); }
 
+/* ═══════════ Confirmed Event Aggregation ═══════════ */
+.event-aggregation {
+    margin: 16px 0;
+    padding: 14px;
+    border: 1px solid #E7DDB4;
+    border-radius: 6px;
+    background: #FFFDF5;
+}
+
+.event-head {
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.event-sources { display: grid; gap: 8px; }
+
+.event-source {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    align-items: center;
+    color: var(--text-body);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.event-role {
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: #F0EABD;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.event-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.event-domain { color: var(--text-light); font-family: 'Inter', sans-serif; font-size: 10px; }
+.event-source:hover .event-title { color: var(--accent); }
+
 /* ═══════════ Links ═══════════ */
 .links-row {
     display: flex;
@@ -682,9 +724,7 @@ body {
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
             <div class="history-note"><span class="label">📌 新增量：</span>历史查重未发现相关日报。当前新增量是 Muse Glimmer 首次发布开放权重，并同时给出本地代理能力、量化方案、投机解码和生态集成路径。</div>
             <div class="tags-row"><span class="tag">Meta</span><span class="tag">Muse Glimmer</span><span class="tag">开放权重</span><span class="tag">本地模型</span><span class="tag">AI Agent</span></div>
-            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=49241679" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
-<a class="ext-link" href="https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model" target="_blank" rel="noopener">Original article <span class="domain">research.meta.ai</span></a>
-<a class="ext-link" href="https://news.ycombinator.com/item?id=1049" target="_blank" rel="noopener">Coverage <span class="domain">news.ycombinator.com</span></a></div>
+            <div class="event-aggregation"><div class="event-head">事件聚合 · 7 个来源 · 已合并 5 条候选</div><div class="event-sources"><a class="event-source" href="https://news.ycombinator.com/item?id=49241679" target="_blank" rel="noopener"><span class="event-role">社区讨论</span><span class="event-title">Muse Glimmer: 30B-parameter model optimized for always-on local agent workflows</span><span class="event-domain">news.ycombinator.com</span></a><a class="event-source" href="https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model" target="_blank" rel="noopener"><span class="event-role">原始发布</span><span class="event-title">Muse Glimmer: 30B-parameter model optimized for always-on local agent workflows</span><span class="event-domain">research.meta.ai</span></a><a class="event-source" href="https://techcrunch.com/2026/08/10/metas-new-glimmer-ai-model-offers-a-hint-at-zuckerbergs-personal-intelligence-vision/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Meta’s new Glimmer AI model offers a hint at Zuckerberg’s personal intelligence vision</span><span class="event-domain">techcrunch.com</span></a><a class="event-source" href="https://www.marktechpost.com/2026/08/10/meta-ai-releases-muse-glimmer/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Meta AI Releases Muse Glimmer: A 30B Open-Weights Agentic Model That Runs on One Consumer GPU</span><span class="event-domain">www.marktechpost.com</span></a><a class="event-source" href="https://simonwillison.net/2026/Aug/10/introducing-muse-glimmer/#atom-everything" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Introducing Muse Glimmer</span><span class="event-domain">simonwillison.net</span></a><a class="event-source" href="https://www.artificialintelligence-news.com/news/meta-muse-glimmer-local-ai-agents-consumer-gpus/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Meta Muse Glimmer brings local AI agents to consumer GPUs</span><span class="event-domain">www.artificialintelligence-news.com</span></a><a class="event-source" href="https://www.ft.com/content/4e3957f8-ea7c-4c46-a3de-cdce8e526878" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Mark Zuckerberg attacks &#x27;closed&#x27; AI rivals as Meta returns to open models</span><span class="event-domain">www.ft.com</span></a></div></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
@@ -1129,7 +1169,7 @@ body {
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
     <div class="stats">19 源<span>|</span>76 条<span>|</span>6 条精选<span>|</span>17 条候选</div>
-    <div class="generated">生成于 2026-08-11T12:09:07.337560</div>
+    <div class="generated">生成于 2026-08-11T14:52:14.290244</div>
 </footer>
 
 </div>
