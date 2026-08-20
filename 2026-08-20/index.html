@@ -1,4 +1,4 @@
-<!-- ai-daily-final-sha256:20e7268aa6466c4fa0aabba3453a31e015ea77188bd9ee948aa373cdf1bf2046 -->
+<!-- ai-daily-final-sha256:ae5e93f160f54b8b3d85ccf05895cd3c10338ff659c420881fd37b529e39f1d1 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -711,31 +711,34 @@ body {
     <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
       <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
     </div>
-    <div class="trend-callout">本期核心是 AI 代理（Agent）的基础设施第一次成型：MCP 转向无状态核心让代理服务能像普通 Web 服务一样水平扩展，Agent Plugins 给技能与 MCP 服务器定了跨厂商打包标准，Tunix 把多轮 agent 强化学习训练放到 TPU 上，Qwen3.8-27B 用 FP8/GGUF 走上消费级硬件。整期关键词是『代理从单点演示走向可规模化、标准化、可落地的真实基础设施』。</div>
+    <div class="trend-callout">本期是智能体编排与记忆基础设施的成型：开源沙箱化代理编排平台 OneCLI（YC S26）发布，跨代理长期记忆(ai-memory、OpenViking)与端到端算法工程(LEGO-RL、SemaPLC)同时浮现，OpenAI 在隐私(ZDR 零数据保留)、安全(TAC 访问)上推进企业级代理信任。整期关键词是『代理编排、记忆与可验证基础设施的成型』。</div>
 </header>
 
 <!-- ═══════ TOP ARTICLES ═══════ -->
 <section class="articles-section">
     <div class="section-label">今日最值得关注</div>
-    <div class="article-card" data-id="raw-3f3db147ccbf">
-            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">announcements</span><span class="score-tag">评分 9.5/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://developers.googleblog.com/scaling-ai-agent-infrastructure-with-the-mcp-stateless-updates/" target="_blank" rel="noopener">MCP规范改为无状态核心，AI代理可像Web服务一样水平扩容</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>2026-07-28 发布的 MCP 规范移除了传输层的状态会话：initialize 握手与 Mcp-Session-Id 均被删掉，协议核心彻底无状态化。代理服务因此能像普通 Web 服务一样做标准轮询负载均衡、在 Serverless 平台上缩到零，并获得对客户端完全透明的故障转移，解决了扩容必须靠会话亲和与粘性路由的问题。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>有状态会话把客户端与某个容器的内存状态绑定，如果战力扩展到多实例，负载均衡会把后续请求送到没有这段会话的 pod，出现 400。这迫使运维加配置会话亲和、共享 Redis 兜底，扩容和故障转移都拖着。协议无状态化让每个请求自描述、由任意实例独立处理，直接给高并发代理服务铺平了水平扩展、Serverless 缩容和透明故障切换的土壤。这是 MCP 发布以来最大的一次架构变化，也是 AI 代理从单点演示走向可规模部署基础设施的标志一步。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>当一家企业把代理工作流从演示推向上万台用户时，瓶颈往往出在协议本身。MCP 最早在 2024 年底设计，默认为本地单客户端对单服务器，走的是状态化路径：客户端先用 initialize 握手换一个 Mcp-Session-Id，之后每次工具调用都带上它，把自己锁在持有会话状态的那个容器上。Google 在自己的云上铺开时撞上这堵墙，普通轮询负载均衡器并不清楚哪个容器存着哪段会话，第二个请求打到另一个 pod 就直接返回 400 Session Not Found；要绕开还得配置粘性路由，流量无法均匀分布、扩容低效；容器一旦重启或崩溃，会话立刻丢失，把瞬时错误抛回正在对话的用户。跑远程 MCP 服务还得靠共享的 Redis 会话库或网关级深度包检查兜底，成本和延迟同步上涨。</p>
-<p>于是 Google 牵头、联合 Hugging Face 等伙伴成立 MCP Transports Working Group，把状态从传输层剥离。2026-07-28 规范发布后，握手与 Mcp-Session-Id 被移除，客户端信息、协议版本、能力等元数据全部内联进每条请求。任何容器实例都能独立处理任意输入请求。由此拿到的是标准轮询负载均衡、能在 Google Cloud Run 这类 Serverless 平台上空闲归零的运行方式，以及容器崩溃、滚动、扩容时对客户端完全透明的故障转移。GitHub MCP 服务器随后升级，直接移除了 Redis 会话存储。Mcp-Protocol-Version、Mcp-Method、Mcp-Name 被提升为标准 HTTP 头，网关与负载均衡器无需深度包检查就能限流、路由、审计，还配上了带 ttlMs 的缓存字段。</p>
-<p>交互性任务在无状态世界里也有了对应解法。MRTR 用 InputRequiredResult 加 requestState，把一段需要用户确认的对话拆成自包含步骤，确认后重发可由任意实例接续。Tasks 扩展从实验特性升格为一等协议扩展，耗时 10 到 60 秒的长跑任务立即返回 taskId 转后台，客户端用 tasks/get、tasks/update 轮询进度。安全上新增 Issuer Verification（RFC 9207）与 Resource Indicators（RFC 8707），工具参数全面采用 JSON 数据模型。Roots、Sampling、Logging 正式进入弃用，保留至少 12 个月迁移窗口。四款 Tier-1 SDK 全部发布了适配新规范的 beta。</p></div></details>
+    <div class="article-card" data-id="raw-f8d90cd7385f">
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">community</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=49363710" target="_blank" rel="noopener">OneCLI 发布：开源沙箱代理编排平台，为团队每位员工提供安全个人代理</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>OneCLI 以 YC S26 批次公司的身份通过 Launch HN 正式亮相，同时推出 v2 版本。它从早先的凭证保险库转型为完整的团队级沙箱化代理编排平台，核心变化是提供按身份提供商配置的代理，为合约团队每位员工分配一个独立沙箱代理，统一管理团队策略，并通过网关本轮实现凭证隔离。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>团队把代理从单机扩展到多人、多责任的场景时，凭证管理、权限边界和多人协同会成为基础设施问题。OneCLI 把凭证藏在 Rust 网关后面，让代理的每个外部请求都受统一策略约束，同时集成 Slack 审批，这代表一条比“共享凭证”更低的代理安全模型路线。它进入由各实验室竞相提供的一层，也让多代理编排基础设施的赛道上多出一个开源、可自托管的选择。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>OneCLI 是开源社区里又一类面向团队的多代理基础设施，这次以 YC S26 批次公司的身份正式亮相，通过 Launch HN 对外发布。它的定位很明确：在团队层面运行 AI 代理，而不是只服务一个个人的单机代理。每个员工都能获得一个独立的沙箱化个人代理，由平台统一管理凭证、权限和安全策略，代理本身不直接接触任何密钥，所有出站请求都流经一个 Rust 编写的网关，由网关在请求发生的时刻注入对应凭证。两者合在一起，构成一个以代理为单位的、凭证与模型上下文隔离的安全模型。</p>
+<p>OneCLI 并非首次出现。仓库已存在数月，HN 上有评论指出它已经发布了 6 个月，本次新闻的增量在于正式成为主 YC S26 公司并推出 v2。v1 是从一个基于 Rust 的凭证保险库开始的，团队原本只是为 Hermes、OpenClaw、NanoClaw 这类自主代理管理密钥和权限，后来发现绝大多数需求都来自跑着自主代理的个人和团队，于是把产品改造成完整的团队级编排平台。v2 引入按 IdP 身份配置代理、团队级统一策略、Slack 集成、确定性人工审批，以及持久化的代理实体。</p>
+<p>一个代理被设计成持久的东西，而不单是一次提示。它拥有自己隔离的沙箱、文件系统和 shell，唯一的出口是网关；它有自己的对话页面，也能以自己名字、头像和独立 Slack 应用出现在频道和私信里；它带平台托管的记忆、可复用技能和计划任务。代理运行在自有基础设施上，runner 只出站、不监听入站端口，因此笔记本、家庭服务器或 NAT 背后的 VPC 都不需要建立唤醒隧道或入站端口。</p>
+<p>安全是 HN 讨论的核心争议。创始人强调 proxy 的凭证隔离、离模型上下文，但社区立刻指出它可能面临一个“混淆副官”问题：即使代理拿不到真实凭证，网关对端点的策略粒度仍待验证。作者 Jonathan Fishner 澄清，同一主机的规则是按方法、路径和主体匹配，而不是只看主机，例如允许 GET /calendar/v3/* 而 POST 需要审批。</p>
+<p>团队遇到的另一类讨论是关于竞争与定价。HN 上不少人在抱怨“代理编排赛道早已拥挤”，有评论以 20 个代理每月 499 美元、不含 API 成本来衡量是否划算。创始人自己也承认，回到拥挤的主回答，他们还没想清楚怎么在这一片里赢，两个创始人来自安全背景，一开始先构建网关，是出于对默认配置下直接使用 OpenClaw 的不信任。反应背后其实还有一个共性判断：随着各家实验室推出自带代理产品，这类开放编排平台能否提供真正的护城河，仍是 HN 仍在互相发票的核心问题。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>MCP 2026-07-28 规范首次把协议核心从有状态会话改成完全无状态，并整体移除握手与 Mcp-Session-Id，属于全新版本级新增，而非常规迭代，故列 genuinely_new。</div>
-            <div class="tags-row"><span class="tag">MCP</span><span class="tag">AI代理</span><span class="tag">协议</span><span class="tag">无状态</span><span class="tag">基础设施</span><span class="tag">Serverless</span></div>
-            <div class="links-row"><a class="ext-link" href="https://developers.googleblog.com/scaling-ai-agent-infrastructure-with-the-mcp-stateless-updates/" target="_blank" rel="noopener">Source <span class="domain">developers.googleblog.com</span></a>
-<a class="ext-link" href="https://developers.google.com/blog/mcp-stateless" target="_blank" rel="noopener">Coverage <span class="domain">developers.google.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>OneCLI 仓库已存在数月（HN 评论指出发布约 6 个月），并非首次面向社区。本次增量在于作为 YC S26 公司以 Launch HN 正式亮相，并跨到 v2：从单一凭证保险库转型为完整团队级代理编排平台，新增基于 IdP 的按身份配置、团队统一策略、Slack 集成、沙箱管理等多项企业级能力，架构分层和安全模型皆有实质变化。</div>
+            <div class="tags-row"><span class="tag">agent-harness</span><span class="tag">open-source</span><span class="tag">YC-S26</span><span class="tag">sandboxing</span><span class="tag">security</span><span class="tag">team-collaboration</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=49363710" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://github.com/onecli/onecli" target="_blank" rel="noopener">Original article <span class="domain">github.com</span></a>
+<a class="ext-link" href="https://news.ycombinator.com/item?id=raw-f8d90cd7385f" target="_blank" rel="noopener">Coverage <span class="domain">news.ycombinator.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">The 2026-07-28 Specification | Model Context Protocol Blog</div>
-                        <div class="source-url"><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">YC S26 Companies (Summer 2026): Full Startup List | Extruct AI</div>
+                        <div class="source-url"><a href="https://www.extruct.ai/data-room/ycombinator-companies-s26" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -745,175 +748,19 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Scaling AI Agent Infrastructure with the MCP Stateless ...</div>
-                        <div class="source-url"><a href="https://developers.googleblog.com/scaling-ai-agent-infrastructure-with-the-mcp-stateless-updates" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">OneCLI (YC S26) – OSS sandboxed agent harness for teams</div>
+                        <div class="source-url"><a href="https://news.ycombinator.com/item?id=49363710" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
                         <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
+                        <span class="badge community">社区讨论</span>
                     </div>
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">The 2026-07-28 MCP Specification Release Candidate</div>
-                        <div class="source-url"><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">MCP goes stateless and extensible</div>
-                        <div class="source-url"><a href="https://www.netlify.com/blog/mcp-goes-stateless-and-extensible" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-0ed85870bc68">
-            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">announcements</span><span class="score-tag">评分 9.2/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/" target="_blank" rel="noopener">Agent 插件 1.0.0 规范发布，技能工具一次打包跨客户端复用</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>多个厂商联合发布了 Agent Plugins 1.0.0，一个开源、供应商中立的打包规范，用来把 Agent Skills 和 MCP 服务器装进一个可移植的插件目录。Google 以核心维护者身份加入这个由亚马逊、Cursor、微软、OpenAI、Vercel 组成的群体，并已把支持推进到自己的 Agents CLI 和 Data Agent Kit 两个产品里。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>技能和 MCP 服务器本身早已各自可移植，缺的是一直要把它们放进同一个包的这个外壳，而这个外壳在过去几乎每个客户端都在重复发明。统一目录结构和 manifest 之后，开发者不必再针对不同编码代理给各自的 IDE 维护成套独立包装，一次打包就能跨客户端运行。Google 的加入意味着跨厂商的标准化又多了一个重要支点，插件作者不用在覆盖所有客户端和维护质感之间二选一。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>假设你写好了一个 Agent 技能，又配了对应的脚本和 MCP 服务器，三者合起来能查询团队的报表数据库，并把结果生成每周摘要。这把技能迁移到第二个客户端时，麻烦来了。技能没问题，MCP 服务器也没问题，有问题的是装它们的那个外壳。每个客户端对目录布局、清单元数据、MCP 配置的写法都有自己的一套，于是你只能把包分叉成两份去维护，看着它们逐渐走样。Google 在开发者博客里点破了这个根因：问题从来不在组件本身，而在那个包住它们的清单。</p>
-<p>为了让这份包装不再各写各的，Google 与亚马逊、Cursor、微软、OpenAI、Vercel 一起维护了 Agent Plugins 1.0.0，一个供应商中立的插件打包规范。它的核心约束很简单：插件就是一个固定目录，plugin.json 只要求 $schema 和 name 两个字段，其余组件都放在规定位置，客户端走进来就能认，不用靠猜测推断传输方式。技能放进 skills/ 下的独立子目录，MCP 服务器在 mcp.json 里逐个声明并标清类型，stdio、Streamable HTTP、HTTP+SSE 都覆盖。</p>
-<p>这个规范刻意把范围压得极小。plugin.json 不能重定位组件，也不能内联声明它们；skills/ 缺失时客户端就加载现有内容继续，mcp.json 里某个服务器启动失败不会拖垮整个插件的技能，组件独立加载、独立失败。末尾那个 com.example.client/ 反向域名目录是专属某一客户端的扩展空间，别的客户端不认识就忽略，既保住可移植的核心，又给不可移植的部分留了合法的去处。</p>
-<p>按理说，封装只是其中一环。找插件靠 Agentic Resource Discovery（ARD），ARD 已把插件视作一类独立的 agentic 资源；AI Catalog 是 ARD 索引的入口格式，提出把 application/agent-plugins+json 注册为已知类型，让目录条目能指向 plugin.json。这样发现、描述、打包、运行各司其职，每层独立可用、独立被采用。Google 已经在 Agents CLI 和 Data Agent Kit 两个产品里落地了这套格式。</p>
-<p>规范也留了明确的取舍：它不是所有场景都需要。只向单一客户端派发一个 MCP 服务器，mcp.json 单独使用反而是更简单的答案；只有当你手里的组件本来就要结伴迁移时，插件才真正值得一用。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Agent Plugins 1.0.0 首次正式发布，Google 首次以核心维护者身份加入并已落地到两个自身产品，属于全新规范的初次推出；它不是增量补丁而是新出现的跨代标准，按标准应判为 significant_update。</div>
-            <div class="tags-row"><span class="tag">Agent Plugins</span><span class="tag">Agent Skills</span><span class="tag">MCP</span><span class="tag">跨厂商规范</span><span class="tag">Google</span><span class="tag">标准化</span><span class="tag">AI 基础设施</span></div>
-            <div class="links-row"><a class="ext-link" href="https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more/" target="_blank" rel="noopener">Source <span class="domain">developers.googleblog.com</span></a>
-<a class="ext-link" href="https://developers.google.com/blog/agent-plugins" target="_blank" rel="noopener">Coverage <span class="domain">developers.google.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">What Are Agent Plugins? Skills, MCP Servers, and What Changes (2026)</div>
-                        <div class="source-url"><a href="https://powerdrill.ai/blog/what-are-agent-plugins" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">人工智能 - Agent Plugins 是什么：跨客户端 AI 插件开放标准，一套配置全平台运行 - 七牛云行业应用 - SegmentFault 思否</div>
-                        <div class="source-url"><a href="https://segmentfault.com/a/1190000048142096" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Agent Plugins package your skills, tools, and more</div>
-                        <div class="source-url"><a href="https://developers.googleblog.com/agent-plugins-package-your-skills-tools-and-more" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Agent Plugins 1.0: One Package Format for Every AI Agent</div>
-                        <div class="source-url"><a href="https://blakecrosley.com/blog/agent-plugins-standard" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Tech Titans | Google, OpenAI, Amazon, Microsoft, Cursor, and Vercel just standardized how Skills and MCP gets packaged as an Agent Plugin  | Facebook</div>
-                        <div class="source-url"><a href="https://www.facebook.com/groups/techtitansgroup/posts/1734077127919598" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-eec241c289f2">
-            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">tools</span><span class="score-tag">评分 9.0/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://huggingface.co/Qwen/Qwen3.8-27B-FP8" target="_blank" rel="noopener">阿里云发布Qwen3.8-27B FP8量化版，把多模态代理压进消费级硬件</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>阿里云 Qwen 团队 8 月 13 日发布 Qwen3.8-27B-FP8，把 27B 参数的多模态模型按 FP8 细粒度量化（块大小 128）压缩进量化权重，官方称性能与原始模型几乎一致。它原生理解图像和视频，支持 262144 token 上下文（可经 YaRN 扩到 100 万），兼容 Transformers、vLLM、SGLang 等主流框架。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>多模态与长上下文历来是内存黑洞，27B 双重夹击下本地几乎跑不动。FP8 把权重从 16 位压到 8 位，配合块 128 的细粒度缩放，内存占用与推理开销显著下降而精度损失很小，等于把一个能看、会代理的多模态模型压缩到消费级硬件能接住的程度。这让本地跑代理（能自主读文档、看视频、多步骤执行）从口号变得可行，是模型端把基础设施落向普通开发者桌面的标志一步。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>要在一台消费级显卡上跑起一个能读图、看视频、还能自己规划多步任务的 27B 参数多模态模型，内存和算力是第一道坎。阿里云 Qwen 团队在 8 月 13 日发布 Qwen3.8-27B-FP8，思路是用更细的量化把模型压小：FP8 的含义是权重从常见的 16 位浮点降到 8 位，这次用的是块大小为 128 的细粒度量化，也就是按小块分别做缩放，尽量减少精度损失带来的性能损耗。官方给出的说法是量化后的性能指标与原始模型几乎一致，换来的是内存占用和推理速度都更适合落在量产硬件上。</p>
-<p>这个 FP8 版本不只解决跑不快的问题，它同时也让消费级硬件有机会触及 Qwen3.8 这一代的核心能力。模型本身是带视觉编码器的因果语言模型，原生理解图像和视频，能承担编码、专业工作、研究这类长周期代理任务。原生支持 262144 token 上下文，需要更长场景时可通过 YaRN 扩展到 100 万 token，vLLM、SGLang、TokenSpeed 等主流推断框架里都给了配置方式。它与 Hugging Face Transformers、vLLM、SGLang 等生态直接兼容，等于把部署路径也一并铺好。在官方基准里，它和上一代 Qwen3.6-27B 对比普遍占优，举例 SWE-bench Pro 拿到 61.7，DeepSWE 1.1 拿到 42.2，MathVision 无 CI 到 90.0。</p>
-<p>对想本地跑干的人，这套压下来的内存和速度，意味着多模态代理不必再绑在云上。配上推理强度控制 reasoning_effort 和保留思考痕迹的 preserve_thinking，一个能看、能思考、能接工具的 27B 级代理可以更接近普通开发者的桌面，而不是停留在机房专用卡。这也是本期代理基础设施落地的一个代表：模型本身走到了消费级硬件能接住的尺度。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Qwen3.8-27B-FP8 是 8 月 13 日新出版的官方 FP8 量化权重，属于全新版本级新增；其意义不止于量化参数，而是让 27B 多模态代理首次在消费级硬件上跑通，故判 genuinely_new。</div>
-            <div class="tags-row"><span class="tag">Qwen</span><span class="tag">阿里云</span><span class="tag">FP8</span><span class="tag">量化</span><span class="tag">多模态</span><span class="tag">消费级硬件</span><span class="tag">AI代理</span></div>
-            <div class="links-row"><a class="ext-link" href="https://huggingface.co/Qwen/Qwen3.8-27B-FP8" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Qwen3.8-27B: A Comprehensive Technical Analysis</div>
-                        <div class="source-url"><a href="https://local-ai-zone.github.io/blog/qwen3-8-27b-comprehensive-analysis.html" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Qwen3.8-27B（2026）：Qwen 新27B 视觉语言模型完整指南 - 博客园</div>
-                        <div class="source-url"><a href="https://www.cnblogs.com/sing1ee/p/22498000" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Qwen3.8-27B Uncensored GGUF: Abliterated Local Build</div>
-                        <div class="source-url"><a href="https://www.orcarouter.ai/blog/qwen-3-8-27b-uncensored-gguf" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Qwen 3.8 27B is excellent, but it defaults to wildly overthinking things</div>
-                        <div class="source-url"><a href="https://simonw.substack.com/p/qwen-38-27b-is-excellent-but-it-defaults" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Qwen/Qwen3.8-27B-FP8</div>
-                        <div class="source-url"><a href="https://huggingface.co/Qwen/Qwen3.8-27B-FP8" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">onecli/onecli: Open-source sandboxed agent harness for ...</div>
+                        <div class="source-url"><a href="https://github.com/onecli/onecli" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -921,26 +768,39 @@ body {
                         <span class="badge official">官方</span>
                     </div>
                 </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">How OneCLI Handles Prompt Injection Risks - DEV Community</div>
+                        <div class="source-url"><a href="https://dev.to/jonathanfishner/how-onecli-handles-prompt-injection-risks-4oc" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-33a374e2e2db">
-            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.6/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://developers.googleblog.com/scaling-agentic-rl-high-throughput-agentic-training-with-tunix/" target="_blank" rel="noopener">Google 开源 Tunix 后训练库，消除 TPU 空转</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Google 首次公开发布了一款面向 JAX 的后训练库 Tunix，专门用于训练多轮、会调用工具的 LLM 推理 agent。它解决的是这类训练里 TPU 资源被空转浪费的问题：当 agent 停下来执行代码、查数据库或等待网络返回时，昂贵的算力会闲置。Tunix 用高并发的异步滚动加上实时流式的生产消费流水线，把算力从等待中解放出来，同时提供了可插拔的 agent 与环境接口。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>agent 的强化学习训练正从单轮对齐转向多轮决策，模型要在循环里反复推理、调用工具、环境交互，这种过程中硬件利用率极易掉下来。如果 TPU 常空转，训练成本会成倍上升，很多团队因此不敢做 agent 级强化学习。Tunix 把吞吐最大化、流水线可视化都做好了，把多轮 agent 训练从少数大厂才玩得起的门槛，往下拉了一个台阶。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>训练能多步推理、主动调用工具、与外部环境交互的 agent，比训练普通聊天模型难得多。难点主要在于，当 agent 停下来执行代码、查询数据库或等待网页搜索返回时，昂贵的 TPU 往往处于空转状态，利用率骤降。Google 本周发布的后训练库 Tunix，正是冲着这个痛点来的：它把异步滚动和高并发流水线结合起来，让 TPU 几乎一直处于忙碌状态。</p>
-<p>传统同步式滚动会在两处拖慢训练。一是执行气泡，当 rollout 同步等待环境初始化或返回状态与奖励时，加速器上就会出现空档；二是尾随者效应，分批生成的整体延迟被组里最慢的一条轨迹拖住。Tunix 用基于 asyncio 的高并发异步滚动解决这两点，一个 agent 暂停等待工具执行时，推理引擎会立即转向为其他活跃轨迹生成 token。生产端持续吐出完成的轨迹，消费端把这些变长轨迹动态分组后实时流式注入训练器，避免训练侧被迫空等整批数据。</p>
-<p>同时，Tunix 提供可插拔的接口。开发者继承 ConversationAgentBase 实现自己的 agent，或继承 BaseTaskEnv 接入 SWE-bench、WebArena 这类开源环境，大概几分钟就能把新环境搬进来，训练代码基本不用改。库本身原生建在 JAX、Flax、Optax 上，支持 Pathways 多主机分布式训练，也集成了 vLLM-TPU 与 SGLang-Jax 两类推理引擎，并附带一套轻量级 RL 指标和 Perfetto 可视化，帮开发者定位 TPU 饥饿出现在流水线的哪一步。</p></div></details>
+<div class="article-card" data-id="raw-9b780e5528de">
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">tools</span><span class="score-tag">评分 7.2/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://github.com/akitaonrails/ai-memory" target="_blank" rel="noopener">ai-memory：git Markdown wiki 打通编码代理长期记忆</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>ai-memory 在 2026-08-20 之际发布 v1.29.0，大幅扩充编码代理支持矩阵并要求托管工作流能力。此前它主要支持 Claude Code、Codex、OpenCode、Cursor 等少数代理，本次新增 Antigravity CLI、Grok Build CLI、Kimi Code、Kiro CLI v3、Zero、Swival CLI 的接入，并让 ai-memory run 能跨多个代理 CLI 透明恢复同一逻辑工作流，同时保留按项目隔离与对脱敏观察数书的默认行为。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>编码代理的会话上下文在结束即清零，切到另一家厂商的 CLI 就要重讲一遍架构与失败尝试。ai-memory 公开的意图正是打通不同代理厂商之间的记忆交接：用 git 版本化的 Markdown wiki 承接一座仓库的长期记忆，让 Claude Code 中途退出、Codex 接手的场景变成新代理先读到一段有界交接块。这为跨代理协作提供了无需向量数据库的记忆数据面，也代表了代理基础设施中记忆层开始走向厂商中立的趋势。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>以 Claude Code 干活到一半切到 Codex，对方往往得重新理解一遍架构、之前的失败尝试和悬而未决的问题，因为每个代理的上下文都死在各自的会话里。ai-memory（akitaonrails/ai-memory）想解决的就是这个生命周期上下文丢失问题：用一个基于 git 的 Markdown wiki，把代理会话的生命周期观察结果编译成持久记忆，并在新会话开始时给下一个代理一份有界的交接摘要。</p>
+<p>项目仓库创建于 2026-05-21，截至 2026-08-20 已有约 3300 star、272 fork、1325 次提交，README 在抓取时仍处于活跃维护状态。核心机制分两条路径：零摩擦的生命周期捕获用钩子记录经脱敏的提示词、工具生命周期与会话边界观察，会话结束时把这些观察编译成连贯摘要供下一个代理读取；可选的 ai-memory run 托管工作流则提供跨不同 CLI 原生会话的更高保真连续性。</p>
+<p>wiki 本身是普通 Markdown，落到一个 git 仓库里，可以直接 grep，能在 Obsidian 中打开，也能用 rsync 备份，不需要维护向量数据库。每一条用户提示与压缩后摘要最多保留 16 KiB，通知与工具摘录保留 2 KB，每个观察正文还有 16 KiB 的持久退路。同目录下把 Claude Code 中途退出再启动 Codex，新代理在第一条提示之前就会看到一段「上次进行到哪」的交接块，这靠跨代理交接与按稳定 UUID 键控的按项目隔离实现。</p>
+<p>最新 release v1.29.0 于 2026-08-19 发布，本次更新显著扩充了代理支持矩阵：新增 Antigravity CLI、Grok Build CLI、Kimi Code、Kiro CLI v3、Zero、Swival CLI 等客户端的接入，并引入托管工作流能力，能跨多个代理 CLI 透明地恢复同一逻辑工作流。官方支持矩阵覆盖 Linux、macOS 与 Windows 的 WSL2，原生 Windows 仍标记实验性；向量搜索需要持有 Anthropic、OpenAI、Gemini 等提供商密钥，但零 LLM 模式已内置 FTS5、实体勾稽与图邻居搜索。</p>
+<p>开箱即用的捕获并非常规的完整转写，而是有界的脱敏摘要。检索到的历史文本仍被视为不可信的过往证据，不会因命名空间、标签或排序而获得指令权威，需要对照当前代码库核验后再行动。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Tunix 是 Google 首次公开发布的后训练库，引入异步轨迹收集引擎、无屏障生产消费流水线与宏观级 RL 可视化，并支持 vLLM-TPU、SGLang-Jax 集成，此前没有同名可用的公开基础来实现这些能力，属于新发布。</div>
-            <div class="links-row"><a class="ext-link" href="https://developers.googleblog.com/scaling-agentic-rl-high-throughput-agentic-training-with-tunix/" target="_blank" rel="noopener">Source <span class="domain">developers.googleblog.com</span></a>
-<a class="ext-link" href="https://cloud.google.com/blog/products/ai-machine-learning/scaling-agentic-rl-high-throughput-agentic-training-with-tunix" target="_blank" rel="noopener">Coverage <span class="domain">cloud.google.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>项目的核心机制（git Markdown wiki 承接编码代理长期记忆）在先前版本已存在，本次 v1.29.0 带来了明确的可度量增量：新增 Antigravity CLI、Grok Build CLI、Kimi Code、Kiro CLI v3、Zero、Swival CLI 等客户端接入，并引入托管工作流以跨多个代理 CLI 透明恢复同一逻辑工作流。属于能力范围明显扩展的版本更新，判定为 significant_update。</div>
+            <div class="tags-row"><span class="tag">ai-memory</span><span class="tag">AI Agent</span><span class="tag">长期记忆</span><span class="tag">编码代理</span><span class="tag">跨厂商交接</span><span class="tag">Markdown wiki</span><span class="tag">开源工具</span></div>
+            <div class="links-row"><a class="ext-link" href="https://github.com/akitaonrails/ai-memory" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Scaling Agentic RL: High-Throughput Agentic Training with Tunix - Google Developers Blog</div>
-                        <div class="source-url"><a href="https://developers.googleblog.com/scaling-agentic-rl-high-throughput-agentic-training-with-tunix" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Persistent Codebase Memory for Coding Agents 2026 | Cognee</div>
+                        <div class="source-url"><a href="https://www.cognee.ai/blog/guides/ai-coding-agent-persistent-codebase-memory" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -950,371 +810,103 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">GitHub - google/tunix: A Lightweight LLM Post-Training Library · GitHub</div>
-                        <div class="source-url"><a href="https://github.com/google/tunix" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Persistent Memory Layer for AI Agents 2026 | Cognee</div>
+                        <div class="source-url"><a href="https://www.cognee.ai/blog/guides/building-an-ai-agent-best-persistent-memory-layer" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
                         <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">The 6 Best AI Agent Memory Frameworks You Should Try in 2026</div>
+                        <div class="source-url"><a href="https://machinelearningmastery.com/the-6-best-ai-agent-memory-frameworks-you-should-try-in-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AI Agent Memory Architectures for Multi-Agent Systems | Zylos Research</div>
+                        <div class="source-url"><a href="https://zylos.ai/research/2026-03-09-multi-agent-memory-architectures-shared-isolated-hierarchical" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-983a2836ccc3">
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">research</span><span class="score-tag">评分 7.2/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://huggingface.co/papers/2608.17393" target="_blank" rel="noopener">LEGO-RL 框架把原生编码智能体桥接到策略梯度训练</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>LEGO-RL 是围绕三个支柱设计的编码智能体 RL 框架：进程内 LLM 捕获原始生成流实现 token 级对齐并在 trainer 侧重算 log-probability，可靠执行用带镜像缓存和分阶段提示的沙箱编排缓解奖励黑客，可观测训练用集成代理加 Live UI 做轨迹诊断。它以 Qwen3.5-35B-A3B 这个稀疏 MoE 模型为基础，在三个 harness 上都带来提升。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>harness 原生执行环境与策略梯度训练的不对齐是当前编码 agent RL 的结构性问题：环境崩溃和奖励黑客污染结果信号，训练推理差异让 rollout 与更新脱节。LEGO-RL 不碰 harness 内部逻辑就补上这个缺口，在多个主流开源 harness 上同时验证了跨模型的性能提升，是可落地的方法论而非单点补丁。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>编码智能体的强化学习正越来越多地依赖运行时间更长的 agent harness 来管理工具调用、仓库上下文和执行反馈。问题在于，这些 harness 的原生执行环境与策略梯度训练并不对齐：环境崩溃和奖励黑客会污染结果信号，训练与推理的差异又会让 rollout 行为和政策更新脱节。LEGO-RL 是一个新框架，它不对 harness 的内部控制流做任何改动，就把原生编码智能体与可扩展的策略梯度优化桥接起来。</p>
+<p>框架建立在三个支柱上。第一支柱是忠实优化，通过进程内 LLM 代理捕获原始生成流，以获得 token 级对齐并在 trainer 侧稳健地重算 log-probability，即使面对 harness 侧的压缩或重新序列化也不受影响。第二支柱是可靠执行，用可扩展的沙盒编排配合镜像缓存和分阶段防御，来缓解奖励黑客问题。第三支柱是可观测训练，用集成插件自动化验证与监控，配一个 Live UI 做细粒度轨迹诊断。</p>
+<p>作者用 GSPO 在三个原生编码 agent harness 上训练稀疏 MoE 模型 Qwen3.5-35B-A3B 来评估 LEGO-RL。在 SWE-bench Verified 上，OpenHands SDK 从 64.0% 提到 70.4%，Claude Code 从 62.4% 提到 68.2%，OpenCode 从 57.2% 提到 66.6%，同时 rollout 信号与训练侧的模型概率相关性保持高于 0.99。</p>
+<p>对开发者和研究者而言，这套方法的吸引力在于不重写 harness 就补上 RL 训练的数据面缺口，既能降低奖励黑客风险，又保持训练信号与真实行为的一致。主要成本落在环境稳定性和对齐环节上，但结果验证了方向可行。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>LEGO-RL 框架首次提出，通过进程内 LLM 代理把原生编码智能体桥接到策略梯度训练，属于方法层面的全新增量。</div>
+            <div class="tags-row"><span class="tag">强化学习</span><span class="tag">编码智能体</span><span class="tag">RLHF</span><span class="tag">harness</span><span class="tag">稀疏MoE</span><span class="tag">SWE-bench</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2608.17393" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a>
+<a class="ext-link" href="https://huggingface.co/papers" target="_blank" rel="noopener">Coverage <span class="domain">huggingface.co</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Refonte Learning : Reinforcement Learning in 2026: Trends, Applications, and How to Master It</div>
+                        <div class="source-url"><a href="https://www.refontelearning.com/blog/reinforcement-learning-in-2026-trends-applications-and-how-to-master-it" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">How Top AI Labs Are Building RL Agents in 2026</div>
+                        <div class="source-url"><a href="https://www.dailydoseofds.com/p/how-top-ai-labs-are-building-rl-agents-in-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">How Top AI Labs Are Building RL Agents in 2026</div>
+                        <div class="source-url"><a href="https://blog.dailydoseofds.com/p/how-top-ai-labs-are-building-rl-agents" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Paper page - LEGO-RL: Harness-Native Reinforcement Learning for Coding Agents</div>
+                        <div class="source-url"><a href="https://huggingface.co/papers/2608.17393" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
                         <span class="badge official">官方</span>
                     </div>
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Introducing Tunix: A JAX-Native Library for LLM Post-Training - Google Developers Blog</div>
-                        <div class="source-url"><a href="https://developers.googleblog.com/introducing-tunix-a-jax-native-library-for-llm-post-training" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">LiteResearcher: A Scalable Agentic RL Training Framework for Deep Research Agent</div>
-                        <div class="source-url"><a href="https://arxiv.org/html/2604.17931v2" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Agentic RL: Frameworks and Best Practices</div>
-                        <div class="source-url"><a href="https://cameronrwolfe.substack.com/p/agentic-rl" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-0cf8ef731e63">
-            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">tools</span><span class="score-tag">评分 8.4/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://huggingface.co/unsloth/Qwen3.8-27B-GGUF" target="_blank" rel="noopener">Unsloth Dynamic V3.0 量化首秀：Qwen3.8-27B 走进消费级硬件</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Unsloth 首次为其 Qwen3.8-27B GGUF 引入 Dynamic V3.0 量化方法，一次推出从 1-bit 到 16-bit 共 18 种精度的量化文件，最小约 6.19 GB。官方声明在同等大小下其 top-1% 准确率优于所有其他 GGUF 供应商 10% 以上，并配有一套推荐采样参数和输出长度建议。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>27B 是当前多模态模型里偏大、通常卡在高端显卡或云端的一档，Dynamic V3.0 的目标正是把这类模型压进消费级设备。对做本地代理、长上下文和视觉理解的开发者而言，这意味着能在一台普通 Mac 或 Windows 机器上运行并微调 Qwen3.8-27B，而不是依赖云端推理。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Unsloth 为 Qwen3.8-27B 首次发布了采用 Dynamic V3.0 量化方法的 GGUF 版本，仓库月下载量约 431 万次。它把 27B 规模的密集多模态模型压缩到 1-bit 至 16-bit 共 18 种精度文件，最小仅约 6.19 GB，声称在同等模型大小下 top-1% 准确率比其他供应商量化方案高出 10% 以上。模型本身原生支持最长 262k 的上下文，可扩展至 100 万 token，并具备图像与视频理解能力，配合 Unsloth Desktop 可在 Mac、Windows、Linux 上运行或微调，支持思考开关与代理工具调用。对本地模型玩家来说，这是当前在消费级硬件落地 Qwen3.8-27B 的主流工具化选择。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>这是 Unsloth 首次发布 Dynamic V3.0 量化方法并推出 Qwen3.8-27B 的多精度 GGUF，属于此前未见的新方法论与模型落地组合，而非对既有版本的小幅改写。</div>
-            <div class="links-row"><a class="ext-link" href="https://huggingface.co/unsloth/Qwen3.8-27B-GGUF" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Qwen3.8-27B（2026）：Qwen 新27B 视觉语言模型完整指南 - 博客园</div>
-                        <div class="source-url"><a href="https://www.cnblogs.com/sing1ee/p/22498000" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Qwen3.8-27B: A Comprehensive Technical Analysis</div>
-                        <div class="source-url"><a href="https://local-ai-zone.github.io/blog/qwen3-8-27b-comprehensive-analysis.html" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Qwen3.8-27B Uncensored GGUF: Abliterated Local Build</div>
-                        <div class="source-url"><a href="https://www.orcarouter.ai/blog/qwen-3-8-27b-uncensored-gguf" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Unsloth Dynamic 3.0 GGUFs | Unsloth Documentation</div>
-                        <div class="source-url"><a href="https://unsloth.ai/docs/basics/dynamic-3.0-ggufs" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Unsloth Dynamic 2.0 GGUFs</div>
-                        <div class="source-url"><a href="https://unsloth.ai/docs/basics/unsloth-dynamic-2.0-ggufs" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-fe161a4b6daf">
-            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.3/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://developers.googleblog.com/build-zero-trust-ai-agents-with-googles-agent-development-kit/" target="_blank" rel="noopener">系统提示词不是安全边界：Google开源零信任AI代理参考实现</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Google 官方博客 8 月 17 日发文，用 Agent Development Kit（ADK）示范如何构造零信任 AI 代理，并在 GitHub 开源 zero-trust-agents 参考实现，还附带客服退款代理 demo、攻击演示沙箱和可本地运行的 CLI 脚本。文章的立场是把安全边界从提示词里拿出来，转到 LLM 外部的硬约束上。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>AI 代理一旦连上数据库、内部 API 和动态运行时，就不再只是生成文本，而是在改写生产状态。它用自然语言自行确定执行路径，传统的外围防护看不见它内部怎么运作。把签名、沙箱、网关搬到模型之外，是让代理处理动态推理、同时让基础设施钉死底线的一套工程做法；提示词挡不住被注入或越狱的模型。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Google 官方博客 2026 年 8 月 17 日发布文章，用 Agent Development Kit（ADK）构建零信任 AI 代理，并在 GitHub 开源 zero-trust-agents 参考实现。核心论点很直接：系统提示词只是软约束，能被提示注入绕过、在微调中走形、随模型更新表现失控，因此不是安全边界，必须在 LLM 外部强制硬安全约束。文章附一个客服退款代理 demo，演示攻击者把 149 美元的退款改写成 10000 美元、盗取环境变量和 API key，并对照给出三层防护：用 Cloud KMS/HSM 硬件签名每个数据库写入实现防抵赖；用 gVisor 用户态内核隔离所有动态代码执行，零网络出口并限制 CPU、内存和 5 秒超时；用确定性语义网关检查进出模型的输入输出，靠 CI/CD 回归测试守住业务流程和泄密规则。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>文章 8 月 17 日发布，Google 首次公开一个零信任代理参考实现（GitHub 仓库 zero-trust-agents），包含完整代码例、攻击演示沙箱和回归测试用例，未在过往日报中出现过。</div>
-            <div class="tags-row"><span class="tag">zero-trust</span><span class="tag">AI-Agent</span><span class="tag">Google-ADK</span><span class="tag">gVisor</span><span class="tag">Cloud-KMS</span><span class="tag">security</span></div>
-            <div class="links-row"><a class="ext-link" href="https://developers.googleblog.com/build-zero-trust-ai-agents-with-googles-agent-development-kit/" target="_blank" rel="noopener">Source <span class="domain">developers.googleblog.com</span></a>
-<a class="ext-link" href="https://developers.google.com/blog/agent-dev-kit" target="_blank" rel="noopener">Coverage <span class="domain">developers.google.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Anthropic提出AI代理人零信任框架，因應AI加速攻擊風險 | iThome</div>
-                        <div class="source-url"><a href="https://www.ithome.com.tw/news/176277" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">警示企業AI 驅動的自主攻擊將成為網絡安全最大威脅。報告指出 - Facebook</div>
-                        <div class="source-url"><a href="https://www.facebook.com/unwirepro/posts/cloudflare-%E7%99%BC%E5%B8%83-2026-%E5%B9%B4%E5%BA%A6%E8%B6%A8%E5%8B%A2%E9%A0%90%E6%B8%AC%E8%AD%A6%E7%A4%BA%E4%BC%81%E6%A5%AD-ai-%E9%A9%85%E5%8B%95%E7%9A%84%E8%87%AA%E4%B8%BB%E6%94%BB%E6%93%8A%E5%B0%87%E6%88%90%E7%82%BA%E7%B6%B2%E7%B5%A1%E5%AE%89%E5%85%A8%E6%9C%80%E5%A4%A7%E5%A8%81%E8%84%85%E5%A0%B1%E5%91%8A%E6%8C%87%E5%87%BA%E6%94%BB%E6%93%8A%E8%80%85%E6%AD%A3%E5%BE%9E%E4%BD%BF%E7%94%A8-ai-%E4%BD%9C%E7%82%BA%E8%BC%94%E5%8A%A9%E5%B7%A5%E5%85%B7%E8%BD%89%E5%90%91%E9%83%A8%E7%BD%B2%E8%83%BD%E8%87%AA%E4%B8%BB%E5%9F%B7/1388102933330654" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">2026 年末人工智能安全面临的主要威胁 - Stellar Cyber</div>
-                        <div class="source-url"><a href="https://stellarcyber.ai/zh-CN/learn/agentic-ai-securiry-threats" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Build zero-trust AI agents with Google's Agent Development Kit - Google Developers Blog</div>
-                        <div class="source-url"><a href="https://developers.googleblog.com/build-zero-trust-ai-agents-with-googles-agent-development-kit" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Google’s $10,000 refund test shows why AI agents need zero trust</div>
-                        <div class="source-url"><a href="https://www.helpnetsecurity.com/2026/08/18/google-zero-trust-ai-agents" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-2b7f972da5d3">
-            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">research</span><span class="score-tag">评分 8.2/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://huggingface.co/papers/2608.14036" target="_blank" rel="noopener">技能是程序锚定而非注入知识：Agent技能为何有效又为何失效</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>一篇来自加州大学圣地亚哥分校的系统研究（arXiv 2608.14036，8 月 14 日上线，当天被 Hugging Face Papers 列为每日论文）用 813 条受控实验记录和 238 个有效配对轨迹，系统回答一个此前较少深挖的问题：Agent 技能什么时候起作用、为什么、在哪失效。结论是技能主要靠程序化锚定来稳定执行，而非注入缺失知识。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>技能一直被当作给 Agent 灌输知识的手段，直觉是技能越多越可靠。这篇论文用归因实验反向挑战了这个直觉：技能的有效其实是把混乱轨迹固化成稳定的程序锚点，而不是补足缺失的事实。同时检索本身是独立瓶颈，池子扩大后精度严重下滑，失效更多来自检索和假设而非技能缺设计本身。这提醒从业者，评测与堆砌技能都不能只看成功率，要落到机制层面评估。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>把更多技能塞进 Agent 的检索池，往往被当成提升可靠性的默认做法。但这篇来自加州大学圣地亚哥分校的论文（arXiv 2608.14036，8 月 14 日上线，当天被 Hugging Face Papers 评为当日论文）给出了反直觉的结论：技能主要通过程序锚定稳定执行，而不是为模型注入缺失知识。</p>
-<p>研究用 8135 条受控实验记录和 238 个有效标签配对轨迹做归因，把技能使用模式归纳为 3 大类 12 种。数据上，程序锚定占技能有效案例的 65.7%，显式知识注入只占 4.5%，说明技能主要改变了行动稳定性而非补足了事实。检索则被单独认定为瓶颈：检索池从 5 扩到 100，实际使用精度从 29.6% 掉到 3.3%。技能还会在脆弱假设、不兼容上下文、适应不足这三类条件下失效。</p>
-<p>这份研究把评测焦点从聚合成功率挪到机制层面，挑战了技能经验越多越好的整体直觉，也为可靠的自进化 Agent 提供了更细的评估路径。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>这是一篇当日上线的新研究论文，用受控实验与配对轨迹首次系统性拆解了Agent技能有效与失效的机制原因，非既有内容的事件性发布，故列 genuinely_new。</div>
-            <div class="tags-row"><span class="tag">AI Agent</span><span class="tag">技能</span><span class="tag">程序锚定</span><span class="tag">检索</span><span class="tag">arXiv</span><span class="tag">归因实验</span></div>
-            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2608.14036" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a>
-<a class="ext-link" href="https://huggingface.co/papers/demystifying-agent-skills" target="_blank" rel="noopener">Coverage <span class="domain">huggingface.co</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Agent Skills '26 — CAIS Workshop</div>
-                        <div class="source-url"><a href="https://www.agentskills-workshop.org" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">A Survey of Agent Skills: Toward Procedural Infrastructure ...</div>
-                        <div class="source-url"><a href="https://www.preprints.org/manuscript/202605.1276" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Agent Skills Can Be Harmful: An Empirical Study of Skill-Induced Failures in LLM Agents | alphaXiv</div>
-                        <div class="source-url"><a href="https://www.alphaxiv.org/abs/2608.11888" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-0975ef17c272">
-            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">tools</span><span class="score-tag">评分 7.9/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://github.com/volcengine/OpenViking" target="_blank" rel="noopener">火山引擎开源OpenViking：Agent记忆、RAG与技能的统一文件系统</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>火山引擎开源了 OpenViking（v0.4.15），一个自进化的上下文数据库，把 Agent 的记忆、RAG 检索和技能统一到一套 viking:// 虚拟文件系统下。代理用 ls、tree、find 就能浏览自己的上下文，而非查询黑盒向量库；内容分 L0/L1/L2 三层摘要加载压低 token；查询保留目录浏览轨迹可排障；会话会自动沉淀为长期记忆。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Agent 的上下文长期碎片化，记忆、检索、技能分散且互不相同，成本高、检索不透明。OpenViking 用一套文件系统把三者统一，配合分层加载与可见检索，让上下文管理从黑盒变成可操作、可排障的工程。官方基准显示准确率提升的同时 token 与延迟双降，又按 AGPLv3 开源，是 Agent 记忆基础设施里少见的可落地尝试。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>火山引擎开源了 OpenViking，一个自进化的上下文数据库，当前版本 v0.4.15。它把 AI Agent 的记忆、RAG 检索和技能统一进一套 viking:// 虚拟文件系统，代理像操作本地文件一样用 ls、tree、find 浏览自己的上下文，而不是只对接黑盒向量库。</p>
-<p>每个条目被整理成三层：L0 摘要、L1 概述、L2 细节，加载只到任务需要的深度，以压低 token 消耗。每次查询会保留目录浏览轨迹，结果不对时能回看是哪条路径生成的，便于调试。会话结束后自动沉淀为长期记忆，异步抽取用户偏好与代理经验。检索先定位高分目录，再逐层下钻，让结果带着周围上下文一块返回。集成层面对接 Claude Code、Codex、Cursor、OpenClaw 等多个代理。</p>
-<p>官方基准数据来自项目自测：LoCoMo 与 tau2-bench 上准确率从原生记忆的 24% 到 57% 提升到 80% 到 83%，输入 token 减少 34.3% 到 91.0%，查询延迟降低 58.45% 到 66.10%；tau2-bench 上附加经验记忆让零售任务成功率提升 6.87 个百分点、航司任务提升 11.87 个百分点。主要项目按 AGPLv3 开源，无功能阉割；另提供托管与自托管商业版。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>仓库于 2026 年 1 月创建，本次审阅期的 v0.4.15（2026-08-18）带来自测基准结果、多代理集成与商业版说明，是同一产品线的最新更新，并非全新事件，故列 significant_update。</div>
-            <div class="tags-row"><span class="tag">AI Agent</span><span class="tag">火山引擎</span><span class="tag">OpenViking</span><span class="tag">上下文数据库</span><span class="tag">记忆</span><span class="tag">开源</span></div>
-            <div class="links-row"><a class="ext-link" href="https://github.com/volcengine/OpenViking" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">OpenViking: The Context Database AI Agents Actually Need - YouTube</div>
-                        <div class="source-url"><a href="https://www.youtube.com/watch?v=m0TViV3_cRY" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">volcengine/OpenViking - ClawNavigator</div>
-                        <div class="source-url"><a href="https://clawnavigator.com/entry/gh-volcengine-openviking" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">OpenViking: The Database Paradigm for Context Engineering | OpenViking Blog</div>
-                        <div class="source-url"><a href="https://blog.openviking.ai/post/openviking-context-database" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">OpenViking Explained: Reinventing Memory and Context for AI Agents</div>
-                        <div class="source-url"><a href="https://faun.pub/openviking-explained-reinventing-memory-and-context-for-ai-agents-c189b2bea61b" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Meet OpenViking: An Open-Source Context Database that Brings ...</div>
-                        <div class="source-url"><a href="https://www.marktechpost.com/2026/03/15/meet-openviking-an-open-source-context-database-that-brings-filesystem-based-memory-and-retrieval-to-ai-agent-systems-like-openclaw" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-00a29d18e1f0">
-            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.6/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://www.databricks.com/blog/designing-effective-genie-agents-single-prompt" target="_blank" rel="noopener">Databricks 单提示词生成领域代理，直接跑在已治理数据上</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Databricks 博客介绍了新能力：用户现在只需一个提示词，就能用 Genie One 或 Genie Code 快速生成领域特化的 Genie 代理，而此前创建它们需要手动配置。生成的代理会基于 Unity Catalog 里已经治理过的结构化数据、文档和文件作为上下文，也能对 PDF、图片等非结构化内容做推理，并返回按提问者权限执行的答案。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>企业代理回答不一致的根因通常不在提示词，而在代理缺少解释请求所需的业务上下文。把代理锚定在已治理的数据和文档上，让"代理直接跑在真实受治理数据上"从一次性手工配置，变成能单提示词起步、还能靠内置基准测试度量准确率的可迭代路径，企业数据代理的落地门槛因此被降下来。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>给企业造一个通用的 AI 代理，过去要先手动配置数据源和上下文边界才能跑起来；而通用代理因为没有业务语境，问营收可能会挑错表，提升的方向也常被误指成改提示词。Databricks 博客（2026-08-19）带来的变化，是把这件事压成单提示词。</p>
-<p>用 Genie One 或 Genie Code，描述清代理要达成的目标并指到相关数据来源，就能在几分钟内得到一个最初的代理版本。它复用的是 Unity Catalog 里已经治理过的内容，既包括结构化表格、度量定义，也包括 PDF、Word 这类非结构化文件，答复时始终按提问者的权限执行。博客给出的路径是先窄后宽：先挑一个聚焦、重复性强的用例，靠内置基准测试定义一组用例问题，得到可追踪的准确率，再逐步把更多知识和数据源加进去。同时它强调，代理质量取决于上下文质量，单提示词并不取代治理、文档和领域知识，只是让它们更快变成可自助使用的产物。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>此前创建 Genie Agents 需要手动配置，现在新增了通过单提示词（Genie One 或 Genie Code）快速生成代理的能力，并依赖 Unity Catalog 的上下文治理与内置基准测试，属于能力范围发生明显变化的新特性发布，判定为 significant_update。</div>
-            <div class="tags-row"><span class="tag">Databricks</span><span class="tag">Genie</span><span class="tag">Unity Catalog</span><span class="tag">单提示词</span><span class="tag">企业 AI 代理</span><span class="tag">Agent</span></div>
-            <div class="links-row"><a class="ext-link" href="https://www.databricks.com/blog/designing-effective-genie-agents-single-prompt" target="_blank" rel="noopener">Source <span class="domain">www.databricks.com</span></a>
-<a class="ext-link" href="https://databricks.com/blog/..." target="_blank" rel="noopener">Coverage <span class="domain">databricks.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">AI/BI and Genie One release notes 2026 - Azure Databricks</div>
-                        <div class="source-url"><a href="https://learn.microsoft.com/en-us/azure/databricks/ai-bi/release-notes/2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">AI/BI and Genie One release notes 2026 | Databricks on AWS</div>
-                        <div class="source-url"><a href="https://docs.databricks.com/aws/en/ai-bi/release-notes/2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Databricks Genie Context Requirements: Setup Guide 2026</div>
-                        <div class="source-url"><a href="https://atlan.com/know/ai-agent/databricks/databricks-genie-context-requirements" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Databricks Genie Agent Security Risks – AIRQ Framework</div>
-                        <div class="source-url"><a href="https://airq.adversa.ai/agent/databricks-genie" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Mitigating The Risk of Prompt Injection for AI Agents on Databricks | Databricks Blog</div>
-                        <div class="source-url"><a href="https://www.databricks.com/blog/mitigating-risk-prompt-injection-ai-agents-databricks" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">AI Agent Reinforcement Learning | NVIDIA Technical Blog</div>
+                        <div class="source-url"><a href="https://developer.nvidia.com/blog/mastering-agentic-techniques-ai-agent-reinforcement-learning" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1325,20 +917,25 @@ body {
             </div>
         </div>
 <div class="article-card" data-id="raw-dc10f8a972be">
-            <div class="article-meta"><span class="rank-badge ">#10</span><span class="category-tag">tools</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank" rel="noopener">817项安全技能映射六大框架，为Agent定可复用标准</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>一个开源仓库把 817 项网络安全技能按 agentskills.io 组织，映射到 6 大框架：MITRE ATT&CK、NIST CSF 2.0、MITRE ATLAS、D3FEND、NIST AI RMF、MITRE F3（Fight Fraud），覆盖 29 个安全领域，兼容 Claude Code、GitHub Copilot、Codex CLI、Cursor、Gemini CLI 等 20 多平台，Apache 2.0 开源。仓库 2026 年 2 月 25 日创建，6 月 22 日发布 v1.3.0，8 月 8 日 README 更新，正进入 GitHub Trending。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>安全技能的核心价值是把 AI 代理能执行的任务标准化成可枚举、可比对的清单。映射到企业熟悉的行业框架意味着不再靠各平台各自手写系统提示，同一套技能能在 Claude Code、Copilot、Cursor 等之间搬移。对要评估安全资产的团队，这是一份可复用的基线：每项技能的边界写得很清楚，拿来对照审计框架、做能力清点和团队基准都会更顺。它是代理安全标准化能落在盘面上的一种形态。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>mukul975/Anthropic-Cybersecurity-Skills 是一个开源仓库，把 817 项网络安全技能按 6 大框架组织起来：MITRE ATT&amp;CK、NIST CSF 2.0、MITRE ATLAS、D3FEND、NIST AI RMF、MITRE F3（Fight Fraud）。技能覆盖检测、威胁情报、勒索响应、AI 风险治理等 29 个安全领域，遵循 agentskills.io 技能标准，采用 Apache 2.0 开源许可，兼容 Claude Code、GitHub Copilot、Codex CLI、Cursor、Gemini CLI 等 20 多个平台。仓库 2026 年 2 月 25 日创建，6 月 22 日发布 v1.3.0，8 月 8 日 README 仍有更新，正进入 GitHub Trending。它的价值不在堆数量，而在于把安全技能变成一份可枚举、可比对、可跨平台复用的能力清单，让不同代理带着同一套标准执行同类安全任务。</p></div></details>
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">tools</span><span class="score-tag">评分 7.0/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank" rel="noopener">817项安全技能映射6大框架，AI代理安全操作有了统一标准库</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>mukul975/Anthropic-Cybersecurity-Skills 仓库在本期进入待选视野，特征是 817 项结构化网络安全技能覆盖 29 个领域，且全部映射到 MITRE ATT&CK、NIST CSF 2.0、MITRE ATLAS、D3FEND、NIST AI RMF、MITRE F3 六套框架。结合仓库时间线看，这是一次既有项目上的持续迭代：创建于 2026 年 2 月，v1.3.0 于 6 月 22 日发布，README 在 8 月 8 日又有一次提交。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>真正值得关注的不是技能数量，而是映射六个框架之后带来的标准化价值。当 AI 代理被要求执行安全类能力时，缺乏统一的技能语义是常见短板。这类仓库把攻防、防御、AI 风险与欺诈对抗整合进同一套可复用技能库，让跨工具的安全操作有了可对齐的刻度线。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>mukul975/Anthropic-Cybersecurity-Skills 是一个为 AI 代理准备的结构化网络安全技能开源仓库，共收纳 817 项技能，覆盖 29 个安全领域。它最核心的价值不在数量，而在标准化：每一项技能都被映射到 6 个业界主流安全框架，从而让不同 AI 工具能在同一套权威坐标系下执行安全操作。</p>
+<p>这 6 个框架分别是 MITRE ATT&amp;CK、NIST CSF 2.0、MITRE ATLAS、D3FEND、NIST AI RMF 和 MITRE F3。其中 MITRE ATT&amp;CK 覆盖攻击者战术与技术，D3FEND 是 MITRE 的防御机制图谱，NIST AI RMF 面向人工智能风险管理，MITRE F3 则聚焦诈骗对抗。把攻防、防御、AI 风险与欺诈对抗四类语义纳入同一套映射，意味着同一个技能可以同时兼容多个评估视角，这正是企业在做代理安全审查时最需要的对齐能力。</p>
+<p>该仓库遵循 agentskills.io 标准，与更早围绕 agent 技能定义的生态形成承接。它已声明兼容 Claude Code、GitHub Copilot、Codex CLI、Cursor、Gemini CLI 等至少 20 个平台，并以 Apache 2.0 协议开源。对开发者而言，它提供的是可被直接读取的目录化技能定义，而非只能人工翻阅的报告，这让代理在运行时能按框架调用对应的技能条目。</p>
+<p>时间线上需要提醒的是，这一轮的信号更接近既有项目的持续迭代。仓库创建于 2026 年 2 月 25 日，最新 release 为 2026 年 6 月 22 日发布的 v1.3.0，README 最近一次提交则在 2026 年 8 月 8 日。把它当作本期代理安全清单与行业标准化主线上的增量更新来理解，比当作全新项目更准确。</p>
+<p>价值判断上，这类仓库把分散在各工具里的安全技能收敛为可对比、可验证的清单，让多个代理能在同一套语义下操作。它解决的并非开创性的技术难题，而是代理时代最被低估的一环：技能定义的标准化与可移植性。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>仓库并非全新项目，2026 年 2 月 25 日已创建，June 22 发布 v1.3.0；本次被列为 GitHub Trending，README 于 8 月 8 日仍有更新，属于在前序版本基础上功能扩充与框架覆盖完善的显著更新，而非常规小迭代，故列 significant_update。</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>仓库并非全新项目，而是既有开源技能库的持续演进。创建于 2026 年 2 月，v1.3.0 于 2026 年 6 月 22 日发布，README 最近一次提交在 2026 年 8 月 8 日。本次入选主要结合其在 GitHub Trending 的曝光与既有更新周期，属于已成熟项目上的持续性更新，而非首次发布。</div>
+            <div class="tags-row"><span class="tag">AI Agent</span><span class="tag">网络安全</span><span class="tag">开源</span><span class="tag">技能标准化</span><span class="tag">MITRE</span><span class="tag">security</span></div>
             <div class="links-row"><a class="ext-link" href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">全国网络安全标准化技术委员会</div>
-                        <div class="source-url"><a href="https://www.tc260.org.cn" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Anthropic Cybersecurity Skills - AI Agent Skill | AgentConn</div>
+                        <div class="source-url"><a href="https://agentconn.com/skills/anthropic-cybersecurity-skills" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1348,8 +945,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">AI安全焦点追踪丨我国人工智能安全标准体系加速构建-新华网</div>
-                        <div class="source-url"><a href="http://www.news.cn/tech/20260407/e5345fd98bcf4dc99fab49f2ec8eb1d5/c.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">817 Cybersecurity Skills for AI Agents - Mahipal</div>
+                        <div class="source-url"><a href="https://www.mahipal.engineer/Anthropic-Cybersecurity-Skills" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1359,19 +956,19 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">China's cybersecurity standards body issues draft guidance on OpenClaw AI agent | MLex | Specialist news and analysis on legal risk and regulation</div>
-                        <div class="source-url"><a href="https://www.mlex.com/mlex/articles/2460276/china-s-cybersecurity-standards-body-issues-draft-guidance-on-openclaw-ai-agent" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">mukul975/Anthropic-Cybersecurity-Skills</div>
+                        <div class="source-url"><a href="https://github.com/mukul975/anthropic-cybersecurity-skills" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
                         <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
+                        <span class="badge official">官方</span>
                     </div>
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">GitHub - mukul975/Anthropic-Cybersecurity-Skills: 817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3… | Mahipal J.</div>
-                        <div class="source-url"><a href="https://www.linkedin.com/posts/mahipal975_github-mukul975anthropic-cybersecurity-skills-activity-7435074838492233728-XRCZ" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Anthropic's AI agent hacked by China-backed attackers | Rakesh Gohel posted on the topic | LinkedIn</div>
+                        <div class="source-url"><a href="https://www.linkedin.com/posts/rakeshgohel01_anthropics-coding-ai-agent-faces-a-catastrophic-activity-7394860444462739456-3TTT" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1381,13 +978,432 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Anthropic-Cybersecurity-Skills - AI Agents on GitHub (27.9k  ) | SkillsLLM</div>
-                        <div class="source-url"><a href="https://skillsllm.com/skill/anthropic-cybersecurity-skills" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Anthropic Cybersecurity Skills — Full Tutorial - OSINT Team</div>
+                        <div class="source-url"><a href="https://osintteam.blog/anthropic-cybersecurity-skills-full-tutorial-4b3621f14c59" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
                         <span class="badge contrarian">反证</span>
                         <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-3dfbecc2af64">
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">tools</span><span class="score-tag">评分 6.8/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://github.com/santifer/career-ops" target="_blank" rel="noopener">开源 career-ops 把 AI 编码 CLI 变成求职指挥中心</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>santun 开源的 career-ops 本周登上 GitHub Trending，最新 release 更新到 v1.27.0（发布于 2026-08-18）。项目把任意一个 AI 编码 CLI（Claude Code、Codex、OpenCode、Antigravity、Grok、Qwen、Kimi、Cursor）直接改造成求职指挥中心：既能自动扫描招聘门户，也能用 A-F 评分框架把招聘信息征求成一个 1.0-5.0 的结构化评分、按岗位定制简历并追踪申请进展，整个流程完全在本地 CLI 里运行。仓库自 2026-04-04 创建以来已累积 66.1k star、12.8k fork，作者自称用它评估了 740+ 份职位并生成 100+ 定制简历。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>求职招聘里，公司先用 AI 过滤候选人，career-ops 则把 AI 交给求职者本人去主动选择公司，在标准的 AI 编码 CLI 里即可免费或低成本运行（Antigravity 免费层，或接本地/自定义模型）。这不是又一个抓简历的简单工具，而是一套带评分框架、ATS 简历、面试准备和薪资谈判模块的完整流水线，且始终保留人类最后决定权。对需要系统化展开求职或个人想验证 agent 化工具在真实工作流上跑通的人，这是个现成的落地参考。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>career-ops 是一个开源项目，把 Claude Code、Codex、OpenCode、Antigravity、Grok、Qwen、Kimi 和 Cursor 等 AI 编码 CLI 改造成一套求职指挥中心。作者 santifer 自称用硬方式求职数月后，干脆造了套自己想要的系统，并用它评估了 740+ 份职位、生成了 100+ 份定制简历，最终拿到 Head of Applied AI 岗位。它底层是一套 A-G 评估框架：A-F 六个维度在加权评分上产出 1.0-5.0 的总体分，额外的 G 块专门做职位真实性核查（标记骗局和已消失的 ghost job），但不会影响 1-5 分，同时还用 Work-Auth 信号把明确不提供工作签证的岗位标为硬阻断项。系统会用 Playwright 自动遍历公司招聘页，扫描 Ashby、Greenhouse、Lever 和 Wellfound 等门户（出厂配置了 100+ 家公司、45+ 条查询和 55+ 个招聘板模块），用子代理并行评估多份职位，再按职位描述定制 ATS 优化的 PDF 简历。它还附带面试故事银行、薪资谈判脚本、给招聘人员的邮件草稿、联系人发现（contacto）和追踪器 TUI。设计上它明确拒绝「漫天撒网」，自我定位是过滤器，强烈建议不投评分低于 4.0/5 的职位；AI 只做评估和推荐，从不代你提交申请，最终决定权永远在你手里。首次评估未必理想，需要喂给它简历、职业故事和偏好逐步校准。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>本期首次录入 career-ops（history_check 未出现）；仓库持续维护并有新发布，属既有项目的增量更新。</div>
+            <div class="tags-row"><span class="tag">开源</span><span class="tag">AI 求职</span><span class="tag">agent</span><span class="tag">CLI</span><span class="tag">AI 编码工具</span><span class="tag">ATS</span><span class="tag">求职自动化</span></div>
+            <div class="links-row"><a class="ext-link" href="https://github.com/santifer/career-ops" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">The Vision: Free AI-Powered Job Search for Everyone · santifer/career-ops · Discussion #156 · GitHub</div>
+                        <div class="source-url"><a href="https://github.com/santifer/career-ops/discussions/156" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">career-ops - AI Agents on GitHub (63.4k★) | SkillsLLM</div>
+                        <div class="source-url"><a href="https://skillsllm.com/skill/career-ops" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">career-ops: How I Built My Own AI Job Search Tool</div>
+                        <div class="source-url"><a href="https://santifer.io/career-ops-system" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">GitHub - santifer/career-ops: Open-source AI job search: scan ...</div>
+                        <div class="source-url"><a href="https://github.com/santifer/career-ops" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Career-Ops on Claude: An AI-powered Job Search System built on Claude Code | Product Hunt</div>
+                        <div class="source-url"><a href="https://www.producthunt.com/products/santifer-io" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-0975ef17c272">
+            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">tools</span><span class="score-tag">评分 6.8/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://github.com/volcengine/OpenViking" target="_blank" rel="noopener">OpenViking：以文件系统统一代理记忆、RAG与技能</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Volcengine 的 OpenViking 于 8 月 18 日发布 v0.4.15，Repo 自 1 月创建以来持续推进，本次 README 也同步更新了基准报告与集成说明。它提出一个代理上下文数据库的明确实现：把记忆、知识 RAG 与技能统一为一个 viking:// 虚拟文件系统，让代理用文件系统的语义管理自己的上下文，而不是查询黑盒向量存储。仓库当前已获 30.7k star。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>本期主题是代理记忆与可验证基础设施的成型，OpenViking 站在代理记忆数据面这一角。它把检索变成可观察、可调试的路径轨迹，用分层加载来控制 token 消耗，方向上有别于早期简单的向量召回。对于开发者，它给出一个具体可落地、又能和主流编码代理对接的记忆层，与其配套的记忆/技能编排方案形成互补。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Volcengine 开源的 OpenViking 在 8 月 18 日发布 v0.4.15，定位为面向 AI 代理的自演进上下文数据库，理念是把记忆、知识 RAG 与技能三类上下文统一到一个虚拟文件系统上。代理不再查询黑盒向量库，而是直接用 ls、tree、find 这类文件操作浏览自身上下文，每次检索都会留下可观察、可调试的轨迹。</p>
+<p>核心设计是三层加载结构。每条写入的内容都被处理成 L0 摘要（约一串句子的快速相关性判断，约 100 tokens）、L1 概览（约 2k tokens 的核心信息与使用场景，供规划使用）、L2 细节（需要时才读取的全量原文）。每个目录都自带 L0 与 L1 层，所以代理在读取任何完整文件前就能先判断相关性。检索时先由向量搜索定位最高分的目录，再一层层往下钻取，让结果带着周边上下文整体返回，避免孤立的碎片。会话结束后还会异步把用户偏好与代理经验抽成长期记忆。</p>
+<p>项目用实际数字验证了这层设计。在 LoCoMo 长对话用户记忆基准上，接入 OpenViking 的三个代理集成准确率从原生记忆的 24% 至 57% 提到 80% 至 83%，输入 tokens 下降 34.3% 至 91.0%，查询延迟下降 58.45% 至 66.10%。在多轮代理任务基准 tau2-bench 上，经验记忆让零售任务成功率提升 6.87 个百分点、航司任务提升 11.87 个百分点，对比的是同一 LLM 无记忆版本。</p>
+<p>落地方面要求 Python 3.10 以上，pip 安装后先用向导初始化并写出 ov.conf，支持 Volcengine、OpenAI、Codex OAuth、Kimi、GLM 与本地 Ollama，还能自动安装 Ollama 运行时并按硬件拉取模型。官方提供 Docker 镜像、无需安装的浏览器演示 OpenViking Studio、带桌面 Client 管理界面的 VikingBot 代理框架，以及 Claude Code、Codex、OpenClaw、Hermes、Cursor、TRAE 等多个代理的召回注入集成。项目主框架以 AGPLv3 开源，OV CLI、示例与第三方目录则分别采用 Apache 2.0 与原版权。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>OpenViking 发布 v0.4.15（8-18）并有基准与集成更新，属既有产品线的显著更新而非全新事件。</div>
+            <div class="tags-row"><span class="tag">OpenViking</span><span class="tag">上下文数据库</span><span class="tag">agent-memory</span><span class="tag">RAG</span><span class="tag">agentic-rag</span><span class="tag">open-source</span><span class="tag">AGPLv3</span><span class="tag">文件系统</span></div>
+            <div class="links-row"><a class="ext-link" href="https://github.com/volcengine/OpenViking" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenViking | AI Native Landscape</div>
+                        <div class="source-url"><a href="https://landscape.jimmysong.io/projects/open-viking" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenViking Review 2026: Context Database for AI Agent Memory, RAG, and Skills</div>
+                        <div class="source-url"><a href="https://vibecodinghub.org/blog/openviking-review" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenViking/docs/en/about/01-about-us.md at main · volcengine/OpenViking · GitHub</div>
+                        <div class="source-url"><a href="https://github.com/volcengine/OpenViking/blob/main/docs/en/about/01-about-us.md" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenViking: The Open Source Alternative to Pinecone</div>
+                        <div class="source-url"><a href="https://www.opentechhub.io/openviking" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">volcengine/OpenViking | DeepWiki</div>
+                        <div class="source-url"><a href="https://deepwiki.com/volcengine/OpenViking" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-b4644eb31e9a">
+            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">research</span><span class="score-tag">评分 6.8/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://huggingface.co/papers/2608.18565" target="_blank" rel="noopener">SemaPLC 用外部编译与动态运行把关 PLC 生成代码</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>SemaPLC 是美的 AI Research Center 面向 PLC 代码生成的验证门控智能体框架。它不靠模型自我判断是否完成，而是以严格完成规则强制过三道外部检查：规范、编译、以及实时运行行为。开源并附带浏览器端 IDE，可生成、编辑、验证和模拟 PLC 程序。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>PLC 控制工业设备，LLM 已能生成独立 POU，但逻辑能否嵌入真实项目并正确运行几乎没被系统验证。SemaPLC 用可追踪的外部编译和实时运行作为完成的唯一依据。动态运行对比显示基线得分与 SemaPLC 拉开明显差距，说明静态评分不足以检验控制逻辑，运行验证才是可靠标准。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>可编程逻辑控制器（PLC）驱动工业产线，大语言模型已能生成独立的程序组织单元（POU），但生成的逻辑能否集成进既有 PLC 项目并正确运行，此前只做过有限验证。来自美的 AI 研究院（Midea AI Research Center）的 SemaPLC，是一个项目级、验证门控的智能体框架，解决的正是这个缺口。</p>
+<p>核心思路是不信任模型对自身输出的判断。SemaPLC 设定严格完成规则：只有日志化的外部检查确认通过，任务才算完成。这些检查覆盖三层：规范说明、编译、以及在实时运行环境中的行为。相比多数系统停在自己评分认为足够的地方，SemaPLC 强制每一步都落到可追溯的外部验证上。</p>
+<p>结果上，在 117 个独立 POU 任务上，它在全部 7 个模型上取得最高严格验证通过率，平均 72.6%。在 65 个必须把逻辑编译并跑进真实项目的项目上下文任务上，它在集成编译、静态行为和动态行为三层都拿到最高均值。动态行为最说明问题：把生成逻辑与参考逻辑部署到实时 PLC 运行环境并比对执行轨迹，各方法静态得分仅相差 10 分以内，动态分却拉开明显差距，基线在 22.4 至 31.4，SemaPLC 达 52.2。项目的含义很直接：静态评分不是检验逻辑是否真正工作的可靠标准，运行验证才是。</p>
+<p>项目已开源在 github.com/midea-ai/SemaPLC，并提供基于浏览器的 IDE，支持生成、编辑、验证和模拟程序。这份工作选在 8 月 19 日发布，属于工业自动化里把代码生成推向端到端验证的一步，尤其动态运行验证这一层最有参考价值。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>SemaPLC 是 2026-08 发布的新闻框架，引入项目级验证门控，属全新方法而非迭代。</div>
+            <div class="tags-row"><span class="tag">PLC</span><span class="tag">工业自动化</span><span class="tag">代码生成</span><span class="tag">验证门控</span><span class="tag">智能体harness</span><span class="tag">实时运行验证</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2608.18565" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a>
+<a class="ext-link" href="https://huggingface.co/papers" target="_blank" rel="noopener">Coverage <span class="domain">huggingface.co</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">SemaPLC: A Project-Grounded, Verification-Gated Agent ...</div>
+                        <div class="source-url"><a href="https://arxiv.org/pdf/2608.18565" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">[2608.18565] SemaPLC: A Project-Grounded, Verification-Gated Agent Harness for PLC Code Generation</div>
+                        <div class="source-url"><a href="https://arxiv.org/abs/2608.18565" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">MPC-Coder: A Dual-Knowledge Enhanced Multi-Agent System with Closed-Loop Verification for PLC Code Generation</div>
+                        <div class="source-url"><a href="https://www.mdpi.com/2073-8994/18/2/248" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">[PDF] Towards Automated Safety Vetting of PLC Code in Real-World Plants</div>
+                        <div class="source-url"><a href="https://sibin.github.io/papers/2019_s&p_vetplc_mu.pdf" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-fd4fe0caa6f8">
+            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">tools</span><span class="score-tag">评分 6.5/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://github.com/chaitanyagiri/munder-difflin" target="_blank" rel="noopener">Munder Difflin：把多个编码 CLI 搬进一张办公坊的本地多智能体编排</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>项目进入 v0.4.4（发布于 2026 年 8 月 18 日），本次是修复为主的更新。最值得注意的 bug 是 Windows 平台上智能体一直无法互相通信：协议以多行命令行抵达，而 cmd.exe 在第一个换行处把它截断，导致每个进程看起来启动正常却永久彼此无视。修复后，新安装也能在冷启动时自动拉起自己的消息路由器，不需要等重启；安装向导可走完，暗色模式为可读性重做。功能侧新增了 Skills（跨 Claude Code、OpenCode 和 Codex 的既有能力目录，外加 227 个可检索、可筛选、可装卸的技能清单）、Prerequisites（一页展示 uv、git、Node、MemPalace 与各 CLI 是否就位的检测入口，还能请 Michael 去安装缺失项），以及带独立页面（而非单一版本号）的发行说明。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这款工具展示了一条不同的多智能体落地路径：大多数编排平台倾向云端服务或统一代理网关，而 Munder Difflin 选择把用户手上已有的订阅老老实实当真实进程跑，在本地把多家厂商的 CLI 拧成一个可观察、可审批、有记忆的团队。它把"共享记忆"具体化为一份 git 仓库、把"编排器"具体化为一个名字叫 Michael 的 GOD 智能体，再配上预算与断路器等安全生产设施，让多智能体协作从演示走向可实际看管。对关心 Agent 可靠性与可在本地运行的基础设施读者，它的设计取舍比标题里的 办公室 更值得看。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Munder Difflin 是一个开源的本地多智能体桌面应用，名字套用《办公室》里的虚构公司 Dunder Mifflin，自我调侃为"世界上最优秀的智能体、世界上最烂的纸业公司"。它把这些年流行的终端编码 CLI 直接包装成可协作的智能体：Claude Code、Antigravity（Gemini）、OpenAI Codex、xAI Grok、Kimi Code、Qwen、OpenCode、Crush、pi.dev，再到 GitHub Copilot，都支持自带密钥，也兼容本地 LLM 运行。</p>
+<p>核心设计是把每个终端会话变成真实进程。每个 agent 在 node-pty 的伪终端里运行，用 xterm.js 渲染，外观上是 Pixi.js 绘制的一张 2D 办公室楼层，头像会走到工作站干活，消息则以信封的形式在桌与桌之间飞。智能体之间的协作基于一个叫 hive 的共享记忆层，这是一份本地 git 仓库，由普通文件构成，包含记忆、邮箱、黑板和追加式事件日志，采用单提交者设计来规避 index.lock 损坏。</p>
+<p>编排由"你的克隆"Michael 完成。Michael 相当于一个 GOD 编排者，由它来分配任务、路由消息、裁决优先级，常规请求自动处理，只会把关键事项（支出、破坏性操作、范围变更）升级到一个需要人操作的审批队列。安全性上有三层：人工门控、断路器（steer / constrain / stop），以及每个智能体独立的 token 预算和从 transcript 里计算出的真实成本。</p>
+<p>界面走像素美学，全用 Chrome 壳（Electron + React + TypeScript）承载，还内置一套 Monaco IDE、依赖看板、Slack 与 webhook 集成、可共享的招聘链接和 Agent Gallery。最新 v0.4.4 发布于 2026 年 8 月 18 日，主要修复了 Windows 下智能体无法互发消息的关键 bug，，cmd.exe 把协议当作多行命令、在第一处换行处截断，于是智能体看似健康却互相无视；同时新增 Skills、Prerequisites 与自带上架的发行说明。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Munder Difflin 仓库已存在，本次 v0.4.4（8-18）修复关键 bug 并新增功能，属既有项目的显著更新。</div>
+            <div class="tags-row"><span class="tag">multi-agent</span><span class="tag">agent-harness</span><span class="tag">local-first</span><span class="tag">orchestration</span><span class="tag">claude-code</span><span class="tag">open-source</span><span class="tag">devtools</span><span class="tag">competitive</span></div>
+            <div class="links-row"><a class="ext-link" href="https://github.com/chaitanyagiri/munder-difflin" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Which are the Best Multi-Agent Orchestration Tools in 2026?</div>
+                        <div class="source-url"><a href="https://www.truefoundry.com/blog/multi-agent-orchestration-tools" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">10 Best AI Agent Orchestration Tools in 2026 | Rasa | Rasa Blog</div>
+                        <div class="source-url"><a href="https://rasa.com/blog/agent-orchestration-tools" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Multi-Agent Orchestration Explained for Modern AI Systems</div>
+                        <div class="source-url"><a href="https://emerline.com/blog/multi-agent-orchestration" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Securing Multi-Agent AI Development Systems</div>
+                        <div class="source-url"><a href="https://www.knostic.ai/blog/multi-agent-security" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">What is multi-agent orchestration in agentic systems</div>
+                        <div class="source-url"><a href="https://www.kore.ai/blog/what-is-multi-agent-orchestration" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-ef913e9fdabc">
+            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">announcements</span><span class="score-tag">评分 5.5/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models" target="_blank" rel="noopener">OpenAI 预览 Private Safety Processing，让前沿模型零数据保留与安全监控兼得</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>OpenAI 于 2026-08-19 发布公告，重申前沿模型的 Zero Data Retention（ZDR）承诺，并预览新服务 Private Safety Processing。现有 ZDR 安全系统按单次交互逐一评估，而新服务是 OpenAI 描述的一种长跨度安全监控：把自动防护扩展到相关交互序列，让系统跨多轮会话识别滥用模式，同时 OpenAI 人员不会拿到所保留的客户内容。公告同时明确 9 月将开始逐步推出该能力，并发布技术白皮书。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>ZDR 承诺给符合条件的企业客户一个确定性保证：提示词与模型响应在处理后不被 OpenAI 保留，客户内容不供 OpenAI 人员审阅，也不会被用于训练。问题是这类系统此前只能逐次评估交互，面对恶意请求被分散到多轮会话、或代理在艰深任务中逐步失配的情形，检测能力有限。Private Safety Processing 代表一条折中路线，在跨交互识别风险的同时仍守住零保留与内容不可见，直接回应了当前前沿模型部署中一个普遍冲突：安全监控要求 vs 敏感企业数据不被 AI 实验室留存。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>OpenAI 在 2026 年 8 月 19 日发布公告，重申零点数据保留（ZDR）承诺，并首次预览一项名为 Private Safety Processing（私有安全处理）的新技术。公告给出的整套承诺是：符合条件的 API 客户，其提示词与模型响应在处理完成后不会被 OpenAI 保留；客户内容不会交由 OpenAI 人员审阅，企业数据也不会被用于训练模型，除非客户明确选择加入。</p>
+<p>ZDR 由来已久，其内置的安全系统按单个交互逐一评估滥用风险。问题在于，随着模型承担更长、更复杂的任务，某些严重风险往往只有在多个相关交互连起来看时才会显现。一个坏行为者可能分多次试探防护、跨账号协调，甚至把恶意意图伪装成例行研究。代理类任务中，系统还可能在被要求停下来之后继续行动，与用户意图逐渐失配。OpenAI 明确描述，Private Safety Processing 正是把 ZDR 的自动防护从单次交互扩展到相关交互序列：自动化系统能跨会话识别模式，同时 OpenAI 人员依旧拿不到所保留的客户内容。</p>
+<p>实现路径有两条。其一，ZDR 部署下客户内容存放在客户掌控的基础设施上；其二，OpenAI 正在开发一个选项，把内容存在 OpenAI 基础设施上，用客户控制的密钥加密。两种情况下，自动化系统都能识别潜在滥用并返回限定的安全信号，而无需把底层提示词或响应暴露给 OpenAI 人员。OpenAI 说明的是几种典型形态：没有推断内容，即使交互被标记，OpenAI 人员也不会收到客户内容。客户可用自己系统的信息调查告警与强制决定，若需申诉、澄清合法活动或支持受验证滥用的调查，可自行决定是否把相关信息分享给 OpenAI。</p>
+<p>公告背景是竞争与合规的双重压力。TechCrunch 报道指出，Anthropic 今年 7 月推出数据保留政策，对“受覆盖模型”（包括 Mythos 级及具备相近能力的模型）的会话保留 30 天用于安全检查，这让不少处理敏感数据的企业不安。OpenAI 则借这次预览强调无需牺牲客户对内容的控制权即可推进安全。Glean 首席信息安全官 Sunil Agrawal 在公告中点评，企业采用 AI 依赖对数据掌控，OpenAI 的不训练承诺与 ZDR 给了 Glean 信任基础。</p>
+<p>目前 Private Safety Processing 正在与早期客户测试，OpenAI 计划 9 月开始逐步推出，并同步发布技术白皮书。公告同时给出 CSAM 例外：与其他前沿模型提供商一样，OpenAI 依法需报告疑似儿童性虐待材料，即使 ZDR 部署中，被标记图像仍会保留，供人工审查与报告。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>这是 OpenAI 官方在 2026-08-19 首次预览 Private Safety Processing 的公告，是该能力第一次公开亮相，而全球的 TechCrunch 同期报道把它定位为此前 Anthropic 数据保留政策之后的差异化竞争动作。公告明确给出了新技术在 ZDR 上的扩展范围、两种存储形态与密钥管理方式，并确定了 9 月的开展节奏，属于可核实的时间线上的首次发布，判定为 genuinely_new。</div>
+            <div class="tags-row"><span class="tag">OpenAI</span><span class="tag">Zero Data Retention</span><span class="tag">Private Safety Processing</span><span class="tag">前沿模型</span><span class="tag">企业数据隐私</span><span class="tag">AI安全</span><span class="tag">代理安全</span></div>
+            <div class="event-aggregation"><div class="event-head">事件聚合 · 2 个来源 · 已合并 1 条候选</div><div class="event-sources"><a class="event-source" href="https://openai.com/index/offering-zero-data-retention-for-frontier-models" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Offering Zero Data Retention for frontier models</span><span class="event-domain">openai.com</span></a><a class="event-source" href="https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">OpenAI seeks to one-up Anthropic with new customer privacy protections</span><span class="event-domain">techcrunch.com</span></a></div></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Offering Zero Data Retention for frontier models</div>
+                        <div class="source-url"><a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Court orders OpenAI to Retain Data</div>
+                        <div class="source-url"><a href="https://datasaur.ai/blog/court-orders-openai-to-retain-data" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Openai data retention policy - API</div>
+                        <div class="source-url"><a href="https://community.openai.com/t/openai-data-retention-policy/391946" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Medium</div>
+                        <div class="source-url"><a href="https://medium.com/@mikehpg/ensuring-privacy-and-data-safety-with-openai-a-comprehensive-guide-5a744e2c6416" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenAI Data Processing Addendum</div>
+                        <div class="source-url"><a href="https://openai.com/policies/data-processing-addendum" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-5dbaa1ce7ac4">
+            <div class="article-meta"><span class="rank-badge ">#10</span><span class="category-tag">research</span><span class="score-tag">评分 6.5/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://techcrunch.com/2026/08/19/researchers-complain-that-openai-revoked-their-access-to-limited-cyber-program/" target="_blank" rel="noopener">OpenAI技术失误撤销TAC安全研究员访问需重新验证</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>多位安全研究员在 OpenAI 官方论坛和 X 上报告，他们访问 Trusted Access for Cyber（TAC）项目的权限被突然撤销，打开 ChatGPT 网络安全页时出现身份无法核实或账户当前不合格的提示。TechCrunch 采访了五名受害者，OpenAI 承认是公司一侧的技术失误，并要求受影响者重新申请并完成验证。撤销可能只在部分区域生效，受访五人都不在美国和欧洲。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>TAC 是 OpenAI 向经过核验的安全研究员开放防御性模型的机制，目的是让可信防御方更快报告并修复漏洞，同时阻止恶意攻击者滥用模型。这类撤销争议直接暴露了合规核验与实际使用体验之间的张力，也关系到前沿模型在网络安全落地时到底提供给谁、怎么防。若核验流程让正当研究员一次受挫，可能劝退他们继续为厂商补漏洞，最终拖慢漏洞修复节奏。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>多家安全研究员反映，OpenAI 突然撤销了他们访问 Trusted Access for Cyber（TAC）项目的权限，OpenAI 随后承认问题源于自身的技术失误。TAC 是 OpenAI 面向经过核验的研究员开放的特殊项目，允许他们使用比普通用户模型护栏更少的前沿模型做防御性安全工作，让可信的防御者更快向厂商报告漏洞并推动修复，同时防止网络犯罪分子用这些模型发掘漏洞和开发 exploit。想获得 TAC 访问，研究员须提交身份证明并接受 OpenAI 核验。</p>
+<p>TechCrunch 采访了五位遭遇此问题的研究员。其中一人透露，OpenAI 发邮件称其 Daybreak Blue（TAC 最新核验层级）的访问因技术问题被撤销，邮件写道：这是我们这边的问题，不是我们想提供的用户体验。OpenAI 官方论坛和 X 上的回应一致，均指向近期技术问题导致部分用户丢失 Daybreak Blue 访问，并请受影响者重新申请、走完验证流程。值得注意的背景是，TechCrunch 接触到的五名研究员都不在美国和欧洲，说明撤销或许集中在特定区域。OpenAI 将 TechCrunch 指向一条推文：一小部分用户对 Daybreak Blue 的访问已不再生效，需要重新验证以维持访问。</p>
+<p>Daybreak Blue 是面向个体研究员的最新层级，于 8 月 10 日上线。OpenAI 称它授予包括 GPT-5.6 Sol 在内的前沿通用模型访问权，防护（safeguards）按授权的防御性安全工作定制，是多数防御者推荐的起点，覆盖漏洞发现、安全代码审查、恶意软件分析、事件响应与补丁验证。同期 OpenAI 还推出了层级更高的 Daybreak Red，让经过核验的用户访问专为网络安全研究打造的模型，用于授权的漏洞研究、exploit 验证与安全测试。近几个月来，攻防两端的研究员都在抱怨 Anthropic 与 OpenAI 的护栏妨碍了正当工作，此次撤销事件再次把焦点引向这类方案在合规核验与真实可用性之间的张力。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>OpenAI 撤销 TAC 访问是本周发生的具体安全事件，此前未报道，属 genuinely_new。</div>
+            <div class="tags-row"><span class="tag">OpenAI</span><span class="tag">TAC</span><span class="tag">网络安全</span><span class="tag">安全研究员</span><span class="tag">Daybreak Blue</span><span class="tag">GPT-5.6</span></div>
+            <div class="links-row"><a class="ext-link" href="https://techcrunch.com/2026/08/19/researchers-complain-that-openai-revoked-their-access-to-limited-cyber-program/" target="_blank" rel="noopener">Source <span class="domain">techcrunch.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenAI's Hardware Passkey Mandate for Trusted Cyber Access</div>
+                        <div class="source-url"><a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-openai-hardware-passkey-mandate-trusted-ac" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Presidio Joins OpenAI Trusted Access for Cyber Program to Advance AI-Driven Cyber Defense - Presidio</div>
+                        <div class="source-url"><a href="https://www.presidio.com/news/presidio-joins-openai-trusted-access" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Frontier AI for Defenders: CrowdStrike and OpenAI TAC</div>
+                        <div class="source-url"><a href="https://www.crowdstrike.com/en-us/blog/frontier-ai-for-defenders-crowdstrike-and-openai-tac" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenAI Daybreak - Trusted Access for Cyber Overview</div>
+                        <div class="source-url"><a href="https://help.openai.com/en/articles/20001258-openai-daybreak-trusted-access-for-cyber-overview" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Trusted Access For Cyber - OpenAI</div>
+                        <div class="source-url"><a href="https://openai.com/form/enterprise-trusted-access-for-cyber" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
                     </div>
                 </div>
             </div>
@@ -1400,15 +1416,15 @@ body {
             <div class="radar-card">
                 <div class="radar-rank">#1</div>
                 <div class="radar-info">
-                    <div class="radar-title"><a href="https://www.reddit.com/r/programming/comments/1vt2lzu/turns_are_better_than_radians/" target="_blank" rel="noopener">用『圈数』比『弧度』更直观</a> <span class="radar-category">tools</span></div>
-                    <div class="radar-blurb">社区讨论编程中的角度单位选择，观察主流是否会在数学与代码教育里切换。</div>
+                    <div class="radar-title"><a href="https://huggingface.co/papers/2608.19197" target="_blank" rel="noopener">SPADE：自适应合成可执行环境中的自我对弈</a> <span class="radar-category">research</span></div>
+                    <div class="radar-blurb">用于语言代理的合成环境自博弈训练池，贴近 RLM/agent 自动迭代方向。</div>
                 </div>
             </div>
             <div class="radar-card">
                 <div class="radar-rank">#2</div>
                 <div class="radar-info">
-                    <div class="radar-title"><a href="https://www.reddit.com/r/ClaudeAI/comments/1vsztvg/give_back_claudes_thought_process/" target="_blank" rel="noopener">用户不满 Claude 移除思维过程展示</a> <span class="radar-category">tools</span></div>
-                    <div class="radar-blurb">付费用户抱怨 Claude 输出价值的贬值，观察推理可见性对 Agent 信任的影响。</div>
+                    <div class="radar-title"><a href="https://huggingface.co/papers/2608.18933" target="_blank" rel="noopener">SkillForge：面向项目特定 issue 的自蒸馏代理</a> <span class="radar-category">research</span></div>
+                    <div class="radar-blurb">项目特定代码 issue 解决的自蒸馏代理，贴近实际软件工程工作流。</div>
                 </div>
             </div>
         </section>
@@ -1418,8 +1434,8 @@ body {
 
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
-    <div class="stats">20 源<span>|</span>132 条<span>|</span>10 条精选<span>|</span>17 条候选</div>
-    <div class="generated">生成于 2026-08-20T09:54:48.805012</div>
+    <div class="stats">23 源<span>|</span>157 条<span>|</span>10 条精选<span>|</span>17 条候选</div>
+    <div class="generated">生成于 2026-08-20T19:11:06.194101</div>
 </footer>
 
 </div>
