@@ -147,6 +147,17 @@ body {
 .article-body img {
     display: block; max-width: 100%; height: auto;
     margin: 14px auto; border-radius: 8px;
+    cursor: zoom-in;
+}
+.img-lightbox {
+    position: fixed; inset: 0; z-index: 999;
+    background: rgba(0, 0, 0, 0.86);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; cursor: zoom-out;
+}
+.img-lightbox img {
+    max-width: 96vw; max-height: 96vh; width: auto; height: auto;
+    border-radius: 8px; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
 }
 .article-body summary {
     cursor: pointer; color: var(--accent); font: 600 13px 'Inter', sans-serif;
@@ -1358,5 +1369,34 @@ body {
 </footer>
 
 </div>
+<script>
+(function () {
+    function closeLightbox(overlay, escHandler) {
+        overlay.remove();
+        document.removeEventListener('keydown', escHandler);
+    }
+    function openLightbox(src, alt) {
+        var overlay = document.createElement('div');
+        overlay.className = 'img-lightbox';
+        var big = document.createElement('img');
+        big.src = src;
+        big.alt = alt || '';
+        overlay.appendChild(big);
+        var escHandler = function (e) {
+            if (e.key === 'Escape') closeLightbox(overlay, escHandler);
+        };
+        overlay.addEventListener('click', function () { closeLightbox(overlay, escHandler); });
+        document.addEventListener('keydown', escHandler);
+        document.body.appendChild(overlay);
+    }
+    document.addEventListener('click', function (e) {
+        var img = e.target;
+        if (img && img.tagName === 'IMG' && img.closest && img.closest('.article-body')) {
+            e.preventDefault();
+            openLightbox(img.src, img.alt);
+        }
+    });
+})();
+</script>
 </body>
 </html>
