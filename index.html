@@ -1,4 +1,4 @@
-<!-- ai-daily-final-sha256:6ca071e6e5137676e0956141b9c34eb179b16a0ecba430d3bf6d99a7eb37cc4f -->
+<!-- ai-daily-final-sha256:2020bba38b1e8f9fe7d5d38f6b4e8b30092c5e6ceef7e8f3c1de8bd7a90c0b96 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -884,84 +884,8 @@ body {
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-b6628674f1ea">
-            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">tools</span><span class="score-tag">评分 8.8/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo" target="_blank" rel="noopener">阿里7B文生图出Turbo加速版，8步去噪开箱即用</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>10 月 9 日，阿里 Qwen 团队在 HuggingFace 发布 Qwen-Image-2.1-Turbo，这是基座 Qwen-Image-2.1 的加速蒸馏检查点，沿用同款 7B 视觉生成架构与 BF16 精度，文生图与图像编辑都只需 8 步去噪。HuggingFace 元数据显示仓库于 10 月 9 日创建并在同日更新，属于首次亮相的全新检查点。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>扩散模型出图要逐轮去噪，步数直接决定等待时间与算力开销，少步数蒸馏因此成为社区常见的提速路线。Turbo 的增量在于把加速做成了默认配置，8 步采样调度存进检查点、默认 CFG=1、前缀 KV 缓存三件事加载即用，省掉了使用者的调参环节。7B 体量配 8 步采样，让多分辨率文生图与图像编辑在本地跑起来的成本进一步下降，对研究者和个人开发者是直接可感的提速。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>阿里 Qwen 团队在 10 月 9 日把 Qwen-Image-2.1-Turbo 放上了 HuggingFace。按官方 README 的定位，它是基座 Qwen-Image-2.1 的加速检查点，文生图和图像编辑都只用 8 步去噪就能出图，视觉生成部分沿用基座同款 7B 架构，BF16 精度。HuggingFace 元数据显示仓库在 10 月 9 日凌晨创建、当天下午完成更新，是一次全新亮相。</p>
-<p>去噪步骤是扩散模型出图的基本盘。这类模型生成图片的方式是先铺一张纯噪声，再一轮一轮把噪声修掉，画面逐步清晰，每修一轮算一步，步数越多等得越久。Turbo 把这个过程压到 8 步，靠的是蒸馏，也就是用基座模型当老师，专门教出一个步数更少的学生。少步数蒸馏是扩散模型社区常见的提速路线，Turbo 把它落到了 Qwen-Image 这条产品线上。</p>
-<p>比步数本身更省心的是开箱即用的设计。检查点内置官方推荐的 8 步采样调度，加载模型自动生效，不需要手动配调度器，单独改 num_inference_steps 也覆盖不了它，官方说明里只评估过这一套调度。生成默认走 CFG=1。CFG 指无分类器引导，是文生图常用的质量控制手段，常规用法下每个去噪步要算有引导和无引导两路再叠加，计算量接近翻倍，CFG=1 相当于关掉这层双倍开销。再配合前缀 KV 缓存，把文本和参考图像算过的中间结果存下来，在 8 个去噪步骤之间复用，示例代码里只需传一个 use_kv_cache=True。</p>
-<p><img alt="Turbo 8 步生成的人像摄影示例" src="https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo/resolve/main/assets/turbo-portrait.png" /></p>
-<p>能力清单与基座对齐。分辨率预设覆盖 7 种宽高比，从 1:1 的 2048×2048 到 16:9 的 2752×1536；官方示例中文生图用 1680×2512 竖版，图像编辑用 2048×2048，编辑示例把一张游艇草图转成写实照片。展示页列出人像摄影、人物姿态与动作、透明 RGBA 出图、海报排版、UI 信息布局、单图转换和多参考图合成，长文本排版这类 Qwen-Image 的招牌能力都还在。</p>
-<p><img alt="Turbo 生成的海报排版示例" src="https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo/resolve/main/assets/turbo-poster.png" /></p>
-<p><img alt="Turbo 单图转换输出示例" src="https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo/resolve/main/assets/turbo-figure.png" /></p>
-<p>门槛在依赖侧。要用上它，得装 Diffusers 的源码版，因为 pipeline 级采样 sigma 支持来自尚未进正式版的 PR #14950，transformers 也要 5.17.0 以上，再配一份 CUDA 版 PyTorch。据 MarkTechPost 报道，这套模型的视觉生成器是 7B，搭配 Qwen3-VL 8B 文本编码器。</p>
-<p>许可和生态是两件要分开看的事。模型采用 Qwen Research License Agreement，按其条款用于研究用途。下载页面同日数据显示 440 个赞和 2138 次下载，模型树下已经挂出 26 个量化版本、7 个微调、2 个适配器和 10 个 Spaces 应用，量化社区跟进得最快，说明把 7B 塞进本地显卡跑起来的需求真实存在。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>HuggingFace 元数据显示模型创建于 2026-10-09T04:50，最近修改为同日 14:14，属于首次对外发布的全新检查点；新增量为 Turbo 加速版本身——相对基座 Qwen-Image-2.1 新增 8 步去噪蒸馏、内置推荐采样调度、前缀 KV 缓存与 CFG=1 推理路径，并配套 Diffusers 新增的 QwenImage21Pipeline 支持（依赖 PR #14950 与 transformers>=5.17.0）。</div>
-            <div class="links-row"><a class="ext-link" href="https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">扩散模型的模型蒸馏技术</div>
-                        <div class="source-url"><a href="https://apxml.com/zh/courses/advanced-diffusion-architectures/chapter-6-advanced-sampling-optimization/model-distillation-diffusion" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">通过开放式即插即用产品加速扩散模型 - NVIDIA 技术博客</div>
-                        <div class="source-url"><a href="https://developer.nvidia.cn/blog/accelerating-diffusion-models-with-an-open-plug-and-play-offering" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">PaddleMIX推出扩散模型推理加速Fast-Diffusers：自研蒸馏加速方法FLUX-Lightning实现4步图像生成</div>
-                        <div class="source-url"><a href="https://blog.csdn.net/lihui49/article/details/150273002" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Qwen Image 2.1 | Hacker News</div>
-                        <div class="source-url"><a href="https://news.ycombinator.com/item?id=49775499" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge community">社区讨论</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Qwen-Image-2.1-Turbo vs Qwen-Image-2.1: what really changed</div>
-                        <div class="source-url"><a href="https://www.orcarouter.ai/blog/qwen-image-2-1-turbo-vs-qwen-image-2-1" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
 <div class="article-card" data-id="raw-92604ea79b26">
-            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">community</span><span class="score-tag">评分 8.3/10</span><span class="newness-tag">genuinely_new</span></div>
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">community</span><span class="score-tag">评分 8.3/10</span><span class="newness-tag">genuinely_new</span></div>
             <h2><a href="https://news.ycombinator.com/item?id=50031614" target="_blank" rel="noopener">一条命令,AI 助理住进你的 Cloudflare 免费额度</a></h2>
             <div class="what-box"><strong>这是什么：</strong>开源项目 Talorys 用一条命令 npx create-talorys@latest 把单用户个人 AI 助理部署到用户自己的 Cloudflare 账号,流式聊天、长期记忆、任务/笔记/项目管理和定时提醒全部运行在免费套餐上,数据存在自己账号的 SQLite Durable Object 里,无遥测。项目以 HN 讨论形式首次进入公众视野,获 225 分,仓库当时约 12 个 commit、341 stars、20 forks,MIT 协议。</div>
             <div class="why-box"><strong>🔥 为什么今天值得看：</strong>它同时回应普通人对 AI 助理的两类顾虑。隐私上,聊天记录、记忆和任务都存在用户自己的 Cloudflare 账号内,不经项目开发者的任何服务器,代码里没有遥测;成本上,个人助理市场常见形态是按月订阅,这套方案跑在免费额度内。边界也要讲清,平台方 Cloudflare 仍会为提供服务处理数据(包括跑推理),Workers AI 的每日 Neurons 配额用尽后聊天会暂停,免费有限度。</div>
@@ -1037,7 +961,7 @@ body {
             </div>
         </div>
 <div class="article-card" data-id="raw-e83ad47ddc0a">
-            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">research</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">genuinely_new</span></div>
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">research</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">genuinely_new</span></div>
             <h2><a href="https://huggingface.co/papers/2610.11169" target="_blank" rel="noopener">219万次技能复制绘成网络，审计前百仓库挡14.9%高危采用</a></h2>
             <div class="what-box"><strong>这是什么：</strong>10 月 8 日，英属哥伦比亚大学奥卡纳干校区团队在 arXiv 发布论文 Skill Constellations（编号 2610.11169），10 月 9 日提交至 HuggingFace Papers。论文构建了首个带时间戳的 Agent 技能复制网络，基于 GitSkills 数据集中每份 SKILL.md 的 git 历史，覆盖 GitHub 上 2,193,119 次技能采用（约 219 万次），并配套交互式查看器与项目页面。</div>
             <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Agent 技能以用户本人的权限在 Claude Code、Codex 等编程智能体里执行，却靠仓库之间的裸复制流通，没有注册表、版本和来源记录，出了问题无人知道该修哪里、修复能到达谁。只记录某一时点哪些仓库持有技能的研究，看不出谁从谁复制。这篇论文把复制关系连成了带日期的网络，证明 GitHub star 数找不出真正的技能源头，而按复制网络排序审计前 100 个仓库，能拦下 14.9% 的高危技能后续采用，按 star 数选前 100 只能拦 0.5%，给安全工程师提供了一份可操作的检查短名单。</div>
@@ -1098,7 +1022,7 @@ body {
             </div>
         </div>
 <div class="article-card" data-id="raw-c303c60a2dac">
-            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">community</span><span class="score-tag">评分 7.5/10</span><span class="newness-tag">significant_update</span></div>
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">community</span><span class="score-tag">评分 7.5/10</span><span class="newness-tag">significant_update</span></div>
             <h2><a href="https://news.ycombinator.com/item?id=50027694" target="_blank" rel="noopener">2,209 个子智能体两周把自家编程框架重写成 Rust</a></h2>
             <div class="what-box"><strong>这是什么：</strong>Prime Intellect 在官方博客宣布，开源编程智能体框架 Prime Agent 完成从 TypeScript 到 Rust 的全面重写并正式发布，博文在 Hacker News 获得 63 分。按官方自述，迁移由 2,209 个子智能体在一万余个 Prime Sandboxes 中自主完成，历时约两周，消耗约 2,287 亿 token，新版附带 Windows 原生支持（beta）、homebrew 安装并保持开源。</div>
             <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这次重写展示了一套可复核的多智能体工程范式，人类设计验证体系并做优先级决策，智能体集群承担移植与优化的劳动，说明大规模语言迁移这类繁琐工程可以让智能体集群接手。对日常使用者，官方口径下 51.9ms 冷启动与约降 80% 的启动内存让终端里的编程智能体更轻快。对工程团队，四角色有限状态机加对等性验证器的做法给出了可迁移到其他代码库的模板。</div>
@@ -1149,7 +1073,7 @@ body {
             </div>
         </div>
 <div class="article-card" data-id="raw-f3e93a591542">
-            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">research</span><span class="score-tag">评分 7.3/10</span><span class="newness-tag">genuinely_new</span></div>
+            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">research</span><span class="score-tag">评分 7.3/10</span><span class="newness-tag">genuinely_new</span></div>
             <h2><a href="https://huggingface.co/papers/2610.11794" target="_blank" rel="noopener">冻结LLM靠一本会自我修订的规则书通关ARC-AGI-3</a></h2>
             <div class="what-box"><strong>这是什么：</strong>伦敦大学学院(UCL)团队 10 月 8 日在 arXiv 发布论文《Memento 3: Model-Based Recursive Self-Improvement through Reflective Rulebooks》(编号 2610.11794),10 月 9 日提交 HuggingFace Papers,抓取时页面 28 赞。论文让参数冻结的 LLM 智能体通过外部记忆持续学习显式世界模型,相对 Memento 系列前作的新增量包括自然语言规则书加代码编译的双层记忆结构、cell-exact 逐帧重放验证门控、基于 Git 的版本化智能体记忆,以及 N=2 并行世界模型的种群扩展机制。凭借这套机制,单个智能体通关了 ARC-AGI-3 基准全部 25 个公开游戏的 183 个关卡。</div>
             <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这篇论文把学习过程整体搬到了模型之外。冻结的 LLM 只充当推理与修订引擎,积累经验的是一本人可读、可版本化、可回滚的规则书,避开了改参数或重新训练的成本;逐帧重放的验证门控也给拒绝幻觉更新立了一个硬标准,为智能体工程提供了一条测试时学习的可审计路线。边界同样要说清,ARC-AGI-3 是游戏化基准,通关考察的是陌生游戏里现场归纳规则的能力,不能引申为通用智能;论文的对比实验也因单次运行与预训练先验受到方法学质疑,42 至 21,000 倍的样本效率区间为论文自述,未经第三方复验。</div>
@@ -1188,7 +1112,7 @@ body {
             </div>
         </div>
 <div class="article-card" data-id="raw-61ba662f8443">
-            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">tools</span><span class="score-tag">评分 7.2/10</span><span class="newness-tag">genuinely_new</span></div>
+            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">tools</span><span class="score-tag">评分 7.2/10</span><span class="newness-tag">genuinely_new</span></div>
             <h2><a href="https://www.marktechpost.com/2026/10/10/sakana-ais-llm-peer-review-system-catches-73-of-core-claim-errors/" target="_blank" rel="noopener">257 篇顶会论文埋千余处错，AI 审稿人抓出 73.43%</a></h2>
             <div class="what-box"><strong>这是什么：</strong>MarkTechPost 10 月 10 日报道，Sakana AI 在 TMLR 发表论文《Beyond Imitation》，同文发布错误检测基准 Contradiction Benchmark 与多智能体评审系统 Multi-Layered Review（MLR）。基准在 5 个顶会的 257 篇论文中植入 1,164 处矛盾，MLR 以 4 次评审捕获 73.43% 的核心主张错误，把 AI 评审员的考核标准从模仿人类评审文本转向错误检出。</div>
             <div class="why-box"><strong>🔥 为什么今天值得看：</strong>同行评审长期供不应求，LLM-Review、AI Reviewer、AgentReview 等 AI 审稿系统已有多种设计，评价它们时却多依赖与人类评审文本的相似度或评分相关性，评审意见写得好并不保证错误发现得了。新基准把错误检出变成按严重度分级的量化指标，距核心主张越近的错误权重越高，正对审稿把关最要紧的环节。论文消融同时给出工程结论，换更强模型与多层评审设计各自大幅抬升检出率，对构建科研智能体的开发者可迁移。单次 0.47 美元的成本加上与人类评分 0.586 的相关性，让它有条件充当投稿初筛。论文也自量边界，真实撤稿论文检出骤降、提示注入未解，作者定位为人类评审的互补视角。</div>
@@ -1226,7 +1150,7 @@ body {
             </div>
         </div>
 <div class="article-card" data-id="raw-b6773085f128">
-            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">tools</span><span class="score-tag">评分 7.2/10</span><span class="newness-tag">significant_update</span></div>
+            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">tools</span><span class="score-tag">评分 7.2/10</span><span class="newness-tag">significant_update</span></div>
             <h2><a href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener">Karpathy 编码四原则成插件，Cursor 也能用</a></h2>
             <div class="what-box"><strong>这是什么：</strong>multica-ai 维护的开源仓库 andrej-karpathy-skills 登上 GitHub Trending。本次可见增量包括新增 .cursor/rules/karpathy-guidelines.mdc 规则文件与 CURSOR.md 说明文档、Claude Code 插件市场安装方式、简体中文 README（README.zh.md），页首同时新增 Multica 平台推广。仓库创建于 2026 年 1 月 27 日，累计约 218.2k stars、22k forks，MIT 许可。</div>
             <div class="why-box"><strong>🔥 为什么今天值得看：</strong>AI 编码智能体的日常摩擦集中在乱伸手，擅自假设、过度工程、越界改动让 review 成本居高不下。该仓库给出了一条极轻的治理路径，把知名开发者公开总结的坏习惯清单直接固化为提示词约束，一个 Markdown 文件即可生效，不需要训练、微调或额外服务。本次接入 Cursor 规则与插件市场安装后，Claude Code 与 Cursor 两大主流工具可以共用同一套方法论，中文 README 降低了中文团队的接入成本。对想给团队编码规范找个起点的开发者，这是一份可直接合并改造的模板。</div>
@@ -1310,8 +1234,8 @@ body {
 
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
-    <div class="stats">10 源<span>|</span>101 条<span>|</span>9 条精选<span>|</span>17 条候选</div>
-    <div class="generated">生成于 2026-10-11T08:13:01.275567</div>
+    <div class="stats">10 源<span>|</span>101 条<span>|</span>8 条精选<span>|</span>17 条候选</div>
+    <div class="generated">生成于 2026-10-11T08:15:16.566115</div>
 </footer>
 
 </div>
