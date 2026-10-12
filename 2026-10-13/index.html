@@ -1,0 +1,1328 @@
+<!-- ai-daily-final-sha256:5c5e198d639b43d302924d84eb782bfd0c5b7c270fb5bd298d8d48478e7777c3 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 | 2026-10-13 — AI 内容机会日报</title>
+<style>
+/* ═══════════ CSS Reset & Base ═══════════ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+:root {
+    --bg-page: #F7F7F5;
+    --bg-paper: #FFFFFF;
+    --text-main: #111111;
+    --text-body: #222222;
+    --text-muted: #555555;
+    --text-light: #999999;
+    --accent: #D93025;
+    --accent-soft: #FFF0EE;
+    --border-divider: #E5E5E5;
+    --border-strong: #111111;
+    --tag-bg: #F5F5F5;
+    --score-high: #0F7B4E;
+    --score-mid: #D97706;
+    --link-underline: #CCCCCC;
+    --hover-accent: #B82020;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", serif;
+    background: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-paper);
+    padding: 80px 60px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: var(--text-main);
+}
+
+/* ═══════════ Header ═══════════ */
+.header {
+    text-align: center;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--border-strong);
+}
+
+.header h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 1.2;
+    color: var(--text-main);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.header .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.header .divider {
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    margin: 0 auto 20px;
+}
+
+.header .meta-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+}
+
+.header .meta-line span {
+    margin: 0 12px;
+    color: var(--border-divider);
+}
+
+.header .trend-callout {
+    margin-top: 24px;
+    padding: 16px 24px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    font-size: 15px;
+    color: var(--text-main);
+    text-align: left;
+    line-height: 1.7;
+    border-radius: 0 4px 4px 0;
+}
+
+/* ═══════════ Article Cards ═══════════ */
+.articles-section {
+    margin-bottom: 50px;
+}
+
+.section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.article-card {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.article-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.article-body { margin: 16px 0; }
+.article-body img {
+    display: block; max-width: 100%; height: auto;
+    margin: 14px auto; border-radius: 8px;
+    cursor: zoom-in;
+}
+.img-lightbox {
+    position: fixed; inset: 0; z-index: 999;
+    background: rgba(0, 0, 0, 0.86);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; cursor: zoom-out;
+}
+.img-lightbox img {
+    max-width: 96vw; max-height: 96vh; width: auto; height: auto;
+    border-radius: 8px; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+.article-body summary {
+    cursor: pointer; color: var(--accent); font: 600 13px 'Inter', sans-serif;
+}
+.article-body[open] summary { margin-bottom: 14px; }
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.rank-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    background: var(--text-main);
+    color: #FFF;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+}
+
+.rank-badge.headline {
+    background: var(--accent);
+}
+
+.category-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: var(--tag-bg);
+    color: var(--text-muted);
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+}
+
+.score-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--score-high);
+}
+
+.newness-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 4px 8px;
+    background: #F0F9F4;
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+}
+
+.article-card h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.article-card .one-liner {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: #FAFAFA;
+    border-left: 2px solid var(--border-divider);
+    border-radius: 0 4px 4px 0;
+}
+
+.article-card .what-box {
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-body);
+}
+
+.article-card .what-box strong {
+    color: var(--accent);
+}
+
+.article-card .why-box {
+    margin-bottom: 14px;
+    padding: 14px 18px;
+    background: #FFFDF5;
+    border: 1px solid #F0EABD;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-body);
+}
+
+.article-card .body-md {
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-body);
+    text-align: justify;
+}
+
+.article-card .body-md p {
+    margin-bottom: 16px;
+}
+
+.article-card .body-md a {
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-underline);
+    transition: all 0.2s;
+}
+
+.article-card .body-md a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.article-card .body-md strong {
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.article-card .body-md code {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    font-size: 13px;
+    background: #F5F5F5;
+    padding: 2px 6px;
+    border-radius: 2px;
+    color: var(--accent);
+}
+
+.article-card .body-md ul, .article-card .body-md ol {
+    margin-bottom: 16px;
+    padding-left: 20px;
+}
+
+.article-card .body-md li {
+    margin-bottom: 8px;
+}
+
+/* ═══════════ Tags ═══════════ */
+.tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: #F0F0F0;
+    color: #666;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+}
+
+/* ═══════════ Verification Sources ═══════════ */
+.sources-box {
+    margin: 16px 0;
+    border: 1px solid var(--border-divider);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.sources-box .sources-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 10px 16px;
+    background: #FAFAFA;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.sources-box .source-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 16px;
+    border-bottom: 1px solid #F5F5F5;
+    font-size: 13px;
+    gap: 12px;
+}
+
+.sources-box .source-row:last-child {
+    border-bottom: none;
+}
+
+.sources-box .source-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.sources-box .source-info .source-title {
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.sources-box .source-info .source-url {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sources-box .source-info .source-url a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.sources-box .source-info .source-url a:hover {
+    text-decoration: underline;
+}
+
+.sources-box .source-info .source-purpose {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 3px;
+    line-height: 1.5;
+}
+
+.sources-box .source-badges {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.badge.official { background: #E8F5E9; color: #2E7D32; }
+.badge.media { background: #E3F2FD; color: #1565C0; }
+.badge.community { background: #FFF3E0; color: #E65100; }
+.badge.secondary { background: #F3E5F5; color: #7B1FA2; }
+.badge.noise { background: #FFEBEE; color: #C62828; }
+
+.badge.newness { background: #E8F5E9; color: #2E7D32; }
+.badge.background { background: #E3F2FD; color: #1565C0; }
+.badge.contrarian { background: #FFF3E0; color: #E65100; }
+.badge.content { background: #F3E5F5; color: #7B1FA2; }
+
+/* ═══════════ History Check ═══════════ */
+.history-note {
+    margin: 10px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.history-note .label {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.history-note .verdict-not-seen { color: var(--score-high); }
+.history-note .verdict-seen-before { color: var(--score-mid); }
+
+/* ═══════════ Confirmed Event Aggregation ═══════════ */
+.event-aggregation {
+    margin: 16px 0;
+    padding: 14px;
+    border: 1px solid #E7DDB4;
+    border-radius: 6px;
+    background: #FFFDF5;
+}
+
+.event-head {
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.event-sources { display: grid; gap: 8px; }
+
+.event-source {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    align-items: center;
+    color: var(--text-body);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.event-role {
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: #F0EABD;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.event-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.event-domain { color: var(--text-light); font-family: 'Inter', sans-serif; font-size: 10px; }
+.event-source:hover .event-title { color: var(--accent); }
+
+/* ═══════════ Links ═══════════ */
+.links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ext-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border: 1px solid var(--border-divider);
+    border-radius: 4px;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.ext-link:hover {
+    border-color: var(--text-main);
+    background: #FAFAFA;
+}
+
+.ext-link .domain { color: var(--text-light); font-size: 10px; }
+
+/* ═══════════ Radar Scan ═══════════ */
+.radar-section {
+    margin-bottom: 50px;
+}
+
+.radar-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #A3A3A3;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--border-divider);
+}
+
+.radar-card {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    background: #FAFAFA;
+    border: 1px dashed var(--border-divider);
+    border-radius: 4px;
+    transition: all 0.15s;
+}
+
+.radar-card:hover {
+    border-color: #BBBBBB;
+    background: #F5F5F5;
+}
+
+.radar-rank {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-light);
+    flex-shrink: 0;
+}
+
+.radar-card .radar-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.radar-card .radar-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+    line-height: 1.4;
+}
+
+.radar-card .radar-title a {
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-underline);
+}
+
+.radar-card .radar-title a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.radar-card .radar-category {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.radar-card .radar-blurb {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-top: 2px;
+}
+
+.radar-empty {
+    text-align: center;
+    padding: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    border: 1px dashed var(--border-divider);
+    border-radius: 4px;
+}
+
+/* ═══════════ Pick of the Day ═══════════ */
+.pick-section {
+    margin-bottom: 50px;
+}
+
+.pick-card {
+    padding: 28px;
+    background: linear-gradient(135deg, #FFFBEB 0%, #FFF7ED 100%);
+    border: 2px solid #F59E0B;
+    border-radius: 8px;
+    position: relative;
+}
+
+.pick-card::before {
+    content: "★ 今日最佳选题";
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: #F59E0B;
+    color: #FFF;
+    padding: 4px 14px;
+    border-radius: 3px;
+}
+
+.pick-card h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 8px 0 12px;
+    line-height: 1.4;
+}
+
+.pick-card .pick-meta {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.pick-card .pick-outline {
+    margin: 12px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.pick-card .pick-outline li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-body);
+}
+
+.pick-card .pick-outline li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: monospace;
+}
+
+.pick-card .pick-closing {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed #F0EABD;
+}
+
+/* ═══════════ Footer ═══════════ */
+.footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-divider);
+    text-align: center;
+}
+
+.footer .stats {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.footer .stats span {
+    margin: 0 16px;
+}
+
+.footer .generated {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 8px;
+}
+
+/* ═══════════ Responsive ═══════════ */
+@media (max-width: 700px) {
+    body { padding: 0; background: var(--bg-paper); }
+    .container { padding: 32px 20px; box-shadow: none; }
+    .header h1 { font-size: 28px; }
+    .article-card h2 { font-size: 18px; }
+    .pick-card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="header">
+    <h1>AI 日报 | 2026-10-13</h1>
+    <div class="subtitle">AI 内容机会日报</div>
+    <div class="divider"></div>
+    <div class="meta-line">2026-10-13<span>|</span>由 <strong>local-memory-agent</strong> 生成</div>
+    <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
+      <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
+    </div>
+    <div class="trend-callout">智能体的"账本"成为主线:Meta 拿出首批前沿模型专攻长时程记忆任务,阿里开源训练框架把超长时程智能体的 RL 训练算力账压下来,微软自研芯片把推理账压下来;同一天哈佛与 JetBrains 的两项实证研究泼了冷水——代码产出涨三成、软件交付没变化,基准测试也没跟上真实工作流。</div>
+</header>
+
+<!-- ═══════ TOP ARTICLES ═══════ -->
+<section class="articles-section">
+    <div class="section-label">今日最值得关注</div>
+    <div class="article-card" data-id="raw-80d24e118917">
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">announcements</span><span class="score-tag">评分 9.5/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/" target="_blank" rel="noopener">Meta发布首批前沿模型Muse Wonder，最强版锁进订阅墙</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>10 月 12 日，Meta 超级智能实验室发布公司首批前沿模型 Muse Wonder 与 Muse Wonder Full：Wonder 经 Meta Model API 商用，定价 $4/$20 每百万输入/输出 token；更强的 Wonder Full 不上 API，仅向 Muse Code 订阅用户开放（$50/$200 月）。主打长时程智能体的 active memory 能力，第三方 Artificial Analysis 智能指数 56 与 Claude Sonnet 5.5 持平。两款模型均不开放权重。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>其一，Meta 在重组约 14 个月后重回前沿竞争的边缘位置，且这次有独立评测而非仅厂商自宣背书；其二，分发策略是真正的新东西——把最强模型做成订阅护城河而非 API 商品，直接改变企业买家的采购与部署决策；其三，Llama 曾定义开放权重时代，如今两款旗舰闭源，意味着 Meta 不再是开源阵营的前沿模型供给方，开放生态的前沿供给进一步集中于其他厂商。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 12 日，Meta 超级智能实验室（MSL）发布公司第一批真正意义上的前沿模型：Muse Wonder 与 Muse Wonder Full。扎克伯格 2025 年 8 月重组 Meta AI 部门、设立超级智能实验室并请来 Alexandr Wang 领导，约 14 个月后，Meta 第一次真正回到前沿模型牌桌——此前它只拿出过轻量级的 Muse Spark 和 Muse agent，一直避开 OpenAI、Anthropic 式的旗舰级发布。</p>
+<p>两款模型定位拉开档次：Wonder 走商业 API，模型标识 muse-wonder-1.0；更强的 Wonder Full 不上 API，只向 Muse Code 编程助手的付费订阅用户开放。两者也都用于驱动 Muse agent。</p>
+<p><img alt="Meta 发布 Muse Wonder 系列模型" src="https://techcrunch.com/wp-content/uploads/2026/10/Screenshot-2026-10-12-at-1.09.43-PM.jpg" /></p>
+<p><strong>基准：第三方给 56 分，与 Sonnet 5.5 打平</strong></p>
+<p>第三方评测机构 Artificial Analysis 给 Wonder Full 的智能指数为 56，与 Anthropic Claude Sonnet 5.5 持平，高于 GPT-6 Astra、Gemini 4 Argon 和 Claude Fable 5.1（三者均为 53），仅低于 Claude Opus 5.5 的 58；标准版 Wonder 为 52，比 GPT-6 Astra 低 1 分。这是独立评测结果，不是 Meta 自家合成分数。</p>
+<p>Meta 模型卡（10 月 12 日，最大推理力度）给出的细分图景互有胜负：长时程编码 SWE-Marathon 上 Wonder Full 拿 57.5，明显领先 Opus 5.5 的 46.3 和 GPT-6 Astra 的 42.5；法律任务 Harvey LAB-AA 上 13.1 对 8.6/4.2 领先；但 Terminal-Bench 4.0-AA（57.1 对 59.1/59.6）和 HealthBench Pro（62.3 对 65.3/65.6）落后于两个对手。模型卡混合了自测、厂商提供与第三方结果，部分软件工程对比使用了不同编码工具，方法学需要打折看待。</p>
+<p><strong>定价与分发：$4/$20，旗舰锁进订阅</strong></p>
+<p>Wonder 定价为每百万输入 token 4 美元、输出 20 美元，缓存输入 0.20 美元，与 Claude Opus 5.5 完全相同；约为 GPT-6 Sol、Sonnet 5.5、Gemini 4 Argon 介绍价合计的两倍，低于 $10/$50 档的 GPT-6 Astra 与 Fable 5.1。API 兼容 OpenAI/Anthropic 接口，限流为每分钟 3000 请求、400 万 token，上下文窗口约 100 万，联网搜索另收每千次 2.50 美元。</p>
+<p>Wonder Full 未公布按量付费价格，只能通过 Muse Code 订阅获得：Power Usage 档每月 50 美元（用量为 Everyday 档的 20 倍），Maximum Usage 档每月 200 美元（80 倍），均有用量上限。想在自有生产系统里部署最强版本，目前做不到。</p>
+<p><strong>active memory：差异化主张</strong></p>
+<p>模型面向长时程智能体场景，Meta 提出两个核心能力：active memory（跨对话保留、检索并整合用户的个人与工作上下文）和 active focus（遇到障碍时修正计划、探索替代路径、在重大动作前请求许可）。Meta 自测在 MemoryBench 记忆基准上超过 Fable、Opus 与 Astra。研究科学家 Kavya Kopparapu 在发布视频中介绍，团队花了大量精力让模型能在数天、数周、数月乃至更长时间里记住对用户重要的事。</p>
+<p>值得注意的是，这套能力依赖跨工作流持续留存信息，而 Meta 的数据政策分为 Standard 模式（内容不用于训练，按量付费 API 仅提供此模式）与 Contributor 模式（默认用于训练，可关闭但仅对未来提交生效，且条款禁止提交机密、敏感或个人信息）。记忆能力与隐私配置能否兼容，是企业买家要自己算的账。</p>
+<p><strong>战略信号：告别开放权重</strong></p>
+<p>更具符号意义的是分发方式。Llama 系列曾让"可下载权重、自建基础设施运行"成为 Meta 的标签，而两款 Wonder 均不提供公开可下载权重，不能自托管或私有部署——对比之下，较小的 Muse Glimmer 反而以 Apache 2.0 开源。从开放旗帜到闭源 API 加订阅墙，Meta 这次的商业转身相当彻底。Meta 在博客中称这两款模型是"扩展阶梯上的下一步，迈向个人超级智能的一大步"；扎克伯格则在 X 上称 Wonder 是比 Muse Spark 大得多、先进得多的一类模型。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>全新产品线首次亮相：Meta 首批前沿模型（Wonder 与 Wonder Full 双型号）、新定价体系（$4/$20、缓存 $0.20）、active memory 新能力主张及 MemoryBench 领先自测、Wonder Full 仅限 Muse Code 订阅的分发策略，均为本次新增量；MSL 重组后首次前沿级发布，历史核查未匹配到既往报道。</div>
+            <div class="tags-row"><span class="tag">Meta</span><span class="tag">前沿模型</span><span class="tag">Muse Wonder</span><span class="tag">长时程智能体</span><span class="tag">API定价</span></div>
+            <div class="event-aggregation"><div class="event-head">事件聚合 · 2 个来源 · 已合并 1 条候选</div><div class="event-sources"><a class="event-source" href="https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Meta releases its first frontier model, Muse Wonder</span><span class="event-domain">techcrunch.com</span></a><a class="event-source" href="https://venturebeat.com/technology/metas-new-muse-wonder-and-muse-wonder-full-models-achieve-frontier-performance-but-only-the-weaker-one-is-available-via-api" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Meta&#x27;s new Muse Wonder and Muse Wonder Full models achieve frontier performance, but only the weaker one is available via API</span><span class="event-domain">venturebeat.com</span></a></div></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Meta's new Muse Wonder and Muse Wonder Full models achieve frontier performance, but only the weaker one is available via API | VentureBeat</div>
+                        <div class="source-url"><a href="https://venturebeat.com/technology/metas-new-muse-wonder-and-muse-wonder-full-models-achieve-frontier-performance-but-only-the-weaker-one-is-available-via-api" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Muse Wonder - API Pricing & Providers | OpenRouter</div>
+                        <div class="source-url"><a href="https://openrouter.ai/meta/muse-wonder" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AI at Meta on X: "We’re excited to introduce the Muse Wonder series with Muse Wonder and Muse Wonder Full, our most capable models yet. Both are frontier models, built to deliver state-of-the-art performance for personal and professional agentic tasks. Muse Wonder is available today via the Meta M… / X</div>
+                        <div class="source-url"><a href="https://x.com/AIatMeta/status/2109691148943999167" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Meta Just Went Closed Source. Here's Why That Changes Everything About AI.</div>
+                        <div class="source-url"><a href="https://miraflow.ai/blog/meta-closed-source-muse-spark-changes-everything-ai-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Meta Unveils Frontier Muse Wonder Model, Reclaiming Competitive Ground In AI Race — TradingView News</div>
+                        <div class="source-url"><a href="https://www.tradingview.com/news/stocktwits:fef69724e094b:0-meta-unveils-frontier-muse-wonder-model-reclaiming-competitive-ground-in-ai-race" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-aebcb90d3102">
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">tools</span><span class="score-tag">评分 9.2/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://www.marktechpost.com/2026/10/12/alibaba-qwen-introduces-qwengyre-elastic-reinforcement-learning-rl-for-xlong-horizon-agents/" target="_blank" rel="noopener">阿里 QwenGyre：超长时程智能体 RL 训练最高提速 1.85 倍</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>阿里巴巴 Qwen 团队 10 月 12 日发布 QwenGyre，一个面向超长时程（XLong-horizon）智能体的弹性在线强化学习训练框架。定位是训练框架而非模型，配套 arXiv 论文，但论文未附公开代码。它通过未经修改的黑盒 harness 训练编码智能体（基准全部使用 Claude Code 2.1.220），针对运行数小时、token 量接近百万（实测约 70 万）的 rollout，在相同评测分数下取得对 Async 1.38-1.78 倍、对 Colocate 1.21-1.85 倍的加速。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>长时程智能体的 RL 训练有一笔算力账：Colocate 模式下训练要等最慢的 rollout，GPU 在长尾里空转；Async 模式下 rollout 与训练各占固定 GPU 池，忙闲不均时无法互借。当单次 rollout 以小时计，浪费被成倍放大。QwenGyre 把 GPU 变成可在两种角色间动态切换的弹性 cell，又把分支式执行历史压成有界训练样本——它展示的是训练基础设施如何跟上智能体任务的时长爆炸，这是各家模型发布背后少有人算的隐形成本。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p><strong>发生了什么</strong></p>
+<p>阿里巴巴 Qwen 团队发布 QwenGyre，一个面向超长时程（XLong-horizon）智能体的弹性在线强化学习训练框架。关键定位：它是训练框架，不是模型，配套 arXiv 论文，但论文未附公开代码。</p>
+<p>它训练的是运行数小时、token 量接近百万（实测约 70 万）的智能体 rollout，通过未经修改的黑盒 harness 进行——全部基准使用 Claude Code 2.1.220，GPU 预算相等、staleness 匹配。整体架构上 Megatron 负责训练，SGLang 服务 rollout，GPU 型号未披露。</p>
+<p><strong>为什么重要</strong></p>
+<p>长时程智能体的 RL 训练有一笔没人爱算的账。Colocate 模式下，训练要等最慢的 rollout 结束，GPU 在长尾里空转；Async 模式下，rollout 和训练各占固定 GPU 池，忙闲不均时无法互借。单次 rollout 以小时计时，这些浪费被成倍放大。</p>
+<p>QwenGyre 的回答是两个机制：让 GPU 在 rollout 和训练之间弹性切换，以及把分支式的智能体执行历史压成有界训练样本。在相同评测分数下，它对 Async 提速 1.38-1.78 倍，对 Colocate 提速 1.21-1.85 倍。</p>
+<p><strong>弹性调度器</strong></p>
+<p>GPU 被划分为共享训练布局的 cell。核心 cell 持有权威权重和优化器状态，卫星 cell 后加入训练。调度器跟踪 rollout 水位线（排队与运行中的执行数）：随着执行完成，cell 在“剩余 cell 仍能服务所有在跑任务”的前提下切换去训练；模型调用经代理重定向，harness 继续运行无感知。</p>
+<p>工程细节上，KV-cache 块在重路由时经 RDMA 迁移以减少前缀重算；卫星 cell 通过 Mooncake Transfer Engine 拉取核心权重、加入进行中的批次；流式训练让 cell 在数据就绪时认领微步。角色切换平均耗时 8.52 秒（rollout→训练）和 3.46 秒（训练→rollout）。</p>
+<p><strong>轨迹处理器</strong></p>
+<p>Claude Code 这类 harness 会压缩上下文、派生子智能体、重试，一次执行是分支树而非单条轨迹，展开每条路径会重复共享前缀、推高训练成本。QwenGyre 的代理用 TITO（token-in, token-out）记录精确 token ID 与行为 log 概率，把调用存为前缀共享轨迹树，再做四件事：</p>
+<ul>
+<li>有界采样：每次执行最多保留 5 条轨迹，按主轨迹 &gt; 主摘要 &gt; 子智能体 &gt; 子智能体摘要排序；5 条上限在匹配未封顶训练分数的同时，削减 25.2% 前向-反向耗时</li>
+<li>部分计分：超时执行仍按其保留的工作区计分；评估器失败被排除，绝不计为零奖励</li>
+<li>去重：共享目标只算一次，只训练策略生成的 token</li>
+<li>公平加权：损失在每次执行内取平均，多分支不给这次执行灌水</li>
+</ul>
+<p>训练算法是改造版 GSPO，每组 16 个 rollout。</p>
+<p><strong>实测数字</strong></p>
+<p>Qwen 3.6 122B（24-32 节点）：</p>
+<ul>
+<li>NL2RepoBench（48 步）：对 Async 1.42-1.53 倍，对 Colocate 1.36-1.47 倍</li>
+<li>DeepSWE（24 步）：对 Async 1.569-1.572 倍，对 Colocate 1.610-1.824 倍</li>
+<li>TerminalBench（24 步）：对 Async 1.383-1.430 倍，对 Colocate 1.809-1.849 倍</li>
+</ul>
+<p>Qwen 3.8 2.4T（192 节点，4 个 cell 各 48）：NL2RepoBench 48 步，对 Async 1.78 倍、对 Colocate 1.21 倍；总耗时 75.42 小时，对照 Async 134.55 小时、Colocate 91.47 小时；通过率从 52.48% 升至 58.54%。</p>
+<p><strong>限制与同行对照</strong></p>
+<p>论文明示了下限：2.4T 模型上对 Colocate 只有 1.21 倍，因为该设定下许多查询接近超时。更大的现实门槛是可得性——论文未附公开代码，许可证未披露。对照之下，veRL（字节跳动 Seed + 社区，Apache-2.0）、AReaL（清华 IIIS + 蚂蚁，Apache-2.0）、Agent Lightning（微软，MIT）均已开源；AReaL 自报对同步训练 2.77 倍加速，但原文提醒各家数字来自各自 setup，不可直接比较。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>QwenGyre 为首次对外发布的新框架（2026-10-12 报道，配套 arXiv 论文）。本次增量：弹性 cell 调度器（水位线驱动角色切换、8.52 秒/3.46 秒切换耗时、RDMA 迁移 KV-cache、Mooncake 拉权重、流式训练认领微步）；TITO 轨迹处理器（前缀共享轨迹树、每次执行最多 5 条轨迹的有界采样、省 25.2% 前向反向耗时、超时部分计分与评估器失败排除）；122B 与 2.4T 双规模实测（2.4T 48 步 75.42 小时 vs Async 134.55 / Colocate 91.47 小时，NL2RepoBench 52.48%→58.54%）。</div>
+            <div class="tags-row"><span class="tag">强化学习</span><span class="tag">训练基础设施</span><span class="tag">Qwen</span><span class="tag">智能体</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.marktechpost.com/2026/10/12/alibaba-qwen-introduces-qwengyre-elastic-reinforcement-learning-rl-for-xlong-horizon-agents/" target="_blank" rel="noopener">Source <span class="domain">www.marktechpost.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">QwenGyre：用于训练超长时程智能体的弹性强化学习框架 | alphaXiv</div>
+                        <div class="source-url"><a href="https://www.alphaxiv.org/zh/abs/2609.33848" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">阿里千问发布 QwenGyre，面向超长程智能体任务的在线强化学习框架_新浪科技_新浪网</div>
+                        <div class="source-url"><a href="https://finance.sina.com.cn/tech/digi/2026-10-12/doc-iniuypex5240698.shtml" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">阿里千问发布 QwenGyre，面向超长程智能体任务的在线强化学习框架 - IT之家</div>
+                        <div class="source-url"><a href="https://www.ithome.com/1/012/066.htm" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">QwenGyre: An Elastic Reinforcement Learning Framework forTraining xLong-Horizon Agents</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2609.33848v1" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">阿里：让大模型在超长任务中高效训练</div>
+                        <div class="source-url"><a href="https://blog.csdn.net/weixin_46739757/article/details/167392302" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-f35a07389044">
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">tools</span><span class="score-tag">评分 9.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://www.theverge.com/news/1009465/microsoft-maia-300-chip-improvements-rollout" target="_blank" rel="noopener">微软发布 Maia 300：自研芯片瞄准主要 AI 推理系统</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>微软今天官宣第三代自研 AI 芯片 Maia 300，定位“主要 AI 推理系统”，2027 年投产并自 2027 年起扩展至多吉瓦级 Azure 部署。官方首次给出量化指标：每兆瓦 token 产出比领先 GPU 系统高 40%、96 加速器满配机架吞吐最高为 Maia 200 的 7 倍；并披露 chiplet 架构与台积电 N2P 工艺。这是继任者的首次对外发布，不是旧闻更新。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>推理是 AI 运营成本的大头，谁掌握推理系统的能效与产能，谁就握住成本自主权。Maia 300 把微软自研芯片从“补充算力”推向“主力系统”：按官方口径，同样的电多四成 token 产出、同样的机架最高七倍吞吐，直接改写与 Nvidia/AMD 的议价格局。同时，软硬协同设计（自有模型与自有芯片共同迭代）给了微软一条对标 Google DeepMind、OpenAI、Anthropic 的垂直整合路径，这也是本期“智能体账本”主线在芯片层的支柱。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>今天微软发布第三代自研 AI 芯片 Maia 300，并把它定位为微软产品与服务的“主要 AI 推理系统”（primary AI inference system）——不只是外部 GPU 之外的补充算力，而是要当主力。芯片计划 2027 年进入生产环境。</p>
+<p>两个官方量化指标是这次发布的核心。微软云部门执行副总裁 Scott Guthrie 给出的预期是：与领先的 GPU 系统相比，Maia 300 每兆瓦产出的 token 多 40%；在 96 颗加速器满配的机架里，token 吞吐量最高可达前代 Maia 200 的 7 倍。前者是能效账，后者是机架级算力密度账，两者都直接对应推理成本。</p>
+<p><img alt="Maia 300 原型芯片" src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/Maia-300-prototype-chip-03.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" /></p>
+<p>效率提升的战略含义写在 Guthrie 的另一句话里：从 2027 年起，Azure 的 Maia 家族将扩展到“多吉瓦级”部署，使 Maia 成为微软产品与服务的主要 AI 推理系统。换言之，这些改进将让微软不久后主要依靠自研芯片，而不是 Nvidia 和 AMD 的 GPU。</p>
+<p>架构层面，Maia 300 换用 chiplet（芯粒）设计，基于台积电 N2P 工艺节点，把计算、内存控制器和 I/O 三类功能拆开。Azure 硬件与基础设施团队解释：这能把更多硅片面积留给计算性能，并让每种功能选用最适合自身角色的制程技术——这是“每兆瓦多 40% token”在芯片设计上的来路。</p>
+<p>负载画像也变了。Guthrie 称 Maia 300 是为“今天正在出现的新型 AI 负载”设计的完整 AI 系统：长上下文推理、延迟敏感的对话体验、持续多步的智能体任务——恰好是当前推理开销增长最快的几类场景。</p>
+<p>背景值得记一笔：前代 Maia 200 今年 1 月才发布，目前已在 Microsoft Copilot、GitHub Copilot、Microsoft Foundry 以及微软自有模型上承载生产负载。Guthrie 称按真实世界的 AI 服务指标衡量，Maia 200 是微软机队里表现最好的 AI 基础设施。</p>
+<p><img alt="Maia 300 芯片将于 2027 年用于生产负载" src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/Maia-300-prototype-chip-01.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" /></p>
+<p>还有一层意图指向模型侧。微软 AI CEO Mustafa Suleyman 说，微软必须在整个技术栈上工作，“一路下沉到硅片”：在这个规模上需要一个自己拥有、并与模型协同设计的平台，因此“把微软自有模型跑在 Maia 芯片上”是其团队的关键重点。The Verge 将此解读为微软追赶 Google DeepMind、OpenAI 和 Anthropic 的路径之一。</p>
+<p>需要保留的限定：40% 与 7 倍都是微软自己的预期口径（原文用的是 “we expect”），7 倍还带“最高可达”（up to）前缀，目前没有第三方基准验证；减依赖也不会立刻发生——投产要到 2027 年，过渡期内 Nvidia 与 AMD 仍是主要供应商。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Maia 300 为今天首次对外官宣的新一代芯片：首次披露 chiplet 架构与台积电 N2P 工艺、40% 每兆瓦 token 产出与 7 倍机架吞吐两项量化指标，以及 2027 年投产/多吉瓦级 Azure 部署时间表；前代 Maia 200（今年 1 月发布）的继任者此前从未公开，历史日报亦无匹配记录。</div>
+            <div class="tags-row"><span class="tag">Microsoft</span><span class="tag">Maia 300</span><span class="tag">自研芯片</span><span class="tag">AI 推理</span><span class="tag">Azure</span><span class="tag">chiplet</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.theverge.com/news/1009465/microsoft-maia-300-chip-improvements-rollout" target="_blank" rel="noopener">Source <span class="domain">www.theverge.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Microsoft Maia 300: Specs, the 40% Claim, vs Maia 200 | CellCog</div>
+                        <div class="source-url"><a href="https://cellcog.ai/blog/microsoft-maia-300" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Microsoft Maia 300: What It Means for Chip Design Hiring - KORE1</div>
+                        <div class="source-url"><a href="https://www.kore1.com/microsoft-maia-300-chip-design-hiring" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Maia（Microsoft's in-house AI inference chip.）_Baiduwiki</div>
+                        <div class="source-url"><a href="https://baike.baidu.com/en/item/Maia/3180884" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Microsoft Maia 300: 300K TSMC Chips Aim at Nvidia</div>
+                        <div class="source-url"><a href="https://shattered.io/microsoft-maia-300-ai-chip-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Microsoft is ordering 300,000+ Maia 300 AI chips from TSMC as it races to reduce its dependence on Nvidia</div>
+                        <div class="source-url"><a href="https://thenextweb.com/news/microsoft-maia-300-chip-tsmc-production-boost-nvidia" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-65cabc1aad04">
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">community</span><span class="score-tag">评分 8.6/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50059523" target="_blank" rel="noopener">哈佛研究：AI 编码代理让代码多三成，软件交付没变多</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>哈佛研究者 Fiona Chen 与 James Stratton 基于 Jellyfish 平台 3 亿个工作事件（700 余家企业、70 万+ 员工、2021–2026.03）的汇总数据，用差分之差分回归测量 AI 编码代理的真实影响：代码行数 +30%、提交 +20%、PR +23%，但 Jira 追踪的 Issue/Epic 解决率无统计显著变化；评审时长 +49%、要求修改的 PR 占比近乎翻倍、每 PR 评论 +35%。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这是目前对"AI 让软件交付变快"叙事规模最大的实证检验之一，且把瓶颈定位到代码评审这个具体环节而非泛泛争论。注意它的结论边界：测的是"编码收益被下游约束吸收"，不是"AI 编码无用"。对正在采购或推广编码智能体的团队，直接含义是：度量交付（Issue/Epic 解决率）而不是产出（代码行数），并把评审容量纳入容量规划。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>哈佛大学的 Fiona Chen 与 James Stratton 做了一件少见的事：不给 AI 编码智能体跑基准，而是去查企业真实工程系统的流水账。他们从工程分析平台 Jellyfish 拿到汇总数据——3 亿个"工作事件"（提交、PR 等），覆盖 700 余家软件开发企业的 70 万多名员工，时间跨度为 2021 年至 2026 年 3 月。Ars Technica 对结论的概括就是标题那句话：AI 编码代理产生更多代码，但没有产生更多软件。</p>
+<p><strong>方法</strong>。研究者结合直接测得的 AI 使用情况与 GitHub 活动分析，判断每家公司何时引入 AI 编码助手（以补全人类代码为主）与 AI 编码代理（按提示自主写码并提交），再对不同时点引入工具的组织做关键变量的"差分之差分"（difference of differences）回归。</p>
+<p><strong>写代码的一侧，数字很清楚</strong>。引入 AI 编码代理后，企业总代码行数平均增长 30%，提交数增长 20%，PR 数增长 23%。</p>
+<p><img alt="AI 编码代理带来的代码产出变化" src="https://cdn.arstechnica.net/wp-content/uploads/2026/10/aiagentcode.png" /></p>
+<p><strong>交付的一侧，数字同样清楚</strong>。Jira 等工具追踪的 Issue 与 Epic——即完整的软件功能——解决率，在引入 AI 工具后没有统计显著变化。研究者同时确认这些问题在规模与复杂度上没有"组成性偏移"：不是问题变难了，就是解决率没动。</p>
+<p><strong>差额出现在评审环节</strong>。PR 从提交到合并的平均评审时长增加 49%；被要求修改的 PR 占比近乎翻倍；每条 PR 的评论数增加 35%；执行代码评审的员工占比增加 14%。研究者的表述是：编码阶段的效率提升被"生产流程的下游约束"吸收——评审流程显著变长，PR 更可能被要求返工，评审者留下更多评论。</p>
+<p><img alt="代理编码时代 PR 更频繁被要求修改" src="https://cdn.arstechnica.net/wp-content/uploads/2026/10/aiagentpr.png" /></p>
+<p><strong>AI 自己评审了吗？还很少</strong>。截至 2026 年 3 月，80% 的受测企业使用了某种形式的 AI 代码评审，但 AI 代理只贡献了全部评审评论的 23.3% 和全部 PR 的 10.8%——绝大多数评审工作仍由人类完成。</p>
+<p><strong>就业问题要按原话转述</strong>。研究者交叉比对 Jellyfish 与 LinkedIn 数据后写道，他们"无法将显著的就业变化归因于 AI"。注意这句话的边界：它既不支持"AI 导致裁员"，也不支持"AI 没有影响就业"，而是当前数据下归因做不到。</p>
+<p><strong>证据的边界</strong>。到 2026 年 3 月，研究中 95% 的企业已部署 AI 编码代理；数据截止之后模型能力又有重大升级；研究者也提示，"编码时间与评审时间"的权衡可能随团队经验积累而改善。换句话说，这份研究测的是当前真实工程流程的一次快照：编码收益被评审成本吃掉，而不是 AI 编码没有价值。它把瓶颈定位到一个具体、可优化的环节上。</p>
+<p><strong>HN 怎么看</strong>。这条讨论在 Hacker News 拿到 284 分。最有分量的一线证言来自用户 bunderbunder：今年处理的每一起严重到要走正式 RCA 流程的缺陷，"AI 生成的测试断言缺陷行为是正确的"都是促成因素之一。反方同样具体：用户 svachalek 让 AI 全量审计约 10 万行测试、判定约 6 万行近乎无用，删除后重写为覆盖更广的场景测试，途中还发现并修了一批 bug，总耗时约 2 小时——他认为人类该评审的是需求、规格与测试场景。用户 staminade 则判断，评审文化的真正变化会先出现在从第一天就执行"无人工评审"并坚持下来的初创公司，只是这类实践目前对研究不可见。围绕"该不该回到重规格开发"的老争论也在重新上演，ipsi 把这层争论概括成一句话：变更的主要成本正越来越多地变成反馈延迟，而不是开发工作量。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>首次公开该研究的完整量化结果：3 亿个工作事件、700 余家企业、70 余万员工、2021–2026.03 的差分之差分回归分析；核心数字（+30%/+20%/+23%/+49%/近乎翻倍/+35%/+14%、23.3% 评审评论、10.8% PR）与归因边界均为本轮新信息，且历史日报中未出现过匹配或语义相似条目。</div>
+            <div class="tags-row"><span class="tag">AI编码</span><span class="tag">实证研究</span><span class="tag">代码评审</span><span class="tag">工程效能</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50059523" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/" target="_blank" rel="noopener">Original article <span class="domain">arstechnica.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">原创丨2026 年 AI 编程工具终极横评：从 “代码补全” 到 “软件工程 Agent” 的范式跃迁 - 搜狐时间线</div>
+                        <div class="source-url"><a href="https://timeline.sohu.com/news/5m6aKOdjHJ" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AI 编码代理产生更多代码但并未提高软件产出 ｜#AI资讯# #Jellyfish# #代码审查#_搜狐网</div>
+                        <div class="source-url"><a href="https://m.sohu.com/a/1085781696_122396381?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AI coding agents generate more code, but not more software - Ars Technica</div>
+                        <div class="source-url"><a href="https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge media">媒体报道</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AI coding agents generate more code, but not more software</div>
+                        <div class="source-url"><a href="https://www.reddit.com/r/technology/comments/1x3go0s/ai_coding_agents_generate_more_code_but_not_more" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge community">社区讨论</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-ff23e061d90f">
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">community</span><span class="score-tag">评分 8.4/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50060694" target="_blank" rel="noopener">Codex CLI 默认后台守护进程引发争议,官方已提交回退</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>GitHub issue #48195 在 HN 重新发酵(398 分):Codex CLI 自 0.157.0 起打开交互式会话就自动启动持久守护进程 codex app-server --managed-daemon,无 TTY、关窗后 reparent 到 PID 1 仍存活。9 月 28 日 breakds 已提交「默认禁用 daemon 自动启动」commit,官方开始回撤;但截至 10 月 12 日 issue 仍未关闭,#40969 也开着。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>守护进程同时打破 CLI 的三条默认契约(进程随窗口生灭、运行用户安装的二进制、不后台自更新),且官方配置参考查不到 daemon_auto_start 开关。更实质的是执行身份错位:自我复制+自我更新之后,真正执行任务的进程未必是用户安装的版本,这对接入 CI、多目录工作流与合规环境的团队是信任边界问题。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p><strong>发生了什么</strong></p>
+<p>OpenAI Codex CLI 的 GitHub issue #48195 在 Hacker News 重新发酵(398 分)。这份 9 月 25 日由用户 Yihua-Liu-1997 提交的 issue 指出:自 0.157.0 起,只要打开一个交互式会话,CLI 就会自动启动持久后台守护进程 codex app-server --managed-daemon——它运行在独立会话、没有 TTY,关闭所有 Codex 窗口后仍被 reparent 到 PID 1 继续存活,直到手动执行 codex app-server daemon stop 或重启机器。issue 的诉求是把 daemon_auto_start 改为 opt-in(默认关闭)。</p>
+<p>9 月 28 日,breakds 提交了关联该 issue 的 commit「codex: disable daemon auto-start by default」,默认行为开始回撤。但截至 10 月 12 日,issue 仍处于打开状态,强杀活跃任务的关联问题 #40969 也未关闭。</p>
+<p><strong>为什么重要</strong></p>
+<p>这踩中了命令行工具的三条默认契约:后端进程随窗口生灭、运行用户亲手安装的二进制、不在后台自行更新。守护进程同时打破了三条,而官方配置参考里查不到 daemon_auto_start 这个开关——用户只能在 issue 区互相传授关闭方法。</p>
+<p>更实质的是「执行身份」错位:当 CLI 把自己复制进受管目录、再由后台更新器随时替换,真正执行任务的进程未必是你安装的那个版本。对把编码 agent 接入 CI、多目录工作流或企业合规环境的团队,这是信任边界的实质问题。issue 下 aetherxeg-source 提出的「执行回执」提案(向客户端报告 CLI 版本、守护进程二进制摘要、代次、更新器状态、继承环境代次)正是针对这个缺口。</p>
+<p><strong>背景</strong></p>
+<p>Codex CLI 本体用 Rust 编写(HN 评论者指出),但以 npm 作为二进制分发渠道,静态链接堆出了可观体积。0.157.0 的发布说明只用一句话带过这次变更——为符合条件的交互式会话启用自动后台服务器启动、设置不兼容时提供恢复选项——没有提及常驻进程、约 374 MB 的受管包副本和每小时更新器。</p>
+<p><strong>关键细节</strong></p>
+<p>• 守护进程把整个平台包(约 374 MB,含 codex、codex-code-mode-host 及捆绑的 bwrap/zsh/rg)字节级复制到 ~/.codex/packages/app-server-daemon/releases/&lt;版本&gt;/ 并从副本运行,后端版本从此与 npm/brew/pacman 安装的 CLI 脱钩;Arch Linux 打包版不加 --no-daemon 直接无法启动(#48050)。</p>
+<p>• 附带独立更新器 pid-update-loop:启动 5 分钟后首次检查、此后每小时一次,自动下载新版并重启后端;重启前只给 60 秒 drain 预算,超时对活跃任务 SIGKILL 强杀,且无法禁用(#40969)。执行 daemon stop 后更新器仍会残留——报告者观察到 70 秒后它还活着,只能手动 kill。</p>
+<p>• 环境变量被「钉住」:守护进程继承首个启动它的会话的环境。issue 作者按次用 wrapper 设置 HTTPS_PROXY,结果后续所有出站流量都走第一个会话的代理;10 月 12 日 alexklibisz 新报告跨目录泄漏——direnv 注入的 GH_TOKEN 等变量,在第二个目录启动的会话里仍取第一个目录的值,直接打断依赖同名环境变量的工作流。</p>
+<p>• Windows 受损最重:两位用户先后报告 CLI 不可用,其中一位称完全无法输入(felipeelopes、zdd);tagorr 在 Windows 10 LTSC 上复现,并确认在 config.toml 写 daemon_auto_start = false 可解。</p>
+<p>• 临时关闭组合拳:codex features disable daemon_auto_start,再 codex app-server daemon stop,pkill -f 'app-server daemon pid-update-loop',最后删除 ~/.codex/packages/app-server-daemon 目录。HN 用户 whimblepop 给出更极端的加固:把 ~/.codex 下的 pid/lock 文件替换为指向 /dev/null 的符号链接并 chattr +i。</p>
+<p>• 官方响应与文档缺口:9 月 28 日的默认禁用 commit 已关联进 issue;但 10 月 12 日 foma-agent 核查发现,官方配置参考至今没有 daemon_auto_start 的任何条目(同类开关 check_for_update_on_startup 却有记载)。发行版侧也在自救:10 月 7 日、10 月 10 日先后出现为 nix-user-chroot 打沙箱补丁升级到 0.160.1、改从官方 release 二进制打包 Codex CLI 的打包者 commit。</p>
+<p><strong>社区怎么说</strong></p>
+<p>愤怒是主色调。laurynas-karvelis 的评论「Basically - a trait of malware」(并称不认为这是意外)拿到 12 个赞,tagorr 回应说感觉正是如此——动机判断无从证实,但社区对「常驻+自更新+强杀任务」这个组合的反感是真实的。</p>
+<p>也有冷静的技术判断。pilooch 认同应默认关闭,但指出守护进程本身有用:在 daemon server 之上构建 pi 这类自定义 harness 时,共享后端是合理架构,问题只在默认值。st396gt 提供了对照数据点:上周的 v0.160.0 在他机器上已看不到守护进程。讨论还横向蔓延成行业吐槽:sroussey 清理了 20 GB Cursor 缓存,InsideOutSanta 抱怨 Claude Code 留下的临时文件与未清理的 worktree;「Codex 体积大是因为没编译」的说法被纠正——它是 Rust 写的,只是经 npm 分发。觉得两头都糟的 rfgplk 结论是干脆自己写 harness;也有用户指出 hax 可零配置替换 codex-cli(复用已认证的 codex token)。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>行为本身 0.157.0 起就有、issue 9-25 已开,本次新增量:(1) 9-28 breakds 提交默认禁用 daemon 自动启动的 commit,官方开始回撤;(2) 10-12 alexklibisz 新报告跨目录环境变量泄漏(direnv/GH_TOKEN),foma-agent 同日核实官方配置参考零记载 daemon_auto_start、0.157.0 发布说明仅一句话带过;(3) HN 398 分讨论重燃,社区给出 config.toml、hax 零配置替代等可操作方案,发行版打包者已自行打补丁。</div>
+            <div class="tags-row"><span class="tag">Codex CLI</span><span class="tag">开发者工具</span><span class="tag">信任与治理</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50060694" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://github.com/openai/codex/issues/48195" target="_blank" rel="noopener">Original article <span class="domain">github.com</span></a>
+<a class="ext-link" href="https://news.ycombinator.com/item?id=raw-ff23e061d90f" target="_blank" rel="noopener">Coverage <span class="domain">news.ycombinator.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">CLI: make `daemon_auto_start` opt-in — a persistent, self-updating background daemon shouldn't be the default · Issue #48195 · openai/codex · GitHub</div>
+                        <div class="source-url"><a href="https://github.com/openai/codex/issues/48195" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Codex Updates by OpenAI - October 2026 - Releasebot</div>
+                        <div class="source-url"><a href="https://releasebot.io/updates/openai/codex" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Codex CLI 0.157.0: GPT-6 Sol/Luna (incl. Bedrock), fullscreen transcript + background daemon by default — AICoder</div>
+                        <div class="source-url"><a href="https://aicoder.com/news/news-20260925-codex-cli-0-157-0" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Codex CLI Guide 2026: Setup, Sandbox, AGENTS.md & MCP</div>
+                        <div class="source-url"><a href="https://blakecrosley.com/guides/codex" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-e12569a7d588">
+            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">research</span><span class="score-tag">评分 8.2/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://huggingface.co/papers/2610.09633" target="_blank" rel="noopener">4782 个真实 IDE 会话：编码智能体基准考的是假工作流</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>一篇新挂出的论文（arXiv 2610.09633）给编码智能体基准做了「体检」：4,782 个 JetBrains IDE 真实会话显示，用户实际在问答、规划、审查、重构、执行之间频繁切换，而主流 issue 基准只考「一次性修好一个 issue」。论文同时给出改造方案 SWE-TaskFlow 与对齐指标 TFAS。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>当各方开始追问智能体在真实工作流中的实际表现时，这篇论文提醒：度量工具本身先失真了。试点中多步交互让成本约翻倍、解决率无稳定变化，说明换一种交互协议，同一个智能体的「成绩」就会变。不标明目标任务流的基准分数，既无法外推到日常 IDE 使用，也回答不了关于真实产出的疑问——这是榜单分数与真实价值之间缝隙的方法论解释。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>JetBrains 团队在自家 IDE 中收集了 4,782 个真实工程师的智能体会话（Production Sessions），其中 33% 是含至少 3 条用户消息的长会话。分析显示，真实使用与 issue 驱动基准的差距不在难度而在工作流：用户的请求混合代码问答、规划、审查、重构、执行，且在一个会话内频繁切换类型；三个公开交互语料库的任务流分布也各不相同，不存在「普适真实」的交互分布。</p>
+<p><img alt="SWE-TaskFlow 论文题图" src="https://cdn-uploads.huggingface.co/production/uploads/6279319139b7383b8a70bbe9/Xr3be-YO2tQzNBYjdbcvH.png" /></p>
+<p>论文据此提出 SWE-TaskFlow：用提示拆分和可验证的仓库问答，把任意 issue 基准改造成匹配目标任务流的多步交互形式，保留原基准已验证的任务与测试，并以 TFAS 对齐分数筛选生成轨迹。在 700 个 SWE-Bench Pro 任务的试点中，同样的任务拆成多步顺序求解后，智能体成本约翻倍，解决率却没有稳定变化——交互协议本身就是评测的一个关键维度。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>全新发表的 arXiv 论文（2610.09633，2026 年 10 月），首次公开三部分增量：JetBrains IDE 真实生产会话数据集（4,782 个会话、33% 长会话）、SWE-TaskFlow 基准转换方法与 TFAS 对齐指标、以及 700 个 SWE-Bench Pro 任务上成本约翻倍而解决率无稳定变化的试点结果。</div>
+            <div class="tags-row"><span class="tag">编码智能体</span><span class="tag">基准测试</span><span class="tag">SWE-Bench</span><span class="tag">评测方法</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2610.09633" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a>
+<a class="ext-link" href="https://huggingface.co/papers" target="_blank" rel="noopener">Coverage <span class="domain">huggingface.co</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Opinion: Coding-Agent Benchmarks Should Match Their Users’ Task Flows</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2610.09633v1" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">SWE-Bench Live Leaderboard Q2 2026: Complete Deep Analysis</div>
+                        <div class="source-url"><a href="https://www.digitalapplied.com/blog/swe-bench-live-leaderboard-q2-2026-analysis" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Coding-Agent Benchmarks Should Match Their Users' Task Flows | Cool Papers - Immersive Paper Discovery</div>
+                        <div class="source-url"><a href="https://papers.cool/arxiv/2610.09633" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">SWE-MERA: A Dynamic Benchmark for Agenticly ...</div>
+                        <div class="source-url"><a href="https://aclanthology.org/2025.emnlp-demos.30.pdf" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">SWE-Bench Verified Benchmark</div>
+                        <div class="source-url"><a href="https://www.emergentmind.com/topics/swe-bench-verified-47773414-8319-4e96-b867-a5a13ef278a7" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-447bd53d556c">
+            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">tools</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://github.com/Alishahryar1/free-claude-code" target="_blank" rel="noopener">编码智能体省钱网关 FCC v6.16.0 把战场搬进浏览器</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>2026-10-12，开源本地代理网关 free-claude-code（FCC）发布 v6.16.0，主打原生浏览器 Code 会话：在浏览器中选定文件夹直接运行 Codex，支持实时与后台两种模式，同一会话内自由切换提供商/模型；同会话切换 harness 被官方列为即将支持，功能形态对标 OpenClaw。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>在编码智能体订阅费成为团队刚性成本的当下（呼应本期「账本」主线），FCC 代表了民间的省钱路线：61 个 ToS 友好提供商、每月 13 亿+ 免费 token、11 个编码代理共用一个模型目录，再用自动回退和 token 压缩把可用性与成本一并优化。它不是模型能力的突破，而是把「额度拼盘」工程化的一次示范。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>开源项目 free-claude-code（FCC）发布 v6.16.0，把「编码智能体省钱方案」延伸到浏览器。这个 Python 编写、AGPL v3 许可的本地代理网关聚合 61 个声称对服务条款友好的提供商，每月合计 13 亿+ 免费 token，供 Claude Code、Codex、Aider 等 11 个编码代理共用一个模型目录。v6.16.0 的增量是原生浏览器会话：在浏览器选定文件夹即可运行 Codex，支持实时与后台模式，同一会话内自由切换提供商/模型，同会话切换 harness 官方称即将支持，形态对标 OpenClaw。重试耗尽后自动回退到下一个配置模型；配合 RTK 过滤与 Headroom 压缩，项目宣称最多降低 90% token 用量。边界清晰：项目声明独立于 Anthropic、遵守服务商条款、集成不被允许时会移除；免费额度与限制由提供商控制、可能变化。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>既有项目（2026-01-28 创建、1189 次提交）的显著版本更新：v6.16.0（2026-10-12 发布）新增原生浏览器 Code 会话——选文件夹运行 Codex、实时/后台模式、同会话切换提供商/模型，是本次新闻主体，其余为背景定位。</div>
+            <div class="tags-row"><span class="tag">开源工具</span><span class="tag">编码智能体</span><span class="tag">AI成本</span></div>
+            <div class="links-row"><a class="ext-link" href="https://github.com/Alishahryar1/free-claude-code" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">free-claude-code 一周暴涨 16K Star：终端免费使用 Claude Code 的开源方案 - ChaoBro</div>
+                        <div class="source-url"><a href="https://chaobro.com/posts/free-claude-code-github-trending" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Claude Code 第三方 API 设置：2026 年分步指南</div>
+                        <div class="source-url"><a href="https://www.atlascloud.ai/zh/blog/tips/claude-code-third-party-api-setup" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Claude Code_Claude Code资讯 - 与非网</div>
+                        <div class="source-url"><a href="https://www.eefocus.com/tag/Claude%20Code/article" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Warning: Don't Use Claude Code Sub Token for OpenClaw - ClaudeWorld</div>
+                        <div class="source-url"><a href="https://claude-world.com/articles/claude-code-token-warning-zai-alternative" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- ═══════ RADAR SCAN ═══════ -->
+        <section class="radar-section">
+            <div class="radar-header">📡 雷达扫描</div>
+            <div class="radar-card">
+                <div class="radar-rank">#1</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxPaVhYRjJMUEU3cTBkN0xKNGhfOHNDaGYteFBjQWVsdEdSSEVGYXU4OFYyenNfaGNVa0pmNjQxUGxVVnJRY0JCejdPT3BzQjM5QXZremVWTUp1UUJnSDZnUnF0SXU2aEhjV1FRazh4ZzlzX1htbWRIbk45NDNpQTJobVFJZjUzbEtkU01namR1MTZNT2RRdzhwSjFHaUhtWFNwSThjeU92T3AxUGhUQlE?oc=5" target="_blank" rel="noopener">富途汇编:微软新决策模型的基座是阿里 Qwen</a> <span class="radar-category">tools</span></div>
+                    <div class="radar-blurb">中文财经平台汇总称 60% 以上决策模型以 Qwen 为基座;大厂小模型扎堆 Qwen 基座是可观察趋势,具体比例无一手来源,谨慎参考。</div>
+                </div>
+            </div>
+            <div class="radar-card">
+                <div class="radar-rank">#2</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://news.ycombinator.com/item?id=50062237" target="_blank" rel="noopener">Epic 被曝要求员工用 AI 赶工迪士尼游戏</a> <span class="radar-category">community</span></div>
+                    <div class="radar-blurb">HN 讨论工期压力下 AAA 工作室的 AI 强制使用,观察游戏工业化生产中的劳动议题与 AI 政策走向。</div>
+                </div>
+            </div>
+        </section>
+
+<!-- ═══════ PICK OF THE DAY ═══════ -->
+
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+    <div class="stats">17 源<span>|</span>122 条<span>|</span>7 条精选<span>|</span>17 条候选</div>
+    <div class="generated">生成于 2026-10-13T07:50:22.128132</div>
+</footer>
+
+</div>
+<script>
+(function () {
+    function closeLightbox(overlay, escHandler) {
+        overlay.remove();
+        document.removeEventListener('keydown', escHandler);
+    }
+    function openLightbox(src, alt) {
+        var overlay = document.createElement('div');
+        overlay.className = 'img-lightbox';
+        var big = document.createElement('img');
+        big.src = src;
+        big.alt = alt || '';
+        overlay.appendChild(big);
+        var escHandler = function (e) {
+            if (e.key === 'Escape') closeLightbox(overlay, escHandler);
+        };
+        overlay.addEventListener('click', function () { closeLightbox(overlay, escHandler); });
+        document.addEventListener('keydown', escHandler);
+        document.body.appendChild(overlay);
+    }
+    document.addEventListener('click', function (e) {
+        var img = e.target;
+        if (img && img.tagName === 'IMG' && img.closest && img.closest('.article-body')) {
+            e.preventDefault();
+            openLightbox(img.src, img.alt);
+        }
+    });
+})();
+</script>
+</body>
+</html>
