@@ -1,0 +1,1383 @@
+<!-- ai-daily-final-sha256:7b0b154d0df894fe605d8f6a6cf7e647b9331ae0fa9647627107b6939f65c32e -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 | 2026-10-15 — AI 内容机会日报</title>
+<style>
+/* ═══════════ CSS Reset & Base ═══════════ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+:root {
+    --bg-page: #F7F7F5;
+    --bg-paper: #FFFFFF;
+    --text-main: #111111;
+    --text-body: #222222;
+    --text-muted: #555555;
+    --text-light: #999999;
+    --accent: #D93025;
+    --accent-soft: #FFF0EE;
+    --border-divider: #E5E5E5;
+    --border-strong: #111111;
+    --tag-bg: #F5F5F5;
+    --score-high: #0F7B4E;
+    --score-mid: #D97706;
+    --link-underline: #CCCCCC;
+    --hover-accent: #B82020;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", serif;
+    background: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-paper);
+    padding: 80px 60px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: var(--text-main);
+}
+
+/* ═══════════ Header ═══════════ */
+.header {
+    text-align: center;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--border-strong);
+}
+
+.header h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 1.2;
+    color: var(--text-main);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.header .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.header .divider {
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    margin: 0 auto 20px;
+}
+
+.header .meta-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+}
+
+.header .meta-line span {
+    margin: 0 12px;
+    color: var(--border-divider);
+}
+
+.header .trend-callout {
+    margin-top: 24px;
+    padding: 16px 24px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    font-size: 15px;
+    color: var(--text-main);
+    text-align: left;
+    line-height: 1.7;
+    border-radius: 0 4px 4px 0;
+}
+
+/* ═══════════ Article Cards ═══════════ */
+.articles-section {
+    margin-bottom: 50px;
+}
+
+.section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.article-card {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.article-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.article-body { margin: 16px 0; }
+.article-body img {
+    display: block; max-width: 100%; height: auto;
+    margin: 14px auto; border-radius: 8px;
+    cursor: zoom-in;
+}
+.img-lightbox {
+    position: fixed; inset: 0; z-index: 999;
+    background: rgba(0, 0, 0, 0.86);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; cursor: zoom-out;
+}
+.img-lightbox img {
+    max-width: 96vw; max-height: 96vh; width: auto; height: auto;
+    border-radius: 8px; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+.article-body summary {
+    cursor: pointer; color: var(--accent); font: 600 13px 'Inter', sans-serif;
+}
+.article-body[open] summary { margin-bottom: 14px; }
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.rank-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    background: var(--text-main);
+    color: #FFF;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+}
+
+.rank-badge.headline {
+    background: var(--accent);
+}
+
+.category-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: var(--tag-bg);
+    color: var(--text-muted);
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+}
+
+.score-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--score-high);
+}
+
+.newness-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 4px 8px;
+    background: #F0F9F4;
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+}
+
+.article-card h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.article-card .one-liner {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: #FAFAFA;
+    border-left: 2px solid var(--border-divider);
+    border-radius: 0 4px 4px 0;
+}
+
+.article-card .what-box {
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-body);
+}
+
+.article-card .what-box strong {
+    color: var(--accent);
+}
+
+.article-card .why-box {
+    margin-bottom: 14px;
+    padding: 14px 18px;
+    background: #FFFDF5;
+    border: 1px solid #F0EABD;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-body);
+}
+
+.article-card .body-md {
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-body);
+    text-align: justify;
+}
+
+.article-card .body-md p {
+    margin-bottom: 16px;
+}
+
+.article-card .body-md a {
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-underline);
+    transition: all 0.2s;
+}
+
+.article-card .body-md a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.article-card .body-md strong {
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.article-card .body-md code {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    font-size: 13px;
+    background: #F5F5F5;
+    padding: 2px 6px;
+    border-radius: 2px;
+    color: var(--accent);
+}
+
+.article-card .body-md ul, .article-card .body-md ol {
+    margin-bottom: 16px;
+    padding-left: 20px;
+}
+
+.article-card .body-md li {
+    margin-bottom: 8px;
+}
+
+/* ═══════════ Tags ═══════════ */
+.tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: #F0F0F0;
+    color: #666;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+}
+
+/* ═══════════ Verification Sources ═══════════ */
+.sources-box {
+    margin: 16px 0;
+    border: 1px solid var(--border-divider);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.sources-box .sources-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 10px 16px;
+    background: #FAFAFA;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.sources-box .source-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 16px;
+    border-bottom: 1px solid #F5F5F5;
+    font-size: 13px;
+    gap: 12px;
+}
+
+.sources-box .source-row:last-child {
+    border-bottom: none;
+}
+
+.sources-box .source-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.sources-box .source-info .source-title {
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.sources-box .source-info .source-url {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sources-box .source-info .source-url a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.sources-box .source-info .source-url a:hover {
+    text-decoration: underline;
+}
+
+.sources-box .source-info .source-purpose {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 3px;
+    line-height: 1.5;
+}
+
+.sources-box .source-badges {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.badge.official { background: #E8F5E9; color: #2E7D32; }
+.badge.media { background: #E3F2FD; color: #1565C0; }
+.badge.community { background: #FFF3E0; color: #E65100; }
+.badge.secondary { background: #F3E5F5; color: #7B1FA2; }
+.badge.noise { background: #FFEBEE; color: #C62828; }
+
+.badge.newness { background: #E8F5E9; color: #2E7D32; }
+.badge.background { background: #E3F2FD; color: #1565C0; }
+.badge.contrarian { background: #FFF3E0; color: #E65100; }
+.badge.content { background: #F3E5F5; color: #7B1FA2; }
+
+/* ═══════════ History Check ═══════════ */
+.history-note {
+    margin: 10px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.history-note .label {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.history-note .verdict-not-seen { color: var(--score-high); }
+.history-note .verdict-seen-before { color: var(--score-mid); }
+
+/* ═══════════ Confirmed Event Aggregation ═══════════ */
+.event-aggregation {
+    margin: 16px 0;
+    padding: 14px;
+    border: 1px solid #E7DDB4;
+    border-radius: 6px;
+    background: #FFFDF5;
+}
+
+.event-head {
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.event-sources { display: grid; gap: 8px; }
+
+.event-source {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    align-items: center;
+    color: var(--text-body);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.event-role {
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: #F0EABD;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.event-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.event-domain { color: var(--text-light); font-family: 'Inter', sans-serif; font-size: 10px; }
+.event-source:hover .event-title { color: var(--accent); }
+
+/* ═══════════ Links ═══════════ */
+.links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ext-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border: 1px solid var(--border-divider);
+    border-radius: 4px;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.ext-link:hover {
+    border-color: var(--text-main);
+    background: #FAFAFA;
+}
+
+.ext-link .domain { color: var(--text-light); font-size: 10px; }
+
+/* ═══════════ Radar Scan ═══════════ */
+.radar-section {
+    margin-bottom: 50px;
+}
+
+.radar-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #A3A3A3;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--border-divider);
+}
+
+.radar-card {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    background: #FAFAFA;
+    border: 1px dashed var(--border-divider);
+    border-radius: 4px;
+    transition: all 0.15s;
+}
+
+.radar-card:hover {
+    border-color: #BBBBBB;
+    background: #F5F5F5;
+}
+
+.radar-rank {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-light);
+    flex-shrink: 0;
+}
+
+.radar-card .radar-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.radar-card .radar-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+    line-height: 1.4;
+}
+
+.radar-card .radar-title a {
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-underline);
+}
+
+.radar-card .radar-title a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.radar-card .radar-category {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.radar-card .radar-blurb {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-top: 2px;
+}
+
+.radar-empty {
+    text-align: center;
+    padding: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    border: 1px dashed var(--border-divider);
+    border-radius: 4px;
+}
+
+/* ═══════════ Pick of the Day ═══════════ */
+.pick-section {
+    margin-bottom: 50px;
+}
+
+.pick-card {
+    padding: 28px;
+    background: linear-gradient(135deg, #FFFBEB 0%, #FFF7ED 100%);
+    border: 2px solid #F59E0B;
+    border-radius: 8px;
+    position: relative;
+}
+
+.pick-card::before {
+    content: "★ 今日最佳选题";
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: #F59E0B;
+    color: #FFF;
+    padding: 4px 14px;
+    border-radius: 3px;
+}
+
+.pick-card h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 8px 0 12px;
+    line-height: 1.4;
+}
+
+.pick-card .pick-meta {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.pick-card .pick-outline {
+    margin: 12px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.pick-card .pick-outline li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-body);
+}
+
+.pick-card .pick-outline li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: monospace;
+}
+
+.pick-card .pick-closing {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed #F0EABD;
+}
+
+/* ═══════════ Footer ═══════════ */
+.footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-divider);
+    text-align: center;
+}
+
+.footer .stats {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.footer .stats span {
+    margin: 0 16px;
+}
+
+.footer .generated {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 8px;
+}
+
+/* ═══════════ Responsive ═══════════ */
+@media (max-width: 700px) {
+    body { padding: 0; background: var(--bg-paper); }
+    .container { padding: 32px 20px; box-shadow: none; }
+    .header h1 { font-size: 28px; }
+    .article-card h2 { font-size: 18px; }
+    .pick-card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="header">
+    <h1>AI 日报 | 2026-10-15</h1>
+    <div class="subtitle">AI 内容机会日报</div>
+    <div class="divider"></div>
+    <div class="meta-line">2026-10-15<span>|</span>由 <strong>zcode-chief-editor</strong> 生成</div>
+    <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
+      <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
+    </div>
+    <div class="trend-callout">语音智能体换了基准冠军、阿里 AI 眼镜从发布走到开售,而 Netflix 的评估体系与 TV4 的删片事故提醒人们,agent 进生产的第一课是把验证和备份补上</div>
+</header>
+
+<!-- ═══════ TOP ARTICLES ═══════ -->
+<section class="articles-section">
+    <div class="section-label">今日最值得关注</div>
+    <div class="article-card" data-id="raw-c50bc83caf29">
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">tools</span><span class="score-tag">评分 9.3/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://x.ai/news/grok-voice-3" target="_blank" rel="noopener">语音基准换冠军，Grok Voice 3.0 每天数百万对话</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>SpaceXSI(前身 xAI，经 SpaceX 收购后两次更名)10 月 14 日发布语音到语音模型 Grok Voice 3.0，官方定位为“世界最智能的语音模型”。模型当天在 Voice Agent API 上线，定价每分钟 0.08 美元与 Grok Voice 2.0 持平，调用 grok-voice-latest 的存量 agent 已自动切换。在 Artificial Analysis 的 Speech-to-Speech Index 上，它以 86.9 分排名第一。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>语音 agent 的竞争从榜单分数延伸到生产规模与单位成本。Grok Voice 3.0 在独立基准登顶的同时，把 Big Bench Audio 单任务成本压到 0.025 美元，并用 Tesla 与 Starlink 的日均数据证明它承载真实客服流量；τ-Voice 上落后 OpenAI 但首音频响应延迟低约 40%，给开发者提供了一个在准确率与响应速度之间做取舍的样本。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 14 日，SpaceXSI 发布语音到语音模型 Grok Voice 3.0，官方将其定位为“世界最智能的语音模型”，称其在解决客服来电上创下新纪录，延迟低于一秒。发布方的前身是 xAI，经 SpaceX 收购后两次更名，官网仍使用 x.ai 域名。模型当天进入 Voice Agent API，定价每分钟 0.08 美元，折合每小时 4.80 美元，与 Grok Voice 2.0 持平，调用 grok-voice-latest 的存量 agent 已自动完成切换，开发者无需改动。</p>
+<p>在 Artificial Analysis 的独立测试中，Grok Voice 3.0 以 86.9 分登上 Speech-to-Speech Index 第一名，领先 GPT-Live-1(Astra, Medium)的 83.2 与 Gemini 3.8 Live(Ext. Thinking, High)的 82.6，也高于自家上一代的 81.3。这项指数综合了语音推理、τ-Voice 以及盲测对战中的偏好与任务成功率。分项成绩包括 Big Bench Audio 语音推理 98.5%，Speech Agent Arena 人类偏好 Elo 1070，衡量停顿、轮换与打断应对自然度的 Full Duplex Bench 为 97.0%。</p>
+<p>榜单里同样有对发布方不利的数字。在考察口音、背景噪声与打断场景下客服通话处理能力的 τ-Voice 上，Grok Voice 3.0 得分 71.6%，落后 GPT-Live-1 的 74.5%；官方选择的叙述角度是，新模型的首音频响应延迟低约 40%，等于在智能与响应速度之间重新划出一条取舍线。成本是另一块筹码，按 Artificial Analysis 的 Big Bench Audio 单任务成本核算，Grok Voice 3.0 为 0.025 美元，低于 GPT-Live-1 的 0.030 美元与 GPT-Realtime-2.1 的 0.055 美元。</p>
+<p>企业场景的背书来自 ServiceNow 的开源基准 EVA-Bench，该基准覆盖 200 多个真实企业场景，按准确率与客户体验联合评分，Grok Voice 3.0 取得 74% 的最高准确率，联合评分同样居首。ServiceNow 高级产品总监(Agentic Evals and RAI)Nitin Aggarwal 在官方稿中写道："Grok Voice 3.0 sets a new Pareto frontier on EVA-Bench... setting a new standard for what enterprises can expect from AI on the front line of customer service."</p>
+<p>比榜单更硬的是生产数据。Tesla 车辆中每天由 Grok Voice 3.0 处理数百万次对话，驾驶者可以用 Connectors 完成查日历、回邮件等简单请求，把订咖啡、订晚餐交给 Grok Bot，全程免手操作，Grok Bot 的语音模式也由这一代模型驱动。Starlink 呼叫中心用它每天接听 2 万通多语种客服电话，约 70% 无需人工介入，四分之一的销售来电在挂断前完成购买；一个基于 Grok Voice 3.0 搭建的 agent 能独立走完验证客户、排查硬件、发放退款、寄出更换设备的全流程。</p>
+<p>需要保留的审慎之处是，基准分数引自 Artificial Analysis 10 月 13 日的测试，生产规模数字来自厂商自述，τ-Voice 上与 OpenAI 的差距客观存在，“世界最智能”属于发布方的官方定位。Unite.AI、Superpower Daily 等媒体的跟进报道基本复述官方口径，独立的横向验证还需要更多时间与样本。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Grok Voice 3.0 为 10-14 发布的全新模型迭代，基准数据出自 Artificial Analysis 10-13 测试；history_check 显示历史日报未出现同题报道，semantic_history 亦未命中相似文章，属首次覆盖。</div>
+            <div class="tags-row"><span class="tag">Grok Voice</span><span class="tag">语音模型</span><span class="tag">SpaceXSI</span></div>
+            <div class="event-aggregation"><div class="event-head">事件聚合 · 3 个来源 · 已合并 1 条候选</div><div class="event-sources"><a class="event-source" href="https://x.ai/news/grok-voice-3" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Introducing Grok Voice 3.0 | SpaceXSI - xAI</span><span class="event-domain">x.ai</span></a><a class="event-source" href="https://news.google.com/rss/articles/CBMiREFVX3lxTE1mOUcxZkpjVVVyYjlLOWk1V0sxb1QyY3dVLWtpcDBFbEpqQzlDQzFPekdzSUVKbnhoaHZNd3ZzYzlweElu?oc=5" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Introducing Grok Voice 3.0 | SpaceXSI - xAI</span><span class="event-domain">news.google.com</span></a><a class="event-source" href="https://siliconangle.com/2026/10/14/grok-voice-3-0-from-spacexsi-outscores-openai-and-google-on-speech-to-speech-index/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Grok Voice 3.0 from SpaceXSI outscores OpenAI and Google on speech-to-speech index - SiliconANGLE</span><span class="event-domain">siliconangle.com</span></a></div></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Quick Start Grok Voice and Text-to-Speech API With Realtime WebSocket Streaming</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=B3A0fNZTgko" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Evalgent - Grok Voice Agent Builder Pricing: $0.08/min (Oct 2026)</div>
+                        <div class="source-url"><a href="https://www.evalgent.com/blog/xai-grok-voice-agent" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">xAI Introduces Grok Voice 3.0 Speech-to-Speech Model for Voice Agents – Unite.AI</div>
+                        <div class="source-url"><a href="https://www.unite.ai/xai-introduces-grok-voice-3-0-speech-to-speech-model-for-voice-agents" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Introducing Grok Voice 3.0 | SpaceXSI</div>
+                        <div class="source-url"><a href="https://x.ai/news/grok-voice-3" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">xAI upgrades its voice API to Grok Voice 3.0 without raising prices | Superpower Daily</div>
+                        <div class="source-url"><a href="https://superpowerdaily.com/posts/xai-upgrades-its-voice-api-to-grok-voice-3-0-without-raising-prices" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-a0e0fec2c2b5">
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.6/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://openai.com/index/amp-beyond-coding" target="_blank" rel="noopener">编码 agent 出圈,Amp 重度用户周耗百亿 token</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>OpenAI 官方博客发布 Amp 客户案例,展示其近期密集上线的一批能力,包括 Sign in with ChatGPT 登录集成(换取更多 token 额度与 GPT-6 Astra 访问)、GPT-6 Astra 承担写作设计营销等编程外工作、GPT-Live-1 驱动的 Calling Puck 实时语音(手表可用),以及在 GPT-6 Astra 上测试的 Ultrafast 极速模式。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>编码 agent 的竞争正从写代码扩展到完整工作流。这个案例把计费方式、模型能力、语音交互和响应速度放进同一个产品流程,是 agent 出圈的可参考样本,Sign in with ChatGPT 也显示登录入口正在成为模型分发渠道。需要记住它属客户证言,数字均来自 Amp 一方。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>先交代来源属性。这是 OpenAI 官方博客最新发布的客户案例,主角是 AI 编程 agent 产品 Amp 和它的 CEO Quinn Slack。客户案例的本质是客户证言加产品展示,发布方是 OpenAI 官方渠道,立场天然偏向自家模型,以下事实与引语均出自原文,阅读时需要带着这层属性。</p>
+<p>Amp 想做的是帮开发者把想法变成能运行的软件,覆盖从决定做什么、写代码到设计页面的全过程。它会根据实际效果替用户选择和推荐模型,OpenAI 模型占 Amp 全部 token 用量的大头。这次案例重点展示的,是 Amp 近期密集上线的一批新能力,它们共同把 agent 从代码里推了出来,推进写作、设计、营销这些过去靠人做的环节。</p>
+<p>成本是最先被摆上台面的问题。Quinn Slack 描述,Amp 部分重度用户每周要消耗 100 亿 token,而如果人们盯着每一笔用量精打细算,就不敢放手让 agent 去试,也就摸不到它真正的上限。为此 Amp 上线了 Sign in with ChatGPT 集成,用 ChatGPT 账号登录即可获得更多 token 额度和 OpenAI 模型访问权,其中包括 GPT-6 Astra。他说:"Sign in with ChatGPT 让人们可以拥有那种不用数着每一个 token 的感觉。一旦你真的放开手让 agent 去跑、给它更长的活动半径,你就会意识到它到底能做多少。"</p>
+<p>编程之外的工作由 GPT-6 Astra 接手。Amp 团队只有 20 个人,没有专职营销,面向新用户的体验改进、让更多人通过搜索发现 Amp 的增长工作都交给了 agent。Quinn Slack 的说法是:"我们没有专门投入一个人,但我们专门投入了一个 agent。"他补充说团队对写作和设计风格非常挑剔,但对 GPT-6 Astra 的产出相当满意。这种用法延续到了他家里,他把自家住宅的平面图交给 GPT-6 Astra 转成 Blender 3D 模型,再和孩子一起把模型改成游戏,比如在房子里加一条懒人河,或者绕着屋子追大蒜,灵感来自祖母讨厌大蒜。他强调,这类事情在几个月前还做不到。</p>
+<p>交互形态的变化集中在 Puck。Puck 是 Amp 内置的对话式助手,负责启动和管理其他 agent,可以让它开一个 agent 去排查 bug、协调几个 agent 同时干活,或者找回之前关于某个技术问题的讨论。新推出的 Calling Puck 由 GPT-Live-1 驱动,支持实时语音交互,在手表上也能用。Quinn Slack 的想象是,人离开电脑甚至出门跑步的时候,也能靠语音让 agent 继续干活。</p>
+<p>速度层面的变量是 Ultrafast。Amp 正在 GPT-6 Astra 上测试这个模式,更快的响应可能改变人们使用 agent 的方式。眼下常见的做法,是在等待期间在几个 agent 任务之间来回切换,模型变快之后,用户需要同时照看的 agent 可能变少,agent 也可以在交回结果前多花时间自查。Quinn Slack 的原话是:"人们还没见过一个又这么好、又这么快的模型。"</p>
+<p>这份案例值得读的地方,在于它把编码 agent 出圈所需要的整条链路摆上了台面,计费与登录方式、模型的多面手能力、语音调度入口、响应速度,彼此咬合才撑得起每周百亿 token 的用法,Sign in with ChatGPT 更是暗示登录入口正在变成模型的分发渠道。限制同样要说清楚,文中全部数字和体验来自 Amp 一方,由 OpenAI 官方博客转述,没有第三方评测,Ultrafast 也没有公布提速幅度和上线时间表,目前仍在测试。把它当作一个可参考的产品化样本是合适的,直接推成行业结论则需要更多独立证据。Amp 给自己定的下一步,是把编码之前和之后的更多环节也装进 agent。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Amp 本身是已存在的产品，本次增量为其近期密集上线的一批新能力：Sign in with ChatGPT 登录集成（提供更多代币与 GPT-6 Astra 访问）、内置对话式助手 Puck、基于 GPT-Live-1 的 Calling Puck 实时语音功能、以及配合 GPT-6 Astra 的 Ultrafast 极速模式测试。</div>
+            <div class="links-row"><a class="ext-link" href="https://openai.com/index/amp-beyond-coding" target="_blank" rel="noopener">Source <span class="domain">openai.com</span></a>
+<a class="ext-link" href="https://openai.com/blog/amp-agents-beyond-code" target="_blank" rel="noopener">Coverage <span class="domain">openai.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Amp puts AI agents to work beyond code with OpenAI models</div>
+                        <div class="source-url"><a href="https://openai.com/index/amp-beyond-coding" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Astra AI Agent Connects NVIDIA Omniverse Libraries For Simulations</div>
+                        <div class="source-url"><a href="https://quantumzeitgeist.com/astra-agent-connects-nvidia-omniverse" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenAI Amp Agents Beyond Code — Pricing Impact (Oct 2026) | AI Pricing Guru</div>
+                        <div class="source-url"><a href="https://www.aipricing.guru/news/openai-amp-agents-beyond-code-pricing-impact-october-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">7 Truths About Amp as an Enterprise AI Coding Agent</div>
+                        <div class="source-url"><a href="https://medium.com/@jonathanaraney/7-truths-about-amp-as-an-enterprise-ai-coding-agent-aa8ecbf61087" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-edbc6b7abaee">
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">tools</span><span class="score-tag">评分 8.4/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://thenextweb.com/news/alibaba-qwen-glasses-n1-price-launch" target="_blank" rel="noopener">阿里Qwen眼镜N1正式开售，国补后最低2218元</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>阿里巴巴本周二在杭州发布会后于中国正式开售 Qwen Glasses N1 智能眼镜，上架淘宝、天猫、京东、抖音四个渠道。最终定价落定为 N1 起售 2,999 元(约 450 美元，多家中国媒体报道 2,899 元)，叠加国家补贴与首发优惠最低 2,218 元；N1 Pro 售价 3,499 元；与 Bose 合作的 AI 耳夹耳机 Qwen Clip 售价 1,299 元。产品此前已于 9 月 Apsara 大会亮相、9 月 22 日开启预售，本次增量是正式发售与价格敲定。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>定价、渠道、规格、监管背景俱全，这款国产 AI 眼镜走完了从发布会亮相、预售到真金白银销售的完整流程。2,999 元的起售价与全球市场领跑者 Meta Ray-Ban 处于同一价格带，国内厂商开始在同一个价位上参与正面竞争。同期，中国 9 月出台的录制提示灯自愿性规范伴随首批消费级 AI 眼镜进入公开销售，产品与监管几乎同步走进真实使用场景，开售后的销量与合规反馈都是值得跟踪的信号。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>本周二，阿里巴巴在杭州的发布会上宣布 Qwen Glasses N1 智能眼镜在中国正式开售，上架渠道包括淘宝、天猫、京东和抖音。据彭博社报道，N1 起售价为 2,999 元(约 450 美元)，多家中国媒体给出的起售价略低，为 2,899 元，叠加国家补贴与首发优惠后最低到手 2,218 元。与眼镜同步开售的还有和 Bose 合作的首款 AI 耳夹耳机 Qwen Clip，售价 1,299 元。</p>
+<p><img alt="Qwen 眼镜与 Qwen Clip 耳机充电盒" src="https://media.thenextweb.com/2026/10/two-black-smart-glasses-lilac-earbud-case-white-steps.avif" /></p>
+<p>这批硬件的故事要从 9 月讲起。N1 系列与耳机最早于 9 月的云栖大会(Apsara)亮相，9 月 22 日开启预售，本周的杭州活动把预售推进到正式发售，并敲定了最终定价。发布时，阿里巴巴通义业务副总裁宋刚称这副眼镜是用户的"第二双眼睛和耳朵"。</p>
+<p>N1 配备 5000 万像素摄像头，运行通义千问 AI 助手，用户通过骨传导麦克风与其语音交互，可以翻译、记录会议纪要、协助购物与支付。续航方面，彭博社称单次充电可待机 25 小时或播放音乐 9 小时，中国媒体报道电池支持更换。Qwen Clip 耳机夹在耳朵上使用，同样支持翻译和笔记功能。</p>
+<p>高配版 N1 Pro 售价 3,499 元，增加了眼动追踪，佩戴者注视一个物体即可向 AI 提问，支付时通过虹膜扫描确认。据中国科技网站 PConline 报道，Pro 版还能监测心率、血氧和皮肤温度。</p>
+<p>彭博社指出，N1 的定价与市场领跑者 Meta 的 Ray-Ban 眼镜处于同一水平线，Meta 上月还为产品线新增了无摄像头型号。监管层面，中国 9 月发布了一项自愿性规范，要求 AI 眼镜在录制时显示提示灯，为这批刚上架的产品划出了新的合规边界。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>产品于 9 月 Apsara 大会发布、9 月 22 日开启预售，历史日报未报道过该事件(history_check 与 semantic_history 均无匹配)；本次增量为正式开售与最终定价确认(N1 2,999 元起、国补后最低 2,218 元、Pro 3,499 元、Qwen Clip 1,299 元)、四渠道上架以及 Pro 版眼动追踪、虹膜支付、健康监测等细节披露。</div>
+            <div class="tags-row"><span class="tag">阿里巴巴</span><span class="tag">智能眼镜</span><span class="tag">AI硬件</span></div>
+            <div class="event-aggregation"><div class="event-head">事件聚合 · 3 个来源 · 已合并 1 条候选</div><div class="event-sources"><a class="event-source" href="https://thenextweb.com/news/alibaba-qwen-glasses-n1-price-launch" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Alibaba Takes AI Beyond Chatbots With Smart Glasses, Bose-Powered Earbuds - TradingView</span><span class="event-domain">thenextweb.com</span></a><a class="event-source" href="https://news.google.com/rss/articles/CBMiywFBVV95cUxNbFdaZzdVclhnSHVKS3QzUUNFVWtYUTVtMzJocHd6Q01yTk50cEtjZkQ1NlVHQm9OTlNCWkNiaU5XdW5qcEFELXVjMXAySzd1SUNFOHRXRXNsMnN5ZWp5QzJIazNVcHByYkFMU2FFQnRBQWJqSjZWRDNZVFdpVEJCTU43NlQxMldYajctVDlxcTJfbjBudXMzWnZ4dTA5VWEtTEk0VngwYzY0Q25iWk9MQ2hPNXlXLXkwUVpSSEI2RFQtMVFRSEt0Y0ZmTQ?oc=5" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Alibaba Takes AI Beyond Chatbots With Smart Glasses, Bose-Powered Earbuds - TradingView</span><span class="event-domain">news.google.com</span></a><a class="event-source" href="https://www.telecompaper.com/news/alibaba-unveils-qwen-book-agentic-computer-ai-wearables-lineup--1585645" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Alibaba unveils Qwen Book agentic computer, AI wearables lineup - Telecompaper</span><span class="event-domain">www.telecompaper.com</span></a></div></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Alibaba unveils Qwen Book agentic computer and new AI wearables</div>
+                        <div class="source-url"><a href="https://technode.global/2026/09/24/alibaba-qwen-book-ai-wearables-apsara-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Alibaba Unveils 4 Qwen AI Devices at Apsara 2026</div>
+                        <div class="source-url"><a href="https://productnation.co/my/31964/alibaba-qwen-ai-devices-apsara-conference-taul" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Alibaba Unveils Agentic Computer, AI Wearables and More at 2026 Apsara Conference | Alizila</div>
+                        <div class="source-url"><a href="https://www.alizila.com/alibaba-unveils-agentic-computer-ai-wearables-and-more-at-2026-apsara-conference" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Alibaba Unveils Game-Changing Device to Challenge Meta</div>
+                        <div class="source-url"><a href="https://finance.yahoo.com/technology/ai/articles/alibaba-unveils-game-changing-device-184234992.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">HUGE: Alibaba Unveils Chip 3x More Powerful Than Its Last and Plans a 10 Trillion Parameter Model</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=EMT7NjHem84" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-9bc5b319f9a0">
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.3/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://netflixtechblog.com/the-lifecycle-of-llm-as-a-judge-building-aligning-and-monitoring-at-scale-c95bd8283508?source=rss----2615bd06b42e---4" target="_blank" rel="noopener">谁给 AI 裁判打分？Netflix 交出三阶段生命周期答案</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Netflix 技术博客发布 11 位成员署名的工程长文，首次系统公开其 LLM-as-a-Judge 生命周期方法论。增量包括 RART(Reasoning-Aligned Rubric Tuning)推理对齐调优方法、Generator/Judge/Reflector/Meta-Judge 四组件架构、纯标签对齐会退化的消融实验、门卫加评论者双角色部署，以及约一个月移动端线上实验与每周漂移监控的完整数据，文末指向同名研究论文。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>大规模 LLM 生成内容普遍依赖裁判模型做代理评估，裁判自身的可信度此前多停留在原则讨论。Netflix 把它落成有基准、有指标、有人工签字、有回滚的生产流程，消融实验证明只对齐标签会让裁判退化，推理对齐是防止这种退化的关键。任何要在线上跑 AI 生成内容的团队都能拿这份流程对照自查，评估由此从一次性脚本变成可长期运营的工程资产。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>任何用 LLM 大规模生成文本的团队都会撞上同一堵墙。输出太多，人工读不完，也就无从知道哪些出色、哪些平庸、哪些有害。Netflix 的推荐解释场景是个典型，会员在片目详情页看到一句基于自己观看历史的自然语言推荐理由，测试期间每周要生成数十万条，片目库还在不断变化。人工全量评审不可行，业界通行解法是 LLM-as-a-Judge，让第二个模型替人工给第一个模型的输出打分，速度快、成本低。它在带来便利的同时也带来一个新问题，原文的发问是："Who evaluates the evaluator?"(谁来评估这个评估者)。更麻烦的是裁判一旦漂移，悄悄退化并开始放行坏输出，下游系统不会有任何报警。</p>
+<p>Netflix 技术博客的这篇长文由 11 位成员署名，给出的答案是像运营生产系统一样对待裁判，给它完整的生命周期管理。核心原则被写成一句话："An LLM judge must never operate alone."(LLM 裁判绝不能独自运行)。文章标题把生命周期概括为构建、对齐、监控三个环节，正文进一步展开为四个阶段，基准数据创建、裁判训练、部署、人在环对齐与漂移监控，每个阶段都有明确的人工负责人。四个自动化组件贯穿全程，Generator 生成解释，Judge 给出 pass/fail 标签和书面理由，Reflector 负责修订评分细则，Meta-Judge 检查 Judge 拒绝一条解释的理由是否站得住。</p>
+<p>构建阶段是人力投入最重的一段。内部写作专家定义解释必须满足的准则，撰写详细标注指南，手工构造对抗性难例，标注者对每条样例给出 pass/fail 判定并写下书面理由。现成的通用基准覆盖不到这种短小、绑定具体片目和参考片、依赖上下文的任务，于是团队用三类来源自建基准，专家手写的对抗样例、用 LLM 合成再交人工评分的边界样例、从生成器真实输出中抽取的解释。两个细节决定了后续成败。基准每周追加一批新的人工评分样本，避免随片目和用户习惯变化而过期；每个 fail 标签都附带自由文本理由，这些理由正是下一阶段对齐裁判推理的原料。</p>
+<p>对齐阶段要抓的失败模式很隐蔽，裁判可能与人类标签完全一致，结论对但理由错。文中举了一个例子，会员看过一部音乐剧，属于带年轻女主角的家庭奇幻片，还有知名群像卡司，系统推荐了同样带年轻女主角的家庭奇幻冒险片，裁判给出 FAIL，理由乍看合理，细看却不完整，两部片子既不共享歌曲也不共享群像卡司。这种错误在标签一致率仪表盘上完全隐形，却会让裁判在解释拒绝原因时给出误导反馈。Netflix 的解法叫 RART(Reasoning-Aligned Rubric Tuning，推理对齐的评分细则调优)，Judge 是一个由评分细则参数化的固定提示词模板，调优只迭代改写细则文本，无须重训底层模型。Meta-Judge 把 Judge 的拒绝理由与人类理由逐条对比，它自身先经人工校验，与训练有素的标注员判断几乎全部吻合；标签不一致和标签对但理由错这两类错误一起交给 Reflector 修订细则。消融实验给出了关键证据，在三条必须准则之一上，只用标签分歧的 vanilla 循环把细则改写成退化形态，specificity 与 reasoning agreement 逐轮下滑，最终低于初始细则，而 RART 在同一准则上保持稳定并有所提升，原因在于靠不健全推理达到的正确标签无法泛化到新数据。三项指标按准则独立追踪，分别是 specificity(fail-recall，团队最看重，漏过坏解释是信任隐患)、recall(pass-recall)和 reasoning agreement。</p>
+<p>部署后，同一个对齐好的裁判身兼两职。作为门卫，它按必须准则逐条打分，解释必须通过全部必须准则才有资格展示。作为评论者，它把拒绝理由附回生成器的提示词，驱动自我修订，形成先生成、再评审、后修订的循环。1000 条解释、最多 12 轮修订、4 个生成器的对照测试显示，增益集中在头几轮，而且修订放大的是本来就强的生成器。团队最终用最强生成器配 3 次重试预算，仍不达标就丢弃，理由是两种后果不对等，一条坏解释是信任隐患，少一条解释只是放弃一次机会。线上效果靠一次约一个月的移动端对照实验验证，看到解释的会员把观看转向此前没看过的内容，更多浏览会话以有意义的播放收尾，两项效果均统计显著，期间没有出现会员发起的下架请求或投诉升级。作者同时提醒，与标注者的离线一致只是必要条件，裁判通过的解释是否真对会员有用，只有线上实验能回答。</p>
+<p>监控阶段针对的问题在于上线时对齐良好并不能长期保持，片目在变，高标准的定义也在变。每周抽取约 300 条解释做人工评审，按门卫的处理结果分层并偏向新片目，至少 3 名标注者独立评分，多数票作为真值。裁判的及格线随人类标注者自身分歧幅度浮动，要求其成绩不低于平均标注者 2 个标准差，难题周会自动放宽区间。任何一项指标掉出区间即构成漂移事件，触发带着扩充基准回到训练阶段再调优，修订后的细则不自动上线，须有人读完签字批准，旧细则保留以便即时回滚。人工周评还能发现指标抓不到的问题，模糊形容词堆成的词汤、单口喜剧元数据相似但调性完全不同、参考片本身不合适等，这些反复出现的模式会反哺构建阶段的准则，或者变成裁判之外的产品规则，比如禁止某些片型充当参考片。</p>
+<p>文末给出五条可迁移经验，先投资带理由标注的基准再动手做裁判，调优时对齐人类的推理过程、只盯标签会被糊弄，一个对齐好的裁判复用为门卫和评论者以摊薄对齐成本，从第一天就规划监控，让人的介入成为制度设计。这篇博文同时总结了同名研究论文 The Lifecycle of LLM-as-a-Judge for Large-Scale Recommendation Explanations。对要把 LLM 生成内容放上生产线的团队，它示范的评估工程是把裁判当成有负责人、有周检、有回滚的长期资产来运营。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Netflix Tech Blog 经 RSS 首发的原创工程博文，deep_read 判定 genuinely_new；history_check 与 semantic_history 均未匹配到历史报道，RART 方法与完整生命周期流程系首次公开。</div>
+            <div class="tags-row"><span class="tag">LLM-as-a-Judge</span><span class="tag">Netflix</span><span class="tag">评估工程</span></div>
+            <div class="links-row"><a class="ext-link" href="https://netflixtechblog.com/the-lifecycle-of-llm-as-a-judge-building-aligning-and-monitoring-at-scale-c95bd8283508?source=rss----2615bd06b42e---4" target="_blank" rel="noopener">Source <span class="domain">netflixtechblog.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">The Lifecycle of LLM-as-a-Judge for Large-Scale Recommendation Explanations | alphaXiv</div>
+                        <div class="source-url"><a href="https://www.alphaxiv.org/abs/2608.18300" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">LLM-as-a-Judge: Guide & Pre-built Evaluators | Arize AI</div>
+                        <div class="source-url"><a href="https://arize.com/guides/llm-as-a-judge" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Exploring LLM-as-a-Judge - Weights & Biases</div>
+                        <div class="source-url"><a href="https://wandb.ai/site/articles/exploring-llm-as-a-judge" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-b254b3e9c518">
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">community</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">new_event</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50085323" target="_blank" rel="noopener">瑞典TV4一季素材蒸发,AI删除说与备份故障说并存</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>瑞典 TV4 真人秀《The Challenge》新季大部分已剪辑素材丢失,首播从原定的 11 月 22 日推迟到 2027 年春末,整季需从头重剪,Aftonbladet 估算损失相当于数百天工作量。删除原因存在两种说法,Aftonbladet 称素材被一个 AI agent 删除;TV4 节目总监 Mia Lindqvist 对瑞典电台 P4 Stockholm 否认这一说法,称问题出在制作公司的备份系统。相关讨论在 Hacker News 获得 138 分。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>无论最终归因是哪一方,这都是 agent 进入内容生产流程时最直接的警示样本。一台能动手删文件的 agent,配上从未验证过恢复的备份,一次事故就能抹掉数百天工作。HN 讨论把焦点从谁背锅拉回工程常识,没做过恢复测试的备份约等于没有备份,这条教训对所有正在把 agent 接入生产的团队同样适用。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>瑞典电视台 TV4 的真人秀《The Challenge》新季在首播前出了事故。据瑞典媒体 Sweden Herald 报道,这一季大部分已剪辑素材丢失,节目原定 11 月 22 日首播,如今改到 2027 年春末,整季需要从头重剪。Aftonbladet 的报道估算,损失相当于数百天的工作量。</p>
+<p><img alt="TV4 推迟 The Challenge 播出,整季需重新剪辑" src="https://swedenherald.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fstatic.swedenherald.com%2F8378300b-e898-407a-be8d-b7ca33af72c1%2F8378300b-e898-407a-be8d-b7ca33af72c1.jpg&amp;w=1200&amp;q=85" /></p>
+<p>素材为什么没了,目前流传着两种说法,分别来自报道方与播出方。Aftonbladet 的版本是,一季已经剪好的节目被一个 AI agent 删除。TV4 方面随即否认,节目总监 Mia Lindqvist 对瑞典电台 P4 Stockholm 表示:"并不是什么独立的 AI agent 进来删掉了素材。"她说,问题出在制作公司的备份系统,并补充道:"这意味着他们现在得从头剪起。"主持人 Ahmed Berhan 在 Aftonbladet 报道下的反应则是:"这是真的吗?!我就知道 AI 迟早要了我的命,这只是个开始。"截至发稿,两种说法都没有第三方调查佐证。</p>
+<p>这条新闻在 Hacker News 拿到 138 分,讨论重心很快从"AI 是不是凶手"挪到了备份本身。用户 Roark66 的疑问代表了许多人的第一反应,删除并不可怕,可怕的是几百天的工作量摆在那里,却从来没有验证过备份能不能恢复。用户 hobo123 给"能用的备份"下了一个被反复引用的定义,成功完成过恢复测试、并对完整文件树核对过校验和的备份,才算在工作。</p>
+<p>社区里流传最广的一种拼接,能让双方的说法各对上一部分。用户 organsnyder 猜测时间线可能分两步,主存储上的素材先被删掉,执行者是谁并不影响后一半,等人们去备份里找,才发现备份系统恢复不出来。用户 Ekaros 认为更可能的故事是存储系统故障叠加备份恢复失败。这些仍是猜测,但它们指向同一个事实,备份平时无人验证,出事时才第一次被真正调用。</p>
+<p>行业结构也被摆上台面。用户 munificent 从结构给出一种解释,视频文件体量远超大多数行业,一个制作动辄占用数 TB,拷贝本身就是物流问题;从业者多为艺术家出身,擅长创作和特定工具,未必有计算机基础;行业里大量小公司利润微薄,项目时有时无。几条叠加,在他看来许多制作团队的备份纪律远低于软件行业的想象。这一推断当场遭到反驳,在影视行业干了二十年的 Forgeties79 表示,十有八九的剧组,包括规模不大的独立制作,都遵循 3-2-1 或类似原则,三份拷贝、两种介质、一份异地,出了这种事故反而需要用严重失职来解释。用户 flanz_10 的回帖只有一句话,可他们确实出了故障,而且没有能用的备份。用户 benoau 贴出了皮克斯《玩具总动员 2》当年被误删的报道链接,那桩旧事最后靠一份带回家的个人备份把整部片子救了回来,正好说明误删有先例,救场的从来是真正可恢复的备份。</p>
+<p>还有一层讨论直接关乎 AI agent。用户 actionfromafar 指出,一份合格的备份同样防得住主动删除。用户 bathtub365 补充,剪辑工程的时间线状态本可以独立备份、随时回滚,前提是剪辑人员对备份介质没有写权限。换句话说,让 agent 碰生产环境之前,备份与权限这两道旧课都得先补齐。至于瑞典这单事故的最终归因,仍要等 TV4 或制作公司的后续说法。对正在把 agent 接进生产流程的团队,这则罗生门的价值相当直白,按最坏的删除场景设计防护,并且今天就去做一次真正的恢复演练。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>历史日报与语义历史均未匹配该事件(history_check 与 semantic_history 皆为空),本次为 TV4《The Challenge》素材丢失与首播推迟事件首次进入日报。</div>
+            <div class="tags-row"><span class="tag">AI agent</span><span class="tag">数据备份</span><span class="tag">影视制作</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50085323" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://swedenherald.com/article/tv4-postpones-the-challenge-until-2027-after-technical-failure-erases-edited-footage" target="_blank" rel="noopener">Original article <span class="domain">swedenherald.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AI Deletion Claim Pushes Challenge Sverige to 2027</div>
+                        <div class="source-url"><a href="https://tech-insider.org/challenge-sverige-ai-deletion-claim-2027-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">TV4 Disputes AI Blame for Lost ‘The Challenge’ Edits | Zeniteq</div>
+                        <div class="source-url"><a href="https://www.zeniteq.com/tv4-disputes-ai-blame-for-lost-the-challenge-edits-e9xcmn" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AI agent reportedly wipes entire season of Swedish TV show before premiere — as presenter says 'I knew AI would be the death of me'</div>
+                        <div class="source-url"><a href="https://tech.yahoo.com/ai/articles/ai-agent-reportedly-wipes-entire-151656684.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Why backup and recovery must be part of your AI agent security strategy</div>
+                        <div class="source-url"><a href="https://gitprotect.io/blog/ai-agent-security-strategy-backup-and-recovery" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-4c7da885a3bb">
+            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">tools</span><span class="score-tag">评分 7.6/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B" target="_blank" rel="noopener">MiniCPM-V4.7塞进手机，3GB内存跑35B MoE</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>OpenBMB(面壁智能)10 月 7 日在 HuggingFace 发布 MiniCPM-V 4.7 35B-A3B，为 MiniCPM-V 系列首个 MoE 架构的多模态模型，总参数 35B、每 token 激活约 3B，语言骨干来自 Qwen3.5/Qwen3.6，视觉模块基于 SigLIP2。模型卡 10 月 14 日仍在更新，本周增量包括配套的 DSpark 投机解码草稿模型(MiniCPM-V-4.7-35B-A3B-DSpark)、FP8 量化版本，以及降低灾难性遗忘的 SRFT 自回归重放微调方法。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>MoE 的端侧推理卡在内存上，专家权重放不进手机，按需加载又会让解码慢到没法实时交互。LES 预取、逐层量化加投机采样这套组合证明 35B 总参的模型可以在 3GB 内存里流畅跑，路线开源可复用。与 Qwen3.6 35B-A3B 的同档对比显示，Instruct 模式下更少推理时间拿到更高综合分，效率差异已经足以影响端侧选型。三端移动系统加五类芯片的 day-0 支持，把开发者试用门槛压得很低。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>面壁智能的 MiniCPM-V 4.7 35B-A3B 还在持续施工。模型 10 月 7 日在 HuggingFace 上线，10 月 14 日模型卡仍在更新，一周内陆续补上了 DSpark 投机解码草稿模型、FP8 量化版本和降低灾难性遗忘的 SRFT 微调方法。它是 MiniCPM-V 系列第一个 MoE 架构的多模态模型，总参数 35B，每个 token 只激活约 3B，语言骨干来自 Qwen3.5/Qwen3.6，视觉模块基于 SigLIP2。</p>
+<p>MoE 模型上手机的麻烦在于专家权重总量远超设备内存，按需加载会让解码卡顿到无法交互，锁定专家子集又会削弱能力。官方的工程解法分三层。Lookahead Expert Scheduling(LES)利用跨层路由预测，提前预取下一层可能用到的专家，预测只负责预取与调度，计算仍遵循模型原本的 token 级路由，漏掉的专家照常加载，因此不损失精度。细粒度逐层量化压缩专家权重的存储占用与内存流量。DSpark 投机采样与前两者配合，草稿模型先草拟一批候选、主模型一次校验，解码吞吐因此提高。三项叠加后，这个 35B 总参的模型在 iPhone 17 Pro Max 上以 3GB 内存实现每秒 13 个 token 以上的解码，官方称其为首个能在端侧流畅无损推理的开源 MoE。</p>
+<p><img alt="端侧 MoE 推理优化前后的速度对比" src="https://raw.githubusercontent.com/OpenBMB/MiniCPM-o/main/assets/minicpmv4.7/moe_speed_comparison_en.gif" /></p>
+<p>效率维度上，官方评测显示 Instruct 模式下 35B-A3B 以更少的推理时间取得高于 Qwen3.6 35B-A3B 的综合得分，把性能与耗时的帕累托前沿往前推了一格。视觉侧沿用 LLaVA-UHD v4 的 ViT 内早期压缩，支持 4x/16x 混合视觉 token 压缩，开发者可按任务在细节与成本之间调配。部署面铺得也宽，iOS、Android、HarmonyOS 三端可用，Rockchip、后摩、Intel、AMD、Arm 芯片拿到 day-0 支持，SGLang、vLLM、llama.cpp、Ollama 均可推理，上线一周已衍生 47 个量化模型和 7 个微调模型。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>模型 2026-10-07 创建于 HuggingFace、2026-10-14 仍在更新，历史日报无匹配记录(history_check 判定未出现)。本次覆盖的首发事实为系列首个 MoE 多模态模型及 LES、细粒度逐层量化、DSpark 三项端侧推理技术，本周增量为 DSpark 草稿模型、FP8 量化版本与 SRFT 微调方法，写作按已发布项目持续迭代的口径处理，避免写成全新首发。</div>
+            <div class="tags-row"><span class="tag">面壁智能</span><span class="tag">端侧推理</span><span class="tag">多模态模型</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a>
+<a class="ext-link" href="https://huggingface.co/openbmb/MiniCPM-V-4.7-1B" target="_blank" rel="noopener">Coverage <span class="domain">huggingface.co</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenBMB on X: "Interesting result for local VLMs. MiniCPM-V 4.7 35B-A3B not only used fewer tokens, but also produced a better voxel pagoda than Qwen 3.6 35B-A3. Efficiency + quality is becoming the real battleground for multimodal models.🔥" / X</div>
+                        <div class="source-url"><a href="https://x.com/OpenBMB/status/2109882972262535510" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">MiniCPM-V 4.7 35B-A3B local AI: custom runtime | LocalClaw</div>
+                        <div class="source-url"><a href="https://localclaw.io/models/minicpm-v-4-7-35b-a3b" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">MiniCPM-V-4.7-35B-A3B-5bit - ModelScope</div>
+                        <div class="source-url"><a href="https://www.modelscope.cn/models/mlx-community/MiniCPM-V-4.7-35B-A3B-5bit" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">MiniCPM-V 4.7 35B A3B - VRAM, Specs & Benchmarks</div>
+                        <div class="source-url"><a href="https://apxml.com/models/minicpm-v-4-7-35b-a3b" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-f350160e6b6f">
+            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.5/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://developers.googleblog.com/announcing-mcp-support-in-apigee-hybrid-agentic-tools-that-run-in-your-own-cluster/" target="_blank" rel="noopener">Apigee hybrid支持MCP，工具流量不出自家集群</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Google 宣布 Apigee hybrid 1.17.0 原生 MCP 支持 GA,MCP 数据平面直接部署在客户自有 Kubernetes 集群内,运行时仅从控制平面拉取配置更新。同期能力包括 OpenAPI 3.0.x 规范自动生成 MCP manifest、API Insights 对 MCP 流量与工具性能的观测、Cloud Trace 的代理调用链端到端追踪,文档站新增专门 MCP 章节并附带示例项目。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>企业把 agent 接进内部 API 时,数据出境与合规是最硬的约束。hybrid 形态让工具调用全程留在自有集群,并复用网关既有的 OAuth 2.0、API Key 与限流策略,等于把代理流量纳入企业已有的 API 治理体系。OpenAPI 自动生成 manifest 意味着存量 API 无需定制集成代码就能变成代理可调用的工具,受监管行业与延迟敏感负载因此成为官方点名的主打场景。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Apigee hybrid 的原生 MCP 支持随 1.17.0 版本正式 GA。MCP(Model Context Protocol)是让大模型按统一格式发现并调用外部工具的开放协议,规定了请求响应模式、认证要求与速率限制的描述方式。这次更新的重点在部署位置,MCP 数据平面整个跑在客户自己的 Kubernetes 集群里,代理的请求流量与工具执行都留在自有基础设施内,运行时只从控制平面拉取配置更新,敏感数据不出企业环境。</p>
+<p><img alt="MCP 数据平面在 Apigee X 与 hybrid 中的不同部署位置" src="https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/02-mcp-data-plane-placement-apigee-x-vs-hybrid.original.png" /></p>
+<p>接入侧不需要为代理重写接口。开发者在管理平面用 OpenAPI 规范定义好 API,平台会自动生成 MCP manifest,格式为标准 JSON-RPC 描述,任何 MCP 兼容的代理框架都能直接加载,把存量 API 当作原生工具调用,省掉定制集成代码。安全策略原样复用,所有调用仍经过网关强制执行 OAuth 2.0、API Key 和限流策略,受监管行业与延迟敏感负载是官方点名的主打场景。</p>
+<p>可观测性一并到位。API Insights 可以查看 MCP 流量与热门工具的性能,Cloud Trace 能把一次代理调用的整条链路做成瀑布图追踪。文档站新增了专门的 MCP 章节,覆盖清单格式、安全考量与合规实践,并附带完整的代理工作流示例项目。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>deep_read 判定 genuinely_new,本次为 Apigee hybrid 首次原生支持 MCP(1.17.0 版本),history_check 与 semantic_history 均未匹配到历史报道,官方开发者博客为首发一手来源,写作按全新 GA 发布的口径处理。</div>
+            <div class="tags-row"><span class="tag">谷歌云</span><span class="tag">MCP</span><span class="tag">API 网关</span></div>
+            <div class="links-row"><a class="ext-link" href="https://developers.googleblog.com/announcing-mcp-support-in-apigee-hybrid-agentic-tools-that-run-in-your-own-cluster/" target="_blank" rel="noopener">Source <span class="domain">developers.googleblog.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Apigee all release notes  |  Google Cloud Documentation</div>
+                        <div class="source-url"><a href="https://docs.cloud.google.com/apigee/docs/release-notes" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Alexandra Escobar's Post</div>
+                        <div class="source-url"><a href="https://www.linkedin.com/posts/alexandra-escobar-301276191_huge-news-for-enterprise-teams-running-multi-cloud-activity-7511191661192900609-FS0F" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Enable Model Context Protocol (MCP) in Apigee hybrid  |  Google Cloud Documentation</div>
+                        <div class="source-url"><a href="https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/enable-mcp" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Model Context Protocol (MCP) in Apigee overview  |  Google Cloud Documentation</div>
+                        <div class="source-url"><a href="https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-overview" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">You just installed your first Apigee hybrid cluster, what next? - Knowledge Hub - Google Developer forums</div>
+                        <div class="source-url"><a href="https://discuss.google.dev/t/you-just-installed-your-first-apigee-hybrid-cluster-what-next/289007" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-aecabc34316e">
+            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">industry</span><span class="score-tag">评分 7.2/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://www.unite.ai/alibabas-qwen-glasses-n1-use-himax-wiseeye-always-on-vision-ai/" target="_blank" rel="noopener">奇景光电5毫瓦常开视觉芯片进Qwen眼镜,分层唤醒延续航</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>奇景光电(Himax)10 月 14 日官宣,WiseEye HX6538 超低功耗 AI 处理器集成进阿里巴巴 Qwen Glasses N1,共同构成常开视觉感知系统,官方口径约 5 毫瓦的端侧实时视觉推理,芯片架构为 Arm Cortex-M55 加 Ethos-U55。CEO Jordan Wu 同时透露 WiseEye 此前已被一家全球领先科技公司用于其智能眼镜(公告未点名),阿里由此成为第二个公开选用它的头部客户。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>续航是智能眼镜轻量化形态下最硬的约束,常开视觉又是其中持续耗电的大头。把感知任务从主芯片挪到一颗 5 毫瓦的协处理器上,再让主机只在被需要时醒来,等于把最耗电的环节从持续运行改成按需运行。对供应链而言,这显示 AI 眼镜的体验分工正在细化,主芯片负责复杂计算,毫瓦级端点 AI 芯片负责常开盯梢,后者决定了常开功能能否真正常开。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>智能眼镜要当好随身助理,先得解决一直看与少用电的矛盾。奇景光电(Himax)10 月 14 日官宣,其 WiseEye HX6538 超低功耗 AI 处理器已集成进阿里巴巴 Qwen Glasses N1,共同构成常开视觉感知系统。官方口径下,这颗芯片以约 5 毫瓦的功耗独立完成实时端侧视觉推理,公司称该数字处于业界领先水平。</p>
+<p><img alt="阿里 Qwen 眼镜 N1 采用 Himax WiseEye 常开视觉 AI 方案" src="https://www.unite.ai/wp-content/uploads/2026/10/alibaba-qwen-glasses-n1-use-himax-wiseeye-vision-ai.jpg" /></p>
+<p>方案的省电逻辑分两层。HX6538 基于 Arm Cortex-M55 CPU 与 Ethos-U55 NPU,在眼镜常规影像通路之外单独运行视觉识别模型,持续执行人形与事件检测。其上是分层视觉唤醒机制,小芯片检测到相关人或事件时,才把主机唤醒做进一步的 AI 处理,其余时间主机保持非活跃,整机功耗因此被压下来,续航随之延长。</p>
+<p>按奇景产品文档,WiseEye2 方案由超低功耗 CMOS 图像传感器与 HX6538 AI 微控制器组成,较上一代 WE1 芯片推理速度快 32 倍、能效高 50 倍(官方口径),同功耗级别可运行更复杂的模型、返回更准确的结果;量产模组为 HX6538 搭配 640×480 分辨率的 HM0360 传感器,封装尺寸 20.5×21.5×4.92 毫米。</p>
+<p>奇景光电 CEO Jordan Wu 在公告中说:"在 WiseEye 早先被一家全球领先科技公司用于其最新智能眼镜之后,阿里巴巴为 Qwen Glasses 选用它,进一步验证了 WiseEye 在超低功耗运行、常开感知与端侧 AI 处理上的优势。"从供应链视角看,这颗躲在影像通路旁边的 5 毫瓦协处理器把常开视觉的电力成本降到了整机可以承受的量级,也给 AI agent 式的主动感知与实时服务留出了电池余量。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>10 月 14 日奇景光电官方公告为首发事实,历史日报与语义历史均无匹配(history_check 判定未出现)。本次新增量为 Qwen Glasses N1 首次确认搭载 HX6538,并披露 5 毫瓦常开视觉推理、分层视觉唤醒架构等细节,CEO 原话另透露此前已有全球头部科技公司采用,按全新供应链合作事件处理。</div>
+            <div class="tags-row"><span class="tag">智能眼镜</span><span class="tag">端侧AI</span><span class="tag">芯片供应链</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.unite.ai/alibabas-qwen-glasses-n1-use-himax-wiseeye-always-on-vision-ai/" target="_blank" rel="noopener">Source <span class="domain">www.unite.ai</span></a>
+<a class="ext-link" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxOTjFXbXVwLWlDRzRYV1BwSkl4SXRYNlZRT1lPYjdiOUsybEZIUm00em9qV2hmemU1dm9OeXlWOHRVNURGYm5MdEZMZzY5NUJwRG1kQ0ZJMGVoeEN4WnB5Y0ZxWWt1WWRTV2dEQzM5Tml2TzFFUDVwZVp0TnhkMlhaWGo0d0FBcmlvdUFFZUNDa0xxZ3NTMnpzSE9uQW1QdE5BeTZRT3J1NlZQSWFqczdOMHRzT0swWnpaLUlZ?oc=5" target="_blank" rel="noopener">Source <span class="domain">news.google.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Alibaba’s Qwen Glasses N1 Use Himax WiseEye Always-On Vision AI – Unite.AI</div>
+                        <div class="source-url"><a href="https://www.unite.ai/alibabas-qwen-glasses-n1-use-himax-wiseeye-always-on-vision-ai" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Himax WiseEye Ultralow Power AI Adopted in Alibaba's ...</div>
+                        <div class="source-url"><a href="https://www.himax.com.tw/wp-content/uploads/2026/10/PR-Himax-WiseEye-Ultralow-Power-AI-Adopted-in-Alibabas-Latest-Qwen-AI-Glasses-Final.pdf" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Himax WiseEye Ultralow Power AI Adopted in Alibaba’s Latest Qwen Glasses</div>
+                        <div class="source-url"><a href="https://www.manilatimes.net/2026/10/14/tmt-newswire/globenewswire/himax-wiseeye-ultralow-power-ai-adopted-in-alibabas-latest-qwen-glasses/2445361/amp" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-feb8f7eb7d35">
+            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">tools</span><span class="score-tag">评分 7.0/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://github.com/K-Dense-AI/scientific-agent-skills" target="_blank" rel="noopener">177个科研技能开源，把编程agent变成AI科学家</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>scientific-agent-skills 是一个已存在约一年的成熟仓库，本次新闻点是版本迭代与热度回升。最新版本 v2.72.0 发布于 2026 年 10 月 1 日，README 最近一次提交在 10 月 12 日，仓库随后重新登上 GitHub Trending。history_check 未在历史日报中找到匹配，属首次覆盖。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>通用编程 agent 缺乏科研领域能力是 AI for Science 落地的常见门槛，这个库用开源技能包的思路补齐了一环。177 个验证技能与 100 多个数据库接入按开放 Agent Skills 标准打包，Cursor、Claude Code、Codex 等主流工具通用，意味着一份技能资产可以在多个工具之间复用。一年迭代到 v2.72.0 的节奏，也给技能库这类开源项目的持续维护提供了一个样本。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>GitHub Trending 最近重新出现一个熟悉的项目。K-Dense-AI 的 scientific-agent-skills 仓库创建于 2025 年 10 月，至今约一年，期间持续迭代，最新版本 v2.72.0 发布于 10 月 1 日，README 在 10 月 12 日仍有提交，随后热度回升登上 Trending。它解决的问题很直接，把任意 AI 编程 agent 改造成科研助手。</p>
+<p>项目提供 177 个经过验证的即用型技能和 100 多个科学数据库接入，覆盖生物学、化学、医学与药物发现。技能库遵循开放的 Agent Skills 标准，Cursor、Claude Code、Codex、Pi、Google Antigravity 等主流编程工具都可以直接安装，装上之后，通用编程 agent 便多出一层领域科研能力和专业数据源。仓库以 MIT 协议开源，方法学有对应的 arXiv 论文（编号 2609.00065）支撑。</p>
+<p>README 自述全球有超过 25 万科学家在使用，并称自己是科学领域规模第一的技能库，这些数字与名头均为项目方口径，暂无第三方数据佐证。可以直接核实的是维护节奏，一年内版本号走到 v2.72.0，10 月 12 日仓库仍有动作。对科研团队，它给出了一条低成本路径，用现成编程 agent 加开源技能包组装自己的领域助手。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>仓库创建于 2025 年 10 月 19 日，至今约一年，deep_read 判定 significant_update。本次增量为 2026 年 10 月 1 日发布的 v2.72.0 与 10 月 12 日的 README 提交，随后登上 GitHub Trending。history_check 与语义历史库均未匹配到此前报道，写作按成熟项目版本迭代与热度回升的口径处理，避免写成新项目首发。</div>
+            <div class="tags-row"><span class="tag">Agent Skills</span><span class="tag">开源社区</span><span class="tag">AI for Science</span></div>
+            <div class="links-row"><a class="ext-link" href="https://github.com/K-Dense-AI/scientific-agent-skills" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Agent Skills Open Standard Explained | Anthropic SKILL.md Specification Adopted by Claude Code, Codex, Cursor & 32 Tools - Interoperability Guide 2026</div>
+                        <div class="source-url"><a href="https://www.paperclipped.de/en/blog/agent-skills-open-standard-interoperability" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">The Agent Skills Ecosystem in 2026: Who's Building, What's Working, and What's Next | Agentman Blog</div>
+                        <div class="source-url"><a href="https://agentman.ai/blog/agent-skills-ecosystem-report-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">scientific-agent-skills/skills/peer-review/SKILL.md at main · K-Dense-AI/scientific-agent-skills · GitHub</div>
+                        <div class="source-url"><a href="https://github.com/k-dense-ai/scientific-agent-skills/blob/main/skills/peer-review/SKILL.md" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">GitHub - K-Dense-AI/scientific-agent-skills: Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard. · GitHub</div>
+                        <div class="source-url"><a href="https://github.com/k-dense-ai/scientific-agent-skills" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">K-Dense Web vs Scientific Agent Skills</div>
+                        <div class="source-url"><a href="https://www.k-dense.ai/blog/k-dense-web-vs-scientific-agent-skills" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- ═══════ RADAR SCAN ═══════ -->
+        <section class="radar-section">
+            <div class="radar-header">📡 雷达扫描</div>
+            <div class="radar-card">
+                <div class="radar-rank">#1</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://github.com/ifixai-ai/iFixAi" target="_blank" rel="noopener">iFixAi:两分钟给 AI agent 做独立体检</a> <span class="radar-category">tools</span></div>
+                    <div class="radar-blurb">开源工具对 AI agent 做独立审计,人或 agent 自己都能跑,120 秒内回答“它到底有没有在干该干的活”,观察 agent 经济的质检层能否长出标准</div>
+                </div>
+            </div>
+            <div class="radar-card">
+                <div class="radar-rank">#2</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://github.blog/engineering/architecture-optimization/from-2500-requests-to-24-rebuilding-star-history-without-the-stargazers/" target="_blank" rel="noopener">GitHub 把 star 历史查询从 2500 次请求压到 24 次</a> <span class="radar-category">tools</span></div>
+                    <div class="radar-blurb">GitHub 工程博客复盘 star 历史 API 重构,不返回个人身份、不给数据库无界压力,隐私与性能的取舍值得做图表接口的团队一读</div>
+                </div>
+            </div>
+        </section>
+
+<!-- ═══════ PICK OF THE DAY ═══════ -->
+
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+    <div class="stats">18 源<span>|</span>148 条<span>|</span>9 条精选<span>|</span>17 条候选</div>
+    <div class="generated">生成于 2026-10-15T08:15:25.499960</div>
+</footer>
+
+</div>
+<script>
+(function () {
+    function closeLightbox(overlay, escHandler) {
+        overlay.remove();
+        document.removeEventListener('keydown', escHandler);
+    }
+    function openLightbox(src, alt) {
+        var overlay = document.createElement('div');
+        overlay.className = 'img-lightbox';
+        var big = document.createElement('img');
+        big.src = src;
+        big.alt = alt || '';
+        overlay.appendChild(big);
+        var escHandler = function (e) {
+            if (e.key === 'Escape') closeLightbox(overlay, escHandler);
+        };
+        overlay.addEventListener('click', function () { closeLightbox(overlay, escHandler); });
+        document.addEventListener('keydown', escHandler);
+        document.body.appendChild(overlay);
+    }
+    document.addEventListener('click', function (e) {
+        var img = e.target;
+        if (img && img.tagName === 'IMG' && img.closest && img.closest('.article-body')) {
+            e.preventDefault();
+            openLightbox(img.src, img.alt);
+        }
+    });
+})();
+</script>
+</body>
+</html>
