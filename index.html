@@ -1,10 +1,10 @@
-<!-- ai-daily-final-sha256:7b0b154d0df894fe605d8f6a6cf7e647b9331ae0fa9647627107b6939f65c32e -->
+<!-- ai-daily-final-sha256:a44acd3c05a90b8d4f5985c55f5d5ec05a60f373431592788c5c0912226c099d -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 | 2026-10-15 — AI 内容机会日报</title>
+<title>AI 日报 | 2026-10-16 — AI 内容机会日报</title>
 <style>
 /* ═══════════ CSS Reset & Base ═══════════ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
@@ -719,40 +719,41 @@ body {
 
 <!-- ═══════ HEADER ═══════ -->
 <header class="header">
-    <h1>AI 日报 | 2026-10-15</h1>
+    <h1>AI 日报 | 2026-10-16</h1>
     <div class="subtitle">AI 内容机会日报</div>
     <div class="divider"></div>
-    <div class="meta-line">2026-10-15<span>|</span>由 <strong>zcode-chief-editor</strong> 生成</div>
+    <div class="meta-line">2026-10-16<span>|</span>由 <strong>chief-editor-zcode</strong> 生成</div>
     <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
       <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
     </div>
-    <div class="trend-callout">语音智能体换了基准冠军、阿里 AI 眼镜从发布走到开售,而 Netflix 的评估体系与 TV4 的删片事故提醒人们,agent 进生产的第一课是把验证和备份补上</div>
+    <div class="trend-callout">开放权重赛道今天挤进三位重量级玩家:Meta 首次放出 816B 的 Muse Spark Open 并与 Apple 打通桌面端,NVIDIA 补上 120B 多模态代理模型,微软亮出 2.8T 前沿基座却只授权不开放;同一周 agent 基础设施从沙箱到评估也在密集开源。</div>
 </header>
 
 <!-- ═══════ TOP ARTICLES ═══════ -->
 <section class="articles-section">
     <div class="section-label">今日最值得关注</div>
-    <div class="article-card" data-id="raw-c50bc83caf29">
-            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">tools</span><span class="score-tag">评分 9.3/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://x.ai/news/grok-voice-3" target="_blank" rel="noopener">语音基准换冠军，Grok Voice 3.0 每天数百万对话</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>SpaceXSI(前身 xAI，经 SpaceX 收购后两次更名)10 月 14 日发布语音到语音模型 Grok Voice 3.0，官方定位为“世界最智能的语音模型”。模型当天在 Voice Agent API 上线，定价每分钟 0.08 美元与 Grok Voice 2.0 持平，调用 grok-voice-latest 的存量 agent 已自动切换。在 Artificial Analysis 的 Speech-to-Speech Index 上，它以 86.9 分排名第一。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>语音 agent 的竞争从榜单分数延伸到生产规模与单位成本。Grok Voice 3.0 在独立基准登顶的同时，把 Big Bench Audio 单任务成本压到 0.025 美元，并用 Tesla 与 Starlink 的日均数据证明它承载真实客服流量；τ-Voice 上落后 OpenAI 但首音频响应延迟低约 40%，给开发者提供了一个在准确率与响应速度之间做取舍的样本。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 14 日，SpaceXSI 发布语音到语音模型 Grok Voice 3.0，官方将其定位为“世界最智能的语音模型”，称其在解决客服来电上创下新纪录，延迟低于一秒。发布方的前身是 xAI，经 SpaceX 收购后两次更名，官网仍使用 x.ai 域名。模型当天进入 Voice Agent API，定价每分钟 0.08 美元，折合每小时 4.80 美元，与 Grok Voice 2.0 持平，调用 grok-voice-latest 的存量 agent 已自动完成切换，开发者无需改动。</p>
-<p>在 Artificial Analysis 的独立测试中，Grok Voice 3.0 以 86.9 分登上 Speech-to-Speech Index 第一名，领先 GPT-Live-1(Astra, Medium)的 83.2 与 Gemini 3.8 Live(Ext. Thinking, High)的 82.6，也高于自家上一代的 81.3。这项指数综合了语音推理、τ-Voice 以及盲测对战中的偏好与任务成功率。分项成绩包括 Big Bench Audio 语音推理 98.5%，Speech Agent Arena 人类偏好 Elo 1070，衡量停顿、轮换与打断应对自然度的 Full Duplex Bench 为 97.0%。</p>
-<p>榜单里同样有对发布方不利的数字。在考察口音、背景噪声与打断场景下客服通话处理能力的 τ-Voice 上，Grok Voice 3.0 得分 71.6%，落后 GPT-Live-1 的 74.5%；官方选择的叙述角度是，新模型的首音频响应延迟低约 40%，等于在智能与响应速度之间重新划出一条取舍线。成本是另一块筹码，按 Artificial Analysis 的 Big Bench Audio 单任务成本核算，Grok Voice 3.0 为 0.025 美元，低于 GPT-Live-1 的 0.030 美元与 GPT-Realtime-2.1 的 0.055 美元。</p>
-<p>企业场景的背书来自 ServiceNow 的开源基准 EVA-Bench，该基准覆盖 200 多个真实企业场景，按准确率与客户体验联合评分，Grok Voice 3.0 取得 74% 的最高准确率，联合评分同样居首。ServiceNow 高级产品总监(Agentic Evals and RAI)Nitin Aggarwal 在官方稿中写道："Grok Voice 3.0 sets a new Pareto frontier on EVA-Bench... setting a new standard for what enterprises can expect from AI on the front line of customer service."</p>
-<p>比榜单更硬的是生产数据。Tesla 车辆中每天由 Grok Voice 3.0 处理数百万次对话，驾驶者可以用 Connectors 完成查日历、回邮件等简单请求，把订咖啡、订晚餐交给 Grok Bot，全程免手操作，Grok Bot 的语音模式也由这一代模型驱动。Starlink 呼叫中心用它每天接听 2 万通多语种客服电话，约 70% 无需人工介入，四分之一的销售来电在挂断前完成购买；一个基于 Grok Voice 3.0 搭建的 agent 能独立走完验证客户、排查硬件、发放退款、寄出更换设备的全流程。</p>
-<p>需要保留的审慎之处是，基准分数引自 Artificial Analysis 10 月 13 日的测试，生产规模数字来自厂商自述，τ-Voice 上与 OpenAI 的差距客观存在，“世界最智能”属于发布方的官方定位。Unite.AI、Superpower Daily 等媒体的跟进报道基本复述官方口径，独立的横向验证还需要更多时间与样本。</p></div></details>
+    <div class="article-card" data-id="raw-5a3a27e8e6a4">
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">tools</span><span class="score-tag">评分 9.6/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://venturebeat.com/technology/meta-unveils-muse-spark-open-the-new-top-u-s-open-weights-model-and-it-runs-on-two-paired-mac-desktops" target="_blank" rel="noopener">Meta放出816B开放权重模型，拉上苹果两台Mac就能跑</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Meta 在 10 月 15 日发布 Muse Spark Open 并放开权重下载，总参数 8160 亿的 MoE 大模型，每个 token 激活 420 亿参数，支持 100 万 token 上下文，能读文本、图像、视频、音频，只输出文本。Meta 称它是"迄今最强的美国开放权重模型"。发布同时给出桌面运行方案，两台 512GB 统一内存的 M5 Ultra Mac Studio 拼出 1TB 内存，用苹果 MLX 框架本地跑，The Verge、VentureBeat、TechCrunch 等多家媒体同步报道。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>过去两年企业能下载自部署的大模型主要来自 Qwen、DeepSeek、Kimi 等中国实验室，Hugging Face 今年 3 月评估显示中国模型占平台下载量 41% 超过美国，OpenRouter 9 月数据里美国来源请求 60% 的 token 由开放权重模型处理且多数由中国实验室供给。Meta 此前开放过权重的只有 30B 的 Glimmer，主力模型全走 API，Spark Open 是它第一次把大尺寸模型权重放出来，有采购合规要求的企业多了一个美国选项。苹果为桌面端本地推理公开站台，两家常年较劲的公司罕见协作了几个月。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>The Verge、VentureBeat、TechCrunch 等多家媒体同步报道了 Meta 的这次发布。10 月 15 日，Meta 把大模型 Muse Spark Open 的权重放开下载，总参数 8160 亿，采用 MoE 混合专家架构，每个 token 只激活其中 420 亿参数，推理计算量接近一个 42B 模型，支持 100 万 token 上下文，能读文本、图像、视频、音频，输出只有文本。Meta 自称它是"迄今最强的美国开放权重模型"，这里的限定词是"美国"，综合分数排在它前面的开放权重模型目前都来自中国实验室。</p>
+<p>发布最抢眼的部分是苹果的参与。Meta 给出的桌面运行方案是两台 M5 Ultra 芯片的 Mac Studio，每台 512GB 统一内存，合计 1TB，用苹果为自家芯片打造的机器学习框架 MLX 在本地跑完整个模型。Mark Zuckerberg 在 X 上发帖说权重当天放出，在与 John Ternus 及苹果团队的合作之下它在新款 Mac Studio 上跑得很好，新任苹果 CEO John Ternus 随即回帖祝贺，称这个量级的模型能这样高效地在桌面上运行，Mac Studio 正在把设备端 AI 往前推。Meta 首席 AI 官 Alexandr Wang 对 Axios 打趣，两家常年较劲的公司终于又玩到一起，并透露双方已经协作了几个月。</p>
+<p>桌面方案有两个现实约束。512GB 内存的 M5 Ultra 配置 10 月下旬才上市，价格未公布，在售的 256GB 内存版一台 10799 美元，按现价凑出同样的 1TB 内存需要四台、合计约 43196 美元，这只能当作两台 512GB 版的价格参照。模型卡同时写明，NVFP4 量化版本需要至少 700GB 加速器内存，BF16 版本需要 2TB，普通工作站配不到这个容量。</p>
+<p>Meta 自报的基准表需要完整地看。工具调用类的 JobBench 它拿 61.8 分排在第一，GLM 5.3 是 61.4，Kimi K3 是 54.3，MCP-Atlas 拿 89.2 也领先列出的全部对手。到了编码和专业工作测试，排名反过来了。Terminal-Bench 2.1 它得 76.4，落后 GLM 5.3 的 83.9 和 Kimi K3 的 85.0，DeepSWE 1.1 得 60，落后 GLM 5.3 的 67 和 Kimi K3 的 68，GDPVal-AA v2 得 1401，排在 GLM 5.3 的 1653、Qwen3.8 的 1613 和 Kimi K3 的 1537 之后。综合性的 Artificial Analysis 智能指数，Meta 自报 39 分，该机构独立榜单上 MiMo-V2.6-Pro 46 分、GLM-5.3 45 分、Kimi K3 44 分都在前面，截止发稿也没有查到它对 Spark Open 本体的独立评测。所谓最强，目前只在美国这个范围内、在 Meta 自己的表格里成立。</p>
+<p>许可条款里有实际约束。Muse Model License 允许运行、修改、微调、蒸馏和再分发，同时加了一道营收门槛，被许可方连同关联方在任意连续 12 个月总营收超过 2000 万美元，若要把它做成模型服务对外提供，需要先通知 Meta 并另签书面协议。内部部署、科研以及模型服务之外的商用被明确豁免，企业拿它做内部助手或把能力嵌进自家产品不受影响。使用方需要在产品上标注 Built with Muse Spark Open，Meta 声明不主张模型生成内容的所有权。</p>
+<p>在这次发布之前，Meta 开放过权重的模型只有 8 月 10 日的 30B 小模型 Glimmer，主力 Muse Spark 和更强的 Wonder 一直只走 API，Spark Open 补上了大尺寸这一档。权重托管在 Hugging Face、Amazon SageMaker AI、Google Cloud Model Garden 和 Microsoft Foundry Models，API 侧 Meta 点名了 Together AI 等七家托管商，Together AI 的 serverless 报价为每百万 token 输入 1.25 美元、输出 4.25 美元。各托管商能力并不一致，例如 Groq 把上下文限制在 131072 token，Fireworks 才给到完整的约 105 万。</p>
+<p>放到大盘里看，Hugging Face 今年 3 月的评估显示此前一年中国模型占平台下载量 41%，超过美国模型，OpenRouter 9 月数据里美国来源请求 60% 的 token 由开放权重模型处理，其中多数由中国实验室供给。Spark Open 把美国自研开放权重重新带回牌桌，牌桌上排名靠前的选手，眼下仍然是中国模型。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Grok Voice 3.0 为 10-14 发布的全新模型迭代，基准数据出自 Artificial Analysis 10-13 测试；history_check 显示历史日报未出现同题报道，semantic_history 亦未命中相似文章，属首次覆盖。</div>
-            <div class="tags-row"><span class="tag">Grok Voice</span><span class="tag">语音模型</span><span class="tag">SpaceXSI</span></div>
-            <div class="event-aggregation"><div class="event-head">事件聚合 · 3 个来源 · 已合并 1 条候选</div><div class="event-sources"><a class="event-source" href="https://x.ai/news/grok-voice-3" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Introducing Grok Voice 3.0 | SpaceXSI - xAI</span><span class="event-domain">x.ai</span></a><a class="event-source" href="https://news.google.com/rss/articles/CBMiREFVX3lxTE1mOUcxZkpjVVVyYjlLOWk1V0sxb1QyY3dVLWtpcDBFbEpqQzlDQzFPekdzSUVKbnhoaHZNd3ZzYzlweElu?oc=5" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Introducing Grok Voice 3.0 | SpaceXSI - xAI</span><span class="event-domain">news.google.com</span></a><a class="event-source" href="https://siliconangle.com/2026/10/14/grok-voice-3-0-from-spacexsi-outscores-openai-and-google-on-speech-to-speech-index/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Grok Voice 3.0 from SpaceXSI outscores OpenAI and Google on speech-to-speech index - SiliconANGLE</span><span class="event-domain">siliconangle.com</span></a></div></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>10 月 15 日全新发布，历史查重与语义查重均未匹配（verdict 未出现）。与 10 月 12 日的 Muse Wonder 属不同事件；此前 Meta 开放权重仅有 30B Glimmer，816B 模型首次开放下载、苹果协作桌面运行方案、Muse Model License 均为全新事实。</div>
+            <div class="tags-row"><span class="tag">Meta</span><span class="tag">开放权重</span><span class="tag">Muse Spark Open</span></div>
+            <div class="event-aggregation"><div class="event-head">事件聚合 · 3 个来源 · 已合并 2 条候选</div><div class="event-sources"><a class="event-source" href="https://venturebeat.com/technology/meta-unveils-muse-spark-open-the-new-top-u-s-open-weights-model-and-it-runs-on-two-paired-mac-desktops" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Meta unveils Muse Spark Open, the new top U.S. open weights model — and it runs on two paired Mac desktops</span><span class="event-domain">venturebeat.com</span></a><a class="event-source" href="https://www.theverge.com/news/1012293/meta-apple-muse-spark-open-ai-model-mlx" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Meta and Apple team up to make Muse AI models run better on Macs</span><span class="event-domain">www.theverge.com</span></a><a class="event-source" href="https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Meta launches an open-weight AI model that runs on Macs</span><span class="event-domain">techcrunch.com</span></a></div></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Quick Start Grok Voice and Text-to-Speech API With Realtime WebSocket Streaming</div>
-                        <div class="source-url"><a href="https://www.youtube.com/watch?v=B3A0fNZTgko" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Meta’s 816B-Parameter Muse Spark Open Weights Are Now Public – Unite.AI</div>
+                        <div class="source-url"><a href="https://www.unite.ai/metas-816b-parameter-muse-spark-open-weights-are-now-public" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -762,8 +763,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Evalgent - Grok Voice Agent Builder Pricing: $0.08/min (Oct 2026)</div>
-                        <div class="source-url"><a href="https://www.evalgent.com/blog/xai-grok-voice-agent" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Meta发布Muse Spark Open，8160亿参数、权重开放</div>
+                        <div class="source-url"><a href="https://pasqualepillitteri.it/zh/news/24346/meta-muse-spark-open-816b-quanzhong-kaifang" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -773,8 +774,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">xAI Introduces Grok Voice 3.0 Speech-to-Speech Model for Voice Agents – Unite.AI</div>
-                        <div class="source-url"><a href="https://www.unite.ai/xai-introduces-grok-voice-3-0-speech-to-speech-model-for-voice-agents" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Meta released Muse Spark Open: what you can run, and what it takes</div>
+                        <div class="source-url"><a href="https://flaviocopes.com/muse-spark-open" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -784,19 +785,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Introducing Grok Voice 3.0 | SpaceXSI</div>
-                        <div class="source-url"><a href="https://x.ai/news/grok-voice-3" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">xAI upgrades its voice API to Grok Voice 3.0 without raising prices | Superpower Daily</div>
-                        <div class="source-url"><a href="https://superpowerdaily.com/posts/xai-upgrades-its-voice-api-to-grok-voice-3-0-without-raising-prices" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Meta’s Muse Spark Open Comes With Strings Attached | Trending Topics</div>
+                        <div class="source-url"><a href="https://www.trendingtopics.eu/muse-spark-open-meta-open-weight-license" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -806,91 +796,566 @@ body {
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-a0e0fec2c2b5">
-            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.6/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://openai.com/index/amp-beyond-coding" target="_blank" rel="noopener">编码 agent 出圈,Amp 重度用户周耗百亿 token</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>OpenAI 官方博客发布 Amp 客户案例,展示其近期密集上线的一批能力,包括 Sign in with ChatGPT 登录集成(换取更多 token 额度与 GPT-6 Astra 访问)、GPT-6 Astra 承担写作设计营销等编程外工作、GPT-Live-1 驱动的 Calling Puck 实时语音(手表可用),以及在 GPT-6 Astra 上测试的 Ultrafast 极速模式。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>编码 agent 的竞争正从写代码扩展到完整工作流。这个案例把计费方式、模型能力、语音交互和响应速度放进同一个产品流程,是 agent 出圈的可参考样本,Sign in with ChatGPT 也显示登录入口正在成为模型分发渠道。需要记住它属客户证言,数字均来自 Amp 一方。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>先交代来源属性。这是 OpenAI 官方博客最新发布的客户案例,主角是 AI 编程 agent 产品 Amp 和它的 CEO Quinn Slack。客户案例的本质是客户证言加产品展示,发布方是 OpenAI 官方渠道,立场天然偏向自家模型,以下事实与引语均出自原文,阅读时需要带着这层属性。</p>
-<p>Amp 想做的是帮开发者把想法变成能运行的软件,覆盖从决定做什么、写代码到设计页面的全过程。它会根据实际效果替用户选择和推荐模型,OpenAI 模型占 Amp 全部 token 用量的大头。这次案例重点展示的,是 Amp 近期密集上线的一批新能力,它们共同把 agent 从代码里推了出来,推进写作、设计、营销这些过去靠人做的环节。</p>
-<p>成本是最先被摆上台面的问题。Quinn Slack 描述,Amp 部分重度用户每周要消耗 100 亿 token,而如果人们盯着每一笔用量精打细算,就不敢放手让 agent 去试,也就摸不到它真正的上限。为此 Amp 上线了 Sign in with ChatGPT 集成,用 ChatGPT 账号登录即可获得更多 token 额度和 OpenAI 模型访问权,其中包括 GPT-6 Astra。他说:"Sign in with ChatGPT 让人们可以拥有那种不用数着每一个 token 的感觉。一旦你真的放开手让 agent 去跑、给它更长的活动半径,你就会意识到它到底能做多少。"</p>
-<p>编程之外的工作由 GPT-6 Astra 接手。Amp 团队只有 20 个人,没有专职营销,面向新用户的体验改进、让更多人通过搜索发现 Amp 的增长工作都交给了 agent。Quinn Slack 的说法是:"我们没有专门投入一个人,但我们专门投入了一个 agent。"他补充说团队对写作和设计风格非常挑剔,但对 GPT-6 Astra 的产出相当满意。这种用法延续到了他家里,他把自家住宅的平面图交给 GPT-6 Astra 转成 Blender 3D 模型,再和孩子一起把模型改成游戏,比如在房子里加一条懒人河,或者绕着屋子追大蒜,灵感来自祖母讨厌大蒜。他强调,这类事情在几个月前还做不到。</p>
-<p>交互形态的变化集中在 Puck。Puck 是 Amp 内置的对话式助手,负责启动和管理其他 agent,可以让它开一个 agent 去排查 bug、协调几个 agent 同时干活,或者找回之前关于某个技术问题的讨论。新推出的 Calling Puck 由 GPT-Live-1 驱动,支持实时语音交互,在手表上也能用。Quinn Slack 的想象是,人离开电脑甚至出门跑步的时候,也能靠语音让 agent 继续干活。</p>
-<p>速度层面的变量是 Ultrafast。Amp 正在 GPT-6 Astra 上测试这个模式,更快的响应可能改变人们使用 agent 的方式。眼下常见的做法,是在等待期间在几个 agent 任务之间来回切换,模型变快之后,用户需要同时照看的 agent 可能变少,agent 也可以在交回结果前多花时间自查。Quinn Slack 的原话是:"人们还没见过一个又这么好、又这么快的模型。"</p>
-<p>这份案例值得读的地方,在于它把编码 agent 出圈所需要的整条链路摆上了台面,计费与登录方式、模型的多面手能力、语音调度入口、响应速度,彼此咬合才撑得起每周百亿 token 的用法,Sign in with ChatGPT 更是暗示登录入口正在变成模型的分发渠道。限制同样要说清楚,文中全部数字和体验来自 Amp 一方,由 OpenAI 官方博客转述,没有第三方评测,Ultrafast 也没有公布提速幅度和上线时间表,目前仍在测试。把它当作一个可参考的产品化样本是合适的,直接推成行业结论则需要更多独立证据。Amp 给自己定的下一步,是把编码之前和之后的更多环节也装进 agent。</p></div></details>
+<div class="article-card" data-id="raw-347d0cbcae8e">
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">community</span><span class="score-tag">评分 9.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50105791" target="_blank" rel="noopener">微软公开2.8T前沿基座训练账本，自称胜过开放模型却不开放</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>微软 AI 部门 10 月 15 日在官方博客宣布，新的前沿基座模型 MAI-Base-2 完成预训练。它是混合专家架构，总参数 2.8 万亿，处理每个 token 激活 800 亿，2026 年 8 月到 9 月用 16000 块 GB200 GPU 训练了 38 天。微软自称在自建评测上超过所有被测的开放权重模型，达到同样效果所需算力约为最强开放基座 DeepSeek-V4-Pro-Base 的 1/4 到 1/12。模型权重不开放，目前进入后训练阶段，之后通过 Foundry 平台授权给受信任的企业伙伴。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>大厂很少把前沿模型的参数规模、GPU 数量、训练时长、利用率一起公开，这份账本给了行业一个可对照的样本。4 到 12 倍的算力效率声明如果站得住，同样水平的基座模型训练成本会被明显拉开。放在同一天看更清楚，Meta 放出 816B 开放权重模型、NVIDIA 发布 120B 开放模型，微软选了第三条路，用自报评测证明实力，再把权重锁进授权体系。评测集自建、口径自定，外部暂时无法独立验证这些声明，开放与闭源阵营的信息不对称在这件事上体现得同样明显。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>微软 AI 部门 10 月 15 日在官方博客发了一篇长文，第一次把自家前沿模型的预训练过程摊开来讲。新基座模型 MAI-Base-2 采用混合专家架构，总参数 2.8 万亿，处理每个 token 只激活 800 亿参数。今年 8 月到 9 月，16000 块 GB200 GPU 连续跑了 38 天完成训练，平均 MFU 为 21%（衡量 GPU 有多少算力真正用在有效计算上），训练正常推进的时间占比 89%。</p>
+<p>博客给出两个核心声明。其一，在与分词器无关的 BPB 指标（模型在没见过的文本上平均每字节要花多少比特，越低越好）上，MAI-Base-2 在微软自建的留出评测集上低于所有被测的开放权重模型，对比对象包括 DeepSeek-V4-Pro-Base、Kimi K3、Qwen3.8 和 MiMo-V2.6-Pro。其二，用拟合出的缩放曲线反推，要达到 DeepSeek-V4-Pro-Base 的同样效果，微软这套训练配方所需算力只有对方的约 1/4 到 1/12，比自家 6 月的上一代 MAI-Base-1 也省了 6.3 到 12.7 倍。这些数字全部出自微软自己的评测口径，代码评测用的是 MAI 自己的代码库，其余题目委托外部厂商出题并做了去污染，目前没有第三方复验。对 Kimi K3 等三个只有后训练版本的对手，微软自己也注明后训练可能影响成绩。</p>
+<p>发布方式把它和同一天的另外两条新闻区分开来。Meta 放出了 816B 的开放权重模型 Muse Spark Open，NVIDIA 发布了 120B 的开放多模态模型，微软这个在评测里压过所有被测开放模型的基座，权重本身不会开放。微软强调训练数据全部为有机数据、不涉及从其他模型蒸馏、来源可追溯，并把数据干净当作向企业授权的底气，权重将通过 Foundry 平台授权给受信任的伙伴。模型目前还在后训练阶段，实际能力要等后续发布。</p>
+<p>技术细节里挑三处讲成人话。</p>
+<p>先看 source scaling（数据源缩放）。训练万亿参数模型前，配方要先在几百倍小的模型上试出来，麻烦在于小模型上最优的选择放到大模型上容易过拟合。微软的做法是在小实验里人为限制唯一训练数据的数量，让每个数据集无论训练多长都重复同样次数，唯一数据与参数的比例在各尺度上保持恒定，小实验的结论才能可靠地搬到正式训练上。微软称这是稳妥放大到 2.8T 参数的关键。</p>
+<p>MoE 的工程改造是另一条线。混合专家层分给每个专家的 token 数量不均，热门专家可能挤爆显存，老办法要么丢掉超出阈值的 token（伤效果），要么按最大不均衡预留显存（浪费）。微软改成把专家分组、按固定容量多轮处理溢出的 token，显存占用恒定，配合一系列通信优化，把 MoE 层的 MFU 从 24% 提到 35%，让模型在每一层都使用 MoE 变得划算。</p>
+<p>优化器则从 AdamW 换成了 Muon。微软称 Muon 训练更稳、效率增益更大，代价是每步要做矩阵正交化，与主流的显存切分方案冲突。团队通过动量重分片和通信计算重叠等改造，让 Muon 在 16000 卡的集群上只占每步训练时间的 2.1%，约合 165 毫秒。</p>
+<p>这篇博客在 Hacker News 只引出三条发言。adroitboss 问得很直接，模型不开放，为什么只跟开放模型比，不跟最强的闭源模型比。leothetechguy 的解释是闭源 SOTA 的基座权重拿不到，没法测。Bolwin 注意到 MAI-Base-2 的配置与 Kimi K3 相近，激活参数更少（80B 对 104B），博客也没有说明用的是哪种注意力形式。</p>
+<p>这份账本把前沿训练的规格、成本口径和效率声明摆上了台面，给了外界一个可讨论的参照。模型本身有多强，要等后训练完成、外部能实际测试的那天。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Amp 本身是已存在的产品，本次增量为其近期密集上线的一批新能力：Sign in with ChatGPT 登录集成（提供更多代币与 GPT-6 Astra 访问）、内置对话式助手 Puck、基于 GPT-Live-1 的 Calling Puck 实时语音功能、以及配合 GPT-6 Astra 的 Ultrafast 极速模式测试。</div>
-            <div class="links-row"><a class="ext-link" href="https://openai.com/index/amp-beyond-coding" target="_blank" rel="noopener">Source <span class="domain">openai.com</span></a>
-<a class="ext-link" href="https://openai.com/blog/amp-agents-beyond-code" target="_blank" rel="noopener">Coverage <span class="domain">openai.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>历史查重与语义查重均未匹配，MAI-Base-2 为微软首次对外披露的新模型，本次公开的预训练细节此前从未报道过</div>
+            <div class="tags-row"><span class="tag">微软</span><span class="tag">大模型</span><span class="tag">预训练</span><span class="tag">开放权重</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50105791" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/" target="_blank" rel="noopener">Original article <span class="domain">microsoft.ai</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Amp puts AI agents to work beyond code with OpenAI models</div>
-                        <div class="source-url"><a href="https://openai.com/index/amp-beyond-coding" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Frontier Pre-training at Microsoft AI | Microsoft AI</div>
+                        <div class="source-url"><a href="https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
                         <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Microsoft MAI-Base-2: 2.8T Parameters, What We Know | CellCog</div>
+                        <div class="source-url"><a href="https://cellcog.ai/blog/microsoft-mai-base-2" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">🚨 AI News | TestingCatalog on X: "MICROSOFT 🔥: MAI-Base-2 pre-training has been completed; MAI-Base-3 training cycle is already being prepared as well. > "MAI-Base-2 outperforms every open-weight model we tested on our held-out evaluations. It is 4-12x more pre-training FLOPs-efficient than the… / X</div>
+                        <div class="source-url"><a href="https://x.com/testingcatalog/status/2110797298661744928" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Microsoft unveils MAI-Base-2, a 2.8-trillion-parameter model</div>
+                        <div class="source-url"><a href="https://pasqualepillitteri.it/en/news/24354/microsoft-mai-base-2-trillion-parameters" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-0c443fbb8785">
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.9/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://www.marktechpost.com/2026/10/15/nvidia-nemotron-3-5-super-vl-release/" target="_blank" rel="noopener">NVIDIA开源120B多模态代理模型，单机可跑但明显偏科</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>10 月 15 日，NVIDIA 发布面向企业代理的开放多模态模型 Nemotron 3.5 Super VL。总参数 120B、每 token 激活 12B 的 MoE 结构，上下文最长 100 万 token，能读文本、图像、文档和 2 分钟以内的 MP4 视频，输出文本，中间穿插推理、工具调用和代码生成。权重按 OpenMDW-1.1 许可开放，数据集、训练配方和强化学习环境一起放出。同场还有两款边缘模型，Bolt 74B-A9B 已可下载，4GB 的 Bolt E4B 定在 10 月 23 日。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>企业代理的一个回合常常读和写连着来，比如从 PDF 表格抠数字、看懂图表，再查网页、写代码，过去要文本模型和视觉模型两件套接力，部署和成本都是两份。Super VL 用一个开放检查点替换两件套，NVFP4 量化后单台 DGX Spark、单张 H200、两张 H100 或单台 GB200 就能承载，模型可以留在企业自己机房。短板也明摆着，长程银行代理任务 tau3-bench 只有 17.78，单步强不等于长链条可靠，想全托管金融流程还要观望。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 15 日，NVIDIA 发布开放多模态代理模型 Nemotron 3.5 Super VL。模型总参数 120B，每个 token 只激活 12B，上下文最长 100 万 token，能读文本、图像、文档和 2 分钟以内的 MP4 视频，输出文本，中间穿插推理、工具调用和代码生成，推理模式可以通过聊天模板开关。权重按 OpenMDW-1.1 许可开放，数据集、训练配方和 NeMo Gym 里的强化学习环境也一并放出。</p>
+<p>企业里真干活的代理，一个回合往往读和写都占。比如审一份信贷协议，先从表格里抠数字、看懂附图，再核对网页信息，最后按公司规则写出结论。过去这类系统常用一个文本模型加一个视觉模型接力，两套部署、两份成本。Super VL 用一个检查点把两件活都接了，NVFP4 量化版能塞进单台 DGX Spark、单张 H200、两张 H100 或单台 GB200，另有 BF16 检查点同时发布。对不愿把文档送出内网的公司，模型和数据留在自己机房这一点有实际吸引力。</p>
+<p>架构上，骨干把 Mamba-2 层、MoE 层和注意力层交错排布，每个 MoE 层挂 512 个路由专家，图像、文档页和视频帧经 C-RADIO 编码器进入语言骨干。提速靠几层手段叠加，多 token 预测让一次前向就能验证多个候选词，LiLiCorr 投机解码在 DGX Spark 上最多快 2.3 倍，NVFP4 量化感知蒸馏把权重压到 4 比特，前缀缓存再把注意力缓存和 Mamba 状态跨轮次保留下来。模型从 550B 的 Nemotron 3 Ultra 蒸馏而来，对方总参数约是它的 4.6 倍，预训练约 26 万亿 token，后训练约 380 万样本，外加数十个环境里的强化学习。</p>
+<p>NVIDIA 自报的成绩单强项弱项都摆在明面。GPQA-Diamond 89.90，SWE-bench Verified 71.07，OSWorld-Verified 52.3，浏览器任务 BrowseComp 77.5。最弱的是长程银行代理任务 tau3-bench，只有 17.78。单步分数漂亮，长串金融操作连着走完还不稳。600 token 每秒以上的吞吐出自 NVIDIA 自报的 Baseten 端点数据，官方图表对着 Inkling Small 标了 5 倍速度差，各家基准版本和测试工具并不一致，几个点的分差不必当真。</p>
+<p>NVIDIA 引述的早期客户结果听起来诱人，Scale AI 给 Skydance 做供应商信贷处理，推理成本降 40 倍、延迟降 5 倍，Ramp 的收据转 JSON 预期吞吐升 50%，AI21 的威胁情报场景准确率升 40%，这些数字都出自厂商口径。</p>
+<p>同场发布的还有两款 Bolt 边缘模型。Bolt 74B-A9B 从 Super VL 蒸馏，原生 2 比特量化后 24GB 显存就能在 RTX 或 DGX Spark 上跑本地多步任务，已上架 Hugging Face。Bolt E4B 只要 4GB 内存，面向语音助手和嵌入式代理，10 月 23 日发布。Meta 同日放出 816B 的 Muse Spark Open，两个开放大模型定位不同，Nemotron 押的是企业代理单机化。</p>
+<p>获取渠道包括 Hugging Face、OpenRouter、Modelscope 和 NVIDIA NIM，推理支持 vLLM、SGLang、TensorRT-LLM，本地路径有 llama.cpp 和 Unsloth。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>历史查重与语义历史库均为未出现、未匹配。Nemotron 3.5 Super VL 为全新首发，首次把视觉理解带进 Nemotron 的 Super 档并配套两款 Bolt 边缘模型，规格、基准、硬件门槛均为本次新增信息，无旧闻重提或显著更新情形。</div>
+            <div class="tags-row"><span class="tag">NVIDIA</span><span class="tag">Nemotron</span><span class="tag">开放权重</span><span class="tag">多模态模型</span><span class="tag">AI 代理</span></div>
+            <div class="event-aggregation"><div class="event-head">事件聚合 · 2 个来源 · 已合并 1 条候选</div><div class="event-sources"><a class="event-source" href="https://www.marktechpost.com/2026/10/15/nvidia-nemotron-3-5-super-vl-release/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">NVIDIA Releases Nemotron 3.5 Super VL, a 120B Open Multimodal Agent Model</span><span class="event-domain">www.marktechpost.com</span></a><a class="event-source" href="https://venturebeat.com/technology/nvidias-new-open-nemotron-3-5-super-vl-with-post-training-beats-claude-opus-5-gpt-6-1-sol-on-specialized-task-benchmarks" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">NVIDIA&#x27;s new, open Nemotron 3.5 Super VL with post-training beats Claude Opus 5, GPT-6.1 Sol on specialized task benchmarks</span><span class="event-domain">venturebeat.com</span></a></div></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">NVIDIA Nemotron 3.5 Super VL: 120B Open AI Model</div>
+                        <div class="source-url"><a href="https://tech-insider.org/nvidia-nemotron-3-5-super-vl-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Nemotron 3.5 Super VL: 120B Open Model, 5x Throughput | explainx.ai Blog | explainx.ai</div>
+                        <div class="source-url"><a href="https://explainx.ai/blog/nemotron-3-5-super-vl-120b-12b-multimodal-open-agents-nvidia-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">NVIDIA's new, open Nemotron 3.5 Super VL with post-training beats Claude Opus 5, GPT-6.1 Sol on specialized task benchmarks</div>
+                        <div class="source-url"><a href="https://venturebeat.com/technology/nvidias-new-open-nemotron-3-5-super-vl-with-post-training-beats-claude-opus-5-gpt-6-1-sol-on-specialized-task-benchmarks" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Nemotron 3.5: NVIDIA is Open-Sourcing AI to Protect its ...</div>
+                        <div class="source-url"><a href="https://pub.towardsai.net/nemotron-3-5-nvidia-is-open-sourcing-ai-to-protect-its-gpu-monopoly-fb9f66e65056" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">NVIDIA on X: "Today, we’re expanding our Nemotron family of open models with Nemotron 3.5 Super VL.  Bringing visual understanding, reasoning, and tool use together to help AI agents complete more work in less time.  Open models ➡️ more control to customize, deploy, and build on your own terms.… / X</div>
+                        <div class="source-url"><a href="https://x.com/nvidia/status/2110750157272719562" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-adb6c89c63b3">
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.8/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://engineering.fb.com/2026/10/15/ml-applications/how-meta-built-forum-ai-native-engineering/" target="_blank" rel="noopener">Meta 让智能体跑开发循环，八周做出 Forum 应用</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Meta 工程博客 10 月 15 日发文，首次披露独立应用 Forum 的完整开发过程。Forum 面向 Facebook Groups 里想就话题深入讨论的用户，由一个小团队从零构建。开发采用了 AI 原生工程方法，让智能体自己运行规划、实现、构建、测试、纠错的迭代循环，工程师负责定目标、监督运行和验收结果。Forum 用八个星期达到了与 Facebook Groups 的核心功能对等。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>常见用法里，AI 编程的价值集中在编辑器内的补全和修复建议，收益被锁在编码单个环节。Meta 把智能体推进到规划、构建、测试、验证整条链路，并把完成标准从编译通过改成自动化测试与视觉检查通过，这决定了 AI 产出能否被信任。文中同时给出诚实边界，写明部分环节已自主运行、其余仍需工程师每次迭代在场，为评估当前智能体开发的真实水平提供了难得的一手参照。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Meta 工程博客 10 月 15 日放出一篇长复盘，主角是一款叫 Forum 的独立应用，服务 Facebook Groups 里想就话题聊得更深的用户，由一个小团队从零做起。项目真正的看点在开发方式，团队把 AI 智能体当作工程流程的参与者，并给出判断，只对着编码环节用 AI，改变有限。</p>
+<p><img alt="Forum 应用界面" src="https://engineering.fb.com/wp-content/uploads/2026/10/Meta-Forum-UI.jpg" /></p>
+<p>文章区分了两种协作模式。human-in-the-loop（人在环内）里，工程师驱动每一个步骤，AI 在步骤内部辅助，补全一个函数、建议一处修复，迭代节奏由人决定。human-on-the-loop（人在环上）里，智能体自己跑完规划、实现、构建、测试、纠错的迭代，工程师换成定目标、盯运行、发现跑偏就介入、验收结果。人退出每一轮循环后，过去串行的工作可以并行推进，工程师的时间也从陪跑循环转向方向与判断。Meta 讲得直白，第二种是他们正在逼近的目标，部分环节今天已经自主运行，其余环节仍要工程师进入每一次迭代。</p>
+<p>完成标准也换了把尺子。团队给成功下的定义是可验证、可上线的产出，改动要构建通过，自动化测试和界面视觉检查要过关，最后还要活过代码评审，编译通过不算完成。智能体把结果交给工程师前先自检，到达评审环节的是一小批置信度更高的成果，工程师的签字从未被取消，只是每次签字都附带构建结果、测试结论和录制的验证记录。Meta 同时提醒，验证信号弱的时候，瓶颈只会从写代码挪到审读没人确认过能否运行的代码上。</p>
+<p>支撑自主循环的有四项能力。规划被写成机器可读的技术规格，因为智能体执行需要极高精度，工程师凭直觉就能化解的歧义会让智能体直接失败。构建状态、单元测试、界面规格比对这类通过或不通过的信号直接接进循环内部，智能体据此异步开发，产出的待评审提交自带测试计划。导航智能体像真人一样操作真实 App，执行操作、读屏幕，把发现的回归问题报上来。上线后，智能体根据用户反馈自动排查根因，把分析转给工程师定夺。工具链由五个组件拼成，Rules 在错误重复超过两次时把纠正固化成永久项目指令，Skills 把团队约定变成可加载的步骤，Agents 接管过去要人工过一遍的检查，Commands 把这些能力串成可执行的流程并跑多阶段评审，Hooks 负责自动触发，比如每轮结束跑一遍代码检查工具。</p>
+<p>经验部分信息量最大。Meta 称最大的收益来自修改代码库和工具链，提示词调优排在次要位置。团队宁可牺牲部分代码复用、从头重写，来换智能体更高的开发吞吐，因为智能体从读到的代码里学模式，坏模式修一次，之后的每个会话都受益。一个高频失败是智能体在 App 里迷路，被要求改群组主页却动了信息流，或者瞎猜屏幕坐标。团队给它配上查看状态的直接工具，从模拟器读实时视图层级、列出屏幕上真实存在的元素，改错位置的情况随之大幅下降。为保护线上稳定，团队还做了构建级隔离，沙盒应用与生产应用共享同一套代码库、框架和设计系统，原型代码通过插件式插槽架构被整个编译出生产构建，设计师可以放手用 AI 做原型，这些代码在线上包里物理上不存在。</p>
+<p><img alt="官方配图 What Worked" src="https://engineering.fb.com/wp-content/uploads/2026/10/Building-Forum-What-Worked.png" /></p>
+<p>结果可以量化。Forum 用八个星期达到与 Facebook Groups 的核心功能对等，大量常规实现由 AI 完成，工程师把时间花在架构和产品决策上。一组模拟真实用户行为的压力场景，激进滚动、随机浏览、快速导航、反复加载媒体，让智能体在开发期抓到一个内存问题，它自己复现、定位、提出修复并验证，修复后设备端内存增长和缺页错误大约减半。还有一条关于上下文的经验，某类调查任务的质量一直平平，直到团队给智能体配上新员工入职第一天那份材料，相关代码指针、示例查询、设计文档，这类调查的质量随即明显跃升，人要反复带，智能体训练一次，之后每个会话都从这份记忆起步。</p>
+<p><img alt="官方配图 What Didn't" src="https://engineering.fb.com/wp-content/uploads/2026/10/Building-Forum-What-Didnt.png" /></p>
+<p>想照搬这套方法的团队，要把 Meta 的边界声明原样带走，部分阶段自主运行，其余仍需工程师每次迭代在场，这是方向，眼下还不是完成态。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>历史查重与语义查重均为未出现、未匹配。这是 Meta 首次对外披露 Forum 应用及其 AI 原生工程方法，包含 human-on-the-loop 职责模型、四项循环能力、Rules/Skills/Agents/Commands/Hooks 五组件工具链、沙盒构建隔离等全新一手细节，与同日 Muse 开放权重模型发布属于两个独立事件，无重叠报道。</div>
+            <div class="tags-row"><span class="tag">Meta</span><span class="tag">智能体开发</span><span class="tag">AI 编程</span></div>
+            <div class="links-row"><a class="ext-link" href="https://engineering.fb.com/2026/10/15/ml-applications/how-meta-built-forum-ai-native-engineering/" target="_blank" rel="noopener">Source <span class="domain">engineering.fb.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Ian Thomas - AI Native Engineering - AI Native DevCon June 2026</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=NVzKtCSeoRA" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Meta AI and the 75% AI Coding Target by 2026</div>
+                        <div class="source-url"><a href="https://www.blockchain-council.org/news/meta-ai-asking-engineers-75-percent-code-ai-tools" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">A Practical Guide to Becoming an AI-Native Engineer</div>
+                        <div class="source-url"><a href="https://blog.bytebytego.com/p/a-practical-guide-to-becoming-an" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AI Native Engineering - InfoQ</div>
+                        <div class="source-url"><a href="https://www.infoq.com/presentations/ai-native-engineering" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Strategic Symbiosis: Engineering Human-in-the-Loop Architectures for Verifiable and Salable Agentic…</div>
+                        <div class="source-url"><a href="https://pub.towardsai.net/strategic-symbiosis-engineering-human-in-the-loop-architectures-for-verifiable-and-salable-agentic-db7b7711ae87" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-74e19d6f10f0">
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">tools</span><span class="score-tag">评分 8.5/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://venturebeat.com/technology/black-forest-labs-opens-flux-3-image-klein-weights-with-free-commercial-use-limited-to-smaller-businesses" target="_blank" rel="noopener">图像模型Klein开放权重，营收500万美元成免费商用分界</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>德国公司 Black Forest Labs 今天开放图像模型 FLUX 3 Image Klein 的权重，56 亿（5.6B）参数，可以在自己的显卡上生成和编辑图片。官方称它承接 7 月发布的大模型 FLUX 3 Image 的能力，保住原生 4K 输出和靠参考图驱动的编辑与空间控制，还能用 bounding box 指定元素出现的位置，GeForce RTX 显卡最低 8GB 显存即可本地运行，权重今天起可下载。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>对想私有化跑图像生成的人，这是显存门槛又一次下探，官方下限标到 8GB，还保留 4K 输出与参考图控制，游戏显卡就有了本地部署和按自有素材微调的可能，不必每张图都过云 API。对商业用户，真正定调的是营收线，500 万美元以下免费，之上要单独授权或按张付费，这条线决定一家公司能不能把它直接接进生产。今天放出的 Klein 与 7 月的大模型首发是两件事，增量在小尺寸权重本身和配套的多版本、许可条款与速度数据。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>德国图像公司 Black Forest Labs 今天开放了 FLUX 3 Image Klein 的模型权重。这是一个 56 亿（5.6B）参数的图像生成与编辑模型，能力承接今年 7 月发布的 FLUX 3 Image，今天的新东西是小尺寸权重本身。官方称 Klein 保住了原生 4K 输出，也保住了靠参考图驱动的编辑和空间控制，开发者可以用 bounding box 指定某个元素出现在画面的哪个位置。运行门槛同时压低，官方称在 GeForce RTX 硬件上最低 8GB 显存就能本地运行。</p>
+<p>配套放出的是一个版本矩阵。base 版走 50 步采样，定位是微调起点；蒸馏版把步数压到 16 步，换更低延迟；另有 FP8、NVFP4、INT8 三个压缩版本，用更低的数值精度换更小的显存占用。工具链方面，Klein 支持 ComfyUI、Hugging Face Diffusers、Ostris 的 AI Toolkit、vLLM-Omni 和 SGLang Diffusion，可用 Nvidia NeMo AutoModel 做微调，官方训练用的是 GB200 组成的 NVL72 系统。</p>
+<p>8GB 这个下限要读仔细。BFL 没有把它绑定到具体版本、输出尺寸或生成时间，随发布给出的速度图表也没有实测 8GB 配置和 4K 输出，图表里被实测的是更强的卡。RTX 5090 跑 INT8 蒸馏版，生成一张 1024×1024 的图 4.1 秒，编辑 7.2 秒，分辨率提到 2048×2048 后变成 15 秒和 43 秒；RTX 4070 跑同样的 16 步测试，1K 生成 8.9 秒，2K 生成 50.4 秒，编辑分别是 18.9 秒和 150 秒。这些数字全部来自 BFL 自己的测量，标注为对应 GPU 上最快的构建，每次只跑一张图。</p>
+<p><img alt="Klein 蒸馏版官方速度图表" src="https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F2Aid3TDtiEep8v0bANOlHz%2F714f5629ae8ab94eac2c7ccc7b61af60%2Fflux3-klein-grid-distilled__1_.png%3Fw%3D1000%26q%3D100&amp;w=3840&amp;q=75" /></p>
+<p><img alt="Klein base 版官方速度图表" src="https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F4yyDdHvcFRb6gH0i4VQyRO%2F7daefc6378f5fbb6fcb6315ca8771195%2Fflux3-klein-grid-base__1_.png%3Fw%3D1000%26q%3D100&amp;w=3840&amp;q=75" /></p>
+<p>对企业买家，分量最重的一条写在许可证里。Klein 采用 FLUX Kommunity License，年营收低于 500 万美元的个人与企业可以免费商用；更大的组织要么单独谈自托管授权，要么改走 API。API 按张计费，1K 分辨率一张 0.009 美元起，768×768 更低些，一张 0.008 美元，往上 2K 与 4K 分别是 0.014 美元和 0.036 美元，同一分辨率下生成和编辑同价。按 BFL 已公开的 Kommunity 许可文本，资格按合并关联方的年化总收入计算，大公司旗下的小团队不能靠项目预算自证合格，BFL 也没有公布标准的商业自托管费用。</p>
+<p>竞品侧最近的对照是 Alibaba 的 Qwen-Image 2.1，70 亿参数，权重可下载，生成和编辑做在同一个模型里，但走研究许可，商用需另行授权；Ideogram 4.5 通过应用、MCP 和 API 提供服务，原生 2K 输出；Google 的 Nano Banana 2.1 覆盖 1K 到 4K，同样托管运行。BFL 自己的偏好评测把 Klein 排在 Qwen-Image 2.1、Ideogram 4.5、FLUX.2 [klein] 9B、Krea 2 等可下载权重模型前面，但评测没有公开提示词、评判方式和样本量，也没有纳入 GPT Image 2.5、Nano Banana 2.1 和同日发声的 Krea 3。Klein 与 BFL 的机器人模型 FLUX 3 Action 共享 FLUX 3 基础，联合创始人兼 CEO Robin Rombach 在公告里说，同一个基础可以被社区适配到从创意生成到机器人的不同需求；不过 Klein 的功能只涉及图像，这次发布并不能证明这个图像模型能直接控制机器人。发布前外部伙伴 Cinder 对两个 checkpoint 做了安全评估，BFL 称发现的漏洞少于其他流行的开放权重模型，但没有给出量化对比。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>历史查重与语义库均未出现匹配。7 月发布的是大模型 FLUX 3 Image 本体，今日放出的是 Klein 小尺寸权重的首次公开发布，新增量包括 base、蒸馏与 FP8、NVFP4、INT8 多版本权重、8GB 显存本地运行下限、Kommunity License 商用条款、分层 API 定价与官方本地速度数据，属首次发布而非旧闻重提。</div>
+            <div class="links-row"><a class="ext-link" href="https://venturebeat.com/technology/black-forest-labs-opens-flux-3-image-klein-weights-with-free-commercial-use-limited-to-smaller-businesses" target="_blank" rel="noopener">Source <span class="domain">venturebeat.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AGTP on X: "Black Forest Labs just released FLUX 3 Image Klein, an open weights image model. Here's what you need to know.
+
+Klein is a 5.6B parameter model that runs on a single consumer GPU. It keeps the larger FLUX 3 Image model's native 4K generation, bounding boxes and pixel-perfect editing. Bl… / X</div>
+                        <div class="source-url"><a href="https://x.com/AGTPinsights/status/2110776270967677193" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">FLUX 3 Image Klein: open weights, 5.6B parameters | Black Forest Labs</div>
+                        <div class="source-url"><a href="https://bfl.ai/blog/flux-3-image-klein" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Flux 3: Black Forest Labs' Multimodal AI World Model</div>
+                        <div class="source-url"><a href="https://morphic.com/resources/models/flux-3" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Black Forest Labs opens FLUX 3 Image Klein weights, with free commercial use limited to smaller businesses</div>
+                        <div class="source-url"><a href="https://venturebeat.com/technology/black-forest-labs-opens-flux-3-image-klein-weights-with-free-commercial-use-limited-to-smaller-businesses" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">FLUX 3 Image Klein Launch | Comfy</div>
+                        <div class="source-url"><a href="https://comfy.org/flux-3-image-klein" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-7515c203ffec">
+            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">industry</span><span class="score-tag">评分 8.2/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://www.unite.ai/perplexity-open-sources-space-its-in-house-agent-sandbox-platform/" target="_blank" rel="noopener">Perplexity 开源沙箱 SPACE，虚拟机逃逸零成功</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>10 月 15 日，Perplexity 宣布将沙箱平台 SPACE 以 Apache License 2.0 开源，公开代码仓库与托管文档一并放出。SPACE 是给 AI 智能体执行代码用的隔离环境，自今年 7 月起支撑 Perplexity 个人代理 Computer 的全部会话，日均创建数百万个沙箱。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>智能体会替人执行代码、改文件、调外部服务，一旦被诱导或出错就可能越权，沙箱是圈住它的关键基础设施。这类组件过去多依赖闭源商业方案，现在开发者能拿到一套经过日均数百万次生产流量验证的开源实现，自行检查、改造和部署。Perplexity 的说法是，能被检查和改造的系统会被找出更多弱点，也会做出更好的工具。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>AI 智能体替人写代码跑任务，先得有个跑不掉的笼子。10 月 15 日，Perplexity 宣布把自研沙箱平台 SPACE 以 Apache License 2.0 开源，代码进入公开仓库，托管文档一并放出。SPACE 全称 Sandboxed Platform for Agentic Code Execution，每个沙箱运行在一台独立的 Firecracker 微虚拟机里，自带操作系统，通过 HTTP API 创建 Linux 环境、执行命令，暂停恢复与销毁也走同一套接口，账号凭据和网络权限由平台在沙箱之外持有。</p>
+<p><img alt="Perplexity 开源 SPACE 沙箱平台" src="https://www.unite.ai/wp-content/uploads/2026/10/perplexity-open-sources-space-in-house-agent-sandbox-platform.jpg" /></p>
+<p>这套系统自今年 7 月起支撑 Perplexity 个人代理 Computer 的全部会话，日均创建数百万个沙箱，官方称同等生产流量下创建速度比此前采购的商用方案快 3 到 5 倍。在随开源公布的安全评估里，智能体被放手蓄意冲击沙箱边界，108 次尝试零次从虚拟机逃到宿主机，期间发现的网络绕过手法已修复，复测中两种攻击方法都未再成功。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>SPACE 源码与安全评估结果均为首次公开，此前该平台仅自 2026 年 7 月起在 Perplexity 内部支撑 Computer 会话；历史查重与语义查重均未匹配到过往报道，10 月 15 日的开源宣布是新事件。</div>
+            <div class="tags-row"><span class="tag">Perplexity</span><span class="tag">agent 安全</span><span class="tag">沙箱</span><span class="tag">开源</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.unite.ai/perplexity-open-sources-space-its-in-house-agent-sandbox-platform/" target="_blank" rel="noopener">Source <span class="domain">www.unite.ai</span></a>
+<a class="ext-link" href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOTTc2Z1VXNHFreWxNV3hZU0F5LUZVazVoSXlPQmtoRmhqYkc4elM3NERGVzhEdXRqSS1URy1sNl8tQnAzRmk3Ni1Bb3lTN0F6ZnI5SFpOUVNvQ3dzVmlNVHh1Rk5FQzhkYlZoczh4VEVFd3VoSnVKdzlDcEJuNzJxcjhiajRKNm5tR0tlSlRlcGc1VXNhanRMSlRSbmo5QTE1aTJORGpfa19UUnhCUVR1eWpYSQ?oc=5" target="_blank" rel="noopener">Source <span class="domain">news.google.com</span></a>
+<a class="ext-link" href="https://www.investing.com/news" target="_blank" rel="noopener">Coverage <span class="domain">www.investing.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Perplexity open sources SPACE, its sandbox for AI agents</div>
+                        <div class="source-url"><a href="https://cryptobriefing.com/perplexity-open-sources-space-agent-sandbox" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Perplexity Open-Sources SPACE, Its In-House Agent Sandbox Platform – Unite.AI</div>
+                        <div class="source-url"><a href="https://www.unite.ai/perplexity-open-sources-space-its-in-house-agent-sandbox-platform" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Perplexity SPACE Open Source: Firecracker Agent Sandbox | explainx.ai Blog | explainx.ai</div>
+                        <div class="source-url"><a href="https://explainx.ai/blog/perplexity-open-sources-space-firecracker-agent-sandbox-apache-2-github-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Perplexity SPACE Red Team: Escaping Part I (2026) | explainx.ai Blog | explainx.ai</div>
+                        <div class="source-url"><a href="https://explainx.ai/blog/perplexity-space-escaping-part-i-red-team-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-663dce7dd7ee">
+            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://developers.googleblog.com/evaluating-ai-agents-moving-past-the-vibe-check/" target="_blank" rel="noopener">agent 评估别再凭感觉，Google 给出三支柱方法</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Google 开发者博客发布工程指南，讲怎么系统化评估 AI 智能体，替代随手问几个问题、看感觉拍板的 vibe check 式测试。指南把评估拆成数据收集、指标选择、持续改进三根支柱，并配套基于 Gemini Enterprise Agent Platform、Google ADK 与 OpenInference 标准的参考架构，面向把智能体从原型带向生产的团队。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>智能体进生产环境的最大障碍之一，是没人说得清它会在哪类问题上出错。vibe check 覆盖不了长尾场景，故障往往要等用户投诉才暴露。这套方法把评估变成可重复的工程流程，每次改动后都能知道质量是升是降。对本报读者的增量在于，8 月 13 日那篇 GA 新闻告诉大家 Google 平台有评测功能了，这篇补上了怎么把评估做对的方法论。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>AI 智能体从演示走进生产环境之后，随手问几个问题、感觉不错就上线的 vibe check 撑不住了。Google 开发者博客发布工程指南，把 agent 评估拆成三根支柱。</p>
+<p>数据收集摆在第一位，从生产对话日志、合成测试用例和专家人工标注凑出带标准答案的测试集；指标选择紧随其后，按场景区分准确率、忠实度、工具调用质量与安全合规，还得盯住次级指标，防止答案变好、话却变啰嗦；剩下的一环是持续改进，把评估当成软件测试，接入回归测试、A/B 实验与人在环审查，循环往复。指南同时给出参考架构，用 Gemini Enterprise Agent Platform、Google ADK 与 OpenInference 标准串起持续评估流水线。</p>
+<p><img alt="agent 评估方法一览" src="https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/00-tldr-at-a-glance.original.png" /></p>
+<p>本报 8 月 13 日报过该平台评测功能 GA，那篇讲产品功能正式商用，这篇讲怎么把评估做对，两件事互补。上手门槛也低，拉最近一个月日志里的前 50 条查询请同事评一遍，定一两个指标跑出基线。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>语义查重唯一命中本报 2026-08-13 报道 raw-90065eb7e6ae（Agent and Model Evaluations in Gemini Enterprise Agent Platform are now GA）。两者主题相邻但属于不同事件，8 月 13 日那次是产品功能 GA 的产品新闻，本次是 Google 开发者博客发布的评估方法论工程指南，内容为三支柱框架加上基于 Gemini Enterprise Agent Platform、Google ADK 与 OpenInference 的参考架构操作指导，属于同一话题下的全新角度与全新内容，按复核规则保留 genuinely_new。</div>
+            <div class="links-row"><a class="ext-link" href="https://developers.googleblog.com/evaluating-ai-agents-moving-past-the-vibe-check/" target="_blank" rel="noopener">Source <span class="domain">developers.googleblog.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Evaluating Google ADK Agents in 2026</div>
+                        <div class="source-url"><a href="https://futureagi.com/blog/evaluating-google-adk-agents-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">What is Google ADK? Agent Development Kit 2026</div>
+                        <div class="source-url"><a href="https://futureagi.com/blog/what-is-google-adk-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Google ADK in 2026: Build Production AI Agents</div>
+                        <div class="source-url"><a href="https://www.alekseialeinikov.com/en/blog/topics/cloud/google-adk-build-production-ai-agents-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">LLM Evaluation and Agent Evaluation | MLflow AI Platform</div>
+                        <div class="source-url"><a href="https://mlflow.org/llm-evaluation" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-f8f8424fdc5e">
+            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.9/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://www.marktechpost.com/2026/10/15/copilotkit-releases-clif-a-continual-learning-platform-that-turns-agent-traces-and-user-actions-into-skills-evals-and-fine-tuning-data/" target="_blank" rel="noopener">CLiF 进入早期访问，把用户操作炼成 agent 技能</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>开源 agent 界面框架 CopilotKit 在 GitHub 有超过 38000 颗星，其发布的持续学习平台 CLiF 现处早期访问阶段。它把 agent 的运行记录和用户在产品里的真实操作合并成同一条时间线上的全栈轨迹，再转化成可加载的技能、生产级评测用例和微调数据集，每条技能都要人审核后才生效。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>上线一个 agent 最慢的环节往往是让它通过评测，团队要手写几百上千条用例再反复改提示词。用户每天在产品里把这些任务做完一遍，那就是现成的正确示范，可 agent 追踪看不见用户操作，产品分析数据又是给人看仪表盘准备的，单独哪一边都给不出 agent 能照着学的完整路径。CLiF 把两侧对齐到一条时间线上，让评测和训练素材随真实使用持续积累，同时靠人工审核和版本化保证每条技能可追溯、可回滚。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>agent 团队常卡在同一处，模型不弱，放进具体产品干端到端的活就不够稳，只能手写几百条评测用例慢慢磨。CopilotKit 发布持续学习平台 CLiF，现处早期访问，其开源框架在 GitHub 超 38000 颗星。</p>
+<p>CLiF 的原料叫全栈轨迹。agent 追踪只记下哪一步走岔，做对的路径藏在用户的点击、请求和对话里。AG-UI 协议把守在 agent 与用户界面之间，CLiF 借它把两股记录合成一条可逐步回放的时间线。</p>
+<p><img alt="全栈轨迹示意" src="https://www.marktechpost.com/wp-content/uploads/2026/10/image-6.png" /></p>
+<p>四阶段循环接着开工。轨迹按业务收进学习容器，系统定期分析出反复出现的模式并给出技能提案，每条都要人批准，以 SKILL.md 纯文本发布，agent 免重部署即可加载。同一批轨迹还能导出生产级评测用例、微调数据集和原始轨迹。原文用迭代收尾举例，用户挪完任务总会顺手清理遗留项，这些习惯被提炼成了技能。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>历史查重与语义检索均未出现匹配。CLiF 是 CopilotKit Intelligence 产品线下首次以早期访问形式发布的新平台，全栈轨迹原语、四阶段学习循环与人工审核发布流程均为本次新增量。</div>
+            <div class="links-row"><a class="ext-link" href="https://www.marktechpost.com/2026/10/15/copilotkit-releases-clif-a-continual-learning-platform-that-turns-agent-traces-and-user-actions-into-skills-evals-and-fine-tuning-data/" target="_blank" rel="noopener">Source <span class="domain">www.marktechpost.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Introducing CLiF | Continual Learning Platform for AI Agents</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=QOrT6sWeirw" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">CopilotKit raises $27M Series A | Blog | CopilotKit</div>
+                        <div class="source-url"><a href="https://www.copilotkit.ai/blog/series-a" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">How to Build a Self-Improving LangChain Agent | Blog | CopilotKit</div>
+                        <div class="source-url"><a href="https://www.copilotkit.ai/blog/langchain-self-improving-agent" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-e3c36d4422c6">
+            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.7/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://huggingface.co/blog/swiss-ai/apertus-v15-release-notes" target="_blank" rel="noopener">瑞士 Apertus 1.5 补发技术报告，多模态走早融合</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>瑞士开源项目 Apertus 的 1.5 版补上了完整技术文档。8B 与 70B 两个模型的权重早在 2026 年 7 月 24 日就以 Apache 2.0 许可发到 Hugging Face，10 月 15 日团队发布博客总结，配套技术报告 10 月 11 日挂上 arXiv，训练数据清单、流程配方、中间检查点全部公开。模型具备图像与音频理解、可开关的思考模式，上下文窗口 262144 token。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>开放权重赛道里放出权重的项目不少，训练细节照单全交的少。Apertus 把继续预训练与后训练每个阶段的配方、消融结论、中间检查点和数据集全部交出，研究者和监管方都能逐阶段核对。报告中的评估卡按可复现的机器可读格式发布，团队称能覆盖欧盟 AI 法案 60 个评估报告要素中的 56 个。多模态采用 tokenizer 早融合，给想保留原架构的团队一条现成路线。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>瑞士 swiss-ai 团队 10 月 15 日在 Hugging Face 发出 Apertus 1.5 发布说明，为 7 月 24 日就已上传的 8B 与 70B 权重补齐完整技术说明，配套报告 10 月 11 日先行挂上 arXiv。这次新增的是配方与数据，模型权重三个月前就已可用。</p>
+<p>多模态部分选了 tokenizer 早融合路线。图像经 Emu3.5 tokenizer、音频经 WavTokenizer 转成 token，与文字排进同一条序列，模型里没有单独的视觉编码器，只扩充词表，架构不变，训练保持纯文本速度。模型能看图听音，输出仍只有文字，语音理解属实验性。</p>
+<p>继续预训练给 8B 追加 4 万亿 token、70B 追加 2 万亿 token，总量分别到 19T 与 17T，上下文窗口从 8k 逐步扩到 262144 token，为 1.0 的四倍。开放权重、开放数据、完整训练细节在报告里凑齐，中间检查点与训练数据集一并放出。</p>
+<p><img alt="Apertus 1.5 训练流程" src="https://cdn-uploads.huggingface.co/production/uploads/650ed7adf141bc34f91a12ae/Xi58nSrPTd5_ASGNIg60g.png" /></p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>8B 与 70B 权重 2026 年 7 月 24 日即以 Apache 2.0 发布到 Hugging Face，本报此前未报道过 Apertus 1.5；本次 10 月 15 日发布的增量是技术报告（10 月 11 日挂 arXiv）与完整训练细节，包括配方、消融结论、中间检查点与数据集。按增量性质标为显著更新。</div>
+            <div class="tags-row"><span class="tag">开源模型</span><span class="tag">多模态</span><span class="tag">欧洲AI</span><span class="tag">技术报告</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/blog/swiss-ai/apertus-v15-release-notes" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a>
+<a class="ext-link" href="https://huggingface.co/blog" target="_blank" rel="noopener">Coverage <span class="domain">huggingface.co</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">With 1.5x the love, from Switzerland</div>
+                        <div class="source-url"><a href="https://publicai.co/stories/apertus-1-5" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Apertus AI</div>
+                        <div class="source-url"><a href="https://www.apertus-ai.org/articles/2026-07-apertus-1-5" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">With 1.5x the love, from Switzerland - by Joshua Tan</div>
+                        <div class="source-url"><a href="https://publicai.substack.com/p/with-15x-the-love-from-switzerland" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">From Open Text Models to Open Multimodal Reasoners Apertus v1.5 Technical Report</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2610.15542v1" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">swiss-ai/Apertus-v1.5-70B · Hugging Face</div>
+                        <div class="source-url"><a href="https://huggingface.co/swiss-ai/Apertus-v1.5-70B" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
                         <span class="badge official">官方</span>
                     </div>
                 </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Astra AI Agent Connects NVIDIA Omniverse Libraries For Simulations</div>
-                        <div class="source-url"><a href="https://quantumzeitgeist.com/astra-agent-connects-nvidia-omniverse" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">OpenAI Amp Agents Beyond Code — Pricing Impact (Oct 2026) | AI Pricing Guru</div>
-                        <div class="source-url"><a href="https://www.aipricing.guru/news/openai-amp-agents-beyond-code-pricing-impact-october-2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">7 Truths About Amp as an Enterprise AI Coding Agent</div>
-                        <div class="source-url"><a href="https://medium.com/@jonathanaraney/7-truths-about-amp-as-an-enterprise-ai-coding-agent-aa8ecbf61087" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-edbc6b7abaee">
-            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">tools</span><span class="score-tag">评分 8.4/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://thenextweb.com/news/alibaba-qwen-glasses-n1-price-launch" target="_blank" rel="noopener">阿里Qwen眼镜N1正式开售，国补后最低2218元</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>阿里巴巴本周二在杭州发布会后于中国正式开售 Qwen Glasses N1 智能眼镜，上架淘宝、天猫、京东、抖音四个渠道。最终定价落定为 N1 起售 2,999 元(约 450 美元，多家中国媒体报道 2,899 元)，叠加国家补贴与首发优惠最低 2,218 元；N1 Pro 售价 3,499 元；与 Bose 合作的 AI 耳夹耳机 Qwen Clip 售价 1,299 元。产品此前已于 9 月 Apsara 大会亮相、9 月 22 日开启预售，本次增量是正式发售与价格敲定。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>定价、渠道、规格、监管背景俱全，这款国产 AI 眼镜走完了从发布会亮相、预售到真金白银销售的完整流程。2,999 元的起售价与全球市场领跑者 Meta Ray-Ban 处于同一价格带，国内厂商开始在同一个价位上参与正面竞争。同期，中国 9 月出台的录制提示灯自愿性规范伴随首批消费级 AI 眼镜进入公开销售，产品与监管几乎同步走进真实使用场景，开售后的销量与合规反馈都是值得跟踪的信号。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>本周二，阿里巴巴在杭州的发布会上宣布 Qwen Glasses N1 智能眼镜在中国正式开售，上架渠道包括淘宝、天猫、京东和抖音。据彭博社报道，N1 起售价为 2,999 元(约 450 美元)，多家中国媒体给出的起售价略低，为 2,899 元，叠加国家补贴与首发优惠后最低到手 2,218 元。与眼镜同步开售的还有和 Bose 合作的首款 AI 耳夹耳机 Qwen Clip，售价 1,299 元。</p>
-<p><img alt="Qwen 眼镜与 Qwen Clip 耳机充电盒" src="https://media.thenextweb.com/2026/10/two-black-smart-glasses-lilac-earbud-case-white-steps.avif" /></p>
-<p>这批硬件的故事要从 9 月讲起。N1 系列与耳机最早于 9 月的云栖大会(Apsara)亮相，9 月 22 日开启预售，本周的杭州活动把预售推进到正式发售，并敲定了最终定价。发布时，阿里巴巴通义业务副总裁宋刚称这副眼镜是用户的"第二双眼睛和耳朵"。</p>
-<p>N1 配备 5000 万像素摄像头，运行通义千问 AI 助手，用户通过骨传导麦克风与其语音交互，可以翻译、记录会议纪要、协助购物与支付。续航方面，彭博社称单次充电可待机 25 小时或播放音乐 9 小时，中国媒体报道电池支持更换。Qwen Clip 耳机夹在耳朵上使用，同样支持翻译和笔记功能。</p>
-<p>高配版 N1 Pro 售价 3,499 元，增加了眼动追踪，佩戴者注视一个物体即可向 AI 提问，支付时通过虹膜扫描确认。据中国科技网站 PConline 报道，Pro 版还能监测心率、血氧和皮肤温度。</p>
-<p>彭博社指出，N1 的定价与市场领跑者 Meta 的 Ray-Ban 眼镜处于同一水平线，Meta 上月还为产品线新增了无摄像头型号。监管层面，中国 9 月发布了一项自愿性规范，要求 AI 眼镜在录制时显示提示灯，为这批刚上架的产品划出了新的合规边界。</p></div></details>
+<div class="article-card" data-id="raw-eb6210d05e81">
+            <div class="article-meta"><span class="rank-badge ">#10</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.6/10</span><span class="newness-tag">minor_update</span></div>
+            <h2><a href="https://www.databricks.com/blog/how-our-ai-research-team-uses-ai-runtime" target="_blank" rel="noopener">Databricks 自用 AIR，agent 让训练任务量增 8 倍</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Databricks 在官方博客发文，讲自家 AI 研究团队怎么用公司的 GPU 训练平台 AI Runtime（AIR）。这个团队训练的模型支撑 ai_parse_document、ai_extract 等 AI Functions，也就是 Databricks 平台上解析企业文档那类内置 AI 功能，相关研究累计要跑数万次训练和评估。研究团队从 AIR 去年诞生起就是零号客户，即产品的第一个用户。按官方口径，让智能体自动发起和迭代实验之后，研究的训练任务数量增长到了原来的 8 倍。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>几百块 GPU 连续跑几周不出故障，研究员换配置几秒内起新实验，这是把大模型训出来的硬功夫，多项目抢同一批卡时还得按优先级调度算力。Databricks 让自家研究团队当零号客户，用内部真实负载先趟平这些坑，相当于替 AIR 这个产品做了一轮实打实的打磨。8 倍任务量增长还给出一个信号，智能体自动做实验正在把训练平台的负载放大一个量级，往后平台的启动速度、报错可读性这类细节都会变成硬指标。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Databricks 研究团队官方发文，讲他们怎么用自家去年推出的 GPU 训练基础设施 AI Runtime。团队训的模型支撑 ai_parse_document 等 AI Functions，即平台上解析企业文档那类内置 AI 功能，规模从几十亿到接近一万亿参数，研究要跑数万次训练和评估。研究团队从产品诞生起就是它的第一个用户，内部叫零号客户。</p>
+<p>这种规模的训练，难处集中在几个地方。最大的任务要几百块 GPU 连跑几天到几周，中途一个节点或网络出故障，整批卡闲置，只能退回上一个存档点重跑。研究要反复换模型和数据配方，环境得随起随用。多项目还共用同一支 GPU 舰队，空闲算力要能分给探索实验，又不耽误要紧任务。</p>
+<p>实验的发起方式也在变。过去研究员手动跑实验，现在智能体提出改动、并行试跑，读完指标再决定下一轮试什么，官方口径是训练任务量增长到了原来的 8 倍。手动跑几个实验，启动慢、报错含糊还能忍，智能体一次发起几百个任务，这些小毛病就成了瓶颈。</p>
+<p><img alt="AI Runtime 上 agent 主导训练的配图" src="https://www.databricks.com/sites/default/files/inline-images/image2_117.png?v=1792101140" /></p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>产品于 9 月 Apsara 大会发布、9 月 22 日开启预售，历史日报未报道过该事件(history_check 与 semantic_history 均无匹配)；本次增量为正式开售与最终定价确认(N1 2,999 元起、国补后最低 2,218 元、Pro 3,499 元、Qwen Clip 1,299 元)、四渠道上架以及 Pro 版眼动追踪、虹膜支付、健康监测等细节披露。</div>
-            <div class="tags-row"><span class="tag">阿里巴巴</span><span class="tag">智能眼镜</span><span class="tag">AI硬件</span></div>
-            <div class="event-aggregation"><div class="event-head">事件聚合 · 3 个来源 · 已合并 1 条候选</div><div class="event-sources"><a class="event-source" href="https://thenextweb.com/news/alibaba-qwen-glasses-n1-price-launch" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Alibaba Takes AI Beyond Chatbots With Smart Glasses, Bose-Powered Earbuds - TradingView</span><span class="event-domain">thenextweb.com</span></a><a class="event-source" href="https://news.google.com/rss/articles/CBMiywFBVV95cUxNbFdaZzdVclhnSHVKS3QzUUNFVWtYUTVtMzJocHd6Q01yTk50cEtjZkQ1NlVHQm9OTlNCWkNiaU5XdW5qcEFELXVjMXAySzd1SUNFOHRXRXNsMnN5ZWp5QzJIazNVcHByYkFMU2FFQnRBQWJqSjZWRDNZVFdpVEJCTU43NlQxMldYajctVDlxcTJfbjBudXMzWnZ4dTA5VWEtTEk0VngwYzY0Q25iWk9MQ2hPNXlXLXkwUVpSSEI2RFQtMVFRSEt0Y0ZmTQ?oc=5" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Alibaba Takes AI Beyond Chatbots With Smart Glasses, Bose-Powered Earbuds - TradingView</span><span class="event-domain">news.google.com</span></a><a class="event-source" href="https://www.telecompaper.com/news/alibaba-unveils-qwen-book-agentic-computer-ai-wearables-lineup--1585645" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Alibaba unveils Qwen Book agentic computer, AI wearables lineup - Telecompaper</span><span class="event-domain">www.telecompaper.com</span></a></div></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>AI Runtime 是 Databricks 去年已发布并商用的产品，本文不是新品公告，而是研究团队作为零号客户的使用案例复盘。今天的增量是内部数据首次披露，包括智能体主导训练使训练任务量增长 8 倍、最大训练需数百块 GPU 连跑数天到数周、使用 H100 与 B300 GPU、训练模型规模接近万亿参数等细节</div>
+            <div class="tags-row"><span class="tag">Databricks</span><span class="tag">AI Runtime</span><span class="tag">GPU 训练</span><span class="tag">智能体</span><span class="tag">AI 基础设施</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.databricks.com/blog/how-our-ai-research-team-uses-ai-runtime" target="_blank" rel="noopener">Source <span class="domain">www.databricks.com</span></a>
+<a class="ext-link" href="https://databricks.com/blog" target="_blank" rel="noopener">Coverage <span class="domain">databricks.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Alibaba unveils Qwen Book agentic computer and new AI wearables</div>
-                        <div class="source-url"><a href="https://technode.global/2026/09/24/alibaba-qwen-book-ai-wearables-apsara-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">AI Runtime: Train and Fine-Tune Models on Serverless GPUs Without Managing Infrastructure</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=SCCuEsiztHM" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -900,8 +1365,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Alibaba Unveils 4 Qwen AI Devices at Apsara 2026</div>
-                        <div class="source-url"><a href="https://productnation.co/my/31964/alibaba-qwen-ai-devices-apsara-conference-taul" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">AI Runtime: Train and Fine-Tune Models on Serverless GPUs Without Managing Infrastructure</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=SCCuEsiztHM&xstg=CAMSBhUDze3xHw%3D%3D" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -911,8 +1376,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Alibaba Unveils Agentic Computer, AI Wearables and More at 2026 Apsara Conference | Alizila</div>
-                        <div class="source-url"><a href="https://www.alizila.com/alibaba-unveils-agentic-computer-ai-wearables-and-more-at-2026-apsara-conference" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Introducing AI Runtime: Scalable, serverless NVIDIA GPUs on Databricks for training and finetuning | Databricks Blog</div>
+                        <div class="source-url"><a href="https://www.databricks.com/blog/introducing-ai-runtime-scalable-serverless-nvidia-gpus-databricks-training-and-finetuning" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -922,8 +1387,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Alibaba Unveils Game-Changing Device to Challenge Meta</div>
-                        <div class="source-url"><a href="https://finance.yahoo.com/technology/ai/articles/alibaba-unveils-game-changing-device-184234992.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">GPU Reliability Push: AI Training Risks Exposed</div>
+                        <div class="source-url"><a href="https://futurumgroup.com/insights/databricks-ais-gpu-reliability-push-exposes-hidden-risks-for-large-scale-training" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -933,383 +1398,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">HUGE: Alibaba Unveils Chip 3x More Powerful Than Its Last and Plans a 10 Trillion Parameter Model</div>
-                        <div class="source-url"><a href="https://www.youtube.com/watch?v=EMT7NjHem84" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-9bc5b319f9a0">
-            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.3/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://netflixtechblog.com/the-lifecycle-of-llm-as-a-judge-building-aligning-and-monitoring-at-scale-c95bd8283508?source=rss----2615bd06b42e---4" target="_blank" rel="noopener">谁给 AI 裁判打分？Netflix 交出三阶段生命周期答案</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Netflix 技术博客发布 11 位成员署名的工程长文，首次系统公开其 LLM-as-a-Judge 生命周期方法论。增量包括 RART(Reasoning-Aligned Rubric Tuning)推理对齐调优方法、Generator/Judge/Reflector/Meta-Judge 四组件架构、纯标签对齐会退化的消融实验、门卫加评论者双角色部署，以及约一个月移动端线上实验与每周漂移监控的完整数据，文末指向同名研究论文。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>大规模 LLM 生成内容普遍依赖裁判模型做代理评估，裁判自身的可信度此前多停留在原则讨论。Netflix 把它落成有基准、有指标、有人工签字、有回滚的生产流程，消融实验证明只对齐标签会让裁判退化，推理对齐是防止这种退化的关键。任何要在线上跑 AI 生成内容的团队都能拿这份流程对照自查，评估由此从一次性脚本变成可长期运营的工程资产。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>任何用 LLM 大规模生成文本的团队都会撞上同一堵墙。输出太多，人工读不完，也就无从知道哪些出色、哪些平庸、哪些有害。Netflix 的推荐解释场景是个典型，会员在片目详情页看到一句基于自己观看历史的自然语言推荐理由，测试期间每周要生成数十万条，片目库还在不断变化。人工全量评审不可行，业界通行解法是 LLM-as-a-Judge，让第二个模型替人工给第一个模型的输出打分，速度快、成本低。它在带来便利的同时也带来一个新问题，原文的发问是："Who evaluates the evaluator?"(谁来评估这个评估者)。更麻烦的是裁判一旦漂移，悄悄退化并开始放行坏输出，下游系统不会有任何报警。</p>
-<p>Netflix 技术博客的这篇长文由 11 位成员署名，给出的答案是像运营生产系统一样对待裁判，给它完整的生命周期管理。核心原则被写成一句话："An LLM judge must never operate alone."(LLM 裁判绝不能独自运行)。文章标题把生命周期概括为构建、对齐、监控三个环节，正文进一步展开为四个阶段，基准数据创建、裁判训练、部署、人在环对齐与漂移监控，每个阶段都有明确的人工负责人。四个自动化组件贯穿全程，Generator 生成解释，Judge 给出 pass/fail 标签和书面理由，Reflector 负责修订评分细则，Meta-Judge 检查 Judge 拒绝一条解释的理由是否站得住。</p>
-<p>构建阶段是人力投入最重的一段。内部写作专家定义解释必须满足的准则，撰写详细标注指南，手工构造对抗性难例，标注者对每条样例给出 pass/fail 判定并写下书面理由。现成的通用基准覆盖不到这种短小、绑定具体片目和参考片、依赖上下文的任务，于是团队用三类来源自建基准，专家手写的对抗样例、用 LLM 合成再交人工评分的边界样例、从生成器真实输出中抽取的解释。两个细节决定了后续成败。基准每周追加一批新的人工评分样本，避免随片目和用户习惯变化而过期；每个 fail 标签都附带自由文本理由，这些理由正是下一阶段对齐裁判推理的原料。</p>
-<p>对齐阶段要抓的失败模式很隐蔽，裁判可能与人类标签完全一致，结论对但理由错。文中举了一个例子，会员看过一部音乐剧，属于带年轻女主角的家庭奇幻片，还有知名群像卡司，系统推荐了同样带年轻女主角的家庭奇幻冒险片，裁判给出 FAIL，理由乍看合理，细看却不完整，两部片子既不共享歌曲也不共享群像卡司。这种错误在标签一致率仪表盘上完全隐形，却会让裁判在解释拒绝原因时给出误导反馈。Netflix 的解法叫 RART(Reasoning-Aligned Rubric Tuning，推理对齐的评分细则调优)，Judge 是一个由评分细则参数化的固定提示词模板，调优只迭代改写细则文本，无须重训底层模型。Meta-Judge 把 Judge 的拒绝理由与人类理由逐条对比，它自身先经人工校验，与训练有素的标注员判断几乎全部吻合；标签不一致和标签对但理由错这两类错误一起交给 Reflector 修订细则。消融实验给出了关键证据，在三条必须准则之一上，只用标签分歧的 vanilla 循环把细则改写成退化形态，specificity 与 reasoning agreement 逐轮下滑，最终低于初始细则，而 RART 在同一准则上保持稳定并有所提升，原因在于靠不健全推理达到的正确标签无法泛化到新数据。三项指标按准则独立追踪，分别是 specificity(fail-recall，团队最看重，漏过坏解释是信任隐患)、recall(pass-recall)和 reasoning agreement。</p>
-<p>部署后，同一个对齐好的裁判身兼两职。作为门卫，它按必须准则逐条打分，解释必须通过全部必须准则才有资格展示。作为评论者，它把拒绝理由附回生成器的提示词，驱动自我修订，形成先生成、再评审、后修订的循环。1000 条解释、最多 12 轮修订、4 个生成器的对照测试显示，增益集中在头几轮，而且修订放大的是本来就强的生成器。团队最终用最强生成器配 3 次重试预算，仍不达标就丢弃，理由是两种后果不对等，一条坏解释是信任隐患，少一条解释只是放弃一次机会。线上效果靠一次约一个月的移动端对照实验验证，看到解释的会员把观看转向此前没看过的内容，更多浏览会话以有意义的播放收尾，两项效果均统计显著，期间没有出现会员发起的下架请求或投诉升级。作者同时提醒，与标注者的离线一致只是必要条件，裁判通过的解释是否真对会员有用，只有线上实验能回答。</p>
-<p>监控阶段针对的问题在于上线时对齐良好并不能长期保持，片目在变，高标准的定义也在变。每周抽取约 300 条解释做人工评审，按门卫的处理结果分层并偏向新片目，至少 3 名标注者独立评分，多数票作为真值。裁判的及格线随人类标注者自身分歧幅度浮动，要求其成绩不低于平均标注者 2 个标准差，难题周会自动放宽区间。任何一项指标掉出区间即构成漂移事件，触发带着扩充基准回到训练阶段再调优，修订后的细则不自动上线，须有人读完签字批准，旧细则保留以便即时回滚。人工周评还能发现指标抓不到的问题，模糊形容词堆成的词汤、单口喜剧元数据相似但调性完全不同、参考片本身不合适等，这些反复出现的模式会反哺构建阶段的准则，或者变成裁判之外的产品规则，比如禁止某些片型充当参考片。</p>
-<p>文末给出五条可迁移经验，先投资带理由标注的基准再动手做裁判，调优时对齐人类的推理过程、只盯标签会被糊弄，一个对齐好的裁判复用为门卫和评论者以摊薄对齐成本，从第一天就规划监控，让人的介入成为制度设计。这篇博文同时总结了同名研究论文 The Lifecycle of LLM-as-a-Judge for Large-Scale Recommendation Explanations。对要把 LLM 生成内容放上生产线的团队，它示范的评估工程是把裁判当成有负责人、有周检、有回滚的长期资产来运营。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Netflix Tech Blog 经 RSS 首发的原创工程博文，deep_read 判定 genuinely_new；history_check 与 semantic_history 均未匹配到历史报道，RART 方法与完整生命周期流程系首次公开。</div>
-            <div class="tags-row"><span class="tag">LLM-as-a-Judge</span><span class="tag">Netflix</span><span class="tag">评估工程</span></div>
-            <div class="links-row"><a class="ext-link" href="https://netflixtechblog.com/the-lifecycle-of-llm-as-a-judge-building-aligning-and-monitoring-at-scale-c95bd8283508?source=rss----2615bd06b42e---4" target="_blank" rel="noopener">Source <span class="domain">netflixtechblog.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">The Lifecycle of LLM-as-a-Judge for Large-Scale Recommendation Explanations | alphaXiv</div>
-                        <div class="source-url"><a href="https://www.alphaxiv.org/abs/2608.18300" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">LLM-as-a-Judge: Guide & Pre-built Evaluators | Arize AI</div>
-                        <div class="source-url"><a href="https://arize.com/guides/llm-as-a-judge" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Exploring LLM-as-a-Judge - Weights & Biases</div>
-                        <div class="source-url"><a href="https://wandb.ai/site/articles/exploring-llm-as-a-judge" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-b254b3e9c518">
-            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">community</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">new_event</span></div>
-            <h2><a href="https://news.ycombinator.com/item?id=50085323" target="_blank" rel="noopener">瑞典TV4一季素材蒸发,AI删除说与备份故障说并存</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>瑞典 TV4 真人秀《The Challenge》新季大部分已剪辑素材丢失,首播从原定的 11 月 22 日推迟到 2027 年春末,整季需从头重剪,Aftonbladet 估算损失相当于数百天工作量。删除原因存在两种说法,Aftonbladet 称素材被一个 AI agent 删除;TV4 节目总监 Mia Lindqvist 对瑞典电台 P4 Stockholm 否认这一说法,称问题出在制作公司的备份系统。相关讨论在 Hacker News 获得 138 分。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>无论最终归因是哪一方,这都是 agent 进入内容生产流程时最直接的警示样本。一台能动手删文件的 agent,配上从未验证过恢复的备份,一次事故就能抹掉数百天工作。HN 讨论把焦点从谁背锅拉回工程常识,没做过恢复测试的备份约等于没有备份,这条教训对所有正在把 agent 接入生产的团队同样适用。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>瑞典电视台 TV4 的真人秀《The Challenge》新季在首播前出了事故。据瑞典媒体 Sweden Herald 报道,这一季大部分已剪辑素材丢失,节目原定 11 月 22 日首播,如今改到 2027 年春末,整季需要从头重剪。Aftonbladet 的报道估算,损失相当于数百天的工作量。</p>
-<p><img alt="TV4 推迟 The Challenge 播出,整季需重新剪辑" src="https://swedenherald.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fstatic.swedenherald.com%2F8378300b-e898-407a-be8d-b7ca33af72c1%2F8378300b-e898-407a-be8d-b7ca33af72c1.jpg&amp;w=1200&amp;q=85" /></p>
-<p>素材为什么没了,目前流传着两种说法,分别来自报道方与播出方。Aftonbladet 的版本是,一季已经剪好的节目被一个 AI agent 删除。TV4 方面随即否认,节目总监 Mia Lindqvist 对瑞典电台 P4 Stockholm 表示:"并不是什么独立的 AI agent 进来删掉了素材。"她说,问题出在制作公司的备份系统,并补充道:"这意味着他们现在得从头剪起。"主持人 Ahmed Berhan 在 Aftonbladet 报道下的反应则是:"这是真的吗?!我就知道 AI 迟早要了我的命,这只是个开始。"截至发稿,两种说法都没有第三方调查佐证。</p>
-<p>这条新闻在 Hacker News 拿到 138 分,讨论重心很快从"AI 是不是凶手"挪到了备份本身。用户 Roark66 的疑问代表了许多人的第一反应,删除并不可怕,可怕的是几百天的工作量摆在那里,却从来没有验证过备份能不能恢复。用户 hobo123 给"能用的备份"下了一个被反复引用的定义,成功完成过恢复测试、并对完整文件树核对过校验和的备份,才算在工作。</p>
-<p>社区里流传最广的一种拼接,能让双方的说法各对上一部分。用户 organsnyder 猜测时间线可能分两步,主存储上的素材先被删掉,执行者是谁并不影响后一半,等人们去备份里找,才发现备份系统恢复不出来。用户 Ekaros 认为更可能的故事是存储系统故障叠加备份恢复失败。这些仍是猜测,但它们指向同一个事实,备份平时无人验证,出事时才第一次被真正调用。</p>
-<p>行业结构也被摆上台面。用户 munificent 从结构给出一种解释,视频文件体量远超大多数行业,一个制作动辄占用数 TB,拷贝本身就是物流问题;从业者多为艺术家出身,擅长创作和特定工具,未必有计算机基础;行业里大量小公司利润微薄,项目时有时无。几条叠加,在他看来许多制作团队的备份纪律远低于软件行业的想象。这一推断当场遭到反驳,在影视行业干了二十年的 Forgeties79 表示,十有八九的剧组,包括规模不大的独立制作,都遵循 3-2-1 或类似原则,三份拷贝、两种介质、一份异地,出了这种事故反而需要用严重失职来解释。用户 flanz_10 的回帖只有一句话,可他们确实出了故障,而且没有能用的备份。用户 benoau 贴出了皮克斯《玩具总动员 2》当年被误删的报道链接,那桩旧事最后靠一份带回家的个人备份把整部片子救了回来,正好说明误删有先例,救场的从来是真正可恢复的备份。</p>
-<p>还有一层讨论直接关乎 AI agent。用户 actionfromafar 指出,一份合格的备份同样防得住主动删除。用户 bathtub365 补充,剪辑工程的时间线状态本可以独立备份、随时回滚,前提是剪辑人员对备份介质没有写权限。换句话说,让 agent 碰生产环境之前,备份与权限这两道旧课都得先补齐。至于瑞典这单事故的最终归因,仍要等 TV4 或制作公司的后续说法。对正在把 agent 接进生产流程的团队,这则罗生门的价值相当直白,按最坏的删除场景设计防护,并且今天就去做一次真正的恢复演练。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>历史日报与语义历史均未匹配该事件(history_check 与 semantic_history 皆为空),本次为 TV4《The Challenge》素材丢失与首播推迟事件首次进入日报。</div>
-            <div class="tags-row"><span class="tag">AI agent</span><span class="tag">数据备份</span><span class="tag">影视制作</span></div>
-            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50085323" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
-<a class="ext-link" href="https://swedenherald.com/article/tv4-postpones-the-challenge-until-2027-after-technical-failure-erases-edited-footage" target="_blank" rel="noopener">Original article <span class="domain">swedenherald.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">AI Deletion Claim Pushes Challenge Sverige to 2027</div>
-                        <div class="source-url"><a href="https://tech-insider.org/challenge-sverige-ai-deletion-claim-2027-2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">TV4 Disputes AI Blame for Lost ‘The Challenge’ Edits | Zeniteq</div>
-                        <div class="source-url"><a href="https://www.zeniteq.com/tv4-disputes-ai-blame-for-lost-the-challenge-edits-e9xcmn" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">AI agent reportedly wipes entire season of Swedish TV show before premiere — as presenter says 'I knew AI would be the death of me'</div>
-                        <div class="source-url"><a href="https://tech.yahoo.com/ai/articles/ai-agent-reportedly-wipes-entire-151656684.html" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Why backup and recovery must be part of your AI agent security strategy</div>
-                        <div class="source-url"><a href="https://gitprotect.io/blog/ai-agent-security-strategy-backup-and-recovery" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-4c7da885a3bb">
-            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">tools</span><span class="score-tag">评分 7.6/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B" target="_blank" rel="noopener">MiniCPM-V4.7塞进手机，3GB内存跑35B MoE</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>OpenBMB(面壁智能)10 月 7 日在 HuggingFace 发布 MiniCPM-V 4.7 35B-A3B，为 MiniCPM-V 系列首个 MoE 架构的多模态模型，总参数 35B、每 token 激活约 3B，语言骨干来自 Qwen3.5/Qwen3.6，视觉模块基于 SigLIP2。模型卡 10 月 14 日仍在更新，本周增量包括配套的 DSpark 投机解码草稿模型(MiniCPM-V-4.7-35B-A3B-DSpark)、FP8 量化版本，以及降低灾难性遗忘的 SRFT 自回归重放微调方法。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>MoE 的端侧推理卡在内存上，专家权重放不进手机，按需加载又会让解码慢到没法实时交互。LES 预取、逐层量化加投机采样这套组合证明 35B 总参的模型可以在 3GB 内存里流畅跑，路线开源可复用。与 Qwen3.6 35B-A3B 的同档对比显示，Instruct 模式下更少推理时间拿到更高综合分，效率差异已经足以影响端侧选型。三端移动系统加五类芯片的 day-0 支持，把开发者试用门槛压得很低。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>面壁智能的 MiniCPM-V 4.7 35B-A3B 还在持续施工。模型 10 月 7 日在 HuggingFace 上线，10 月 14 日模型卡仍在更新，一周内陆续补上了 DSpark 投机解码草稿模型、FP8 量化版本和降低灾难性遗忘的 SRFT 微调方法。它是 MiniCPM-V 系列第一个 MoE 架构的多模态模型，总参数 35B，每个 token 只激活约 3B，语言骨干来自 Qwen3.5/Qwen3.6，视觉模块基于 SigLIP2。</p>
-<p>MoE 模型上手机的麻烦在于专家权重总量远超设备内存，按需加载会让解码卡顿到无法交互，锁定专家子集又会削弱能力。官方的工程解法分三层。Lookahead Expert Scheduling(LES)利用跨层路由预测，提前预取下一层可能用到的专家，预测只负责预取与调度，计算仍遵循模型原本的 token 级路由，漏掉的专家照常加载，因此不损失精度。细粒度逐层量化压缩专家权重的存储占用与内存流量。DSpark 投机采样与前两者配合，草稿模型先草拟一批候选、主模型一次校验，解码吞吐因此提高。三项叠加后，这个 35B 总参的模型在 iPhone 17 Pro Max 上以 3GB 内存实现每秒 13 个 token 以上的解码，官方称其为首个能在端侧流畅无损推理的开源 MoE。</p>
-<p><img alt="端侧 MoE 推理优化前后的速度对比" src="https://raw.githubusercontent.com/OpenBMB/MiniCPM-o/main/assets/minicpmv4.7/moe_speed_comparison_en.gif" /></p>
-<p>效率维度上，官方评测显示 Instruct 模式下 35B-A3B 以更少的推理时间取得高于 Qwen3.6 35B-A3B 的综合得分，把性能与耗时的帕累托前沿往前推了一格。视觉侧沿用 LLaVA-UHD v4 的 ViT 内早期压缩，支持 4x/16x 混合视觉 token 压缩，开发者可按任务在细节与成本之间调配。部署面铺得也宽，iOS、Android、HarmonyOS 三端可用，Rockchip、后摩、Intel、AMD、Arm 芯片拿到 day-0 支持，SGLang、vLLM、llama.cpp、Ollama 均可推理，上线一周已衍生 47 个量化模型和 7 个微调模型。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>模型 2026-10-07 创建于 HuggingFace、2026-10-14 仍在更新，历史日报无匹配记录(history_check 判定未出现)。本次覆盖的首发事实为系列首个 MoE 多模态模型及 LES、细粒度逐层量化、DSpark 三项端侧推理技术，本周增量为 DSpark 草稿模型、FP8 量化版本与 SRFT 微调方法，写作按已发布项目持续迭代的口径处理，避免写成全新首发。</div>
-            <div class="tags-row"><span class="tag">面壁智能</span><span class="tag">端侧推理</span><span class="tag">多模态模型</span></div>
-            <div class="links-row"><a class="ext-link" href="https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a>
-<a class="ext-link" href="https://huggingface.co/openbmb/MiniCPM-V-4.7-1B" target="_blank" rel="noopener">Coverage <span class="domain">huggingface.co</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">OpenBMB on X: "Interesting result for local VLMs. MiniCPM-V 4.7 35B-A3B not only used fewer tokens, but also produced a better voxel pagoda than Qwen 3.6 35B-A3. Efficiency + quality is becoming the real battleground for multimodal models.🔥" / X</div>
-                        <div class="source-url"><a href="https://x.com/OpenBMB/status/2109882972262535510" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">MiniCPM-V 4.7 35B-A3B local AI: custom runtime | LocalClaw</div>
-                        <div class="source-url"><a href="https://localclaw.io/models/minicpm-v-4-7-35b-a3b" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">MiniCPM-V-4.7-35B-A3B-5bit - ModelScope</div>
-                        <div class="source-url"><a href="https://www.modelscope.cn/models/mlx-community/MiniCPM-V-4.7-35B-A3B-5bit" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">MiniCPM-V 4.7 35B A3B - VRAM, Specs & Benchmarks</div>
-                        <div class="source-url"><a href="https://apxml.com/models/minicpm-v-4-7-35b-a3b" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-f350160e6b6f">
-            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.5/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://developers.googleblog.com/announcing-mcp-support-in-apigee-hybrid-agentic-tools-that-run-in-your-own-cluster/" target="_blank" rel="noopener">Apigee hybrid支持MCP，工具流量不出自家集群</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Google 宣布 Apigee hybrid 1.17.0 原生 MCP 支持 GA,MCP 数据平面直接部署在客户自有 Kubernetes 集群内,运行时仅从控制平面拉取配置更新。同期能力包括 OpenAPI 3.0.x 规范自动生成 MCP manifest、API Insights 对 MCP 流量与工具性能的观测、Cloud Trace 的代理调用链端到端追踪,文档站新增专门 MCP 章节并附带示例项目。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>企业把 agent 接进内部 API 时,数据出境与合规是最硬的约束。hybrid 形态让工具调用全程留在自有集群,并复用网关既有的 OAuth 2.0、API Key 与限流策略,等于把代理流量纳入企业已有的 API 治理体系。OpenAPI 自动生成 manifest 意味着存量 API 无需定制集成代码就能变成代理可调用的工具,受监管行业与延迟敏感负载因此成为官方点名的主打场景。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Apigee hybrid 的原生 MCP 支持随 1.17.0 版本正式 GA。MCP(Model Context Protocol)是让大模型按统一格式发现并调用外部工具的开放协议,规定了请求响应模式、认证要求与速率限制的描述方式。这次更新的重点在部署位置,MCP 数据平面整个跑在客户自己的 Kubernetes 集群里,代理的请求流量与工具执行都留在自有基础设施内,运行时只从控制平面拉取配置更新,敏感数据不出企业环境。</p>
-<p><img alt="MCP 数据平面在 Apigee X 与 hybrid 中的不同部署位置" src="https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/02-mcp-data-plane-placement-apigee-x-vs-hybrid.original.png" /></p>
-<p>接入侧不需要为代理重写接口。开发者在管理平面用 OpenAPI 规范定义好 API,平台会自动生成 MCP manifest,格式为标准 JSON-RPC 描述,任何 MCP 兼容的代理框架都能直接加载,把存量 API 当作原生工具调用,省掉定制集成代码。安全策略原样复用,所有调用仍经过网关强制执行 OAuth 2.0、API Key 和限流策略,受监管行业与延迟敏感负载是官方点名的主打场景。</p>
-<p>可观测性一并到位。API Insights 可以查看 MCP 流量与热门工具的性能,Cloud Trace 能把一次代理调用的整条链路做成瀑布图追踪。文档站新增了专门的 MCP 章节,覆盖清单格式、安全考量与合规实践,并附带完整的代理工作流示例项目。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>deep_read 判定 genuinely_new,本次为 Apigee hybrid 首次原生支持 MCP(1.17.0 版本),history_check 与 semantic_history 均未匹配到历史报道,官方开发者博客为首发一手来源,写作按全新 GA 发布的口径处理。</div>
-            <div class="tags-row"><span class="tag">谷歌云</span><span class="tag">MCP</span><span class="tag">API 网关</span></div>
-            <div class="links-row"><a class="ext-link" href="https://developers.googleblog.com/announcing-mcp-support-in-apigee-hybrid-agentic-tools-that-run-in-your-own-cluster/" target="_blank" rel="noopener">Source <span class="domain">developers.googleblog.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Apigee all release notes  |  Google Cloud Documentation</div>
-                        <div class="source-url"><a href="https://docs.cloud.google.com/apigee/docs/release-notes" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge official">官方</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Alexandra Escobar's Post</div>
-                        <div class="source-url"><a href="https://www.linkedin.com/posts/alexandra-escobar-301276191_huge-news-for-enterprise-teams-running-multi-cloud-activity-7511191661192900609-FS0F" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Enable Model Context Protocol (MCP) in Apigee hybrid  |  Google Cloud Documentation</div>
-                        <div class="source-url"><a href="https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/enable-mcp" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge official">官方</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Model Context Protocol (MCP) in Apigee overview  |  Google Cloud Documentation</div>
-                        <div class="source-url"><a href="https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-overview" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge official">官方</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">You just installed your first Apigee hybrid cluster, what next? - Knowledge Hub - Google Developer forums</div>
-                        <div class="source-url"><a href="https://discuss.google.dev/t/you-just-installed-your-first-apigee-hybrid-cluster-what-next/289007" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-aecabc34316e">
-            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">industry</span><span class="score-tag">评分 7.2/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://www.unite.ai/alibabas-qwen-glasses-n1-use-himax-wiseeye-always-on-vision-ai/" target="_blank" rel="noopener">奇景光电5毫瓦常开视觉芯片进Qwen眼镜,分层唤醒延续航</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>奇景光电(Himax)10 月 14 日官宣,WiseEye HX6538 超低功耗 AI 处理器集成进阿里巴巴 Qwen Glasses N1,共同构成常开视觉感知系统,官方口径约 5 毫瓦的端侧实时视觉推理,芯片架构为 Arm Cortex-M55 加 Ethos-U55。CEO Jordan Wu 同时透露 WiseEye 此前已被一家全球领先科技公司用于其智能眼镜(公告未点名),阿里由此成为第二个公开选用它的头部客户。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>续航是智能眼镜轻量化形态下最硬的约束,常开视觉又是其中持续耗电的大头。把感知任务从主芯片挪到一颗 5 毫瓦的协处理器上,再让主机只在被需要时醒来,等于把最耗电的环节从持续运行改成按需运行。对供应链而言,这显示 AI 眼镜的体验分工正在细化,主芯片负责复杂计算,毫瓦级端点 AI 芯片负责常开盯梢,后者决定了常开功能能否真正常开。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>智能眼镜要当好随身助理,先得解决一直看与少用电的矛盾。奇景光电(Himax)10 月 14 日官宣,其 WiseEye HX6538 超低功耗 AI 处理器已集成进阿里巴巴 Qwen Glasses N1,共同构成常开视觉感知系统。官方口径下,这颗芯片以约 5 毫瓦的功耗独立完成实时端侧视觉推理,公司称该数字处于业界领先水平。</p>
-<p><img alt="阿里 Qwen 眼镜 N1 采用 Himax WiseEye 常开视觉 AI 方案" src="https://www.unite.ai/wp-content/uploads/2026/10/alibaba-qwen-glasses-n1-use-himax-wiseeye-vision-ai.jpg" /></p>
-<p>方案的省电逻辑分两层。HX6538 基于 Arm Cortex-M55 CPU 与 Ethos-U55 NPU,在眼镜常规影像通路之外单独运行视觉识别模型,持续执行人形与事件检测。其上是分层视觉唤醒机制,小芯片检测到相关人或事件时,才把主机唤醒做进一步的 AI 处理,其余时间主机保持非活跃,整机功耗因此被压下来,续航随之延长。</p>
-<p>按奇景产品文档,WiseEye2 方案由超低功耗 CMOS 图像传感器与 HX6538 AI 微控制器组成,较上一代 WE1 芯片推理速度快 32 倍、能效高 50 倍(官方口径),同功耗级别可运行更复杂的模型、返回更准确的结果;量产模组为 HX6538 搭配 640×480 分辨率的 HM0360 传感器,封装尺寸 20.5×21.5×4.92 毫米。</p>
-<p>奇景光电 CEO Jordan Wu 在公告中说:"在 WiseEye 早先被一家全球领先科技公司用于其最新智能眼镜之后,阿里巴巴为 Qwen Glasses 选用它,进一步验证了 WiseEye 在超低功耗运行、常开感知与端侧 AI 处理上的优势。"从供应链视角看,这颗躲在影像通路旁边的 5 毫瓦协处理器把常开视觉的电力成本降到了整机可以承受的量级,也给 AI agent 式的主动感知与实时服务留出了电池余量。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>10 月 14 日奇景光电官方公告为首发事实,历史日报与语义历史均无匹配(history_check 判定未出现)。本次新增量为 Qwen Glasses N1 首次确认搭载 HX6538,并披露 5 毫瓦常开视觉推理、分层视觉唤醒架构等细节,CEO 原话另透露此前已有全球头部科技公司采用,按全新供应链合作事件处理。</div>
-            <div class="tags-row"><span class="tag">智能眼镜</span><span class="tag">端侧AI</span><span class="tag">芯片供应链</span></div>
-            <div class="links-row"><a class="ext-link" href="https://www.unite.ai/alibabas-qwen-glasses-n1-use-himax-wiseeye-always-on-vision-ai/" target="_blank" rel="noopener">Source <span class="domain">www.unite.ai</span></a>
-<a class="ext-link" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxOTjFXbXVwLWlDRzRYV1BwSkl4SXRYNlZRT1lPYjdiOUsybEZIUm00em9qV2hmemU1dm9OeXlWOHRVNURGYm5MdEZMZzY5NUJwRG1kQ0ZJMGVoeEN4WnB5Y0ZxWWt1WWRTV2dEQzM5Tml2TzFFUDVwZVp0TnhkMlhaWGo0d0FBcmlvdUFFZUNDa0xxZ3NTMnpzSE9uQW1QdE5BeTZRT3J1NlZQSWFqczdOMHRzT0swWnpaLUlZ?oc=5" target="_blank" rel="noopener">Source <span class="domain">news.google.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Alibaba’s Qwen Glasses N1 Use Himax WiseEye Always-On Vision AI – Unite.AI</div>
-                        <div class="source-url"><a href="https://www.unite.ai/alibabas-qwen-glasses-n1-use-himax-wiseeye-always-on-vision-ai" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Himax WiseEye Ultralow Power AI Adopted in Alibaba's ...</div>
-                        <div class="source-url"><a href="https://www.himax.com.tw/wp-content/uploads/2026/10/PR-Himax-WiseEye-Ultralow-Power-AI-Adopted-in-Alibabas-Latest-Qwen-AI-Glasses-Final.pdf" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Himax WiseEye Ultralow Power AI Adopted in Alibaba’s Latest Qwen Glasses</div>
-                        <div class="source-url"><a href="https://www.manilatimes.net/2026/10/14/tmt-newswire/globenewswire/himax-wiseeye-ultralow-power-ai-adopted-in-alibabas-latest-qwen-glasses/2445361/amp" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-feb8f7eb7d35">
-            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">tools</span><span class="score-tag">评分 7.0/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://github.com/K-Dense-AI/scientific-agent-skills" target="_blank" rel="noopener">177个科研技能开源，把编程agent变成AI科学家</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>scientific-agent-skills 是一个已存在约一年的成熟仓库，本次新闻点是版本迭代与热度回升。最新版本 v2.72.0 发布于 2026 年 10 月 1 日，README 最近一次提交在 10 月 12 日，仓库随后重新登上 GitHub Trending。history_check 未在历史日报中找到匹配，属首次覆盖。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>通用编程 agent 缺乏科研领域能力是 AI for Science 落地的常见门槛，这个库用开源技能包的思路补齐了一环。177 个验证技能与 100 多个数据库接入按开放 Agent Skills 标准打包，Cursor、Claude Code、Codex 等主流工具通用，意味着一份技能资产可以在多个工具之间复用。一年迭代到 v2.72.0 的节奏，也给技能库这类开源项目的持续维护提供了一个样本。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>GitHub Trending 最近重新出现一个熟悉的项目。K-Dense-AI 的 scientific-agent-skills 仓库创建于 2025 年 10 月，至今约一年，期间持续迭代，最新版本 v2.72.0 发布于 10 月 1 日，README 在 10 月 12 日仍有提交，随后热度回升登上 Trending。它解决的问题很直接，把任意 AI 编程 agent 改造成科研助手。</p>
-<p>项目提供 177 个经过验证的即用型技能和 100 多个科学数据库接入，覆盖生物学、化学、医学与药物发现。技能库遵循开放的 Agent Skills 标准，Cursor、Claude Code、Codex、Pi、Google Antigravity 等主流编程工具都可以直接安装，装上之后，通用编程 agent 便多出一层领域科研能力和专业数据源。仓库以 MIT 协议开源，方法学有对应的 arXiv 论文（编号 2609.00065）支撑。</p>
-<p>README 自述全球有超过 25 万科学家在使用，并称自己是科学领域规模第一的技能库，这些数字与名头均为项目方口径，暂无第三方数据佐证。可以直接核实的是维护节奏，一年内版本号走到 v2.72.0，10 月 12 日仓库仍有动作。对科研团队，它给出了一条低成本路径，用现成编程 agent 加开源技能包组装自己的领域助手。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>仓库创建于 2025 年 10 月 19 日，至今约一年，deep_read 判定 significant_update。本次增量为 2026 年 10 月 1 日发布的 v2.72.0 与 10 月 12 日的 README 提交，随后登上 GitHub Trending。history_check 与语义历史库均未匹配到此前报道，写作按成熟项目版本迭代与热度回升的口径处理，避免写成新项目首发。</div>
-            <div class="tags-row"><span class="tag">Agent Skills</span><span class="tag">开源社区</span><span class="tag">AI for Science</span></div>
-            <div class="links-row"><a class="ext-link" href="https://github.com/K-Dense-AI/scientific-agent-skills" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Agent Skills Open Standard Explained | Anthropic SKILL.md Specification Adopted by Claude Code, Codex, Cursor & 32 Tools - Interoperability Guide 2026</div>
-                        <div class="source-url"><a href="https://www.paperclipped.de/en/blog/agent-skills-open-standard-interoperability" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">The Agent Skills Ecosystem in 2026: Who's Building, What's Working, and What's Next | Agentman Blog</div>
-                        <div class="source-url"><a href="https://agentman.ai/blog/agent-skills-ecosystem-report-2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">scientific-agent-skills/skills/peer-review/SKILL.md at main · K-Dense-AI/scientific-agent-skills · GitHub</div>
-                        <div class="source-url"><a href="https://github.com/k-dense-ai/scientific-agent-skills/blob/main/skills/peer-review/SKILL.md" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge official">官方</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">GitHub - K-Dense-AI/scientific-agent-skills: Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard. · GitHub</div>
-                        <div class="source-url"><a href="https://github.com/k-dense-ai/scientific-agent-skills" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge official">官方</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">K-Dense Web vs Scientific Agent Skills</div>
-                        <div class="source-url"><a href="https://www.k-dense.ai/blog/k-dense-web-vs-scientific-agent-skills" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">AI Runtime (GPU serverless) - new in Databricks | REbricked</div>
+                        <div class="source-url"><a href="https://rebricked.org/databricks/ai-runtime" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1327,15 +1417,15 @@ body {
             <div class="radar-card">
                 <div class="radar-rank">#1</div>
                 <div class="radar-info">
-                    <div class="radar-title"><a href="https://github.com/ifixai-ai/iFixAi" target="_blank" rel="noopener">iFixAi:两分钟给 AI agent 做独立体检</a> <span class="radar-category">tools</span></div>
-                    <div class="radar-blurb">开源工具对 AI agent 做独立审计,人或 agent 自己都能跑,120 秒内回答“它到底有没有在干该干的活”,观察 agent 经济的质检层能否长出标准</div>
+                    <div class="radar-title"><a href="https://simonwillison.net/2026/Oct/15/anthropic-tells-investors/" target="_blank" rel="noopener">Anthropic 季度营收达 168 亿美元,IPO 前同比增长近 50%</a> <span class="radar-category">industry</span></div>
+                    <div class="radar-blurb">路透社消息,Anthropic 向投资者披露营收接近翻五成的最新季度数据,上市前的增长曲线是观察 AI 商业化成色的关键样本</div>
                 </div>
             </div>
             <div class="radar-card">
                 <div class="radar-rank">#2</div>
                 <div class="radar-info">
-                    <div class="radar-title"><a href="https://github.blog/engineering/architecture-optimization/from-2500-requests-to-24-rebuilding-star-history-without-the-stargazers/" target="_blank" rel="noopener">GitHub 把 star 历史查询从 2500 次请求压到 24 次</a> <span class="radar-category">tools</span></div>
-                    <div class="radar-blurb">GitHub 工程博客复盘 star 历史 API 重构,不返回个人身份、不给数据库无界压力,隐私与性能的取舍值得做图表接口的团队一读</div>
+                    <div class="radar-title"><a href="https://openai.com/index/introducing-the-rosalind-academic-plan" target="_blank" rel="noopener">OpenAI 推出 GPT-Rosalind 学术研究实验室计划</a> <span class="radar-category">announcements</span></div>
+                    <div class="radar-blurb">OpenAI 面向学术实验室的专用接入计划,看 AI 巨头如何用特殊定价与资源扶持绑定科研用户群</div>
                 </div>
             </div>
         </section>
@@ -1345,8 +1435,8 @@ body {
 
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
-    <div class="stats">18 源<span>|</span>148 条<span>|</span>9 条精选<span>|</span>17 条候选</div>
-    <div class="generated">生成于 2026-10-15T08:15:25.499960</div>
+    <div class="stats">20 源<span>|</span>139 条<span>|</span>10 条精选<span>|</span>17 条候选</div>
+    <div class="generated">生成于 2026-10-16T08:16:43.584740</div>
 </footer>
 
 </div>
