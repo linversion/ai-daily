@@ -1,0 +1,1377 @@
+<!-- ai-daily-final-sha256:84e47ce0a78cdbfac373f3e43c9bbe59d24e8d95384676b1d545426219d0e944 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 | 2026-10-20 — AI 内容机会日报</title>
+<style>
+/* ═══════════ CSS Reset & Base ═══════════ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+:root {
+    --bg-page: #F7F7F5;
+    --bg-paper: #FFFFFF;
+    --text-main: #111111;
+    --text-body: #222222;
+    --text-muted: #555555;
+    --text-light: #999999;
+    --accent: #D93025;
+    --accent-soft: #FFF0EE;
+    --border-divider: #E5E5E5;
+    --border-strong: #111111;
+    --tag-bg: #F5F5F5;
+    --score-high: #0F7B4E;
+    --score-mid: #D97706;
+    --link-underline: #CCCCCC;
+    --hover-accent: #B82020;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", serif;
+    background: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-paper);
+    padding: 80px 60px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: var(--text-main);
+}
+
+/* ═══════════ Header ═══════════ */
+.header {
+    text-align: center;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--border-strong);
+}
+
+.header h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 1.2;
+    color: var(--text-main);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.header .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.header .divider {
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    margin: 0 auto 20px;
+}
+
+.header .meta-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+}
+
+.header .meta-line span {
+    margin: 0 12px;
+    color: var(--border-divider);
+}
+
+.header .trend-callout {
+    margin-top: 24px;
+    padding: 16px 24px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    font-size: 15px;
+    color: var(--text-main);
+    text-align: left;
+    line-height: 1.7;
+    border-radius: 0 4px 4px 0;
+}
+
+/* ═══════════ Article Cards ═══════════ */
+.articles-section {
+    margin-bottom: 50px;
+}
+
+.section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.article-card {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.article-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.article-body { margin: 16px 0; }
+.article-body img {
+    display: block; max-width: 100%; height: auto;
+    margin: 14px auto; border-radius: 8px;
+    cursor: zoom-in;
+}
+.img-lightbox {
+    position: fixed; inset: 0; z-index: 999;
+    background: rgba(0, 0, 0, 0.86);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; cursor: zoom-out;
+}
+.img-lightbox img {
+    max-width: 96vw; max-height: 96vh; width: auto; height: auto;
+    border-radius: 8px; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+.article-body summary {
+    cursor: pointer; color: var(--accent); font: 600 13px 'Inter', sans-serif;
+}
+.article-body[open] summary { margin-bottom: 14px; }
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.rank-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    background: var(--text-main);
+    color: #FFF;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+}
+
+.rank-badge.headline {
+    background: var(--accent);
+}
+
+.category-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: var(--tag-bg);
+    color: var(--text-muted);
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+}
+
+.score-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--score-high);
+}
+
+.newness-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 4px 8px;
+    background: #F0F9F4;
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+}
+
+.article-card h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.article-card .one-liner {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: #FAFAFA;
+    border-left: 2px solid var(--border-divider);
+    border-radius: 0 4px 4px 0;
+}
+
+.article-card .what-box {
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-body);
+}
+
+.article-card .what-box strong {
+    color: var(--accent);
+}
+
+.article-card .why-box {
+    margin-bottom: 14px;
+    padding: 14px 18px;
+    background: #FFFDF5;
+    border: 1px solid #F0EABD;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-body);
+}
+
+.article-card .body-md {
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-body);
+    text-align: justify;
+}
+
+.article-card .body-md p {
+    margin-bottom: 16px;
+}
+
+.article-card .body-md a {
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-underline);
+    transition: all 0.2s;
+}
+
+.article-card .body-md a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.article-card .body-md strong {
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.article-card .body-md code {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    font-size: 13px;
+    background: #F5F5F5;
+    padding: 2px 6px;
+    border-radius: 2px;
+    color: var(--accent);
+}
+
+.article-card .body-md ul, .article-card .body-md ol {
+    margin-bottom: 16px;
+    padding-left: 20px;
+}
+
+.article-card .body-md li {
+    margin-bottom: 8px;
+}
+
+/* ═══════════ Tags ═══════════ */
+.tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: #F0F0F0;
+    color: #666;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+}
+
+/* ═══════════ Verification Sources ═══════════ */
+.sources-box {
+    margin: 16px 0;
+    border: 1px solid var(--border-divider);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.sources-box .sources-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 10px 16px;
+    background: #FAFAFA;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.sources-box .source-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 16px;
+    border-bottom: 1px solid #F5F5F5;
+    font-size: 13px;
+    gap: 12px;
+}
+
+.sources-box .source-row:last-child {
+    border-bottom: none;
+}
+
+.sources-box .source-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.sources-box .source-info .source-title {
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.sources-box .source-info .source-url {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sources-box .source-info .source-url a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.sources-box .source-info .source-url a:hover {
+    text-decoration: underline;
+}
+
+.sources-box .source-info .source-purpose {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 3px;
+    line-height: 1.5;
+}
+
+.sources-box .source-badges {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.badge.official { background: #E8F5E9; color: #2E7D32; }
+.badge.media { background: #E3F2FD; color: #1565C0; }
+.badge.community { background: #FFF3E0; color: #E65100; }
+.badge.secondary { background: #F3E5F5; color: #7B1FA2; }
+.badge.noise { background: #FFEBEE; color: #C62828; }
+
+.badge.newness { background: #E8F5E9; color: #2E7D32; }
+.badge.background { background: #E3F2FD; color: #1565C0; }
+.badge.contrarian { background: #FFF3E0; color: #E65100; }
+.badge.content { background: #F3E5F5; color: #7B1FA2; }
+
+/* ═══════════ History Check ═══════════ */
+.history-note {
+    margin: 10px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.history-note .label {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.history-note .verdict-not-seen { color: var(--score-high); }
+.history-note .verdict-seen-before { color: var(--score-mid); }
+
+/* ═══════════ Confirmed Event Aggregation ═══════════ */
+.event-aggregation {
+    margin: 16px 0;
+    padding: 14px;
+    border: 1px solid #E7DDB4;
+    border-radius: 6px;
+    background: #FFFDF5;
+}
+
+.event-head {
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.event-sources { display: grid; gap: 8px; }
+
+.event-source {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    align-items: center;
+    color: var(--text-body);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.event-role {
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: #F0EABD;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.event-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.event-domain { color: var(--text-light); font-family: 'Inter', sans-serif; font-size: 10px; }
+.event-source:hover .event-title { color: var(--accent); }
+
+/* ═══════════ Links ═══════════ */
+.links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ext-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border: 1px solid var(--border-divider);
+    border-radius: 4px;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.ext-link:hover {
+    border-color: var(--text-main);
+    background: #FAFAFA;
+}
+
+.ext-link .domain { color: var(--text-light); font-size: 10px; }
+
+/* ═══════════ Radar Scan ═══════════ */
+.radar-section {
+    margin-bottom: 50px;
+}
+
+.radar-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #A3A3A3;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--border-divider);
+}
+
+.radar-card {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    background: #FAFAFA;
+    border: 1px dashed var(--border-divider);
+    border-radius: 4px;
+    transition: all 0.15s;
+}
+
+.radar-card:hover {
+    border-color: #BBBBBB;
+    background: #F5F5F5;
+}
+
+.radar-rank {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-light);
+    flex-shrink: 0;
+}
+
+.radar-card .radar-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.radar-card .radar-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+    line-height: 1.4;
+}
+
+.radar-card .radar-title a {
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-underline);
+}
+
+.radar-card .radar-title a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.radar-card .radar-category {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.radar-card .radar-blurb {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-top: 2px;
+}
+
+.radar-empty {
+    text-align: center;
+    padding: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    border: 1px dashed var(--border-divider);
+    border-radius: 4px;
+}
+
+/* ═══════════ Pick of the Day ═══════════ */
+.pick-section {
+    margin-bottom: 50px;
+}
+
+.pick-card {
+    padding: 28px;
+    background: linear-gradient(135deg, #FFFBEB 0%, #FFF7ED 100%);
+    border: 2px solid #F59E0B;
+    border-radius: 8px;
+    position: relative;
+}
+
+.pick-card::before {
+    content: "★ 今日最佳选题";
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: #F59E0B;
+    color: #FFF;
+    padding: 4px 14px;
+    border-radius: 3px;
+}
+
+.pick-card h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 8px 0 12px;
+    line-height: 1.4;
+}
+
+.pick-card .pick-meta {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.pick-card .pick-outline {
+    margin: 12px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.pick-card .pick-outline li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-body);
+}
+
+.pick-card .pick-outline li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: monospace;
+}
+
+.pick-card .pick-closing {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed #F0EABD;
+}
+
+/* ═══════════ Footer ═══════════ */
+.footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-divider);
+    text-align: center;
+}
+
+.footer .stats {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.footer .stats span {
+    margin: 0 16px;
+}
+
+.footer .generated {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 8px;
+}
+
+/* ═══════════ Responsive ═══════════ */
+@media (max-width: 700px) {
+    body { padding: 0; background: var(--bg-paper); }
+    .container { padding: 32px 20px; box-shadow: none; }
+    .header h1 { font-size: 28px; }
+    .article-card h2 { font-size: 18px; }
+    .pick-card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="header">
+    <h1>AI 日报 | 2026-10-20</h1>
+    <div class="subtitle">AI 内容机会日报</div>
+    <div class="divider"></div>
+    <div class="meta-line">2026-10-20<span>|</span>由 <strong>local-memory-agent</strong> 生成</div>
+    <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
+      <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
+    </div>
+    <div class="trend-callout">把 agent 做便宜、跑稳定成了多家公司一天内的共同动作：MiniMax 用新 Flash 模型把 agent 任务成本砍七成，Meta 同时公开编排方法论与吉瓦级集群细节，英伟达把开源 agent 模型铺到桌面，而 MIT 科技评论提醒为 agent 改造互联网有其代价</div>
+</header>
+
+<!-- ═══════ TOP ARTICLES ═══════ -->
+<section class="articles-section">
+    <div class="section-label">今日最值得关注</div>
+    <div class="article-card" data-id="raw-e7877c750e92">
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">announcements</span><span class="score-tag">评分 9.2/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://www.bestblogs.dev/article/d8cd131e06?utm_source=rss&utm_medium=feed&utm_campaign=resources&entry=rss_article_item" target="_blank" rel="noopener">MiniMax M3.1 Flash 发布，Agent 成本降七成</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>10 月 19 日晚，MiniMax 正式发布新一代 Flash 模型 M3.1 Flash，官方公众号与 VentureBeat 等海外媒体同日报道。模型面向 agent 场景，覆盖企业流程自动化、编程、电脑操作与网络安全四类任务，官方称线上推理速度较上一代提升近 3 倍，Agentic 类任务的综合使用成本降低 70%。发布节奏分两步，9 月 27 日模型曾以 M3.1-Flash-Preview 的名义上线预览，10 月 19 日去掉 Preview 后缀正式定档。模型现已上线 MiniMax API、订阅制 MPlan 与 MiniMax Code，权重计划 10 月 23 日开放。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Agent 应用的账单按 token 结算，一个 agent 完成任务往往要走几十上百步，每一步都消耗输入与输出 token，模型单价直接决定规模化部署能否算得过账。M3.1 Flash 输入每百万 token 1 元、输出 4 元、缓存读取 0.1 元，VentureBeat 换算为输入 0.15 美元，与 DeepSeek V4.1 Flash-1017 的低谷价同档，在其整理的 frontier 模型价格表中属于最便宜的一批。第三方评测机构 Artificial Analysis 给出参照，M3.1 Flash 智能指数 42 分，较上一代 M3 的 29 分提高 13 分，与 GLM-5.3 Flash 持平，领先 Gemini 3.8 Flash 的 41 分，略低于 DeepSeek V4.1 Flash-1017 的 45 分，完成单项评测任务的平均成本从约 0.51 美元降到 0.22 美元。评测还记录它完成评测输出约 1.89 亿 token，少于 GLM-5.3 Flash 的约 3.24 亿与 Gemini 3.8 Flash 的约 3.34 亿，少生成 token 同样在省钱。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 19 日晚，MiniMax 正式发布新一代 Flash 模型 M3.1 Flash，官方公众号之外，VentureBeat 等海外媒体同日跟进报道，两边共同的关键词是 agent、便宜、快。官方把能力落在大类上，Agentic 任务、编程、Computer Use 与网络安全，并给出两组关键数字，线上推理速度提升近 3 倍，Agentic 类任务的综合使用成本较前代降低 70%。</p>
+<p>这次发布走了两步。9 月 27 日，模型以 M3.1-Flash-Preview 的名义上线预览，10 月 19 日去掉 Preview 后缀正式定档。还有一段匿名前史，官方披露此前以 Space Bunny 身份在线上处理了超过 200 万亿 token 的模型，正是 M3.1 Flash 的早期版本，正式亮相前已经经受过大规模真实流量，官方没有给出更细的用量拆分。</p>
+<p>基准成绩是这次公告的主体。编程评测 DeepSWE v1.1 拿到 73.7%，电脑操作基准 OSWorld V2 61.7 分、Agents' Last Exam 29.6 分，官方称两项均列国产模型第一，网络安全基准 CyberGym 82%，金融工作流 BankerToolBench 76.2 分，企业自动化评测 AutomationBench-AA 位居最前列。VentureBeat 补充了对照视角，M3.1 Flash 在 Automation-Bench v1.0.6 上拿到 62.2 分，略高于 DeepSeek V4.1 Flash-1017 的 60.5，也在官方对比中超过 GPT-5.6 Sol 与 Claude Opus 5 的成绩，BankerToolBench 则与 Claude Opus 5 打平。</p>
+<p>价格与速度构成另一半叙事。输入每百万 token 1 元、输出 4 元、缓存读取 0.1 元，VentureBeat 换算为输入 0.15 美元、输出 0.60 美元、缓存 0.015 美元，与 DeepSeek V4.1 Flash-1017 的低谷价同档，属于当前最便宜的一批 frontier 模型。速度来自更激进的稀疏注意力架构，官方称日常输出 200+ TPS，中位数 P50 稳定 170+ TPS。第三方机构 Artificial Analysis 的评测给了独立锚点，智能指数 42 分，较上一代 M3 的 29 分提高 13 分，与 GLM-5.3 Flash 持平，领先 Gemini 3.8 Flash 的 41 分，略低于 DeepSeek V4.1 Flash-1017 的 45 分，完成单项评测任务的平均成本从约 0.51 美元降到 0.22 美元。评测同时记录，它完成评测输出约 1.89 亿 token，少于 GLM-5.3 Flash 的约 3.24 亿与 Gemini 3.8 Flash 的约 3.34 亿，在 API 单价之外又省下一层。</p>
+<p>最有分量的反方证据同样出自 Artificial Analysis。事实性基准 AA-Omniscience 上，M3.1 Flash 答对 56%，高于 DeepSeek V4.1 Flash-1017 的 43% 与 GLM-5.3 Flash 的 28%，但评测机构发现它几乎每题都作答，很少承认不确定，93% 的幻觉率由此而来。这个指标衡量没答对的回答中彻底答错的比例，拒答与部分正确不计入，不能读成 93% 的回答都错，即便如此该项总分只有 16 分。VentureBeat 的提醒很直接，企业把它放进知识密集型工作流，需要检索、护栏与人工审核兜底。</p>
+<p>渠道方面，模型已上线 MiniMax API、订阅制 MPlan 与 MiniMax Code。权重发布时仍为专有，官方计划 10 月 23 日开放，许可条款尚未公布，能修改与自托管的范围要等条款落地才见分晓。追求智能上限的 Pro 版本也在官方稿中预告，没有给出时间表。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>M3.1 Flash 官方首发公告，首次公开完整定价、基准、速度与渠道，并披露 Space Bunny 匿名前史与 10 月 23 日开放权重计划，历史日报无匹配。</div>
+            <div class="tags-row"><span class="tag">MiniMax</span><span class="tag">大模型</span><span class="tag">AI Agent</span><span class="tag">模型定价</span></div>
+            <div class="event-aggregation"><div class="event-head">事件聚合 · 2 个来源 · 已合并 1 条候选</div><div class="event-sources"><a class="event-source" href="https://www.bestblogs.dev/article/d8cd131e06?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=resources&amp;entry=rss_article_item" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">MiniMax M3.1 Flash：重新定义 Agent 的性能与成本</span><span class="event-domain">www.bestblogs.dev</span></a><a class="event-source" href="https://venturebeat.com/technology/minimaxs-new-m3-1-flash-beats-deepseek-and-opus-5-on-a-key-business-benchmark-at-lower-cost-but-with-a-high-hallucination-rate" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">MiniMax&#x27;s new M3.1 Flash beats DeepSeek and Opus 5 on a key business benchmark at lower cost — but with a high hallucination rate</span><span class="event-domain">venturebeat.com</span></a></div></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">MiniMax's new M3.1 Flash beats DeepSeek and Opus 5 on a key business benchmark at lower cost — but with a high hallucination rate</div>
+                        <div class="source-url"><a href="https://venturebeat.com/technology/minimaxs-new-m3-1-flash-beats-deepseek-and-opus-5-on-a-key-business-benchmark-at-lower-cost-but-with-a-high-hallucination-rate" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">M3.1 Flash Preview Review: MiniMax Specs, Access & Limits | MyClaw.ai</div>
+                        <div class="source-url"><a href="https://myclaw.ai/blog/m3-1-flash-preview" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">MiniMax Just Launched M3.1 Flash: 428B MoE Agentic Model at $0.15/M Input</div>
+                        <div class="source-url"><a href="https://www.marktechpost.com/2026/10/19/minimax-m3-1-flash-release" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-5641e45c2126">
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.8/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/" target="_blank" rel="noopener">Meta 瘦编排器实践，1300 行路由器管 14 个子代理</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Meta 工程团队 10 月 19 日在工程博客发文，公开其数据管道 AI 代理系统采用的瘦编排器架构。约 1300 行代码的编排器把 20 多个工作流路由给 14 个专门化子代理，自己不做任何领域工作，只负责排序、收集字段和执行可靠性检查，领域推理全部交给带隔离上下文的子代理。文章属于内部工程经验披露，没有伴随代码或框架发布。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>它把 agent 的可靠性从提示词技巧变成结构约束。单个全知代理的失败方式在文章里很具体，上下文超过阈值后加知识反而降性能，出现跨子系统的概念污染，另一个单代理方案在没有任务级手写提示词时成功率只有 10% 到 20%。固定七步协议把大模型推理压缩到委派一步，知识按需隔离加载，错误被框在单个子代理内。收益同样具体，新数据列配置准备从人工三到四天压到一小时以内，约三分之二变更免重大人工编辑。文末五条建议让其他团队能直接对照改造自己的 agent 系统。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Meta 工程团队 10 月 19 日在工程博客发文，署名 Plawan Rath、Akhil Jindal、Ashwini Verma，首次公开他们数据管道 AI 代理系统采用的瘦编排器（Thin Orchestrator）架构。这套系统用约 1300 行代码的编排器调度 20 多个工作流和 14 个专门化子代理，编排器自身不做任何领域工作，全部职责是排序、收集字段和执行可靠性检查。文章定位为内部工程经验披露，随文没有代码或框架发布。</p>
+<p>他们自动化的场景是推荐系统的数据列接入，一个新列要在三个代码仓库、三种编程语言间同步改动，最多经过六个管道阶段才能把数据送达。团队最初把 10 多个数据源的全部领域知识、配置 schema、代码生成规则和填充模式装进一个全知型代理，演示跑得通，进了生产环境开始幻觉，把一个子系统的字段命名规范套到另一个子系统，给这个数据源写的代码生成模式用到了那个数据源上。文章记录的规律是，上下文超过某个阈值之后，继续加知识，性能下降。旁证来自 Mount Sinai 的 Windreich 人工智能与人类健康系一篇预印本，编排式多代理系统在 80 任务批次中保持 65.3% 准确率，单代理掉到 16.6%，token 用量最多降到原来的六十五分之一。团队还评估过另一个单代理方案，工程师为每个任务手写专属系统提示词时成功率 70% 到 80%，撤掉人工陪护就掉到 10% 到 20%。</p>
+<p>新架构把系统拆成两层。确定性编排器负责意图分类、字段收集、可靠性门控和任务委派，确定性在这里指按固定规则执行、结果可预期，不经过大模型猜测；14 个子代理各带隔离上下文做领域推理，schema 管理代理懂配置注册表，填充代理懂 10 个数据源的代码生成，校验代理懂构建系统和质量检查，谁都看不到系统全貌。编排器对每个请求执行固定的七步协议，依次是读子代理指令文件、查重、向用户收集必填字段、自动推断可推断项、跑可靠性门控、带着完整上下文委派、处理结果并上报告错。七步里只有第六步委派涉及大模型推理，而且推理发生在只加载了本领域知识的隔离上下文内。</p>
+<p>扩展靠工作流模板完成，模板本质是约束大模型决策空间的确定性状态机。列接入、事件接入、管道迁移三种模板以不同顺序复用同一池子代理，团队支持管道迁移这个全新用例时，写了一个新模板重排现有代理，没有新增任何代理代码。每个子代理按五段统一结构编写，涵盖知识源、预收集清单、分步工作流、发现模式、故障排查，第 15 个子代理和第 1 个结构一致，新增子代理属于模板化工作。系统维护着 25 个以上按工作流域组织的知识文件，在子代理执行时按需加载，单文件通常几千 token，文件更新后下一次会话自动用新版，编排器不用改代码也不用重新部署。</p>
+<p><img alt="瘦编排器的工作流模板" src="https://engineering.fb.com/wp-content/uploads/2026/10/Meta-Thin-Orchestrator-workflow.jpg" /></p>
+<p>效果有量化数字。新数据列的配置准备，纯人工要三到四天，早期的配置驱动系统约一天，瘦编排器系统压到一小时以内；全系统约三分之二的变更免于重大人工修改直接合入。作者同时写明代价，系统用通用性换领域深度，编排器保持通用，子代理做深做专。文末的五条建议面向所有做生产级 agent 的团队，头两条讲路由与推理分离和子代理结构统一，后面三条分别是用工作流模板扩场景、知识运行时加载、给确定性和概率性任务划清边界。团队下一步计划把架构扩到新的管道域，并用带人工审核的自动反馈循环持续改进子代理知识。</p>
+<p><img alt="瘦编排器的结果数据" src="https://engineering.fb.com/wp-content/uploads/2026/10/Meta-Thin-Orchestrator-results.png" /></p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Meta 工程博客对该架构模式的首次公开披露，新增量包括 1300 行编排器加 14 个子代理加 20 多个工作流的具体规模、七步固定协议、三种零代码扩展的工作流模板、25 个以上按需加载知识文件的设计和量化结果。</div>
+            <div class="tags-row"><span class="tag">Meta</span><span class="tag">AI Agent</span><span class="tag">多智能体</span><span class="tag">工程实践</span></div>
+            <div class="links-row"><a class="ext-link" href="https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/" target="_blank" rel="noopener">Source <span class="domain">engineering.fb.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AI Agent Orchestrator in 2026: 9 Frameworks, 5 Patterns, and the Production Stack to Ship Them - Totalum Blog</div>
+                        <div class="source-url"><a href="https://www.totalum.app/blog/ai-agent-orchestrator-totalum-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">The Thin Orchestrator: How We Made Our AI Agents More Reliable by Giving the Router Less to Do - Engineering at Meta</div>
+                        <div class="source-url"><a href="https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">The Orchestration of Multi-Agent Systems: Architectures, Protocols, and Enterprise Adoption</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2601.13671v1" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-d88320583f8c">
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.0/10</span><span class="newness-tag">minor_update</span></div>
+            <h2><a href="https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/" target="_blank" rel="noopener">英伟达开源模型铺到桌面，Super VL 领跑美国开源榜</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>英伟达上周四（10 月 15 日）开源发布 Nemotron 3.5 模型家族，TechCrunch 本周一（10 月 19 日）刊发跟进报道，今天日报收录的正是这轮媒体跟进。家族一头是给企业数据中心用的 Super VL，总参数 1200 亿；另一头是给本地设备用的 Bolt 系列，能装进搭载英伟达芯片的 AI PC 和工作站，在本地跑 agent。Super VL 和 Bolt 74B-A9B 现已可用，最小的 Bolt E4B 定在 10 月 23 日上线。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>开源权重给了企业一条自托管路径，模型可以拿自有数据做后训练，部署在自家机房，成果也归自己。英伟达开放模型与软件副总裁 Kari Briski 在发布博客里写道：“Unlike closed frontier models, organizations can post-train Super VL on their own data, deploy it on their own infrastructure and own what they build。” 消费端同样有需求，agent 要接触家庭、健康、财务这类敏感信息，本地运行让这些数据不必送上云端。对英伟达来说，这套模型还把搭载自家芯片的 AI PC 变成了新的出货方向。本期日报多条新闻都在围绕 agent 的成本与自托管展开，这条补上了开源权重一侧的拼图。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>英伟达在 10 月 15 日（上周四）开源了 Nemotron 3.5 模型家族，本篇依据 TechCrunch 10 月 19 日刊发的跟进报道整理，属于媒体跟进视角。家族分两条产品线。面向企业的 Super VL 总参数 1200 亿，每个请求激活 120 亿，上下文 100 万 token，按 OpenMDW-1.1 许可开放权重。评测机构 Artificial Analysis 给它打出 26 分的智能指数，高于前代 Nemotron 3 Super 的 13 分和上代旗舰 Nemotron 3 Ultra 的 23 分，目前在美国开源权重模型中领先；同一机构在 DeepInfra 预发布服务器上测得约 630 token/秒（10 万 token 长输入），称它为智能指数 20 分以上模型中最快的一个。</p>
+<p>面向本地设备的 Bolt 74B-A9B 24GB 可以在搭载 RTX Spark 芯片的 AI PC 和 DGX Spark 工作站上运行，支持多步推理、工具调用和网页浏览，已随 Super VL 一同上线；更小的 Bolt E4B 面向对话型 agent，定于 10 月 23 日上线。企业侧，Skydance、EY、Ramp、CrowdStrike、Perplexity、Salesforce 已在使用 Super VL。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>发布于 10-15，今日为媒体跟进报道</div>
+            <div class="tags-row"><span class="tag">英伟达</span><span class="tag">开源模型</span><span class="tag">AI Agent</span></div>
+            <div class="links-row"><a class="ext-link" href="https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/" target="_blank" rel="noopener">Source <span class="domain">techcrunch.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">NVIDIA Nemotron 3.5 Super VL Explained</div>
+                        <div class="source-url"><a href="https://www.eigent.ai/blog/nvidia-nemotron-3-5-super-vl" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">NVIDIA Releases Nemotron 3.5 Super VL and Nemotron 3.5 Bolt 74B A9B | Artificial Analysis</div>
+                        <div class="source-url"><a href="https://artificialanalysis.ai/articles/nemotron-3-5-super-and-bolt" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Open From Data Center to Desktop: NVIDIA Expands Nemotron Family With Highest Efficiency Super VL and Bolt Models | NVIDIA Blog</div>
+                        <div class="source-url"><a href="https://blogs.nvidia.com/blog/nemotron-3-5-super-vl" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Nvidia adds Super VL and Bolt to Nemotron 3.5 open model range</div>
+                        <div class="source-url"><a href="https://finance.yahoo.com/news/nvidia-adds-super-vl-bolt-103909969.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Nvidia adds Super VL and Bolt to Nemotron 3.5 open model range</div>
+                        <div class="source-url"><a href="https://www.verdict.co.uk/nvidia-adds-super-vl-bolt-nemotron?.tsrc=rss" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-486bf42c49bf">
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://venturebeat.com/technology/fal-launches-flux-3-max-claiming-22-faster-ai-video-generation-than-seedance-2-5" target="_blank" rel="noopener">fal 发布 FLUX 3 Max 视频端点，自报快 22 倍</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>AI 视频生成平台 fal.ai 今天上线 FLUX 3 Max，通过 API 提供服务。官方对比数据显示，一段 10 秒 720p 视频平均 12.45 秒生成，Seedance 2.5 跑同一段素材需要 277.80 秒，厂商宣称快约 22 倍。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>等待时间直接决定视频模型能不能进入协作流程。设计师改一个运镜，等四分多钟才能看到结果，讨论早已岔开；12 秒出片让试错在对话进行中完成。促销价还把试错成本压得很低，720p 促销期 10 秒 $0.425，生成 10 个版本挑一条只要 $4.25。这些耗时为厂商自报，文档提醒设置与运行条件会影响完成时间，图生视频文档还提供高低两档推理设置，高档更慢；若生成量随速度膨胀而接受率没提升，账单反而会涨。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>fal.ai 今天发布 FLUX 3 Max 视频生成端点。这款服务建立在 Black Forest Labs 的 FLUX 3 Video 基座模型之上，fal 用额外训练强化指令遵循与画面质量，并把生成时间压了下来。按 fal 公布的对比数据，生成一段 10 秒 720p 视频平均用时 12.45 秒，Seedance 2.5 跑同一段素材需要 277.80 秒，相差约 22 倍。12.45 秒仍略慢于视频本身的时长，文档也提醒实际耗时受设置与运行条件影响。</p>
+<p>速度之外，质量图景要复杂一些。Artificial Analysis 10 月 19 日的图生视频榜单上，FLUX 3 Max 拿到 1138 Elo，与 Dreamina Seedance 2.5 持平，落后 MiniMax H3 两分，三家置信区间彼此重叠，只能算并列领先梯队，该榜也只覆盖图生视频场景。第三方 v-benchmark v2 给出另一种结果，Seedance 2.5 得 86.9，FLUX 3 为 76.5，质量对比处于下风。22 倍是厂商自报的耗时数字，比较对象是 Seedance 2.5 的生成时间，与画质优劣没有关系。</p>
+<p>端点方面，文生视频与图生视频均已公开可用，图生视频支持首帧加尾帧，keyframes 端点最多接受 10 张图像控制画面经过的视觉阶段。输出时长 5 至 20 秒，原生 720p，可升格 1080p，音频生成可开关。定价上，11 月 7 日前享 75% 促销折扣，720p 每秒 $0.0425、10 秒 $0.425，促销结束后恢复每秒 $0.17。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>fal 今日发布 FLUX 3 Max 新端点，为基于 BFL FLUX 3 Video 追加训练后首次上线的产品，历史与语义检查均无匹配条目</div>
+            <div class="tags-row"><span class="tag">AI视频生成</span><span class="tag">fal</span><span class="tag">Black Forest Labs</span></div>
+            <div class="links-row"><a class="ext-link" href="https://venturebeat.com/technology/fal-launches-flux-3-max-claiming-22-faster-ai-video-generation-than-seedance-2-5" target="_blank" rel="noopener">Source <span class="domain">venturebeat.com</span></a>
+<a class="ext-link" href="https://venturebeat.com/ai/raw-486bf42c49bf" target="_blank" rel="noopener">Coverage <span class="domain">venturebeat.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">FLUX 3 Video: What Black Forest Labs’ Release Means</div>
+                        <div class="source-url"><a href="https://kingy.ai/blog/flux-3-video-general-availability-world-model" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Flux 3: Black Forest Labs' Multimodal AI World Model</div>
+                        <div class="source-url"><a href="https://morphic.com/resources/models/flux-3" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Black Forest Labs launches FLUX 3 Video with Crusoe AI infrastructure support</div>
+                        <div class="source-url"><a href="https://cryptobriefing.com/black-forest-labs-flux-3-video-crusoe-ai" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">fal Launches FLUX 3 Max, Delivering #1-Tier Image-to-Video Quality at Industry-Leading Speeds</div>
+                        <div class="source-url"><a href="https://www.prnewswire.com/news-releases/fal-launches-flux-3-max-delivering-1-tier-image-to-video-quality-at-industry-leading-speeds-302913033.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Seedance 2.5 vs FLUX 3: v-benchmark v2 Scores | Megaton</div>
+                        <div class="source-url"><a href="https://megaton.ai/compare/seedance-2-5-vs-flux-3" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-ad0fcca57292">
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/" target="_blank" rel="noopener">Meta 吉瓦超集群一期练出 Muse，一年把中断砍掉 99%</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Meta 工程博客 10 月 19 日发文，披露俄亥俄州 New Albany 的 Prometheus 超集群第一期已经建成。这批设施训练出了 Muse 基础模型家族，其中 Muse Wonder 是 Meta 当前面向个人与专业 agent 任务的前沿模型。整个集群还在继续扩容，最终目标是约 100 万 GPU 协同运转。文章最有分量的内容是一组可靠性数字。预训练 goodput 超过 85%，强化学习超过 90%，全集群平均无故障间隔从约 4.7 万 GPU 小时提升到 5.4 万以上，2025 年年中的中断峰值在一年内压掉了 99%。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>吉瓦级集群上跑一个训练任务，任何一台主机出问题都会拖慢甚至停掉整个作业，停机期间买来的算力全部闲置。goodput 衡量真正花在有效计算上的时间比例，直接决定前沿模型的交付周期和单位算力成本。Meta 把 MTBI、中断率、冗余预算一并公开，给同行做超大规模集群规划提供了一个可对照的样本。应用层谈的 agent 稳定性，最终要落在这类中断与冗余数字上。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>俄亥俄州 New Albany 的吉瓦级超集群 Prometheus 交出了一期成绩单，Meta 在工程博客首次系统披露建设细节。这一期设施已经完成 Muse 基础模型家族的训练，其中包括前沿模型 Muse Wonder，整个集群正朝约 100 万 GPU 的规模扩展。</p>
+<p>文章的信息密度集中在可靠性数字上。Muse Wonder 训练期间，预训练 goodput 超过 85%，强化学习超过 90%。训练时段的全集群平均无故障间隔约 4.7 万 GPU 小时，固件修复铺开到整个机队后，这个数字提升到 5.4 万以上。2025 年年中，每 8000 GPU 每日的中断事件接近 1000 次，经过一年的系统性修复，中断率压低了 99%。</p>
+<p><img alt="Prometheus 集群中断率下降情况" src="https://engineering.fb.com/wp-content/uploads/2026/10/Meta-Prometheus-GB200-GB200-interruptions.png" /></p>
+<p>硬件上已经部署两代 NVIDIA 平台。Catalina 采用 GB200 NVL72 的 Ariel 双机柜变体，每个 GPU 分到 800G 的 scale-out 带宽。Clemente 升级到 GB300 NVL72，把 72 GPU 域收进单个机柜，每 GPU 配 288 GB HBM。第三代的 Vera Rubin NVL72 平台即将到位。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Prometheus 项目 2025 年已对外宣布，本次为第一期建设成果的系统披露，新增 goodput、MTBI、中断率降幅、两代平台规格与冗余策略等大量一手数字</div>
+            <div class="tags-row"><span class="tag">Meta</span><span class="tag">超大规模训练</span><span class="tag">可靠性工程</span><span class="tag">基础设施</span><span class="tag">NVIDIA</span></div>
+            <div class="links-row"><a class="ext-link" href="https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/" target="_blank" rel="noopener">Source <span class="domain">engineering.fb.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Meta的数千亿美元AI基建计划，打造吉瓦级超级计算集群</div>
+                        <div class="source-url"><a href="https://xueqiu.com/6257370910/354468358" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Meta signs nuclear energy deals to power Prometheus AI supercluster</div>
+                        <div class="source-url"><a href="https://www.cnbc.com/2026/01/09/meta-signs-nuclear-energy-deals-to-power-prometheus-ai-supercluster.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">小扎开建「人类第一算力帝国」！26年榨干当地水电，27年超越星际之门 - 智源社区</div>
+                        <div class="source-url"><a href="https://hub.baai.ac.cn/view/47336" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Meta’s Hyperion and Prometheus: A Deep Dive into Gigawatt-Scale AI Data Centers - IMP.NEWS</div>
+                        <div class="source-url"><a href="https://imp.news/business/metas-hyperion-and-prometheus-a-deep-dive-into-gigawatt-scale-ai-data-centers-58631" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Meta's Prometheus and Google's Central Ohio Cluster: An AI Data Center Primer</div>
+                        <div class="source-url"><a href="https://measuredai.substack.com/p/meta-prometheus-google-ohio" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-3934c63fefec">
+            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">community</span><span class="score-tag">评分 7.6/10</span><span class="newness-tag">minor_update</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50148855" target="_blank" rel="noopener">用 tmux 编排 Claude Code，社区实战与天花板</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>一篇教开发者用 tmux 编排 Claude Code 的教程登上 Hacker News 首页，拿到 146 分。教程出自 crystl.dev，先介绍新版 Claude Code 自带的一条命令 claude --worktree --tmux，敲一次就建好隔离的 git worktree 和对应的 tmux 会话，然后展开社区手工搭建多 agent 工作流的常用手法，最后单独一节讲这套做法的边界在哪。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>AI 编程 agent 一跑就是几十分钟，一个人手里往往同时压着好几个。tmux 的会话由服务端进程托管，关窗口、断 SSH 都不影响 agent 继续干活，配上 send-keys 和 capture-pane 这对进出通道，任何脚本都能驱动和观察 agent，多 agent 协同不必等官方平台。这篇教程把散落在社区的做法收成一条可复制的路径，也把边界画清。tmux 看到的是渲染后的屏幕帧，感知不到 agent 的状态和事件，建立在抓屏之上的监控天然脆弱，知道这条边界的人不会把力气浪费在注定碎掉的解析器上。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>crystl.dev 上的一篇实战教程在 Hacker News 拿下 146 分，讲怎么用 tmux 管住一批 Claude Code 这类长时间运行的编程 agent。教程先给官方捷径，新版 Claude Code 里一条 claude --worktree --tmux 就能把 git worktree 和 tmux 会话一次建好；剩下的场景靠社区多年攒下的手法补齐，send-keys 从脚本往运行中的 agent 里打字，capture-pane 把屏幕读回来，两者拼在一起就能无人值守地驱动 agent。文末的天花板一节引发最多讨论。作者承认 tmux 从 2007 年用到现在，会话复用与持久化做得足够好，但它设计时没有 agent 这个概念，分不清 agent 是在等确认还是在思考，没有完成事件可订阅，抓屏解析建立在字符串匹配上，agent 界面一改就碎。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>tmux 与 Claude Code 均为既有成熟工具，本次增量是一篇系统性社区教程，加上新版 Claude Code 内置的 claude --worktree --tmux 一键创建 worktree 加会话功能，属于工作流方法整理而非产品版本发布</div>
+            <div class="tags-row"><span class="tag">tmux</span><span class="tag">Claude Code</span><span class="tag">AI 编程</span><span class="tag">开发者工具</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50148855" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://crystl.dev/guides/tmux-for-ai-agents/" target="_blank" rel="noopener">Original article <span class="domain">crystl.dev</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">GitHub - primeline-ai/claude-tmux-orchestration: Claude Code tmux orchestration — spawn full AI sessions as parallel workers with heartbeat monitoring and file-based coordination · GitHub</div>
+                        <div class="source-url"><a href="https://github.com/primeline-ai/claude-tmux-orchestration" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">tmux in the Coding Agents Era: Why a 2007 Tool Is Back at the Center</div>
+                        <div class="source-url"><a href="https://pasqualepillitteri.it/en/news/3493/tmux-runtime-coding-agents-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">How Do You Manage Parallel Claude Code Sessions?</div>
+                        <div class="source-url"><a href="https://primeline.cc/blog/tmux-orchestration" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Regression: TUI alternate-screen breaks tmux scroll-back; cannot review conversation above top of screen (accessibility regression) · Issue #67289 · anthropics/claude-code · GitHub</div>
+                        <div class="source-url"><a href="https://github.com/anthropics/claude-code/issues/67289" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Running Claude Code in tmux: Persistent AI Agents (2026)</div>
+                        <div class="source-url"><a href="https://tmux.app/doc/claude-code-tmux" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-9a75aafc0f23">
+            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">tools</span><span class="score-tag">评分 7.4/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://github.com/headroomlabs-ai/headroom" target="_blank" rel="noopener">开源压缩层 headroom 迭代，工具输出进模型前先瘦身</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>一个叫 headroom 的开源工具刚更新到 v0.41.0 版本，10 月 14 日发布，README 三天后刚更新过。它夹在 AI 编程助手和大模型之间，工具输出、日志这些材料在送进模型前先在本地压缩一遍，token 用量降下来，账单随之变薄。仓库今年 1 月创建，九个月里已经积累 3,316 次提交。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>大模型按 token 计费，agent 每读一次文件、每跑一次工具，输出都会整段进入上下文，长会话的成本随轮次累积，README 还指出 Opus 级模型上输出 token 价格是输入的 5 倍。压缩层在数据进模型之前动手，不改应用代码就能压下这部分开销。模型厂在降单价，这类工具在降用量，两条路径叠加，agent 的运行成本才有继续下探的空间。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>开源项目 headroom 把压缩环节搬进 agent 与大模型之间。工具输出、日志、文件、RAG 检索块在进入模型上下文之前，先在本地压掉冗余，模型照样拿到它需要的答案。项目以 Apache 2.0 协议开源，提供 Python 与 TypeScript 库、零代码改动的本地代理、MCP 服务器三种接入形态，一条 headroom wrap 命令还能直接包装 Claude Code、Codex、Cursor 等十余个编码工具。</p>
+<p><img alt="55,957 token 的提示被压缩到 24,340 token 后再送入模型" src="https://github.com/headroomlabs-ai/headroom/raw/main/.github/assets/hero.svg" /></p>
+<p>官方自报口径的数字是编码 agent 省 20% token，JSON 场景省 60% 到 95%，答案不变。四个用真实 MCP 输出格式搭建的基准场景节省幅度在 21% 到 57% 之间，SRE 事故调试场景从 55,957 个 token 压到 24,340 个。压缩在本机完成，不把内容送往外部，原文缓存在本地，模型需要全文时可调用检索工具取回，压缩可逆。质量评测里 GSM8K 基线 0.870 持平，SQuAD v2 与 BFCL 分别在 19%、32% 压缩幅度下保持 97%。</p>
+<p>这个仓库 2026 年 1 月创建，九个月积累 3,316 次提交，最新版本 v0.41.0 于 10 月 14 日发布。近期增量集中在输出端，verbosity steering 与 effort routing 负责让模型写回的内容更精简，该功能默认关闭，需要设置 HEADROOM_OUTPUT_SHAPER=1 环境变量才启用。同期加入的还有 GitHub Copilot CLI 订阅模式代理、Claude 与 Codex 等工具共用的跨 agent 共享记忆，以及 VS Code 里的 Claude Code 集成。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>九个月老项目近期版本迭代与功能新增</div>
+            <div class="tags-row"><span class="tag">开源工具</span><span class="tag">上下文压缩</span><span class="tag">AI Agent</span><span class="tag">token 成本</span></div>
+            <div class="links-row"><a class="ext-link" href="https://github.com/headroomlabs-ai/headroom" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Headroom Review 2026: Context Compression for Claude Code, Codex, Cursor, and OpenCode</div>
+                        <div class="source-url"><a href="https://vibecodinghub.org/tools/headroom" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Headroom AI: Context Compression for Agents Guide | explainx.ai Blog | explainx.ai</div>
+                        <div class="source-url"><a href="https://explainx.ai/blog/headroom-ai-context-compression-agents-guide-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Headroom: The Open Source Context Compression Layer from Github</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=uplU5p-J8AU" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Show HN: Headroom – Reversible context compression for LLMs(~60% cost reduction) | Hacker News</div>
+                        <div class="source-url"><a href="https://news.ycombinator.com/item?id=46628278" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge community">社区讨论</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Building Cost-Efficient Agents with Headroom: Context ...</div>
+                        <div class="source-url"><a href="https://subratpati.medium.com/building-cost-efficient-agents-with-headroom-context-compression-for-llm-applications-b665128153b6" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-85ea72a0f9e1">
+            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">research</span><span class="score-tag">评分 7.2/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://huggingface.co/papers/2610.16402" target="_blank" rel="noopener">AI 编程新考卷 EvoWeb 发布，320 个累积需求考出迭代短板</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>研究人员在 arXiv 发布论文 2610.16402，公开全新基准 EvoWeb。它考察编码智能体在持续演化的 Web 应用上的干活能力，考卷规模为 32 个 Web 应用上的 320 个累积式请求，论文还同步给出了开源与闭源前沿模型的评测结论。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>现有 Web 生成基准大多让智能体按一份固定规格一次性开发，而真实软件开发是在已有代码库上不断叠加新需求。考法和实际工作的落差，让榜单分数难以反映智能体在真实项目里的表现。EvoWeb 把考试改成长期项目制，盯着新功能与旧功能的协同，也盯着回归问题，直接照出这个落差有多大。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>编码智能体收到一张新考卷。研究人员在 arXiv 发布编号 2610.16402 的论文，提出基准 EvoWeb，专门考察智能体在持续演化的 Web 应用上的开发能力。考卷覆盖 32 个 Web 应用、320 个累积式请求，每个需求都来自真实产品功能，并按功能依赖图组织，后面的题目会用到前面做出来的功能。</p>
+<p>以往的 Web 生成基准大多发一份固定规格，让智能体从零开发、一次交卷。真实项目里的开发节奏更接近 EvoWeb 的考法，需求持续追加，代码库长期保留。评测方式与真实工作方式的落差，会让榜单分数和实际表现脱节，这张新考卷把差距摆上了台面。</p>
+<p>EvoWeb 还配了一条自动测试管线。一个多模态浏览器智能体把每个中间版本放进真实浏览器里跑一遍，检查新功能是否实现、旧功能有没有被改坏。论文对开源与闭源前沿模型做了评测，结论指向同一个方向，让新请求与已有功能正确协同是最难的部分，运行时错误也会随开发推进不断累积。对天天用 AI 写代码的人来说，这份考卷给出了一份数字化的能力边界参照。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>全新基准论文发布</div>
+            <div class="tags-row"><span class="tag">编码智能体</span><span class="tag">基准测试</span><span class="tag">AI编程</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2610.16402" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">A Benchmark for Coding Agents on Evolving Web ...</div>
+                        <div class="source-url"><a href="https://www.themoonlight.io/review/evoweb-a-benchmark-for-coding-agents-on-evolving-web-applications" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">EvoCode-Bench: Evaluating Coding Agents in Multi-Turn Iterative Interactions | alphaXiv</div>
+                        <div class="source-url"><a href="https://www.alphaxiv.org/abs/2605.24110" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">EvoWeb: A Benchmark for Coding Agents on Evolving Web ...</div>
+                        <div class="source-url"><a href="https://www.twodelta.com/blog/evoweb" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-fbbcdbe57add">
+            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">community</span><span class="score-tag">评分 7.0/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://www.technologyreview.com/2026/10/19/1147186/making-the-internet-better-for-ai-agents-might-make-it-worse-for-everyone-else/" target="_blank" rel="noopener">代理流量8月至9月增至三倍，互联网开始为AI代理铺设专属车道</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>MIT 科技评论 The Algorithm 周刊 10 月 19 日刊登分析，说互联网开始为 AI 代理改造自身。商业一侧，Shopify 为代理开出专属结账车道，让它们绕开为人类设计的结账页；封锁一侧，Yelp、Pizza Hut 等平台仍不允许代理订餐厅、下单。新数据显示，代理网络流量 8 月至 9 月增至三倍，Meta 的 Muse 个人代理应用上线首月被下载 500 万次。Amazon 起诉 Perplexity 以拦下代理的官司一审由法官判 Perplexity 胜诉，Amazon 已提起上诉。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>代理构成第三类网络访客，以机器速度运行，又替个人订机票、谈价格，现有的人机区分体系管不住它们，各家平台只能自行抉择。代理流量绝大部分流向电商网站，平台放行就有生意可做，Shopify 的专属车道是用真金白银投出的第一票。宾夕法尼亚大学沃顿商学院副教授 Ethan Mollick 预测，一旦派代理去要求退款、商量价格成为常识，客服部门将被代理挤占到真人无法使用的地步。争议规则倒向哪一边，例如平台能否封锁代理、能否阻止代理替消费者谈更好的交易，将决定未来的网成为替我们效力的代理高速公路，还是与我们作对的代理高速公路，账单很可能落在人类头上。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>MIT 科技评论 The Algorithm 周刊 10 月 19 日刊登趋势分析，指出互联网正围绕 AI 代理朝两个方向延伸变化。商业一侧，电商巨头 Shopify 为代理开出专属结账车道，让它们绕开为人类设计的结账页；接入一侧，Amazon、Yelp 等平台仍把代理挡在门外，Amazon 起诉 Perplexity 一审败诉后已进入上诉阶段。双向改造的背后站着新数据，代理网络流量 8 月至 9 月增至三倍，Meta 的个人代理应用 Muse 上线首月被下载 500 万次。</p>
+<p>文章认为代理是第三类网络访客，以机器速度运行，又替个人执行订机票、谈价格这类正当任务，现有区分人与机器人的体系管不住这个灰色地带。宾夕法尼亚大学沃顿商学院副教授 Ethan Mollick 预测，一旦派代理去要求退款、商量价格成为常识，客服部门将被代理挤占到真人无法使用的地步。原文作者警示，为代理优化的网络可能让人类面对更差的界面和没完没了的验证；那件毛衣不再有统一价格，不同代理看到不同报价，你也说不清代理的推荐何时被广告和平台佣金左右。争议规则倒向哪一边，将决定这轮改造的账单最终由谁来付。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>趋势综述带多个新增数据点与事件进展，代理流量 8 月至 9 月增至三倍、Muse 首月下载 500 万次、Amazon 诉 Perplexity 一审败诉后上诉、Shopify 代理专属结账通道等增量事实此前未见于本报</div>
+            <div class="tags-row"><span class="tag">AI 代理</span><span class="tag">agentic web</span><span class="tag">互联网生态</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.technologyreview.com/2026/10/19/1147186/making-the-internet-better-for-ai-agents-might-make-it-worse-for-everyone-else/" target="_blank" rel="noopener">Source <span class="domain">www.technologyreview.com</span></a>
+<a class="ext-link" href="raw-fbbcdbe57add" target="_blank" rel="noopener">Coverage</a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">State of Agentic Traffic - April 2026: Agentic browsers generate nearly three-quarters of agentic traffic</div>
+                        <div class="source-url"><a href="https://www.humansecurity.com/learn/blog/state-of-agentic-traffic-april-26" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Agentic AI Summit 2026</div>
+                        <div class="source-url"><a href="https://rdi.berkeley.edu/events/agentic-ai-summit" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">We Need Better Infrastructure to Govern AI Agents | AI Frontiers</div>
+                        <div class="source-url"><a href="https://ai-frontiers.org/articles/we-need-better-infrastructure-to-govern-ai-agents" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Infrastructure for AI Agents</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2501.10114v1" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">The Internet of Physical AI Agents: Interoperability, Longevity, and the Cost of Getting It Wrong</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2603.15900v1" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- ═══════ RADAR SCAN ═══════ -->
+        <section class="radar-section">
+            <div class="radar-header">📡 雷达扫描</div>
+            <div class="radar-card">
+                <div class="radar-rank">#1</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://news.ycombinator.com/item?id=50154060" target="_blank" rel="noopener">AI 实验室在三个城市免费修水管和暖气，用真实家庭训练机器人</a> <span class="radar-category">community</span></div>
+                    <div class="radar-blurb">拿免费上门维修换真实场景数据，具身智能的训练数据收集从实验室走进了居民家里</div>
+                </div>
+            </div>
+            <div class="radar-card">
+                <div class="radar-rank">#2</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://news.ycombinator.com/item?id=50156189" target="_blank" rel="noopener">美国下令各民用机构拆除 DeepSeek，连基于它的工具也不放过</a> <span class="radar-category">community</span></div>
+                    <div class="radar-blurb">禁令范围从联邦层延伸到整个民用体系，开源模型的供应链政治风险继续升级</div>
+                </div>
+            </div>
+        </section>
+
+<!-- ═══════ PICK OF THE DAY ═══════ -->
+
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+    <div class="stats">18 源<span>|</span>134 条<span>|</span>9 条精选<span>|</span>17 条候选</div>
+    <div class="generated">生成于 2026-10-20T07:57:33.157152</div>
+</footer>
+
+</div>
+<script>
+(function () {
+    function closeLightbox(overlay, escHandler) {
+        overlay.remove();
+        document.removeEventListener('keydown', escHandler);
+    }
+    function openLightbox(src, alt) {
+        var overlay = document.createElement('div');
+        overlay.className = 'img-lightbox';
+        var big = document.createElement('img');
+        big.src = src;
+        big.alt = alt || '';
+        overlay.appendChild(big);
+        var escHandler = function (e) {
+            if (e.key === 'Escape') closeLightbox(overlay, escHandler);
+        };
+        overlay.addEventListener('click', function () { closeLightbox(overlay, escHandler); });
+        document.addEventListener('keydown', escHandler);
+        document.body.appendChild(overlay);
+    }
+    document.addEventListener('click', function (e) {
+        var img = e.target;
+        if (img && img.tagName === 'IMG' && img.closest && img.closest('.article-body')) {
+            e.preventDefault();
+            openLightbox(img.src, img.alt);
+        }
+    });
+})();
+</script>
+</body>
+</html>
