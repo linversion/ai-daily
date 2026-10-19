@@ -1,0 +1,1472 @@
+<!-- ai-daily-final-sha256:59ae8553d41fb932a8a4afd0a9ef6e0042ae55113e1e4a680c51ba467a31599f -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 | 2026-10-19 — AI 内容机会日报</title>
+<style>
+/* ═══════════ CSS Reset & Base ═══════════ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+:root {
+    --bg-page: #F7F7F5;
+    --bg-paper: #FFFFFF;
+    --text-main: #111111;
+    --text-body: #222222;
+    --text-muted: #555555;
+    --text-light: #999999;
+    --accent: #D93025;
+    --accent-soft: #FFF0EE;
+    --border-divider: #E5E5E5;
+    --border-strong: #111111;
+    --tag-bg: #F5F5F5;
+    --score-high: #0F7B4E;
+    --score-mid: #D97706;
+    --link-underline: #CCCCCC;
+    --hover-accent: #B82020;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", serif;
+    background: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-paper);
+    padding: 80px 60px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: var(--text-main);
+}
+
+/* ═══════════ Header ═══════════ */
+.header {
+    text-align: center;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--border-strong);
+}
+
+.header h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 1.2;
+    color: var(--text-main);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.header .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.header .divider {
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    margin: 0 auto 20px;
+}
+
+.header .meta-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+}
+
+.header .meta-line span {
+    margin: 0 12px;
+    color: var(--border-divider);
+}
+
+.header .trend-callout {
+    margin-top: 24px;
+    padding: 16px 24px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    font-size: 15px;
+    color: var(--text-main);
+    text-align: left;
+    line-height: 1.7;
+    border-radius: 0 4px 4px 0;
+}
+
+/* ═══════════ Article Cards ═══════════ */
+.articles-section {
+    margin-bottom: 50px;
+}
+
+.section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.article-card {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.article-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.article-body { margin: 16px 0; }
+.article-body img {
+    display: block; max-width: 100%; height: auto;
+    margin: 14px auto; border-radius: 8px;
+    cursor: zoom-in;
+}
+.img-lightbox {
+    position: fixed; inset: 0; z-index: 999;
+    background: rgba(0, 0, 0, 0.86);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; cursor: zoom-out;
+}
+.img-lightbox img {
+    max-width: 96vw; max-height: 96vh; width: auto; height: auto;
+    border-radius: 8px; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+.article-body summary {
+    cursor: pointer; color: var(--accent); font: 600 13px 'Inter', sans-serif;
+}
+.article-body[open] summary { margin-bottom: 14px; }
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.rank-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    background: var(--text-main);
+    color: #FFF;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+}
+
+.rank-badge.headline {
+    background: var(--accent);
+}
+
+.category-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: var(--tag-bg);
+    color: var(--text-muted);
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+}
+
+.score-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--score-high);
+}
+
+.newness-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 4px 8px;
+    background: #F0F9F4;
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+}
+
+.article-card h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.article-card .one-liner {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: #FAFAFA;
+    border-left: 2px solid var(--border-divider);
+    border-radius: 0 4px 4px 0;
+}
+
+.article-card .what-box {
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-body);
+}
+
+.article-card .what-box strong {
+    color: var(--accent);
+}
+
+.article-card .why-box {
+    margin-bottom: 14px;
+    padding: 14px 18px;
+    background: #FFFDF5;
+    border: 1px solid #F0EABD;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-body);
+}
+
+.article-card .body-md {
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-body);
+    text-align: justify;
+}
+
+.article-card .body-md p {
+    margin-bottom: 16px;
+}
+
+.article-card .body-md a {
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-underline);
+    transition: all 0.2s;
+}
+
+.article-card .body-md a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.article-card .body-md strong {
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.article-card .body-md code {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    font-size: 13px;
+    background: #F5F5F5;
+    padding: 2px 6px;
+    border-radius: 2px;
+    color: var(--accent);
+}
+
+.article-card .body-md ul, .article-card .body-md ol {
+    margin-bottom: 16px;
+    padding-left: 20px;
+}
+
+.article-card .body-md li {
+    margin-bottom: 8px;
+}
+
+/* ═══════════ Tags ═══════════ */
+.tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: #F0F0F0;
+    color: #666;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+}
+
+/* ═══════════ Verification Sources ═══════════ */
+.sources-box {
+    margin: 16px 0;
+    border: 1px solid var(--border-divider);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.sources-box .sources-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 10px 16px;
+    background: #FAFAFA;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.sources-box .source-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 16px;
+    border-bottom: 1px solid #F5F5F5;
+    font-size: 13px;
+    gap: 12px;
+}
+
+.sources-box .source-row:last-child {
+    border-bottom: none;
+}
+
+.sources-box .source-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.sources-box .source-info .source-title {
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.sources-box .source-info .source-url {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sources-box .source-info .source-url a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.sources-box .source-info .source-url a:hover {
+    text-decoration: underline;
+}
+
+.sources-box .source-info .source-purpose {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 3px;
+    line-height: 1.5;
+}
+
+.sources-box .source-badges {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.badge.official { background: #E8F5E9; color: #2E7D32; }
+.badge.media { background: #E3F2FD; color: #1565C0; }
+.badge.community { background: #FFF3E0; color: #E65100; }
+.badge.secondary { background: #F3E5F5; color: #7B1FA2; }
+.badge.noise { background: #FFEBEE; color: #C62828; }
+
+.badge.newness { background: #E8F5E9; color: #2E7D32; }
+.badge.background { background: #E3F2FD; color: #1565C0; }
+.badge.contrarian { background: #FFF3E0; color: #E65100; }
+.badge.content { background: #F3E5F5; color: #7B1FA2; }
+
+/* ═══════════ History Check ═══════════ */
+.history-note {
+    margin: 10px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.history-note .label {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.history-note .verdict-not-seen { color: var(--score-high); }
+.history-note .verdict-seen-before { color: var(--score-mid); }
+
+/* ═══════════ Confirmed Event Aggregation ═══════════ */
+.event-aggregation {
+    margin: 16px 0;
+    padding: 14px;
+    border: 1px solid #E7DDB4;
+    border-radius: 6px;
+    background: #FFFDF5;
+}
+
+.event-head {
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.event-sources { display: grid; gap: 8px; }
+
+.event-source {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    align-items: center;
+    color: var(--text-body);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.event-role {
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: #F0EABD;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.event-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.event-domain { color: var(--text-light); font-family: 'Inter', sans-serif; font-size: 10px; }
+.event-source:hover .event-title { color: var(--accent); }
+
+/* ═══════════ Links ═══════════ */
+.links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ext-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border: 1px solid var(--border-divider);
+    border-radius: 4px;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.ext-link:hover {
+    border-color: var(--text-main);
+    background: #FAFAFA;
+}
+
+.ext-link .domain { color: var(--text-light); font-size: 10px; }
+
+/* ═══════════ Radar Scan ═══════════ */
+.radar-section {
+    margin-bottom: 50px;
+}
+
+.radar-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #A3A3A3;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--border-divider);
+}
+
+.radar-card {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    background: #FAFAFA;
+    border: 1px dashed var(--border-divider);
+    border-radius: 4px;
+    transition: all 0.15s;
+}
+
+.radar-card:hover {
+    border-color: #BBBBBB;
+    background: #F5F5F5;
+}
+
+.radar-rank {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-light);
+    flex-shrink: 0;
+}
+
+.radar-card .radar-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.radar-card .radar-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+    line-height: 1.4;
+}
+
+.radar-card .radar-title a {
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-underline);
+}
+
+.radar-card .radar-title a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.radar-card .radar-category {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.radar-card .radar-blurb {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-top: 2px;
+}
+
+.radar-empty {
+    text-align: center;
+    padding: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    border: 1px dashed var(--border-divider);
+    border-radius: 4px;
+}
+
+/* ═══════════ Pick of the Day ═══════════ */
+.pick-section {
+    margin-bottom: 50px;
+}
+
+.pick-card {
+    padding: 28px;
+    background: linear-gradient(135deg, #FFFBEB 0%, #FFF7ED 100%);
+    border: 2px solid #F59E0B;
+    border-radius: 8px;
+    position: relative;
+}
+
+.pick-card::before {
+    content: "★ 今日最佳选题";
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: #F59E0B;
+    color: #FFF;
+    padding: 4px 14px;
+    border-radius: 3px;
+}
+
+.pick-card h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 8px 0 12px;
+    line-height: 1.4;
+}
+
+.pick-card .pick-meta {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.pick-card .pick-outline {
+    margin: 12px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.pick-card .pick-outline li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-body);
+}
+
+.pick-card .pick-outline li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: monospace;
+}
+
+.pick-card .pick-closing {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed #F0EABD;
+}
+
+/* ═══════════ Footer ═══════════ */
+.footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-divider);
+    text-align: center;
+}
+
+.footer .stats {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.footer .stats span {
+    margin: 0 16px;
+}
+
+.footer .generated {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 8px;
+}
+
+/* ═══════════ Responsive ═══════════ */
+@media (max-width: 700px) {
+    body { padding: 0; background: var(--bg-paper); }
+    .container { padding: 32px 20px; box-shadow: none; }
+    .header h1 { font-size: 28px; }
+    .article-card h2 { font-size: 18px; }
+    .pick-card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="header">
+    <h1>AI 日报 | 2026-10-19</h1>
+    <div class="subtitle">AI 内容机会日报</div>
+    <div class="divider"></div>
+    <div class="meta-line">2026-10-19<span>|</span>由 <strong>chief-editor-zcode</strong> 生成</div>
+    <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
+      <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
+    </div>
+    <div class="trend-callout">AI agent 的"上网"问题一天内被三面照亮:DeepSeek 把搜索 API 定到每千次成功请求 0.75 美元,TinyFish 干脆限额内免费,而 The Verge 盘点主流网站正批量封锁 agent 访问——联网成本与联网权利同时成为新闻。</div>
+</header>
+
+<!-- ═══════ TOP ARTICLES ═══════ -->
+<section class="articles-section">
+    <div class="section-label">今日最值得关注</div>
+    <div class="article-card" data-id="raw-bb22af570abd">
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">community</span><span class="score-tag">评分 9.1/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50138531" target="_blank" rel="noopener">DeepSeek上线搜索与抓取API，千次成功0.75美元</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>DeepSeek 在官方文档里宣布 Search API 和 Fetch API 正式可用，给 AI 智能体和检索增强（RAG）应用提供实时网页访问能力。Search 输入查询返回结构化搜索结果，Fetch 把指定网页转成 Markdown 返回，两个接口都复用 DeepSeek 现有的 API Key 认证。定价均为每 1000 次成功请求 0.75 美元，消息在 Hacker News 拿下 556 分讨论。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>给智能体接搜索此前有两条路，买 Exa、Tavily、Brave 这类商业搜索 API，或者用 SearXNG 自建聚合，后者在实践中频繁遭遇限速和封 IP。DeepSeek 用自研搜索引擎把联网这一层做成正式商品，且只在请求成功时收费，搜空了不给钱，智能体上网的成本多了一种按成功计价的明码标价选项。模型厂商亲自供应搜索层，调用方能在同一家同时拿到模型和联网能力。通过 Claude Code、Codex 等工具的服务端搜索调用在 2026 年 11 月 1 日前免费，等于一段零成本试用期。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>AI 智能体要替人查资料，第一步是搜索，第二步是把网页内容抓回来读。DeepSeek 在官方文档里宣布，这两步现在做成了正式商品。上线的 Search API 和 Fetch API 由它自研的搜索引擎驱动，专门给智能体和检索增强类应用提供实时上网能力。消息在 Hacker News 上拿到 556 分讨论热度。</p>
+<p>两个接口分工明确。Search 负责搜索，端点是 /v1/tools/search，输入一句查询，返回一组结构化结果。Fetch 负责抓取，端点是 /v1/tools/fetch，给它一个网页地址，它把页面内容转成 Markdown 返回。两者都是原始 JSON 接口，认证沿用 DeepSeek 现有的 API Key，开发者不用重新注册任何东西。</p>
+<p>字段设计明显是冲着模型去的。每条搜索结果里，snippet 是 100 到 200 字符的短摘要，给界面显示用；summary 是 600 到 800 字符的长摘要，官方文档明确说这部分是给模型阅读的。结果还带两个评分。rerank_score 从 0 到 3，1.5 以上算高质量结果；authority 从 0 到 4，3 以上算高权威来源。查询本身支持 site:、lang:、after:、before: 这类操作符，能限定站点、语言和发布时间。</p>
+<p>定价是评论区吵起来的地方。Search 和 Fetch 都是每 1000 次成功请求 0.75 美元，计费口径写得相当清楚，只有返回 HTTP 200 且真的拿到结果才收费，搜索结果为空、请求失败、超时统统不计费，count 参数一次取多少条也不影响单价。速率方面，两个 API 在账户层面各限 5 QPS，互不占用配额，Fetch 还额外受单域名限速，超限返回 429。对已经在用 Claude Code、Codex 或 DeepSeek Harness 的人有个免费窗口，模型在服务端自动触发的搜索和抓取目前分文不收，到北京时间 2026 年 11 月 1 日零点才切换成按请求计费。</p>
+<p>HN 评论区几乎变成一场搜索供应商的集体吐槽。多人反映用 SearXNG 这类自建聚合方案，很快就被限速、验证码和 IP 封禁盯上，有位用户的家庭 IP 已经被 Brave Search 永久拉黑。另一位用户做了横向测试，让模型自己挑搜索结果，Exa 和 Tavily 排第一，Brave 第二，SearXNG 垫底。大家的结论相当一致，每千次 0.75 美元的价格下，直接付钱比跟搜索引擎玩猫鼠游戏划算。反对声音集中在隐私，有人担心把公司内部查询词交给 DeepSeek 的 API 不安全，讨论中给出的办法包括域名白名单、参数剥离，要求最高的场景只能上完全断网的气隙系统，Diffbot 的员工在评论里自荐，称该公司提供可自托管的全离线网页索引。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>官方文档标注 Search/Fetch API is now available，属新产品线首次公开发布，历史查重与语义查重均无匹配。本次新增量包括完整 API 文档与端点、查询操作符体系、面向模型的 summary 与评分字段设计、按成功请求计费的定价口径、5 QPS 限额，以及服务端工具调用免费至 2026 年 11 月 1 日的时间表。</div>
+            <div class="tags-row"><span class="tag">DeepSeek</span><span class="tag">Search API</span><span class="tag">AI Agent</span><span class="tag">开发者工具</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50138531" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://api-docs.deepseek.com/guides/search/" target="_blank" rel="noopener">Original article <span class="domain">api-docs.deepseek.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">DeepSeek Search and Fetch API: Pricing and Reliability</div>
+                        <div class="source-url"><a href="https://www.activepieces.com/blog/deepseek-search-and-fetch-api-pricing-and-reliability" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Gagan Ghotra on X: "DeepSeek launched Search API 👀 It's one of the cheapest option in the market now! Search API Pricing Comparison (per 1,000 searches) - 2026 👇" / X</div>
+                        <div class="source-url"><a href="https://x.com/gaganghotra_/status/2111517716444221939" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">DeepSeek Pricing 2026: API Cost, Free Tier & Plans Guide</div>
+                        <div class="source-url"><a href="https://felloai.com/deepseek-pricing" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">DeepSeek silently introducing rate limits?</div>
+                        <div class="source-url"><a href="https://www.reddit.com/r/DeepSeek/comments/1wir47s/deepseek_silently_introducing_rate_limits" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge community">社区讨论</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-dab83dc73e12">
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">tools</span><span class="score-tag">评分 8.9/10</span><span class="newness-tag">minor_update</span></div>
+            <h2><a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017" target="_blank" rel="noopener">DeepSeek 日期版小更新，命令行测试得分涨11.1分</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>10 月 17 日，DeepSeek 在 Hugging Face 发布模型 DeepSeek-V4.1-Flash-1017，官方定位为既有模型 DeepSeek-V4.1-Flash 的小版本更新，名字末尾的 1017 即发布日期。模型接受图片和文本输入、输出文本，总参数 763B，MIT 许可开源。官方称其在推理、编程、智能体任务和视觉基准上全面走高，同时任务执行时间与输出长度缩短，使用成本下降。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>日期版小更新也带来了大幅涨分，Terminal-Bench 4.0 从 31.2 到 42.3，DeepSWE v1.1 达 77.0 且高于官方对比表中 GPT-5.6 Sol 的 73.0 与 Opus 5 的 74.0，这给了外界一个观察 DeepSeek 模型线迭代节奏的样本。执行更快、输出更短会直接体现在按 token 计费的账单上。763B 开放权重配 MIT 许可，自部署团队可以自由商用和改造。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 17 日，DeepSeek 在 Hugging Face 开了一个新模型仓库，名字叫 DeepSeek-V4.1-Flash-1017，末尾的 1017 就是当天日期。官方在模型卡里写明，这是 DeepSeek-V4.1-Flash 的一次 minor update，也就是小版本更新，重点改进推理、编程、智能体任务和视觉四类基准。仓库创建于当天凌晨，数小时内完成了一轮修订，属于典型的日期版刷新。</p>
+<p>榜单涨幅先看几项硬数字。Terminal-Bench 4.0 测的是模型在命令行环境里完成实际任务的能力，这次从 31.2 涨到 42.3，多了 11.1 分，同表的 GPT-5.6 Sol 为 39.9，GLM-5.3 为 37.9，Opus 5 为 51.8。软件工程测试 DeepSWE v1.1 拿到 77.0，是这张对比表里的最高分，高于 GPT-5.6 Sol 的 73.0 和 Opus 5 的 74.0。编程测试 ProgramBench 从 20.3 涨到 29.1，高难度知识测验 HLE 无工具版从 36.8 到 42.6。模型卡表格里列出的每一项对比，这一版都高于前版。</p>
+<p>另一条线是成本。模型卡强调这次更新缩短了任务执行时间和输出长度，用户能更快完成任务、花更少的钱，官方称这在多个 agent 框架上推进了性能与成本的 Pareto 前沿，也就是把性能和成本两头同时占优的边界往外推。按 token 付费的用户对此最直观，模型少绕弯、少写废话，账单就薄一截。</p>
+<p>规格方面，模型总参数 763B，MIT 许可，接受图片和文本输入、输出文本，上下文窗口 100 万 token，最大输出不少于 25.6 万 token，官方推荐的采样参数为 temperature 1.0 和 top_p 1.0。工程接入有个显眼变化，这个版本不再附带常见的 Jinja 聊天模板，官方改用 encoding 文件夹里的一个自包含 Python 参考实现来演示提示词的拼法，同时发布了 deepseek-recipe，一组带 Python 绑定的 Rust 库，负责把 Messages、Chat Completions 和 Responses 请求编码成 DeepSeek V4 与 V4.1 的格式。模型卡引用的技术报告标题为 DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression，主题指向 KV Cache 压缩。</p>
+<p>生态反应也不慢。上线两天，页面显示月下载已有 10233 次、点赞 1384 个，社区做出 60 个量化版本和 7 个微调模型，5 个 Spaces 应用已经用上了它。模型暂时没有接入 Hugging Face 的托管推理服务，想现在就试的用户需要自行部署。跑分细节上，官方注明 Terminal-Bench 4.0 使用 Claude Code 框架，DeepSWE v1.1 使用 Mini-SWE-V2 框架。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>历史查重未出现；语义历史匹配到 2026-08-01 报道的 DeepSeek-V4-Flash Update，同属 Flash 产品线迭代但分属 V4 与 V4.1 世代。本次是 V4.1-Flash 的日期版刷新（-1017），官方自述 minor update。新增量包括基准全面提升（Terminal-Bench 4.0 +11.1 至 42.3）、取消 Jinja 聊天模板改用 encoding.py 参考实现、新发布 deepseek-recipe 编码工具、1M token 上下文窗口，维持 minor_update 标签。</div>
+            <div class="tags-row"><span class="tag">DeepSeek</span><span class="tag">开源模型</span><span class="tag">模型发布</span><span class="tag">基准测试</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">DeepSeek V4.1 Flash 1017: Wish-Driven Programming Deep Dive - Local AI Zone</div>
+                        <div class="source-url"><a href="https://local-ai-zone.github.io/blog/deepseek-v4-1-flash-1017-deep-dive.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">DeepSeek V4.1-Flash-1017 Hits 77.0 on DeepSWE [2026]</div>
+                        <div class="source-url"><a href="https://shattered.io/deepseek-v4-1-flash-1017-deepswe-77-search-api-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">DeepSeek V4.1 Flash 1017 Just Got BETTER — The New Coding & Agent Beast</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=0RIE3pD2aVA" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">DeepSeek Just Released V4.1-Flash-1017, Scores 77.0 on DeepSWE, Opens Search API - MarkTechPost</div>
+                        <div class="source-url"><a href="https://www.marktechpost.com/2026/10/17/deepseek-just-released-v4-1-flash-1017-scores-77-0-on-deepswe-opens-search-api" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">DeepSeek V4.1-Flash-1017: What's New in the Benchmark Update | MindStudio</div>
+                        <div class="source-url"><a href="https://www.mindstudio.ai/blog/deepseek-v4-1-flash-1017-release" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-db08a7f2a98b">
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">community</span><span class="score-tag">评分 8.5/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50141657" target="_blank" rel="noopener">Yelp、摩根大通、Delta 关门谢客，AI 代理四处碰壁</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>The Verge 记者 Emma Roth 10 月 17 日报道，Hacker News 讨论热度 135 分。近几周，Meta Muse、xAI Grok、OpenAI Dots、Instinct 等 AI 代理的用户接连发现，代理在主流网站办不成事。Amazon 警告 Meta 的 Muse“继续访问”违反站点政策，Grok、Instinct 的代理和 Dots 也有无法使用 Amazon 的报道。Yelp 只向购买其数据授权计划的代理开放，Delta 航空禁止代理订票，摩根大通与嘉信理财以安全为由封锁代理访问账户，Cars.com 和 Amtrak 被用户发现悄悄上锁。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>代理产品的核心卖点是替人上网办事，封锁直接砍向这个卖点，EquiStamp CEO Chris Canal 判断，这会实际削弱 Anthropic、OpenAI 的价值感知。普通人也躲不开，反机器人防护本来拦的是骗子和黑客，AI 代理触发同一套机制，往后网页上“证明你是人类”的验证只会更多。法律边界悬而未决，Amazon 诉 Perplexity 的初审禁令今年 8 月被上诉法院推翻，修正诉状已递交。门也没有全关，Meta 用合作换通行证，Shopify 向代理开放店面，访问权正在被重新定价。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>The Verge 记者 Emma Roth 在 10 月 17 日的报道，梳理了近几周 AI 代理在主流网站接连碰壁的情况，Hacker News 上的讨论热度已有 135 分。OpenAI、Meta、Google、Instinct 都在承诺自家代理能替你上网办事，订餐厅、清理收件箱，甚至买双新鞋。可代理真的出门干活时，越来越多网站把门关上了。</p>
+<p>最新撞墙的是 Meta 的 Muse。Amazon 称它的“继续访问”违反站点政策，另有报道称 xAI 的 Grok、Instinct 的代理以及 OpenAI 的 Dots 同样无法使用 Amazon。Elon Musk 的回应是，也许自己“该创办一个 Amazon 的竞争对手”。Instinct 拒绝置评，OpenAI 和 Google 也没有立即回应 The Verge 的问询。</p>
+<p><img alt="网站对 AI 代理关门的报道插图" src="https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/STK414_AI_CVIRGINIA_C.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" /></p>
+<p>各家关门的方式各有逻辑。Yelp 对 TechCrunch 表示，只允许购买其数据授权计划的 AI 代理进入。Delta 航空不让代理替用户订机票。到了银行这里，理由换成了安全，JPMorgan Chase 和 Charles Schwab 都确认封锁代理对账户的访问。还有用户发现，之前能用的 Cars.com 和 Amtrak 现在把代理拒之门外，报道认为这暗示更多公司在悄悄上锁。基础设施层面，Cloudflare 在 2025 年推出一键屏蔽 AI 爬虫的开关后，又开始屏蔽同时用于搜索索引和 AI 训练的爬虫，理由是 AI 流量正在加重互联网基础设施的负担。</p>
+<p>打官司这一仗去年就开打了。Amazon 封杀 Perplexity 的代理购物功能并提起诉讼，称自己“反复要求”对方停止，还表示替客户购物的第三方公司应当公开运作、尊重服务提供方是否参与的决定。Perplexity 把代理比作用户的延伸，反击说 Amazon 不欢迎代理是因为广告少了人看，并称 Amazon“不相信你有权雇用劳动力、让一名助手或员工代你行事”。初审法官一度下令 Perplexity 收手，今年 8 月上诉法院推翻了这项裁决，Amazon 随后提交修正诉状。</p>
+<p>Meta 换了一条路走。公司本月早些时候表态：“拒绝一个个人代理，就是拒绝其背后的客户。”它没有跟 Amazon 缠斗，转而与 Walmart、Gap、Sephora、Best Buy 等零售商合作，让 Muse 直接在这些站点购物，Shopify 也向 AI 代理开放了自己的店面网络。合作也不等于畅通，Reddit 上有用户报告在 Walmart 结账照样出问题，还有人称 Google 以“可疑活动”为由封禁了他们使用 Muse 的账号。</p>
+<p>对代理公司来说，麻烦直接砍在产品卖点上。AI 安全评估公司 EquiStamp 的 CEO Chris Canal 对 The Verge 说，这件事“绝对”会影响 Anthropic、OpenAI 的价值感知，这些产品号称能渗透生活的方方面面、能在网上做任何你能做的事，一旦有公司在主动阻挠，代理能派上用场的场景就变少了。他还指出，很多防护机制本来拦的是骗子和黑客，AI 代理会触发同一套防护，往后普通人的网页体验也会更“烦人”，连买菜的网站可能都要过一堆验证，才能证明屏幕前坐的是个人。</p>
+<p>HN 评论区把另一面的账也算了出来。有人指出小企业网站被爬虫流量打爆，又没钱没人手防御，Cloudflare 作为最省事的方案成了最大赢家，一位站长说封禁爬虫后，自家 nginx 日志从每天 1GB 降到每周 10MB。也有人唱反调，说 Cloudflare 其实拦不住用真实浏览器、能点掉验证框的机器人，大家选它更多图个安心。还有人认为小企业该高兴，代理逛不了 Amazon，就会逛进小店。对付不起钱的小站，评论里讨论了自建开源防火墙的方案，思路是让机器人付出的成本高过服务器响应请求的成本。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>历史日报未出现过此话题。代理被网站拦截有旧背景（Cloudflare 2025 年一键屏蔽、Amazon 去年封杀 Perplexity），本次增量在于近几周态势集中且首次成体系汇总：Muse 遭 Amazon 点名警告，Grok、Instinct 代理与 Dots 无法使用 Amazon 的报道，Cars.com 与 Amtrak 被发现悄然封锁，Yelp 亮出数据授权门槛，Google 以可疑活动为由封禁 Muse 相关账号，Meta 转向零售结盟且 Shopify 开放店面网络。</div>
+            <div class="tags-row"><span class="tag">AI 代理</span><span class="tag">Cloudflare</span><span class="tag">Amazon</span><span class="tag">反机器人</span><span class="tag">网络访问权</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50141657" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web" target="_blank" rel="noopener">Original article <span class="domain">www.theverge.com</span></a>
+<a class="ext-link" href="https://news.ycombinator.com/item?id=raw-db08a7f2a98b" target="_blank" rel="noopener">Coverage <span class="domain">news.ycombinator.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">5 Key Insights on AI Agents Blocking Websites and Consumer Struggles in 2026</div>
+                        <div class="source-url"><a href="https://codygroups.com/ai-agents-blocking-websites" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Websites Block AI Agents: The New Web Access Battleground</div>
+                        <div class="source-url"><a href="https://emergent.sh/news/websites-block-ai-agents-new-web-access" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">How Many Top Websites Block AI Crawlers in 2026?</div>
+                        <div class="source-url"><a href="https://ustechautomations.com/resources/blog/how-many-top-websites-block-ai-crawlers-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Websites are closing their doors to AI agents | The Verge</div>
+                        <div class="source-url"><a href="https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge media">媒体报道</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Multiple Websites Restrict AI Agent Access | Trending Stories | HyperAI</div>
+                        <div class="source-url"><a href="https://hyper.ai/en/stories/657279cf248cf6ba701b967e7f9c2185" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-24bcfc655b42">
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.3/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://www.marktechpost.com/2026/10/18/mistral-timestral-time-series-foundation-model/" target="_blank" rel="noopener">时序模型 Timestral 发布，免GPU跑赢Google</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Mistral 在 10 月 18 日发布其首个时间序列基础模型家族 Timestral，含 5M、28M、123M、209M 四个稠密模型，上下文最长支持 32,768 个时间步，单次前向最多预测 1,024 步，每步输出 21 个分位数的概率预测。官方文档将 Timestral 1.0 209M 标为 Public Preview，权重与推理代码开放。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>时间序列预测过去要为每个数据集单独训练模型，ARIMA 逐条拟合，PatchTST 从头训练，换个场景就得重来。Timestral 用预训练加零样本替换了这套做法，拿到新数据可以直接预测。推理不需要 GPU，8 线程服务器 CPU 上 209M 模型 140 毫秒完成一次预测，中小团队不买显卡也能用上概率预测。权重采用 Modified MIT 许可，比 Google TimesFM-3 的非商业许可更开放，商用限制更少。基础模型的打法从语言外溢到预测场景，Mistral 成为这一领域新的入场者。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>据 MarkTechPost 报道，Mistral 于 10 月 18 日发布了它的第一个时间序列基础模型家族 Timestral，一次拿出 5M、28M、123M、209M 四个尺寸的稠密模型，全部支持零样本预测。官方文档把 Timestral 1.0 209M 标为 Public Preview，权重和推理代码开放下载。</p>
+<p>时间序列指按时间顺序记录的数据，电表读数、服务器负载、门店销量都属于这一类，预测它们的未来取值是许多行业的日常需求。过去的做法分成两派，ARIMA 这类经典工具一条序列一条序列地拟合，PatchTST 这类深度模型要在每个数据集上从头训练，换一个场景就得重新来过。Timestral 借用大语言模型的思路，先在大规模数据上预训练，再直接面对从未见过的数据给出预测，这种能力叫零样本。它每个时间步输出 21 个分位数的概率预测，答案自带不确定性区间，还能联合预测多个相互关联的变量，并接纳只属于过去、已知未来取值和类别型三类协变量。</p>
+<p>这次发布最实际的卖点落在硬件门槛上。Mistral 团队在一块 8 线程的标准服务器 CPU 上实测，任务是用 3 周的 15 分钟粒度历史数据预测未来 1 天，5M 模型耗时 10 毫秒，209M 模型耗时 140 毫秒，全程不需要 GPU。209M 模型的 fp32 权重为 837 MB，5M、28M、123M 三个版本在 Hugging Face 的下载体积分别是 21 MB、111 MB、490 MB。对预算有限的团队来说，这把概率预测从显卡机房搬回了普通服务器。</p>
+<p>性能数字来自 Timestral-209M 的模型卡，属于 Mistral 自报。209M 版本在 GIFT-Eval 上取得 MASE 0.658、CRPS 0.446，在 TIME 上取得 MASE 0.626、CRPS 0.522，在 fev-bench 上的 SQL 技能分为 50.39，三项均在零样本预训练模型中排第一，测试条件是单检查点且不做集成。对比对象包括 Google Research 的 TimesFM-3（330M 参数，fev-bench SQL 48.99）、Amazon 的 Chronos-2（120M，47.28）和 Datadog 的 Toto（2.5B，44.42）。Google 和 Amazon 并未在自己的模型页面公布可对标的数字，上述成绩均转录自 Mistral 的模型卡。尺寸之间的差距也不大，123M 在 GIFT-Eval 上拿到 0.659，与 209M 的 0.658 只差 0.001，延迟是四分之三，精度达到 209M 的 99.8%；28M 版本则能在 GIFT-Eval 和 TIME 上击败体积约大它 4 倍的 Chronos-2。</p>
+<p>技术层面，Timestral 是一个因果 patch transformer，209M 版本有 24 层、嵌入维度 768，每个 patch 覆盖 32 个时间步，单次前向最多预测 1,024 步，上下文最长 32,768 步。官方列出四项贡献，分别是解耦视界预测（DHF）、协变量感知注意力、合成数据优先和两阶段训练，其中协变量感知注意力规定信息只能从协变量流向目标，用来防止未来数据泄漏进预测。权重采用 Modified MIT 许可，比 TimesFM-3 的非商业许可宽松，Chronos-2 和 Toto 则是 Apache 2.0。安装只需一条 pip 命令，要求 Python 3.10+ 和 torch 2.4+，私有数据微调走 Mistral Forge，支持本地、VPC 和物理隔离部署。</p>
+<p>这类模型可能先在库存、能耗、容量规划等内部预测场景落地，金融方向的用途目前只是可能性，尚无已证实的案例。基础模型的打法从语言外溢到预测场景，Mistral 这次把门槛压在了普通 CPU 和开放权重上。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Mistral 首个时间序列基础模型家族于 2026 年 10 月 18 日全新首发，历史查重与语义检索均未匹配到既往报道。本次新增量包括四个全新检查点（5M/28M/123M/209M，fp32 权重 21/111/490/837 MB）、新 GitHub 仓库与 Hugging Face 模型卡、Timestral 1.0 Public Preview 定位、四项技术贡献（解耦视界预测 DHF、协变量感知注意力、合成数据优先、两阶段训练），以及三个基准上 Mistral 自报的零样本第一成绩。</div>
+            <div class="tags-row"><span class="tag">时间序列预测</span><span class="tag">基础模型</span><span class="tag">Mistral</span><span class="tag">开源权重</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.marktechpost.com/2026/10/18/mistral-timestral-time-series-foundation-model/" target="_blank" rel="noopener">Source <span class="domain">www.marktechpost.com</span></a>
+<a class="ext-link" href="https://www.marktechpost.com/raw-24bcfc655b42" target="_blank" rel="noopener">Coverage <span class="domain">www.marktechpost.com</span></a>
+<a class="ext-link" href="https://news.google.com/raw-d8df07a822c3" target="_blank" rel="noopener">Coverage <span class="domain">news.google.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Mistral releases Timestral open time-series foundation models with SOTA forecasting — AI Signal</div>
+                        <div class="source-url"><a href="https://ai-news-navy-two.vercel.app/news/mistral-releases-timestral-open-time-series-foundation-models-with-sota-forecasting" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Mistral Releases Timestral Time-series Foundation Models » DataGuy</div>
+                        <div class="source-url"><a href="https://dataguy.in/ai-developments/mistral-releases-timestral-time-series-foundation-models" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Timestral 1.0 — Mistral Time-Series Forecasting Models | AI/TLDR</div>
+                        <div class="source-url"><a href="https://ai-tldr.dev/models/timestral-1-0" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">mistralai/Timestral-209M · Hugging Face</div>
+                        <div class="source-url"><a href="https://huggingface.co/mistralai/Timestral-209M" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Mistral Timestral: Time-Series Forecasting Models from 5M to 209M | Data Studios</div>
+                        <div class="source-url"><a href="https://www.datastudios.org/post/mistral-timestral-time-series-forecasting-5m-28m-123m-209m" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-a509ece1edb9">
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">tools</span><span class="score-tag">评分 7.9/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://www.marktechpost.com/2026/10/18/tinyfish-free-search-ai-agent-token-cost/" target="_blank" rel="noopener">TinyFish 搜索与抓取 API 限额免费，同页 token 消耗差 36 倍</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>TinyFish 是一家给 AI agent 做网络基础设施的公司，它宣布 Search（搜索）与 Fetch（网页抓取）API 在限额内免费。搜索每分钟 30 次、每小时 500 次，抓取每分钟 150 个网址、每天 1000 次，钱包余额为 0 美元时仍可使用，新账户赠送 8 美元。收费项目为 Agent 产品每步 0.016 美元、云浏览器每分钟 0.002 美元。报道由 MarkTechPost 于 10 月 18 日发布。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>agent 读网页付两层钱，一层是搜索和抓取 API 的检索费，另一层是返回内容进入大模型后按 token 计费的模型处理费。开发团队普遍只给模型推理做预算，检索返回内容推高的 token 开销经常漏在预算外。TinyFish 把检索费归零，模型那层照收，而抓取工具选谁直接决定模型账单的厚薄，同一篇文章不同供应商的返回量相差约 36 倍。在 agent 上网的花销与门禁接连成为新闻的这几天，这份限额表和 token 账单拆解给了开发者一个可对照的样本。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>给 AI agent 做网络基础设施的公司 TinyFish 把自家的 Search 与 Fetch API 改成限额内免费。搜索接口每分钟 30 次、每小时 500 次，抓取接口每分钟 150 个网址、每天 1000 次。钱包余额降到 0 美元，这两项照样能用，新注册账户另送 8 美元。收费项目单独标价，Agent 产品每步 0.016 美元（2 个并发），云浏览器每分钟 0.002 美元（5 个会话）。</p>
+<p>这份免费要放进 agent 读网页的完整账单里看。agent 上网付两层钱。第一层是检索费，搜索和抓取 API 按请求或按页收，TinyFish 免掉的是这一层。第二层是模型处理费，抓回来的页面内容塞进大模型的上下文，按输入 token 计费，推理和输出另算，这一层照收。MarkTechPost 在报道里点出，多数团队只给模型推理做预算，检索内容推高的 token 账单经常没人算。</p>
+<p>差距有实测数字。TinyFish 在 2026 年 6 月 2 日跑了 45 个网址、5 家供应商的抓取对比，对象是一篇正文约 4300 字符的 Daily Mail 文章。TinyFish Fetch 返回约 1184 个 token，估算输入成本约 0.00118 美元；Firecrawl Scrape 返回约 42774 个 token，约 0.04277 美元，相差约 36 倍。Parallel 只返回节选，不与整页抓取直接可比。原文同时提醒，数据来自单个网页，不能推广到所有网站。</p>
+<p>肥大的返回还会吃掉上下文窗口。一个约 42774 token 的页面约占去 128K 上下文窗口的三分之一，三个这样的页面约需 128322 token，系统指令、对话历史和 agent 自己的回答几乎没有空间。agent 每轮执行还会把整个上下文重发一遍，缓存输入价能压低重读的成本，压不掉页面占用的窗口。</p>
+<p>免费的底气来自哪里，TinyFish 给出三点解释。浏览器车队、隐身系统、会话水合这些基础设施在 Search 产品化之前就已建成，搜索的边际成本随之降低，公司也说明基础设施并非零成本运转。自研的 web-native 模型 Mako 专为搜索、抓取和与真实网站交互设计，只在 TinyFish 托管设施上运行，不能自部署，Agent 产品的内置模型不能更换。这个团队还说，它想学的是网上的活怎么办成，不想变成一家索引公司。</p>
+<p>第三方榜单给出参照。Artificial Analysis 2026 年 9 月 28 日的快照固定答案模型为 GPT-5.6 Luna（medium）。12 个展示配置中，TinyFish 每千任务总成本 9.30 美元，由 0 美元搜索加 9.30 美元模型构成，是展示中最低的总成本。它的 Search Index 得分 71 同样是展示中最低，Perplexity Search（medium）以 80 分居首，无搜索基线为 33。每任务约 59 秒，在展示配置中排第二慢。</p>
+<p>读这篇文章要打个折。文末明确披露它由 TinyFish 赞助，token 对比和覆盖率都来自厂商自测，样本为 45 个网址，新闻页面主导了差距，第三方基准快照也早于文章约三周。免费的限额和单价可以直接记下，36 倍这个数字不妨等独立复测再下结论。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>本次新增量是免费定价政策调整。TinyFish 公司与产品此前已存在，本次把 Search 与 Fetch 改为限额内免费（0 美元余额可用、新账户赠 8 美元），并公布 Agent 每步 0.016 美元、Browser 每分钟 0.002 美元的付费项，配合 Artificial Analysis 榜单数据与 token 成本拆解。</div>
+            <div class="tags-row"><span class="tag">AI Agent</span><span class="tag">搜索 API</span><span class="tag">token 成本</span><span class="tag">TinyFish</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.marktechpost.com/2026/10/18/tinyfish-free-search-ai-agent-token-cost/" target="_blank" rel="noopener">Source <span class="domain">www.marktechpost.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">2026年Agent搜索工具怎么选？主流方案对比与场景选型指南_凤凰网</div>
+                        <div class="source-url"><a href="https://sz.ifeng.com/c/8wwXSInU0sZ" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">如何为 AI Agent 配置 SearXNG 搜索功能</div>
+                        <div class="source-url"><a href="https://www.ssdnodes.com/learn/lang/zh-hans/browser-search-skill-searxng-agents" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Web Search for Agents in 2026</div>
+                        <div class="source-url"><a href="https://michaellivs.com/blog/web-search-for-agents-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">TinyFish Makes Search Free: What It Really Costs an AI Agent to Read the Web - MarkTechPost</div>
+                        <div class="source-url"><a href="https://www.marktechpost.com/2026/10/18/tinyfish-free-search-ai-agent-token-cost" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Why TinyFish Search Is Free (and what's the catch?)</div>
+                        <div class="source-url"><a href="https://x.com/sudheenair/article/2095498048537526332?lang=ar-x-fm" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-cf106409cdcc">
+            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">community</span><span class="score-tag">评分 7.7/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50137950" target="_blank" rel="noopener">开源工具 Sphinx 走红，AI 代码推送前要先答对考题</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>一款叫 Sphinx 的免费开源小工具通过 Hacker News 的 Show HN 首次亮相，热度达到 242 分，npm 包名为 sphinx-understand。它装在本地后接管 git push，在受保护分支上暂停推送，由 AI 针对本次代码 diff 出一道理解题，开发者答对推送继续，答错会收到讲解并换新场景重考。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Claude Code、Cursor 这类编程代理让代码产出速度上去了，读代码的时间被压缩。HN 讨论里有开发者承认从不读代理写的代码，项目指定用 shadcn 组件库，代理中途悄悄换掉也无人察觉。Sphinx 把上线前的理解检查从个人自觉变成流程的一步，答不出就推不上去；它能不能挡住想绕过的人，正是这场讨论的主要分歧。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Hacker News 上一个 Show HN 帖子拿下了 242 分热度，主角是一款叫 Sphinx 的小工具。它做的事情很直接，在 git push 之前把你拦下来，围绕这次改动出一道题，答对了才放行。</p>
+<p>用编程代理写代码的人越来越多，Claude Code、Cursor 这类工具能替人生成整个文件，开发者更多时候变成验收代码的人。Sphinx 的作者想把“你到底懂不懂这次改动”变成流程里的一道关卡。安装只要两行命令，npm install -g sphinx-understand 之后执行 sphinx install，要求 Node 22.19 以上，支持 macOS、Linux 和 WSL。装好之后照常 push，Git 会在受保护的分支上暂停。</p>
+<p>出题的是一个大模型。它没看过你和编程代理的聊天记录，只读本次 diff，专门问变更在出错时会怎样。官网演示的题目长这样，webhook 处理器在调用 charge() 之前先保存了事件 ID，Stripe 超时后会重发同一事件，重试时会发生什么。演示里的开发者第一次答错，Sphinx 讲解了原因，换一个新场景再考，第二次答对，推送继续。这次演示的推送涉及 11 个文件，新增 5012 行，删掉 3147 行。出题的模型可以直接复用你现有的编程代理，也可以走 OpenRouter 或任意 OpenAI 兼容端点，作者强调 token 消耗很低。</p>
+<p><img alt="一次 git push 在提问处暂停，答对后继续推送" src="https://sphinx-six-theta.vercel.app/demo.gif" /></p>
+<p>设计上有两条边界。你的回答不会回传给编程代理，.env 文件和密钥从不被打开。赶时间可以执行 sphinx yolo 直接放行，但每一次跳过都会被记录在案。</p>
+<p>官网首页挂着一句口号并署名孙子：“You can outsource your thinking, but not your understanding.” 评论区很快有人纠正，这句话出自 Andrej Karpathy，他在四月红杉资本的 AI Ascent 大会上把它放进了演讲核心。还有读者补了个老故事，国王托勒密向欧几里得求几何的捷径，得到的回答是几何没有为王室专设的坦途。</p>
+<p>讨论区分成了两派。质疑的人认为这道关卡挡不住真想偷懒的人，题目可以复制粘贴给编程代理代答，也有开发者见过员工让代理删掉 husky 这类钩子，认为 Sphinx 会遭遇同样对待。有人觉得想法不错，但建议把关的时机从推送上线挪到提交 PR、占用同事时间之前。有人预言下一幕是编程代理替人去和 Sphinx 应答。自称造过同类工具的评论者泼了冷水，说在编码代理兴起早期做这种把关说得通，如今更需要重新想清楚代理与人之间的理解关系。另一段坦白更扎心，一位开发者承认自己完全不读 Claude Code 写的代码，一个指定用 shadcn 的项目，代理写到一半悄悄弃用了这个组件库，没人察觉。还有人搭过同类东西，很快被烦到弃用，理由是受不了被一个本该像魔法一样好用的东西反复盘问。</p>
+<p>这款工具免费开源，装完只要两分钟。它挡得住多少次没读懂的推送，评论区吵了一整天也没有结论，242 分的热度至少说明被这个问题硌到的人不少。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>本次为新增量（Show HN 首发冷启动）：sphinx-understand 首次公开安装方式、官网与工作演示即拿到 242 分热度，历史查重与语义检索均未命中，无既有版本更新痕迹。</div>
+            <div class="tags-row"><span class="tag">开发者工具</span><span class="tag">AI 编程</span><span class="tag">开源</span><span class="tag">Git</span><span class="tag">Hacker News</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50137950" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://sphinx-six-theta.vercel.app/" target="_blank" rel="noopener">Original article <span class="domain">sphinx-six-theta.vercel.app</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Sphinx: A Git Hook That Quizzes You on Agent-Written Code</div>
+                        <div class="source-url"><a href="https://ai-tldr.dev/tools/sphinx" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">A new tool makes AI coding agents quiz developers on their own code before deployment</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=E4TFNA0_CTM" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping #Shorts</div>
+                        <div class="source-url"><a href="https://www.youtube.com/shorts/u8529v7c3ds" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">[Workflow] Git Hook for LLM-Powered Diff Quizzes (Grip) to ...</div>
+                        <div class="source-url"><a href="https://www.reddit.com/r/ClaudeWorkflows/comments/1wo24tk/workflow_git_hook_for_llmpowered_diff_quizzes" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge community">社区讨论</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Sphinx Git hook quizzes developers on agent code before push | LavX News</div>
+                        <div class="source-url"><a href="https://news.lavx.hu/article/sphinx-git-hook-quizzes-developers-on-agent-code-before-push" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-5d1ed4fc608d">
+            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">research</span><span class="score-tag">评分 7.5/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://huggingface.co/papers/2610.22234" target="_blank" rel="noopener">外挂代码工具让桌面智能体变笨，OS-Helix 统一训练冲上 66.44%</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>中国科学技术大学团队 10 月 15 日在 arXiv 首发论文（编号 2610.22234），推出替人操作电脑的智能体 OS-Helix，发布 27B、35B-A3B、27B-RL 三个模型。论文报告了一个反直觉的实验结果，在提示层给图形界面（GUI）智能体外挂代码工具，性能反而退化。OS-Helix 把界面操作与代码执行统一进同一个动作空间重新训练，在桌面自动化基准 OSWorld-Verified 上拿到 66.44% 的成功率。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>给智能体加能力的常见做法是多接工具。这篇论文用对照实验划出了边界，提示层的工具组合换不来协调能力，什么时候点界面、什么时候敲命令的路由决策要在训练阶段内化。对桌面自动化与 agent 产品的开发方，这是架构选型时多出来的一个数据点。强化学习版 27B-RL 在不含 Windows 专属数据的情况下于 WindowsAgentArena 拿到 63.87%，显示统一训练出的能力可以跨平台迁移。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>中国科学技术大学团队 10 月 15 日在 arXiv 首发论文（编号 2610.22234），推出替人操作电脑的智能体 OS-Helix，共发布 27B、35B-A3B、27B-RL 三个模型。这类智能体坐在电脑前把任务做完，点界面、跑脚本都归它管。</p>
+<p>论文里最有分量的内容是一个对照实验。在提示层给图形界面（GUI）智能体外挂一个代码工具，性能不升反降。团队的解释是，界面操作与代码执行之间的路由决策没法靠提示词组合出来，必须用高质量混合数据训练内化。OS-Helix 因此把两类动作统一进同一个动作空间，先在过滤后的混合轨迹上做监督微调冷启动，再用新算法 Step-balanced GSPO 在真实桌面环境里做在线强化学习。这个算法按动作步骤而非逐个 token 聚合重要性权重，防止长代码动作主导优化。</p>
+<p>基准成绩给出了对照。OSWorld-Verified 上，OS-Helix-27B 与 35B-A3B 较各自匹配的 Qwen3.5 混合基线相对提升 35.0% 与 33.7%，27B-RL 在此基础上再提升 42.9%，成功率达到 66.44%。同一模型在 WindowsAgentArena 上拿到 63.87%，训练数据不含任何 Windows 专属样本。模型与数据集已上线 HuggingFace，训练与评测代码团队称仍在整理。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>论文 10 月 15 日在 arXiv 首发属首次公开，历史查重为未出现。本次新增量包括 OS-Helix-27B、35B-A3B、27B-RL 三个新模型、Step-balanced GSPO 新强化学习算法、OSWorld-Verified 66.44% 与 WindowsAgentArena 63.87% 两项新基准成绩，以及已在 HuggingFace 上线的配套数据集。</div>
+            <div class="tags-row"><span class="tag">OS-Helix</span><span class="tag">GUI 智能体</span><span class="tag">桌面自动化</span><span class="tag">强化学习</span><span class="tag">中国科学技术大学</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2610.22234" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a>
+<a class="ext-link" href="https://huggingface.co/papers/raw-5d1ed4fc608d" target="_blank" rel="noopener">Coverage <span class="domain">huggingface.co</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OS-Helix: Unifying GUI Interaction and Code Execution in Native Computer-Using Agents</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2610.22234" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OS-Helix: Unifying GUI Interaction and Code Execution in Native Computer-Using Agents</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2610.22234v1" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OS-Helix: Unifying GUI Interaction and Code Execution in Native Computer-Using Agents | alphaXiv</div>
+                        <div class="source-url"><a href="https://www.alphaxiv.org/abs/2610.22234" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-4747a804fd45">
+            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">tools</span><span class="score-tag">评分 7.4/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://github.com/stablyai/orca" target="_blank" rel="noopener">开源编排器 Orca 走红，30 多个编码代理并行手机盯进度</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Orca 是 YC 孵化公司 Stably AI 开发的开源桌面应用，用来同时管理一大群 AI 编码代理。它支持 30 多个命令行代理，包括 Claude Code、Codex、Cursor、OpenCode、Qwen Code、Kimi、Devin 等，每个代理在独立的 git worktree 中改代码，互不覆盖。仓库 2026 年 3 月创建，已积累 96.9k stars 与 6.2k forks，最新版本 v1.4.229 发布于 10 月 17 日，README 更新到 10 月 19 日并登上 GitHub Trending。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>开发者手里的编码订阅越来越多，Claude 的额度用完换 Codex，不同任务适合不同代理，切换、监控、防止互相覆盖文件的成本都在涨。Orca 把这些事收进一个界面，还提供同一提示词分发五个代理的对比玩法，相当于每次生成都自带备选。配套手机端让代理变成可挂机的后台劳动力，人只在手机上验收和追加指令。多代理编排从概念演示走到普通开发者能下载安装的桌面应用，是 agent 基建成熟度的一个直观样本。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>同时开着好几个 AI 编码工具的开发者，桌面多半是一团乱麻。YC 孵化公司 Stably AI 的开源应用 Orca 想把这种混乱管起来，它把 30 多个命令行编码代理收进同一个桌面界面，Claude Code、Codex、Cursor、OpenCode、Qwen Code、Kimi、Devin 都在支持名单上，README 的承诺是凡能在终端里运行的代理都能进 Orca。</p>
+<p>秩序靠 git worktree 维持。每个代理在自己的 worktree 里改代码，谁也不会覆盖谁的文件。它还支持赛马式对比，把同一条提示词分发给五个代理各自执行，比较五份结果，把最好的那份合并回去。算力不够时可以走 SSH 把代理派到远程大机器上，断线自动重连。</p>
+<p><img alt="Orca 桌面端并行运行代理，角落为手机伴侣应用" src="https://github.com/stablyai/orca/raw/main/docs/assets/readme-hero.jpg" /></p>
+<p>手机伴侣应用让它变成随身遥控器。iOS 与 Android 版本和桌面端配对，代理干完活会推送通知，人在外面也能查看结果、追加指令。应用内还能看到 Claude 和 Codex 的用量与限流重置时间，多个账号之间切换不用重新登录。</p>
+<p>这个仓库今年 3 月才创建，现在已有 96.9k stars、6.2k forks，累计 15,029 次提交。团队自称每日发货，最新版本 v1.4.229 发布于 10 月 17 日，README 一直更新到 10 月 19 日，项目也登上了 GitHub Trending。Orca 以 MIT 协议完全开源，手机与桌面配对用的中继代码同样放在仓库的 cloud 目录里。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>并非新发布，仓库创建于 2026-03-17；本次新增量来自极高频迭代（最新 release v1.4.229 发布于 10-17，README 更新于 10-19，自称每日发货）与移动伴侣应用的完善，并登上 GitHub Trending</div>
+            <div class="tags-row"><span class="tag">AI Agent</span><span class="tag">开发者工具</span><span class="tag">开源项目</span><span class="tag">多代理编排</span></div>
+            <div class="links-row"><a class="ext-link" href="https://github.com/stablyai/orca" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Orca ADE: Parallel AI Agent Fleet Explained | Zentor Blog</div>
+                        <div class="source-url"><a href="https://zentor.ai/blog/what-is-orca-ade" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">GitHub - stablyai/orca: Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.</div>
+                        <div class="source-url"><a href="https://github.com/stablyai/orca" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Best AI Agent Orchestration Platforms 2026: Coding vs Workflow | Nimbalyst</div>
+                        <div class="source-url"><a href="https://nimbalyst.com/blog/best-ai-agent-orchestration-platforms-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Stably AI Orca GitHub Review: Git Worktrees and Parallel AI Agents</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=vhycjTCjiC4" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-f3b4b96b5bbd">
+            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.2/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity" target="_blank" rel="noopener">Vercel AI Gateway 日志新增会话视图，agent 成本逐轮可查</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Vercel 给 AI Gateway 的日志新增了 Sessions（会话）视图。它把原来逐条排列的请求日志按会话分组，每一行显示发起会话的编码代理或应用，比如 Claude Code、Codex、Cursor，并给出这个会话的成本、所用模型、提供商，以及每一轮输入里来自缓存的比例。点开单个会话，还能看到缓存命中率、持续时长和逐轮路径。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>编码代理跑一次任务动辄几十轮请求，路由到哪些提供商、缓存命中多少，直接影响最终成本和延迟。这些信息以前散在逐条日志里，开发者很难回答一次任务的钱具体花在哪个环节。会话视图把路由、缓存和成本放到同一行，等于给 agent 的开销提供了一个对账入口，也第一次让会话亲和这项默认行为的效果可以被直接验证。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Vercel 给 AI Gateway 的日志加了一个 Sessions 视图。过去这些请求散在逐条日志里，一个 Claude Code 会话跑几十轮，每轮去了哪个提供商、花了多少钱、缓存读了多少，都要开发者自己拼。现在请求按会话分组，每一行显示发起会话的编码代理或应用，比如 Claude Code、Codex、Cursor，同时给出这个会话的成本、用到的模型、提供商，以及每一轮输入里来自缓存的比例。</p>
+<p><img alt="按会话分组的 AI Gateway 日志视图" src="https://vercel.com/vc-ap-vercel-marketing/_next/image?url=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Fcontentful%2Fimage%2Fe5382hct74si%2F12MMzxq7bWCbKoN6TBtUrS%2Fddd009cb2612ecece362b3342326db18%2FCleanShot_2026-10-16_at_3.29.22_AM_2x.png&amp;w=3840&amp;q=95" /></p>
+<p>点开单个会话，能看到它的缓存命中率、持续时长和完整路径。路径逐轮列出所用模型和耗时，并标出当前在服务这个会话的提供商，连同更早服务过它的那些。会话列表还支持按轮数、客户端、模型、提供商、认证方式或成本过滤，单轮会话默认隐藏，清掉最小轮数过滤后才会出现。</p>
+<p>会话亲和已经在 text 和 chat 请求上默认启用，它把每一轮请求发给服务过上一轮的提供商，让对话尽量复用同一份缓存。这次更新的部分是把路由结果放进日志，开发者可以逐轮核对。想自己控制分组，可以在每次请求的 providerOptions.gateway 里传同一个 sessionId，或者在每个请求上带同一个 x-session-id 请求头。两者都不带的请求，网关按对话开头内容的指纹归组，显示为 fingerprinted sessions。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>会话亲和路由本身已在 text 和 chat 请求上默认启用，属于已有能力。本次新增量集中在可观测性层面，日志新增 Sessions 视图，可按会话查看缓存命中率、成本、逐轮模型与提供商路径，并支持多维过滤与 sessionId 自定义分组，历史查重未出现同话题报道。</div>
+            <div class="tags-row"><span class="tag">Vercel</span><span class="tag">AI Gateway</span><span class="tag">可观测性</span><span class="tag">AI Agent</span><span class="tag">开发者工具</span></div>
+            <div class="links-row"><a class="ext-link" href="https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity" target="_blank" rel="noopener">Source <span class="domain">vercel.com</span></a>
+<a class="ext-link" href="https://vercel.com/blog/ai-gateway-logs-session-affinity" target="_blank" rel="noopener">Coverage <span class="domain">vercel.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AI Gateway Session Affinity</div>
+                        <div class="source-url"><a href="https://vercel.com/docs/ai-gateway/models-and-providers/session-affinity" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AI Gateway logs now show session affinity - Vercel</div>
+                        <div class="source-url"><a href="https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AI Gateway Request Logs</div>
+                        <div class="source-url"><a href="https://vercel.com/docs/ai-gateway/observability-and-spend/logs" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-58a7fd5ff950">
+            <div class="article-meta"><span class="rank-badge ">#10</span><span class="category-tag">research</span><span class="score-tag">评分 7.1/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://huggingface.co/papers/2610.14157" target="_blank" rel="noopener">南京大学全开源 OpenMobile-2，110 多个仿真应用搭起手机智能体训练场</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>南京大学团队 10 月 19 日在 HuggingFace Papers 提交论文 OpenMobile-2（arXiv 2610.14157，10 月 9 日上传 arXiv），并同步全量开源。这是一个接近前沿的手机智能体，训练环境 MobileGym++、训练数据、基准 MobileGym++ Bench 和模型全部开放，项目页还能在线试用那些仿真应用。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>手机智能体研究长期缺两样东西，可以规模化复现的训练环境和足够大的开源数据，多数团队只放模型不放过程。OpenMobile-2 把环境、数据、训练配方一起交出来，其他团队可以直接在上面继续训练和改进，论文称其可验证强化学习数据是移动智能体领域最大规模的开源集合。GUI 操作与应用原生工具交替使用的混合设定，也给社区提供了一个新的实验方向。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>南京大学团队 10 月 19 日把论文 OpenMobile-2 提交到 HuggingFace Papers，编号 arXiv 2610.14157，论文本身 10 月 9 日已上传 arXiv。这次放出的不只是论文，训练环境、数据、基准、模型全部开源，项目页还提供仿真应用的在线试用。</p>
+<p>手机智能体指的是像人一样看屏幕、点按钮、跨应用办事的 AI，它先得有地方练。团队为此构建了 MobileGym++，35 个功能丰富的仿真商业应用支持跨应用工作流，连同 Android 模拟器中新配置的应用，整个训练场铺到 110 多个。数据方面，团队开源了近 12K 条监督微调交互轨迹，外加 2000 多个带自动奖励的可执行任务，论文称这是移动智能体领域最大规模的开源可验证强化学习数据。交互方式上，这项工作探索了一个实验性设定，应用把部分功能封装成原生工具，智能体在单个任务里可以交替进行 GUI 操作与工具调用，50 多个应用共实现 300 多个工具，配套的 MobileGym++ Bench 支持纯 GUI 与混合两种模式的长时程商业场景评测。</p>
+<p>成绩方面，OpenMobile-2 在 AndroidWorld 拿到 79.9，MobileWorld 50.4。论文报告称它从模拟器迁移到真机后表现突出，SPA-Bench 从 31.9 升至 59.6，近乎翻倍。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>OpenMobile 系列第二代，10 月 19 日随论文提交 HuggingFace Papers 同步全量开源，相对前作新增 MobileGym++ 环境（35 个可跨应用协作的仿真商业应用、连同配置共 110+ 应用）、近 12K 条 SFT 轨迹与 2000+ 个带自动奖励的可验证 RL 任务、GUI 与应用原生工具混合设定、MobileGym++ Bench 基准，属显著更新。</div>
+            <div class="tags-row"><span class="tag">移动智能体</span><span class="tag">GUI Agent</span><span class="tag">开源</span><span class="tag">南京大学</span><span class="tag">可验证强化学习</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2610.14157" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenMobile-2: Building Versatile Mobile Agents with Scalable Environments and App-Native Tools</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2610.14157v1" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">MobileGym: Fast Simulation for Mobile GUI Agents</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=LRGh1cR3_60&xstg=CAMSBhUDzO3xHw%3D%3D" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">GitHub - Purewhiter/mobilegym: [EMNLP 2026] MobileGym: A Verifiable and Highly Parallel Simulation Platform for Mobile GUI Agent Research · 浏览器里运行的安卓模拟器 · Browser-hosted Android Simulator · Verifiable Evaluation · Scalable Online RL Training · GitHub</div>
+                        <div class="source-url"><a href="https://github.com/Purewhiter/mobilegym" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenMobile-2: Building Versatile Mobile Agents with ...</div>
+                        <div class="source-url"><a href="https://huggingface.co/papers/2610.14157" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenMobile-2: Building Versatile Mobile Agents with Scalable ...</div>
+                        <div class="source-url"><a href="https://www.roboticscenter.ai/research/papers/openmobile-2-building-versatile-mobile-agents-with-scalable-environments-and-app-native-to-2610" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- ═══════ RADAR SCAN ═══════ -->
+        <section class="radar-section">
+            <div class="radar-header">📡 雷达扫描</div>
+            <div class="radar-card">
+                <div class="radar-rank">#1</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxPYzBNWks1NGt1Y2RWMnBvQXhnNDdIdkFoMTN3cUVRY29DclBNQXJENzBRWkJXeXlOcHpiWUpjeGtRS2ZpUkhIU3FfUG1xUDVnRWNsc2tlSzF1STU1QWFFYUZiZ1A2RVl3eGhVTVh5YzZ2T2FhSE81RVJMVU0zdjF4b05Odk9KQQ?oc=5" target="_blank" rel="noopener">越狱 PS5 跑通 Qwen 3.8 27B,每秒 20 token</a> <span class="radar-category">tools</span></div>
+                    <div class="radar-blurb">llama.cpp 移植让游戏机兼职推理机,端侧模型的硬件边界又被玩家外推一格</div>
+                </div>
+            </div>
+            <div class="radar-card">
+                <div class="radar-rank">#2</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://news.ycombinator.com/item?id=50139873" target="_blank" rel="noopener">HN 热议 Anthropic 的用工结构之变</a> <span class="radar-category">community</span></div>
+                    <div class="radar-blurb">108 分讨论串把 AI 公司自己的招聘与用工调整摆上台面,观察实验室用工风向的社区切面</div>
+                </div>
+            </div>
+        </section>
+
+<!-- ═══════ PICK OF THE DAY ═══════ -->
+
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+    <div class="stats">11 源<span>|</span>95 条<span>|</span>10 条精选<span>|</span>17 条候选</div>
+    <div class="generated">生成于 2026-10-19T13:15:06.020284</div>
+</footer>
+
+</div>
+<script>
+(function () {
+    function closeLightbox(overlay, escHandler) {
+        overlay.remove();
+        document.removeEventListener('keydown', escHandler);
+    }
+    function openLightbox(src, alt) {
+        var overlay = document.createElement('div');
+        overlay.className = 'img-lightbox';
+        var big = document.createElement('img');
+        big.src = src;
+        big.alt = alt || '';
+        overlay.appendChild(big);
+        var escHandler = function (e) {
+            if (e.key === 'Escape') closeLightbox(overlay, escHandler);
+        };
+        overlay.addEventListener('click', function () { closeLightbox(overlay, escHandler); });
+        document.addEventListener('keydown', escHandler);
+        document.body.appendChild(overlay);
+    }
+    document.addEventListener('click', function (e) {
+        var img = e.target;
+        if (img && img.tagName === 'IMG' && img.closest && img.closest('.article-body')) {
+            e.preventDefault();
+            openLightbox(img.src, img.alt);
+        }
+    });
+})();
+</script>
+</body>
+</html>

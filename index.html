@@ -1,10 +1,10 @@
-<!-- ai-daily-final-sha256:9e885a8dbfd937cf3c13afb665226f354a773be8e7cd29392f17cea0745c6669 -->
+<!-- ai-daily-final-sha256:59ae8553d41fb932a8a4afd0a9ef6e0042ae55113e1e4a680c51ba467a31599f -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 | 2026-10-17 — AI 内容机会日报</title>
+<title>AI 日报 | 2026-10-19 — AI 内容机会日报</title>
 <style>
 /* ═══════════ CSS Reset & Base ═══════════ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
@@ -719,42 +719,40 @@ body {
 
 <!-- ═══════ HEADER ═══════ -->
 <header class="header">
-    <h1>AI 日报 | 2026-10-17</h1>
+    <h1>AI 日报 | 2026-10-19</h1>
     <div class="subtitle">AI 内容机会日报</div>
     <div class="divider"></div>
-    <div class="meta-line">2026-10-17<span>|</span>由 <strong>chief-editor-zcode</strong> 生成</div>
+    <div class="meta-line">2026-10-19<span>|</span>由 <strong>chief-editor-zcode</strong> 生成</div>
     <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
       <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
     </div>
-    <div class="trend-callout">AI 智能体写代码的规模把整条工程链逼进重构期：审查流水线交给机器、模型供应商重新站队、推理成本按 token 精算、本地硬件重新洗牌</div>
+    <div class="trend-callout">AI agent 的"上网"问题一天内被三面照亮:DeepSeek 把搜索 API 定到每千次成功请求 0.75 美元,TinyFish 干脆限额内免费,而 The Verge 盘点主流网站正批量封锁 agent 访问——联网成本与联网权利同时成为新闻。</div>
 </header>
 
 <!-- ═══════ TOP ARTICLES ═══════ -->
 <section class="articles-section">
     <div class="section-label">今日最值得关注</div>
-    <div class="article-card" data-id="raw-138da39db88f">
-            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">community</span><span class="score-tag">评分 9.4/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://news.ycombinator.com/item?id=50122951" target="_blank" rel="noopener">AI 写代码太快，Anthropic 公开六层审查流水线</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Anthropic 的 Claude Code 团队发布工程博客，首次系统公开内部六层代码审查流水线的职责与顺序。公开工具 Code Review for Claude Code 从 research preview 转为在 Team 和 Enterprise 计划正式 GA，安全审查以开源 GitHub Action 形式发布。文中同时披露多项数据，获得实质性审查意见的内部 PR 占比从 16% 升至 54%，monorepo 日变更量从 5 月约 2500 条增至 9 月超 3 万条，Claude Code 仓库 6 到 9 月合并 PR 翻倍以上而回退占比下降超 40%。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这是一线 AI 编码团队对「代码产出速度超过人审能力」交出的第一份完整工程答卷。它把人的角色从逐行阅读改成按风险出手，用回退率和事故率兜底，大量引入智能体写代码的团队可能都会走到同一条路上。HN 讨论里已经有人点出更深层的变化，系统不再依赖某个具体的人完整理解，排障能力押在模型自己能定位到正确片段上，这个信任模型的赌注值得所有用 AI 写码的人想清楚。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>在 Anthropic 的内部代码仓库里，每天落地的变更从今年 5 月的约 2500 条涨到 9 月的 3 万条以上。人逐行读代码这条路在这个量级下已经走不通。Claude Code 团队刚刚在官方工程博客公开了他们的完整应对方案，一套六层的代码审查流水线，思路是把大部分阅读工作交给机器，人的注意力只投向高风险改动。</p>
-<p>团队给这套体系定的目标很具体。让 Claude Code 仓库里的大部分 PR 最多只需一个人参与就能合并，这个人可以是作者本人，同时回退率和事故率不上升。他们追踪的人工时间指标包括每个 PR 的人工批准数（中位数和 95 分位）、人工评论数、PR 等人处理的时长。回退率和事故率被当作护栏，一旦上升就说明省下的人工时间只是转嫁到了修 bug 上。在他们看来，问「有没有人读过这段代码」不够精确，更有用的问法是这次改动可能出什么问题、自动化检查和人工检查谁来接住它。审查的时机也因此变了，从事后的关卡变成类似写作时拼写检查的持续过程，大部分改动在人看到之前已经被 Claude 审过并修过至少一轮。</p>
-<p>六层流水线按顺序展开。PR 开出之前，Claude 自己跑测试、构建和 lint，另一个带着全新上下文的 agent 先审一遍 diff。Claude Code 的创建者 Boris Cherny 估计，给 Claude 一种验证自己工作的方式能让最终结果好上两到三倍。PR 开出后，必选 CI 在全平台跑 lint、类型、测试和打包，红的直接挡住合并。接着是 AI 审查，多个 agent 并行找 bug，另一组验证 agent 对每条发现投票，只有足够多的验证者认为是真问题才会贴出来，按严重程度排成行内评论，每条标上 Important、Nit 或 Pre-existing，存量代码里的 bug 不会被算到作者头上。安全审查单独一道，bug 审查或安全审查任何一条未关闭都合不了。再往后是按风险分级的人工审批，分类器读改动定档，文档和纯增量变更可以零人审批，缓存、自动更新器、系统提示词这类敏感路径要一个人，最高风险路径固定要两个人，agent 的批准永远不算人工名额，非受信作者一律加审一人。最后是合并队列对着最新主干重跑检查、feature flag 内部先用、灰度放量，出问题不部署就能关掉开关快速回滚。</p>
-<p>这套体系跑出了数据。研究预览版上线时，内部获得实质性审查意见的 PR 占比从 16% 升到 54%，超过一千行的大 PR 大部分会被查出问题。今年 6 月到 9 月，Claude Code 仓库合并的 PR 数量翻了一倍多，需要回退的占比反而降了四成以上。面向外部的 Code Review for Claude Code 也在 Team 和 Enterprise 计划正式 GA，本地还能用 /code-review 跑轻量版。安全审查部分以开源 GitHub Action 的形式发布，配一条 /security-review 命令就能用起来。</p>
-<p>博客里最生动的一段是收敛问题。agent 当作者、agent 当审查者，两边能互相忙活到没完，一个 CLI PR 曾在一夜之间经历五十多轮审查和修复，作者最后手动叫停。团队用 git blame 回查审查者反复标记的内容，约 59% 从第一轮就存在，审查者很少在找新 bug，每一轮只是多翻出几个旧的。解法是让审查者只报告增量问题。另一个持续改进的闭环也值得一看，每次事故或回退都转成 eval 用例，由熟悉那段代码的工程师确认，审查器每天对着全量用例集跑分，改提示词、工具或模型后只有提分才保留。</p>
-<p>Hacker News 上这个帖子已经 178 分，讨论聚焦在一个更远的问题。用户 jonahx 认为这背后是软件信任模型的转变，系统大到任何一个具体的人脑内都装不下完整的因果模型，一切取决于 Claude 总能定位并理解系统里正确的那一片，他把这比喻成接手一艘原理无法理解的外星飞船，同时也承认很多大型遗留系统其实早已如此。也有人质疑给一个终端工具产品维持这样的变更规模是否有必要，随后有评论指出 3 万条是整个 monorepo 的量，Claude Code 在另一个独立仓库。</p></div></details>
+    <div class="article-card" data-id="raw-bb22af570abd">
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">community</span><span class="score-tag">评分 9.1/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50138531" target="_blank" rel="noopener">DeepSeek上线搜索与抓取API，千次成功0.75美元</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>DeepSeek 在官方文档里宣布 Search API 和 Fetch API 正式可用，给 AI 智能体和检索增强（RAG）应用提供实时网页访问能力。Search 输入查询返回结构化搜索结果，Fetch 把指定网页转成 Markdown 返回，两个接口都复用 DeepSeek 现有的 API Key 认证。定价均为每 1000 次成功请求 0.75 美元，消息在 Hacker News 拿下 556 分讨论。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>给智能体接搜索此前有两条路，买 Exa、Tavily、Brave 这类商业搜索 API，或者用 SearXNG 自建聚合，后者在实践中频繁遭遇限速和封 IP。DeepSeek 用自研搜索引擎把联网这一层做成正式商品，且只在请求成功时收费，搜空了不给钱，智能体上网的成本多了一种按成功计价的明码标价选项。模型厂商亲自供应搜索层，调用方能在同一家同时拿到模型和联网能力。通过 Claude Code、Codex 等工具的服务端搜索调用在 2026 年 11 月 1 日前免费，等于一段零成本试用期。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>AI 智能体要替人查资料，第一步是搜索，第二步是把网页内容抓回来读。DeepSeek 在官方文档里宣布，这两步现在做成了正式商品。上线的 Search API 和 Fetch API 由它自研的搜索引擎驱动，专门给智能体和检索增强类应用提供实时上网能力。消息在 Hacker News 上拿到 556 分讨论热度。</p>
+<p>两个接口分工明确。Search 负责搜索，端点是 /v1/tools/search，输入一句查询，返回一组结构化结果。Fetch 负责抓取，端点是 /v1/tools/fetch，给它一个网页地址，它把页面内容转成 Markdown 返回。两者都是原始 JSON 接口，认证沿用 DeepSeek 现有的 API Key，开发者不用重新注册任何东西。</p>
+<p>字段设计明显是冲着模型去的。每条搜索结果里，snippet 是 100 到 200 字符的短摘要，给界面显示用；summary 是 600 到 800 字符的长摘要，官方文档明确说这部分是给模型阅读的。结果还带两个评分。rerank_score 从 0 到 3，1.5 以上算高质量结果；authority 从 0 到 4，3 以上算高权威来源。查询本身支持 site:、lang:、after:、before: 这类操作符，能限定站点、语言和发布时间。</p>
+<p>定价是评论区吵起来的地方。Search 和 Fetch 都是每 1000 次成功请求 0.75 美元，计费口径写得相当清楚，只有返回 HTTP 200 且真的拿到结果才收费，搜索结果为空、请求失败、超时统统不计费，count 参数一次取多少条也不影响单价。速率方面，两个 API 在账户层面各限 5 QPS，互不占用配额，Fetch 还额外受单域名限速，超限返回 429。对已经在用 Claude Code、Codex 或 DeepSeek Harness 的人有个免费窗口，模型在服务端自动触发的搜索和抓取目前分文不收，到北京时间 2026 年 11 月 1 日零点才切换成按请求计费。</p>
+<p>HN 评论区几乎变成一场搜索供应商的集体吐槽。多人反映用 SearXNG 这类自建聚合方案，很快就被限速、验证码和 IP 封禁盯上，有位用户的家庭 IP 已经被 Brave Search 永久拉黑。另一位用户做了横向测试，让模型自己挑搜索结果，Exa 和 Tavily 排第一，Brave 第二，SearXNG 垫底。大家的结论相当一致，每千次 0.75 美元的价格下，直接付钱比跟搜索引擎玩猫鼠游戏划算。反对声音集中在隐私，有人担心把公司内部查询词交给 DeepSeek 的 API 不安全，讨论中给出的办法包括域名白名单、参数剥离，要求最高的场景只能上完全断网的气隙系统，Diffbot 的员工在评论里自荐，称该公司提供可自托管的全离线网页索引。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>首次系统性披露 Claude Code 团队内部审查流水线的分层细节与指标设计；Code Review for Claude Code 从 research preview 转为 Team/Enterprise 正式 GA；开源 security review GitHub Action 与 16% 到 54%、日变更 2500 到 3 万、回退占比降超 40%、50 轮循环与 59% 存量代码等数据均为本次首次公开；历史日报检索无匹配。</div>
-            <div class="tags-row"><span class="tag">Anthropic</span><span class="tag">Claude Code</span><span class="tag">代码审查</span><span class="tag">AI 编码</span></div>
-            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50122951" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
-<a class="ext-link" href="https://claude.dev/blog/solving-code-review-at-anthropic/" target="_blank" rel="noopener">Original article <span class="domain">claude.dev</span></a>
-<a class="ext-link" href="https://news.ycombinator.com/item?id=raw-138da39db88f" target="_blank" rel="noopener">Coverage <span class="domain">news.ycombinator.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>官方文档标注 Search/Fetch API is now available，属新产品线首次公开发布，历史查重与语义查重均无匹配。本次新增量包括完整 API 文档与端点、查询操作符体系、面向模型的 summary 与评分字段设计、按成功请求计费的定价口径、5 QPS 限额，以及服务端工具调用免费至 2026 年 11 月 1 日的时间表。</div>
+            <div class="tags-row"><span class="tag">DeepSeek</span><span class="tag">Search API</span><span class="tag">AI Agent</span><span class="tag">开发者工具</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50138531" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://api-docs.deepseek.com/guides/search/" target="_blank" rel="noopener">Original article <span class="domain">api-docs.deepseek.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Anthropic launches a multi-agent code review tool for Claude Code - The New Stack</div>
-                        <div class="source-url"><a href="https://thenewstack.io/anthropic-launches-a-multi-agent-code-review-tool-for-claude-code" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">DeepSeek Search and Fetch API: Pricing and Reliability</div>
+                        <div class="source-url"><a href="https://www.activepieces.com/blog/deepseek-search-and-fetch-api-pricing-and-reliability" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -764,54 +762,59 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">When AI builds itself \ Anthropic</div>
-                        <div class="source-url"><a href="https://www.anthropic.com/institute/recursive-self-improvement" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge official">官方</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">AI Code Review Tools for Engineering Teams (2026) | Nimbalyst</div>
-                        <div class="source-url"><a href="https://nimbalyst.com/blog/ai-code-review-tools-for-engineering-teams-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Gagan Ghotra on X: "DeepSeek launched Search API 👀 It's one of the cheapest option in the market now! Search API Pricing Comparison (per 1,000 searches) - 2026 👇" / X</div>
+                        <div class="source-url"><a href="https://x.com/gaganghotra_/status/2111517716444221939" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
                         <span class="badge newness">时效性</span>
                         <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">DeepSeek Pricing 2026: API Cost, Free Tier & Plans Guide</div>
+                        <div class="source-url"><a href="https://felloai.com/deepseek-pricing" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">DeepSeek silently introducing rate limits?</div>
+                        <div class="source-url"><a href="https://www.reddit.com/r/DeepSeek/comments/1wir47s/deepseek_silently_introducing_rate_limits" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge community">社区讨论</span>
                     </div>
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-636ccab7e160">
-            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">tools</span><span class="score-tag">评分 8.6/10</span><span class="newness-tag">⬆️ 显著更新</span></div>
-            <h2><a href="https://venturebeat.com/technology/reflections-beam-aims-to-undercut-chinese-open-models-with-fewer-tokens-not-cheaper-tokens" target="_blank" rel="noopener">Beam 权重如期开放，一台 8 卡服务器就能自己跑</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Beam 权重正式开放下载，Apache 2.0 许可，兑现 10 月 5 日预告中"本月晚些时候放出"的承诺。8-bit 与 4-bit 量化版本可运行在 8 张 H100/H200/GB300 的单台服务器上。配套"开放操作系统"软件栈与命令行编码代理 Mirror CLI 同步开源，33 家合作伙伴参与，Dell/HPE 提供硬件预装。Baseten 经 OpenRouter 开始供应 API，Reflection 自家托管服务公测期免费。CTO 首次回应并否认英伟达收购传闻。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>美国公司近年大量改用中国开源模型降本，但调研显示一半以上企业说不清自己栈里的模型来自哪里。Beam 提供了一个许可证干净、可自托管、单机可跑的美国选项，并把企业选型的比较基准从每百万 token 单价挪到单个任务的总成本。对想自己部署模型的团队，一台 8 卡服务器加一条命令就是全部门槛。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 5 日，Reflection AI 在博客文章里预告了自家首个开源模型 Beam 的全部细节，并承诺权重"本月晚些时候放出"。今天承诺兑现，Beam 的权重正式开放下载，许可证是 Apache 2.0，企业可以把它部署在自己的服务器上。规格与预告一致，总参数 5010 亿，每个 token 激活 230 亿，定位是编程和智能体任务的日常主力模型。</p>
-<p><img alt="各家模型在压低每个任务 token 用量上的竞赛" src="https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F60XdpofkKXOlwgLeGGMwgj%2F6127e682223008b6224a81b1231184da%2Flead-v3.png%3Fw%3D1000%26q%3D100&amp;w=3840&amp;q=85" /></p>
-<p>这次随权重一起到位的还有一整套配套。Reflection 同步开源了它称为"开放操作系统"的软件栈，许可同样是 Apache 2.0，覆盖模型的运行、定制和部署。量化后的 8-bit 与 4-bit 版本可以装进一台 8 卡 GPU 服务器，英伟达 H100、H200 和 GB300 芯片都支持，全精度版本则需要几十张卡。负责产品的副总裁 Joe Spisak 说，借助官方容器，"几分钟之内"Beam 就能在企业自己的 Kubernetes 集群上跑起来。合作伙伴共 33 家，另有约 9 家等待最终批准，Dell 和 HPE 会把 Beam 预装到企业自有硬件，Reflection 还会派驻场工程师上门。软件栈里还有开源命令行编码代理 Mirror CLI，用 Rust 和 Python 编写，Reflection 内部写代码和审代码已经在用它。开源推理框架 vLLM 今天也发文演示了 Beam 以 MXFP4 4-bit 格式运行。</p>
-<p>前一天，Meta 刚刚发布了 8160 亿参数的 Muse Spark Open，自称迄今能力最强的美国开源权重模型，每 token 420 亿的激活参数接近 Beam 的两倍，首日就在 OpenRouter 挂出每百万输入 token 1.25 美元、输出 4.25 美元的价格。它的许可证附带"Built with Muse Spark Open"署名要求，年收入超过 2000 万美元、要把模型作为服务转售的公司还需另签协议。Beam 的 Apache 2.0 没有这些约束。Reflection 表示欢迎 Meta 加入竞争，实验室同时开放多个模型给了企业更多选择。</p>
-<p>Beam 自己的筹码压在账单结构上。企业选模型习惯比每百万 token 的单价，Reflection 盯上的是另一个变量，一个任务从头到尾要消耗多少 token。同一道命令行智能体测试 Terminal-Bench 2.1，Beam 拿到约 80.1 分，平均每个任务生成约 2.5 万 token；GLM-5.2 分数略低，token 用量约 8 万。这 80.1 分在开源模型里没有登顶，DeepSeek V4.1 Flash 的成绩是 90.6%，Reflection 没有回避这个差距，它的算盘是性能足够用的前提下，把每个任务的总成本压下来。独立评测机构 Artificial Analysis 已拿到访问权并开始独立测试，初步判断是 Beam 可能是同等智能水平下最高效的开源模型之一。</p>
-<p><img alt="Meta 和 Reflection 各自只公布了单个任务成本的一半" src="https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F6Ly2Dbiz6ytDMdtXbr9mu6%2Fa78cefb5e3295f09257e6f6c39fd8ac2%2Fin-article-cost-per-task-v2.png%3Fw%3D1000%26q%3D100&amp;w=3840&amp;q=75" /></p>
-<p>定价眼下还是空白。Baseten 从今天起经 OpenRouter 供应 Beam，发稿时没有标价；Reflection 自家的托管服务公测期免费，正式价格仍在制定。Spisak 被问到单个任务比 DeepSeek 或 GLM 便宜多少时说，"我们确实没有具体数字可以分享"，他还承认 DeepSeek 和 Qwen 的融合内核可能做得更好，实际账单未必更贵。</p>
-<p>这个赌注背后有真实的行业土壤。Pinterest 的购物助手模型 Navigator 1 建在阿里的 Qwen 3 VL 上，其 CEO 曾对投资者表示微调开源模型比直接采购闭源模型省了 90% 成本；Coinbase 把智谱 GLM 和月之暗面 Kimi 设为内部工具默认模型后，AI 支出几乎砍半。VentureBeat 九月调研中，32 家运行开源权重的企业里有 56% 说不清自己栈里的模型来自哪里。CTO Ioannis Antonoglou 认为，中国模型的广泛使用让美国经济的核心环节对中国技术形成了依赖，他也补了一句，"这并非说中国模型不好"。Reflection 强调 Beam 从全新权重训练，不使用其他模型的输出做训练数据。</p>
-<p>早期反馈和案例一并亮相。智能戒指厂商 Oura 经云平台 Modal 试用后评价，Beam 的上下文泄漏更少，回答比评估过的其他前沿模型更扎实。韩国零售集团新世界正在和 Reflection 合作开发购物智能体，计划在韩国部署一个 Spisak 称为"AI 工厂"的项目。具名的付费客户目前还没有，其他伙伴的终端客户"名字都很大，暂时不能透露"。</p>
-<p>围绕公司的收购传闻也在今天得到正面回应。《金融时报》10 月 10 日报道称英伟达正处于收购 Reflection 或追加投资的早期谈判。Antonoglou 回应称英伟达是从 B 轮就开始支持公司的紧密伙伴和投资方，并把这篇报道称作"毫无根据的谣言"，表示公司将作为独立公司继续构建前沿开放智能。谈判是否真的存在，他没有说明。</p></div></details>
+<div class="article-card" data-id="raw-dab83dc73e12">
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">tools</span><span class="score-tag">评分 8.9/10</span><span class="newness-tag">minor_update</span></div>
+            <h2><a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017" target="_blank" rel="noopener">DeepSeek 日期版小更新，命令行测试得分涨11.1分</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>10 月 17 日，DeepSeek 在 Hugging Face 发布模型 DeepSeek-V4.1-Flash-1017，官方定位为既有模型 DeepSeek-V4.1-Flash 的小版本更新，名字末尾的 1017 即发布日期。模型接受图片和文本输入、输出文本，总参数 763B，MIT 许可开源。官方称其在推理、编程、智能体任务和视觉基准上全面走高，同时任务执行时间与输出长度缩短，使用成本下降。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>日期版小更新也带来了大幅涨分，Terminal-Bench 4.0 从 31.2 到 42.3，DeepSWE v1.1 达 77.0 且高于官方对比表中 GPT-5.6 Sol 的 73.0 与 Opus 5 的 74.0，这给了外界一个观察 DeepSeek 模型线迭代节奏的样本。执行更快、输出更短会直接体现在按 token 计费的账单上。763B 开放权重配 MIT 许可，自部署团队可以自由商用和改造。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 17 日，DeepSeek 在 Hugging Face 开了一个新模型仓库，名字叫 DeepSeek-V4.1-Flash-1017，末尾的 1017 就是当天日期。官方在模型卡里写明，这是 DeepSeek-V4.1-Flash 的一次 minor update，也就是小版本更新，重点改进推理、编程、智能体任务和视觉四类基准。仓库创建于当天凌晨，数小时内完成了一轮修订，属于典型的日期版刷新。</p>
+<p>榜单涨幅先看几项硬数字。Terminal-Bench 4.0 测的是模型在命令行环境里完成实际任务的能力，这次从 31.2 涨到 42.3，多了 11.1 分，同表的 GPT-5.6 Sol 为 39.9，GLM-5.3 为 37.9，Opus 5 为 51.8。软件工程测试 DeepSWE v1.1 拿到 77.0，是这张对比表里的最高分，高于 GPT-5.6 Sol 的 73.0 和 Opus 5 的 74.0。编程测试 ProgramBench 从 20.3 涨到 29.1，高难度知识测验 HLE 无工具版从 36.8 到 42.6。模型卡表格里列出的每一项对比，这一版都高于前版。</p>
+<p>另一条线是成本。模型卡强调这次更新缩短了任务执行时间和输出长度，用户能更快完成任务、花更少的钱，官方称这在多个 agent 框架上推进了性能与成本的 Pareto 前沿，也就是把性能和成本两头同时占优的边界往外推。按 token 付费的用户对此最直观，模型少绕弯、少写废话，账单就薄一截。</p>
+<p>规格方面，模型总参数 763B，MIT 许可，接受图片和文本输入、输出文本，上下文窗口 100 万 token，最大输出不少于 25.6 万 token，官方推荐的采样参数为 temperature 1.0 和 top_p 1.0。工程接入有个显眼变化，这个版本不再附带常见的 Jinja 聊天模板，官方改用 encoding 文件夹里的一个自包含 Python 参考实现来演示提示词的拼法，同时发布了 deepseek-recipe，一组带 Python 绑定的 Rust 库，负责把 Messages、Chat Completions 和 Responses 请求编码成 DeepSeek V4 与 V4.1 的格式。模型卡引用的技术报告标题为 DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression，主题指向 KV Cache 压缩。</p>
+<p>生态反应也不慢。上线两天，页面显示月下载已有 10233 次、点赞 1384 个，社区做出 60 个量化版本和 7 个微调模型，5 个 Spaces 应用已经用上了它。模型暂时没有接入 Hugging Face 的托管推理服务，想现在就试的用户需要自行部署。跑分细节上，官方注明 Terminal-Bench 4.0 使用 Claude Code 框架，DeepSWE v1.1 使用 Mini-SWE-V2 框架。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>2026-10-06 日报头条报道的只是 10 月 5 日博客的发布预告，501B 总参/23B 激活、百万上下文、训练细节与自述跑分当时均已披露，且明确权重"本月晚些时候放出"、不可自托管。本次新增量为权重实际放出并可自托管（承诺兑现）、Apache 2.0 许可与 8 卡单机部署、"开放操作系统"软件栈与 Mirror CLI 及 33 家伙伴生态、Baseten 经 OpenRouter 供应 API（自家托管公测免费）、Oura 与韩国新世界落地案例，以及 CTO 首次回应并否认英伟达收购传闻。规格与训练细节属历史已报内容，本文按 brief 一笔带过。判定为显著更新，权重兑现加生态落地使事件向前推进了实质一步。</div>
-            <div class="tags-row"><span class="tag">开源模型</span><span class="tag">Beam</span><span class="tag">Reflection AI</span><span class="tag">自托管</span></div>
-            <div class="links-row"><a class="ext-link" href="https://venturebeat.com/technology/reflections-beam-aims-to-undercut-chinese-open-models-with-fewer-tokens-not-cheaper-tokens" target="_blank" rel="noopener">Source <span class="domain">venturebeat.com</span></a>
-<a class="ext-link" href="https://venturebeat.com/ai/reflections-beam-aims-to-undercut-chinese-open-models-with-fewer-tokens-not-cheaper-tokens/" target="_blank" rel="noopener">Coverage <span class="domain">venturebeat.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>历史查重未出现；语义历史匹配到 2026-08-01 报道的 DeepSeek-V4-Flash Update，同属 Flash 产品线迭代但分属 V4 与 V4.1 世代。本次是 V4.1-Flash 的日期版刷新（-1017），官方自述 minor update。新增量包括基准全面提升（Terminal-Bench 4.0 +11.1 至 42.3）、取消 Jinja 聊天模板改用 encoding.py 参考实现、新发布 deepseek-recipe 编码工具、1M token 上下文窗口，维持 minor_update 标签。</div>
+            <div class="tags-row"><span class="tag">DeepSeek</span><span class="tag">开源模型</span><span class="tag">模型发布</span><span class="tag">基准测试</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Beam Joins Open-Weight AI Efficiency Race [2026]</div>
-                        <div class="source-url"><a href="https://shattered.io/beam-open-weight-efficiency-race-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">DeepSeek V4.1 Flash 1017: Wish-Driven Programming Deep Dive - Local AI Zone</div>
+                        <div class="source-url"><a href="https://local-ai-zone.github.io/blog/deepseek-v4-1-flash-1017-deep-dive.html" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -821,8 +824,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Reflection AI's Beam: What It Means for Rivals [2026]</div>
-                        <div class="source-url"><a href="https://shattered.io/reflection-ai-beam-market-impact-23b-active-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">DeepSeek V4.1-Flash-1017 Hits 77.0 on DeepSWE [2026]</div>
+                        <div class="source-url"><a href="https://shattered.io/deepseek-v4-1-flash-1017-deepswe-77-search-api-2026" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -832,8 +835,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Beam: Reflection AI's 501B Open-Weight Model | DataCamp</div>
-                        <div class="source-url"><a href="https://www.datacamp.com/blog/reflection-ai-beam" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">DeepSeek V4.1 Flash 1017 Just Got BETTER — The New Coding & Agent Beast</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=0RIE3pD2aVA" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -843,8 +846,19 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Artificial Analysis on X: "Artificial Analysis has been given access by Reflection and is independently benchmarking Beam Early indicators suggest Beam will be one of the most token-efficient open models we've seen for its level of intelligence. Congratulations @reflection_ai on the announcement… / X</div>
-                        <div class="source-url"><a href="https://x.com/ArtificialAnlys/status/2107219177132155233" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">DeepSeek Just Released V4.1-Flash-1017, Scores 77.0 on DeepSWE, Opens Search API - MarkTechPost</div>
+                        <div class="source-url"><a href="https://www.marktechpost.com/2026/10/17/deepseek-just-released-v4-1-flash-1017-scores-77-0-on-deepswe-opens-search-api" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">DeepSeek V4.1-Flash-1017: What's New in the Benchmark Update | MindStudio</div>
+                        <div class="source-url"><a href="https://www.mindstudio.ai/blog/deepseek-v4-1-flash-1017-release" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -854,28 +868,31 @@ body {
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-d0f11237d1f3">
-            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">tools</span><span class="score-tag">评分 7.7/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/" target="_blank" rel="noopener">Replit 宣称已弃用 Anthropic，知情人士否认</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>10 月 16 日，Replit CEO Amjad Masad 在 TechCrunch Disrupt 舞台上表示公司已不再与 Anthropic 合作，理由是成本、合作关系与模型性能，并称自家基准显示 Sol 和 Astra 在从零构建 vibe-coded 应用上持续表现更好。知情人士随即向 TechCrunch 否认，称合作仍在进行。Replit 8 月宣布与 OpenAI 合作后从未披露过离开 Anthropic，这是首次公开表态。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Replit 平台此前由 Claude 模型驱动，据称与 Anthropic 的合作曾显著推高其收入，这类平台级供应商切换直接影响模型厂商的客户格局，也显示成本与性能正在成为选型的硬指标。但本次表态遭知情人士否认，9 月底的博客仍显示 Claude 模型运行在 Replit Agent 生产环境，最终事实尚未落定，采信与否需要等 Replit 的正式回应。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 16 日，AI 编程平台 Replit 的联合创始人兼 CEO Amjad Masad 站上 TechCrunch Disrupt 大会的舞台，说公司已经不再与 Anthropic 合作。他给出的理由涉及成本、合作关系和模型性能三方面。Replit 今年 8 月刚宣布与 OpenAI 达成合作，在那之前没有任何迹象表明它已离开 Anthropic，这次是 Masad 首次把这件事公开摆上台面。</p>
-<p><img alt="Replit CEO Amjad Masad 在 TechCrunch Disrupt 大会现场" src="https://techcrunch.com/wp-content/uploads/2026/10/replit-ceo-masad.jpg" /></p>
-<p>按 Masad 的说法，"我认为现在 ChatGPT 更好"。他称公司用一套内部基准评估性能等指标，"我们也发布公开基准，Sol 和 Astra 在从零构建 vibe-coded 应用上持续表现更好"。他把结论归成一句，"这个决定基于成本、合作和性能，出于所有这些原因，我们只是觉得他们目前是更好的合作伙伴"。所谓 vibe-coded 应用，通常指用户靠自然语言提需求、由 AI 直接生成可运行软件的开发方式。Sol 和 Astra 表现更好的判断出自 Replit 自己的基准，目前没有第三方验证。</p>
-<p>这个说法很快有了另一个版本。了解两家公司合作关系的知情人士向 TechCrunch 否认了 Masad 的表述，其中一位要求匿名的人士称，合作仍在进行。公开痕迹也站在质疑者一边，Replit 的官网、博客和社交媒体显示，就在几周前公司还在使用 Anthropic 的产品。9 月底的一篇博客明确写着，Anthropic 的 Claude Fable 5 和 Claude Fable 5.1 是运行在 Replit Agent 生产环境里的模型。差不多同一时间，Replit 的一名产品员工还在 X 上发帖，介绍公司对 Anthropic 旗舰模型 Opus 5.5 的使用并宣传其能力。TechCrunch 已就这些矛盾再次联系 Replit 求证，表示得到回复后会更新报道。</p>
-<p>Replit 卖的是云端软件开发平台，用户在浏览器里就能开发和部署应用。与 Anthropic 合作期间，平台由 Claude 模型驱动，据称这段合作曾显著推高公司收入，这也是 Masad 的表态显得突然的原因。同一舞台上他还报了增长情况，数字同样全部出自他的口述。他说公司暂不公布 ARR，去年企业客户收入占比约 2%，今年升到约 15%，B2B 收入占比超过 50%。</p>
-<p>聊到 AI 安全时，Masad 打了个比方："人类工作需要一定的环境，也许是一间不错的办公室、办公室里不错的食物、空调和电脑，智能体也需要一个能让它们存在并好好干活的栖息地。"在他描述里，这个栖息地要配齐好的编排、错误恢复、安全防护与沙箱、网络、身份与授权，把这些都解决好之后，才能安全地部署 AI。</p>
-<p>一边是 CEO 的舞台宣言，一边是知情人士的否认和几周前的生产环境记录，这桩供应商切换眼下处在各说各话的阶段，Replit 的回应和后续报道会是关键。</p></div></details>
+<div class="article-card" data-id="raw-db08a7f2a98b">
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">community</span><span class="score-tag">评分 8.5/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50141657" target="_blank" rel="noopener">Yelp、摩根大通、Delta 关门谢客，AI 代理四处碰壁</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>The Verge 记者 Emma Roth 10 月 17 日报道，Hacker News 讨论热度 135 分。近几周，Meta Muse、xAI Grok、OpenAI Dots、Instinct 等 AI 代理的用户接连发现，代理在主流网站办不成事。Amazon 警告 Meta 的 Muse“继续访问”违反站点政策，Grok、Instinct 的代理和 Dots 也有无法使用 Amazon 的报道。Yelp 只向购买其数据授权计划的代理开放，Delta 航空禁止代理订票，摩根大通与嘉信理财以安全为由封锁代理访问账户，Cars.com 和 Amtrak 被用户发现悄悄上锁。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>代理产品的核心卖点是替人上网办事，封锁直接砍向这个卖点，EquiStamp CEO Chris Canal 判断，这会实际削弱 Anthropic、OpenAI 的价值感知。普通人也躲不开，反机器人防护本来拦的是骗子和黑客，AI 代理触发同一套机制，往后网页上“证明你是人类”的验证只会更多。法律边界悬而未决，Amazon 诉 Perplexity 的初审禁令今年 8 月被上诉法院推翻，修正诉状已递交。门也没有全关，Meta 用合作换通行证，Shopify 向代理开放店面，访问权正在被重新定价。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>The Verge 记者 Emma Roth 在 10 月 17 日的报道，梳理了近几周 AI 代理在主流网站接连碰壁的情况，Hacker News 上的讨论热度已有 135 分。OpenAI、Meta、Google、Instinct 都在承诺自家代理能替你上网办事，订餐厅、清理收件箱，甚至买双新鞋。可代理真的出门干活时，越来越多网站把门关上了。</p>
+<p>最新撞墙的是 Meta 的 Muse。Amazon 称它的“继续访问”违反站点政策，另有报道称 xAI 的 Grok、Instinct 的代理以及 OpenAI 的 Dots 同样无法使用 Amazon。Elon Musk 的回应是，也许自己“该创办一个 Amazon 的竞争对手”。Instinct 拒绝置评，OpenAI 和 Google 也没有立即回应 The Verge 的问询。</p>
+<p><img alt="网站对 AI 代理关门的报道插图" src="https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/STK414_AI_CVIRGINIA_C.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" /></p>
+<p>各家关门的方式各有逻辑。Yelp 对 TechCrunch 表示，只允许购买其数据授权计划的 AI 代理进入。Delta 航空不让代理替用户订机票。到了银行这里，理由换成了安全，JPMorgan Chase 和 Charles Schwab 都确认封锁代理对账户的访问。还有用户发现，之前能用的 Cars.com 和 Amtrak 现在把代理拒之门外，报道认为这暗示更多公司在悄悄上锁。基础设施层面，Cloudflare 在 2025 年推出一键屏蔽 AI 爬虫的开关后，又开始屏蔽同时用于搜索索引和 AI 训练的爬虫，理由是 AI 流量正在加重互联网基础设施的负担。</p>
+<p>打官司这一仗去年就开打了。Amazon 封杀 Perplexity 的代理购物功能并提起诉讼，称自己“反复要求”对方停止，还表示替客户购物的第三方公司应当公开运作、尊重服务提供方是否参与的决定。Perplexity 把代理比作用户的延伸，反击说 Amazon 不欢迎代理是因为广告少了人看，并称 Amazon“不相信你有权雇用劳动力、让一名助手或员工代你行事”。初审法官一度下令 Perplexity 收手，今年 8 月上诉法院推翻了这项裁决，Amazon 随后提交修正诉状。</p>
+<p>Meta 换了一条路走。公司本月早些时候表态：“拒绝一个个人代理，就是拒绝其背后的客户。”它没有跟 Amazon 缠斗，转而与 Walmart、Gap、Sephora、Best Buy 等零售商合作，让 Muse 直接在这些站点购物，Shopify 也向 AI 代理开放了自己的店面网络。合作也不等于畅通，Reddit 上有用户报告在 Walmart 结账照样出问题，还有人称 Google 以“可疑活动”为由封禁了他们使用 Muse 的账号。</p>
+<p>对代理公司来说，麻烦直接砍在产品卖点上。AI 安全评估公司 EquiStamp 的 CEO Chris Canal 对 The Verge 说，这件事“绝对”会影响 Anthropic、OpenAI 的价值感知，这些产品号称能渗透生活的方方面面、能在网上做任何你能做的事，一旦有公司在主动阻挠，代理能派上用场的场景就变少了。他还指出，很多防护机制本来拦的是骗子和黑客，AI 代理会触发同一套防护，往后普通人的网页体验也会更“烦人”，连买菜的网站可能都要过一堆验证，才能证明屏幕前坐的是个人。</p>
+<p>HN 评论区把另一面的账也算了出来。有人指出小企业网站被爬虫流量打爆，又没钱没人手防御，Cloudflare 作为最省事的方案成了最大赢家，一位站长说封禁爬虫后，自家 nginx 日志从每天 1GB 降到每周 10MB。也有人唱反调，说 Cloudflare 其实拦不住用真实浏览器、能点掉验证框的机器人，大家选它更多图个安心。还有人认为小企业该高兴，代理逛不了 Amazon，就会逛进小店。对付不起钱的小站，评论里讨论了自建开源防火墙的方案，思路是让机器人付出的成本高过服务器响应请求的成本。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Masad 首次公开表示 Replit 已不再与 Anthropic 合作，此前公司只在 8 月公布与 OpenAI 的合作，从未披露离开 Anthropic；同场还首次给出企业收入占比从 2% 到 15%、B2B 超 50% 的结构口述。原文同时呈现知情人士否认与 9 月底生产环境仍在用 Claude 的证据，作为存疑信息保留双边呈现，不改变事件本身的首发性。</div>
-            <div class="tags-row"><span class="tag">Replit</span><span class="tag">Anthropic</span><span class="tag">OpenAI</span><span class="tag">AI 编程</span></div>
-            <div class="links-row"><a class="ext-link" href="https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/" target="_blank" rel="noopener">Source <span class="domain">techcrunch.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>历史日报未出现过此话题。代理被网站拦截有旧背景（Cloudflare 2025 年一键屏蔽、Amazon 去年封杀 Perplexity），本次增量在于近几周态势集中且首次成体系汇总：Muse 遭 Amazon 点名警告，Grok、Instinct 代理与 Dots 无法使用 Amazon 的报道，Cars.com 与 Amtrak 被发现悄然封锁，Yelp 亮出数据授权门槛，Google 以可疑活动为由封禁 Muse 相关账号，Meta 转向零售结盟且 Shopify 开放店面网络。</div>
+            <div class="tags-row"><span class="tag">AI 代理</span><span class="tag">Cloudflare</span><span class="tag">Amazon</span><span class="tag">反机器人</span><span class="tag">网络访问权</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50141657" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web" target="_blank" rel="noopener">Original article <span class="domain">www.theverge.com</span></a>
+<a class="ext-link" href="https://news.ycombinator.com/item?id=raw-db08a7f2a98b" target="_blank" rel="noopener">Coverage <span class="domain">news.ycombinator.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Replit Dumps Anthropic for OpenAI, Citing Cost Pressures | The Tech Buzz</div>
-                        <div class="source-url"><a href="https://www.techbuzz.ai/articles/replit-dumps-anthropic-for-openai-citing-cost-pressures" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">5 Key Insights on AI Agents Blocking Websites and Consumer Struggles in 2026</div>
+                        <div class="source-url"><a href="https://codygroups.com/ai-agents-blocking-websites" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -885,8 +902,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Replit ends partnership with Anthropic, citing ... | Pluang</div>
-                        <div class="source-url"><a href="https://pluang.com/en/news-feed/replit-tidak-lagi-bekerja-sama-dengan-anthropic-ceo-katakan" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Websites Block AI Agents: The New Web Access Battleground</div>
+                        <div class="source-url"><a href="https://emergent.sh/news/websites-block-ai-agents-new-web-access" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -896,30 +913,30 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Replit is no longer working with Anthropic, CEO says</div>
-                        <div class="source-url"><a href="https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">How Many Top Websites Block AI Crawlers in 2026?</div>
+                        <div class="source-url"><a href="https://ustechautomations.com/resources/blog/how-many-top-websites-block-ai-crawlers-2026" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
                         <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Websites are closing their doors to AI agents | The Verge</div>
+                        <div class="source-url"><a href="https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
                         <span class="badge media">媒体报道</span>
                     </div>
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">STOP RAGING ABOUT Replit V3 - Here’s The ACTUAL Solution That Works - Agent & Assistant - Replit Community Forum</div>
-                        <div class="source-url"><a href="https://replit.discourse.group/t/stop-raging-about-replit-v3-here-s-the-actual-solution-that-works/7187" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Anthropic's Claude Design Ships Directly to Replit, Killing the Design-to-Code Gap | AlphaSignal</div>
-                        <div class="source-url"><a href="https://alphasignal.ai/news/anthropic-s-claude-design-ships-directly-to-replit-killing-the-design-to-code" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Multiple Websites Restrict AI Agent Access | Trending Stories | HyperAI</div>
+                        <div class="source-url"><a href="https://hyper.ai/en/stories/657279cf248cf6ba701b967e7f9c2185" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -929,30 +946,29 @@ body {
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-3d6f16cf09a8">
-            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">tools</span><span class="score-tag">评分 7.9/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://www.theverge.com/tech/1012748/nvidia-rtx-spark-windows-arm-laptops-asus-hp-lenovo-impressions" target="_blank" rel="noopener">英伟达新笔记本一周实测，图形性能低于官方宣称</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>英伟达首款 Arm 架构笔记本芯片 RTX Spark N1X 上市第一周，The Verge 三位编辑对微软、华硕、联想、惠普首批五台笔记本做了一周综合实测，覆盖日常兼容、游戏、续航、本地 AI 和做工五个维度，给出了 2599.99 至 6999.99 美元定价下的第一批真实使用数据。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这是英伟达第一次把自家 GPU 和 Arm CPU 打包送进 Windows 笔记本，直接对标苹果、高通、英特尔和 AMD 的高端方案。对普通买家的意义在于，发布会宣传的游戏性能和本地 AI 卖点第一次被一周实测逐条检验，图形水平低于宣称的 RTX 5070 档位，本地 AI 耗电且效果输给免费云端服务，这笔预算值不值得花有了比厂商 PPT 可靠的依据。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>英伟达的第一款 Arm 架构笔记本芯片 RTX Spark N1X 上市了。The Verge 的三位编辑拿到首批五台搭载这颗芯片的笔记本，覆盖微软 Surface Laptop Ultra、华硕 ProArt P16、联想 Yoga 9n 和惠普 OmniBook Ultra 四个品牌，连续用了一周。这批机器统一采用 20 个 CPU 核心加 6144 个 CUDA 核心的旗舰版 N1X，顶配提供 128GB 统一内存，售价从 2599.99 美元一路排到 6999.99 美元，目标人群是开发者、程序员和内容创作者。</p>
-<p><img alt="首批RTX Spark笔记本" src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/268814_Nvidia_RTX_Spark_laptops_Asus_HP_Lenovo_ADiBenedetto_0001.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" /></p>
-<p>日常兼容性基本过关。Windows on Arm 这几年进步明显，微软的 Prism 模拟层让大量 x86 应用直接能跑，Photoshop 和 Premiere 早就有原生 Arm 版本。把 ProArt P16 当主力机用了一整周的编辑 Sean Hollister 说，Signal、Discord、CapCut、Slack 这些日常应用没有一个掉链子，他感觉不到自己开的到底是 Arm 应用还是 x86 应用。偶尔有应用加载偏慢、笔记软件闪退一次的情况，重开就好。</p>
-<p>游戏部分需要泼冷水。英伟达宣称 N1X 的图形性能相当于一块 RTX 5070 笔记本显卡，实测结论是卡在 RTX 5060 和 5070 之间，没能兑现宣传口径。落到帧数上，黑神话悟空在原生 3270x2180 分辨率、中画质加 DLSS 性能档下平均 70fps，赛博朋克 2077 同设置平均 66fps，极限竞速地平线 6 平均 57fps。可一旦碰上吃 CPU 的游戏就露馅，星球大战 Zero Company 无论怎么调画质都锁在 37 到 39fps，绝地潜兵 2 在高难度关卡也稳不住 60fps。VR 眼下不适合折腾，Valve 无线适配器的驱动直接装不上。冲着游戏去的买家，便宜一大截的独显笔记本跑得更快。</p>
-<p><img alt="微软演示Surface Laptop Ultra运行游戏" src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/VERGE_10_04_2026_0229.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" /></p>
-<p>续航同样不乐观。这批机器塞进了 99.9Wh 的电池，已经是不用向航空公司报备就能带上飞机的最大容量，实际办公却只撑约 5 小时，最好的一次是 50% 亮度下 5 小时 40 分钟。网页办公时整机功耗 13 到 17W，玩印第安纳琼斯与伟大圈时飙到 120W，电量掉到 30% 后游戏功耗被压到 60W，性能明显缩水。快充倒是给力，140W USB-C 电源 20 分钟能从零充到 50%，75 分钟充到 95%。</p>
-<p><img alt="Surface Laptop Ultra的磁吸充电口" src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/VERGE_10_04_2026_0141.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" /></p>
-<p>本地 AI 是这批机器最大的卖点，实测出的结论也最冷静。编辑 Tom Warren 的回答是「还不行，现在整套体验都像面向开发者的测试版」。Sean Hollister 用 Hermes 跑 Qwen3.8-27B 生成的每日新闻简报花了 10 分钟，耗掉 10% 电量，云端的 Claude Opus 5.5 只用一半时间就交出了来源更全的结果。重装后再试一次，耗时更长，电量直接烧掉 60%。另一位编辑让本地模型给 5 张商品图换白底，36 分钟耗电 30%，第一遍还把商品裁掉了。32GB 内存的机型会直接提示内存不够跑推荐模型。隐私上的优势是真的，方便程度和输出质量目前都还输给免费的云端服务。</p>
-<p>做工倒是普遍在线，这批机器的 OLED 屏幕观感出色，触觉触控板手感普遍很好，编辑手上三台的金属机身也够扎实，唯一的二合一机型联想 Yoga 9n 成了编辑们私下最青睐的黑马。一周用下来的画像很清楚。预算充足、想在本地跑大模型且不怕折腾的开发者可以关注，冲着游戏、轻薄或者长续航去的普通买家，市面上有更划算的选择。</p></div></details>
+<div class="article-card" data-id="raw-24bcfc655b42">
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.3/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://www.marktechpost.com/2026/10/18/mistral-timestral-time-series-foundation-model/" target="_blank" rel="noopener">时序模型 Timestral 发布，免GPU跑赢Google</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Mistral 在 10 月 18 日发布其首个时间序列基础模型家族 Timestral，含 5M、28M、123M、209M 四个稠密模型，上下文最长支持 32,768 个时间步，单次前向最多预测 1,024 步，每步输出 21 个分位数的概率预测。官方文档将 Timestral 1.0 209M 标为 Public Preview，权重与推理代码开放。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>时间序列预测过去要为每个数据集单独训练模型，ARIMA 逐条拟合，PatchTST 从头训练，换个场景就得重来。Timestral 用预训练加零样本替换了这套做法，拿到新数据可以直接预测。推理不需要 GPU，8 线程服务器 CPU 上 209M 模型 140 毫秒完成一次预测，中小团队不买显卡也能用上概率预测。权重采用 Modified MIT 许可，比 Google TimesFM-3 的非商业许可更开放，商用限制更少。基础模型的打法从语言外溢到预测场景，Mistral 成为这一领域新的入场者。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>据 MarkTechPost 报道，Mistral 于 10 月 18 日发布了它的第一个时间序列基础模型家族 Timestral，一次拿出 5M、28M、123M、209M 四个尺寸的稠密模型，全部支持零样本预测。官方文档把 Timestral 1.0 209M 标为 Public Preview，权重和推理代码开放下载。</p>
+<p>时间序列指按时间顺序记录的数据，电表读数、服务器负载、门店销量都属于这一类，预测它们的未来取值是许多行业的日常需求。过去的做法分成两派，ARIMA 这类经典工具一条序列一条序列地拟合，PatchTST 这类深度模型要在每个数据集上从头训练，换一个场景就得重新来过。Timestral 借用大语言模型的思路，先在大规模数据上预训练，再直接面对从未见过的数据给出预测，这种能力叫零样本。它每个时间步输出 21 个分位数的概率预测，答案自带不确定性区间，还能联合预测多个相互关联的变量，并接纳只属于过去、已知未来取值和类别型三类协变量。</p>
+<p>这次发布最实际的卖点落在硬件门槛上。Mistral 团队在一块 8 线程的标准服务器 CPU 上实测，任务是用 3 周的 15 分钟粒度历史数据预测未来 1 天，5M 模型耗时 10 毫秒，209M 模型耗时 140 毫秒，全程不需要 GPU。209M 模型的 fp32 权重为 837 MB，5M、28M、123M 三个版本在 Hugging Face 的下载体积分别是 21 MB、111 MB、490 MB。对预算有限的团队来说，这把概率预测从显卡机房搬回了普通服务器。</p>
+<p>性能数字来自 Timestral-209M 的模型卡，属于 Mistral 自报。209M 版本在 GIFT-Eval 上取得 MASE 0.658、CRPS 0.446，在 TIME 上取得 MASE 0.626、CRPS 0.522，在 fev-bench 上的 SQL 技能分为 50.39，三项均在零样本预训练模型中排第一，测试条件是单检查点且不做集成。对比对象包括 Google Research 的 TimesFM-3（330M 参数，fev-bench SQL 48.99）、Amazon 的 Chronos-2（120M，47.28）和 Datadog 的 Toto（2.5B，44.42）。Google 和 Amazon 并未在自己的模型页面公布可对标的数字，上述成绩均转录自 Mistral 的模型卡。尺寸之间的差距也不大，123M 在 GIFT-Eval 上拿到 0.659，与 209M 的 0.658 只差 0.001，延迟是四分之三，精度达到 209M 的 99.8%；28M 版本则能在 GIFT-Eval 和 TIME 上击败体积约大它 4 倍的 Chronos-2。</p>
+<p>技术层面，Timestral 是一个因果 patch transformer，209M 版本有 24 层、嵌入维度 768，每个 patch 覆盖 32 个时间步，单次前向最多预测 1,024 步，上下文最长 32,768 步。官方列出四项贡献，分别是解耦视界预测（DHF）、协变量感知注意力、合成数据优先和两阶段训练，其中协变量感知注意力规定信息只能从协变量流向目标，用来防止未来数据泄漏进预测。权重采用 Modified MIT 许可，比 TimesFM-3 的非商业许可宽松，Chronos-2 和 Toto 则是 Apache 2.0。安装只需一条 pip 命令，要求 Python 3.10+ 和 torch 2.4+，私有数据微调走 Mistral Forge，支持本地、VPC 和物理隔离部署。</p>
+<p>这类模型可能先在库存、能耗、容量规划等内部预测场景落地，金融方向的用途目前只是可能性，尚无已证实的案例。基础模型的打法从语言外溢到预测场景，Mistral 这次把门槛压在了普通 CPU 和开放权重上。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>RTX Spark N1X 芯片与首批笔记本刚上市，本文提供发售第一周的一手实测，帧数、功耗、续航时长、本地模型耗电量等数据此前不存在，历史日报中也未出现过该事件的报道。</div>
-            <div class="tags-row"><span class="tag">硬件实测</span><span class="tag">英伟达</span><span class="tag">本地AI</span></div>
-            <div class="links-row"><a class="ext-link" href="https://www.theverge.com/tech/1012748/nvidia-rtx-spark-windows-arm-laptops-asus-hp-lenovo-impressions" target="_blank" rel="noopener">Source <span class="domain">www.theverge.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Mistral 首个时间序列基础模型家族于 2026 年 10 月 18 日全新首发，历史查重与语义检索均未匹配到既往报道。本次新增量包括四个全新检查点（5M/28M/123M/209M，fp32 权重 21/111/490/837 MB）、新 GitHub 仓库与 Hugging Face 模型卡、Timestral 1.0 Public Preview 定位、四项技术贡献（解耦视界预测 DHF、协变量感知注意力、合成数据优先、两阶段训练），以及三个基准上 Mistral 自报的零样本第一成绩。</div>
+            <div class="tags-row"><span class="tag">时间序列预测</span><span class="tag">基础模型</span><span class="tag">Mistral</span><span class="tag">开源权重</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.marktechpost.com/2026/10/18/mistral-timestral-time-series-foundation-model/" target="_blank" rel="noopener">Source <span class="domain">www.marktechpost.com</span></a>
+<a class="ext-link" href="https://www.marktechpost.com/raw-24bcfc655b42" target="_blank" rel="noopener">Coverage <span class="domain">www.marktechpost.com</span></a>
+<a class="ext-link" href="https://news.google.com/raw-d8df07a822c3" target="_blank" rel="noopener">Coverage <span class="domain">news.google.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Microsoft Surface Laptop Ultra for Business Review: RTX Spark N1X Runs a 35B-Parameter Coding Agent at 89 Tokens per Second, With One Major Caveat - StorageReview.com</div>
-                        <div class="source-url"><a href="https://www.storagereview.com/review/microsoft-surface-laptop-ultra-for-business-review-rtx-spark-n1x" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Mistral releases Timestral open time-series foundation models with SOTA forecasting — AI Signal</div>
+                        <div class="source-url"><a href="https://ai-news-navy-two.vercel.app/news/mistral-releases-timestral-open-time-series-foundation-models-with-sota-forecasting" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -962,8 +978,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Nvidia RTX Spark Analysis - Finally an answer to Apple's M5 Pro & M5 Max? - Notebookcheck Review</div>
-                        <div class="source-url"><a href="https://www.notebookcheck.net/Nvidia-RTX-Spark-Analysis-Finally-an-answer-to-Apple-s-M5-Pro-M5-Max.1422820.0.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Mistral Releases Timestral Time-series Foundation Models » DataGuy</div>
+                        <div class="source-url"><a href="https://dataguy.in/ai-developments/mistral-releases-timestral-time-series-foundation-models" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -973,8 +989,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Absolutely everything I learned while testing RTX Spark for a week: It's a beast, but not at everything | Windows Central</div>
-                        <div class="source-url"><a href="https://www.windowscentral.com/hardware/nvidia/rtx-spark-review-benchmarks-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Timestral 1.0 — Mistral Time-Series Forecasting Models | AI/TLDR</div>
+                        <div class="source-url"><a href="https://ai-tldr.dev/models/timestral-1-0" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -984,19 +1000,19 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Nvidia's RTX Spark could capitalize where Qualcomm's Arm-based efforts have not —  following the expiration of Qualcomm's Windows on Arm deal, Nvidia stands poised to pick up the slack | Tom's Hardware</div>
-                        <div class="source-url"><a href="https://www.tomshardware.com/laptops/nvidia-enters-the-windows-pc-market-with-rtx-spark" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">mistralai/Timestral-209M · Hugging Face</div>
+                        <div class="source-url"><a href="https://huggingface.co/mistralai/Timestral-209M" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
                         <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
+                        <span class="badge official">官方</span>
                     </div>
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">DGX Spark: Could Windows on ARM Support Be Possible, Like RTX Spark, N1X? - DGX Spark / GB10 - NVIDIA Developer Forums</div>
-                        <div class="source-url"><a href="https://forums.developer.nvidia.com/t/dgx-spark-could-windows-on-arm-support-be-possible-like-rtx-spark-n1x/371870" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Mistral Timestral: Time-Series Forecasting Models from 5M to 209M | Data Studios</div>
+                        <div class="source-url"><a href="https://www.datastudios.org/post/mistral-timestral-time-series-forecasting-5m-28m-123m-209m" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1006,28 +1022,28 @@ body {
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-dba65145f01b">
-            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">tools</span><span class="score-tag">评分 8.0/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener">被裁的地球物理学家，把求职做成了13条命令</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>开源项目 MadsLorentzen/ai-job-search 本周登上 GitHub Trending。仓库创建于 2026 年 3 月，并非新项目，但开发持续活跃，累计 325 次提交，最近一次推送是 10 月 15 日，最新版本 v1.7.2 于 9 月 29 日发布，主题覆盖 PDF 页面精确测量、CLI 对数字的处理收紧以及非 ASCII 字符兼容。本次可见的增量是一套完整的功能生态，三条核心命令加十条扩展命令共 13 条，覆盖搜职位、投申请、面试准备、结果追踪的整条链路。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>求职是普通读者最容易代入的高强度重复劳动，每投一个岗位都要重新改简历和写求职信。这个项目展示了 AI 代理的一种贴近生活的用法，把一套完整流程拆成可复用的本地命令，个人数据留在自己的机器上。它在材料真实性上的纪律设计同样有参考价值，所有陈述必须对照个人档案核实、绝不编造经历，关键词只补档案里真实存在的，这类约束对任何用 AI 帮自己写文书的人都是现成的借鉴。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>找工作最磨人的地方在于高度重复。读职位描述、改简历、写求职信、准备面试，每换一家公司就要把这套动作重来一遍。本周登上 GitHub Trending 的开源项目 ai-job-search 给出了另一种做法。作者 Mads Lorentzen 是一名地球物理学家，2025 年底岗位被裁后，他把整个求职流程写成一套跑在自己电脑上的命令，交给 AI 代理执行。</p>
-<p><img alt="ai-job-search 项目的吉祥物信使鸟 Pip" src="https://github.com/MadsLorentzen/ai-job-search/raw/master/assets/mascot/pip_flight_loop.gif" /></p>
-<p>这套框架基于 Anthropic 的命令行编程代理 Claude Code 构建，核心是三条命令。/setup 负责建立个人档案，有三种输入路径，可以把装着简历、领英导出、学位证书、推荐信和过往申请记录的整个文档文件夹交给它解析，也可以直接粘贴一份简历，或者走一轮模拟问答。/scrape 负责搜职位，内置 Jobindex、Jobnet、Akademikernes Jobbank 等丹麦主流门户的搜索技能，也覆盖领英公开职位和聚合站 freehire.me，结果去重后按匹配度排序；其他市场的读者可以用 /add-portal 为本地招聘网站生成对应的搜索技能。看中某个职位后，把链接交给 /apply，它会跑完评估匹配度、起草材料、审阅修订到最终交付的完整流水线，部分门户拦截自动抓取时也支持直接粘贴职位描述全文。</p>
-<p>/apply 内部采用起草加审阅的双代理模式。起草代理先生成 LaTeX 格式的定制简历和求职信，另一个审阅代理去调研目标公司，站在挑剔读者的角度批评草稿，起草方再据此修订。LaTeX 是学术界常用的排版系统，生成的 PDF 版式工整。框架给这套流程立了条硬规矩，简历和求职信里的每一句陈述都要能对照个人档案核实，系统绝不编造技能和经历。</p>
-<p>这个项目最花心思的环节在 PDF 验证。简历用 lualatex 编译，要求精确落在 2 页且条目标题不许孤立地掉到下一页；求职信用 xelatex 编译，要求精确 1 页且签名可见。编译之后 AI 会逐页查看渲染效果，用排版命令自动修复漏洞。随后还有一道 ATS 检查。ATS 是招聘方用来自动解析和筛选简历的系统，它读取的是 PDF 内嵌的文本层，而 LaTeX 的多栏版式有时会让这层内容提取成乱码，邮箱位置提取出图标字符就是常见故障。框架用 pdftotext 把文本层抽出来，按 ATS 的视角验证联系方式是否为可提取的纯文本、阅读顺序是否正常、有没有乱码，再对照职位描述给关键词覆盖率打分。档案里真有的关键词会被补上，真实的差距则保留原样，不做关键词堆砌。</p>
-<p>三条核心命令之外还有十条扩展命令，共同构成 13 条命令的生态。面试前有 /interview 基于已投材料生成针对特定轮次的准备包并陪练模拟问答，投递后有 /outcome 记录每份申请的下落，/gmail-sync 从邮箱识别面试邀约和拒信等状态信号，/notion-sync 把流水线同步成一块只读的 Notion 看板，此外还有批量打分的 /rank、分析技能差距的 /upskill、生成离线仪表盘的 /html-report 等。</p>
-<p>按作者自述，他用同一套流程投出 69 份定制申请、获得 20 场初面，2026 年 6 月以 AI 工程师身份入职，期间他向每家面试公司说明自己在用这套工具。这是一个人的经历，项目页也只把它当作工作流可用性的注脚，读者不必将其视为效果承诺。上手前有几件事需要弄清楚。使用需要 Claude Code 订阅或 API 额度，没有免费层，还要安装 Python 3.10 以上版本、Bun 和 LaTeX 发行版，门户搜索技能也兼容 Codex、Gemini CLI 等其他代理工具。这个仓库在 GitHub 上是公开的，直接 fork 会把姓名、联系方式、薪资期望等个人数据写进公开文件，官方建议求职自用改用私有仓库。框架把职位描述按不可信输入处理，不执行其中嵌入的指令，但防护只到指令层面，作者提醒在不熟悉的招聘网站上发送前先人工过一遍。项目声明与 Anthropic 无关联，也没有代币或付费赞助计划。仓库创建于 2026 年 3 月，累计 325 次提交，最新版本 v1.7.2 于 9 月 29 日发布，重点改进了 PDF 页面精确测量、CLI 对数字的处理以及非 ASCII 字符兼容，最近一次推送是 10 月 15 日。</p></div></details>
+<div class="article-card" data-id="raw-a509ece1edb9">
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">tools</span><span class="score-tag">评分 7.9/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://www.marktechpost.com/2026/10/18/tinyfish-free-search-ai-agent-token-cost/" target="_blank" rel="noopener">TinyFish 搜索与抓取 API 限额免费，同页 token 消耗差 36 倍</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>TinyFish 是一家给 AI agent 做网络基础设施的公司，它宣布 Search（搜索）与 Fetch（网页抓取）API 在限额内免费。搜索每分钟 30 次、每小时 500 次，抓取每分钟 150 个网址、每天 1000 次，钱包余额为 0 美元时仍可使用，新账户赠送 8 美元。收费项目为 Agent 产品每步 0.016 美元、云浏览器每分钟 0.002 美元。报道由 MarkTechPost 于 10 月 18 日发布。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>agent 读网页付两层钱，一层是搜索和抓取 API 的检索费，另一层是返回内容进入大模型后按 token 计费的模型处理费。开发团队普遍只给模型推理做预算，检索返回内容推高的 token 开销经常漏在预算外。TinyFish 把检索费归零，模型那层照收，而抓取工具选谁直接决定模型账单的厚薄，同一篇文章不同供应商的返回量相差约 36 倍。在 agent 上网的花销与门禁接连成为新闻的这几天，这份限额表和 token 账单拆解给了开发者一个可对照的样本。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>给 AI agent 做网络基础设施的公司 TinyFish 把自家的 Search 与 Fetch API 改成限额内免费。搜索接口每分钟 30 次、每小时 500 次，抓取接口每分钟 150 个网址、每天 1000 次。钱包余额降到 0 美元，这两项照样能用，新注册账户另送 8 美元。收费项目单独标价，Agent 产品每步 0.016 美元（2 个并发），云浏览器每分钟 0.002 美元（5 个会话）。</p>
+<p>这份免费要放进 agent 读网页的完整账单里看。agent 上网付两层钱。第一层是检索费，搜索和抓取 API 按请求或按页收，TinyFish 免掉的是这一层。第二层是模型处理费，抓回来的页面内容塞进大模型的上下文，按输入 token 计费，推理和输出另算，这一层照收。MarkTechPost 在报道里点出，多数团队只给模型推理做预算，检索内容推高的 token 账单经常没人算。</p>
+<p>差距有实测数字。TinyFish 在 2026 年 6 月 2 日跑了 45 个网址、5 家供应商的抓取对比，对象是一篇正文约 4300 字符的 Daily Mail 文章。TinyFish Fetch 返回约 1184 个 token，估算输入成本约 0.00118 美元；Firecrawl Scrape 返回约 42774 个 token，约 0.04277 美元，相差约 36 倍。Parallel 只返回节选，不与整页抓取直接可比。原文同时提醒，数据来自单个网页，不能推广到所有网站。</p>
+<p>肥大的返回还会吃掉上下文窗口。一个约 42774 token 的页面约占去 128K 上下文窗口的三分之一，三个这样的页面约需 128322 token，系统指令、对话历史和 agent 自己的回答几乎没有空间。agent 每轮执行还会把整个上下文重发一遍，缓存输入价能压低重读的成本，压不掉页面占用的窗口。</p>
+<p>免费的底气来自哪里，TinyFish 给出三点解释。浏览器车队、隐身系统、会话水合这些基础设施在 Search 产品化之前就已建成，搜索的边际成本随之降低，公司也说明基础设施并非零成本运转。自研的 web-native 模型 Mako 专为搜索、抓取和与真实网站交互设计，只在 TinyFish 托管设施上运行，不能自部署，Agent 产品的内置模型不能更换。这个团队还说，它想学的是网上的活怎么办成，不想变成一家索引公司。</p>
+<p>第三方榜单给出参照。Artificial Analysis 2026 年 9 月 28 日的快照固定答案模型为 GPT-5.6 Luna（medium）。12 个展示配置中，TinyFish 每千任务总成本 9.30 美元，由 0 美元搜索加 9.30 美元模型构成，是展示中最低的总成本。它的 Search Index 得分 71 同样是展示中最低，Perplexity Search（medium）以 80 分居首，无搜索基线为 33。每任务约 59 秒，在展示配置中排第二慢。</p>
+<p>读这篇文章要打个折。文末明确披露它由 TinyFish 赞助，token 对比和覆盖率都来自厂商自测，样本为 45 个网址，新闻页面主导了差距，第三方基准快照也早于文章约三周。免费的限额和单价可以直接记下，36 倍这个数字不妨等独立复测再下结论。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>仓库创建于 2026 年 3 月 18 日，属于持续迭代中的活跃项目。本周因登上 GitHub Trending 进入公众视野，可见增量为持续的产品化推进，最新 release v1.7.2（2026-09-29）与 10 月 15 日的 README 更新构成明确的近期变化，13 条命令、多门户 CLI、Gmail 与 Notion 集成、CI 安全校验等功能生态已相当完整，判定为显著更新。</div>
-            <div class="tags-row"><span class="tag">开源工具</span><span class="tag">求职</span><span class="tag">AI代理</span><span class="tag">Claude</span></div>
-            <div class="links-row"><a class="ext-link" href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>本次新增量是免费定价政策调整。TinyFish 公司与产品此前已存在，本次把 Search 与 Fetch 改为限额内免费（0 美元余额可用、新账户赠 8 美元），并公布 Agent 每步 0.016 美元、Browser 每分钟 0.002 美元的付费项，配合 Artificial Analysis 榜单数据与 token 成本拆解。</div>
+            <div class="tags-row"><span class="tag">AI Agent</span><span class="tag">搜索 API</span><span class="tag">token 成本</span><span class="tag">TinyFish</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.marktechpost.com/2026/10/18/tinyfish-free-search-ai-agent-token-cost/" target="_blank" rel="noopener">Source <span class="domain">www.marktechpost.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">ai-job-search: GitHub's Hottest Agent Applies For You - AgentConn Blog</div>
-                        <div class="source-url"><a href="https://agentconn.com/blog/ai-job-search-agent-drafter-reviewer-claude-code-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">2026年Agent搜索工具怎么选？主流方案对比与场景选型指南_凤凰网</div>
+                        <div class="source-url"><a href="https://sz.ifeng.com/c/8wwXSInU0sZ" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1037,8 +1053,208 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">GitHub - MadsLorentzen/ai-job-search: The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it. · GitHub</div>
-                        <div class="source-url"><a href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">如何为 AI Agent 配置 SearXNG 搜索功能</div>
+                        <div class="source-url"><a href="https://www.ssdnodes.com/learn/lang/zh-hans/browser-search-skill-searxng-agents" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Web Search for Agents in 2026</div>
+                        <div class="source-url"><a href="https://michaellivs.com/blog/web-search-for-agents-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">TinyFish Makes Search Free: What It Really Costs an AI Agent to Read the Web - MarkTechPost</div>
+                        <div class="source-url"><a href="https://www.marktechpost.com/2026/10/18/tinyfish-free-search-ai-agent-token-cost" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Why TinyFish Search Is Free (and what's the catch?)</div>
+                        <div class="source-url"><a href="https://x.com/sudheenair/article/2095498048537526332?lang=ar-x-fm" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-cf106409cdcc">
+            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">community</span><span class="score-tag">评分 7.7/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50137950" target="_blank" rel="noopener">开源工具 Sphinx 走红，AI 代码推送前要先答对考题</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>一款叫 Sphinx 的免费开源小工具通过 Hacker News 的 Show HN 首次亮相，热度达到 242 分，npm 包名为 sphinx-understand。它装在本地后接管 git push，在受保护分支上暂停推送，由 AI 针对本次代码 diff 出一道理解题，开发者答对推送继续，答错会收到讲解并换新场景重考。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Claude Code、Cursor 这类编程代理让代码产出速度上去了，读代码的时间被压缩。HN 讨论里有开发者承认从不读代理写的代码，项目指定用 shadcn 组件库，代理中途悄悄换掉也无人察觉。Sphinx 把上线前的理解检查从个人自觉变成流程的一步，答不出就推不上去；它能不能挡住想绕过的人，正是这场讨论的主要分歧。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Hacker News 上一个 Show HN 帖子拿下了 242 分热度，主角是一款叫 Sphinx 的小工具。它做的事情很直接，在 git push 之前把你拦下来，围绕这次改动出一道题，答对了才放行。</p>
+<p>用编程代理写代码的人越来越多，Claude Code、Cursor 这类工具能替人生成整个文件，开发者更多时候变成验收代码的人。Sphinx 的作者想把“你到底懂不懂这次改动”变成流程里的一道关卡。安装只要两行命令，npm install -g sphinx-understand 之后执行 sphinx install，要求 Node 22.19 以上，支持 macOS、Linux 和 WSL。装好之后照常 push，Git 会在受保护的分支上暂停。</p>
+<p>出题的是一个大模型。它没看过你和编程代理的聊天记录，只读本次 diff，专门问变更在出错时会怎样。官网演示的题目长这样，webhook 处理器在调用 charge() 之前先保存了事件 ID，Stripe 超时后会重发同一事件，重试时会发生什么。演示里的开发者第一次答错，Sphinx 讲解了原因，换一个新场景再考，第二次答对，推送继续。这次演示的推送涉及 11 个文件，新增 5012 行，删掉 3147 行。出题的模型可以直接复用你现有的编程代理，也可以走 OpenRouter 或任意 OpenAI 兼容端点，作者强调 token 消耗很低。</p>
+<p><img alt="一次 git push 在提问处暂停，答对后继续推送" src="https://sphinx-six-theta.vercel.app/demo.gif" /></p>
+<p>设计上有两条边界。你的回答不会回传给编程代理，.env 文件和密钥从不被打开。赶时间可以执行 sphinx yolo 直接放行，但每一次跳过都会被记录在案。</p>
+<p>官网首页挂着一句口号并署名孙子：“You can outsource your thinking, but not your understanding.” 评论区很快有人纠正，这句话出自 Andrej Karpathy，他在四月红杉资本的 AI Ascent 大会上把它放进了演讲核心。还有读者补了个老故事，国王托勒密向欧几里得求几何的捷径，得到的回答是几何没有为王室专设的坦途。</p>
+<p>讨论区分成了两派。质疑的人认为这道关卡挡不住真想偷懒的人，题目可以复制粘贴给编程代理代答，也有开发者见过员工让代理删掉 husky 这类钩子，认为 Sphinx 会遭遇同样对待。有人觉得想法不错，但建议把关的时机从推送上线挪到提交 PR、占用同事时间之前。有人预言下一幕是编程代理替人去和 Sphinx 应答。自称造过同类工具的评论者泼了冷水，说在编码代理兴起早期做这种把关说得通，如今更需要重新想清楚代理与人之间的理解关系。另一段坦白更扎心，一位开发者承认自己完全不读 Claude Code 写的代码，一个指定用 shadcn 的项目，代理写到一半悄悄弃用了这个组件库，没人察觉。还有人搭过同类东西，很快被烦到弃用，理由是受不了被一个本该像魔法一样好用的东西反复盘问。</p>
+<p>这款工具免费开源，装完只要两分钟。它挡得住多少次没读懂的推送，评论区吵了一整天也没有结论，242 分的热度至少说明被这个问题硌到的人不少。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>本次为新增量（Show HN 首发冷启动）：sphinx-understand 首次公开安装方式、官网与工作演示即拿到 242 分热度，历史查重与语义检索均未命中，无既有版本更新痕迹。</div>
+            <div class="tags-row"><span class="tag">开发者工具</span><span class="tag">AI 编程</span><span class="tag">开源</span><span class="tag">Git</span><span class="tag">Hacker News</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50137950" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://sphinx-six-theta.vercel.app/" target="_blank" rel="noopener">Original article <span class="domain">sphinx-six-theta.vercel.app</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Sphinx: A Git Hook That Quizzes You on Agent-Written Code</div>
+                        <div class="source-url"><a href="https://ai-tldr.dev/tools/sphinx" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">A new tool makes AI coding agents quiz developers on their own code before deployment</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=E4TFNA0_CTM" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping #Shorts</div>
+                        <div class="source-url"><a href="https://www.youtube.com/shorts/u8529v7c3ds" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">[Workflow] Git Hook for LLM-Powered Diff Quizzes (Grip) to ...</div>
+                        <div class="source-url"><a href="https://www.reddit.com/r/ClaudeWorkflows/comments/1wo24tk/workflow_git_hook_for_llmpowered_diff_quizzes" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge community">社区讨论</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Sphinx Git hook quizzes developers on agent code before push | LavX News</div>
+                        <div class="source-url"><a href="https://news.lavx.hu/article/sphinx-git-hook-quizzes-developers-on-agent-code-before-push" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-5d1ed4fc608d">
+            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">research</span><span class="score-tag">评分 7.5/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://huggingface.co/papers/2610.22234" target="_blank" rel="noopener">外挂代码工具让桌面智能体变笨，OS-Helix 统一训练冲上 66.44%</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>中国科学技术大学团队 10 月 15 日在 arXiv 首发论文（编号 2610.22234），推出替人操作电脑的智能体 OS-Helix，发布 27B、35B-A3B、27B-RL 三个模型。论文报告了一个反直觉的实验结果，在提示层给图形界面（GUI）智能体外挂代码工具，性能反而退化。OS-Helix 把界面操作与代码执行统一进同一个动作空间重新训练，在桌面自动化基准 OSWorld-Verified 上拿到 66.44% 的成功率。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>给智能体加能力的常见做法是多接工具。这篇论文用对照实验划出了边界，提示层的工具组合换不来协调能力，什么时候点界面、什么时候敲命令的路由决策要在训练阶段内化。对桌面自动化与 agent 产品的开发方，这是架构选型时多出来的一个数据点。强化学习版 27B-RL 在不含 Windows 专属数据的情况下于 WindowsAgentArena 拿到 63.87%，显示统一训练出的能力可以跨平台迁移。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>中国科学技术大学团队 10 月 15 日在 arXiv 首发论文（编号 2610.22234），推出替人操作电脑的智能体 OS-Helix，共发布 27B、35B-A3B、27B-RL 三个模型。这类智能体坐在电脑前把任务做完，点界面、跑脚本都归它管。</p>
+<p>论文里最有分量的内容是一个对照实验。在提示层给图形界面（GUI）智能体外挂一个代码工具，性能不升反降。团队的解释是，界面操作与代码执行之间的路由决策没法靠提示词组合出来，必须用高质量混合数据训练内化。OS-Helix 因此把两类动作统一进同一个动作空间，先在过滤后的混合轨迹上做监督微调冷启动，再用新算法 Step-balanced GSPO 在真实桌面环境里做在线强化学习。这个算法按动作步骤而非逐个 token 聚合重要性权重，防止长代码动作主导优化。</p>
+<p>基准成绩给出了对照。OSWorld-Verified 上，OS-Helix-27B 与 35B-A3B 较各自匹配的 Qwen3.5 混合基线相对提升 35.0% 与 33.7%，27B-RL 在此基础上再提升 42.9%，成功率达到 66.44%。同一模型在 WindowsAgentArena 上拿到 63.87%，训练数据不含任何 Windows 专属样本。模型与数据集已上线 HuggingFace，训练与评测代码团队称仍在整理。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>论文 10 月 15 日在 arXiv 首发属首次公开，历史查重为未出现。本次新增量包括 OS-Helix-27B、35B-A3B、27B-RL 三个新模型、Step-balanced GSPO 新强化学习算法、OSWorld-Verified 66.44% 与 WindowsAgentArena 63.87% 两项新基准成绩，以及已在 HuggingFace 上线的配套数据集。</div>
+            <div class="tags-row"><span class="tag">OS-Helix</span><span class="tag">GUI 智能体</span><span class="tag">桌面自动化</span><span class="tag">强化学习</span><span class="tag">中国科学技术大学</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2610.22234" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a>
+<a class="ext-link" href="https://huggingface.co/papers/raw-5d1ed4fc608d" target="_blank" rel="noopener">Coverage <span class="domain">huggingface.co</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OS-Helix: Unifying GUI Interaction and Code Execution in Native Computer-Using Agents</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2610.22234" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OS-Helix: Unifying GUI Interaction and Code Execution in Native Computer-Using Agents</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2610.22234v1" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OS-Helix: Unifying GUI Interaction and Code Execution in Native Computer-Using Agents | alphaXiv</div>
+                        <div class="source-url"><a href="https://www.alphaxiv.org/abs/2610.22234" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-4747a804fd45">
+            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">tools</span><span class="score-tag">评分 7.4/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://github.com/stablyai/orca" target="_blank" rel="noopener">开源编排器 Orca 走红，30 多个编码代理并行手机盯进度</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Orca 是 YC 孵化公司 Stably AI 开发的开源桌面应用，用来同时管理一大群 AI 编码代理。它支持 30 多个命令行代理，包括 Claude Code、Codex、Cursor、OpenCode、Qwen Code、Kimi、Devin 等，每个代理在独立的 git worktree 中改代码，互不覆盖。仓库 2026 年 3 月创建，已积累 96.9k stars 与 6.2k forks，最新版本 v1.4.229 发布于 10 月 17 日，README 更新到 10 月 19 日并登上 GitHub Trending。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>开发者手里的编码订阅越来越多，Claude 的额度用完换 Codex，不同任务适合不同代理，切换、监控、防止互相覆盖文件的成本都在涨。Orca 把这些事收进一个界面，还提供同一提示词分发五个代理的对比玩法，相当于每次生成都自带备选。配套手机端让代理变成可挂机的后台劳动力，人只在手机上验收和追加指令。多代理编排从概念演示走到普通开发者能下载安装的桌面应用，是 agent 基建成熟度的一个直观样本。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>同时开着好几个 AI 编码工具的开发者，桌面多半是一团乱麻。YC 孵化公司 Stably AI 的开源应用 Orca 想把这种混乱管起来，它把 30 多个命令行编码代理收进同一个桌面界面，Claude Code、Codex、Cursor、OpenCode、Qwen Code、Kimi、Devin 都在支持名单上，README 的承诺是凡能在终端里运行的代理都能进 Orca。</p>
+<p>秩序靠 git worktree 维持。每个代理在自己的 worktree 里改代码，谁也不会覆盖谁的文件。它还支持赛马式对比，把同一条提示词分发给五个代理各自执行，比较五份结果，把最好的那份合并回去。算力不够时可以走 SSH 把代理派到远程大机器上，断线自动重连。</p>
+<p><img alt="Orca 桌面端并行运行代理，角落为手机伴侣应用" src="https://github.com/stablyai/orca/raw/main/docs/assets/readme-hero.jpg" /></p>
+<p>手机伴侣应用让它变成随身遥控器。iOS 与 Android 版本和桌面端配对，代理干完活会推送通知，人在外面也能查看结果、追加指令。应用内还能看到 Claude 和 Codex 的用量与限流重置时间，多个账号之间切换不用重新登录。</p>
+<p>这个仓库今年 3 月才创建，现在已有 96.9k stars、6.2k forks，累计 15,029 次提交。团队自称每日发货，最新版本 v1.4.229 发布于 10 月 17 日，README 一直更新到 10 月 19 日，项目也登上了 GitHub Trending。Orca 以 MIT 协议完全开源，手机与桌面配对用的中继代码同样放在仓库的 cloud 目录里。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>并非新发布，仓库创建于 2026-03-17；本次新增量来自极高频迭代（最新 release v1.4.229 发布于 10-17，README 更新于 10-19，自称每日发货）与移动伴侣应用的完善，并登上 GitHub Trending</div>
+            <div class="tags-row"><span class="tag">AI Agent</span><span class="tag">开发者工具</span><span class="tag">开源项目</span><span class="tag">多代理编排</span></div>
+            <div class="links-row"><a class="ext-link" href="https://github.com/stablyai/orca" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Orca ADE: Parallel AI Agent Fleet Explained | Zentor Blog</div>
+                        <div class="source-url"><a href="https://zentor.ai/blog/what-is-orca-ade" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">GitHub - stablyai/orca: Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.</div>
+                        <div class="source-url"><a href="https://github.com/stablyai/orca" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1048,8 +1264,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">I Automated My Job Search. It Made the Process More Human, ...</div>
-                        <div class="source-url"><a href="https://www.linkedin.com/pulse/i-automated-my-job-search-made-process-more-human-mads-lorentzen-phd-38bje" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Best AI Agent Orchestration Platforms 2026: Coding vs Workflow | Nimbalyst</div>
+                        <div class="source-url"><a href="https://nimbalyst.com/blog/best-ai-agent-orchestration-platforms-2026" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1059,19 +1275,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">The Nearly 30K-Star AI Job Search Agent: How Mads Lorentzen Built It</div>
-                        <div class="source-url"><a href="https://www.ai.joaoqueiros.com/blog/ai-job-search-agent-mads-lorentzen-claude-human-in-loop" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">AI Job Search Explained: An Open Framework That Turns Claude Code Into a Job-Hunt Copilot - HoangYell</div>
-                        <div class="source-url"><a href="https://hoangyell.com/ai-job-search-explained" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Stably AI Orca GitHub Review: Git Worktrees and Parallel AI Agents</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=vhycjTCjiC4" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1081,31 +1286,26 @@ body {
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-95b3a5ae153d">
-            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://engineering.atspotify.com/2026/10/advancing-generative-recommendation-inference-our-collaboration-with-nvidia-on-tensorrt-llm/" target="_blank" rel="noopener">Spotify 联手英伟达统一推荐推理栈，成本最高降 54%</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Spotify 工程博客 10 月 16 日首次披露与 NVIDIA 在推理引擎上的合作，把推荐推理依赖的 beam search、多候选打分、soft token 个性化三项能力统一进 TensorRT LLM 单一引擎。四项改进合入上游版本，分别是 beam search 多序列返回（v1.2.0rc3）、trtllm-serve 支持 out-of-tree 模型（v1.2.0rc4）、经 image_embeds 传多模态嵌入（v1.3.0rc0）、Python API 多候选打分（v1.3.0rc20）。同时首次公布成本基准，Qwen3 1.7B 上 beam search 工作负载成本最高降 54%，打分工作负载最高降 7%，数据为 Spotify 自述。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>大模型推荐从概念验证走向全站铺开，推理成本是绕不开的约束，Spotify 交出了一份带具体数字的生产级答卷，说明推理引擎层面的工程优化能直接换算成成本下降。四项能力全部合入 TensorRT LLM 开源上游，其他使用该引擎的团队升级版本即可获得同样能力，单引擎承载全部推理特性也省下了同时维护 vLLM 和 SGLang 两套栈的复杂度，对在生产环境跑大模型推荐或检索类负载的团队都有直接参考价值。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>打开 Spotify，首页每个卡片、自动播放的下一首歌，背后都是个性化推荐在实时工作。这套系统正在向大模型迁移，Spotify 用一个个性化语言模型实时生成推荐候选。10 月 16 日，Spotify 工程博客首次披露了与 NVIDIA 在推理引擎上的合作，把推荐推理需要的三项关键能力统一收进 TensorRT LLM，按 Spotify 自己公布的基准测试，beam search 工作负载的成本最高降了 54%。</p>
-<p>问题要从今年 1 月上线的播客推荐说起。那套系统用 beam search 同时探索多条 token 序列路径来生成候选，选中的序列对应到目录里的节目。当时用的推理引擎是 vLLM，它的 beam search 实现跑在 GPU 核心之外，既带来 CPU 侧的瓶颈，又因为反复重算没填满的 KV block 消耗了额外的 GPU 算力。高端 GPU 用不满，Spotify 为了控制成本只能改用低端加速器，让系统维持在更合适的负载点上。</p>
-<p>另一项需求是多候选打分，也就是用模型输出的对数概率给一批候选排序。常规做法是一个候选发一次请求再汇总结果，SGLang 在 LinkedIn 工程团队的贡献下支持了更高效的方式，用掩码技术在单个请求里完成多候选打分，Spotify 为此又单独跑了一套 SGLang。引擎散成几摊，正是这次合作要解决的局面。</p>
-<p><img alt="beam search 候选生成示意" src="https://images.ctfassets.net/p762jor363g1/428m8tTUKuNmmg3vEbNYKT/76d6fe626e4a683dd2a3994bc5d6a3c1/image1.png" /></p>
-<p>个性化方面 Spotify 试过三条路线。把用户收听历史转成文本放进提示词，提示会变得非常长，延迟和 GPU 占用都超出请求预算，只在小场景里少量使用；把用户历史编码成语义 ID 并扩充模型词表，早期结果不错但还需要更多研究；最成功的是 soft token，按照 Spotify Research 的 Embedding to Prefix 白皮书，把已有用户向量投影成大模型嵌入空间里的单个 soft token 注入提示，这个方案已经成功用于播客推荐。对推理引擎来说，这要求能把用户向量直接送进模型。</p>
-<p><img alt="soft token 投影示意" src="https://images.ctfassets.net/p762jor363g1/2eO1SYzEzJffCdvTxWAWr0/771213aefee421d0169996ecf9010772/image2.png" /></p>
-<p>合作的目标是把 beam search、打分、soft token 三件事收进同一个引擎。TensorRT LLM 跑 beam search 的硬件利用率更好，但缺 SGLang 那样的打分 API，也缺 vLLM 的多 beam 序列返回和 soft token 注入。两边工程团队把缺口逐个补上，改进陆续合入上游。beam search 返回多序列的能力随 v1.2.0rc3 发布，trtllm-serve 从 v1.2.0rc4 起支持 out-of-tree 模型，v1.3.0rc0 加入用 image_embeds 传多模态嵌入，v1.3.0rc20 的 Python API 补上了多候选打分，另有一批错误修复和性能改进。</p>
-<p>具体做法上，beam search 被实现进采样器内部，降低了主机侧开销，配合 overlap scheduling 保持 GPU 利用率，原本基于 C++ 的采样器也换成了更依赖 PyTorch 的灵活设计，新采样器里的 beam search 带来了明显的性能提升。soft token 靠 out-of-tree 模型支持实现了一个 Qwen3 定制插件，用户向量经多模态请求参数传入，插件内完成嵌入投影和 soft token 替换。多候选打分在 Python API 上做到了与 SGLang 等效，目前还需要自定义服务层做高效分词和请求批处理，但它避免了每个候选单发一次请求的开销，计算量仍与候选数量保持线性关系。</p>
-<p><img alt="beam search 性能对比" src="https://images.ctfassets.net/p762jor363g1/2vdun8ZuSq0SZEf9Mi9QVX/661ef9ea72c592cfe7458717f45d6d47/image5.png" /></p>
-<p>成本账来自 Spotify 公布的基准测试，在 Qwen3 的 1.7B 版本上，beam search 工作负载成本最高降低 54%，打分工作负载最高降低 7%。接下来双方会继续合作，重点放在量化和 Blackwell 架构专属优化上。Spotify 的目标是在个性化能力持续变复杂的同时，把延迟和基础设施成本压在可控范围内。</p></div></details>
+<div class="article-card" data-id="raw-f3b4b96b5bbd">
+            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.2/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity" target="_blank" rel="noopener">Vercel AI Gateway 日志新增会话视图，agent 成本逐轮可查</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Vercel 给 AI Gateway 的日志新增了 Sessions（会话）视图。它把原来逐条排列的请求日志按会话分组，每一行显示发起会话的编码代理或应用，比如 Claude Code、Codex、Cursor，并给出这个会话的成本、所用模型、提供商，以及每一轮输入里来自缓存的比例。点开单个会话，还能看到缓存命中率、持续时长和逐轮路径。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>编码代理跑一次任务动辄几十轮请求，路由到哪些提供商、缓存命中多少，直接影响最终成本和延迟。这些信息以前散在逐条日志里，开发者很难回答一次任务的钱具体花在哪个环节。会话视图把路由、缓存和成本放到同一行，等于给 agent 的开销提供了一个对账入口，也第一次让会话亲和这项默认行为的效果可以被直接验证。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Vercel 给 AI Gateway 的日志加了一个 Sessions 视图。过去这些请求散在逐条日志里，一个 Claude Code 会话跑几十轮，每轮去了哪个提供商、花了多少钱、缓存读了多少，都要开发者自己拼。现在请求按会话分组，每一行显示发起会话的编码代理或应用，比如 Claude Code、Codex、Cursor，同时给出这个会话的成本、用到的模型、提供商，以及每一轮输入里来自缓存的比例。</p>
+<p><img alt="按会话分组的 AI Gateway 日志视图" src="https://vercel.com/vc-ap-vercel-marketing/_next/image?url=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Fcontentful%2Fimage%2Fe5382hct74si%2F12MMzxq7bWCbKoN6TBtUrS%2Fddd009cb2612ecece362b3342326db18%2FCleanShot_2026-10-16_at_3.29.22_AM_2x.png&amp;w=3840&amp;q=95" /></p>
+<p>点开单个会话，能看到它的缓存命中率、持续时长和完整路径。路径逐轮列出所用模型和耗时，并标出当前在服务这个会话的提供商，连同更早服务过它的那些。会话列表还支持按轮数、客户端、模型、提供商、认证方式或成本过滤，单轮会话默认隐藏，清掉最小轮数过滤后才会出现。</p>
+<p>会话亲和已经在 text 和 chat 请求上默认启用，它把每一轮请求发给服务过上一轮的提供商，让对话尽量复用同一份缓存。这次更新的部分是把路由结果放进日志，开发者可以逐轮核对。想自己控制分组，可以在每次请求的 providerOptions.gateway 里传同一个 sessionId，或者在每个请求上带同一个 x-session-id 请求头。两者都不带的请求，网关按对话开头内容的指纹归组，显示为 fingerprinted sessions。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>文章 2026 年 10 月 16 日发布，首次披露 Spotify 与 NVIDIA 在 TensorRT LLM 上的工程合作，四项上游合入的具体版本号（v1.2.0rc3 至 v1.3.0rc20）与 Qwen3 1.7B 的 54%/7% 成本基准均为首次公开。生成式推荐本身 1 月已上线播客推荐，本次增量集中在推理栈统一与上游开源贡献，判定为 genuinely_new。</div>
-            <div class="tags-row"><span class="tag">Spotify</span><span class="tag">TensorRT LLM</span><span class="tag">推理优化</span><span class="tag">推荐系统</span></div>
-            <div class="links-row"><a class="ext-link" href="https://engineering.atspotify.com/2026/10/advancing-generative-recommendation-inference-our-collaboration-with-nvidia-on-tensorrt-llm/" target="_blank" rel="noopener">Source <span class="domain">engineering.atspotify.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>会话亲和路由本身已在 text 和 chat 请求上默认启用，属于已有能力。本次新增量集中在可观测性层面，日志新增 Sessions 视图，可按会话查看缓存命中率、成本、逐轮模型与提供商路径，并支持多维过滤与 sessionId 自定义分组，历史查重未出现同话题报道。</div>
+            <div class="tags-row"><span class="tag">Vercel</span><span class="tag">AI Gateway</span><span class="tag">可观测性</span><span class="tag">AI Agent</span><span class="tag">开发者工具</span></div>
+            <div class="links-row"><a class="ext-link" href="https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity" target="_blank" rel="noopener">Source <span class="domain">vercel.com</span></a>
+<a class="ext-link" href="https://vercel.com/blog/ai-gateway-logs-session-affinity" target="_blank" rel="noopener">Coverage <span class="domain">vercel.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Advancing Generative Recommendation Inference: our collaboration with NVIDIA on TensorRT LLM | Spotify Engineering</div>
-                        <div class="source-url"><a href="https://engineering.atspotify.com/2026/10/advancing-generative-recommendation-inference-our-collaboration-with-nvidia-on-tensorrt-llm" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">AI Gateway Session Affinity</div>
+                        <div class="source-url"><a href="https://vercel.com/docs/ai-gateway/models-and-providers/session-affinity" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1115,8 +1315,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Spotify: Scaling LLM Inference with Multi-Accelerator Strategy for Recommendations and Safety - ZenML LLMOps Database</div>
-                        <div class="source-url"><a href="https://www.zenml.io/llmops-database/scaling-llm-inference-with-multi-accelerator-strategy-for-recommendations-and-safety" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">AI Gateway logs now show session affinity - Vercel</div>
+                        <div class="source-url"><a href="https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1126,46 +1326,35 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">NEO, GLIDE and Semantic ID-Based Generative Retrieval</div>
-                        <div class="source-url"><a href="https://www.youtube.com/watch?v=GvH5_kxzX1Q" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">AI Gateway Request Logs</div>
+                        <div class="source-url"><a href="https://vercel.com/docs/ai-gateway/observability-and-spend/logs" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
                         <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">TensorRT-LLM — Knowledge Base</div>
-                        <div class="source-url"><a href="https://yobitel.com/knowledge-base/tensorrt-llm" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
                         <span class="badge secondary">二手转载</span>
                     </div>
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-2552bec412d6">
-            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.6/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://www.databricks.com/blog/closing-binary-blind-spot-domain-knowledge-injection-llm-malware-triage-npm-packages" target="_blank" rel="noopener">给便宜模型递张 1800 token 小抄，恶意包藏不住了</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Databricks 公布安全研究，指出 npm 恶意包中 3.8% 捆绑剥离二进制，成为大模型分诊的盲区，并给出约 1800 token 的静态证据注入方案，把便宜模型的升级阈值失败率从 50% 压到 4%。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>npm 供应链攻击持续增长，被攻陷的流行开源项目会波及大量下游用户。这项实测显示，补齐领域知识的便宜模型能以约三分之一的花费追平旗舰模型的检测表现，为自动化安全分诊降本提供了一条现实路径。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>npm 是全球开发者共享代码包的中央仓库，恶意软件常年混在其中。Databricks 从 2025 年 11 月起实时扫描，在 11,413 个确认恶意的包版本里，只有 3.8% 直接捆绑编译好的二进制文件。这类文件没有源码可读，外面再裹上干净的源码和正经的安装脚本，负责分诊的大模型很容易放行。实测中，捆绑二进制的恶意包有 14.4% 没能达到明确恶意判定，是纯源码包 6.2% 的两倍多。</p>
-<p>他们的办法是在模型下结论前，把约 1800 token 的结构化静态分析证据注入提示词，相当于把安全老手的排查要点摊在模型眼前。七个便宜模型开启后，升级阈值失败率从 50% 降到 4%，恶意判定失败率从 73% 降到 34%，此前漏掉的 35 个案例里 91% 恢复检出。方案无需重新训练模型，闭源模型同样受益，整套成本约为旗舰方案的三分之一。</p>
-<p><img alt="带能力配置文件的扫描流水线示意" src="https://www.databricks.com/sites/default/files/blog_images/closing-the-binary-blind-spot-domain-knowledge-blog-img-1.png" /></p></div></details>
+<div class="article-card" data-id="raw-58a7fd5ff950">
+            <div class="article-meta"><span class="rank-badge ">#10</span><span class="category-tag">research</span><span class="score-tag">评分 7.1/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://huggingface.co/papers/2610.14157" target="_blank" rel="noopener">南京大学全开源 OpenMobile-2，110 多个仿真应用搭起手机智能体训练场</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>南京大学团队 10 月 19 日在 HuggingFace Papers 提交论文 OpenMobile-2（arXiv 2610.14157，10 月 9 日上传 arXiv），并同步全量开源。这是一个接近前沿的手机智能体，训练环境 MobileGym++、训练数据、基准 MobileGym++ Bench 和模型全部开放，项目页还能在线试用那些仿真应用。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>手机智能体研究长期缺两样东西，可以规模化复现的训练环境和足够大的开源数据，多数团队只放模型不放过程。OpenMobile-2 把环境、数据、训练配方一起交出来，其他团队可以直接在上面继续训练和改进，论文称其可验证强化学习数据是移动智能体领域最大规模的开源集合。GUI 操作与应用原生工具交替使用的混合设定，也给社区提供了一个新的实验方向。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>南京大学团队 10 月 19 日把论文 OpenMobile-2 提交到 HuggingFace Papers，编号 arXiv 2610.14157，论文本身 10 月 9 日已上传 arXiv。这次放出的不只是论文，训练环境、数据、基准、模型全部开源，项目页还提供仿真应用的在线试用。</p>
+<p>手机智能体指的是像人一样看屏幕、点按钮、跨应用办事的 AI，它先得有地方练。团队为此构建了 MobileGym++，35 个功能丰富的仿真商业应用支持跨应用工作流，连同 Android 模拟器中新配置的应用，整个训练场铺到 110 多个。数据方面，团队开源了近 12K 条监督微调交互轨迹，外加 2000 多个带自动奖励的可执行任务，论文称这是移动智能体领域最大规模的开源可验证强化学习数据。交互方式上，这项工作探索了一个实验性设定，应用把部分功能封装成原生工具，智能体在单个任务里可以交替进行 GUI 操作与工具调用，50 多个应用共实现 300 多个工具，配套的 MobileGym++ Bench 支持纯 GUI 与混合两种模式的长时程商业场景评测。</p>
+<p>成绩方面，OpenMobile-2 在 AndroidWorld 拿到 79.9，MobileWorld 50.4。论文报告称它从模拟器迁移到真机后表现突出，SPA-Bench 从 31.9 升至 59.6，近乎翻倍。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>基于 2025 年 11 月以来 11,413 个 npm 包版本的实时扫描数据，首次公开能力配置文件注入方案、四种可复现的 LLM 分诊失败模式分类与生产环境验证指标，属首次发布的研究成果，无同题先行报道。</div>
-            <div class="tags-row"><span class="tag">供应链安全</span><span class="tag">npm</span><span class="tag">大模型分诊</span></div>
-            <div class="links-row"><a class="ext-link" href="https://www.databricks.com/blog/closing-binary-blind-spot-domain-knowledge-injection-llm-malware-triage-npm-packages" target="_blank" rel="noopener">Source <span class="domain">www.databricks.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>OpenMobile 系列第二代，10 月 19 日随论文提交 HuggingFace Papers 同步全量开源，相对前作新增 MobileGym++ 环境（35 个可跨应用协作的仿真商业应用、连同配置共 110+ 应用）、近 12K 条 SFT 轨迹与 2000+ 个带自动奖励的可验证 RL 任务、GUI 与应用原生工具混合设定、MobileGym++ Bench 基准，属显著更新。</div>
+            <div class="tags-row"><span class="tag">移动智能体</span><span class="tag">GUI Agent</span><span class="tag">开源</span><span class="tag">南京大学</span><span class="tag">可验证强化学习</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2610.14157" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Closing the Binary Blind Spot: Domain-Knowledge Injection for LLM Malware Triage in npm Packages | Databricks Blog</div>
-                        <div class="source-url"><a href="https://www.databricks.com/blog/closing-binary-blind-spot-domain-knowledge-injection-llm-malware-triage-npm-packages" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">OpenMobile-2: Building Versatile Mobile Agents with Scalable Environments and App-Native Tools</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2610.14157v1" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1175,47 +1364,19 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">What Is Confabulation (LLM)? FutureAGI Guide (2026)</div>
-                        <div class="source-url"><a href="https://futureagi.com/glossary/confabulation" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
+                        <div class="source-title">MobileGym: Fast Simulation for Mobile GUI Agents</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=LRGh1cR3_60&xstg=CAMSBhUDzO3xHw%3D%3D" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
+                        <span class="badge newness">时效性</span>
                         <span class="badge secondary">二手转载</span>
                     </div>
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">LLM Foundational Failure Modes: Hallucination, Sycophancy, Context Rot, Instruction Attenuation</div>
-                        <div class="source-url"><a href="https://ceaksan.com/en/llm-foundational-failure-modes" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-25a1cff42cdc">
-            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">research</span><span class="score-tag">评分 6.8/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://huggingface.co/papers/2610.22280" target="_blank" rel="noopener">让小模型操作电脑，心里没底才请旗舰出手，成本省近两成</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>10 月 15 日公开于 arXiv 的论文（编号 2610.22280）提出免训练框架 LEASH，用弱模型的潜在不确定性信号决定何时把计算机操作任务交给强模型，交接后由影子观察者继续监督黑盒强模型，10 月 16 日被提交到 HuggingFace Papers。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>计算机操作类任务属于长程任务，旗舰模型步步都上成本高，小模型单干又容易失败。LEASH 证明隐藏状态可以当作近乎免费的不确定性信号，实测在追平常驻旗舰成功率的同时省下 19.2% 推理成本，给智能体规模化落地提供了一条成本解法。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>AI 操作电脑，正撞上成本难题。旗舰模型全程执行每一步，账单太贵；小模型便宜，却常中途把任务搞砸。10 月 15 日挂上 arXiv 的免训练框架 LEASH 让小模型默认上手，心里没底时才把控制权交给旗舰模型。</p>
-<p>判断心里没底几乎零成本。小模型每步动作都会留下隐藏状态，研究者把它与过去成功和失败的轨迹比对，越像失败轨迹越危险。判断复用生成时已算好的中间结果，省掉额外计算和监督器训练。</p>
-<p>接管之后影子观察者继续盯着旗舰模型，强模型也可能迷失。OSWorld 基准上跨四个模型骨干，相同升级率下比随机升级高 6.55 到 11.94 个百分点；搭配 Qwen3.5-35B-A3B 拿到 73.66% 成功率，追平常驻的 Claude Opus 5（72.90%），推理成本低 19.2%。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>论文 10 月 15 日刚在 arXiv 首次公开（2610.22280），10 月 16 日由作者提交至 HuggingFace Papers，社区评论发布于抓取前约 5 小时，历史日报无匹配记录，无关联模型或数据集，属全新研究成果首次亮相。</div>
-            <div class="tags-row"><span class="tag">智能体</span><span class="tag">推理成本</span><span class="tag">论文</span></div>
-            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2610.22280" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a>
-<a class="ext-link" href="https://huggingface.co/papers/raw-25a1cff42cdc" target="_blank" rel="noopener">Coverage <span class="domain">huggingface.co</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">LEASH: Uncertainty-Aware Weak-to-Strong Escalation and ...</div>
-                        <div class="source-url"><a href="https://huggingface.co/papers/2610.22280" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">GitHub - Purewhiter/mobilegym: [EMNLP 2026] MobileGym: A Verifiable and Highly Parallel Simulation Platform for Mobile GUI Agent Research · 浏览器里运行的安卓模拟器 · Browser-hosted Android Simulator · Verifiable Evaluation · Scalable Online RL Training · GitHub</div>
+                        <div class="source-url"><a href="https://github.com/Purewhiter/mobilegym" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1225,19 +1386,19 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">The State of Computer Use Agents in 2026 | Deck</div>
-                        <div class="source-url"><a href="https://deck.co/blog/state-of-computer-use-agents-2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
+                        <div class="source-title">OpenMobile-2: Building Versatile Mobile Agents with ...</div>
+                        <div class="source-url"><a href="https://huggingface.co/papers/2610.14157" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
                     </div>
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Research: Put the Frontier Model on a Leash</div>
-                        <div class="source-url"><a href="https://www.simular.ai/articles/put-the-frontier-model-on-a-leash" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">OpenMobile-2: Building Versatile Mobile Agents with Scalable ...</div>
+                        <div class="source-url"><a href="https://www.roboticscenter.ai/research/papers/openmobile-2-building-versatile-mobile-agents-with-scalable-environments-and-app-native-to-2610" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1255,15 +1416,15 @@ body {
             <div class="radar-card">
                 <div class="radar-rank">#1</div>
                 <div class="radar-info">
-                    <div class="radar-title"><a href="https://news.ycombinator.com/item?id=50122431" target="_blank" rel="noopener">越狱 PS5 原生跑 GGUF 大模型</a> <span class="radar-category">community</span></div>
-                    <div class="radar-blurb">HN 141 分，玩家把游戏机改成本地推理设备，消费硬件跑 LLM 的边界又被推宽一格</div>
+                    <div class="radar-title"><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxPYzBNWks1NGt1Y2RWMnBvQXhnNDdIdkFoMTN3cUVRY29DclBNQXJENzBRWkJXeXlOcHpiWUpjeGtRS2ZpUkhIU3FfUG1xUDVnRWNsc2tlSzF1STU1QWFFYUZiZ1A2RVl3eGhVTVh5YzZ2T2FhSE81RVJMVU0zdjF4b05Odk9KQQ?oc=5" target="_blank" rel="noopener">越狱 PS5 跑通 Qwen 3.8 27B,每秒 20 token</a> <span class="radar-category">tools</span></div>
+                    <div class="radar-blurb">llama.cpp 移植让游戏机兼职推理机,端侧模型的硬件边界又被玩家外推一格</div>
                 </div>
             </div>
             <div class="radar-card">
                 <div class="radar-rank">#2</div>
                 <div class="radar-info">
-                    <div class="radar-title"><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxPXzh0eFQ2WEJkcGhLUkdoRXZ6Tk5LZWNWSjJ0ajNYWlFkUU9wQWpMRFRfX1BYNDh2ajJsTkZZODIwVS1PV2pJdmtoZk9IN05lYm83X0Z1Y29SYjEtYkhjQlgxR2VGVWM5RkRsSmVpQUNvcEgyRnllZXd1aHhoQTBFajJ2QQ?oc=5" target="_blank" rel="noopener">Sipeed 公布 MaixStation 跑 Qwen 实测数据</a> <span class="radar-category">tools</span></div>
-                    <div class="radar-blurb">国产开发板厂商给出低端硬件跑大模型的真实性能口径，落地选型多一份参考</div>
+                    <div class="radar-title"><a href="https://news.ycombinator.com/item?id=50139873" target="_blank" rel="noopener">HN 热议 Anthropic 的用工结构之变</a> <span class="radar-category">community</span></div>
+                    <div class="radar-blurb">108 分讨论串把 AI 公司自己的招聘与用工调整摆上台面,观察实验室用工风向的社区切面</div>
                 </div>
             </div>
         </section>
@@ -1273,8 +1434,8 @@ body {
 
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
-    <div class="stats">14 源<span>|</span>130 条<span>|</span>8 条精选<span>|</span>17 条候选</div>
-    <div class="generated">生成于 2026-10-17T07:59:13.681530</div>
+    <div class="stats">11 源<span>|</span>95 条<span>|</span>10 条精选<span>|</span>17 条候选</div>
+    <div class="generated">生成于 2026-10-19T13:15:06.020284</div>
 </footer>
 
 </div>
