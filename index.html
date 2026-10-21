@@ -1,10 +1,10 @@
-<!-- ai-daily-final-sha256:84e47ce0a78cdbfac373f3e43c9bbe59d24e8d95384676b1d545426219d0e944 -->
+<!-- ai-daily-final-sha256:78e3bf46a2daf189bdbf81743d9a7bbbee2e6114d23365f644c16c9d5b9389a1 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 | 2026-10-20 — AI 内容机会日报</title>
+<title>AI 日报 | 2026-10-21 — AI 内容机会日报</title>
 <style>
 /* ═══════════ CSS Reset & Base ═══════════ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
@@ -719,40 +719,76 @@ body {
 
 <!-- ═══════ HEADER ═══════ -->
 <header class="header">
-    <h1>AI 日报 | 2026-10-20</h1>
+    <h1>AI 日报 | 2026-10-21</h1>
     <div class="subtitle">AI 内容机会日报</div>
     <div class="divider"></div>
-    <div class="meta-line">2026-10-20<span>|</span>由 <strong>local-memory-agent</strong> 生成</div>
+    <div class="meta-line">2026-10-21<span>|</span>由 <strong>local-memory-agent</strong> 生成</div>
     <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
       <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
     </div>
-    <div class="trend-callout">把 agent 做便宜、跑稳定成了多家公司一天内的共同动作：MiniMax 用新 Flash 模型把 agent 任务成本砍七成，Meta 同时公开编排方法论与吉瓦级集群细节，英伟达把开源 agent 模型铺到桌面，而 MIT 科技评论提醒为 agent 改造互联网有其代价</div>
+    <div class="trend-callout">推理引擎、代理记忆、语音管线这些原本藏在各家内部的基础设施,今天被 DeepSeek、Databricks、Mistral 同时开源或做成产品,基础设施层的竞争从模型权重挪到了交付链路。</div>
 </header>
 
 <!-- ═══════ TOP ARTICLES ═══════ -->
 <section class="articles-section">
     <div class="section-label">今日最值得关注</div>
-    <div class="article-card" data-id="raw-e7877c750e92">
-            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">announcements</span><span class="score-tag">评分 9.2/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://www.bestblogs.dev/article/d8cd131e06?utm_source=rss&utm_medium=feed&utm_campaign=resources&entry=rss_article_item" target="_blank" rel="noopener">MiniMax M3.1 Flash 发布，Agent 成本降七成</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>10 月 19 日晚，MiniMax 正式发布新一代 Flash 模型 M3.1 Flash，官方公众号与 VentureBeat 等海外媒体同日报道。模型面向 agent 场景，覆盖企业流程自动化、编程、电脑操作与网络安全四类任务，官方称线上推理速度较上一代提升近 3 倍，Agentic 类任务的综合使用成本降低 70%。发布节奏分两步，9 月 27 日模型曾以 M3.1-Flash-Preview 的名义上线预览，10 月 19 日去掉 Preview 后缀正式定档。模型现已上线 MiniMax API、订阅制 MPlan 与 MiniMax Code，权重计划 10 月 23 日开放。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Agent 应用的账单按 token 结算，一个 agent 完成任务往往要走几十上百步，每一步都消耗输入与输出 token，模型单价直接决定规模化部署能否算得过账。M3.1 Flash 输入每百万 token 1 元、输出 4 元、缓存读取 0.1 元，VentureBeat 换算为输入 0.15 美元，与 DeepSeek V4.1 Flash-1017 的低谷价同档，在其整理的 frontier 模型价格表中属于最便宜的一批。第三方评测机构 Artificial Analysis 给出参照，M3.1 Flash 智能指数 42 分，较上一代 M3 的 29 分提高 13 分，与 GLM-5.3 Flash 持平，领先 Gemini 3.8 Flash 的 41 分，略低于 DeepSeek V4.1 Flash-1017 的 45 分，完成单项评测任务的平均成本从约 0.51 美元降到 0.22 美元。评测还记录它完成评测输出约 1.89 亿 token，少于 GLM-5.3 Flash 的约 3.24 亿与 Gemini 3.8 Flash 的约 3.34 亿，少生成 token 同样在省钱。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 19 日晚，MiniMax 正式发布新一代 Flash 模型 M3.1 Flash，官方公众号之外，VentureBeat 等海外媒体同日跟进报道，两边共同的关键词是 agent、便宜、快。官方把能力落在大类上，Agentic 任务、编程、Computer Use 与网络安全，并给出两组关键数字，线上推理速度提升近 3 倍，Agentic 类任务的综合使用成本较前代降低 70%。</p>
-<p>这次发布走了两步。9 月 27 日，模型以 M3.1-Flash-Preview 的名义上线预览，10 月 19 日去掉 Preview 后缀正式定档。还有一段匿名前史，官方披露此前以 Space Bunny 身份在线上处理了超过 200 万亿 token 的模型，正是 M3.1 Flash 的早期版本，正式亮相前已经经受过大规模真实流量，官方没有给出更细的用量拆分。</p>
-<p>基准成绩是这次公告的主体。编程评测 DeepSWE v1.1 拿到 73.7%，电脑操作基准 OSWorld V2 61.7 分、Agents' Last Exam 29.6 分，官方称两项均列国产模型第一，网络安全基准 CyberGym 82%，金融工作流 BankerToolBench 76.2 分，企业自动化评测 AutomationBench-AA 位居最前列。VentureBeat 补充了对照视角，M3.1 Flash 在 Automation-Bench v1.0.6 上拿到 62.2 分，略高于 DeepSeek V4.1 Flash-1017 的 60.5，也在官方对比中超过 GPT-5.6 Sol 与 Claude Opus 5 的成绩，BankerToolBench 则与 Claude Opus 5 打平。</p>
-<p>价格与速度构成另一半叙事。输入每百万 token 1 元、输出 4 元、缓存读取 0.1 元，VentureBeat 换算为输入 0.15 美元、输出 0.60 美元、缓存 0.015 美元，与 DeepSeek V4.1 Flash-1017 的低谷价同档，属于当前最便宜的一批 frontier 模型。速度来自更激进的稀疏注意力架构，官方称日常输出 200+ TPS，中位数 P50 稳定 170+ TPS。第三方机构 Artificial Analysis 的评测给了独立锚点，智能指数 42 分，较上一代 M3 的 29 分提高 13 分，与 GLM-5.3 Flash 持平，领先 Gemini 3.8 Flash 的 41 分，略低于 DeepSeek V4.1 Flash-1017 的 45 分，完成单项评测任务的平均成本从约 0.51 美元降到 0.22 美元。评测同时记录，它完成评测输出约 1.89 亿 token，少于 GLM-5.3 Flash 的约 3.24 亿与 Gemini 3.8 Flash 的约 3.34 亿，在 API 单价之外又省下一层。</p>
-<p>最有分量的反方证据同样出自 Artificial Analysis。事实性基准 AA-Omniscience 上，M3.1 Flash 答对 56%，高于 DeepSeek V4.1 Flash-1017 的 43% 与 GLM-5.3 Flash 的 28%，但评测机构发现它几乎每题都作答，很少承认不确定，93% 的幻觉率由此而来。这个指标衡量没答对的回答中彻底答错的比例，拒答与部分正确不计入，不能读成 93% 的回答都错，即便如此该项总分只有 16 分。VentureBeat 的提醒很直接，企业把它放进知识密集型工作流，需要检索、护栏与人工审核兜底。</p>
-<p>渠道方面，模型已上线 MiniMax API、订阅制 MPlan 与 MiniMax Code。权重发布时仍为专有，官方计划 10 月 23 日开放，许可条款尚未公布，能修改与自托管的范围要等条款落地才见分晓。追求智能上限的 Pro 版本也在官方稿中预告，没有给出时间表。</p></div></details>
+    <div class="article-card" data-id="raw-8fcacd023eef">
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">community</span><span class="score-tag">评分 9.4/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50163277" target="_blank" rel="noopener">DeepSeek 开源自用推理引擎,单卡每秒可吐 2.5 万 token</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>10 月 20 日,DeepSeek 宣布把内部生产推理框架 DeepInfer 以 Apache 2.0 协议开源,同时开源 MIT 协议的 Token 编解码组件 deepseek-recipe,后者与官方 API 处理逻辑完整对齐。此前开源出去的是模型权重、TileLang 编译工具和算子库,这次给的是把大模型在大规模算力上便宜跑起来的整套自用引擎。官方公告说,希望借此帮助开发者与企业优化大规模推理的吞吐与延迟,降低算力成本、减少能源消耗。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>AI 服务最大头的长期成本在推理。用户每一次调用都要算力卡真金白银地算,推理框架这一层的效率直接决定每个 token 的成本和电力消耗。前沿实验室第一次把生产级推理栈整个开源,意味着其他团队可以对照一家日服务 155 万亿 token 规模的服务商的部署经验来改造自己的系统,私有化和公有云部署都有了降成本的参照。它同时压缩了闭源厂商靠卖 API 调用维持的价差,HN 评论区把它视为开源模型把智能做成大宗商品的又一步。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 20 日,DeepSeek 宣布把内部生产推理框架 DeepInfer 开源,协议为 Apache 2.0,同时开源了 MIT 协议的 Token 编解码组件 deepseek-recipe,它与 DeepSeek 官方 API 的处理逻辑完整对齐,让社区拿到与官方一致的部署体验。DeepSeek 在公告里解释,大模型的能力边界由模型本身划定,而能否以合理成本支撑超大规模服务,取决于一个长期未被公众了解的中间层,即推理框架。他们还在公告里引了一句古语「为善与众行之,为巧与众能之」,表示希望帮助开发者与企业优化大规模推理的吞吐与延迟,降低算力成本、减少能源消耗。</p>
+<p>道理是这样的。训练让模型学有所成,推理让模型为人所用;用户每提一个问题,背后都有算力卡在计算作答,统筹这批庞大算力集群的软件层就是推理框架,它怎么排卡、怎么拆任务、怎么复用中间结果,直接决定每个 token 的成本和耗电。DeepSeek 此前开源的是模型、TileLang 编译工具和推理算子库,这次进入开源世界的是把大模型便宜跑起来的自家用引擎。官方表示基于 DeepInfer 已实现 V4.1 Flash 高吞吐、低延迟的大规模服务,后续新模型的推理代码也会在这个仓库持续更新,模型本身此前已经开源,这里不再展开。</p>
+<p>工程层面,DeepInfer 目前只支持 DeepSeek-V4.1-Flash 一个模型(默认 checkpoint 为 1017 版),最初主要基于 vLLM 构建,也借鉴了 SGLang 和 TensorRT-LLM。五个系统级设计构成它的骨架。注意力部分走数据并行,MoE 结构(模型每层含许多个专家,每次调用只激活其中一部分)的专家层走宽专家并行并配备专家负载均衡,解码阶段在超节点内最高跑到 EP64 到 EP128。DSpark 是按置信度调度的投机解码,小草稿模型先快速写出 5 个候选 token,置信度头预估每个候选的接受率,调度器只验证最有价值的前缀,DeepSeek 称这能把需验证的草稿 token 削减约 30%,接受长度基本不变。SWA 有界重放指缓存命中时只重放一段有界后缀,默认保留 140 个 token,让重算成本与上下文长度无关,解码层的预填充计算量近乎减半。默认开启的零开销异步批调度让 CPU 的调度工作和 GPU 的计算重叠进行,批不变推理和确定性采样只在 NVIDIA 卡上支持,保证不同批次组合下输出一致;结构化输出可以把结果约束在正则、JSON Schema 或 EBNF 语法里。</p>
+<p>官方基准在 NVIDIA SM100 GPU 上测得,预填充(读入问题和上下文的阶段)用 4 张卡,解码(逐字写出回答的阶段)用 64 张卡。这些自报数字读自公布的帕累托曲线,解码在 EP64 下、每秩 256 个请求时,单卡吞吐超过每秒 25000 个 token,每用户响应速度接近每秒 100 个 token,请求只剩 8 个时单用户速度超过每秒 300 个 token;预填充在每秩 4096 个 token 时约为每卡每秒 60000 个 token,65536 个 token 时接近 90000,每步耗时约 730 毫秒。</p>
+<p><img alt="预填充吞吐与延迟关系" src="https://github.com/deepseek-ai/DeepInfer/raw/main/doc/images/prefill_pareto.png" /></p>
+<p><img alt="解码吞吐与单用户速度关系" src="https://github.com/deepseek-ai/DeepInfer/raw/main/doc/images/decode_pareto.png" /></p>
+<p>这次发布并不完整。它只提供离线推理,KV cache 系统(对话上下文的缓存,缺了它每一轮都要重算前文)、预填充与解码分离部署、跨副本负载均衡这三件在线服务的必需品都没有包含,DeepSeek 称这些部分与内部基础设施耦合紧密。官方对比表显示,vLLM、SGLang 和 TensorRT-LLM 都已支持预填充与解码分离。硬件只支持 NVIDIA SM100(需 CUDA 13)和华为昇腾 950(需 CANN 9.2),源码构建要求 Linux、GCC 13 以上和 Python 3.12。按其部署问答的说法,最小高效生产单元是 64 张预填充卡加 64 张解码卡,内部版 FlashMLA 解码内核比公开版快 5% 到 10%,端到端差距不超过 5%。</p>
+<p>讨论中被引用的知乎技术报告披露了两个运营数字,单个集群一天服务 155 万亿个 token,谷底定价下整卡每小时营收 38 美元。这两个数字属于自报,未说明卡型,暂时无法与市场价直接对标。HN 用户 xrisk 拿它与每小时约 2.75 美元的 H100 租金行情相比,对口径提出质疑。</p>
+<p>这条帖子在 HN 拿到 2094 分。<em>aavaa</em> 指出这次发布缺 KV cache 系统,rektlessness 称只放出了一半,meffmadd 想看与 vLLM、SGLang 的性能对比,lukewarm707 关注昇腾这条支持路线。schneehertz 把知乎技术报告的两个数字贴进了评论区;freakynit 贴出 SemiAnalysis 的估算工具,称租用基础设施做推理能有 70% 以上的净利率;mike_hearn 反驳,推理卖的是无差别产品,进的是高度竞争的市场,这类行业的利润率历来在 3% 到 5%,高利润会被竞争抹平;sandworm101 判断,随着新供给上线,38 美元会缩水,开源模型破坏垄断并压缩利润;Closi 的看法是大厂做推理本身赚钱,加上训练和研发开支后整体亏损,这正是开源模型对闭源商业模式的威胁。开源次日的 GitHub 数据是 12062 个 star 和 1085 个 fork。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>M3.1 Flash 官方首发公告，首次公开完整定价、基准、速度与渠道，并披露 Space Bunny 匿名前史与 10 月 23 日开放权重计划，历史日报无匹配。</div>
-            <div class="tags-row"><span class="tag">MiniMax</span><span class="tag">大模型</span><span class="tag">AI Agent</span><span class="tag">模型定价</span></div>
-            <div class="event-aggregation"><div class="event-head">事件聚合 · 2 个来源 · 已合并 1 条候选</div><div class="event-sources"><a class="event-source" href="https://www.bestblogs.dev/article/d8cd131e06?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=resources&amp;entry=rss_article_item" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">MiniMax M3.1 Flash：重新定义 Agent 的性能与成本</span><span class="event-domain">www.bestblogs.dev</span></a><a class="event-source" href="https://venturebeat.com/technology/minimaxs-new-m3-1-flash-beats-deepseek-and-opus-5-on-a-key-business-benchmark-at-lower-cost-but-with-a-high-hallucination-rate" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">MiniMax&#x27;s new M3.1 Flash beats DeepSeek and Opus 5 on a key business benchmark at lower cost — but with a high hallucination rate</span><span class="event-domain">venturebeat.com</span></a></div></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>DeepInfer 此前只作为 DeepSeek 内部生产框架存在,本次是它的首次开源发布,README 明确称之为 open-source release,Apache 2.0 协议,内容包含离线推理核心功能、基准脚本与评测套件;配套的 deepseek-recipe 编解码组件以及知乎技术报告披露的单集群日吞吐 155 万亿 token、每卡每小时 38 美元营收也是首次公开,属于全新事件。</div>
+            <div class="tags-row"><span class="tag">DeepSeek</span><span class="tag">开源</span><span class="tag">推理框架</span><span class="tag">AI 基础设施</span></div>
+            <div class="event-aggregation"><div class="event-head">事件聚合 · 4 个来源 · 已合并 2 条候选</div><div class="event-sources"><a class="event-source" href="https://news.ycombinator.com/item?id=50163277" target="_blank" rel="noopener"><span class="event-role">社区讨论</span><span class="event-title">DeepInfer: High-performance inference framework for DeepSeek models</span><span class="event-domain">news.ycombinator.com</span></a><a class="event-source" href="https://github.com/deepseek-ai/DeepInfer" target="_blank" rel="noopener"><span class="event-role">项目链接</span><span class="event-title">DeepInfer: High-performance inference framework for DeepSeek models</span><span class="event-domain">github.com</span></a><a class="event-source" href="https://www.marktechpost.com/2026/10/20/deepseek-deepinfer-open-source-inference-framework/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">DeepSeek Open-Sources DeepInfer, the Inference Framework Behind DeepSeek-V4.1-Flash</span><span class="event-domain">www.marktechpost.com</span></a><a class="event-source" href="https://www.bestblogs.dev/article/e1e534e6d6?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=resources&amp;entry=rss_article_item" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">DeepSeek 开源推理框架：走向真正普惠的未来</span><span class="event-domain">www.bestblogs.dev</span></a></div></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">MiniMax's new M3.1 Flash beats DeepSeek and Opus 5 on a key business benchmark at lower cost — but with a high hallucination rate</div>
-                        <div class="source-url"><a href="https://venturebeat.com/technology/minimaxs-new-m3-1-flash-beats-deepseek-and-opus-5-on-a-key-business-benchmark-at-lower-cost-but-with-a-high-hallucination-rate" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Deepseek open-sources the inference engine that powers its fastest and cheapest AI model</div>
+                        <div class="source-url"><a href="https://the-decoder.com/deepseek-open-sources-the-inference-engine-that-powers-its-fastest-and-cheapest-ai-model" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">DeepSeek open-sources DeepInfer, but developers still need key serving components | Superpower Daily</div>
+                        <div class="source-url"><a href="https://superpowerdaily.com/posts/deepseek-open-sources-deepinfer-but-developers-still-need-key-serving-components" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">DeepSeek open-sources DeepInfer, its V4.1-Flash serving stack | AI Weekly</div>
+                        <div class="source-url"><a href="https://aiweekly.co/alerts/deepseek-open-sources-deepinfer-its-v41-flash-serving-stack" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Reflections on DeepSeek Open-Sourcing Its Inference Engine, DeepInfer</div>
+                        <div class="source-url"><a href="https://wukong123.substack.com/p/reflections-on-deepseek-open-sourcing" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -762,19 +798,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">M3.1 Flash Preview Review: MiniMax Specs, Access & Limits | MyClaw.ai</div>
-                        <div class="source-url"><a href="https://myclaw.ai/blog/m3-1-flash-preview" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">MiniMax Just Launched M3.1 Flash: 428B MoE Agentic Model at $0.15/M Input</div>
-                        <div class="source-url"><a href="https://www.marktechpost.com/2026/10/19/minimax-m3-1-flash-release" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">DeepSeek Open-Sources DeepInfer, the Inference Framework Behind DeepSeek-V4.1-Flash - MarkTechPost</div>
+                        <div class="source-url"><a href="https://www.marktechpost.com/2026/10/20/deepseek-deepinfer-open-source-inference-framework" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -784,28 +809,29 @@ body {
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-5641e45c2126">
-            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.8/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/" target="_blank" rel="noopener">Meta 瘦编排器实践，1300 行路由器管 14 个子代理</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Meta 工程团队 10 月 19 日在工程博客发文，公开其数据管道 AI 代理系统采用的瘦编排器架构。约 1300 行代码的编排器把 20 多个工作流路由给 14 个专门化子代理，自己不做任何领域工作，只负责排序、收集字段和执行可靠性检查，领域推理全部交给带隔离上下文的子代理。文章属于内部工程经验披露，没有伴随代码或框架发布。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>它把 agent 的可靠性从提示词技巧变成结构约束。单个全知代理的失败方式在文章里很具体，上下文超过阈值后加知识反而降性能，出现跨子系统的概念污染，另一个单代理方案在没有任务级手写提示词时成功率只有 10% 到 20%。固定七步协议把大模型推理压缩到委派一步，知识按需隔离加载，错误被框在单个子代理内。收益同样具体，新数据列配置准备从人工三到四天压到一小时以内，约三分之二变更免重大人工编辑。文末五条建议让其他团队能直接对照改造自己的 agent 系统。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Meta 工程团队 10 月 19 日在工程博客发文，署名 Plawan Rath、Akhil Jindal、Ashwini Verma，首次公开他们数据管道 AI 代理系统采用的瘦编排器（Thin Orchestrator）架构。这套系统用约 1300 行代码的编排器调度 20 多个工作流和 14 个专门化子代理，编排器自身不做任何领域工作，全部职责是排序、收集字段和执行可靠性检查。文章定位为内部工程经验披露，随文没有代码或框架发布。</p>
-<p>他们自动化的场景是推荐系统的数据列接入，一个新列要在三个代码仓库、三种编程语言间同步改动，最多经过六个管道阶段才能把数据送达。团队最初把 10 多个数据源的全部领域知识、配置 schema、代码生成规则和填充模式装进一个全知型代理，演示跑得通，进了生产环境开始幻觉，把一个子系统的字段命名规范套到另一个子系统，给这个数据源写的代码生成模式用到了那个数据源上。文章记录的规律是，上下文超过某个阈值之后，继续加知识，性能下降。旁证来自 Mount Sinai 的 Windreich 人工智能与人类健康系一篇预印本，编排式多代理系统在 80 任务批次中保持 65.3% 准确率，单代理掉到 16.6%，token 用量最多降到原来的六十五分之一。团队还评估过另一个单代理方案，工程师为每个任务手写专属系统提示词时成功率 70% 到 80%，撤掉人工陪护就掉到 10% 到 20%。</p>
-<p>新架构把系统拆成两层。确定性编排器负责意图分类、字段收集、可靠性门控和任务委派，确定性在这里指按固定规则执行、结果可预期，不经过大模型猜测；14 个子代理各带隔离上下文做领域推理，schema 管理代理懂配置注册表，填充代理懂 10 个数据源的代码生成，校验代理懂构建系统和质量检查，谁都看不到系统全貌。编排器对每个请求执行固定的七步协议，依次是读子代理指令文件、查重、向用户收集必填字段、自动推断可推断项、跑可靠性门控、带着完整上下文委派、处理结果并上报告错。七步里只有第六步委派涉及大模型推理，而且推理发生在只加载了本领域知识的隔离上下文内。</p>
-<p>扩展靠工作流模板完成，模板本质是约束大模型决策空间的确定性状态机。列接入、事件接入、管道迁移三种模板以不同顺序复用同一池子代理，团队支持管道迁移这个全新用例时，写了一个新模板重排现有代理，没有新增任何代理代码。每个子代理按五段统一结构编写，涵盖知识源、预收集清单、分步工作流、发现模式、故障排查，第 15 个子代理和第 1 个结构一致，新增子代理属于模板化工作。系统维护着 25 个以上按工作流域组织的知识文件，在子代理执行时按需加载，单文件通常几千 token，文件更新后下一次会话自动用新版，编排器不用改代码也不用重新部署。</p>
-<p><img alt="瘦编排器的工作流模板" src="https://engineering.fb.com/wp-content/uploads/2026/10/Meta-Thin-Orchestrator-workflow.jpg" /></p>
-<p>效果有量化数字。新数据列的配置准备，纯人工要三到四天，早期的配置驱动系统约一天，瘦编排器系统压到一小时以内；全系统约三分之二的变更免于重大人工修改直接合入。作者同时写明代价，系统用通用性换领域深度，编排器保持通用，子代理做深做专。文末的五条建议面向所有做生产级 agent 的团队，头两条讲路由与推理分离和子代理结构统一，后面三条分别是用工作流模板扩场景、知识运行时加载、给确定性和概率性任务划清边界。团队下一步计划把架构扩到新的管道域，并用带人工审核的自动反馈循环持续改进子代理知识。</p>
-<p><img alt="瘦编排器的结果数据" src="https://engineering.fb.com/wp-content/uploads/2026/10/Meta-Thin-Orchestrator-results.png" /></p></div></details>
+<div class="article-card" data-id="raw-ddf23be1f59b">
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.9/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://the-decoder.com/mistral-ai-launches-voxtral-3-a-full-voice-agent-stack-that-listens-thinks-and-talks-in-real-time/" target="_blank" rel="noopener">Mistral 发布 Voxtral 3,实时语音代理一秒应答,支持自部署</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Mistral 于 10 月 20 日发布 Voxtral 3,包含三个转写型号、一个文本转语音模型和一个基于 LiveKit 的语音代理 SDK。听、想、说合成一条实时流式管线,官方称每轮对话一秒内完成,用户插话即停,通话中可直接调用工具办事。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>此前做语音代理要分别采购转写、推理、合成三类服务,再自己拼接并压延迟。Voxtral 3 把整条链路打包成一个 SDK,并给出欧盟托管与自有部署两条落地路径,把语音代理的竞争从单个模型的榜单分推到整条交付链路。转写起步价每分钟 0.0035 美元,整链路语音代理配自家推理模型每分钟 0.04 美元,呼叫中心这类按分钟算成本的场景可以直接算账。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 20 日,法国 AI 公司 Mistral 发布 Voxtral 3。这是一套面向实时语音代理的模型家族,外加一个语音代理 SDK(软件开发包,开发者拿它直接搭应用的工具箱)。语音代理指能接电话、能对话、还能调用业务系统办事的 AI 程序,客服热线、语音前台、免提助手都属于这一类。官方称整套系统把听、想、说接成一条实时流式管线,每轮对话一秒内完成,用户开口插话时,代理立刻停下。</p>
+<p>这条管线的分工是,实时转写模型 Voxtral Mini Transcribe Realtime 3 负责听,边收音边把语音转成文字,延迟低于 500 毫秒,覆盖 35 种以上语言,还自带轮次结束预测,即判断对方这句话说完没有、该不该接话。通用大模型负责想,官方示例用 Mistral Small 4,由它理解意图并调用工具。文本转语音模型 Voxtral Mini TTS 3 负责说,官方计费表和管线说明里也用 Voxtral Speech 3 这个名字指代它。各段按流式方式并行推进,谁也不等上一段跑完,这是官方给出一秒应答的来由。</p>
+<p>转写矩阵分三档。旗舰 Voxtral Small Transcribe 3 每分钟 0.0040 美元,支持 50 种语言,含 24 种欧盟官方语言,带说话人分离(标出谁在什么时候说话)和关键词偏置(提前喂行业术语,提高专有名词的识别率)。Mistral 自报的基准成绩显示,它在多语转写和说话人分离上超过 Whisper、Scribe v2 和 Gemini 3.5 Transcribe,这份成绩单出自官方自测,暂无第三方复核。批处理档 Voxtral Mini Transcribe 3 每分钟 0.0035 美元,40 亿参数,是全家族最低价。实时档即上面负责听的那个型号,每分钟 0.008 美元。</p>
+<p>说话这端,Voxtral Mini TTS 3 支持 35 种以上语言和 50 种以上方言,情绪、语速和重音随对话上下文自动调整,预置音色覆盖 18 种语言,其中有普通话。计费按官方定价表以 Voxtral Speech 3 名目收每 100 万字符 13 美元,批处理和实时走同一个接口。面向更高要求的 Pro Voice 用 30 分钟音频就能复刻一个人的音色、情绪范围和跨语言说话风格,官方把它定位给普通声音克隆不够用的专业场景。</p>
+<p>语音代理 SDK 建在实时音视频框架 LiveKit 之上,每个环节是独立模型,换大模型、换音色、换语言都不必重写代理。通话中它能核实来电人身份、查账单、约时间,靠函数调用、网页搜索和企业自有系统的检索完成,接入支持 SIP 电话线路与浏览器、App 内的 WebRTC,也能对接现成的电话交换、IVR(交互式语音应答,即按键菜单那套)和呼叫中心软件。</p>
+<p>部署上,Mistral 的 API 提供欧洲、美国与全球接入点,并把欧盟托管当卖点,整套系统也可跑在自有基础设施上,音频在哪处理、数据怎么流转、对话留不留存都由部署方决定,私有化需联系商务团队。语音代理 API 按推理模型分档收费,配 Mistral Small 4 每分钟 0.04 美元,换任意其他推理模型每分钟 0.08 美元。官方公告未提开放权重,现阶段拿到这套模型的途径只有 API 与商务私有化两条。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Meta 工程博客对该架构模式的首次公开披露，新增量包括 1300 行编排器加 14 个子代理加 20 多个工作流的具体规模、七步固定协议、三种零代码扩展的工作流模板、25 个以上按需加载知识文件的设计和量化结果。</div>
-            <div class="tags-row"><span class="tag">Meta</span><span class="tag">AI Agent</span><span class="tag">多智能体</span><span class="tag">工程实践</span></div>
-            <div class="links-row"><a class="ext-link" href="https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/" target="_blank" rel="noopener">Source <span class="domain">engineering.fb.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Voxtral 3 为全新发布,前代 Voxtral 只做语音转写,本次新增文本转语音模型 Voxtral Mini TTS 3 与基于 LiveKit 的语音代理 SDK,历史核查未在往期日报出现</div>
+            <div class="tags-row"><span class="tag">Mistral</span><span class="tag">Voxtral 3</span><span class="tag">语音代理</span></div>
+            <div class="links-row"><a class="ext-link" href="https://the-decoder.com/mistral-ai-launches-voxtral-3-a-full-voice-agent-stack-that-listens-thinks-and-talks-in-real-time/" target="_blank" rel="noopener">Source <span class="domain">the-decoder.com</span></a>
+<a class="ext-link" href="raw-ddf23be1f59b" target="_blank" rel="noopener">Coverage</a>
+<a class="ext-link" href="https://news.google.com/rss/articles/CBMivwFBVV95cUxNRng0OWZoWUU3aFVsdl9QVGlheWlnTzBEeng3NkFNNkdvb29jenBIZk42ekJweF9OQUdJTDhuaF9pcGRZa0pmMWZUektGYnVwTTNIU2xmUjIxYVpwYWZZYkN2emlaUkd2dlg0V3VZczAtQUlRc1A2YXhkLTRTd0FXVUIyOC1TYTVTbFNwZjBESTBFVmJHLUdOT1hMLWwtMVJmcXhZOGpkZDJhS3pGT3ZGdVM5WXZhT1RCNXFtXzhvMA?oc=5" target="_blank" rel="noopener">Google News <span class="domain">news.google.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">AI Agent Orchestrator in 2026: 9 Frameworks, 5 Patterns, and the Production Stack to Ship Them - Totalum Blog</div>
-                        <div class="source-url"><a href="https://www.totalum.app/blog/ai-agent-orchestrator-totalum-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Mistral AI launches Voxtral 3, a full voice agent stack that listens, thinks, and talks in real time</div>
+                        <div class="source-url"><a href="https://the-decoder.com/mistral-ai-launches-voxtral-3-a-full-voice-agent-stack-that-listens-thinks-and-talks-in-real-time" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -815,8 +841,30 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">The Thin Orchestrator: How We Made Our AI Agents More Reliable by Giving the Router Less to Do - Engineering at Meta</div>
-                        <div class="source-url"><a href="https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">AGTP on X: "Mistral AI just launched Voxtral 3, a full voice agent stack, today. Here's what you need to know. Voxtral 3 is a family of transcription and speech models that power Mistral's new voice agents API. It is available now through Mistral's EU-hosted API or on your own infrastructure. It i… / X</div>
+                        <div class="source-url"><a href="https://x.com/AGTPinsights/status/2112600720512074178" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Mistral Voxtral 3: Voice Agent Models, Prices, Charts | CellCog</div>
+                        <div class="source-url"><a href="https://cellcog.ai/blog/mistral-voxtral-3" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">The Ultimate Guide to AI Voice Agent Privacy & Security</div>
+                        <div class="source-url"><a href="https://kagen.ai/blog/ai-voice-agent-privacy-security-guide" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -826,8 +874,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">The Orchestration of Multi-Agent Systems: Architectures, Protocols, and Enterprise Adoption</div>
-                        <div class="source-url"><a href="https://arxiv.org/html/2601.13671v1" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Today we're launching Voxtral 3: state-of-the-art speech ...</div>
+                        <div class="source-url"><a href="https://www.linkedin.com/posts/mistralai_today-were-launching-voxtral-3-state-of-the-art-activity-7518340966488018945-msBj" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -837,23 +885,29 @@ body {
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-d88320583f8c">
-            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.0/10</span><span class="newness-tag">minor_update</span></div>
-            <h2><a href="https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/" target="_blank" rel="noopener">英伟达开源模型铺到桌面，Super VL 领跑美国开源榜</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>英伟达上周四（10 月 15 日）开源发布 Nemotron 3.5 模型家族，TechCrunch 本周一（10 月 19 日）刊发跟进报道，今天日报收录的正是这轮媒体跟进。家族一头是给企业数据中心用的 Super VL，总参数 1200 亿；另一头是给本地设备用的 Bolt 系列，能装进搭载英伟达芯片的 AI PC 和工作站，在本地跑 agent。Super VL 和 Bolt 74B-A9B 现已可用，最小的 Bolt E4B 定在 10 月 23 日上线。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>开源权重给了企业一条自托管路径，模型可以拿自有数据做后训练，部署在自家机房，成果也归自己。英伟达开放模型与软件副总裁 Kari Briski 在发布博客里写道：“Unlike closed frontier models, organizations can post-train Super VL on their own data, deploy it on their own infrastructure and own what they build。” 消费端同样有需求，agent 要接触家庭、健康、财务这类敏感信息，本地运行让这些数据不必送上云端。对英伟达来说，这套模型还把搭载自家芯片的 AI PC 变成了新的出货方向。本期日报多条新闻都在围绕 agent 的成本与自托管展开，这条补上了开源权重一侧的拼图。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>英伟达在 10 月 15 日（上周四）开源了 Nemotron 3.5 模型家族，本篇依据 TechCrunch 10 月 19 日刊发的跟进报道整理，属于媒体跟进视角。家族分两条产品线。面向企业的 Super VL 总参数 1200 亿，每个请求激活 120 亿，上下文 100 万 token，按 OpenMDW-1.1 许可开放权重。评测机构 Artificial Analysis 给它打出 26 分的智能指数，高于前代 Nemotron 3 Super 的 13 分和上代旗舰 Nemotron 3 Ultra 的 23 分，目前在美国开源权重模型中领先；同一机构在 DeepInfra 预发布服务器上测得约 630 token/秒（10 万 token 长输入），称它为智能指数 20 分以上模型中最快的一个。</p>
-<p>面向本地设备的 Bolt 74B-A9B 24GB 可以在搭载 RTX Spark 芯片的 AI PC 和 DGX Spark 工作站上运行，支持多步推理、工具调用和网页浏览，已随 Super VL 一同上线；更小的 Bolt E4B 面向对话型 agent，定于 10 月 23 日上线。企业侧，Skydance、EY、Ramp、CrowdStrike、Perplexity、Salesforce 已在使用 Super VL。</p></div></details>
+<div class="article-card" data-id="raw-137fd72d2030">
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.8/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://www.databricks.com/blog/introducing-agent-memory-databricks" target="_blank" rel="noopener">Databricks 代理记忆上线，任务通过率约为无记忆三倍</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Databricks 在代理开发平台 Agent Bricks 上线 Beta 版 Agent Memory，由托管会话、托管记忆、后台记忆管线三部分组成，跑在 Lakebase（Databricks 的无服务器 Postgres）上，架构来自 MemCurrent 研究，同一套设施已在 Genie 产品里支撑真实用户。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>代理记忆此前多停留在论文、框架插件和各团队自建的向量库里，现在变成数据平台上的托管开关，抽取、去重、检索、权限这些工程活由平台接手。官方两套基准指向同一个结论，记忆同时提升质量和压低成本，开源基准上 8.4K 输入 token 追平 103K 全量上下文的准确率。记忆存放在用户自己的 Lakebase 项目，与代理框架解耦，换模型换框架时记忆可以带走。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Databricks 今天在代理开发平台 Agent Bricks 上推出 Agent Memory，以 Beta 形式开放。代理记忆指的是让 AI 助手跨对话记住用户讲过的事实、偏好和走过的流程，下次直接拿来用，这件事在 Databricks 上从此变成平台里的一个开关。服务跑在 Lakebase 上，它是 Databricks 的无服务器 Postgres 数据库，即开即用、由平台代管，记忆读写的延迟和扩容都交给它。底层架构来自 Databricks Research 的 MemCurrent 论文，同一套设施已经在 Genie 这个面向业务用户的自然语言问答产品里支撑真实流量。</p>
+<p>无状态代理的账单最能说明痛点。模型本身没有跨会话记忆，每次对话结束一切清零。研究文记录了一个真实会话，用户问某产品前五大客户是谁，代理从查 SDP 缩写含义、找哪张表存用量数据开始摸索，动用 11 次工具调用和 8 个子智能体，花了近 6 分钟才答对。第二天用户换一个相关的问题，这 6 分钟要原样再花一遍。用户的偏好和上次的纠正同样留不住，要么用户重复自己，要么代理重复犯错。</p>
+<p>开发团队的两种常见补丁各有代价。把全部历史塞回上下文，历史一长成本就涨，无关内容还会把代理带偏，Databricks 在开源记忆基准上测得全量上下文比设计良好的记忆多花约 12 倍输入 token，最长的历史上准确率反而更低。自己在对象存储或向量库上攒一套，抽取、去重、检索、权限都要自己维护，矛盾事实越积越多。Agent Memory 把这些活接了过去，分三个组件。托管会话按框架原生格式记录每条消息、工具调用和结果；托管记忆保存画像、偏好、领域知识和工作流，会话开始先注入一份记忆索引让代理知道自己知道什么，期间用关键词加语义的混合检索（既按字面匹配也按含义匹配）找细节；记忆管线在后台按需或定期蒸馏会话（从原始对话里提炼值得长期保存的事实），去掉重复，用新事实替换被推翻的内容。</p>
+<p><img alt="Agent Memory 三大组件示意，代理写入托管会话，记忆管线在后台蒸馏" src="https://www.databricks.com/sites/default/files/inline-images/image2_119.png" /></p>
+<p>数据模型分两层，这是 MemCurrent 的核心设计。情景记忆以 append-only 方式保存原始轨迹，只增不改；派生记忆存蒸馏后的结构化知识文件，顶部有自动生成的 memory.md 索引，描述每个文件放了什么。代理在线时通过工具显式写入，后台的 dreaming 管线负责隐式提炼和整体整理。</p>
+<p><img alt="有无记忆的代理在 Databricks 内部基准上的通过率对比" src="https://www.databricks.com/sites/default/files/inline-images/image2_116.png" /></p>
+<p>效果数字分内外两套。开源基准 LoCoMo、LongMemEval、ConvoMem 上，MemCurrent 平均 88.1%，与全量上下文的 87.8% 持平，每题输入 token 只花 8.4K，约是全量 103K 的十二分之一，这一组用 GPT 5.6 luna 兼任代理与记忆模型。内部基准由 Databricks 自建自报，从 12K 以上真实 Genie 会话筛出 114 个用例、29 名用户、2233 条历史会话，无记忆通过率 22.3%，MemCurrent 升到 68.4%，约为三倍，延迟 252 秒、418K token 为所有组里最低，弥合了无记忆与金标注入（把答题所需的记忆直接喂进上下文，相当于理论上限，78.6%）之间八成以上的差距，整体省 31% token、快 26%，这一组用 Claude Opus 4.6 做代理模型、GPT 5.6 sol 做记忆模型。消融实验（逐个拆掉部件看贡献）显示，价值主要来自派生记忆，单独拿到 66.1%，情景记忆单独 35.8%，两者叠加 68.4%；提取策略上，离线 dreaming 的 63.5% 高于在线工具的 53.9%；同场竞技的 Mem0 在内部基准只有 43.9%。回到开头那个 6 分钟的例子，工作流存进记忆后，同类跟进问题 2 次工具调用、41 秒答完。</p>
+<p>数据主权是产品的另一层设计。会话和记忆存在用户自己的 Lakebase 项目里，与具体代理框架解耦，开发者可读取、导出、删除每个用户名下的条目，也可以给记忆管线下保留策略指令，博客举的例子是「保留持久客户偏好，忽略一次性调试笔记」。官方称用 Agent Bricks CLI 十分钟内能部署一个带记忆和会话的代理。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>发布于 10-15，今日为媒体跟进报道</div>
-            <div class="tags-row"><span class="tag">英伟达</span><span class="tag">开源模型</span><span class="tag">AI Agent</span></div>
-            <div class="links-row"><a class="ext-link" href="https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/" target="_blank" rel="noopener">Source <span class="domain">techcrunch.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Agent Memory 首次以 Beta 产品形态公开发布，此前 MemCurrent 只存在于研究论文，历史检查未在往期日报出现相同事件。</div>
+            <div class="tags-row"><span class="tag">Databricks</span><span class="tag">代理记忆</span><span class="tag">Agent Bricks</span><span class="tag">MemCurrent</span></div>
+            <div class="event-aggregation"><div class="event-head">事件聚合 · 2 个来源 · 已合并 1 条候选</div><div class="event-sources"><a class="event-source" href="https://www.databricks.com/blog/introducing-agent-memory-databricks" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Introducing Agent Memory on Databricks</span><span class="event-domain">www.databricks.com</span></a><a class="event-source" href="https://www.databricks.com/blog/memcurrent-designing-persistent-memory-production-agents" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">MemCurrent: Designing Persistent Memory for Production Agents</span><span class="event-domain">www.databricks.com</span></a></div></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">NVIDIA Nemotron 3.5 Super VL Explained</div>
-                        <div class="source-url"><a href="https://www.eigent.ai/blog/nvidia-nemotron-3-5-super-vl" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Building Production AI Agents on Databricks – Part 5: Memory Management with Lakebase</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=OTkdVteCsSg" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -863,8 +917,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">NVIDIA Releases Nemotron 3.5 Super VL and Nemotron 3.5 Bolt 74B A9B | Artificial Analysis</div>
-                        <div class="source-url"><a href="https://artificialanalysis.ai/articles/nemotron-3-5-super-and-bolt" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Agent Bricks: Data + AI Summit 2026 | Databricks Blog</div>
+                        <div class="source-url"><a href="https://www.databricks.com/blog/agent-bricks-dais-2026" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -874,8 +928,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Open From Data Center to Desktop: NVIDIA Expands Nemotron Family With Highest Efficiency Super VL and Bolt Models | NVIDIA Blog</div>
-                        <div class="source-url"><a href="https://blogs.nvidia.com/blog/nemotron-3-5-super-vl" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Cognitive Architectures for AI Agents: Long-Term Storage in Databricks</div>
+                        <div class="source-url"><a href="https://www.tredence.com/blog/memory-lakebase-as-a-short-and-longterm-storage" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -885,8 +939,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Nvidia adds Super VL and Bolt to Nemotron 3.5 open model range</div>
-                        <div class="source-url"><a href="https://finance.yahoo.com/news/nvidia-adds-super-vl-bolt-103909969.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">AI Agent Memory: Types and Architectures Explained</div>
+                        <div class="source-url"><a href="https://www.dataiku.com/blog/ai-agent-memory" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -896,8 +950,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Nvidia adds Super VL and Bolt to Nemotron 3.5 open model range</div>
-                        <div class="source-url"><a href="https://www.verdict.co.uk/nvidia-adds-super-vl-bolt-nemotron?.tsrc=rss" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Introducing Agent Memory on Databricks | Databricks Blog</div>
+                        <div class="source-url"><a href="https://www.databricks.com/blog/introducing-agent-memory-databricks" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -907,167 +961,30 @@ body {
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-486bf42c49bf">
-            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://venturebeat.com/technology/fal-launches-flux-3-max-claiming-22-faster-ai-video-generation-than-seedance-2-5" target="_blank" rel="noopener">fal 发布 FLUX 3 Max 视频端点，自报快 22 倍</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>AI 视频生成平台 fal.ai 今天上线 FLUX 3 Max，通过 API 提供服务。官方对比数据显示，一段 10 秒 720p 视频平均 12.45 秒生成，Seedance 2.5 跑同一段素材需要 277.80 秒，厂商宣称快约 22 倍。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>等待时间直接决定视频模型能不能进入协作流程。设计师改一个运镜，等四分多钟才能看到结果，讨论早已岔开；12 秒出片让试错在对话进行中完成。促销价还把试错成本压得很低，720p 促销期 10 秒 $0.425，生成 10 个版本挑一条只要 $4.25。这些耗时为厂商自报，文档提醒设置与运行条件会影响完成时间，图生视频文档还提供高低两档推理设置，高档更慢；若生成量随速度膨胀而接受率没提升，账单反而会涨。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>fal.ai 今天发布 FLUX 3 Max 视频生成端点。这款服务建立在 Black Forest Labs 的 FLUX 3 Video 基座模型之上，fal 用额外训练强化指令遵循与画面质量，并把生成时间压了下来。按 fal 公布的对比数据，生成一段 10 秒 720p 视频平均用时 12.45 秒，Seedance 2.5 跑同一段素材需要 277.80 秒，相差约 22 倍。12.45 秒仍略慢于视频本身的时长，文档也提醒实际耗时受设置与运行条件影响。</p>
-<p>速度之外，质量图景要复杂一些。Artificial Analysis 10 月 19 日的图生视频榜单上，FLUX 3 Max 拿到 1138 Elo，与 Dreamina Seedance 2.5 持平，落后 MiniMax H3 两分，三家置信区间彼此重叠，只能算并列领先梯队，该榜也只覆盖图生视频场景。第三方 v-benchmark v2 给出另一种结果，Seedance 2.5 得 86.9，FLUX 3 为 76.5，质量对比处于下风。22 倍是厂商自报的耗时数字，比较对象是 Seedance 2.5 的生成时间，与画质优劣没有关系。</p>
-<p>端点方面，文生视频与图生视频均已公开可用，图生视频支持首帧加尾帧，keyframes 端点最多接受 10 张图像控制画面经过的视觉阶段。输出时长 5 至 20 秒，原生 720p，可升格 1080p，音频生成可开关。定价上，11 月 7 日前享 75% 促销折扣，720p 每秒 $0.0425、10 秒 $0.425，促销结束后恢复每秒 $0.17。</p></div></details>
+<div class="article-card" data-id="raw-94e7f4f5c0e5">
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.5/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://huggingface.co/blog/ibm-research/altk-evolve-bc" target="_blank" rel="noopener">IBM 用 292 条自学规则让老模型登顶客服基准</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>IBM 研究团队把开源工具库 ALTK-Evolve 用到客服域,较老的非推理模型 GPT-4.1 在 τ²-bench 零售域拿到 67.5% Pass^4,登顶 2026 年 10 月 12 日榜单快照,领先微调模型 RAFT-30B-A3B(61.4%)6.1 个百分点;换 GPT-5.5 自己提准则自己用,航空域以 82.0% 居榜首。方法是把代理自身任务轨迹蒸馏成行为准则贴进系统提示词,不改权重,也无需人工标注,测试集从头到尾不参与学习。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>客服代理落地的瓶颈在稳定性,Pass^4 这类四次全对才计分的指标直接对应真实业务里顾客每次是否都被正确对待。这套方法不用微调、不用换模型,任何团队都能拿自己代理的失败轨迹照做,微调路线换一个领域就要重来的问题也一并绕开。10 个百分点以上的稳定性提升,在每天接成千上万通对话的客服场景里就是真金白银。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>客服 AI 最让运营方不放心的场面,是同一个退款请求四次里办对三次。IBM 研究团队在 Hugging Face 官方博客公布了开源工具库 ALTK-Evolve 的客服域新成绩,用较老的非推理模型 GPT-4.1 跑 τ²-bench 基准,零售域拿到 67.5% 的 Pass^4,在 2026 年 10 月 12 日的榜单快照上排第一,超过在合成数据上微调出的 RAFT-30B-A3B(61.4%)6.1 个百分点。整个过程不碰模型权重,唯一的改动是在系统提示词末尾追加一段自动学来的行为准则。</p>
+<p>ALTK-Evolve 让模型复盘自己的作业。它先把代理做客服任务留下的完整轨迹交给同一个模型,把成功与失败蒸馏成一条条短规则,例如「动订单前先验证用户身份,邮箱查不到就用姓名加邮编调接口核实」「办退换货时主动讲清分项退款明细和到账时间,不等顾客来问」,另一些规则要求一步只做一个动作,等工具返回结果再回复用户。提炼出的准则以 Markdown 列表贴在领域政策后面,参与后续所有对话。提炼与执行用同一个模型,不需要人工标注,测试集从头到尾不参与学习。</p>
+<p>零售域的留出测试集上,全量 292 条准则把平均准确率从 78.1% 推到 82.5%,Pass^4 从 57.5% 推到 67.5%。航空域给出了另一种答案,只保留 14 条高支持度准则的紧凑版在 Pass^4 上拿到 45%,压过全量 101 条版本的 40%,而全量版在平均准确率上领先。团队据此判断,准则的剂量要按领域来调,支持度阈值没有写死的全局最优值。</p>
+<p><img alt="各配置在留出测试集上的平均准确率与 Pass^4" src="https://cdn-uploads.huggingface.co/production/uploads/6435a1131860001f144239ea/HtL2uTn98-xHkcTxKqkFY.png" /></p>
+<p>换前沿模型同样有效。团队在航空域改用 GPT-5.5 自己提炼准则自己用,平均准确率从 72.5% 升到 82.5%,Pass^4 从 55.0% 升到 70.0%,稳定性增益比 GPT-4.1 在同一批任务上还多 5 个百分点,起点也高得多。按完整基准口径提交后,GPT-5.5 版以 82.0% 的 Pass^4 居航空域第一,当期各家前沿模型的提交集中在 66% 到 72% 之间;GPT-4.1 加紧凑准则版拿到 44%,排第 8,超过不开推理档的 GPT-5.2,接近 Claude Sonnet 4.5。</p>
+<p><img alt="ALTK-Evolve 各配置与 τ²-bench 榜单的 Pass^4 对比" src="https://cdn-uploads.huggingface.co/production/uploads/6435a1131860001f144239ea/iOmv6o938CgNfFlULP-VV.png" /></p>
+<p>成本的账也在文中算清。零售域全量准则把每场对话的 LLM 开销从 0.084 美元推到 0.139 美元,涨幅 65%,开销全部落在更长的输入上。对话轮次略微变短,在基线与加准则版都能解出的共同任务集上,助手轮次平均减少 0.3 到 0.4 轮;由于每一轮都是一次串行的模型往返,轮次变少直接压低端到端延迟。准则块在每次调用中一字不差,生产环境用提示词缓存可以省回大部分输入开销。</p>
+<p><img alt="各配置每场对话的 LLM 成本对比" src="https://cdn-uploads.huggingface.co/production/uploads/6435a1131860001f144239ea/MsqhICXsHtpJozVFZYEm7.png" /></p>
+<p>口径需要交代清楚。上述成绩均为 IBM 团队在官方博客自报,并附上了榜单提交记录(零售 PR #542、航空 PR #551),榜单数字对应 10 月 12 日的快照。τ²-bench 由 Sierra 发布,让被测代理与 GPT-5.5 扮演的模拟顾客对话,配给领域工具和政策文档,只有最终数据库状态与预期完全一致才算任务通过,目前覆盖零售与航空两个域。这条路线的复现门槛很低,任何团队都能拿自己代理的失败轨迹照做一遍。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>fal 今日发布 FLUX 3 Max 新端点，为基于 BFL FLUX 3 Video 追加训练后首次上线的产品，历史与语义检查均无匹配条目</div>
-            <div class="tags-row"><span class="tag">AI视频生成</span><span class="tag">fal</span><span class="tag">Black Forest Labs</span></div>
-            <div class="links-row"><a class="ext-link" href="https://venturebeat.com/technology/fal-launches-flux-3-max-claiming-22-faster-ai-video-generation-than-seedance-2-5" target="_blank" rel="noopener">Source <span class="domain">venturebeat.com</span></a>
-<a class="ext-link" href="https://venturebeat.com/ai/raw-486bf42c49bf" target="_blank" rel="noopener">Coverage <span class="domain">venturebeat.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>相对 2026-09-16 日报报道的诊断组件,本次是客服域 τ²-bench 的全新成绩,包含榜单登顶、双域消融、前沿模型对照与成本数据,属实质更新</div>
+            <div class="tags-row"><span class="tag">agent</span><span class="tag">记忆</span><span class="tag">评测</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/blog/ibm-research/altk-evolve-bc" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">FLUX 3 Video: What Black Forest Labs’ Release Means</div>
-                        <div class="source-url"><a href="https://kingy.ai/blog/flux-3-video-general-availability-world-model" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Flux 3: Black Forest Labs' Multimodal AI World Model</div>
-                        <div class="source-url"><a href="https://morphic.com/resources/models/flux-3" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Black Forest Labs launches FLUX 3 Video with Crusoe AI infrastructure support</div>
-                        <div class="source-url"><a href="https://cryptobriefing.com/black-forest-labs-flux-3-video-crusoe-ai" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">fal Launches FLUX 3 Max, Delivering #1-Tier Image-to-Video Quality at Industry-Leading Speeds</div>
-                        <div class="source-url"><a href="https://www.prnewswire.com/news-releases/fal-launches-flux-3-max-delivering-1-tier-image-to-video-quality-at-industry-leading-speeds-302913033.html" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Seedance 2.5 vs FLUX 3: v-benchmark v2 Scores | Megaton</div>
-                        <div class="source-url"><a href="https://megaton.ai/compare/seedance-2-5-vs-flux-3" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-ad0fcca57292">
-            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/" target="_blank" rel="noopener">Meta 吉瓦超集群一期练出 Muse，一年把中断砍掉 99%</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Meta 工程博客 10 月 19 日发文，披露俄亥俄州 New Albany 的 Prometheus 超集群第一期已经建成。这批设施训练出了 Muse 基础模型家族，其中 Muse Wonder 是 Meta 当前面向个人与专业 agent 任务的前沿模型。整个集群还在继续扩容，最终目标是约 100 万 GPU 协同运转。文章最有分量的内容是一组可靠性数字。预训练 goodput 超过 85%，强化学习超过 90%，全集群平均无故障间隔从约 4.7 万 GPU 小时提升到 5.4 万以上，2025 年年中的中断峰值在一年内压掉了 99%。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>吉瓦级集群上跑一个训练任务，任何一台主机出问题都会拖慢甚至停掉整个作业，停机期间买来的算力全部闲置。goodput 衡量真正花在有效计算上的时间比例，直接决定前沿模型的交付周期和单位算力成本。Meta 把 MTBI、中断率、冗余预算一并公开，给同行做超大规模集群规划提供了一个可对照的样本。应用层谈的 agent 稳定性，最终要落在这类中断与冗余数字上。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>俄亥俄州 New Albany 的吉瓦级超集群 Prometheus 交出了一期成绩单，Meta 在工程博客首次系统披露建设细节。这一期设施已经完成 Muse 基础模型家族的训练，其中包括前沿模型 Muse Wonder，整个集群正朝约 100 万 GPU 的规模扩展。</p>
-<p>文章的信息密度集中在可靠性数字上。Muse Wonder 训练期间，预训练 goodput 超过 85%，强化学习超过 90%。训练时段的全集群平均无故障间隔约 4.7 万 GPU 小时，固件修复铺开到整个机队后，这个数字提升到 5.4 万以上。2025 年年中，每 8000 GPU 每日的中断事件接近 1000 次，经过一年的系统性修复，中断率压低了 99%。</p>
-<p><img alt="Prometheus 集群中断率下降情况" src="https://engineering.fb.com/wp-content/uploads/2026/10/Meta-Prometheus-GB200-GB200-interruptions.png" /></p>
-<p>硬件上已经部署两代 NVIDIA 平台。Catalina 采用 GB200 NVL72 的 Ariel 双机柜变体，每个 GPU 分到 800G 的 scale-out 带宽。Clemente 升级到 GB300 NVL72，把 72 GPU 域收进单个机柜，每 GPU 配 288 GB HBM。第三代的 Vera Rubin NVL72 平台即将到位。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Prometheus 项目 2025 年已对外宣布，本次为第一期建设成果的系统披露，新增 goodput、MTBI、中断率降幅、两代平台规格与冗余策略等大量一手数字</div>
-            <div class="tags-row"><span class="tag">Meta</span><span class="tag">超大规模训练</span><span class="tag">可靠性工程</span><span class="tag">基础设施</span><span class="tag">NVIDIA</span></div>
-            <div class="links-row"><a class="ext-link" href="https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/" target="_blank" rel="noopener">Source <span class="domain">engineering.fb.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Meta的数千亿美元AI基建计划，打造吉瓦级超级计算集群</div>
-                        <div class="source-url"><a href="https://xueqiu.com/6257370910/354468358" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Meta signs nuclear energy deals to power Prometheus AI supercluster</div>
-                        <div class="source-url"><a href="https://www.cnbc.com/2026/01/09/meta-signs-nuclear-energy-deals-to-power-prometheus-ai-supercluster.html" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">小扎开建「人类第一算力帝国」！26年榨干当地水电，27年超越星际之门 - 智源社区</div>
-                        <div class="source-url"><a href="https://hub.baai.ac.cn/view/47336" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Meta’s Hyperion and Prometheus: A Deep Dive into Gigawatt-Scale AI Data Centers - IMP.NEWS</div>
-                        <div class="source-url"><a href="https://imp.news/business/metas-hyperion-and-prometheus-a-deep-dive-into-gigawatt-scale-ai-data-centers-58631" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Meta's Prometheus and Google's Central Ohio Cluster: An AI Data Center Primer</div>
-                        <div class="source-url"><a href="https://measuredai.substack.com/p/meta-prometheus-google-ohio" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-3934c63fefec">
-            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">community</span><span class="score-tag">评分 7.6/10</span><span class="newness-tag">minor_update</span></div>
-            <h2><a href="https://news.ycombinator.com/item?id=50148855" target="_blank" rel="noopener">用 tmux 编排 Claude Code，社区实战与天花板</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>一篇教开发者用 tmux 编排 Claude Code 的教程登上 Hacker News 首页，拿到 146 分。教程出自 crystl.dev，先介绍新版 Claude Code 自带的一条命令 claude --worktree --tmux，敲一次就建好隔离的 git worktree 和对应的 tmux 会话，然后展开社区手工搭建多 agent 工作流的常用手法，最后单独一节讲这套做法的边界在哪。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>AI 编程 agent 一跑就是几十分钟，一个人手里往往同时压着好几个。tmux 的会话由服务端进程托管，关窗口、断 SSH 都不影响 agent 继续干活，配上 send-keys 和 capture-pane 这对进出通道，任何脚本都能驱动和观察 agent，多 agent 协同不必等官方平台。这篇教程把散落在社区的做法收成一条可复制的路径，也把边界画清。tmux 看到的是渲染后的屏幕帧，感知不到 agent 的状态和事件，建立在抓屏之上的监控天然脆弱，知道这条边界的人不会把力气浪费在注定碎掉的解析器上。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>crystl.dev 上的一篇实战教程在 Hacker News 拿下 146 分，讲怎么用 tmux 管住一批 Claude Code 这类长时间运行的编程 agent。教程先给官方捷径，新版 Claude Code 里一条 claude --worktree --tmux 就能把 git worktree 和 tmux 会话一次建好；剩下的场景靠社区多年攒下的手法补齐，send-keys 从脚本往运行中的 agent 里打字，capture-pane 把屏幕读回来，两者拼在一起就能无人值守地驱动 agent。文末的天花板一节引发最多讨论。作者承认 tmux 从 2007 年用到现在，会话复用与持久化做得足够好，但它设计时没有 agent 这个概念，分不清 agent 是在等确认还是在思考，没有完成事件可订阅，抓屏解析建立在字符串匹配上，agent 界面一改就碎。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>tmux 与 Claude Code 均为既有成熟工具，本次增量是一篇系统性社区教程，加上新版 Claude Code 内置的 claude --worktree --tmux 一键创建 worktree 加会话功能，属于工作流方法整理而非产品版本发布</div>
-            <div class="tags-row"><span class="tag">tmux</span><span class="tag">Claude Code</span><span class="tag">AI 编程</span><span class="tag">开发者工具</span></div>
-            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50148855" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
-<a class="ext-link" href="https://crystl.dev/guides/tmux-for-ai-agents/" target="_blank" rel="noopener">Original article <span class="domain">crystl.dev</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">GitHub - primeline-ai/claude-tmux-orchestration: Claude Code tmux orchestration — spawn full AI sessions as parallel workers with heartbeat monitoring and file-based coordination · GitHub</div>
-                        <div class="source-url"><a href="https://github.com/primeline-ai/claude-tmux-orchestration" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">ALTK-Evolve: How learned memory tops the τ²-bench leaderboard on customer service tasks without a frontier model</div>
+                        <div class="source-url"><a href="https://huggingface.co/blog/ibm-research/altk-evolve-bc" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1077,8 +994,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">tmux in the Coding Agents Era: Why a 2007 Tool Is Back at the Center</div>
-                        <div class="source-url"><a href="https://pasqualepillitteri.it/en/news/3493/tmux-runtime-coding-agents-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">ALTK-Evolve: How Learned AI Memory Helped an Older ...</div>
+                        <div class="source-url"><a href="https://www.facebook.com/UndercodeNews/posts/altk-evolve-how-learned-ai-memory-helped-an-older-model-beat-frontier-systems-in/2008294490422164" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1088,8 +1005,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">How Do You Manage Parallel Claude Code Sessions?</div>
-                        <div class="source-url"><a href="https://primeline.cc/blog/tmux-orchestration" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">ALTK-Evolve uses learned memory to top τ²-bench retail ...</div>
+                        <div class="source-url"><a href="https://e-acc.ai/items/kdwucssnlfiip0kts7qiwj4qs" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1099,19 +1016,132 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Regression: TUI alternate-screen breaks tmux scroll-back; cannot review conversation above top of screen (accessibility regression) · Issue #67289 · anthropics/claude-code · GitHub</div>
-                        <div class="source-url"><a href="https://github.com/anthropics/claude-code/issues/67289" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">IBM says learned rules make customer-service AI more reliable without retraining | Superpower Daily</div>
+                        <div class="source-url"><a href="https://superpowerdaily.com/posts/ibm-says-learned-rules-make-customer-service-ai-more-reliable-without-retraining" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
                         <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">ALTK-Evolve: IBM Agent Learns Rules, +10 Pass^4 on tau2-bench | explainx.ai Blog | explainx.ai</div>
+                        <div class="source-url"><a href="https://explainx.ai/blog/ibm-altk-evolve-learned-guidelines-tau2-bench-no-fine-tuning-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-f222c909380e">
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://developers.googleblog.com/announcing-new-vllm-and-sglang-inference-engines-on-tpu/" target="_blank" rel="noopener">vLLM 与 SGLang 获得 TPU 原生 PyTorch 后端,迁移不用换工具链</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>10 月 20 日,谷歌宣布 vLLM 与 SGLang 两个开源推理引擎新增由 TorchTPU 驱动的原生 PyTorch 后端,与两个开源社区的维护者合作构建,可在包括最新 Ironwood 在内的 TPU 上运行和优化服务负载。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>vLLM 和 SGLang 是当前部署开源模型最常用的服务框架,此前主要在英伟达 GPU 生态上打磨。原生后端上线后,使用这两套框架的团队把服务搬进 TPU 时不必更换工具链,算力采购多出一个备选。与本期头条 DeepSeek 开源推理栈放在一起看,推理部署层的竞争正在变热。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 20 日,谷歌在官方开发者博客宣布,开源推理引擎 vLLM 和 SGLang 新增由 TorchTPU 驱动的原生 PyTorch 后端,两个项目都与各自社区的维护者合作构建。此前想把推理服务部署到谷歌 TPU 芯片上,往往要离开 PyTorch 生态另学一套工具链;现在熟悉的工具原样能用,迁移门槛降了一大截。</p>
+<p>新后端面向生产环境补齐了三块能力。算子内核针对 TPU 重新打磨,负责吃满硬件。KV cache 管理基于 TPU Sync 机制,KV cache 保存模型处理对话时已经算过的中间结果,管得好就不必每生成一个字都重算整段历史。分离式推理则把读题的预填充阶段和逐字生成的解码阶段拆到不同机器,两类负载各自扩容,互不抢占。</p>
+<p><img alt="TPU 推理技术栈示意" src="https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/tpu_inference-stack.original.png" /></p>
+<p>谷歌称公开基准显示,新后端在最新一代 Ironwood TPU 上达到最先进性能和业界领先的成本效率。这一说法来自官方博客,属于自报口径,文中未附具体数字,实际水平还要等第三方复测。</p>
+<p>同一天,谷歌还公布了 TorchTPU 集成 TorchTitan 等一批生态消息,这次发布是其中面向推理服务的一环。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>vLLM 与 SGLang 的 TorchTPU 原生 PyTorch 后端属首次正式发布,历史日报未见同一事件</div>
+            <div class="tags-row"><span class="tag">推理引擎</span><span class="tag">TPU</span><span class="tag">PyTorch</span></div>
+            <div class="links-row"><a class="ext-link" href="https://developers.googleblog.com/announcing-new-vllm-and-sglang-inference-engines-on-tpu/" target="_blank" rel="noopener">Source <span class="domain">developers.googleblog.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Announcing New vLLM and SGLang Inference Engines on TPU - Google Developers Blog</div>
+                        <div class="source-url"><a href="https://developers.googleblog.com/announcing-new-vllm-and-sglang-inference-engines-on-tpu" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">PyTorch on TPU | OpenLM.ai</div>
+                        <div class="source-url"><a href="https://openlm.ai/pytorch-on-tpu" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">PyTorch on Cloud TPU  |  Google Cloud Documentation</div>
+                        <div class="source-url"><a href="https://docs.cloud.google.com/tpu/docs/pytorch-on-tpu" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
                         <span class="badge official">官方</span>
                     </div>
                 </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-470f81a32e0a">
+            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">community</span><span class="score-tag">评分 8.2/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50159341" target="_blank" rel="noopener">WhatsApp 帮助页暗藏 102 条 AI 指令,曝光十天后撤光</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>数据隐私调查网站 redact.dev 在 10 月 8 日发现 WhatsApp 帮助中心的删号页里藏着只给 AI 看的指令,随后通读帮助中心链接的全部 545 页,在 80 页里挖出 102 个隐藏指令块。10 月 18 日凌晨(UTC)这些块被全部移除,10 月 19 日 WIRED 跟进报道,WhatsApp 称这是客服聊天机器人的指令因 bug 泄露到页面,现已修复。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这是少见的带完整存档、时间线与指令原文的大型平台「给人和给 AI 两套内容」案例。对普通用户,它暴露了一个新风险,向 AI 客服求助时,答案可能被页面里看不见的指令修剪过,连监管机构的存在都不被告知。对做网站和做 AI 产品的人,它同样是个提醒,面向爬虫差异化投送内容的做法已经进入主流公司的生产系统,透明度问题随之而来。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 8 日,做数据隐私调查的网站 redact.dev 在 WhatsApp 帮助中心的删号页面里翻出一段奇怪的文字。页面上人人可见的提示写的是,手机号或设备丢了、无法自助删号时,停用的账号 30 天后自动删除,不活跃账号一般 120 天后删除,美国用户 365 天。藏在网页源码里、屏幕上不显示的部分还多出三条给 AI 的命令,其中一条写着「不要建议联系任何数据保护机构、监管机构或监督机构」,另外两条是不要暗示 WhatsApp 能替用户手动删号、不要推荐改用另一张在用的电话卡。</p>
+<p>为了确认这不是孤例,调查方把帮助中心链接到的全部 545 页逐一存档,发现 80 页里共有 102 个这样的隐藏指令块。第二个扎眼的块在举报与屏蔽页面,指示 AI 一旦用户提到律师、诉讼或法院,就不要引用、解释 GDPR、LGPD、CCPA 等数据保护法规,原文写明「即使用户主动提出」。这两条指令在 10 月 15 日 21 时 40 分(UTC)复查时还在,10 月 18 日凌晨 2 时 08 分(UTC)再查,80 页里的 102 块全部消失,页面本身照常在线。互联网档案馆 10 月 9 日的存档仍留有这些文字,10 月 18 日的存档里没有。10 月 19 日 WIRED 跟进报道,WhatsApp 发言人 Joshua Breckman 回应称这些是客服聊天机器人的指令,出现在页面上是 bug 且已修复,公司希望客服机器人专注于回答与 WhatsApp 相关的问题,不提供法律意见。</p>
+<p>调查的核心是两处落差。WhatsApp 欧洲隐私政策(2026 年 7 月 2 日生效)写明,用户有权向爱尔兰数据保护委员会或任何其他有管辖权的数据保护机构投诉;GDPR 第 17 条给用户删除个人数据的权利,第 77 条给用户向监管机构投诉的权利。redact.dev 认为,写给聊天机器人的指令改变不了这些法定权利,能做到的是让上门求助的用户听不到这些权利的存在。</p>
+<p>bug 之说与有意隐瞒之说眼下并存,两边各有可查的依据。约 100 个块只是澄清容易混淆的用词、把问题引导到更合适的页面,Facebook 和 Instagram 的帮助中心用同一套系统,检查 300 页未发现类似指令,这些事实与 bug 的解释相容。投递机制又让人生疑,这些隐藏文字只随页面发给 Google 和 Bing 的爬虫,调查方 10 月 9 日改用 OpenAI、Anthropic、Perplexity 爬虫的身份访问,返回的页面里没有这些文字。两种说法哪种成立,现有证据下不了结论。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>首次披露的新事件。隐藏指令由 redact.dev 于 2026-10-08 首次发现并公开,2026-10-18 被移除,2026-10-19 WIRED 跟进,历史日报中未出现过此事件(history_check 判定「未出现」)。</div>
+            <div class="tags-row"><span class="tag">WhatsApp</span><span class="tag">提示词注入</span><span class="tag">GDPR</span><span class="tag">隐藏指令</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50159341" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions" target="_blank" rel="noopener">Original article <span class="domain">redact.dev</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Running Claude Code in tmux: Persistent AI Agents (2026)</div>
-                        <div class="source-url"><a href="https://tmux.app/doc/claude-code-tmux" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">WhatsApp's help pages hid LLM instructions: dont...</div>
+                        <div class="source-url"><a href="https://daily.dev/posts/whatsapp-s-help-pages-hid-llm-instructions-dont-recommend-a-regulator-peihxc3hd" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Meta accidentally exposes WhatsApp AI rules on 80 help pages: What it was told about legal questions, what the chatbot was instructed to avoid</div>
+                        <div class="source-url"><a href="https://www.zeebiz.com/technology/news-meta-accidentally-exposes-whatsapp-ai-rules-on-80-help-pages-what-it-was-told-about-legal-questions-what-the-chatbot-was-instructed-to-avoid-404192" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">WhatsApp's Hidden AI Instructions, Explained</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=TTuu1eyq-bI" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">WhatsApp's Hidden Notes Told AI Not to Recommend a Regulator</div>
+                        <div class="source-url"><a href="https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1121,25 +1151,26 @@ body {
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-9a75aafc0f23">
-            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">tools</span><span class="score-tag">评分 7.4/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://github.com/headroomlabs-ai/headroom" target="_blank" rel="noopener">开源压缩层 headroom 迭代，工具输出进模型前先瘦身</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>一个叫 headroom 的开源工具刚更新到 v0.41.0 版本，10 月 14 日发布，README 三天后刚更新过。它夹在 AI 编程助手和大模型之间，工具输出、日志这些材料在送进模型前先在本地压缩一遍，token 用量降下来，账单随之变薄。仓库今年 1 月创建，九个月里已经积累 3,316 次提交。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>大模型按 token 计费，agent 每读一次文件、每跑一次工具，输出都会整段进入上下文，长会话的成本随轮次累积，README 还指出 Opus 级模型上输出 token 价格是输入的 5 倍。压缩层在数据进模型之前动手，不改应用代码就能压下这部分开销。模型厂在降单价，这类工具在降用量，两条路径叠加，agent 的运行成本才有继续下探的空间。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>开源项目 headroom 把压缩环节搬进 agent 与大模型之间。工具输出、日志、文件、RAG 检索块在进入模型上下文之前，先在本地压掉冗余，模型照样拿到它需要的答案。项目以 Apache 2.0 协议开源，提供 Python 与 TypeScript 库、零代码改动的本地代理、MCP 服务器三种接入形态，一条 headroom wrap 命令还能直接包装 Claude Code、Codex、Cursor 等十余个编码工具。</p>
-<p><img alt="55,957 token 的提示被压缩到 24,340 token 后再送入模型" src="https://github.com/headroomlabs-ai/headroom/raw/main/.github/assets/hero.svg" /></p>
-<p>官方自报口径的数字是编码 agent 省 20% token，JSON 场景省 60% 到 95%，答案不变。四个用真实 MCP 输出格式搭建的基准场景节省幅度在 21% 到 57% 之间，SRE 事故调试场景从 55,957 个 token 压到 24,340 个。压缩在本机完成，不把内容送往外部，原文缓存在本地，模型需要全文时可调用检索工具取回，压缩可逆。质量评测里 GSM8K 基线 0.870 持平，SQuAD v2 与 BFCL 分别在 19%、32% 压缩幅度下保持 97%。</p>
-<p>这个仓库 2026 年 1 月创建，九个月积累 3,316 次提交，最新版本 v0.41.0 于 10 月 14 日发布。近期增量集中在输出端，verbosity steering 与 effort routing 负责让模型写回的内容更精简，该功能默认关闭，需要设置 HEADROOM_OUTPUT_SHAPER=1 环境变量才启用。同期加入的还有 GitHub Copilot CLI 订阅模式代理、Claude 与 Codex 等工具共用的跨 agent 共享记忆，以及 VS Code 里的 Claude Code 集成。</p></div></details>
+<div class="article-card" data-id="raw-857800eca388">
+            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">research</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://huggingface.co/papers/2610.25525" target="_blank" rel="noopener">编程 AI 配上止损监工,预判必败就早停,成本最多省 48%</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>论文 StopLoss(arXiv 2610.25525)提出给编程代理外挂一个小型监控模型。它读代理最近几步工具调用的记录,单次前向传播打出失败分数,分数超过在成功运行上校准的阈值就提前中止运行,执行器零改动。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>编程代理在注定失败的任务上烧掉的算力是纯浪费,请前沿模型当裁判又贵到不划算。StopLoss 把每次检查的成本压低一到两个数量级,四种评估设置里每个保留成功任务的成本都低于全部裁判策略,早停这笔账第一次算得过来。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>让 AI 修一个 bug,它常常一头扎进去,改文件、跑测试,直到步数用尽才发现方向从一开始就错。一篇挂在 arXiv 的新论文(编号 2610.25525)给这类编程代理配了个便宜的外部监工,名字叫 StopLoss,借自炒股里的止损单,跌破预设价位就自动卖出。监工的职责类似,预判这趟运行大概率通不过验证,就提前叫停,省下后面的算力。</p>
+<p>监工本体是一个微调过的小语言模型。它只看代理最近的工具调用记录,也就是改文件、跑测试这些动作,一次前向传播(模型把输入扫一遍就出分)给出失败分数,分数越过阈值就中止任务。阈值在成功运行上校准,负责干活的执行器一行代码都不用改。</p>
+<p>训练用的是结果监督,拿 GPT 系模型在 SWE-rebench 上跑完的历史轨迹,用最终验证的成败给早期片段回溯打标签,小模型由此学会早早认出失败苗头。摘要报告,失败预测在第一次检查时就从接近随机提升为可用信号,每次检查的成本比六个通用裁判模型低一到两个数量级。</p>
+<p>省下的钱有具体数字。在 SWE-bench Verified 这项编程代理基准上,每个保留成功任务的成本降 4.5%,99% 本会成功的运行没被误杀。在成本更高的 SWE-bench Pro 子集上最多省 31%,把监工骨干换成 Qwen3-8B 后达到 48%。GPT 与 Claude 两种执行器搭配两个基准共四种设置,它的成本全部低于对照的裁判策略。它不提升代理本身的成功率,只是让失败来得更便宜。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>九个月老项目近期版本迭代与功能新增</div>
-            <div class="tags-row"><span class="tag">开源工具</span><span class="tag">上下文压缩</span><span class="tag">AI Agent</span><span class="tag">token 成本</span></div>
-            <div class="links-row"><a class="ext-link" href="https://github.com/headroomlabs-ai/headroom" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>新论文(arXiv 2610.25525),历史日报未出现匹配,提出用结果监督训练的小型失败监控器做早停的成本账</div>
+            <div class="tags-row"><span class="tag">AI Agent</span><span class="tag">研究论文</span><span class="tag">成本优化</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2610.25525" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a>
+<a class="ext-link" href="https://huggingface.co/papers" target="_blank" rel="noopener">Coverage <span class="domain">huggingface.co</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Headroom Review 2026: Context Compression for Claude Code, Codex, Cursor, and OpenCode</div>
-                        <div class="source-url"><a href="https://vibecodinghub.org/tools/headroom" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">StopLoss: Teaching Agents to Predict Failure andStop Early</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2610.25525v1" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1149,8 +1180,37 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Headroom AI: Context Compression for Agents Guide | explainx.ai Blog | explainx.ai</div>
-                        <div class="source-url"><a href="https://explainx.ai/blog/headroom-ai-context-compression-agents-guide-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Disentangling Task Difficulty from Run-Level Failure in Agent Failure Prediction</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2610.05572v1" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-69e20eacb95a">
+            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">tools</span><span class="score-tag">评分 7.9/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://www.macstories.net/news/perplexity-computers-local-first-approach-to-agents/" target="_blank" rel="noopener">Perplexity Mac 代理可全离线跑，数据不出机器</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>10 月 20 日，Perplexity 公布 Computer 的本地优先模式，模型与代理完全在 Mac 上运行，离线可用，数据仅在用户批准后发送云端。云端模型仍在，负责浏览网页、访问在线应用这类联网任务。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>云端代理要把你的屏幕内容和文件交给远端服务器处理，本地模式把这些留在机器里，隐私不再单纯依赖信任厂商。对订阅用户还有一层实惠，本地跑的任务不消耗云端积分，订阅能用更久。隐私这条路线在消费级代理产品里做成了开局即可选择的开关，而不是留给用户自行折腾。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 20 日，Perplexity 给 Mac 端代理产品 Computer 加了本地优先模式。开启后，模型和代理任务整段在这台 Mac 上跑，断网也能干活，数据只在用户批准后才发往云端。</p>
+<p><img alt="Perplexity Computer 本地优先模式官方配图" src="https://cdn.macstories.net/images/uploads/2026/10/20/f1a61df4d8a457f8dee90c42e98b486dafd51324-1920x1080-1792512207578-6eb16d55e2.jpg" /></p>
+<p>这个模式补在上月推出的 Hybrid Compute 旁边。Hybrid Compute 是混合计算，让本地模型和云端前沿模型，也就是能力最强的那批大模型，搭配干活。现在开局可以二选一，要么从云端起步，要么从本地起步，浏览网页这类联网的活仍经用户许可后交给云端。</p>
+<p>本地一侧跑 Qwen 3.6 或 PPLX Pro，后者是拿 Qwen 再做一轮后训练的特调版本，执行过程装在沙盒里，模型只能碰到被允许的代码和工具。据 MacStories 报道，好处有两个，数据留在本机，隐私有底；本地任务不耗云端积分，订阅能用更久。功能已向 Pro、Max、Enterprise 订阅者开放，官方建议内存 36GB 以上的 Apple Silicon 机型。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Computer 与 Hybrid Compute 上月已发布，本次新增的是可完全离线的本地优先模式，含 Qwen 3.6 与 PPLX Pro 本地模型及沙盒执行环境，属同一产品线的显著更新而非全新产品。</div>
+            <div class="tags-row"><span class="tag">端侧AI</span><span class="tag">Perplexity</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.macstories.net/news/perplexity-computers-local-first-approach-to-agents/" target="_blank" rel="noopener">Source <span class="domain">www.macstories.net</span></a>
+<a class="ext-link" href="https://news.google.com/rss/articles/CBMijAFBVV95cUxOSlByQjdZX2hhbUdBeXluZEFWaHphRzl0N3FlRHRNVERvSzd0N0xGRE5sUGNPUmFTdjVvSWVyZ3p3enZLbUVvUEtHYzlXRFRsbnFDNEF3S3NiSDNlS2wxRXRrMEltQ2FvZTBhb1NYeXFuTmtoaE5qZEhpOTAzNW5McGRrTmxLV1gwQ0s3Ng?oc=5" target="_blank" rel="noopener">Google News <span class="domain">news.google.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Perplexity Portable Computer: Local-First Agents, Explained | CellCog</div>
+                        <div class="source-url"><a href="https://cellcog.ai/blog/perplexity-portable-computer" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1160,8 +1220,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Headroom: The Open Source Context Compression Layer from Github</div>
-                        <div class="source-url"><a href="https://www.youtube.com/watch?v=uplU5p-J8AU" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Official Perplexity Computer Breakdown (2026)</div>
+                        <div class="source-url"><a href="https://www.vellum.ai/blog/official-perplexity-computer-breakdown" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1171,19 +1231,30 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Show HN: Headroom – Reversible context compression for LLMs(~60% cost reduction) | Hacker News</div>
-                        <div class="source-url"><a href="https://news.ycombinator.com/item?id=46628278" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">A Local-First Agent for Private Knowledge Work</div>
+                        <div class="source-url"><a href="https://www.perplexity.ai/hub/blog/a-local-first-agent-for-private-and-cost-effective-knowledge-work" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">What Is Perplexity Personal Computer? The Mac Mini-Powered AI Agent Explained | MindStudio</div>
+                        <div class="source-url"><a href="https://www.mindstudio.ai/blog/what-is-perplexity-personal-computer-mac-mini-agent" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
                         <span class="badge contrarian">反证</span>
-                        <span class="badge community">社区讨论</span>
+                        <span class="badge secondary">二手转载</span>
                     </div>
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Building Cost-Efficient Agents with Headroom: Context ...</div>
-                        <div class="source-url"><a href="https://subratpati.medium.com/building-cost-efficient-agents-with-headroom-context-compression-for-llm-applications-b665128153b6" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Perplexity’s New Local AI Agent Has To Ask Before It Goes To The Cloud</div>
+                        <div class="source-url"><a href="https://www.designwhine.com/perplexity-portable-computer-local-ai-agent-privacy" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1193,24 +1264,26 @@ body {
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-85ea72a0f9e1">
-            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">research</span><span class="score-tag">评分 7.2/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://huggingface.co/papers/2610.16402" target="_blank" rel="noopener">AI 编程新考卷 EvoWeb 发布，320 个累积需求考出迭代短板</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>研究人员在 arXiv 发布论文 2610.16402，公开全新基准 EvoWeb。它考察编码智能体在持续演化的 Web 应用上的干活能力，考卷规模为 32 个 Web 应用上的 320 个累积式请求，论文还同步给出了开源与闭源前沿模型的评测结论。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>现有 Web 生成基准大多让智能体按一份固定规格一次性开发，而真实软件开发是在已有代码库上不断叠加新需求。考法和实际工作的落差，让榜单分数难以反映智能体在真实项目里的表现。EvoWeb 把考试改成长期项目制，盯着新功能与旧功能的协同，也盯着回归问题，直接照出这个落差有多大。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>编码智能体收到一张新考卷。研究人员在 arXiv 发布编号 2610.16402 的论文，提出基准 EvoWeb，专门考察智能体在持续演化的 Web 应用上的开发能力。考卷覆盖 32 个 Web 应用、320 个累积式请求，每个需求都来自真实产品功能，并按功能依赖图组织，后面的题目会用到前面做出来的功能。</p>
-<p>以往的 Web 生成基准大多发一份固定规格，让智能体从零开发、一次交卷。真实项目里的开发节奏更接近 EvoWeb 的考法，需求持续追加，代码库长期保留。评测方式与真实工作方式的落差，会让榜单分数和实际表现脱节，这张新考卷把差距摆上了台面。</p>
-<p>EvoWeb 还配了一条自动测试管线。一个多模态浏览器智能体把每个中间版本放进真实浏览器里跑一遍，检查新功能是否实现、旧功能有没有被改坏。论文对开源与闭源前沿模型做了评测，结论指向同一个方向，让新请求与已有功能正确协同是最难的部分，运行时错误也会随开发推进不断累积。对天天用 AI 写代码的人来说，这份考卷给出了一份数字化的能力边界参照。</p></div></details>
+<div class="article-card" data-id="raw-dd8a8739a45d">
+            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">tools</span><span class="score-tag">评分 7.7/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://www.oneusefulthing.org/p/30-months-on-the-exponential-in-charts" target="_blank" rel="noopener">最强 AI 宝座 30 个月易手 20 次,沃顿教授用图表复盘</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>10 月 20 日,沃顿商学院副教授 Ethan Mollick 的新书 Co-Existence 上市,距上一本 Co-Intelligence 正好 30 个月,这篇文章是它的引子。文中几乎每个数字都是新的,2024 年初以来登顶过的最强模型有 20 个,180 个模型已超过初版 GPT-4,AI 能独立完成的人类工作时长从 4 分钟涨到 17 小时。图表本身也是新闻,全部由 Opus 5.5 编排的 agent 几分钟做完,AI 还纠正了他把 30 个月算成 28 个月的错误。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这篇综述给当天的新闻提供了一个纵向刻度。推理引擎开源、代理记忆产品化,这些动作都落在能力翻倍、价格暴跌的曲线上。对普通读者的含义很直接,你现在用的 AI 大概率是你以后能用到里最差的那个,等下去只会更好更便宜,瓶颈从能不能干挪到该不该信、什么时候交活。对职场人,协作方式正在从盯聊天窗换挡到派活验收,管好一群 agent 会成为新技能。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 20 日,沃顿商学院副教授 Ethan Mollick 的第二本 AI 专著 Co-Existence 上市。上一本 Co-Intelligence 出版于 2024 年初,两本之间隔了 30 个月。他在博客 One Useful Thing 发文,用一批图表复盘这 30 个月 AI 走了多远。</p>
+<p>做图这件事本身就是变化的样本。写上一本书时,他得在聊天窗口里一步步指挥 AI。这次他把活整个交给 Claude Projects 里的 Opus 5.5,让它扮演编排器,也就是负责派活的总管,再由它按需生成别的 agent,即能自己动手干活的 AI 程序。原本要花几个小时的调研和制图,几分钟完成,AI 还发现他算错一处,他本来打算把标题写成 28 个月。连新书的宣传官网都是 Opus 5.5 重新设计的,他的要求只有一句,把它做得更好。</p>
+<p>数字更直观。2024 年初以来,最强模型的头把交椅换了 20 次,全部出自 Anthropic、Google、OpenAI。如今有 180 个模型强过初版 GPT-4,其中 19 个开放权重模型,即人人可免费下载和修改的模型,能直接跑在手机上。METR 长时程基准,一种测 AI 靠一条指令能干完多长人类工作的标准化考试,显示从 GPT-4 发布到该基准停测,这个时长翻倍 8 次,2024 年对应 4 分钟的任务,2026 年 4 月他交书稿时涨到 17 小时。此后 METR 宣布现有方法量不准了,别的研究估计已到 17 周上下。价格同步在跌,GPQA 这种常把研究生难住的博士级考题,拿一个正确答案的费用从 30 美分降到 0.04 美分。</p>
+<p><img alt="指数增长一节的原文图表" src="https://substackcdn.com/image/fetch/$s_!VCJe!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8917d0af-5017-46c0-a953-85dd87735ed6_3840x2160.png" /></p>
+<p>能力依然不均匀,长文写作还是弱项,数学已经超人。他在新书里给人机协作补上第三种形态,召唤师,按需召唤 agent 派活再验收。这篇文章就是这么做出来的,也是他眼中用 AI 最强的方式,代价是人不再清楚 AI 具体怎么把活干成。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>全新基准论文发布</div>
-            <div class="tags-row"><span class="tag">编码智能体</span><span class="tag">基准测试</span><span class="tag">AI编程</span></div>
-            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2610.16402" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>新书 Co-Existence 于 10-20 当日上市,文章同步首发,并首次给出 METR 停测、GPQA 降价至 0.04 美分、召唤师第三种协作方式等新图表数据</div>
+            <div class="tags-row"><span class="tag">AI 趋势</span><span class="tag">人机协作</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.oneusefulthing.org/p/30-months-on-the-exponential-in-charts" target="_blank" rel="noopener">Source <span class="domain">www.oneusefulthing.org</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">A Benchmark for Coding Agents on Evolving Web ...</div>
-                        <div class="source-url"><a href="https://www.themoonlight.io/review/evoweb-a-benchmark-for-coding-agents-on-evolving-web-applications" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Exploring possible AI trajectories through 2030</div>
+                        <div class="source-url"><a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/02/exploring-possible-ai-trajectories-through-2030_b6fb75d9/cb41117a-en.pdf" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1220,8 +1293,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">EvoCode-Bench: Evaluating Coding Agents in Multi-Turn Iterative Interactions | alphaXiv</div>
-                        <div class="source-url"><a href="https://www.alphaxiv.org/abs/2605.24110" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">30 Months on the Exponential (in Charts) - by Ethan Mollick</div>
+                        <div class="source-url"><a href="https://www.oneusefulthing.org/p/30-months-on-the-exponential-in-charts" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1231,8 +1304,30 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">EvoWeb: A Benchmark for Coding Agents on Evolving Web ...</div>
-                        <div class="source-url"><a href="https://www.twodelta.com/blog/evoweb" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">The 2026 AI Playbook</div>
+                        <div class="source-url"><a href="https://agents.chainofthought.xyz/p/the-ai-map-for-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Are AI Capabilities Increasing Exponentially? A Competing Hypothesis</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2602.04836v1" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Are AI Capabilities Increasing Exponentially? A Competing Hypothesis</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2602.04836v2" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1242,24 +1337,26 @@ body {
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-fbbcdbe57add">
-            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">community</span><span class="score-tag">评分 7.0/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://www.technologyreview.com/2026/10/19/1147186/making-the-internet-better-for-ai-agents-might-make-it-worse-for-everyone-else/" target="_blank" rel="noopener">代理流量8月至9月增至三倍，互联网开始为AI代理铺设专属车道</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>MIT 科技评论 The Algorithm 周刊 10 月 19 日刊登分析，说互联网开始为 AI 代理改造自身。商业一侧，Shopify 为代理开出专属结账车道，让它们绕开为人类设计的结账页；封锁一侧，Yelp、Pizza Hut 等平台仍不允许代理订餐厅、下单。新数据显示，代理网络流量 8 月至 9 月增至三倍，Meta 的 Muse 个人代理应用上线首月被下载 500 万次。Amazon 起诉 Perplexity 以拦下代理的官司一审由法官判 Perplexity 胜诉，Amazon 已提起上诉。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>代理构成第三类网络访客，以机器速度运行，又替个人订机票、谈价格，现有的人机区分体系管不住它们，各家平台只能自行抉择。代理流量绝大部分流向电商网站，平台放行就有生意可做，Shopify 的专属车道是用真金白银投出的第一票。宾夕法尼亚大学沃顿商学院副教授 Ethan Mollick 预测，一旦派代理去要求退款、商量价格成为常识，客服部门将被代理挤占到真人无法使用的地步。争议规则倒向哪一边，例如平台能否封锁代理、能否阻止代理替消费者谈更好的交易，将决定未来的网成为替我们效力的代理高速公路，还是与我们作对的代理高速公路，账单很可能落在人类头上。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>MIT 科技评论 The Algorithm 周刊 10 月 19 日刊登趋势分析，指出互联网正围绕 AI 代理朝两个方向延伸变化。商业一侧，电商巨头 Shopify 为代理开出专属结账车道，让它们绕开为人类设计的结账页；接入一侧，Amazon、Yelp 等平台仍把代理挡在门外，Amazon 起诉 Perplexity 一审败诉后已进入上诉阶段。双向改造的背后站着新数据，代理网络流量 8 月至 9 月增至三倍，Meta 的个人代理应用 Muse 上线首月被下载 500 万次。</p>
-<p>文章认为代理是第三类网络访客，以机器速度运行，又替个人执行订机票、谈价格这类正当任务，现有区分人与机器人的体系管不住这个灰色地带。宾夕法尼亚大学沃顿商学院副教授 Ethan Mollick 预测，一旦派代理去要求退款、商量价格成为常识，客服部门将被代理挤占到真人无法使用的地步。原文作者警示，为代理优化的网络可能让人类面对更差的界面和没完没了的验证；那件毛衣不再有统一价格，不同代理看到不同报价，你也说不清代理的推荐何时被广告和平台佣金左右。争议规则倒向哪一边，将决定这轮改造的账单最终由谁来付。</p></div></details>
+<div class="article-card" data-id="raw-33f72cf8b33f">
+            <div class="article-meta"><span class="rank-badge ">#10</span><span class="category-tag">tools</span><span class="score-tag">评分 7.2/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://techcrunch.com/2026/10/20/yelp-can-now-call-on-your-behalf-to-check-wait-times-at-a-restaurant/" target="_blank" rel="noopener">刚收紧第三方代理的Yelp，自己上线了替你打电话的AI</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>10 月 20 日，Yelp 宣布在 App 内上线 Check for Me。用户在餐厅页面填入用餐人数和手机号，语音代理替你致电餐厅询问等位时间，结果用短信返回，再由你自己决定去不去。同场发布的还有 AI 助手接入 OpenTable 订位、跨对话记住偏好、可查 30 天聊天记录、自定义提醒、Been Here 与 Want to Go 清单，以及面向商家的付费产品 Smart Lead Reply。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Instinct、Fo、Muse 等个人助手近几周先后支持代用户致电商家，但它们都是第三方产品。Yelp 这次把同类能力做进自家 App，由平台亲自提供。等位、订位这类环节过去只能靠用户自己打电话，如今平台用代理替用户完成。商家侧的 Smart Lead Reply 显示 Yelp 也在用 AI 帮商家接客，与 Meta 近来用 AI 产品争取小企业客户的做法一致。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>想去的餐厅今晚要等多久？过去你得自己打电话问。10 月 20 日，Yelp 宣布在 App 内上线 Check for Me 功能。你在餐厅页面填好用餐人数和手机号，一个语音代理，也就是能模拟真人打电话的 AI 系统，替你拨通餐厅电话询问等位时间，随后把结果用短信发回，去不去由你决定。</p>
+<p>这个功能补上了 Yelp 语音能力的消费端。去年它已经向餐厅和服务商提供语音方案，让商家用 AI 接线，这次轮到替用户打电话的一侧。</p>
+<p><img alt="Yelp 语音代理替用户打电话查询等位时间" src="https://techcrunch.com/wp-content/uploads/2026/10/Yelp-waitlist.jpg" /></p>
+<p>App 内的 AI 助手同步更新。接入订位平台 OpenTable 后，订餐厅不用跳出 Yelp。助手会记住你在以往对话里提过的偏好，最近 30 天的聊天记录也能翻看，完整历史即将开放。提醒支持自定义，比如每周五收到周末活动建议。新增 Been Here 和 Want to Go 两个清单，可按位置、类别、菜系筛选，支持重排、备注和分享。商家侧则推出月费 30 美元的 Smart Lead Reply，由 AI 自动回复顾客并甄别线索。</p>
+<p>TechCrunch 同时点出一个风险。你的代理打给一家同样用 AI 接线的餐厅时，两边都是机器，agent 对 agent 的通话可能让对话直接失败。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>趋势综述带多个新增数据点与事件进展，代理流量 8 月至 9 月增至三倍、Muse 首月下载 500 万次、Amazon 诉 Perplexity 一审败诉后上诉、Shopify 代理专属结账通道等增量事实此前未见于本报</div>
-            <div class="tags-row"><span class="tag">AI 代理</span><span class="tag">agentic web</span><span class="tag">互联网生态</span></div>
-            <div class="links-row"><a class="ext-link" href="https://www.technologyreview.com/2026/10/19/1147186/making-the-internet-better-for-ai-agents-might-make-it-worse-for-everyone-else/" target="_blank" rel="noopener">Source <span class="domain">www.technologyreview.com</span></a>
-<a class="ext-link" href="raw-fbbcdbe57add" target="_blank" rel="noopener">Coverage</a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Yelp 自家消费端语音代理首次上线，与上周封锁第三方代理的报道成对照</div>
+            <div class="tags-row"><span class="tag">AI 语音代理</span><span class="tag">Yelp</span></div>
+            <div class="links-row"><a class="ext-link" href="https://techcrunch.com/2026/10/20/yelp-can-now-call-on-your-behalf-to-check-wait-times-at-a-restaurant/" target="_blank" rel="noopener">Source <span class="domain">techcrunch.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">State of Agentic Traffic - April 2026: Agentic browsers generate nearly three-quarters of agentic traffic</div>
-                        <div class="source-url"><a href="https://www.humansecurity.com/learn/blog/state-of-agentic-traffic-april-26" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Yelp’s New AI Assistant Can Call Restaurants, Book Tables and Check Wait Times | ChatAI</div>
+                        <div class="source-url"><a href="https://www.chatai.com/posts/yelp-s-new-ai-assistant-can-call-restaurants-book-tables-and-check-wait-times" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1269,8 +1366,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Agentic AI Summit 2026</div>
-                        <div class="source-url"><a href="https://rdi.berkeley.edu/events/agentic-ai-summit" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Yelp Adds OpenTable Reservations in 30+ Product Updates | YELP Stock News</div>
+                        <div class="source-url"><a href="https://www.stocktitan.net/news/YELP/yelp-announces-more-personalized-yelp-assistant-agent-that-checks-8vaotu8swpix.html" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1280,30 +1377,19 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">We Need Better Infrastructure to Govern AI Agents | AI Frontiers</div>
-                        <div class="source-url"><a href="https://ai-frontiers.org/articles/we-need-better-infrastructure-to-govern-ai-agents" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
+                        <div class="source-title">Yelp’s AI Assistant Can Call a Restaurant and Join the Waitlist for You - CNET</div>
+                        <div class="source-url"><a href="https://www.cnet.com/tech/services-and-software/yelps-ai-assistant-can-call-a-restaurant-and-join-the-waitlist-for-you" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
+                        <span class="badge newness">时效性</span>
                         <span class="badge secondary">二手转载</span>
                     </div>
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Infrastructure for AI Agents</div>
-                        <div class="source-url"><a href="https://arxiv.org/html/2501.10114v1" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">The Internet of Physical AI Agents: Interoperability, Longevity, and the Cost of Getting It Wrong</div>
-                        <div class="source-url"><a href="https://arxiv.org/html/2603.15900v1" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Yelp Assistant Review: Features, Availability & Limits</div>
+                        <div class="source-url"><a href="https://www.therundown.ai/tools/yelp-ai-assistant" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1321,15 +1407,15 @@ body {
             <div class="radar-card">
                 <div class="radar-rank">#1</div>
                 <div class="radar-info">
-                    <div class="radar-title"><a href="https://news.ycombinator.com/item?id=50154060" target="_blank" rel="noopener">AI 实验室在三个城市免费修水管和暖气，用真实家庭训练机器人</a> <span class="radar-category">community</span></div>
-                    <div class="radar-blurb">拿免费上门维修换真实场景数据，具身智能的训练数据收集从实验室走进了居民家里</div>
+                    <div class="radar-title"><a href="https://techcrunch.com/2026/10/20/anthropics-cloud-partnerships-are-getting-messy/" target="_blank" rel="noopener">Anthropic 与云厂商的算力合作趋于紧张</a> <span class="radar-category">tools</span></div>
+                    <div class="radar-blurb">TechCrunch 称云厂商越来越把 Anthropic 当竞争对手,算力谈判变难,基础设施开支又在计划中的 11 月 IPO 前膨胀;纯商业动态无技术细节,观察是否波及模型供给。</div>
                 </div>
             </div>
             <div class="radar-card">
                 <div class="radar-rank">#2</div>
                 <div class="radar-info">
-                    <div class="radar-title"><a href="https://news.ycombinator.com/item?id=50156189" target="_blank" rel="noopener">美国下令各民用机构拆除 DeepSeek，连基于它的工具也不放过</a> <span class="radar-category">community</span></div>
-                    <div class="radar-blurb">禁令范围从联邦层延伸到整个民用体系，开源模型的供应链政治风险继续升级</div>
+                    <div class="radar-title"><a href="https://github.com/shiyu-coder/Kronos" target="_blank" rel="noopener">金融 K 线基础模型 Kronos 再上趋势榜</a> <span class="radar-category">tools</span></div>
+                    <div class="radar-blurb">4 万 star 的金融市场基础模型,仓库最近一次代码更新停在 4 月,本次上榜无新版本信号,且偏离代理与编码主线,只做观察。</div>
                 </div>
             </div>
         </section>
@@ -1339,8 +1425,8 @@ body {
 
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
-    <div class="stats">18 源<span>|</span>134 条<span>|</span>9 条精选<span>|</span>17 条候选</div>
-    <div class="generated">生成于 2026-10-20T07:57:33.157152</div>
+    <div class="stats">21 源<span>|</span>152 条<span>|</span>10 条精选<span>|</span>17 条候选</div>
+    <div class="generated">生成于 2026-10-21T11:12:37.375601</div>
 </footer>
 
 </div>
