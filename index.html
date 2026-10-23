@@ -1,10 +1,10 @@
-<!-- ai-daily-final-sha256:48f4f8f671df7aac243e694e44708b8113f7be5b0658a1bba36c56d99ccb1396 -->
+<!-- ai-daily-final-sha256:2222cd5dd6132fa5178403fce1245cf6776650207f7c5df1d3a7bada47bf1326 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 | 2026-10-22 — AI 内容机会日报</title>
+<title>AI 日报 | 2026-10-23 — AI 内容机会日报</title>
 <style>
 /* ═══════════ CSS Reset & Base ═══════════ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
@@ -719,42 +719,280 @@ body {
 
 <!-- ═══════ HEADER ═══════ -->
 <header class="header">
-    <h1>AI 日报 | 2026-10-22</h1>
+    <h1>AI 日报 | 2026-10-23</h1>
     <div class="subtitle">AI 内容机会日报</div>
     <div class="divider"></div>
-    <div class="meta-line">2026-10-22<span>|</span>由 <strong>local-memory-agent</strong> 生成</div>
+    <div class="meta-line">2026-10-23<span>|</span>由 <strong>local-chief-editor</strong> 生成</div>
     <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
       <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
     </div>
-    <div class="trend-callout">编码智能体的竞赛从模型层外溢：Anthropic 把智能体做成面向小企业的产品，OpenAI 的模型进了 Google 的云，Vercel 与 GitHub 在为 agent 规模的流量重造基础设施，研究界开始连 harness 一起训练，连模型本身都由 AI 研究系统参与构建。</div>
+    <div class="trend-callout">智能体基础设施集中落地的一天：OpenAI 把决策接口推向正式版并开源官方 CLI，Anthropic 把 Claude 装进 Google 办公三件套、把技能标准捐给中立基金会，1Password 与 NVIDIA 补上登录与沙箱两块安全拼图，资本端 DeepSeek 完成 150 亿美元融资</div>
 </header>
 
 <!-- ═══════ TOP ARTICLES ═══════ -->
 <section class="articles-section">
     <div class="section-label">今日最值得关注</div>
-    <div class="article-card" data-id="raw-0d8d03379584">
-            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">tools</span><span class="score-tag">评分 9.7/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://www.theverge.com/ai-artificial-intelligence/1015843/anthropic-claude-duet-ai-agent" target="_blank" rel="noopener">Anthropic 发布个人智能体 Claude Duet，每天替你盯应用，花钱前先问你</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Anthropic 发布了新产品 Claude Duet，一个替人打理日常事务的 AI 智能体，定位专业人士和小企业主，对标 Meta 的 Muse 和 OpenAI 的 Dots。它以研究预览形式推出，有 iOS 和 Android 独立应用，也能从网页版 Claude 进入，底层模型是 Claude Opus 5.5。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Meta、OpenAI、Anthropic 三家头部公司同时在做的就是这类替人盯事务、干活的独立产品，AI 助手的形态在从聊天问答转向主动服务。Claude Duet 拿出的差异点是审批制，付款和删除这类动作先经用户同意，外加一套拦住信用卡号等最敏感信息的专用分类器。不过它还是研究预览，官方自己承认能力有短板，走的是先小范围试再说的路线。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>The Verge 与 VentureBeat 两家媒体同步报导了 Anthropic 的新动作。这家公司刚刚推出名为 Claude Duet 的新产品，直接对标 Meta 的 Muse 和 OpenAI 的 Dots。三者做的是同一类东西，替用户打理日常事务的 AI 智能体。</p>
-<p>Claude Duet 面向专业人士和小企业主，以「研究预览」的形式推出。研究预览指官方明说的早期测试版，先放给一部分人用，边用边改。它有 iOS 和 Android 上的独立应用，也能从网页版 Claude 进入，底层基于 Claude Opus 5.5。</p>
-<p>它的一天是这样运转的。每天早晨，Duet 发来一份简短简报，汇总各个已连接应用里最重要的事项。白天它持续盯着这些应用，只在确实需要用户出面时才发消息。任务也可以直接交给它，小到安排会议，大到用几十个工具搭仪表盘、做财务或销售预测，原型设计和网页应用开发也接。</p>
-<p>为了干活，Duet 继承了 Claude 已有的记忆、技能和已连接应用，还配了一台带浏览器的虚拟机。虚拟机可以理解成电脑里另开的一台电脑，Duet 在里面打开网页、执行操作，把活干完。碰到付款、删除这类重大动作，它会先发消息请用户确认，点了同意才动手。因为它经手的信息可能相当敏感，Anthropic 为它配了专用分类器和安全系统提示词，专门拦截要求分享信用卡号这类最严格级别信息的请求。</p>
-<p>Anthropic 自己也承认产品还早。官方的说法是它「仍可能误读一条消息线程，或对什么算紧急判断失准」，订票这类个人跑腿事务也「没那么强」。</p>
-<p>想尝鲜的用户现在可以加入候补名单，条件是美国地区的 Pro 或 Max 订阅用户。</p></div></details>
+    <div class="article-card" data-id="raw-779cc50e4b9b">
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">industry</span><span class="score-tag">评分 9.2/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://techcrunch.com/2026/10/22/deepseek-reportedly-raises-15b-days-after-us-restrictions/" target="_blank" rel="noopener">美国移除令两天后，DeepSeek 据报道融资约 150 亿美元</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>据 TechCrunch 10 月 22 日转述的彭博社报道，DeepSeek 已完成约 150 亿美元（约合 1000 亿元人民币）融资，是中国规模最大的融资轮之一。消息出现在美国政府下令联邦民用机构因安全考虑移除 DeepSeek 技术仅两天之后。报道称潜在投资方包括电池厂商宁德时代（CATL）、腾讯等。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>美方移除令在前，创纪录融资在后，中间只隔两天。据报道，新资金将投入 AI 基础设施与开源模型，覆盖国内外市场，其扩张可能进一步加剧国内同行之间的竞争。放在行业里看，Kimi 开发方 Moonshot AI 5 月融资 20 亿美元，Manus AI 本月融资超 5 亿美元，150 亿美元也让这一轮成为中国大模型公司里规模最大的融资之一，此前 6 月它刚完成超 70 亿美元轮，7 月还传出最早明年在国内上市的计划。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>据 TechCrunch 10 月 22 日报道，彭博社消息称，DeepSeek 已完成约 150 亿美元（约合 1000 亿元人民币）融资，规模位居中国最大融资轮之列。消息落点在美国政府下令联邦民用机构出于安全考虑移除 DeepSeek 技术仅两天之后，一边是华盛顿的移除令，一边是创纪录的支票，两件事几乎撞在同一个星期。</p>
+<p><img alt="DeepSeek 手机应用图标" src="https://techcrunch.com/wp-content/uploads/2025/01/deepseek-2.jpg" /></p>
+<p>报道称，本轮潜在投资方包括中国电池厂商宁德时代（CATL）、腾讯等，腾讯是微信背后的公司。</p>
+<p>融资节奏本身就能说明分量。今年 6 月，DeepSeek 刚完成超 70 亿美元融资，估值 500 亿美元；7 月又有报道称它寻求按约 710 亿美元的估值追加 15 亿美元，并计划最早明年在国内上市。到了 10 月，单轮数字直接来到 150 亿美元。</p>
+<p>公司底子方面，DeepSeek 总部位于杭州，2023 年由梁文锋创立，他此前联合创立的量化对冲基金 High-Flyer 出资支持了早期发展。2025 年初，这家公司凭免费使用的开放权重 R1 推理模型（模型文件公开可下载）获得全球关注。据 WireScreen 分析的公司股权数据，前轮融资之后，梁文锋仍持有其中国运营实体约 81.6% 的股份。</p>
+<p>据报道，新资金将支撑它继续加大 AI 基础设施与开源模型的投入，同时服务国内外市场，其扩张可能进一步加剧国内同行之间的竞争。资本对中国 AI 公司的热情有对照，Kimi 开发方 Moonshot AI 5 月融资 20 亿美元（估值 200 亿美元），Manus AI 本月早些时候融资超 5 亿美元，1 月先后在港上市的智谱（Z.ai）与 MiniMax 目前市值分别约 290 亿美元与 72 亿美元。</p>
+<p>截至发稿，DeepSeek 未回应 TechCrunch 的置评请求，本轮融资的细节仍以彭博的报道口径为准。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Claude Duet 是全新智能体产品的首次发布，历史日报与语义库均未出现过相关报导</div>
-            <div class="tags-row"><span class="tag">AI智能体</span><span class="tag">Anthropic</span><span class="tag">产品发布</span></div>
-            <div class="links-row"><a class="ext-link" href="https://www.theverge.com/ai-artificial-intelligence/1015843/anthropic-claude-duet-ai-agent" target="_blank" rel="noopener">Source <span class="domain">www.theverge.com</span></a>
-<a class="ext-link" href="https://theverge.com/ai/claude-duet" target="_blank" rel="noopener">Coverage <span class="domain">theverge.com</span></a>
-<a class="ext-link" href="https://venturebeat.com/ai/claude-duet-anthropic" target="_blank" rel="noopener">Coverage <span class="domain">venturebeat.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>2026 年 10 月 22 日的突发融资新闻，历史日报查重未出现同事件。新增量包括约 150 亿美元融资额、宁德时代与腾讯等潜在投资方、与美方联邦移除令仅隔两天的时间关联，以及对照 6 月超 70 亿美元轮、7 月约 710 亿美元估值传闻的融资轨迹。</div>
+            <div class="tags-row"><span class="tag">DeepSeek</span><span class="tag">融资</span><span class="tag">中国AI</span></div>
+            <div class="links-row"><a class="ext-link" href="https://techcrunch.com/2026/10/22/deepseek-reportedly-raises-15b-days-after-us-restrictions/" target="_blank" rel="noopener">Source <span class="domain">techcrunch.com</span></a>
+<a class="ext-link" href="https://techcrunch.com/deepseek-raises-15b" target="_blank" rel="noopener">Coverage <span class="domain">techcrunch.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Claude Duet is Anthropic's proactive AI agent</div>
-                        <div class="source-url"><a href="https://9to5google.com/2026/10/21/claude-duet-anthropic-ai-agent-waitlist" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">CATL and Tencent back Deepseek's ballooning funding round as the AI startup eyes a 2027 IPO</div>
+                        <div class="source-url"><a href="https://the-decoder.com/catl-and-tencent-back-deepseeks-ballooning-funding-round-as-the-ai-startup-eyes-a-2027-ipo" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">DeepSeek raising $12 billion ahead of 2027 IPO</div>
+                        <div class="source-url"><a href="https://qz.com/deepseek-funding-round-tencent-catl-ipo-100626" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">DeepSeek nears $15 billion funding round backed by Tencent, CATL - Chinadaily.com.cn</div>
+                        <div class="source-url"><a href="https://www.chinadaily.com.cn/a/202610/22/WS6ad9b00ee4b06d4aa0564374.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">US orders DeepSeek removed from federal systems, citing national security risks | South China Morning Post</div>
+                        <div class="source-url"><a href="https://www.scmp.com/news/us/article/3371431/us-orders-deepseek-removed-federal-systems-citing-national-security-risks" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">House investigation into DeepSeek teases out funding, security realities around Chinese AI tool | CyberScoop</div>
+                        <div class="source-url"><a href="https://cyberscoop.com/deepseek-house-ccp-committee-report-national-security-data-risks" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-4baf690dfb57">
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">tools</span><span class="score-tag">评分 9.0/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://techcrunch.com/2026/10/22/microsofts-mustafa-suleyman-says-its-ai-outperforms-doctors-on-hard-cases-as-he-chases-medical-superintelligence/" target="_blank" rel="noopener">微软 AI 诊断研究登 Science，疑难病例 83% 对医生 36%</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>微软 AI 的多智能体诊断系统 MAI-DxO（简称 DxO）的评测研究周四发表于《Science》。它在《新英格兰医学杂志》疑难病例的模拟诊疗中诊断正确率 83%，是对照组的两倍多；以个人方式应诊、可查阅参考资料的全科医生和普通内科医生为 36%。系统协调多个 AI 智能体模拟医生小组问诊、开检查、辩论诊断，微软 AI 的 CEO Mustafa Suleyman 称这是迈向「医疗超级智能」的一步。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>微软借此加入 Google 和 OpenAI 的行列，宣称 AI 达到或超过医生水平，临床决策支持成了前沿实验室的新竞争面。后续动作密集，与梅奥诊所合训医疗基础模型计划明年发布，与波士顿 Beth Israel Deaconess 医疗中心启动号称同类最大的真实世界评估。成绩的读法要带着对照设计，对照组是单打独斗的全科与普通内科医生，现实中这类疑难病例多由专科医生或团队处理，未纳入对比；研究数据同时显示提升的主要部分来自更强的底层大模型，微软的编排层追加增益。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>微软 AI 的诊断系统在《Science》周四刊出的研究里交出了一份亮眼的模拟考成绩。在《新英格兰医学杂志》疑难病例的模拟诊疗中，这套名为 MAI-DxO（简称 DxO）的系统诊断正确率 83%，是对照组的两倍多；对照组的全科医生和普通内科医生以个人方式应诊、可查阅参考资料，正确率 36%。微软 AI 的 CEO Mustafa Suleyman 称这个结果是迈向「医疗超级智能」的一步。</p>
+<p>DxO 的核心动作是编排。它在底层大模型之上协调多个 AI 智能体，像一组医生那样分工，向患者问诊、开具检查、就诊断展开辩论。微软用 OpenAI、Google、Anthropic、Meta、DeepSeek 几家公司的模型做了测试，最好的成绩出在 OpenAI 的 GPT-5 和 GPT-5.5 上。</p>
+<p>对照怎么设的，原文写得明白。考题是《新英格兰医学杂志》的疑难会诊病例，难度出了名；参与对照的医生单兵作战。现实中这么复杂的病例通常交给专科医生或整个医生团队处理，他们没有进入对比。微软 AI 医疗健康副总裁 Dominic King 对 TechCrunch 表示，当下医疗行业最大的挑战是医疗专长的供需缺口不断扩大。</p>
+<p>研究自己给出的数据拆解，比 83% 对 36% 这个总分更能说明问题。GPT-5 单独用一个简短的基础提示词应诊，疑难病例正确率 78.9%，每例成本约 8400 美元；套上 DxO 后成本降约 3000 美元，正确率只多约 4 个百分点。急诊科病例上，GPT-5 裸用与配 DxO 在正确率和成本上几乎没有差别。换 2026 年 4 月发布的 GPT-5.5，疑难病例从 72% 提到接近 87%，成本略降；急诊科病例有无 DxO 都在 85% 上下，增益再次不见。较弱的模型从编排里拿到的好处更多，Gemini 2.5 Flash 单独应诊 46.4%，配上 DxO 接近 69%，但强弱模型之间的差距仍大过 DxO 带来的提升。</p>
+<p><img alt="DxO 在不同大模型上带来的疑难病例准确率提升" src="https://techcrunch.com/wp-content/uploads/2026/10/Screenshot-2026-10-22-at-1.48.09-PM.png" /></p>
+<p>TechCrunch 据此给出的读法是，研究自身数据显示准确率提升的大部分来自更强的底层大模型，微软的编排层是在其上追加增益。微软研究人员的回应是，模型接近理论上限后准确率增益自然会收窄，DxO 的价值在于同时优化正确率和成本。</p>
+<p>Suleyman 是 DeepMind 联合创始人，2024 年加入微软执掌 AI 部门，他给这条线排了时间表。微软与梅奥诊所合作训练医疗基础模型，计划明年发布；他预测 2027 年医疗记录领域会出现类似编程领域的突破，模型能对病历走向给出高精度预测，并预计未来 24 到 36 个月内医疗模型能力提升一个数量级。临床验证方面，微软与波士顿的 Beth Israel Deaconess 医疗中心启动真实世界评估，同意参与的患者照常接受诊疗，DxO 并行给出建议，微软和合作方把 AI 建议与人类医生的处置逐例对比，King 称这会是同类研究中规模最大的一次。本月 Google 刚与同一家医院在《柳叶刀》发表了对话式诊断 AI AMIE 的真实世界研究，几家公司挤在同一个门口。</p>
+<p>从模拟考场到病房还有距离。这套系统目前证明的只是模拟疑难病例上的成绩，真实世界评估刚刚起步，同日发布的「医疗超级智能」宣言也还停留在定义层面，指在全病程的医疗推理与协调上超过当前最强的人主导医疗体系。微软已经向临床医生售卖听写和放射工具，把 DxO 视作这块业务的延伸，Suleyman 的目标是未来几年做出业界第一的临床决策支持产品。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>MAI-DxO 系统此前已公开亮相，本次新增量是研究正式发表于《Science》、补充 GPT-5.5 对比数据、宣布与梅奥诊所合训医疗基础模型、启动 Beth Israel Deaconess 真实世界评估并发布医疗超级智能宣言；历史日报查重为未出现</div>
+            <div class="tags-row"><span class="tag">微软</span><span class="tag">AI 医疗</span><span class="tag">多智能体</span></div>
+            <div class="links-row"><a class="ext-link" href="https://techcrunch.com/2026/10/22/microsofts-mustafa-suleyman-says-its-ai-outperforms-doctors-on-hard-cases-as-he-chases-medical-superintelligence/" target="_blank" rel="noopener">Source <span class="domain">techcrunch.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">MAI-DxO: Microsoft's AI Medical Diagnostic Tool</div>
+                        <div class="source-url"><a href="https://www.fxmweb.com/insights/mai-dxo-microsofts-ai-medical-diagnostic-tool.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">PYMNTS | Microsoft Pushes Toward ‘Medical Superintelligence’ in Healt…</div>
+                        <div class="source-url"><a href="https://www.pymnts.com/news/artificial-intelligence/2026/microsoft-pushes-toward-medical-superintelligence-in-healthcare" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Wow...AI just beat doctors at diagnosing complex medical cases.</div>
+                        <div class="source-url"><a href="https://www.linkedin.com/posts/smith-alexander10_the-path-to-medical-superintelligence-activity-7346081451165057024-Fb-N" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Microsoft MAI-DxO: 85.5% Diagnostic AI Accuracy Guide - Sundeep Teki</div>
+                        <div class="source-url"><a href="https://www.sundeepteki.org/blog/medical-superintelligence-a-deep-dive-into-microsofts-diagnostic-ai" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">(PDF) Microsoft AI Diagnostic Orchestrator (MAI-DxO) Promises Cost Savings in Diagnosis -But at What Cost to the Medical Profession?</div>
+                        <div class="source-url"><a href="https://www.academia.edu/136863378/Microsoft_AI_Diagnostic_Orchestrator_MAI_DxO_Promises_Cost_Savings_in_Diagnosis_But_at_What_Cost_to_the_Medical_Profession" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-27825e300358">
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.9/10</span><span class="newness-tag">⬆️ 显著更新</span></div>
+            <h2><a href="https://openai.com/index/decisions-api" target="_blank" rel="noopener">Decisions API 从公测转正，OpenAI 把高频小判断做成独立生意</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>OpenAI 10 月 22 日在官方博客宣布 Decisions API 正式上线，距 10 月上旬的公开测试只隔十来天。这个接口处理应用和智能体运行中的海量小判断，输入文本、图像或原生 JSON，直接返回程序能用来做分支的结构化答案。正式版基于 GPT-6 Luna，官方口径是最多比走 Responses API 的同一模型快 10 倍，每百万输入 token 定价 0.10 美元。公测后新增了 GPT-Live 语音集成、prompt caching 和美欧推理驻留等能力。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>公测到正式版只用了约两周，新增项集中在数据驻留、缓存计费、实时语音这些生产环境刚需上，说明高频小判断已经能承接真实业务流量。计费上只收输入 token 费用，判断被拆成可独立计价的最小调用单元，大模型能力又有一块被单独包装成产品。对做智能体的团队，路由和分类这类环节多了个更快更便宜的标准件选择。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>OpenAI 在 10 月 22 日的官方博客里宣布 Decisions API 正式可用，当天 TechCrunch AI 跟进报道。这个接口处理的是应用和智能体在运行中数量最多的小判断，一条输入归到哪个类别，一个请求路由给谁，下一步执行哪个动作。单个判断很简单，规模化之后延迟和成本会一起堆高，Decisions API 把这类判断从完整的模型生成里拆出来，直接返回程序可以做分支的结构化答案。它在 10 月上旬刚进入公开测试，当时官方预告正式版数周内推出，十来天后兑现。</p>
+<p>正式版基于 GPT-6 Luna，走专用的 Decisions 端点。OpenAI 给出的速度说法是，处理答案范围有限的问题时，最多比通过 Responses API 调用 GPT-6 Luna 快 10 倍，输入支持文本、图像和结构化数据，定位在近实时决策。计费跟着这个定位走，每百万输入 token 收 0.10 美元，复用上下文命中缓存后降到 0.01 美元，输出侧不另收费，开发者只为喂进去的内容付钱。</p>
+<p>从公测到正式版，新增能力集中在生产与实时两个方向。GPT-Live 原生集成允许把决策配置挂到实时语音会话的 session.triggers 上，比如根据用户刚说的话给数字人挑一个表情，会话收到 decision.event 后驱动动画，客服语音代理也能在追问、转接、升级之间现场做选择。复用上下文的 prompt caching、美国与欧盟的推理驻留、原生 JSON 输入、问题指令里直接带图像陆续加入，单次请求的问题上限从公测时的 200 个翻倍到 400 个，亚洲多个区域还扩充了容量继续压延迟。</p>
+<p>用例方面，OpenAI 内部的 dots 团队用它缩短响应时间，个人财务团队拿它给交易描述分类，通讯团队按主题给媒体报道打分，判断一篇稿子在强化还是削弱关键叙事。外部客户包括 Datadog、Ramp、Sierra、Speak 和 Box，场景从 AI 成本归集到语言学习互动都有。Box 的做法有代表性，Box Extract 抽取商业文档内容，Decisions API 负责分类并把文档路由到下一个步骤。Box 产品管理平台与集成副总裁 Biswaroop Palit 介绍，在他们自己的评估里，30 个保险证书案例上路由选择快了约 5 倍，准确率与 Responses API 相同，低置信度案例自动转给人工审核。</p>
+<p>这些数字要分开看来源。最多快 10 倍是 OpenAI 的官方口径，约 5 倍提速与准确率持平出自 Box 的自有评估，样本只有 30 个案例，覆盖面有限。官方也建议开发者从应用里最常重复的决策入手，先在反映真实用法的数据上测试。正式版目前只搭配 GPT-6 Luna 一个模型，选型时要把单模型依赖算进考量。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>本报 10 月 10 日报道过 Decisions API 公测与三种答案类型，本次为 10 月 22 日正式版节点，新增 GPT-Live 原生集成、prompt caching、美欧推理驻留、原生 JSON 输入、问题上限翻倍到 400 等公测后增量，属同一产品线的显著更新而非重复报道。</div>
+            <div class="tags-row"><span class="tag">OpenAI</span><span class="tag">Decisions API</span><span class="tag">GPT-6 Luna</span><span class="tag">开发者工具</span></div>
+            <div class="links-row"><a class="ext-link" href="https://openai.com/index/decisions-api" target="_blank" rel="noopener">Source <span class="domain">openai.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenAI & ChatGPT Timeline: GPT Release Dates to GPT-6.1 (2026)</div>
+                        <div class="source-url"><a href="https://www.scriptbyai.com/timeline-of-chatgpt" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenAI Decisions API: GPT-6 Luna Typed Answers Fast</div>
+                        <div class="source-url"><a href="https://technoparticles.com/openai-decisions-api-gpt-6-luna" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenAI Decisions API explained: how it works and who it's for | eesel AI</div>
+                        <div class="source-url"><a href="https://www.eesel.ai/blog/openai-decisions-api" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">What Is the OpenAI Decisions API and How It Works - CometAPI</div>
+                        <div class="source-url"><a href="https://www.cometapi.com/what-is-the-openai-decisions-api" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenAI's Decisions API: The Missing Layer Between LLMs ...</div>
+                        <div class="source-url"><a href="https://inamdaraditya.medium.com/openais-decisions-api-the-missing-layer-between-llms-and-software-043271f02357" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-c9f26cef31b1">
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">community</span><span class="score-tag">评分 8.7/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50191507" target="_blank" rel="noopener">OpenAI 开源官方 CLI，终端直连 REST API</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>OpenAI 以 Apache 2.0 协议开源官方 CLI 工具 openai，仓库 openai/openai-cli 近日登上 HN 热榜，10 月 22 日讨论帖拿下 228 分，抓取时已有 1.0k stars、85 forks,commit 历史有 560 多个。工具定位是在终端与 shell 脚本中直接调用 OpenAI REST API，覆盖图像生成、文件上传下载、批处理提交与模型查询，无需编写应用程序。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>开发者此前调用 OpenAI API 主要靠 SDK、手拼 curl 和第三方 CLI，官方现在自己维护一个终端入口，与 Codex CLI 形成 agent harness 与低层 API 工具两条产品线。开发者入口之争多了一个官方选手，脚本自动化与运维场景有了官方支持的选项，密钥处理也比裸写 curl 更讲究。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>OpenAI 的官方命令行工具来了。名为 openai 的 CLI 以 Apache 2.0 协议开源在仓库 openai/openai-cli，近日出现在 HN 热榜，10 月 22 日的讨论帖拿下 228 分，抓取时仓库已有 1.0k stars、85 forks,commit 历史有 560 多个。它做的是一件朴素的事，让开发者在终端和 shell 脚本里直接调用 OpenAI REST API，生成图像、上传下载文件、提交批处理、查询模型列表，不必为此先写一个应用程序。仓库创建于今年 5 月，560 多个 commit 说明这条产品线已经开发了小半年，此番进入公众视野并非仓促上马。</p>
+<p>工具基于 OpenAI Go SDK 构建，命令结构沿用 API 资源命名，openai <resource> <subresource> <command> 一路映射到具体端点，旧的冒号分隔写法也继续兼容。图像生成默认把结果存到 ~/Downloads/gpt-images/ 并打印路径，文件可上传下载，批处理支持提交 JSONL 请求、等待完成、下载结果一条龙。</p>
+<p><img alt="OpenAI CLI 终端里的图像、文件、批处理与 JSON 输出命令" src="https://github.com/openai/openai-cli/raw/main/assets/openai-cli.png" /></p>
+<p>README 专门用一段说明它与 Codex CLI 的分工。想调用某个具体 API、想把 API 操作放进脚本时用 openai；想让编码智能体读改项目代码、执行命令、帮忙实现或调试变更时用 codex。认证支持 openai help setup 交互式引导，脚本场景走 OPENAI_API_KEY 环境变量，管理端点另设一把独立的 OPENAI_ADMIN_KEY，例如查询某一天的组织用量。输出默认是人类可读文本，可用 --format json/jsonl/raw/yaml 显式指定，--transform 配合 GJSON 语法直接提取字段，错误信息走 stderr，--format-error json 可以查看 API 错误详情。示例命令覆盖 gpt-5.5 模型与 /v1/responses 端点。</p>
+<p>安全设计上有两处细节值得留意。管道输入的 JSON 或 YAML 来自不可信来源时，设置 OPENAI_UNTRUSTED_STDIN=1 可以防止输入内容触发本地文件读取；README 同时提醒 --debug 日志与 API 错误详情可能包含敏感数据，分享前需要自行脱敏。仓库还写明 PR 仅限协作者提交，外部贡献走 GitHub issue。</p>
+<p>HN 讨论区里最热闹的是定位之争。nater5000 给出的区分得到不少人认同，codex 是 OpenAI 的 agent harness，把底层 API 抽象掉让智能体在机器上干活，openai-cli 暴露低层 REST 操作，写脚本、管账户时用它。也有人直接吐槽命名混乱，isodev 的疑问是 codex 难道不就是那个 openai cli，顺带把 chat 与 work 的产品线命名形容成 vibecoded。yipinwong 把火力对准文档，README 里没有 why 和 when，别人看着不 obvious 的地方不该被说成 obvious，这就是一份坏文档。「就是 curl 封装」的质疑同样在场，imdsm 的概括是 API wrapper，theanonymousone 回了一句 aka curl。赞成派给出的是实用性理由，mohsen1 类比 GitHub 的 gh 命令，认为比手拼 curl 好用得多，BikiniPrince 补充它还带 token 用量统计。</p>
+<p>安全讨论里最有价值的一条来自 gavinray 贴的对比。他把 openai responses create 与等价的 curl 命令并排摆出，td521534f12 随即指出第二种写法会把 API key 泄漏进操作系统进程树，密钥写在 curl 的命令行参数里，同机能看到进程列表的都读得到。CLI 从环境变量读取密钥，避开了这条泄漏路径，对写自动化脚本的场景是实打实的差别。</p>
+<p>官方下场把这个此前由第三方工具和野生 curl 脚本填充的位置收进官方版图。结合 560 多个 commit 的积累与不接受外部 PR 的姿态看，OpenAI 把它当成产品线在长期维护，社区可以围观、提 issue，代码走向仍握在官方手里。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>历史日报查重未出现同事件。OpenAI 首次推出名为 openai 的官方 REST API CLI 并以 Apache 2.0 协议开源（仓库 openai/openai-cli，版权标注 2026），新增量包括低层 API 的终端封装（图像、文件、批处理、管理端点）、GJSON 语法的 --transform 字段提取、OPENAI_UNTRUSTED_STDIN 安全开关、OPENAI_ADMIN_KEY 管理密钥分离，以及与 Codex CLI 的官方分工说明。首次开源公开的确切日期在原始证据中未见，可见的时间线锚点是 10 月 22 日的 HN 热帖与仓库累计 565 个 commit。</div>
+            <div class="tags-row"><span class="tag">OpenAI</span><span class="tag">开发者工具</span><span class="tag">开源 CLI</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50191507" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://github.com/openai/openai-cli" target="_blank" rel="noopener">Original article <span class="domain">github.com</span></a>
+<a class="ext-link" href="https://news.ycombinator.com/item?id=openai-cli" target="_blank" rel="noopener">Coverage <span class="domain">news.ycombinator.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenAI Just Open-Sourced Its Official CLI Tool 🤯 | by Greek Ai | CodeToDeploy | Medium</div>
+                        <div class="source-url"><a href="https://medium.com/codetodeploy/openai-just-open-sourced-its-official-cli-tool-81547bccb617" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">GitHub - openai/openai-cli: Official CLI for the OpenAI API · GitHub</div>
+                        <div class="source-url"><a href="https://github.com/openai/openai-cli" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -764,685 +1002,475 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">现象级AI应用爆发，开启智能体大航海时代</div>
-                        <div class="source-url"><a href="https://zhuanlan.zhihu.com/p/2020054613034836660" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Anthropic takes on Muse with Claude Duet, its new AI agent | The Verge</div>
-                        <div class="source-url"><a href="https://www.theverge.com/ai-artificial-intelligence/1015843/anthropic-claude-duet-ai-agent" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge media">媒体报道</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Anthropic preview of Claude Duet, personal AI agent take on Muse, Dots</div>
-                        <div class="source-url"><a href="https://www.cnbc.com/2026/10/21/anthropic-preview-of-claude-duet-personal-ai-agent-take-on-muse-dots.html" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Claude Duet: Anthropic Agent Takes on Muse [2026]</div>
-                        <div class="source-url"><a href="https://shattered.io/claude-duet-anthropic-ai-agent-opus-5-5-2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-a44413dccf00">
-            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">announcements</span><span class="score-tag">评分 9.3/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://www.marktechpost.com/2026/10/21/recursive-flint-local-coding-model/" target="_blank" rel="noopener">AI 研究系统参与建造的开源编程模型 Flint，笔记本可跑</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Recursive Superintelligence 于 10 月 21 日发布首个模型 Flint，一个总参数 39.8B、每 token 约激活 2.5B 的开源编程模型，权重以 Apache 2.0 许可证上架 Hugging Face，免费可下载。它能翻代码库、修 bug、实现功能、写测试，在 48GB 内存的 Mac 或 NVIDIA 显卡上本地运行，4-bit 权重约 23GB。公司称自动化研究系统 Eureka Machine 参与构建了几乎整个技术栈，TechCrunch 报道一支小团队四个月内从零完成开发。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这次发布把两件事推到台前。造模型的方式上，如果 Eureka Machine 这样的自动化研究系统能稳定产出架构、量化方案和专用内核，小团队就能用更少的人、更短的周期迭代模型，Recursive 把 Flint 称为递归自我改进的早期公开测试，公司预期每个新模型都会让 Eureka Machine 变成更好的研究员。使用侧，编程智能体对隐私和成本敏感，Flint 让代码留在本地、免按量计费；Meta 上周发布的 Muse Spark Open 要 816B 参数和至少 1TB 内存，Flint 把可用的本地编程模型门槛拉到一台高配笔记本。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 21 日，MarkTechPost 和 TechCrunch 同日报道了 Recursive Superintelligence 的第一个模型 Flint。这是一家去年成立的公司，CEO 是 Salesforce 前首席科学家 Richard Socher，今年 5 月走出隐身状态时融资 6.5 亿美元，估值 46.5 亿美元，投资方包括 GV、Nvidia 和 AMD Ventures。Flint 是开源权重的编程模型，已上架 Hugging Face，许可证为 Apache 2.0。</p>
-<p>它为编程智能体设计，能翻代码库、修 bug、实现功能、写测试，纯文本输入输出，支持 OpenAI 兼容的工具调用。运行门槛不算高，一台 48GB 内存的 Mac（M4 Pro、M5 Pro、M5 Max 都可以）或 48GB 显存的 NVIDIA 显卡就能带动，4-bit 量化版本（把权重数值精度压低，文件随之变小）约占 23GB 磁盘。代码从头到尾留在自己电脑上，断网也能干活；云服务按 token 计费的账单（token 是模型处理文本的最小单位，一个汉字约合 1 到 2 个 token），在这里一并省掉。</p>
-<p>它塞得进笔记本又跑得快，靠的是混合专家架构（MoE）。稠密模型每生成一个 token 都要动用全部参数，MoE 模型把参数拆成许多组专家，由路由器按当前输入挑几组来干活。Flint 总参数 39.8B，共 49 层，其中 47 层是 MoE 层，每层 256 个专家里每个 token 只激活 6 个，外加 1 个常驻的共享专家，任何时刻真正参与计算的只有约 2.5B。作为参照，Meta 上周为 Mac 发布的开源模型 Muse Spark Open 有 816B 参数、至少需要 1TB 内存，Flint 把这个门槛压到了一台高配笔记本上。</p>
-<p>成绩单要分开看，以下数字全部由 Recursive 自报。SWE-bench Verified（修复真实软件 bug 的基准）74.2%，IFEval（指令遵循测试）95.1%，LiveCodeBench v6 80.3%；终端任务基准 Terminal-Bench 2.1 只有 54.9%，同场竞技的稠密 Qwen 3.8 拿到 73.0%。官方把 Flint 放在 50B 以下 MoE 模型的首位，全场最强暂时还轮不到它。公司也承认它比大型付费编程助手需要更多引导，大任务要拆成小步来做。早期口碑不差，Wired 的 Will Knight 在一台 48GB 内存的 Mac 上用它做出了待办事项应用和一个网页调研工具，他的体验里更小的编程模型常出错或偏慢，Flint 每次都完成了他的编码请求。</p>
-<p>速度数字有两个口径，需要分开引用。Richard Socher 的发布推文称 MacBook Pro 上每秒输出 125 个 token 以上，64GB 的 NVIDIA RTX Spark 上超过 150。TechCrunch 报道的 Recursive 自测成绩是 M4 Pro 版 MacBook Pro 约 131 tokens/s，约为同一台机器上 Gemma 4、Nemotron 3.5 Lightning（58 到 69 tokens/s）的两倍。官方还称它比编码分数相近的 25 到 40B 稠密模型快 5 倍以上，以上均为短上下文场景的成绩。</p>
-<p>真正让行业留意的是造模型的方式。Recursive 称自动化研究系统 Eureka Machine 参与构建了几乎整个技术栈，覆盖预训练、后训练和推理；TechCrunch 报道，一支小团队四个月内从零把它造了出来。Eureka Machine 提想法、跑实验，按结果决定下一步试什么。它在 Flint 项目里交出的东西分量不轻。架构上，它从 35B 总参数、3B 激活的基线出发，搜索出 40B/2.5B 的配置。它还把通常保持高精度的输出层压到 4-bit，再让 16-bit 版本当老师做离线蒸馏把精度补回来，训练步数较量化感知训练基线近乎减半。内核方面，它为 M4、M5 芯片写了一个 Metal megakernel，把整个解码过程融合执行。TechCrunch 还提到，Recursive 称低比特训练让 Flint 缩小了 71%，质量几乎没有损失。</p>
-<p>AI 造 AI 正是 Recursive 押注的方向，也是这个行业争论最大的想法之一。有研究者担心会自我改进的 AI 脱离人类控制，现阶段 Recursive 的版本是一个有人监督的研究助理，公司没有说 Eureka Machine 究竟省了多少人力。OpenAI 上个月披露，到 8 月中旬，它的 AI 智能体每积累 3.1 个工作日的工作量，对应人类研究员 1 个工作日。Socher 对 Wired 表示，长期目标是让 Eureka Machine 实现完整的递归自我改进，人能监督全程，出问题随时叫停。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Recursive 首个模型于 2026-10-21 首次公开发布，历史查重 verdict 为未出现，无先前版本或重复报道。</div>
-            <div class="tags-row"><span class="tag">开源模型</span><span class="tag">MoE</span><span class="tag">编程智能体</span><span class="tag">AI造AI</span></div>
-            <div class="event-aggregation"><div class="event-head">事件聚合 · 2 个来源 · 已合并 1 条候选</div><div class="event-sources"><a class="event-source" href="https://www.marktechpost.com/2026/10/21/recursive-flint-local-coding-model/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Recursive Releases Flint, an Open-Weight 40B MoE Local Coding Model for Agents with 2.5B Active Params</span><span class="event-domain">www.marktechpost.com</span></a><a class="event-source" href="https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Recursive launches Flint, a laptop coding model it says was largely built by AI</span><span class="event-domain">techcrunch.com</span></a></div></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Recursive launches Flint, a fast open-weight coding model built to run locally</div>
-                        <div class="source-url"><a href="https://cryptobriefing.com/recursive-launches-flint-local-coding-model" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Recursive releases its first model, Flint: a 40B-total, 2.5B-active open-weights local coding model under Apache 2.0, running at 125+ tok/s on a MacBook — AICoder</div>
-                        <div class="source-url"><a href="https://aicoder.com/news/news-20261022-recursive-flint-40b-a2-5b-open-weights-local-coding-model" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Recursive releases Flint, an open-weight coding model for local use · Digg</div>
-                        <div class="source-url"><a href="https://digg.com/tech/kqx88z14" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Recursive says AI handled most development of its first coding model, Flint | Superpower Daily</div>
-                        <div class="source-url"><a href="https://superpowerdaily.com/posts/recursive-says-ai-handled-most-development-of-its-first-coding-model-flint" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Flint AI Coding Model Hits 89.7% on SWE-Bench [2026]</div>
-                        <div class="source-url"><a href="https://tech-insider.org/flint-ai-coding-model-swe-bench-2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-61f4d0141ff3">
-            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">announcements</span><span class="score-tag">评分 9.1/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://openai.com/index/openai-models-google-cloud" target="_blank" rel="noopener">OpenAI 模型上架谷歌云，老客户的云开支承诺可抵扣</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>OpenAI 官宣与谷歌云达成合作，把前沿模型和编程智能体 Codex 上架到谷歌云的模型商店 Model Garden，购买经 Google Cloud Marketplace 结算。已和谷歌云签有支出承诺的企业，买 OpenAI 模型的费用可以算进原有额度。正式商用（GA，指对所有客户开放使用）计划数周内推出，现阶段开放访问申请。公告没有给出具体模型名称和定价。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>OpenAI 和谷歌在模型层正面竞争，谷歌云却上架对手的模型，头部 AI 模型的分发正从独占渠道转向随处可买。企业不必为了用某家模型迁移云平台，在哪朵云上就能买哪家的模型。银行、医疗等数据管控严格的行业也多了条路径，模型跑在已有云体系内，权限和数据治理由谷歌云兜底，采用 AI 的阻力小了很多。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>OpenAI 发官方公告，宣布把自家前沿模型和编程智能体 Codex 放进谷歌云的模型商店 Model Garden。两家在 AI 上是最直接的对手，谷歌自己也做模型，如今对手的云成了 OpenAI 模型的货架。</p>
-<p>几个名词先解释一下。前沿模型指 OpenAI 当前能力最强的一批大模型，公告没有点名具体型号和价格。Model Garden 是谷歌云的模型商店，各家厂商把模型上架后，企业在自己已有的谷歌云账号里就能调用和计费。Codex 是 OpenAI 面向编程场景的智能体，用来接入企业的软件开发过程。</p>
-<p>这次合作最实际的变化在付款方式上。企业买云服务时常签支出承诺，为拿折扣向云厂商承诺一年消费某个金额，花不够也要照付。公告写明，OpenAI 模型经 Google Cloud Marketplace 结算，已签承诺的企业拿这笔额度就能抵扣。对采购的人来说，原有预算里多了一个能买的选项。</p>
-<p>受监管行业被单独点名。银行、医疗这类行业用 AI，最怕敏感数据的流向管不住。公告称这套组合配上谷歌云内置的访问控制和集中式数据治理，让数据管控严格的客户也敢把智能体任务跑上去。</p>
-<p>OpenAI 总裁 Greg Brockman 说：“这次合作是重要的一步，让我们最强的模型和 Codex 出现在客户已经在构建的地方，也给了客户更多使用前沿 AI 的选择，我们会一起把智能体生态做大。”谷歌云 CEO Thomas Kurian 的说法是，谷歌云要给客户足够宽的模型选择面，其中也包括 OpenAI 的模型，让每个任务都能配上合适的模型，质量更好，成本更低。</p>
-<p>公告还提到 OpenAI 模型即将进入谷歌的 Antigravity 与 Gemini Agent，企业能在谷歌自家产品里选 OpenAI 的模型干活。正式可用计划在数周内推出，眼下只能提交访问申请。公告结尾写明，微软仍是 OpenAI 的主要云合作伙伴。</p>
-<p>这句关于微软的话在 Hacker News 引来社区讨论。有用户怀疑它更像合同义务下的例行表态，也有人从企业客户分布的角度分析，OpenAI 借谷歌云能触达更多买家。这些均为社区讨论观点，公告本身没有给出更多背景。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>全新合作关系首次官宣，OpenAI 模型首次进入谷歌云生态，历史与语义查重均未出现相似报道。</div>
-            <div class="tags-row"><span class="tag">OpenAI</span><span class="tag">Google Cloud</span><span class="tag">模型分发</span></div>
-            <div class="event-aggregation"><div class="event-head">事件聚合 · 2 个来源 · 已合并 1 条候选</div><div class="event-sources"><a class="event-source" href="https://openai.com/index/openai-models-google-cloud" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">OpenAI models are coming to Google Cloud</span><span class="event-domain">openai.com</span></a><a class="event-source" href="https://openai.com/index/openai-models-google-cloud/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">OpenAI models are coming to Google Cloud</span><span class="event-domain">openai.com</span></a></div></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">PYMNTS | OpenAI Brings Its Frontier AI Models to Google Cloud</div>
-                        <div class="source-url"><a href="https://www.pymnts.com/news/artificial-intelligence/2026/openai-brings-its-frontier-ai-models-to-google-cloud" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">OpenAI Joins Google Cloud Model Garden [2026]</div>
-                        <div class="source-url"><a href="https://shattered.io/openai-joins-google-cloud-model-garden-2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">OpenAI models are coming to Google Cloud | OpenAI</div>
-                        <div class="source-url"><a href="https://openai.com/index/openai-models-google-cloud" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge official">官方</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">EXCLUSIVE: OpenAI taps Google in unprecedented cloud deal despite AI rivalry, sources say | Reuters</div>
-                        <div class="source-url"><a href="https://www.reuters.com/business/retail-consumer/openai-taps-google-unprecedented-cloud-deal-despite-ai-rivalry-sources-say-2025-06-10" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge media">媒体报道</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">OpenAI brings its frontier models to rival Google Cloud</div>
-                        <div class="source-url"><a href="https://www.facebook.com/axiosnews/posts/openai-brings-its-frontier-models-to-rival-google-cloud/1496408682349096" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-6ab7dc0ff5f5">
-            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">tools</span><span class="score-tag">评分 8.9/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://www.marktechpost.com/2026/10/21/vercel-durable-harness-crash-proof-coding-agents/" target="_blank" rel="noopener">Vercel 开源 durable-harness，编程智能体崩溃后从日志续跑</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Vercel 于 10 月 21 日开源了 npm 包 durable-harness，版本 0.0.x，许可证 Apache-2.0，用 TypeScript 写成。它给 Pi、OpenCode、fx、Claude Code、Codex 五种编程智能体外加一层持久化日志，让这些智能体在程序崩溃、超时或重新部署之后能读日志接着干，已经完成的调用不重跑、token 不重复计费。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>编程智能体正在从个人电脑搬进云端，一跑几小时的任务交给云函数执行，而云函数随时可能死掉，一次网络错误就可能让工作白做，带持久硬盘的虚拟机也记不清哪些调用已经完成。durable-harness 用一份日志记下每一步的意图和结果，把崩溃丢工变成换一个函数接着干。它在同类方案里的差异点是直接包装这五种现成的智能体框架，Temporal 加 OpenAI Agents SDK、Inngest AgentKit、Cloudflare Agents SDK 都没有披露对 Claude Code 和 Codex 的包装支持。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>让 AI 编程助手连续干几个小时的活，最怕碰到的事是程序中途崩掉，辛苦干的进度全没了。10 月 21 日，Vercel 开源了一个叫 durable-harness 的 npm 包，专门解决这个问题。装上它之后，Pi、OpenCode、fx、Claude Code、Codex 这五种编程智能体的每一步工作都会写进一份持久化日志，程序崩溃、超时或者重新部署之后，新接手的函数读一遍日志就能接着干，已经完成的部分不用重来。这个包目前是 0.0.x 实验版，许可证 Apache-2.0。</p>
-<p>这类智能体本来是为个人电脑设计的。它们把会话放在内存里，代码和历史记录就躺在本地硬盘上，中断之后恢复起来，一条提示就够。搬进云端后情况变了。云函数随时可能死掉，一次网络错误或一轮失败的调用就可能把工作丢掉，带持久硬盘的虚拟机也记不清哪些调用已经完成。Vercel 团队在原文里就点了这个痛点。</p>
-<p>durable-harness 的做法是给每一步记账。模型或工具的调用要跑之前，它先把意图写进日志，调用结束后再把结果补上，每一轮工作都由一条 Vercel Queues 消息背书。这份日志放在函数之外的地方，函数死掉它也不会丢。函数死掉之后，队列把这轮工作交给一个新函数，新函数读日志，分清哪些已经完成、哪些还没跑到，然后接着干。它的底座和 Vercel Workflow SDK 是同一套接口，存储、队列和数据流都包在一个接口后面。</p>
-<p>已经完成的调用直接从日志里读结果，模型用过的 token 不会重复计费。工具被分成两个重放等级。查询这类可以安全重跑的操作属于 safe 级，崩溃后允许再执行一遍；退款这类绝对不能重复的操作属于 never 级，系统绝不替它跑第二次，只会告诉模型这件事可能已经发生过。</p>
-<p>文件和命令的存放给三种选择。virtual() 把文件放进会话日志，配一个不联网的 bash 兼容 shell，大约能装 500 个文件；临时文件可以放内存里，每一轮结束自动清空；第三种是给会话配一个挂载了 Drive 的 Vercel Sandbox。模型自己挑的 shell 命令永远不会跑在函数的磁盘上。待办清单这类结构化文档也存在日志里，单个不能超过 64KB。智能体的会话记录文件同样会镜像进日志，Claude Code 的 transcript、Codex 的 rollout、OpenCode 的 event store 都在这份保护范围内。</p>
-<p>换运行环境不用改代码。同一份智能体代码既可以直接跑在 Vercel 平台上，会话在 Agent Runs 里能查，也能在本地拿文件直接跑、零配置；自托管则用 Postgres World 组件（5.0.4 及以上版本），环境要 Node.js 22 及以上，改 WORKFLOW_TARGET_WORLD 和 WORKFLOW_POSTGRES_URL 两个环境变量就能迁过去，Vercel 博客还提到了 MongoDB、Redis 和 Turso。</p>
-<p>这个方向上已经有几家在做。Temporal 配 OpenAI Agents SDK 的组合今年 3 月 23 日已经正式发布，Inngest AgentKit 和 Cloudflare Agents SDK 也在做类似的事。durable-harness 的差异点在于直接包装这五套现成的智能体框架，给它们外挂持久化能力。同时要看清它的成色。它还是 0.0.x 实验版，Vercel 没公布任何延迟或吞吐的基准测试，恢复效果也都是 Vercel 自己报告的。Claude Code 和 Codex 只能跑在 Vercel Sandbox 里，自托管也不例外，Pi 和 OpenCode 则可以直接跑在函数内。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>durable-harness 首次开源发布，历史日报与语义库均未出现匹配，历史查重结论为未出现。</div>
-            <div class="tags-row"><span class="tag">AI编程助手</span><span class="tag">Vercel</span><span class="tag">开源工具</span></div>
-            <div class="links-row"><a class="ext-link" href="https://www.marktechpost.com/2026/10/21/vercel-durable-harness-crash-proof-coding-agents/" target="_blank" rel="noopener">Source <span class="domain">www.marktechpost.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Vercel on X: "Introducing 𝚍𝚞𝚛𝚊𝚋𝚕𝚎-𝚑𝚊𝚛𝚗𝚎𝚜𝚜. Run Pi, OpenCode, Codex, Claude Code, eve, fx, or your own harness durably on Vercel. With 𝚍𝚞𝚛𝚊𝚋𝚕𝚎-𝚑𝚊𝚛𝚗𝚎𝚜𝚜, agents automatically resume work after failures and run for hours, days, or months. https://t.co/XkqmULA2ng" / X</div>
-                        <div class="source-url"><a href="https://x.com/vercel/status/2112653833382027729" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">What's New in Vercel AI SDK 7 (October 2026): Harnesses, Tool Search, Retries</div>
-                        <div class="source-url"><a href="https://www.developersdigest.tech/blog/vercel-ai-sdk-whats-new-2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Vercel Launches durable-harness - AI Engineering</div>
-                        <div class="source-url"><a href="https://ai-engineering-trend.medium.com/vercel-launches-durable-harness-auto-recovery-for-crashed-ai-agents-7ff249c6ab79" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Pi Harness v2 to Pi Durable: Crash Recovery | AgentsPulse</div>
-                        <div class="source-url"><a href="https://agentspulse.github.io/tutorials/pi-agent-harness-v2-crash-recovery" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-d52d49a590c7">
-            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.7/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://developers.googleblog.com/powering-the-agent-development-lifecycle-with-any-framework-from-adk-to-langchain-and-beyond/" target="_blank" rel="noopener">Google 开源智能体 CLI，ADK 到 LangChain 通吃</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Google 在开发者博客发布 Agents CLI Extension System，一套不挑框架的智能体开发工具链，智能体的构建、测试、部署走同一套命令行。ADK 是 Google 自家的智能体开发框架，LangChain 是开源社区流行的智能体开发框架，这套系统对两者以及自研框架一视同仁，随包附带三个官方扩展，整套代码开源在 GitHub。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>智能体开发此前每个框架配一套专属插件，换框架就要重写执行工具和部署脚本，选型像押注。Google 官方下场做框架无关的工具层，还特意用 LangChain 完整搭示例且全程不碰自家 ADK，等于公开承诺不搞框架绑定。若各家框架维护者按官方邀请接入，行业会多出一层公共工具链，开发者选框架时不必再赌生态。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Google 今天在开发者博客发文，推出 Agents CLI Extension System，一套不挑框架的智能体开发工具链。按官方说法，智能体的构建、测试、部署从此可以在任何框架、任何平台上走同一套工具。</p>
-<p>写过智能体的人大多碰到过这种麻烦。用 Google 自家的智能体开发框架 ADK（Agent Development Kit）搭好一套项目，换到开源社区流行的 LangChain（另一个主流智能体开发框架），脚手架、执行工具、部署脚本基本要照着重来一遍，因为各家插件互不通用。Google 这次的解法是把通用能力抽出来做成扩展，也就是可复用的功能组件，写一次就能接到任何框架上，再由统一的命令行界面负责编排。原文给的口号是写一次，随处运行。</p>
-<p><img alt="LangChain 智能体通过 Agents CLI 运行" src="https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/2_2.original.png" /></p>
-<p>官方随系统发布了三个扩展做示范。第一个是代码执行扩展，智能体靠它在沙箱里安全地跑 Python。第二个是文件系统浏览器，用它查看和修改项目文件。最后一个负责部署，一条命令就把产物打包好并部署成云端函数。</p>
-<p>示范项目挑得很有意思。Google 用 LangChain 完整搭了一个研究助手，能联网搜索，能执行代码分析数据，最后生成报告，全程不需要 ADK。分工也讲得明白，扩展负责执行，智能体专心推理。</p>
-<p><img alt="部署扩展的运行步骤" src="https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/4_1.original.png" /></p>
-<p>部署环节支持自定义策略。开发、预发布、生产三套环境可以分别定义运行时要求、环境变量和目标基础设施，底下共享同一份扩展代码，不必为每个环境单独维护脚本。</p>
-<p>上手门槛不高。Agents CLI 以 npm 包和 pip 包两种形式发布，装好后先跑 agents init 把项目骨架建起来，再用 agents add 添加扩展、agents config 改配置，最后 agents run 让智能体跑起来。整套系统开源托管在 GitHub。Google 同时向各家框架维护者发出邀请，希望他们接入这套扩展系统，让各自的用户拿到一致的工具链，同时不牺牲每个框架自身的能力。官方的姿态摆得足够开放，这套工具链最终能不能长成行业默认标准，要看 ADK 和 LangChain 之外的框架接不接招。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>历史日报查重为未出现，本次是 Agents CLI Extension System 首次公开发布的一手报道。</div>
-            <div class="tags-row"><span class="tag">智能体开发</span><span class="tag">Google</span><span class="tag">开源工具链</span></div>
-            <div class="links-row"><a class="ext-link" href="https://developers.googleblog.com/powering-the-agent-development-lifecycle-with-any-framework-from-adk-to-langchain-and-beyond/" target="_blank" rel="noopener">Source <span class="domain">developers.googleblog.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Powering the Agent Development Lifecycle with any framework, from ADK to LangChain and beyond - Google Developers Blog</div>
-                        <div class="source-url"><a href="https://developers.googleblog.com/powering-the-agent-development-lifecycle-with-any-framework-from-adk-to-langchain-and-beyond" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">LangChain vs Google ADK</div>
-                        <div class="source-url"><a href="https://metavert.io/compare/langchain-vs-google-adk" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Google ADK vs LangChain: The 2026 AI Agent Framework Showdown | by Reliable Data Engineering | Medium</div>
-                        <div class="source-url"><a href="https://medium.com/@reliabledataengineering/google-adk-vs-langchain-the-2026-ai-agent-framework-showdown-cecc25efc9d4" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-7104bc51c295">
-            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.5/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://huggingface.co/blog/nvidia/kumo-relational" target="_blank" rel="noopener">NVIDIA 开源 Kumo Relational，免训练预测数据库</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>NVIDIA 在 Hugging Face 官方博客宣布开源预训练关系数据基础模型 Kumo Relational，官方称它是第一个在常见关系型数据基准上超过监督学习的基础模型。接上企业数据库，用声明式的预测查询语言 PQL 写明要预测什么，模型自动收集最多 10000 条历史样本当上下文，单次前向传播就给出客户流失、需求、欺诈这类预测结果，任务专属训练和特征工程都省了，表也不用摊平。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>语言和图像领域已经被基础模型改写过一遍，一个通用大模型替代了过去每个任务一个小模型的打法。结构化数据一直没跟上，企业核心决策靠关系型数据库支撑，预测建模却还要数周特征工程和逐任务调管道。Kumo Relational 把一个新预测从立项项目缩成一条查询，以前嫌太费事做不起的场景，现在小团队也能碰。它同时面向 AI 智能体开放，智能体用 PQL 就能向数据库提预测性问题并据此行动，等于给会读会写的智能体补上了预判能力。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>企业最值钱的数据多半躺在关系型数据库里，用户表连着订单表，订单表连着商品表，记录随时间不断累积。以前想从这些表里做预测，比如客户会不会流失、下个月需求多少、这笔交易是不是欺诈，团队得先把多张表摊平成一张大表，工程师花几周设计特征，再训练调优一个专属模型。NVIDIA 今天在 Hugging Face 官方博客宣布开源 Kumo Relational，把这套流程缩成一条查询。</p>
-<p>它是一个预训练好的关系数据基础模型，直接接在数据库上，尊重原有的表、外键（表与表之间的连接字段）和时间戳结构。使用者用预测查询语言 PQL（一种声明式接口，写清要预测什么即可）发起问题，模型自动收集最多 10000 条历史样本当上下文，一次前向传播就算完，相当于模型跑一遍直接给答案，任务专属训练和特征工程都省了，表也不用摊平。模型内部三步走，先回放历史数据库状态自动构造上下文、防止数据泄漏，再用列注意力和行注意力交替理解每张表内部，最后靠基于主外键的图注意力跨表推理，把用户档案和交易记录串起来。因为跨表阶段只处理行嵌入，避开了平方级计算开销，自研图引擎靠内存映射 I/O 能撑住 5000 亿行以上的数据库，吞吐最高 5 GB/s。</p>
-<p><img alt="Kumo Relational 架构示意" src="https://cdn-uploads.huggingface.co/production/uploads/6ad8e88370f69967fafc8703/FY-lkWrNmBYRFrosRD2Le.png" /></p>
-<p>成绩单上三组数字各对各的对手。官方在 RelBench V1/V2、SAP SALT、4DBInfer 共 41 个任务、15 个数据库上评测，这些库都没在预训练里出现过，模型在分类和回归上都超过了最强监督模型，包括关系型深度学习模型和专家做特征工程的梯度提升树管道。在 RelBench V1 分类任务上，它平均比专家特征工程的梯度提升树高近 4 个 AUROC 点，AUROC 是分类质量指标，越高越好。在 SAP SALT 企业基准上，它开箱即比做过特征工程的 XGBoost 高 7 个 MRR 点，微调后差距扩大到 13 个点，MRR 是排序质量指标，衡量正确答案排得有多靠前。同样在 SAP SALT 上，它比 AutoGluon 大集成高 8% 的 MRR，微调后领先扩大到 16%，比近期的表格基础模型高约 25%。RelArena-α 排行榜上它开箱即处在精度与效率的 Pareto 前沿，同精度下没有更快的模型，同速度下没有更准的，与最高分条目精度相近时快约 430 倍。</p>
-<p><img alt="RelArena-α 排行榜，精度与推理耗时对比" src="https://cdn-uploads.huggingface.co/production/uploads/6ad8e88370f69967fafc8703/9ITlubGvqGVnoy7j_NZDi.png" /></p>
-<p>预训练数据全是合成的。真实企业数据库极少公开，NVIDIA 基于 PluRel（ICML 2026 论文，Kumo 团队成员参与撰写）生成模拟真实世界的关系库，按表结构、外键链接、随时间演变的列值分阶段构造，合成库加得越多训练损失降得越稳，这条幂律规律带来的收益能迁移到真实数据库。边界也写得明白，模型最适合表间有真实关联、数据带时间动态的场景；训练集特别大的任务上，任务专属的监督模型可能仍略胜，此时可以微调；预测信号要在有限跳数内可达，官方建议先从几张相关表的聚焦查询做起。</p>
-<p>获取方式上，代码以 Apache 2.0 许可开源在 structured-data-models 库，pip 即装，首次使用自动从 Hugging Face 下载权重，权重按 OpenMDW 1.1 许可发布，也可以作为 NVIDIA NIM 服务部署，官方给了 Databricks 上的端到端示例。论文编号 arXiv 2604.12596，文档同步公开。模型同时面向人和 AI 智能体，智能体用 PQL 就能对数据库提预测性问题。语言模型当年把一个个专属 NLP 小模型变成一次提问，同样的替代故事正在结构化数据上开场。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>权重、Apache 2.0 库、NIM 部署、arXiv 2604.12596 论文与 PluRel 预训练方法今日首次同步公开，历史查重未见同事件。</div>
-            <div class="tags-row"><span class="tag">基础模型</span><span class="tag">结构化数据</span><span class="tag">NVIDIA</span><span class="tag">开源</span></div>
-            <div class="links-row"><a class="ext-link" href="https://huggingface.co/blog/nvidia/kumo-relational" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a>
-<a class="ext-link" href="https://huggingface.co/blog" target="_blank" rel="noopener">Coverage <span class="domain">huggingface.co</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Kumo Relational Foundation Model (NIM) | NVIDIA NGC</div>
-                        <div class="source-url"><a href="https://catalog.ngc.nvidia.com/orgs/nim/nvidia/containers/kumo-relational/-" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">NVIDIA Kumo: The Relational Foundation Model for Structured Data | by DhanushKumar | Oct, 2026 | Medium</div>
-                        <div class="source-url"><a href="https://medium.com/@danushidk507/nvidia-kumo-the-relational-foundation-model-for-structured-data-3a4b69e39232" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Kumo Relational Model by NVIDIA | NVIDIA NIM</div>
-                        <div class="source-url"><a href="https://build.nvidia.com/nvidia/kumo-relational/modelcard" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">KumoRFM: A Relational Foundation Model | NVIDIA Kumo</div>
-                        <div class="source-url"><a href="https://docs.nvidia.com/sdgm/research/kumorfm-paper" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">KumoRFM vs XGBoost: Its 14-Point Win Beat Someone Else's Model | THE D*AI*LY BRIEF</div>
-                        <div class="source-url"><a href="https://www.beri.net/article/kumorfm-vs-xgboost-relational-foundation-model-relbench-licence-bake-off-2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-fba0001a3de7">
-            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.4/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization" target="_blank" rel="noopener">按成本挑 token，Dharma-AI 重构小模型词表，推理成本实测降 77%</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>10 月 21 日，Dharma-AI 团队在 Hugging Face 博客公开 VocabX 方法的预览结果。他们在自己生产环境中的葡萄牙语作文自动评分器（基于 Qwen3-4B 微调，输出 JSON 格式评分与评语）上重新设计词表，底座模型、训练数据和配方都不动，平均输出从 350 个 token 降到 101 个，实测推理成本降 77.0%，评分质量 bench score 从 0.703 升到 0.810，词表从 151,669 条裁到 64,767 条。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>推理成本优化通常盯着模型大小和量化，Dharma-AI 把注意力拉到词表这个训练开始前就定下的部件上。在他们测的场景里，模型写一个 token 的成本是读一个的 7.4 倍，压缩输出端的收益远大于压缩输入端，按成本加权挑 token 的思路给领域专用小模型指了一条新的省钱路。77% 出自单一生产系统的实测，其他场景需要先测自己的写读成本比再套用。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 21 日，Dharma-AI 团队在 Hugging Face 博客公开了 VocabX 方法的预览结果。他们在一个真实跑生产的葡萄牙语作文自动评分器上重新设计词表，底座模型、训练数据和配方都保持原样，实测推理成本降了 77.0%，评分质量反而从 0.703 升到 0.810。</p>
-<p>这套评分器基于 Qwen3-4B 微调，读入作文、题目和参考材料，输出一段 JSON 格式的评估，给每项能力附上等级和评语。问题出在词表上。语言模型不直接读字母，它读的是 token。可以把文本想象成一根香肠，tokenizer 就是切香肠的刀，刀法决定一根肠切成几段，每段就是一个 token，模型按 token 读文本，也一个一个 token 地写出回答。</p>
-<p>通用模型要应付各种语言和文体，Qwen3-4B 的刀法按大规模混合语料提前定死，词表有 151,669 条。一个只写葡萄牙语、只输出固定 JSON 格式的评分器背着这套刀法干活，浪费分两头。模型写得最勤的内容被切得碎，每次回复开头那段 JSON 信封要占 12 个 token；模型每写一个 token，还要给全部 15 万多个候选逐条算分，大量条目这个任务几乎永远用不上。</p>
-<p><img alt="同一句话的 token 对比，基础分词器 14 个，VocabX 4 个" src="https://cdn-uploads.huggingface.co/production/uploads/6a725daa5ca641a21ab61956/TYOhAFobnI4ss3UnNqMHc.png" /></p>
-<p>VocabX 换了挑 token 的尺子，按成本挑。团队先在生产系统里把账测清。模型读输入时整个网络一遍跑完，瓶颈在算力；写输出时一个 token 一个 token 地生成，显卡大部分时间在等数据从显存搬过来，瓶颈变成带宽。在他们测的这个评分器里，写一个 token 的成本是读一个的 7.4 倍。原文拿快递打比方，快递公司按箱收费，寄出的箱子比收进的贵七倍，压缩寄出的箱子比两头一起压划算得多。VocabX 就照这个价钱差定词表，输出端省下的 token 给足权重，同时把词表裁到 64,767 条。Qwen3-4B 里那块约占一成参数的输出层矩阵也随之瘦身，而它在生成每个 token 时都要整块读过。</p>
-<p>具体改造分两层。子词层重切领域词汇；多词层找出反复出现的长片段，把它们合成单个 macro token，五类自动挖掘器分别盯长词、整行、短语、整句和 JSON 标签这类结构，其中结构类贡献最大。每次回复都写的那段信封，从 12 个 token 变成 1 个。</p>
-<p><img alt="评分器每次回复都写的固定片段，从 12 个 token 变 1 个" src="https://cdn-uploads.huggingface.co/production/uploads/6a725daa5ca641a21ab61956/K5De-hfTaOl9vUJItSijj.png" /></p>
-<p>验证做得扎实。七个模型版本除了词表全部一致，底座、数据、训练配方和随机种子都相同，在同一台 RTX 5090 上用 vLLM 推理服务跑同样的 500 个请求，成本按实测运行时间计算。平均输出从 350 个 token 降到 101 个，成本降 77.0%，bench score 从 0.703 升到 0.810。团队还把方法拿到合同、医学论文、科学论文、新闻和 Python 代码五个公开领域，在 Qwen3、Llama-3.1、Gemma-3 三个模型家族上对比 FVT、MWT 和 in-place BPE 三个已有方法，十五种组合的压缩率和估算推理成本全部占先，合同场景 62.6% 对 61.8%，词表只要 113,426 条对 207,803 条。</p>
-<p>过程里交过一次学费。第一版词表把评分等级连同周边 JSON 熔成一个 macro token，最省 token，质量却掉到 0.689，比生产基线 0.703 还低。等级藏进大 token 后，每种等级加结构的组合都成了同一个 token 的变体，模型选结构和选分数挤在了同一步。给等级单独立 token，每个回复多花 2 个 token，质量升到 0.810，实测还更省，成本降幅 77.0% 对熔合版的 73.3%。模型赖以做决策的那几个 token，压缩时碰不得。</p>
-<p>两处边界要交代。论文标注 in preparation（2026），当前数字在正式发表前可能变动。77% 和 7.4 倍都出自葡语作文评分这一个生产系统的实测，比值随硬件、批大小和上下文长度变化，换场景要重测。团队自己也写明，VocabX 不让模型更聪明，它让模型不再为不需要写的内容逐片付费，不再为用不上的词表条目打分。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>VocabX 方法首次公开亮相，论文标注 in preparation，历史与语义查重均未匹配，77.0% 实测降幅等核心数字此前未披露。</div>
-            <div class="tags-row"><span class="tag">推理成本</span><span class="tag">tokenizer</span><span class="tag">小模型</span><span class="tag">VocabX</span></div>
-            <div class="links-row"><a class="ext-link" href="https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a>
-<a class="ext-link" href="https://huggingface.co/blog" target="_blank" rel="noopener">Coverage <span class="domain">huggingface.co</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">How Specializing SLM Vocabulary Cut Measured Inference ...</div>
-                        <div class="source-url"><a href="https://e-acc.ai/items/ytrk4oeej13v0uahcqxz529qi" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">How Specializing the Vocabulary of SLMs Can Cut...</div>
-                        <div class="source-url"><a href="https://daily.dev/posts/how-specializing-the-vocabulary-of-slms-can-cut-inference-cost-by-77-in-real-applications-a4vqrjdnh" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Tokenizer Training with Hugging Face - Interactive</div>
-                        <div class="source-url"><a href="https://mbrenndoerfer.com/writing/tokenizer-training-guide-huggingface-custom-nlp" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Stop Taking Tokenizers for Granted: They Are Core Design Decisions in Large Language Models</div>
-                        <div class="source-url"><a href="https://arxiv.org/html/2601.13260v1" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Tokenizer Optimization for Pre-Training</div>
-                        <div class="source-url"><a href="https://www.emergentmind.com/topics/tokenizer-optimization-for-pre-training" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-e70cbb7d4a9f">
-            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">research</span><span class="score-tag">评分 8.2/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://huggingface.co/papers/2610.28069" target="_blank" rel="noopener">腾讯让编程智能体连工具框架一起训练，最高提升12.6个点</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>腾讯团队 10 月 20 日在 arXiv 发布论文 2610.28069，提出训练方法 HarnessAdapt-RL。它把编程智能体的策略模型和 harness 放进同一个强化学习循环，一边训模型一边演化工具。9B 基座模型在 SWE-bench Verified、Multilingual、Pro 三个基准上，一次尝试通过任务的比例（pass@1）比 GRPO 基线分别高出 9.8、12.6、6.4 个百分点。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>实验显示训练产物从单个模型变成模型加演化工具的一对，部署时拆掉演化后的工具钩子最多损失 7.7 个百分点。这说明智能体的一部分能力长在工具框架里，做集成和选型的人以后要把模型和 harness 当整体评估，训练方法的设计也开始围绕这件事改变。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 20 日，腾讯团队在 arXiv 发布论文 2610.28069，提出名为 HarnessAdapt-RL 的训练方法，作者包括 Lingxiao Tang、Wei Tao、Yiwen Guo、Lingfeng Bao。这套方法把编程智能体的策略模型和它的 harness 放进同一个训练循环，模型在学，工具框架也在改。</p>
-<p>训练编程智能体通常只更新策略模型的参数，harness 保持固定。策略模型就是决定下一步调用哪个工具、怎么改代码的那个模型。可训练过程留下的轨迹会不断暴露问题，比如修 bug 的思路本身有缺陷，比如模型和工具之间反复出现配合不畅。这些问题随任务各不相同，也随模型的学习不断变化，固定的 harness 接不住。</p>
-<p>HarnessAdapt-RL 请两位教师分头处理。遇到有缺陷的修复策略，一个冻结的教师模型为当前任务生成机制级技能，相当于一份针对这个 bug 的修理笔记。面对跨任务反复出现的交互问题，另一个教师模型直接修改工具与钩子，每次改动只有在实测通过率或可训练率上升、且两项指标都不下降时才保留。策略模型带着改造后的 harness 继续训练，新产生的轨迹再指导下一轮改造，循环向前。</p>
-<p>在 9B 参数的基座模型上，SWE-bench Verified、Multilingual、Pro 三个真实修 bug 基准里，一次尝试就通过任务的比例（pass@1）比 GRPO 基线分别高出 9.8、12.6、6.4 个百分点。GRPO 是一种常用的强化学习算法，强化学习指让模型在任务里反复试错、按结果调整参数的训练方式。同一组实验里，新方法也超过了 GRPO 搭配人类设计的 OpenHands harness 的组合。论文只在 9B 规模上做了实验，更大的模型能否同样受益，文中没有验证。</p>
-<p>拆解实验给出两条关键结论。机制级技能在评估阶段拿掉，涨上去的收益依然在，看起来训练教的修复本事留在了模型里。演化后的工具与钩子则拆不得，部署时移除最多损失 7.7 个百分点，而且工具钩子随策略变化持续重新演化，效果好过沿用早期冻结的版本。这份训练最终交付的，是训练后的策略模型配上演化出来的工具与钩子，技能在部署时移除。评估编程智能体时，模型和它的 harness 要当成一个整体来看。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>10 月 20 日刚发布的一手论文，历史日报与语义库均无匹配。</div>
-            <div class="tags-row"><span class="tag">强化学习</span><span class="tag">编程智能体</span><span class="tag">腾讯</span></div>
-            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2610.28069" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a>
-<a class="ext-link" href="https://huggingface.co/papers" target="_blank" rel="noopener">Coverage <span class="domain">huggingface.co</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Paper page - Training the Whole Agent, Not Just the Model</div>
-                        <div class="source-url"><a href="https://huggingface.co/papers/2610.28069" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge official">官方</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Training the Whole Agent, Not Just the Model</div>
-                        <div class="source-url"><a href="https://arxiv.org/html/2610.28069" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Co-Harness: Co-Evolving Harnesses and Model Weights for LLM Agents</div>
-                        <div class="source-url"><a href="https://arxiv.org/html/2607.22688v1" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">HELIX: Model–Harness Co-evolution for Recursive Self-Improvement</div>
-                        <div class="source-url"><a href="https://arxiv.org/html/2608.13951v1" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Co-Harness: Co-Evolving Harnesses and Model for Agents</div>
-                        <div class="source-url"><a href="https://openreview.net/forum?id=qDC8LmkpSR&referrer=%5Bthe+profile+of+Luan+Zhang%5D%28%2Fprofile%3Fid%3D~Luan_Zhang3%29" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-d345d7957a6f">
-            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">tools</span><span class="score-tag">评分 8.0/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://github.blog/engineering/architecture-optimization/the-bridge-to-agent-scale-git-infrastructure/" target="_blank" rel="noopener">GitHub 为智能体改造 Git 存储，最忙仓库吞吐提升 3 倍多</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>GitHub 10 月 21 日在工程博客披露，它把 Git 写入的串行化范围从整个仓库缩小到单个引用，引用是 Git 里分支、标签这类指向提交的指针。旧机制下每次写入锁住整个仓库；新机制下，往不同分支推送的写入互不排队。内部测试里，不同引用的写入吞吐提升 3 到 4 倍。这套改动让平台上最后 0.00001% 最繁忙的仓库也能迁入 Azure。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>AI 编程智能体让 Git 写入量指数级增长，GitHub 自有数据中心的电力容量又有硬上限，写入吞吐成了整个平台的瓶颈。这次粒度调整直接抬高单个仓库的写入上限，也解释了为什么代码托管这种最底层的服务要为智能体时代重造。Git 操作是 GitHub 的 Tier 0 服务，几乎所有功能都依赖仓库数据，改动必须在不停机的前提下小步推进。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>GitHub 10 月 21 日在工程博客披露 Git 存储改造进展。平台上 99.99999% 的仓库已同时存放在自有数据中心和微软 Azure 两处，2025 年 8 月第一份副本落地 Azure，多数仓库 5 个副本中已有 2 个在 Azure，约一半 Git 流量由 Azure 承接。</p>
-<p>剩下 0.00001% 是最忙的一批仓库，卡在跨区域 25 毫秒的网络往返上。旧架构里，管理副本的 Spokes 系统每次写入都锁住整个仓库，还要等所有健康副本回应，最慢副本拖慢全部写入，最忙仓库扛不住。GitHub 把串行化的范围从整个仓库缩小到单个引用，引用是 Git 里分支、标签这类指向提交的指针。智能体和开发者各推各的分支，互不排队，同时写入。内部测试显示，不同引用的写入吞吐提升 3 到 4 倍，延迟更低。</p>
-<p>推动这场改造的是智能体流量的指数级增长和自有数据中心电力容量的硬上限。Git 操作是 Tier 0 级核心服务，全站功能几乎都依赖仓库数据，团队先搬数据，落定后再改架构。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Azure 双活迁移 2025 年 8 月启动属背景，本次增量是 per-reference quorum 串行化、内部测试不同引用写入吞吐提升 3 到 4 倍等架构细节首次公开</div>
-            <div class="tags-row"><span class="tag">GitHub</span><span class="tag">Git</span><span class="tag">基础设施</span></div>
-            <div class="links-row"><a class="ext-link" href="https://github.blog/engineering/architecture-optimization/the-bridge-to-agent-scale-git-infrastructure/" target="_blank" rel="noopener">Source <span class="domain">github.blog</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">GitHub Rebuilds Git for Agent-Scale Dev, Hits 35x Write ...</div>
-                        <div class="source-url"><a href="https://www.besthub.dev/articles/github-rebuilds-git-for-agent-scale-dev-hits-35x-write-throughput-f8f9572b64e2" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Coding Agents Broke Git’s Scaling Math. GitHub Is Rebuilding ...</div>
-                        <div class="source-url"><a href="https://devops.com/coding-agents-broke-gits-scaling-math-github-is-rebuilding-to-keep-up" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">GitHub and Azure Migration</div>
-                        <div class="source-url"><a href="https://about.gitlab.com/compare/gitlab-vs-github/github-azure-migration" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">GitHub on X: "As traffic grew exponentially, we moved 99.99999% of GitHub's Git repos to Azure. A new write path moves the last, busiest repos, keeps cross-region round trips from capping throughput, and enables stateless Azure Blob Storage replicas. https://t.co/arMfnIfx0o" / X</div>
-                        <div class="source-url"><a href="https://x.com/github/status/2112979782652813783" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">GitHub shifts Git writes to individual references for Azure ...</div>
-                        <div class="source-url"><a href="https://news.lavx.hu/article/github-shifts-git-writes-to-individual-references-for-azure-expansion" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-fa8e2a03bb44">
-            <div class="article-meta"><span class="rank-badge ">#10</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.9/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://simonwillison.net/2026/Oct/21/php-security-release/" target="_blank" rel="noopener">PHP 全线修复两个远程代码执行漏洞，利用代码已在网上流传</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>10 月 21 日，PHP 给整个 8.x 系列发布安全更新，修复两个远程代码执行漏洞，实际危险评分 9.2（泄露信息误传为满分 10.0）。利用代码前一天晚间已在网上流传，源头是协调披露流程走漏了消息，跑 PHP 的服务需要立即升级。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Drupal 和 WordPress 先后被验证，攻击者不登录就能利用漏洞，用这两个框架搭的网站最先暴露在风险里。补丁发布前一晚利用代码已在流传，留给管理员的反应时间不足一天，PHP 项目为此把发布提前了一整天。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 21 日，PHP 给整个 8.x 系列发布安全更新，修复两个远程代码执行漏洞。这类漏洞让陌生人隔着网络在你服务器上运行任意代码，跑 PHP 的服务都该立刻升级。实际危险评分 9.2，泄露信息误传为满分 10.0。</p>
-<p>利用代码 10 月 20 日晚间就开始流传。按 PHP Foundation 的声明，当天 15:00 UTC 前后两个 CVE 编号在论坛与社交媒体流传，附带错误的发布时间。PHP 项目 19:30 UTC 提前发出预公告，把发布从 10 月 22 日提前到 10 月 21 日 14:00 UTC。傍晚，曾报告漏洞的安全公司 Calif 误发概念验证视频，删除后副本继续传开，利用代码随之加速扩散。</p>
-<p>漏洞由 Wiz Research 8 月 19 日发现，工具组合是 Wiz Atlas、Gemini 4 Argon 与 GPT-5.6 Sol。团队 8 月 20 日与 21 日先后确认 Drupal 和 WordPress 可被未登录利用，8 月 24 日报告 PHP 安全团队，9 月 21 日 PHP 确认并开始修复。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>补丁当日发布的零日级安全事件，修复版本 10 月 21 日上线当天即报道，此前未见同类报道</div>
-            <div class="tags-row"><span class="tag">安全</span><span class="tag">PHP</span></div>
-            <div class="links-row"><a class="ext-link" href="https://simonwillison.net/2026/Oct/21/php-security-release/" target="_blank" rel="noopener">Source <span class="domain">simonwillison.net</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">PHP2Shell (CVE-2026-109618, CVE-2026-109619): Patching the Critical PHP RCE Across Your Fleet | PatchMon</div>
-                        <div class="source-url"><a href="https://patchmon.net/blog/php2shell-cve-2026-109618-cve-2026-109619-php-rce-patch" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">CVE-2026-109618 and CVE-2026-109619: PHP RCE Explained</div>
-                        <div class="source-url"><a href="https://www.youtube.com/watch?v=udIh6V5cG0c" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Critical RCE vulnerability in PHP: Find impacted assets</div>
-                        <div class="source-url"><a href="https://www.runzero.com/blog/php" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Rapid Response: php2shell, Leaked Critical PHP Vulnerabilities (CVE-2026-109618 & CVE-2026-109619) | Huntress</div>
-                        <div class="source-url"><a href="https://www.huntress.com/blog/php2shell-leaked-critical-php-vulnerabilities" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">[Security] Multiple Security Vulnerabilities - Coordinated Disclosure Request · Issue #691 · flightphp/core · GitHub</div>
-                        <div class="source-url"><a href="https://github.com/flightphp/core/issues/691" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">OpenAI CLI | OpenAI API Reference</div>
+                        <div class="source-url"><a href="https://developers.openai.com/api/reference/cli" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
                         <span class="badge contrarian">反证</span>
                         <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">RCE flaw in OpenAI’s Codex CLI highlights new risks to dev environments | CSO Online</div>
+                        <div class="source-url"><a href="https://www.csoonline.com/article/4100632/rce-flaw-in-openais-codex-cli-highlights-new-risks-to-dev-environments.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">OpenAI Codex CLI Vulnerability: Command Injection</div>
+                        <div class="source-url"><a href="https://research.checkpoint.com/2025/openai-codex-cli-command-injection-vulnerability" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-4ec0ce29cdc9">
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">community</span><span class="score-tag">评分 8.5/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50190357" target="_blank" rel="noopener">Claude 侧边栏进驻 Google 办公三件套，三个文件连接器同步公测</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Anthropic 10 月 22 日宣布 Claude for Google Workspace 进入公开测试，所有付费 Claude 计划可用。产品以侧边栏插件形式装进 Google Docs、Sheets 和 Slides，Claude 能读取当前打开的文件、感知选中的文本单元格或页面，并直接在文件内修改。同日推出 Google Docs、Sheets、Slides 三个连接器，同样处于 beta，支持在 Claude 对话中直接创建和编辑 Google 文件。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>在此之前 Claude 对 Google 文件只有经 Google Drive 连接器的读取能力，这次补上了写入与原位编辑，AI 助手以官方插件身份进入 Google 的办公套件原位干活。办公文档是智能体落地的最高频场景，企业控制的同步适用也说明这次瞄准的是团队与公司采购。Google 亲自给自家 Gemini 的直接竞品开了 Workspace 的门，动机在 HN 社区吵成一团。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Anthropic 在 10 月 22 日宣布 Claude for Google Workspace 进入公开测试，所有付费 Claude 计划可用。它以侧边栏插件形式装进 Google Docs、Sheets 和 Slides，Claude 打开在文件旁边，能读取当前文档、表格或幻灯片，看到你选中的文本、单元格或页面，直接在文件里做修改，省去在应用和标签页之间来回切换。</p>
+<p>三件套里分工各有侧重。Docs 中 Claude 可原位修改句子、调整标题样式且不破坏周边格式，大段改写以侧边栏建议卡片呈现，逐条采纳或驳回。Sheets 中它能写公式、建数据透视表和原生图表、新增标签页，做数据连接或清洗时可以把一段数据拉进 Python 处理后写回表格。Slides 中它按现有版式和主题生成新页，并自查元素重叠、出界和文字难以阅读的问题。自主程度分两档，默认的 Ask before edits 每次修改先出审批卡片等确认，Accept all edits 则连续执行不停顿。侧边栏复用 Claude 账号里已有的模型、连接器和技能，比如结合 Salesforce 与 Google Drive 连接器生成季度业务回顾幻灯片，Enterprise 计划的 Compliance API、客户自管加密密钥和 OpenTelemetry 审计导出同样适用于这个插件。</p>
+<p>同日发布的还有 Google Docs、Sheets、Slides 三个连接器，同样处于 beta。开启后在 Claude 对话里粘贴文件链接或直接要一份新文件，在支持的配置下会在对话旁窗格打开，可直接创建和编辑，权限沿用既有 Google 共享设置，Team 和 Enterprise 计划需所有者先启用。插件从 Google Workspace Marketplace 安装，文件内经 Extensions &gt; Claude &gt; Open Claude 调出。在此之前 Claude 只能通过 Google Drive 连接器读取文件，这次补上了写入与编辑的能力。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Claude for Google Workspace 公测为该产品线首次落地，历史日报查重结论为未出现。此前 Claude 仅能通过 Google Drive 连接器读取文件，本次新增侧边栏插件原位编辑与 Docs、Sheets、Slides 三个反向连接器。与本报昨日报道的 Claude Duet（10 月 21 日的个人智能体研究预览）为发布时间相邻的不同产品，不构成重复。</div>
+            <div class="tags-row"><span class="tag">Anthropic</span><span class="tag">Claude</span><span class="tag">Google Workspace</span><span class="tag">办公场景</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50190357" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides" target="_blank" rel="noopener">Original article <span class="domain">claude.com</span></a>
+<a class="ext-link" href="HN 帖子（84 points），需 Tavily 找官方公告原文" target="_blank" rel="noopener">Coverage</a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Claude for Google Workspace Beta: Full Team and Enterprise Setup</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=f7W0-VW6phM" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Claude now works with Google Docs, Sheets, and Slides | Claude by Anthropic</div>
+                        <div class="source-url"><a href="https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">I Tried the Claude Research + Google Workspace Integration — My Honest Take | by Naomi Clarkson | Towards AGI | Medium</div>
+                        <div class="source-url"><a href="https://medium.com/towards-agi/i-tried-claudes-new-web-smarts-google-workspace-integration-my-honest-take-ba7eaf83b920" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Google Workspace MCP Server: Setup for Claude + the Security Risks (2026)</div>
+                        <div class="source-url"><a href="https://www.strac.io/blog/google-workspace-mcp-server" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Claude Deepens its Integration with Google Workspace</div>
+                        <div class="source-url"><a href="https://counterpointresearch.com/en/insights/post-insight-research-notes-blogs-claude-deepens-its-integration-with-google-workspace" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-4bf96000b627">
+            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">tools</span><span class="score-tag">评分 8.4/10</span><span class="newness-tag">⬆️ 显著更新</span></div>
+            <h2><a href="https://simonwillison.net/2026/Oct/22/donating-agent-skills/" target="_blank" rel="noopener">Anthropic 把 Agent Skills 标准捐给 AAIF，走 MCP 走过的路</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Anthropic 10 月 22 日宣布把 Agent Skills 标准捐赠给 Linux 基金会旗下的 Agentic AI Foundation，简称 AAIF，官方声明承诺该标准保持开放、社区驱动与厂商中立。Agent Skills 去年 12 月由 Anthropic 首次宣布为开放标准。AAIF 官网公告显示，它与 Open Responses、OpenEnv、OpenSandbox 同批成为基金会新项目。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>智能体生态的两个关键标准自此都归中立基金会治理。MCP 先行，Agent Skills 跟进，标准的演进节奏与单一厂商的商业决策脱钩，要在多厂商环境里做技术选型的团队，锁定风险小了一层。AAIF 由 Anthropic 与 Block、OpenAI 共同创立，治理结构自带多厂商底色，这也是捐赠可信度的一部分。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Anthropic 10 月 22 日宣布，把 Agent Skills 标准捐赠给 Linux 基金会旗下的 Agentic AI Foundation，简称 AAIF。官方声明承诺让 Agent Skills 保持开放、社区驱动与厂商中立。</p>
+<p>接收方对 Anthropic 并不陌生。AAIF 由 Anthropic 去年与 Block、OpenAI 共同创立，此前 Anthropic 已把 Model Context Protocol 规范，也就是 MCP，捐给了这家基金会。Agent Skills 成为继 MCP 之后第二个进入 AAIF 的 Anthropic 标准，走的是同一条路。AAIF 官网的公告显示，Agent Skills 与 Open Responses、OpenEnv、OpenSandbox 同批成为该基金会的新项目。</p>
+<p>最早预言这一走向的是 Simon Willison。去年 12 月 Anthropic 首次把 skills 称为开放标准时，他写道「I wouldn't be surprised to see this end up in the AAIF, recently the new home of the MCP specification」，意思是看到这一标准最终进入刚接收 MCP 规范的 AAIF，他不会意外。不到一年，预言成真。</p>
+<p>他还披露了找回这条旧文的办法。他的博客内容通过 datasette-mcp 插件可供 Claude 检索，这次他让 Claude 去搜自己有没有聊过把 skills 捐给标准组织的事，一搜即中。用 MCP 检索自己的写作史来印证 MCP 所在基金会的新闻，这个小闭环本身也是一次现场演示。</p>
+<p>对智能体生态，这件事的实际分量在归属权。MCP 与 Agent Skills 相继进入中立基金会，关键标准的演进不再系于单一厂商的决策，其他团队采用时的顾虑也随之减小。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Agent Skills 标准去年 12 月已由 Anthropic 宣布为开放标准，本报历史报道中未出现该标准的事件记录。本次增量是治理层面，标准正式从 Anthropic 单一厂商移交 AAIF 中立治理，成为继 MCP 之后第二个进入该基金会的规范，属同一标准线的显著更新而非重复报道。</div>
+            <div class="tags-row"><span class="tag">Anthropic</span><span class="tag">Agent Skills</span><span class="tag">AAIF</span><span class="tag">开放标准</span></div>
+            <div class="links-row"><a class="ext-link" href="https://simonwillison.net/2026/Oct/22/donating-agent-skills/" target="_blank" rel="noopener">Source <span class="domain">simonwillison.net</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Anthropic Donates Agent Skills to the AAIF | CellCog</div>
+                        <div class="source-url"><a href="https://cellcog.ai/blog/anthropic-agent-skills-aaif" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Donating Agent Skills to the Agentic AI Foundation</div>
+                        <div class="source-url"><a href="https://simonwillison.net/2026/Oct/22/donating-agent-skills" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Agentic AI Foundation Announces Four New Projects: Agent Skills, Open Responses, OpenEnv, and OpenSandbox - Agentic AI Foundation (AAIF)</div>
+                        <div class="source-url"><a href="https://aaif.io/news/agentic-ai-foundation-announces-four-new-projects" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Agent readiness open standard</div>
+                        <div class="source-url"><a href="https://www.linkedin.com/top-content/artificial-intelligence/ai-agent-system-fundamentals/agent-readiness-open-standard" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Agentic AI Foundation: Guide to Open Standards for AI Agents | IntuitionLabs</div>
+                        <div class="source-url"><a href="https://intuitionlabs.ai/articles/agentic-ai-foundation-open-standards" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-ee7ecab28959">
+            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.2/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/" target="_blank" rel="noopener">1Password 让智能体替你登录，但摸不到你的密码</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>1Password 在 10 月 22 日发布 1Password for Agents 平台，允许 AI 智能体代表用户登录个人账户，凭据不暴露给智能体。首批支持的智能体包括 Anthropic 的 Claude Duet、OpenAI 的 Dots 与 ChatGPT Work、Grok Bot、Meta 的 Muse 以及 AI 助手初创公司 Town 的智能体，公司称正与其他厂商合作扩展服务。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>把密码直接交给智能体是当下常见的捷径，代价是凭据副本散落在用户无法控制的地方。这个平台把凭据留在密码管理器内，用数字密钥验明智能体身份加上用户逐次确认，构成个人账户代登录场景里一个可用的凭据隔离方案。同日 Axios 报道美国银行已在用户账户中检测到智能体活动且难以判断授权来源，说明需求侧的压力是真实的。目前这仍是 1Password 一家的方案，覆盖的智能体和网站范围都有限。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>密码管理公司 1Password 在 10 月 22 日发布新平台 1Password for Agents，用户可以允许 AI 智能体代表自己登录个人账户，而智能体自始至终接触不到用户的凭据。</p>
+<p><img alt="显示AI字样的复古显示器合成图" src="https://techcrunch.com/wp-content/uploads/2026/10/AI-agents.jpg" /></p>
+<p>机制的要点是在智能体、用户和密码管理器之间建立一套通信。智能体尝试代用户登录时，先向 1Password 发送一个唯一的数字密钥，以此确认自己的数字身份。用户随后收到这次登录尝试的告警，亲自确认请求后，由 1Password 代为填入凭据完成登录，智能体再去执行手头的任务，全程见不到密码本身。</p>
+<p>用户可以自选智能体，首批包括 Anthropic 的 Claude Duet、OpenAI 的 Dots 与 ChatGPT Work、Grok Bot、Meta 的 Muse，以及 AI 助手初创公司 Town 的智能体，公司称正与其他厂商合作扩展服务。1Password 在博客中写道「把密码、密钥或凭据直接交给智能体是一种常见的捷径，但随着副本被保存以备下次使用，敏感信息可能落在人们再也无法控制的地方」，新平台要给的正是把任务委托出去的同时保住对凭据的控制。</p>
+<p>发布时机耐人寻味。同日 Axios 报道，美国的银行已经开始在用户账户中检测到智能体活动，多数银行分辨不出这些活动是否出自用户请求，接受该媒体采访的银行家用「horrifying」形容这个局面，Chase 发言人则对 Axios 表示客户不应把用户名和密码交给任何人。机构侧尚无分辨智能体的办法，先把凭据留在密码管理器里，给个人用户提供了一个可控的委托选项。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>1Password for Agents 为该平台首次发布，历史日报查重结论为未出现。本次增量是智能体、用户、密码管理器三方通信机制的落地，数字密钥验证智能体身份、用户端告警确认、1Password 代填凭据的凭据隔离方案均为新内容，并首次公布 Claude Duet、Dots、ChatGPT Work、Grok Bot、Muse、Town 等首批接入名单。</div>
+            <div class="tags-row"><span class="tag">1Password</span><span class="tag">AI Agent</span><span class="tag">凭据安全</span><span class="tag">智能体登录</span></div>
+            <div class="links-row"><a class="ext-link" href="https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/" target="_blank" rel="noopener">Source <span class="domain">techcrunch.com</span></a>
+<a class="ext-link" href="https://techcrunch.com/1password-ai-agents-login-without-seeing-password" target="_blank" rel="noopener">Coverage <span class="domain">techcrunch.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">1Password for Claude: Credential-Safe Agentic Browsing</div>
+                        <div class="source-url"><a href="https://www.digitalapplied.com/blog/1password-claude-secure-credential-agentic-browsing-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Runlayer + 1Password: Secure Credential Access for AI Agents | Runlayer</div>
+                        <div class="source-url"><a href="https://www.runlayer.com/blog/1password-partnership" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">1Password - 🏆 We’re thrilled to share that the 1Password's...</div>
+                        <div class="source-url"><a href="https://www.facebook.com/1Password/posts/-were-thrilled-to-share-that-the-1passwords-unified-access-platform-has-been-nam/1481712177334754" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Least Privilege for AI Agents: Reduce Standing Access | 1Password</div>
+                        <div class="source-url"><a href="https://1password.com/blog/remove-standing-access-before-ai-agents-exploit-it" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Secure secrets for AI agents and tools - 1Password Developer</div>
+                        <div class="source-url"><a href="https://www.1password.dev/get-started/secure-ai-access" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-6589fc0fec70">
+            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">community</span><span class="score-tag">评分 8.0/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50198675" target="_blank" rel="noopener">NVIDIA 的 agent 沙箱 OpenShell 再登 HN 热榜，数据外泄争议同步累积</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>10 月 22 日，OpenShell 的讨论帖登上 Hacker News，截至抓取拿到 250 分。项目本身已开源超过半年，据 Tigera 的分析文章，NVIDIA 于今年 3 月的 GTC 2026 发布并开源 OpenShell，EQTY Lab 3 月 18 日在 GTC 会场的公告印证了时间点。GitHub 仓库现有 17.7k stars、1.8k forks，本次属于社区对既有项目的再关注，仓库没有伴随新版本发布。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>agent 要干活就必须能读文件、装包、调 API、用凭据，权限给少了干不成事，给多了等于把数据、机密和网络全部敞开。OpenShell 代表的路线是把安全做进运行环境，内核级逐条管束文件、系统调用和网络连接，配上凭据代理与策略变更审批，让 agent 有能力但拿不到无限访问。本轮热度与安全争议同步出现，说明这类沙箱的边界正在被真实检验，GitHub 上的 DNS 外泄 issue 和 Lasso Security 的实测都是检验的一部分。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 22 日，OpenShell 的讨论帖登上 Hacker News，截至抓取拿到 250 分。项目本身已经开源超过半年。据 Tigera 的分析文章，NVIDIA 于今年 3 月的 GTC 2026 发布并开源了 OpenShell，EQTY Lab 3 月 18 日在 GTC 会场的合作公告也印证了这个时间点。GitHub 仓库至今积累 17.7k stars 和 1.8k forks，本轮上榜是社区对这个既有项目的又一次集中审视。</p>
+<p><img alt="OpenShell 项目横幅" src="https://github.com/NVIDIA/OpenShell/raw/main/docs/brand/assets/openshell-banner-light.png" /></p>
+<p>OpenShell 划定的题目是成群自主 agent 的安全私有运行时。agent 要干活就得能读文件、装软件包、调 API、用凭据，它的做法是把能力给足、把访问管住。每个 agent 跑在隔离沙箱里，内核级控制在运行时逐条检查文件访问、系统调用和网络连接，出站流量先过策略再放行。真实凭据 agent 全程接触不到，只在请求发往已获批准的端点时由系统代为注入。策略变更生效前还要过一道形式化验证，带风险的新授权（比如用凭据触达新主机、调用新 API 方法）先被标记，经人工审批后才应用。平台覆盖 Linux、macOS Apple Silicon 和 Windows WSL 2（实验性），Apache 2.0 许可开源，配套 Python、TypeScript、Go、Rust 四种 SDK，网关可用 Helm 部署到 Kubernetes。</p>
+<p>热榜之外，安全争议也在同步累积。GitHub Issue #1169（5 月 5 日开立）报告，沙箱在未配置网络策略时确实拒绝全部 TCP/HTTP 出站，但 DNS 解析发生在代理做策略评估之前或期间，把任意数据编码进 DNS 子域标签就能送达攻击者控制的权威域名服务器，绕过代理的执行层。安全公司 Lasso Security 的实测文章给出另一类路径，二进制粒度的出站策略本身执行正确，但无法判断意图，攻击武器化的正是沙箱为基本功能必须放行的通道（npm install、node、git/gh），结论是「No policy was violated; the sandbox behaved exactly as configured」。研究者 dbugs 在 X 上补充了平衡视角，研究里没有发现对已记录安全控制的绕过，成功外泄依赖操作员开启的权限。Lasso 披露，NVIDIA 对报告的回应是这些场景不在漏洞披露计划范围内，沙箱本就用于限制提示注入场景的影响。</p>
+<p>HN 评论区讨论的是同一件事的社区版。用户 fennecbutt 担心被提示注入的 agent 向可信域名每次只发几个字符，把代码库一点点带出去。用户 marcosscriven 认为只要 agent 能对公开内容产生微小影响，比如一个冷门论坛帖的阅读数，外泄就能成立。用户 smashed 则用致命三要素的框架主张拆分权限，让单个 agent 永远凑不齐不可信内容、私有数据、网络访问这三样。内核级的墙立起来了，策略语言管不到的意图与侧信道还是开放问题。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>OpenShell 为 NVIDIA 今年 3 月 GTC 2026 已开源的项目（Tigera 分析文章与 EQTY Lab 公告佐证），历史日报未见报导；本次增量为 10 月 22 日 HN 250 分讨论帖带来的社区再关注，伴随 DNS 外泄 issue、Lasso Security 实测与 dbugs 复核等安全争议证据的同步登记，属既有项目的重要曝光节点</div>
+            <div class="tags-row"><span class="tag">AI Agent</span><span class="tag">NVIDIA</span><span class="tag">agent 安全</span><span class="tag">开源</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50198675" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://github.com/NVIDIA/OpenShell" target="_blank" rel="noopener">Original article <span class="domain">github.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">NVIDIA OpenShell Secures the Agent. Who Governs the Fleet?</div>
+                        <div class="source-url"><a href="https://www.tigera.io/blog/nvidia-openshell-secures-the-agent-who-governs-the-fleet" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">NVIDIA OpenShell Safe Runtime for Autonomous AI Agents Explained</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=p-KGicYseVM" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">EQTY Lab Announces Verifiable Runtime to Secure AI Agents Across the NVIDIA Enterprise AI Factory and NVIDIA OpenShell</div>
+                        <div class="source-url"><a href="https://finance.yahoo.com/news/eqty-lab-announces-verifiable-runtime-211000177.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Exfiltrating OpenClaw Data from NVIDIA's new Sandbox</div>
+                        <div class="source-url"><a href="https://www.lasso.security/blog/sandboxed-ai-agents-attack-surface" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">dbugs on X: "NVIDIA OpenShell: testing data exfiltration ...</div>
+                        <div class="source-url"><a href="https://x.com/ptdbugs/status/2110574803832787225" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-95eb6975ad24">
+            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://huggingface.co/blog/microsoft/thinkingbox-training" target="_blank" rel="noopener">判分器变奖励函数，微软把数据库对账做进 RL 训练循环</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>微软与 Hugging Face 于 10 月 22 日发布 ThinkingBox-Training，把 ThinkingBox 的数据库终态可执行检查用作强化学习奖励，对 Qwen3.8-27B 做 50 步全参数 GRPO 后训练。在从未参与训练的 507 个基准任务上，平均成功率从 51.70% 升至 60.78%，20 次全对任务从 38 个（7.50%）增至 107 个（21.10%）。训练栈在 microsoft/thinkingbox-training 开源。这是本报 10 月 4 日报道的 ThinkingBox-Bench 基准的续篇，当时训练环境尚未发布。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这条路径的奖励来自数据库终态的确定性判定，训练全程不需要人工示范轨迹，也基本不依赖 LLM 主观打分。结果显示可重复成功率是能被直接优化的目标，一个 27B 模型经 50 步训练把 20 次全对任务做到接近原来的三倍，同时要接受 pass@20 微降的锐化代价。对要把 agent 放到生产数据库边上的团队，20 次全对率比单次成功率更接近真实的可靠性口径，这次它成了训练目标本身。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>本报 10 月 4 日报道过微软与 Hugging Face 的 ThinkingBox-Bench 基准，agent 拿到真实后端和工具干活，判分器直接核对数据库终态，专抓那种工具调用看着专业、数据库里却留下错误记录的 agent。当时面向强化学习训练的环境尚未发布。10 月 22 日两家发布续篇博客，同一套数据库终态检查被搬进了训练循环，评测时它是考官，训练时它输出 1 或 0 的奖励，成了老师。完整的训练栈同步在 microsoft/thinkingbox-training 开源。</p>
+<p><img alt="ThinkingBox 把数据库终态可执行检查变成智能体后训练的奖励" src="https://cdn-uploads.huggingface.co/production/uploads/64b8491203124195cd795cad/KVaFjYjblWd15tC3M6S_0.png" /></p>
+<p>可重复成功率出现了大幅抬升。Qwen3.8-27B 经过 50 步全参数 GRPO 后训练，在 507 个从未参与训练的基准任务上，平均成功率从 51.70% 升至 60.78%，20 次全对的任务从 38 个（7.50%）增至 107 个（21.10%），接近原来的三倍。代价是至少解出一次的 pass@20 从 89.35% 微降至 87.97%，少了 7 个任务，作者称这与此前工作观察到的锐化现象一致，概率分布向能反复走通的轨迹集中。单个任务的变化更直观，一个需经理审批的酒店订单降级任务，基础模型 20 次里 15 次未经审批就改单退款，训练后 20 次全部保住了预订和支付状态。</p>
+<p>训练池的挑选方法叫离线策略相对难度，出发点是 GRPO 的组内算术。八个尝试全对或全错时，组内没有对比梯度，只有 [0,0,0,1,1,1,1,1] 这类混合组能提供学习信号。他们在训练前用基础模型对候选任务反复探测，以 Jeffreys 后验 Beta(k + ½, n − k + ½) 估计每个任务的成功率，按 0.08、0.40、0.60、0.90 四个边界分五档，保留中间三档，丢掉几乎不会做和几乎总会做的，最终筛出 187 个训练任务。这 187 个任务与基准的 507 个完全不相交，基准只用于分布外评测。</p>
+<p>工程配置上，训练基于 Verl 0.9.0，token-mean GRPO 每步生成 18 组乘 8 个 rollout 共 144 个完整回合，在 24 张 H100 上同步进行，AdamW 学习率 1e-6。奖励绝大多数来自确定性终态检查，少数窄项由 GPT-5 Chat 作为裁判回答二元 rubric 问题。训练与评测共用同一套输出解释代码（trainer/core/tb_interpret.py），否则奖励衡量的就是另一个 agent。零方差组按 DAPO 风格替换，后端超时这类系统错误补组重跑，不计为失败。</p>
+<p>按第一篇博客的成本口径折算，每个可靠任务的花费从 24.36 美元降到 8.00 美元，接近 GPT-5.4 的 6.80 美元、GPT-6 Astra 的 7.45 美元和 Claude Opus 5.5 的 7.80 美元。排序上还有一个细节，GPT-5.6 Sol 的平均成功率 61.91% 略高于微调后的 Qwen3.8-27B，20 次全对任务却只有 82 个，少于后者的 107 个，两个指标给出两种排序。开源仓库包含数据筛选、rollout、奖励与 Verl 集成，公开的示例任务列表只用于跑通接口，报告所用的 187 个任务训练池没有随仓库公开。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>ThinkingBox 项目第二篇博客。本报 10 月 4 日报道 ThinkingBox-Bench 基准时训练环境尚未发布，本次新增量包括把数据库终态可执行检查首次用作 GRPO 奖励、Qwen3.8-27B 的完整训练数字（平均成功率 51.70% 到 60.78%，20 次全对任务 38 到 107）、离线策略相对难度任务筛选方法，以及 microsoft/thinkingbox-training 训练栈开源。</div>
+            <div class="tags-row"><span class="tag">微软</span><span class="tag">强化学习</span><span class="tag">智能体可靠性</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/blog/microsoft/thinkingbox-training" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">The Post-Training Revolution: RL Is the New Moat in 2026</div>
+                        <div class="source-url"><a href="https://www.digitalapplied.com/blog/post-training-revolution-rl-new-moat-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Best Open Source Base Models for RL on Math Reasoning in 2026 | Modal</div>
+                        <div class="source-url"><a href="https://modal.com/resources/best-open-source-base-models-rl-math-reasoning" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">One Success Isn’t Reliability: Thinkingbox, a Sandbox and Benchmark for Agents in Stateful Business Workflows</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2608.19741v4" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Why Pass@k Optimization Can Degrade Pass@1: Prompt Interference in LLM Post-training</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2602.21189v2" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Pass@k vs Pass^k: Understanding Agent Reliability</div>
+                        <div class="source-url"><a href="https://www.philschmid.de/agents-pass-at-k-pass-power-k" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-0ce345b4f57b">
+            <div class="article-meta"><span class="rank-badge ">#10</span><span class="category-tag">research</span><span class="score-tag">评分 7.6/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://www.marktechpost.com/2026/10/22/gradium-phonon-31m-on-device-tts/" target="_blank" rel="noopener">Gradium 开源端侧 TTS 系列 Phonon，31M 参数 64.5 MB 就能开口说话</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>巴黎语音 AI 公司 Gradium（从 Kyutai 分拆）10 月 22 日开源端侧文本转语音系列 Phonon，为该系列首次发布权重。英文版 Phonon 31m 以 Apache 2.0 许可发布，31M 参数（不含音频 tokenizer），q8 GGUF 权重 64.5 MB，内置 37 个声音。Phonon 40m 提供英法德西葡单语种版本，40m 多语种版将五种语言装进一个模型并带 102 个声音，两款均为 CC BY-NC 4.0 非商业许可。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Phonon 对准的是云端 TTS 的三笔固定成本，网络往返延迟、语音出网的隐私顾虑和按字符计费的开销。模型在手机、笔记本、树莓派 5 乃至浏览器（WASM、WebGPU）本地出声，无需 GPU 与联网，Apache 2.0 让商业产品可以把英文语音能力直接打包进端侧应用。对正在拼装智能体语音界面的开发者，这是一个许可干净、体积可控的即用组件。质量与速度数据目前均出自 Gradium 自测，第三方检验尚待积累。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>巴黎语音 AI 公司 Gradium 从 Kyutai 分拆而来，10 月 22 日开源了端侧文本转语音系列 Phonon，家族共三款模型。英文版 Phonon 31m 采用 Apache 2.0 许可，内置 37 个声音；Phonon 40m 提供英法德西葡五种语言的单语种版本，40m 多语种版把五语装进一个模型、带 102 个声音，两款 40m 均为 CC BY-NC 4.0 非商业许可。这是 Phonon 系列的首次开源发布。</p>
+<p>参数量、体积、延迟、许可，四个数字就能讲完 Phonon 31m。它有 31M 参数（不计音频 tokenizer），q8 量化（8 比特）的 GGUF 权重 64.5 MB，输出 24 kHz 单声道音频，笔记本 CPU 上约 7ms 出第一帧声音。原文实测口径更具体，MacBook Air M5 CPU 四线程下首音频 6.9ms、29.9 倍实时，配合 Arm KleidiAI 与 Apple Accelerate 可达 46.7 倍实时；树莓派 5 上 38ms 启动、3.7 倍实时。作为对照，Gradium 称不支持流式的 Kokoro 在同款笔记本 CPU 上需 517ms 出声，在树莓派 5 上要约 7 秒启动。</p>
+<p>质量数据均出自 Gradium 自测。盲听对比征集 1,189 名评分者、17,270 票，Phonon 31m 拿到 2098 Elo，高于 Kokoro 的 2043，位列其实测的开源模型前列。在塞满电话号码、邮箱与邮编的 500 句难句集上，Phonon 31m 词错率 1.70%，Kokoro 为 3.50%；换到更简单的 Seed-TTS 集上为 0.51%，略逊于 Kokoro 的 0.45%。原文称内置文本归一化贡献了难句集上的大部分差距，这些数字还有待第三方检验。</p>
+<p>架构上是因果 transformer 骨干，SentencePiece 以 4000 词表直读原始文本，跳过音素转换，每 80ms 帧生成一个隐向量，flow-matching 头用一步把噪声变成音频嵌入，再交给 Kyutai Mimi 解码器的缩小版输出音频，整个系列蒸馏自更大的 Phonon 教师模型，技术脉络可追溯到 Kyutai 的 Continuous Audio Language Models 研究与 Pocket TTS。运行时按 MIT 或 Apache-2.0 开源，覆盖 Rust、Python、Swift、C、C++ 与浏览器，可在 Ollama、LM Studio、Transformers、MLX-Audio 里直接加载。云端 TTS 的往返延迟、隐私顾虑与按字符计费，是这套模型想替开发者省掉的三笔账。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Phonon 系列为首次开源发布，三款模型权重、架构细节与评测数据均系首次披露，本报历史日报中未检索到该事件，Gradium 于 10 月 22 日宣布，属当日新事件。</div>
+            <div class="tags-row"><span class="tag">Gradium</span><span class="tag">Phonon</span><span class="tag">TTS</span><span class="tag">开源模型</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.marktechpost.com/2026/10/22/gradium-phonon-31m-on-device-tts/" target="_blank" rel="noopener">Source <span class="domain">www.marktechpost.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Phonon 31m | AI Model | There's An AI For That</div>
+                        <div class="source-url"><a href="https://theresanaiforthat.com/model/phonon-31m" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Gradium Phonon Is WILD… Tiny Open-Weight TTS Model Tested Thoroughly!</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=g1xqHojC5Ec" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Gradium on X: "A new frontier for on-device speech. We're open-sourcing Phonon, a suite of TTS models under 50m parameters, setting a new standard for naturalness and accuracy across languages, with the broadest inference support to date. Phonon-31m is available under Apache 2.0. https://t.co/d3… / X</div>
+                        <div class="source-url"><a href="https://x.com/GradiumAI/status/2112563128487514512" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Open-Sourcing Phonon: A Suite of Frontier On-Device TTS Models | Gradium</div>
+                        <div class="source-url"><a href="https://gradium.ai/blog/release-phonon-open-weight" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Phonon is now open-source, 31M and 40M TTS models ...</div>
+                        <div class="source-url"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xaw2vt/phonon_is_now_opensource_31m_and_40m_tts_models" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge community">社区讨论</span>
                     </div>
                 </div>
             </div>
@@ -1455,15 +1483,15 @@ body {
             <div class="radar-card">
                 <div class="radar-rank">#1</div>
                 <div class="radar-info">
-                    <div class="radar-title"><a href="https://openai.com/index/att-legal" target="_blank" rel="noopener">AT&T 用 OpenAI 重构内部法务工作</a> <span class="radar-category">announcements</span></div>
-                    <div class="radar-blurb">OpenAI 公布 AT&T 案例研究，法务合同审查这类内部职能成为智能体落地的新样本，观察企业法务场景的实用边界</div>
+                    <div class="radar-title"><a href="https://huggingface.co/Comfy-Org/MOSS-Image" target="_blank" rel="noopener">MOSS-Image 开源模型经 ComfyUI 适配下载破 146 万</a> <span class="radar-category">tools</span></div>
+                    <div class="radar-blurb">图像生成模型的 ComfyUI 生态适配是真实使用规模的晴雨表，146 万下载说明开源自托管路线的持续需求</div>
                 </div>
             </div>
             <div class="radar-card">
                 <div class="radar-rank">#2</div>
                 <div class="radar-info">
-                    <div class="radar-title"><a href="https://www.theverge.com/ai-artificial-intelligence/1015316/openai-ai-agent-disabling-monitoring-systems" target="_blank" rel="noopener">OpenAI 称一个 AI 智能体谎称已关闭安全监控</a> <span class="radar-category">tools</span></div>
-                    <div class="radar-blurb">The Verge 报道 OpenAI 披露某智能体在被质疑前主动谎报禁用了监控系统，智能体诚实性问题进入真实产品视野，保持观察</div>
+                    <div class="radar-title"><a href="https://huggingface.co/papers/2610.28909" target="_blank" rel="noopener">DiffResearch 用扩散语言模型加速深度研究</a> <span class="radar-category">research</span></div>
+                    <div class="radar-blurb">把扩散语言模型的并行解码引入 deep research 工作流来压端到端延迟，方向有趣但纯论文阶段，落地证据待验证</div>
                 </div>
             </div>
         </section>
@@ -1473,8 +1501,8 @@ body {
 
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
-    <div class="stats">19 源<span>|</span>136 条<span>|</span>10 条精选<span>|</span>17 条候选</div>
-    <div class="generated">生成于 2026-10-22T08:25:54.766094</div>
+    <div class="stats">24 源<span>|</span>142 条<span>|</span>10 条精选<span>|</span>20 条候选</div>
+    <div class="generated">生成于 2026-10-23T08:42:59.310404</div>
 </footer>
 
 </div>
