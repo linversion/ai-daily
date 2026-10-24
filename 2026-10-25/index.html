@@ -1,0 +1,1210 @@
+<!-- ai-daily-final-sha256:65973bec201bf0fa860467a9e69bc6f5f44ebb51be3cafd3626c0de6b5e3220d -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 | 2026-10-25 — AI 内容机会日报</title>
+<style>
+/* ═══════════ CSS Reset & Base ═══════════ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+:root {
+    --bg-page: #F7F7F5;
+    --bg-paper: #FFFFFF;
+    --text-main: #111111;
+    --text-body: #222222;
+    --text-muted: #555555;
+    --text-light: #999999;
+    --accent: #D93025;
+    --accent-soft: #FFF0EE;
+    --border-divider: #E5E5E5;
+    --border-strong: #111111;
+    --tag-bg: #F5F5F5;
+    --score-high: #0F7B4E;
+    --score-mid: #D97706;
+    --link-underline: #CCCCCC;
+    --hover-accent: #B82020;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", serif;
+    background: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-paper);
+    padding: 80px 60px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: var(--text-main);
+}
+
+/* ═══════════ Header ═══════════ */
+.header {
+    text-align: center;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--border-strong);
+}
+
+.header h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 1.2;
+    color: var(--text-main);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.header .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.header .divider {
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    margin: 0 auto 20px;
+}
+
+.header .meta-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+}
+
+.header .meta-line span {
+    margin: 0 12px;
+    color: var(--border-divider);
+}
+
+.header .trend-callout {
+    margin-top: 24px;
+    padding: 16px 24px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    font-size: 15px;
+    color: var(--text-main);
+    text-align: left;
+    line-height: 1.7;
+    border-radius: 0 4px 4px 0;
+}
+
+/* ═══════════ Article Cards ═══════════ */
+.articles-section {
+    margin-bottom: 50px;
+}
+
+.section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.article-card {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.article-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.article-body { margin: 16px 0; }
+.article-body img {
+    display: block; max-width: 100%; height: auto;
+    margin: 14px auto; border-radius: 8px;
+    cursor: zoom-in;
+}
+.img-lightbox {
+    position: fixed; inset: 0; z-index: 999;
+    background: rgba(0, 0, 0, 0.86);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; cursor: zoom-out;
+}
+.img-lightbox img {
+    max-width: 96vw; max-height: 96vh; width: auto; height: auto;
+    border-radius: 8px; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+.article-body summary {
+    cursor: pointer; color: var(--accent); font: 600 13px 'Inter', sans-serif;
+}
+.article-body[open] summary { margin-bottom: 14px; }
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.rank-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    background: var(--text-main);
+    color: #FFF;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+}
+
+.rank-badge.headline {
+    background: var(--accent);
+}
+
+.category-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: var(--tag-bg);
+    color: var(--text-muted);
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+}
+
+.score-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--score-high);
+}
+
+.newness-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 4px 8px;
+    background: #F0F9F4;
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+}
+
+.article-card h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.article-card .one-liner {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: #FAFAFA;
+    border-left: 2px solid var(--border-divider);
+    border-radius: 0 4px 4px 0;
+}
+
+.article-card .what-box {
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-body);
+}
+
+.article-card .what-box strong {
+    color: var(--accent);
+}
+
+.article-card .why-box {
+    margin-bottom: 14px;
+    padding: 14px 18px;
+    background: #FFFDF5;
+    border: 1px solid #F0EABD;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-body);
+}
+
+.article-card .body-md {
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-body);
+    text-align: justify;
+}
+
+.article-card .body-md p {
+    margin-bottom: 16px;
+}
+
+.article-card .body-md a {
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-underline);
+    transition: all 0.2s;
+}
+
+.article-card .body-md a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.article-card .body-md strong {
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.article-card .body-md code {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    font-size: 13px;
+    background: #F5F5F5;
+    padding: 2px 6px;
+    border-radius: 2px;
+    color: var(--accent);
+}
+
+.article-card .body-md ul, .article-card .body-md ol {
+    margin-bottom: 16px;
+    padding-left: 20px;
+}
+
+.article-card .body-md li {
+    margin-bottom: 8px;
+}
+
+/* ═══════════ Tags ═══════════ */
+.tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: #F0F0F0;
+    color: #666;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+}
+
+/* ═══════════ Verification Sources ═══════════ */
+.sources-box {
+    margin: 16px 0;
+    border: 1px solid var(--border-divider);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.sources-box .sources-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 10px 16px;
+    background: #FAFAFA;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.sources-box .source-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 16px;
+    border-bottom: 1px solid #F5F5F5;
+    font-size: 13px;
+    gap: 12px;
+}
+
+.sources-box .source-row:last-child {
+    border-bottom: none;
+}
+
+.sources-box .source-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.sources-box .source-info .source-title {
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.sources-box .source-info .source-url {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sources-box .source-info .source-url a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.sources-box .source-info .source-url a:hover {
+    text-decoration: underline;
+}
+
+.sources-box .source-info .source-purpose {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 3px;
+    line-height: 1.5;
+}
+
+.sources-box .source-badges {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.badge.official { background: #E8F5E9; color: #2E7D32; }
+.badge.media { background: #E3F2FD; color: #1565C0; }
+.badge.community { background: #FFF3E0; color: #E65100; }
+.badge.secondary { background: #F3E5F5; color: #7B1FA2; }
+.badge.noise { background: #FFEBEE; color: #C62828; }
+
+.badge.newness { background: #E8F5E9; color: #2E7D32; }
+.badge.background { background: #E3F2FD; color: #1565C0; }
+.badge.contrarian { background: #FFF3E0; color: #E65100; }
+.badge.content { background: #F3E5F5; color: #7B1FA2; }
+
+/* ═══════════ History Check ═══════════ */
+.history-note {
+    margin: 10px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.history-note .label {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.history-note .verdict-not-seen { color: var(--score-high); }
+.history-note .verdict-seen-before { color: var(--score-mid); }
+
+/* ═══════════ Confirmed Event Aggregation ═══════════ */
+.event-aggregation {
+    margin: 16px 0;
+    padding: 14px;
+    border: 1px solid #E7DDB4;
+    border-radius: 6px;
+    background: #FFFDF5;
+}
+
+.event-head {
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.event-sources { display: grid; gap: 8px; }
+
+.event-source {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    align-items: center;
+    color: var(--text-body);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.event-role {
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: #F0EABD;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.event-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.event-domain { color: var(--text-light); font-family: 'Inter', sans-serif; font-size: 10px; }
+.event-source:hover .event-title { color: var(--accent); }
+
+/* ═══════════ Links ═══════════ */
+.links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ext-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border: 1px solid var(--border-divider);
+    border-radius: 4px;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.ext-link:hover {
+    border-color: var(--text-main);
+    background: #FAFAFA;
+}
+
+.ext-link .domain { color: var(--text-light); font-size: 10px; }
+
+/* ═══════════ Radar Scan ═══════════ */
+.radar-section {
+    margin-bottom: 50px;
+}
+
+.radar-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #A3A3A3;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--border-divider);
+}
+
+.radar-card {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    background: #FAFAFA;
+    border: 1px dashed var(--border-divider);
+    border-radius: 4px;
+    transition: all 0.15s;
+}
+
+.radar-card:hover {
+    border-color: #BBBBBB;
+    background: #F5F5F5;
+}
+
+.radar-rank {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-light);
+    flex-shrink: 0;
+}
+
+.radar-card .radar-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.radar-card .radar-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+    line-height: 1.4;
+}
+
+.radar-card .radar-title a {
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-underline);
+}
+
+.radar-card .radar-title a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.radar-card .radar-category {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.radar-card .radar-blurb {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-top: 2px;
+}
+
+.radar-empty {
+    text-align: center;
+    padding: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    border: 1px dashed var(--border-divider);
+    border-radius: 4px;
+}
+
+/* ═══════════ Pick of the Day ═══════════ */
+.pick-section {
+    margin-bottom: 50px;
+}
+
+.pick-card {
+    padding: 28px;
+    background: linear-gradient(135deg, #FFFBEB 0%, #FFF7ED 100%);
+    border: 2px solid #F59E0B;
+    border-radius: 8px;
+    position: relative;
+}
+
+.pick-card::before {
+    content: "★ 今日最佳选题";
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: #F59E0B;
+    color: #FFF;
+    padding: 4px 14px;
+    border-radius: 3px;
+}
+
+.pick-card h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 8px 0 12px;
+    line-height: 1.4;
+}
+
+.pick-card .pick-meta {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.pick-card .pick-outline {
+    margin: 12px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.pick-card .pick-outline li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-body);
+}
+
+.pick-card .pick-outline li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: monospace;
+}
+
+.pick-card .pick-closing {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed #F0EABD;
+}
+
+/* ═══════════ Footer ═══════════ */
+.footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-divider);
+    text-align: center;
+}
+
+.footer .stats {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.footer .stats span {
+    margin: 0 16px;
+}
+
+.footer .generated {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 8px;
+}
+
+/* ═══════════ Responsive ═══════════ */
+@media (max-width: 700px) {
+    body { padding: 0; background: var(--bg-paper); }
+    .container { padding: 32px 20px; box-shadow: none; }
+    .header h1 { font-size: 28px; }
+    .article-card h2 { font-size: 18px; }
+    .pick-card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="header">
+    <h1>AI 日报 | 2026-10-25</h1>
+    <div class="subtitle">AI 内容机会日报</div>
+    <div class="divider"></div>
+    <div class="meta-line">2026-10-25<span>|</span>由 <strong>local-memory-agent</strong> 生成</div>
+    <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
+      <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
+    </div>
+    <div class="trend-callout">大模型发布进入静默期,今天真正的新增量集中在把 AI 往本地搬(Block 本地全双工语音模型、Perplexity 决策模型下放 Mac、30 系显卡指令速率解锁)和让 AI 产出不像 AI(hallmark 反 AI 味设计、EvalResearchBench 审视 AI 当裁判)两条线上。</div>
+</header>
+
+<!-- ═══════ TOP ARTICLES ═══════ -->
+<section class="articles-section">
+    <div class="section-label">今日最值得关注</div>
+    <div class="article-card" data-id="raw-35d668020c86">
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">tools</span><span class="score-tag">评分 7.9/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/" target="_blank" rel="noopener">Block 发布全双工语音模型 Dessa，纯人类语音训练本地可跑</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>10 月 24 日，Jack Dorsey 创办的 Block 发布全双工语音对话模型 Dessa。Block 称它完全用人类语音数据、在单一 NVIDIA GPU 机架上训练完成，能同时说和听，带笑声、停顿、哭腔等情绪表达，可在 MacBook M4 Max 或更高配置的消费级电脑上本地运行。模型目前不对外开放，Block 正先召集安全研究员测试语音代理欺骗通话对象的风险。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>现有语音 AI 普遍先把声音转成文字再合成语音，情绪信息在这一步大量流失，听感生硬，Block 在博客文章里直接批评了这条管线。Dessa 直接从语音到语音，Block 宣称情绪内建在模型里，若这一路线经受住检验，语音助手的自然度有望上一个台阶。能在消费级设备本地运行同样关键，算力开销从云端机房搬到用户设备上，Block 旗下 Square 已在点单场景用语音 AI，本地模型让更多商业和消费场景用得起。声音逼真到以假乱真也带来反面问题，语音诈骗的风险随之上升，Block 因此把安全测试放在开放之前。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 24 日，Jack Dorsey 创办的 Block 从公司研究实验室拿出了语音对话模型 Dessa。按 Block 的说法，这个模型听上去出奇地像人，笑声、停顿、哭腔这些表达它都有，而且可以在 MacBook M4 Max 这个级别的消费级电脑上本地运行。</p>
+<p>Dessa 走全双工路线，同时说和同时听，OpenAI 今年早些时候发布的 GPT-Live 就属于这一类。常见的语音助手流程是先把声音转成文字，交给模型处理，再合成语音播出来；Block 称 Dessa 直接从语音到语音，训练完全使用人类语音数据，只占用了单一 NVIDIA GPU 机架，也就是一柜 GPU 服务器。模型的知识来自训练时用到的对话数据，没有再外挂一个大语言模型做知识检索。</p>
+<p>情绪表达是 Block 反复强调的一点。ElevenLabs v4、Fish Audio Drama 3 这类方案用语音标签来驱动情绪，Block 宣称 Dessa 的情绪直接内建在模型里。研究人员放出了多段演示，各段里模型的声音、节奏和情绪都不一样。有一段里模型说自己下班后很累，语气听上去确实疲惫；另一段里它情绪激动，几乎要哭出来。还有一段是 Block 团队成员 Cara 和它玩猜词游戏，第一个词它张口就猜中，第二个也没等多久。TechCrunch 提醒，目前无法确认这些情绪是否由某种标签在背后控制。</p>
+<p><img alt="Jack Dorsey" src="https://techcrunch.com/wp-content/uploads/2025/07/jack-dorsey.jpg" /></p>
+<p>Block 在博客文章里批评现有语音 AI 把声音转成文字，扔掉了文字装不下的巨量信息，最强的大模型也听不出用户的感受。Jack Dorsey 发帖称语音是与智能交互最自然的方式，与 Dessa 交谈就像与人交谈，有情绪也有停顿，节奏自然，他还把 Dessa 称作有史以来最真实的全双工语音模型。研究者 Ragavan Thurairatnam 把这次发布称作语音领域的 GPT-3 时刻。</p>
+<p>Dessa 目前没有公开访问渠道，Block 先召集安全研究员来测试，重点放在语音代理可能欺骗通话对象的场景。Block 的主业是金融服务和小企业解决方案，旗下 Square 已经在用语音 AI 处理点单，若语音模型能在设备本地运行，Block 就能用更低成本支撑更多商业和消费场景。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Dessa 系 Block 首次公开发布的语音模型，全双工能力、纯人类语音训练与消费级本地运行等信息均为首次披露，历史日报无同事件记录。</div>
+            <div class="tags-row"><span class="tag">语音模型</span><span class="tag">全双工</span><span class="tag">端侧AI</span><span class="tag">Jack Dorsey</span><span class="tag">Block</span></div>
+            <div class="links-row"><a class="ext-link" href="https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/" target="_blank" rel="noopener">Source <span class="domain">techcrunch.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Dessa Full-Duplex Speech Model: 0 Text Tokens [2026]</div>
+                        <div class="source-url"><a href="https://shattered.io/block-dessa-full-duplex-speech-model-no-text-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Block unveils Dessa, a full-duplex voice model trained only on human speech — AI Chat Daily</div>
+                        <div class="source-url"><a href="https://www.aichatdaily.com/ai-models/block-unveils-dessa-full-duplex-voice-model-trained-only" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Block Dessa: The Speech Model Trained Without Text | CellCog</div>
+                        <div class="source-url"><a href="https://cellcog.ai/blog/block-dessa" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Block introduces Dessa, a voice AI it says learned from speech alone | Superpower Daily</div>
+                        <div class="source-url"><a href="https://superpowerdaily.com/posts/block-introduces-dessa-a-voice-ai-it-says-learned-from-speech-alone" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Jack Dorsey's Block launches Dessa; AI voice model trained entirely on 'human conversation' - The Economic Times</div>
+                        <div class="source-url"><a href="https://m.economictimes.com/ai/ai-insights/jack-dorseys-block-launches-dessa-ai-voice-model-trained-entirely-on-human-conversation/articleshow/135164566.cms" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-fc2e1c374402">
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">tools</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://github.com/Nutlope/hallmark" target="_blank" rel="noopener">Together AI 开源 Hallmark,在真实浏览器里逐条清理 AI 页面机器味</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Together AI 的开源设计技能 Hallmark 登上 GitHub Trending,仓库 10 月 22 日刚更新 README,放出的 v2 把主题目录扩到 48 套,照片库收进 755 张开放许可图片,还新增 redesign 和 audit 两条命令,一条在保住内容和交互的前提下重做旧页面,一条只出诊断报告不动手。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>AI 编程助手搭页面出活很快,版式却开始互相撞脸,一眼就能认出是机器做的。Hallmark 把这股机器味拆成一条条能执行的规则和自动检查,给用 Claude Code、Cursor 这类助手做前端的人一套现成的设计约束加质检流程,省掉每次人工挑毛病。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>用 AI 编程助手做网页的人越来越多,页面也越长越像。Together AI 开源的设计技能 Hallmark 冲着这个问题来,装进 Claude Code、Cursor、Codex、OpenCode 之后,一句提示就能搭出整个页面,产出是独立的 HTML 和 CSS 文件。</p>
+<p>它的做法分两步。先从 48 套主题里发三套合用的让你挑,主题只装纸张、字体、配色这类材料,不管页面内容和顺序,同一主题换个需求就是另一张页面。页面写完再放进真实浏览器,按八种屏幕宽度核对那些一眼假的信号,比如每个标题上方都顶一行小帽子式导语,标题里挑一个词单独变色,整页除了空框架就是照片,页尾还要塞一个邮件订阅框,以及点了只会道谢却什么都没发的表单。查完再换一个没参与搭建的检查进程冷眼复查。</p>
+<p><img alt="Dusk 主题的成品页示例" src="https://github.com/Nutlope/hallmark/raw/main/docs/screenshots/dusk.jpg" /></p>
+<p>v2 补上了素材和命令。照片库收进 755 张开放许可图片,全部来自维基共享资源 Wikimedia Commons,用哪张就在页面上标出处;新增的 redesign 命令保住原页面的内容和交互重做设计,audit 命令只出报告不动手。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>历史日报未收录该仓库,v2 要点随 10 月 22 日 README 更新进入当日 GitHub Trending,属首次报道的新话题。</div>
+            <div class="tags-row"><span class="tag">AI 编程</span><span class="tag">前端设计</span><span class="tag">开源工具</span><span class="tag">Claude Code</span></div>
+            <div class="links-row"><a class="ext-link" href="https://github.com/Nutlope/hallmark" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Hassan on X: "Introducing Hallmark! An open source design skill to make beautiful UIs and landing pages by default. Works in Claude Code, Cursor, and Codex. npx skills add nutlope/hallmark" / X</div>
+                        <div class="source-url"><a href="https://x.com/nutlope/status/2056754959819915459?lang=en" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Issues · Nutlope/hallmark · GitHub</div>
+                        <div class="source-url"><a href="https://github.com/Nutlope/hallmark/issues" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Hallmark’s Invisible AI Strategy: Protect the Human Core</div>
+                        <div class="source-url"><a href="https://aiadopters.club/p/hallmark-spent-115-years-selling" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-85dac8e8e11e">
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">tools</span><span class="score-tag">评分 7.5/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://pandaily.com/qwen-go-my-apps-no-code-shareable-apps-alibaba-cloud-meoo-invite-beta" target="_blank" rel="noopener">Qwen Go! 上线 My Apps,一句话生成可分享应用</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>10 月 23 日,阿里巴巴的个人智能体 Qwen Go! 上线 My Apps 功能,用户用一句自然语言描述需求,零代码就能生成一个应用,应用可以分享给他人,数据持续更新,长期保持可用。Pandaily 10 月 24 日报道了这次更新。My Apps 和云 Pro 模式目前都处于邀请制内测,用户可以在 Qwen App 内的邀请页加入等候名单。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>普通人想做一个小应用,过去要么找开发者,要么套模板网站。My Apps 把构建和上线这些步骤压缩成一次描述,生成的应用可以分享、数据持续更新、长期可用,小工具能留在聊天之外持续运转。叠加阿里系服务的数据授权和云 Pro 的代理操作,应用还能按个人数据定制。有了这层能力,普通人除了让 AI 替自己办事,还能让 AI 替自己造工具。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 23 日,阿里巴巴的个人智能体 Qwen Go! 上线了 My Apps 功能。用户把想要的应用用一句话描述出来,它就能生成一个面向日常生活、工作或学习的工具,全程不用写代码。生成的应用可以分享给别人,数据持续更新,而且长期可用,Pandaily 10 月 24 日的报道特别提到,这些应用不会在聊天结束后消失。</p>
+<p>官方给出的示例都很日常,比如互动课程材料、活动报名页,也有家庭出游指南和健身课预约助手。这类小工具过去要么请开发者帮忙,要么套一个模板网站的现成方案,现在描述一句话就能拿到手。</p>
+<p>整套功能跑在阿里云的 AI 应用生产平台 Meoo 上。构建应用、配置数据库、部署上线这三步最容易把非程序员卡住,Meoo 全部自动完成。它还在 GitHub 上提供命令行工具,开发者接入的是同一套后端。</p>
+<p>My Apps 还和 Qwen Go! 的云 Pro 模式打通。云 Pro 能替用户操作云手机和云电脑,用户授权之后,生成的应用可以调用淘宝、大麦、夸克网盘等阿里系服务的数据。比如做一个自动汇总自己票务或购物信息的小工具,应用因此比通用工具更贴合个人。</p>
+<p>这次更新延续了 Qwen Go! 的定位变化。本月早些时候开放注册时,它的卖点是替用户跑腿办事,处理航班延误理赔、价保追踪这类杂事,My Apps 把它推进到造工具这一步。同一天,Qwen 的蒋冠军在 CNCC 大会上提出个人智能体依赖模型、记忆和生态协同,应用构建为这个框架补上创造层,可以视作这次功能背后的思路。目前 My Apps 和云 Pro 都在邀请制内测,用户可在 Qwen App 内的邀请页加入等候名单,官方称正在快速放量。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>My Apps 为 10 月 23 日首次上线的新功能,Qwen Go! 此前只有代办任务定位,历史日报未出现过该事件。</div>
+            <div class="tags-row"><span class="tag">阿里</span><span class="tag">Qwen Go!</span><span class="tag">个人智能体</span><span class="tag">无代码</span><span class="tag">AI 应用</span></div>
+            <div class="links-row"><a class="ext-link" href="https://pandaily.com/qwen-go-my-apps-no-code-shareable-apps-alibaba-cloud-meoo-invite-beta" target="_blank" rel="noopener">Source <span class="domain">pandaily.com</span></a>
+<a class="ext-link" href="https://news.google.com/rss/articles/CBMilAFBVV95cUxNeDUwdW5vN1JDNk1SQ0xpTV9yM0FhR2dGNkItNXVxeW5SazFfVlgxOTJLcm02OGRSMWxIa2M2SzczdV9ITDB0M1FlbjZXcXdLWWhZd2JldThNOWJwUFRBRGJQOFdlcjlGR0c3TWFNV2I5ZWZmQnFDazdHSWNTWDUtVVlNLWUwQmVOV0xzUDU5N21XbHRH?oc=5" target="_blank" rel="noopener">Secondary (Google News redirect) <span class="domain">news.google.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">秒悟更新日志 - Meoo</div>
+                        <div class="source-url"><a href="https://docs.meoo.com/file-10" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">阿里云秒悟 Meoo：人人可用的AI应用创作平台，新用户送 12000积分，订阅套餐首月9.9元起-阿里云开发者社区</div>
+                        <div class="source-url"><a href="https://developer.aliyun.com/article/1753685" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">阿里云秒悟 Meoo是什么？功能、适用场景、使用教程与最新优惠-阿里云开发者社区</div>
+                        <div class="source-url"><a href="https://developer.aliyun.com/article/1745512" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-9133bf5a64c9">
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.2/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://docs.perplexity.ai/docs/decisions/decider-for-mac" target="_blank" rel="noopener">Perplexity 4B 决策模型下放 Mac，本地免费跑</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Perplexity 在 10 月 22 日通过官方 X 账号 @perplexitydevs 宣布 Decider for Mac 上线。这款 macOS 应用把 4B 决策模型 pplx-decider-flash-v1.2 搬进本机，首次启动下载 5.8 GB 模型权重，随后在 http://127.0.0.1:8080/v1/decisions 提供与托管版相同的 Decisions API。不需要 API key，不产生使用账单，文本和图像输入都支持，模型读取的所有内容留在本机。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>分类和判断类任务里最难的一类内容，恰恰是不允许出本机的那种，客户导出、内部工具截图、含令牌的日志，托管 API 再方便也送不出去。Decider for Mac 把判断环节整个放到本机，开发者可以反复调问题和阈值，跑几千次打标也不产生费用。等需要托管吞吐量时，改一下 URL、加上 Authorization 头，同一份代码就能切到 api.perplexity.ai，还能换更大的 pplx-decider-v1.2 模型。本地试错、云端扩量，一条路径走通。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>三天前（10 月 22 日），Perplexity 在官方 X 账号 @perplexitydevs 宣布推出 Decider for Mac，把 4B 决策模型 pplx-decider-flash-v1.2 下放到 Mac 本地运行。这款常驻菜单栏的应用首次启动时下载 5.8 GB 模型，之后在本机的 http://127.0.0.1:8080/v1/decisions 上提供与托管版一致的 Decisions API。没有 API key，也没有账单，模型读取的内容全部留在本机，客户导出、会议记录、含令牌的日志这类不方便发给云端 API 的材料，可以直接在本机分类。</p>
+<p><img alt="Decider 菜单栏界面，模型就绪并显示本机 API 地址" src="https://mintcdn.com/perplexity/ZfCnPZnOM2bY-0ki/docs/assets/images/decider/menu.png?w=2500&amp;fit=max&amp;auto=format&amp;n=ZfCnPZnOM2bY-0ki&amp;q=85&amp;s=601e1c9819c3dd101e9e774933b1dd03" /></p>
+<p>硬件要求是 Apple Silicon（M1 或更新）、macOS 13 或更新、16 GB 内存和约 6 GB 磁盘空间。应用支持文本与图像输入，菜单显示 Ready (text + images) 后，截图和照片也能发。官方文档同时提醒，本地权重是 q8_0 量化构建，与托管部署并不相同，本地调好的阈值迁到托管模型前要先复核。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Decider 产品线此前只有托管 Decisions API，本次首次把 4B 决策模型以 q8_0 量化桌面应用形态下放到 Mac 端侧免费运行，属产品线新形态发布。</div>
+            <div class="tags-row"><span class="tag">Perplexity</span><span class="tag">决策模型</span><span class="tag">端侧AI</span><span class="tag">本地部署</span><span class="tag">数据隐私</span></div>
+            <div class="links-row"><a class="ext-link" href="https://docs.perplexity.ai/docs/decisions/decider-for-mac" target="_blank" rel="noopener">Source <span class="domain">docs.perplexity.ai</span></a>
+<a class="ext-link" href="来源: AI Labs News (Google News)" target="_blank" rel="noopener">Coverage</a>
+<a class="ext-link" href="https://news.google.com/rss/articles/CBMilgFBVV95cUxPajlzYVhZcE05UzVXaVdYbTdWc3czX1YzMjR0dWJFWFhxZDNnb3R5M2Z6bDhrOXZxNzVXWENMczNhQURQbU8zeFo1ZVpobC1YUHVGWUZlWFQ4UXpPMEd6SG1HR1IxaEh2ODlseS03OHl0MV85Qkg0QWlZeWNSWEVoOXdwY2lJcFVqczhxZjJ2eDVGVDdSTGc?oc=5" target="_blank" rel="noopener">Secondary (Google News redirect) <span class="domain">news.google.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">🚨 AI News | TestingCatalog on X: "ICYMI 👀: Perplexity released its pplx-decider-flash-v1.2 decision model as Mac application that serves decision API locally. The model takes 5.8 GB of a space and requires 16 GB of memory. 100% True 🤖" / X</div>
+                        <div class="source-url"><a href="https://x.com/testingcatalog/status/2113933478056087821/photo/2" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Perplexity Developers on X: "You can now run pplx-decider-flash-v1.2 locally on your Mac, without an API key. Decider for Mac is an app that runs the 4B decision model on device. Ask a question about text or an image and get a probability back, all on your machine. https://t.co/1BJ4Qv3Urr" / X</div>
+                        <div class="source-url"><a href="https://x.com/perplexitydevs/status/2113400672238616800" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">You can now run pplx-decider-flash-v1.2 locally on your Mac, without an API key - Announcements - Perplexity API Platform Forum</div>
+                        <div class="source-url"><a href="https://community.perplexity.ai/t/you-can-now-run-pplx-decider-flash-v1-2-locally-on-your-mac-without-an-api-key/6413" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Perplexity for Mac claims to split up AI tasks to preserve privacy</div>
+                        <div class="source-url"><a href="https://appleinsider.com/articles/26/09/01/perplexity-claims-to-protect-privacy-by-splitting-ai-tasks-between-local-and-cloud-models" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Official Perplexity Computer Breakdown (2026)</div>
+                        <div class="source-url"><a href="https://www.vellum.ai/blog/official-perplexity-computer-breakdown" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-ac067a4a09c8">
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">community</span><span class="score-tag">评分 6.9/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50219700" target="_blank" rel="noopener">gpu-unlock 1.0.0 用内核模块解锁 RTX 30 系 FP/BF16 指令发射速率</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>gpu-unlock 发布 1.0.0 正式版并在 HN 首次获得大规模曝光，讨论热度约 158 分，仓库已有 2.8k stars。项目本身不新，作者自述已在两张 3090 上运行一个月。这一版补齐 Arch、Debian、Fedora 三家发行版的打包，把模块与固件放进 initramfs，加入内核命令行按卡 opt-in，并处理挂起恢复后自动重新解锁。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>本地跑大模型的算力大多由 GeForce 卡攒出来，矩阵乘法吞吐直接决定 prefill 与训练暖机的耗时。解锁恢复的是固件压掉的发射速率，社区报告里 LLM prefill 提升 14% 到 36%，扩散模型与 FlashAttention 同样受益。免补丁这一点同样实际，NVIDIA 每次发布新驱动，用户不必再手动修补，解锁在 initramfs 阶段先完成。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>开发者 Zagitta 发布 gpu-unlock 1.0.0，这是一个 Linux 内核模块，把 RTX 30 系消费卡的 FP/BF16 指令发射速率解锁到专业卡同等水平。它把 CMP unlocker 的 V67/PLM 技术与 UEFI 方案的预驱动时机合在一起，先写入速度选择器 SS0 0x88888888 与 SS1 0x8，再赶在未修改的 NVIDIA 驱动绑定显卡之前执行 FLR。它既不是 UEFI 应用，也不是打过补丁的驱动，NVIDIA 出新驱动时无需每次手动修补。解锁把 GA102、GA103、GA104、GA106 显卡上 FP/BF16 FMA into FP32 指令的发射速度翻倍。3090 Ti 在 450W 跑 dense 8192³ GEMM，五次采样取中位数，FP16 从 87.46 升到 118.39 TFLOPS。作者自述已在两张水冷 3090 上连续运行一个月。这是社区工具，收益依赖功耗墙与散热，普通用户不必跟风刷写。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>v1.0.0 正式版补齐多发行版打包与 initramfs 集成，HN 首次大规模曝光是新增量，项目此前已在作者两张 3090 上运行一个月</div>
+            <div class="tags-row"><span class="tag">显卡解锁</span><span class="tag">NVIDIA</span><span class="tag">Linux 内核模块</span><span class="tag">本地推理</span><span class="tag">开源工具</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50219700" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://github.com/Zagitta/gpu-unlock" target="_blank" rel="noopener">Original article <span class="domain">github.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">RTX 3090 GPU Unlock: BF16 Hits 129.6 TFLOPS [2026]</div>
+                        <div class="source-url"><a href="https://shattered.io/rtx-3090-gpu-unlock-bf16-129-6-tflops-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Instagram</div>
+                        <div class="source-url"><a href="https://www.instagram.com/reel/De1X3sGotcN" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Open-Source Tool Unlocks Nvidia RTX 30-Series GPU Power | Wisevoter</div>
+                        <div class="source-url"><a href="https://wisevoter.com/world/2026/10/24/open-source-tool-unlocks-nvidia-rtx-30-series" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-3dbc3cd5bdab">
+            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">community</span><span class="score-tag">评分 6.6/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50221066" target="_blank" rel="noopener">Enzyme 首次开源,给个人笔记库装一层想法的 LSP</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>作者 jphorism 在 HN 首楼自述,本周决定把数年的工作开源。项目以 Apache 2.0 许可证发布,仓库历史有 713 次提交,最初是一个 Obsidian 插件,后来做成了 Obsidian 的第一个 MCP。安装走 install.sh 脚本,一条 curl 命令完成,再执行 enzyme install 即可接入 Claude Code、Codex、hermes 或 openclaw。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>编码代理已经能读代码库、跑终端命令,却很难用上你多年攒下的笔记。一个项目什么变了,某个决定为什么那样做,答案散在几个月写下的多篇笔记里,关键词搜索接不住这类跨时间的问题。Enzyme 把这层检索搬到本机,代理回答时引用你自己的原文并附笔记出处,笔记也不用先搬到任何云上。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>作者 jphorism 本周把开发多年的 Enzyme 首次开源,仓库带着 713 次提交的历史,以 Apache 2.0 许可证放出。这个工具读取 Markdown 笔记既有的组织方式,文件夹、标签、链接和日期,在本机构建索引,Claude Code、Codex 等代理由此能检索并引用数月前写下的相关笔记。README 把它定位为知识库的本地优先编译步骤,作者称搜索全程在本机完成,比前沿模型省 350 倍成本、快 1000 倍。HN 帖子的标题则称它是一门为代理编译 wiki 的编程语言。两种说法指向同一件事,写明读哪些内容的设置文件 .enzyme 本身就是一段小语言,代理装好技能后自己判断什么时候该查。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>作者在 HN 首楼明确表示本周决定将数年私有开发的工作开源,本次 Show HN 是项目首次公开亮相,历史日报也未收录过该项目。</div>
+            <div class="tags-row"><span class="tag">开源工具</span><span class="tag">本地优先</span><span class="tag">AI 代理</span><span class="tag">知识库</span><span class="tag">Obsidian</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50221066" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://github.com/byenzyme/enzyme" target="_blank" rel="noopener">Original article <span class="domain">github.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">LLM Wiki 3— From LLM Wiki to Agentic Knowledge Maintenance</div>
+                        <div class="source-url"><a href="https://medium.com/@ken.moriwaki/from-llm-wiki-to-agentic-knowledge-maintenance-8a71500aabb9" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Enzyme – a programming language that compiles wikis ...</div>
+                        <div class="source-url"><a href="https://news.ycombinator.com/item?id=50221066" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge community">社区讨论</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">GitHub - gavischneider/awesome-llm-wiki: A curated list of foundational blueprints, functional frameworks, and technical guides for building compounding, AI-compiled knowledge bases. · GitHub</div>
+                        <div class="source-url"><a href="https://github.com/gavischneider/awesome-llm-wiki" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">GitHub - byenzyme/enzyme: Local-first compile step for knowledge bases. Save 350x cost, 1000x speed vs. frontier models · GitHub</div>
+                        <div class="source-url"><a href="https://github.com/byenzyme/enzyme" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">A local-first project knowledge graph for AI coding agents - DEV Community</div>
+                        <div class="source-url"><a href="https://dev.to/heytalepazguato/a-local-first-project-knowledge-graph-for-ai-coding-agents-34b4" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-b0b119b4ebab">
+            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">research</span><span class="score-tag">评分 6.3/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://huggingface.co/papers/2610.04184" target="_blank" rel="noopener">AI 给 AI 当裁判行不行,新基准给出量化答案</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>论文 EvalResearchBench 于 10 月 16 日发布在 arXiv,编号 2610.04184,10 月 23 日由作者 Yaolun Zhang 提交到 HuggingFace Papers,团队来自 AG2AI。论文提出同名基准 ERB,评测智能体能否自主设计评估器,并用 9 名 researcher 智能体、13 个候选模型、14 个目标基准做了第一轮系统对比。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>递归自我改进要成立,系统得能判断每次改动是真提升还是错觉,这个判断现在靠反复运行复杂基准,成本高、拖慢迭代。ERB 把这件事变成可测的对象,量化地回答自动设计的评估器还差多少。对做智能体自我改进的团队,75% 对 91% 的差距是明确的改进坐标;对读榜单的人,它提醒自动评估还不能直接替代目标基准。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>AG2AI 团队 10 月的新论文 EvalResearchBench(arXiv 2610.04184)提出了同名基准,专门评测智能体能否自主设计评估器。被称为 researcher 的智能体拿到目标材料、开发参考和候选 API,在固定时间与 API 预算内挑选或合成任务、实现评分器,再靠试点测试修订,最后冻结一个可执行的评估器,覆盖编程、协作、推理三类能力。团队研究了 9 名 researcher、13 个候选模型,把每个冻结的评估器与 14 个目标基准对比,口径是分数一致性和成对排序一致性。最好的评估器按目标基准的方式排序约 75% 的候选对,低于目标基准之间分歧设定的 91% 上限;人工设计的公开任务样本仍是强基线,在开发目标上最好的评估器,换到对研究者保密的密封目标上就不再是最好。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>论文 10 月 16 日发布于 arXiv、10 月 23 日才提交到 HuggingFace Papers,属首次公开发表的新基准研究,历史日报未收录,页面评论也刚刚开始。</div>
+            <div class="tags-row"><span class="tag">AI 评测</span><span class="tag">智能体</span><span class="tag">递归自我改进</span><span class="tag">学术研究</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2610.04184" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">EvalResearchBench</div>
+                        <div class="source-url"><a href="https://mercury7353.github.io/self-evaluation-bench" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">State of AI Agent Evaluation 2026: Benchmarks, Gaps, and What Actually Works</div>
+                        <div class="source-url"><a href="https://benchgen.com/blog/state-of-ai-agent-evaluation-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AI Benchmarks 2026: Top Evaluations and Their Limits</div>
+                        <div class="source-url"><a href="https://kili-technology.com/blog/ai-benchmarks-guide-the-top-evaluations-in-2026-and-why-theyre-not-enough" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- ═══════ RADAR SCAN ═══════ -->
+        <section class="radar-section">
+            <div class="radar-header">📡 雷达扫描</div>
+            <div class="radar-card">
+                <div class="radar-rank">#1</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://github.com/makecindy/cindy" target="_blank" rel="noopener">开源开箱即用 AI agent 项目 cindy 冲上 GitHub 热门</a> <span class="radar-category">tools</span></div>
+                    <div class="radar-blurb">定位想到就能做到的个人智能体,宣传语大于可验证细节,先观察留存与真实能力再谈。</div>
+                </div>
+            </div>
+            <div class="radar-card">
+                <div class="radar-rank">#2</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://news.ycombinator.com/item?id=50223647" target="_blank" rel="noopener">HN 热议为什么 AI 生成的语言难懂</a> <span class="radar-category">community</span></div>
+                    <div class="radar-blurb">136 分讨论把 AI 腔的疲劳摆上台面,与今日 hallmark 反 AI 味设计互为镜像,读者不适感正在变成产品机会。</div>
+                </div>
+            </div>
+        </section>
+
+<!-- ═══════ PICK OF THE DAY ═══════ -->
+
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+    <div class="stats">10 源<span>|</span>99 条<span>|</span>7 条精选<span>|</span>17 条候选</div>
+    <div class="generated">生成于 2026-10-25T07:51:31.416769</div>
+</footer>
+
+</div>
+<script>
+(function () {
+    function closeLightbox(overlay, escHandler) {
+        overlay.remove();
+        document.removeEventListener('keydown', escHandler);
+    }
+    function openLightbox(src, alt) {
+        var overlay = document.createElement('div');
+        overlay.className = 'img-lightbox';
+        var big = document.createElement('img');
+        big.src = src;
+        big.alt = alt || '';
+        overlay.appendChild(big);
+        var escHandler = function (e) {
+            if (e.key === 'Escape') closeLightbox(overlay, escHandler);
+        };
+        overlay.addEventListener('click', function () { closeLightbox(overlay, escHandler); });
+        document.addEventListener('keydown', escHandler);
+        document.body.appendChild(overlay);
+    }
+    document.addEventListener('click', function (e) {
+        var img = e.target;
+        if (img && img.tagName === 'IMG' && img.closest && img.closest('.article-body')) {
+            e.preventDefault();
+            openLightbox(img.src, img.alt);
+        }
+    });
+})();
+</script>
+</body>
+</html>
