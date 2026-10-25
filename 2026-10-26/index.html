@@ -1,0 +1,1383 @@
+<!-- ai-daily-final-sha256:50e81db3aac1b11632dd47d2f09bb5aca5ff3cce14e540cdeed939576c3dae77 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 | 2026-10-26 — AI 内容机会日报</title>
+<style>
+/* ═══════════ CSS Reset & Base ═══════════ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+:root {
+    --bg-page: #F7F7F5;
+    --bg-paper: #FFFFFF;
+    --text-main: #111111;
+    --text-body: #222222;
+    --text-muted: #555555;
+    --text-light: #999999;
+    --accent: #D93025;
+    --accent-soft: #FFF0EE;
+    --border-divider: #E5E5E5;
+    --border-strong: #111111;
+    --tag-bg: #F5F5F5;
+    --score-high: #0F7B4E;
+    --score-mid: #D97706;
+    --link-underline: #CCCCCC;
+    --hover-accent: #B82020;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", serif;
+    background: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-paper);
+    padding: 80px 60px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: var(--text-main);
+}
+
+/* ═══════════ Header ═══════════ */
+.header {
+    text-align: center;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--border-strong);
+}
+
+.header h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 1.2;
+    color: var(--text-main);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.header .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.header .divider {
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    margin: 0 auto 20px;
+}
+
+.header .meta-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+}
+
+.header .meta-line span {
+    margin: 0 12px;
+    color: var(--border-divider);
+}
+
+.header .trend-callout {
+    margin-top: 24px;
+    padding: 16px 24px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    font-size: 15px;
+    color: var(--text-main);
+    text-align: left;
+    line-height: 1.7;
+    border-radius: 0 4px 4px 0;
+}
+
+/* ═══════════ Article Cards ═══════════ */
+.articles-section {
+    margin-bottom: 50px;
+}
+
+.section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.article-card {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.article-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.article-body { margin: 16px 0; }
+.article-body img {
+    display: block; max-width: 100%; height: auto;
+    margin: 14px auto; border-radius: 8px;
+    cursor: zoom-in;
+}
+.img-lightbox {
+    position: fixed; inset: 0; z-index: 999;
+    background: rgba(0, 0, 0, 0.86);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; cursor: zoom-out;
+}
+.img-lightbox img {
+    max-width: 96vw; max-height: 96vh; width: auto; height: auto;
+    border-radius: 8px; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+.article-body summary {
+    cursor: pointer; color: var(--accent); font: 600 13px 'Inter', sans-serif;
+}
+.article-body[open] summary { margin-bottom: 14px; }
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.rank-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    background: var(--text-main);
+    color: #FFF;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+}
+
+.rank-badge.headline {
+    background: var(--accent);
+}
+
+.category-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: var(--tag-bg);
+    color: var(--text-muted);
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+}
+
+.score-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--score-high);
+}
+
+.newness-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 4px 8px;
+    background: #F0F9F4;
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+}
+
+.article-card h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.article-card .one-liner {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: #FAFAFA;
+    border-left: 2px solid var(--border-divider);
+    border-radius: 0 4px 4px 0;
+}
+
+.article-card .what-box {
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-body);
+}
+
+.article-card .what-box strong {
+    color: var(--accent);
+}
+
+.article-card .why-box {
+    margin-bottom: 14px;
+    padding: 14px 18px;
+    background: #FFFDF5;
+    border: 1px solid #F0EABD;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-body);
+}
+
+.article-card .body-md {
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-body);
+    text-align: justify;
+}
+
+.article-card .body-md p {
+    margin-bottom: 16px;
+}
+
+.article-card .body-md a {
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-underline);
+    transition: all 0.2s;
+}
+
+.article-card .body-md a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.article-card .body-md strong {
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.article-card .body-md code {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    font-size: 13px;
+    background: #F5F5F5;
+    padding: 2px 6px;
+    border-radius: 2px;
+    color: var(--accent);
+}
+
+.article-card .body-md ul, .article-card .body-md ol {
+    margin-bottom: 16px;
+    padding-left: 20px;
+}
+
+.article-card .body-md li {
+    margin-bottom: 8px;
+}
+
+/* ═══════════ Tags ═══════════ */
+.tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: #F0F0F0;
+    color: #666;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+}
+
+/* ═══════════ Verification Sources ═══════════ */
+.sources-box {
+    margin: 16px 0;
+    border: 1px solid var(--border-divider);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.sources-box .sources-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 10px 16px;
+    background: #FAFAFA;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.sources-box .source-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 16px;
+    border-bottom: 1px solid #F5F5F5;
+    font-size: 13px;
+    gap: 12px;
+}
+
+.sources-box .source-row:last-child {
+    border-bottom: none;
+}
+
+.sources-box .source-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.sources-box .source-info .source-title {
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.sources-box .source-info .source-url {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sources-box .source-info .source-url a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.sources-box .source-info .source-url a:hover {
+    text-decoration: underline;
+}
+
+.sources-box .source-info .source-purpose {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 3px;
+    line-height: 1.5;
+}
+
+.sources-box .source-badges {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.badge.official { background: #E8F5E9; color: #2E7D32; }
+.badge.media { background: #E3F2FD; color: #1565C0; }
+.badge.community { background: #FFF3E0; color: #E65100; }
+.badge.secondary { background: #F3E5F5; color: #7B1FA2; }
+.badge.noise { background: #FFEBEE; color: #C62828; }
+
+.badge.newness { background: #E8F5E9; color: #2E7D32; }
+.badge.background { background: #E3F2FD; color: #1565C0; }
+.badge.contrarian { background: #FFF3E0; color: #E65100; }
+.badge.content { background: #F3E5F5; color: #7B1FA2; }
+
+/* ═══════════ History Check ═══════════ */
+.history-note {
+    margin: 10px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.history-note .label {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.history-note .verdict-not-seen { color: var(--score-high); }
+.history-note .verdict-seen-before { color: var(--score-mid); }
+
+/* ═══════════ Confirmed Event Aggregation ═══════════ */
+.event-aggregation {
+    margin: 16px 0;
+    padding: 14px;
+    border: 1px solid #E7DDB4;
+    border-radius: 6px;
+    background: #FFFDF5;
+}
+
+.event-head {
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.event-sources { display: grid; gap: 8px; }
+
+.event-source {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    align-items: center;
+    color: var(--text-body);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.event-role {
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: #F0EABD;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.event-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.event-domain { color: var(--text-light); font-family: 'Inter', sans-serif; font-size: 10px; }
+.event-source:hover .event-title { color: var(--accent); }
+
+/* ═══════════ Links ═══════════ */
+.links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ext-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border: 1px solid var(--border-divider);
+    border-radius: 4px;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.ext-link:hover {
+    border-color: var(--text-main);
+    background: #FAFAFA;
+}
+
+.ext-link .domain { color: var(--text-light); font-size: 10px; }
+
+/* ═══════════ Radar Scan ═══════════ */
+.radar-section {
+    margin-bottom: 50px;
+}
+
+.radar-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #A3A3A3;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--border-divider);
+}
+
+.radar-card {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    background: #FAFAFA;
+    border: 1px dashed var(--border-divider);
+    border-radius: 4px;
+    transition: all 0.15s;
+}
+
+.radar-card:hover {
+    border-color: #BBBBBB;
+    background: #F5F5F5;
+}
+
+.radar-rank {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-light);
+    flex-shrink: 0;
+}
+
+.radar-card .radar-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.radar-card .radar-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+    line-height: 1.4;
+}
+
+.radar-card .radar-title a {
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-underline);
+}
+
+.radar-card .radar-title a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.radar-card .radar-category {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.radar-card .radar-blurb {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-top: 2px;
+}
+
+.radar-empty {
+    text-align: center;
+    padding: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    border: 1px dashed var(--border-divider);
+    border-radius: 4px;
+}
+
+/* ═══════════ Pick of the Day ═══════════ */
+.pick-section {
+    margin-bottom: 50px;
+}
+
+.pick-card {
+    padding: 28px;
+    background: linear-gradient(135deg, #FFFBEB 0%, #FFF7ED 100%);
+    border: 2px solid #F59E0B;
+    border-radius: 8px;
+    position: relative;
+}
+
+.pick-card::before {
+    content: "★ 今日最佳选题";
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: #F59E0B;
+    color: #FFF;
+    padding: 4px 14px;
+    border-radius: 3px;
+}
+
+.pick-card h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 8px 0 12px;
+    line-height: 1.4;
+}
+
+.pick-card .pick-meta {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.pick-card .pick-outline {
+    margin: 12px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.pick-card .pick-outline li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-body);
+}
+
+.pick-card .pick-outline li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: monospace;
+}
+
+.pick-card .pick-closing {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed #F0EABD;
+}
+
+/* ═══════════ Footer ═══════════ */
+.footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-divider);
+    text-align: center;
+}
+
+.footer .stats {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.footer .stats span {
+    margin: 0 16px;
+}
+
+.footer .generated {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 8px;
+}
+
+/* ═══════════ Responsive ═══════════ */
+@media (max-width: 700px) {
+    body { padding: 0; background: var(--bg-paper); }
+    .container { padding: 32px 20px; box-shadow: none; }
+    .header h1 { font-size: 28px; }
+    .article-card h2 { font-size: 18px; }
+    .pick-card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="header">
+    <h1>AI 日报 | 2026-10-26</h1>
+    <div class="subtitle">AI 内容机会日报</div>
+    <div class="divider"></div>
+    <div class="meta-line">2026-10-26<span>|</span>由 <strong>local-memory-agent</strong> 生成</div>
+    <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
+      <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
+    </div>
+    <div class="trend-callout">AI agent 的活动半径继续外扩：Grok Bot 拿到手机系统级应用权限，33B 开源模型把 agentic 编程拉进单张消费级显卡，自主科研系统开始端到端产出可提交的手稿</div>
+</header>
+
+<!-- ═══════ TOP ARTICLES ═══════ -->
+<section class="articles-section">
+    <div class="section-label">今日最值得关注</div>
+    <div class="article-card" data-id="raw-20fe956fc9fc">
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">tools</span><span class="score-tag">评分 8.2/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://teslanorth.com/2026/10/22/grok-bot-phone-calendar-reminders-contacts/" target="_blank" rel="noopener">Grok Bot 摸到你的手机：六类原生应用逐项授权开放</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>10 月 22 日（周四）下午 3:14（太平洋时间），Grok Bot 官方 @bot 账号宣布 Bot 可使用手机内置的日历、提醒事项、联系人等应用，iOS 与 Android 正在分批推送；权限截图显示共六类应用，每项独立 Allow，逐应用授权。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Grok Bot 是在自有云端计算机上执行任务的代理，此前只能通过邮件、X 等连接账号工作；这次拿到的是手机本地数据与系统应用的直接操作入口（日程、通讯录、信息、智能家居），叠加本周的 Action Button 与 Android 默认助手能力，「按键—口令—自动执行」的闭环首次在手机端成形。逐应用 Allow 把触及范围的选择权交回用户，但云端代理读取私信与通讯录的隐私边界，官方尚未给出说明。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 22 日（周四）下午 3:14（太平洋时间），Grok Bot 官方 @bot 账号宣布：Bot 现在可以使用手机上的日历、提醒事项、联系人等内置应用，更新正在 iOS 与 Android 双平台推送。对这款此前主要隔着连接账号干活的 AI 代理来说，这是它第一次拿到手机本地数据的直接入口。</p>
+<h2>六类应用，逐项授权</h2>
+<p>公告附带的权限截图列出了六类应用，每一项旁边都有独立的 Allow 按钮：</p>
+<ul>
+<li>信息：读取和发送消息</li>
+<li>位置：查找附近地点</li>
+<li>日历：查看当天日程、添加事件</li>
+<li>家庭：控制灯光和门锁</li>
+<li>提醒事项：设置和查看提醒</li>
+<li>联系人：查找和添加联系人</li>
+</ul>
+<p><img alt="Grok Bot 手机权限界面，逐项列出信息、位置、日历、家庭、提醒事项与联系人" src="https://cdn.teslanorth.com/wp-content/uploads/2026/10/grok-bot-phone-apps-calendar-reminders-contacts.jpg" /></p>
+<p>授权以应用为单位逐项进行，用户自己决定 Bot 能触及手机的哪一部分。官方没有说明这份清单是否在两个平台上全部可用，也没有说明需要哪个版本才能看到新选项。</p>
+<h2>从连接账号到本地数据</h2>
+<p>这一步的分量要从架构看。Grok Bot 不是只回答问题的聊天机器人，而是在自己的云端计算机上执行任务的代理。在此之前，它主要通过邮件、X 这类连接账号工作；拿到手机应用权限之后，它能直接操作用户真正存放在手机里的东西——日程表和通讯录。</p>
+<h2>一周三步，两周不停</h2>
+<p>这是 Grok Bot 本周在手机端的第三步：本周一，它上线 iPhone Action Button，按一下即可发起语音对话；次日，官方演示了它处理 X 私信、并作为 Android 默认助手运行。叠加本次更新，「按键—口令—自动完成」的闭环成形：按一下按钮，让 Bot 挪个会议或加条提醒，剩下的无需打开任何应用。另据二手报道，10 月 16 日前后的更新已让计算机任务提速约三倍、其他查询响应时间减半；再算上此前已报道的路由能力与 1Password 接入，这条产品线的密集更新已持续两周。</p>
+<p><img alt="Grok Bot 的 iPhone Action Button 演示画面" src="https://cdn.teslanorth.com/wp-content/uploads/2026/10/grok-bot-iphone-action-button.jpg" /></p>
+<p>车机端早有先例。上个月，特斯拉让车内 Grok 访问邮件、日历和文件，Model Y 与 Cybercab 上也能经由 Grok 使用 Grok Bot。手机端开放日历与联系人之后，同一个助手可以从口袋延续到驾驶座。</p>
+<h2>保留的疑问</h2>
+<p>需要说明：目前信息来自垂直媒体对官方帖文的二手报道，官方未披露任何技术实现细节；功能仍在分批推送，双平台差异与应用版本要求均无说明。按下 Allow 之前，这些问题都值得等一等答案。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Grok Bot 并非新品，本次增量是获得手机系统级应用的逐项授权访问：六类内置应用清单、逐应用 Allow 权限模型、10 月 22 日双平台推送，均为此前未有的能力扩展；同时它接上本周 Action Button、Android 默认助手与上月特斯拉车内访问，构成从连接账号走向设备本地的明确一步。</div>
+            <div class="tags-row"><span class="tag">AI 代理</span><span class="tag">Grok</span><span class="tag">移动端</span><span class="tag">隐私与权限</span></div>
+            <div class="event-aggregation"><div class="event-head">事件聚合 · 2 个来源 · 已合并 1 条候选</div><div class="event-sources"><a class="event-source" href="https://teslanorth.com/2026/10/22/grok-bot-phone-calendar-reminders-contacts/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Grok Bot can now get things done on your PHONE. No more tapping around. It connects directly to your calendar, reminders, contacts, messages, and location. Tell it to organize your appointments, set reminders, or message someone. All without opening ever - X</span><span class="event-domain">teslanorth.com</span></a><a class="event-source" href="https://www.basenor.com/blogs/news/grok-bot-now-connects-to-your-phone-apps-what-to-know" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Grok Bot Can Now Make Phone Calls for You — Here&#x27;s How It Works - BASENOR - Tesla Accessories</span><span class="event-domain">www.basenor.com</span></a></div></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Grok Bot Now Connects to Your Phone Apps: What to Know</div>
+                        <div class="source-url"><a href="https://www.basenor.com/blogs/news/grok-bot-now-connects-to-your-phone-apps-what-to-know" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Grok Bot can now use Calendar, Reminders, Contacts, and ...</div>
+                        <div class="source-url"><a href="https://x.com/bot/status/2113393684209176718" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Grok Bot Galaxy: What the Three-Day Build Showed | CellCog</div>
+                        <div class="source-url"><a href="https://cellcog.ai/blog/grok-bot-galaxy" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Grok Bot Review: Features, Pricing & Security</div>
+                        <div class="source-url"><a href="https://www.therundown.ai/tools/grok-bot" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Grok Bot security | SpaceXSI Docs</div>
+                        <div class="source-url"><a href="https://docs.x.ai/grok-bot/security" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-964d37526595">
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">tools</span><span class="score-tag">评分 8.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://startupfortune.com/nanbeiges-new-33b-open-model-takes-aim-at-qwen-and-gemma-on-coding/" target="_blank" rel="noopener">33B 开源模型对标 Qwen：agentic 编程拉回单张显卡</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>BOSS直聘旗下的 Nanbeige 团队本周在 Hugging Face 发布 33B 参数开源模型 Nanbeige4.3-33B：Apache 2.0 许可证、512K token 上下文、原生支持 XML/JSON 工具调用。官方模型卡自报口径下，8 项 agentic 编程评测中 7 项超过 Qwen3.8-27B。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>在 H100 一年期租赁价五个月上涨近 40%（SemiAnalysis 口径）的当口，一个 4-bit 量化后可跑单张 24GB 消费级/准专业显卡的强 agentic 模型，让「买卡自托管」对「按小时租算力/调 API」的经济账开始变化；Apache 2.0 无商业使用上限，进一步降低团队自建编码 agent 的门槛。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>BOSS直聘旗下的 Nanbeige 团队本周在 Hugging Face 发布 330 亿参数开源模型 Nanbeige4.3-33B：Apache 2.0 许可证、512K token 上下文窗口，开箱支持 XML 和 JSON 两种工具调用格式。官方将其定位为「旗舰教师模型」，后续将蒸馏出更小、更便宜的版本——今年早些时候它已用同样路线发布过 3B 参数系列。</p>
+<p><img alt="Nanbeige 33B 开源模型对标 Qwen 与 Gemma" src="https://startupfortune.com/wp-content/uploads/2026/10/qwen-nanbeige-apache-2-0.jpg" /></p>
+<p><strong>基准：7/8 领先，但并非全胜。</strong> 需要先写明口径：以下数字来自官方 Hugging Face 模型卡的自报数据，不是第三方验证。在 33B 量级的 8 项 agentic 编程评测中，Nanbeige4.3-33B 有 7 项超过 Qwen3.8-27B：DeepSWE 65.5 对 42.5，Terminal-Bench 2.1 80.9 对 73.0，Automation Bench 54.2 对 38.3，JobBench 44.8 对 34.5。对比集为同量级的 Qwen3.8-27B、Gemma4-31B 和 Muse-Glimmer-30B。</p>
+<p>同一张表里也有输的一面：SWE-Bench Pro 60.3 输给 Qwen 的 61.7；GPQA Diamond 89.5 落后 Gemma4-31B 的 91.3；AIME 2026 95.2 对 94.5，基本打平。合理的读法是：多步任务执行、终端操作这类 agentic 编程能力是它的强项，通用推理只是「有竞争力」。</p>
+<p><strong>为什么时机重要。</strong> 据 SemiAnalysis，H100 一年期租赁价从 2025 年 10 月的约 1.70 美元/GPU 小时涨到 2026 年 3 月的 2.35 美元，五个月上涨近 40%；英伟达 CFO Colette Kress 5 月也表示 H100 租金年内已涨 20%。当「按小时租算力」的账越算越贵，一个 4-bit 量化后能塞进单张 24GB 消费级或准专业显卡的强模型，正在改变自托管与租用 API 之间的算术——代价是模型较大的 KV cache 会限制这类硬件上实际可用的上下文长度。</p>
+<p>更大的背景是开源阵营的整体逼近：原文援引 Epoch AI 的 Capabilities Index（基于含 FrontierMath、SWE-Bench Verified 在内的 39 项基准），DeepSeek、Qwen、Kimi 与美国前沿的差距，已从 2023 年 MMLU 上 17.5 分的水平持续收窄，按其口径约合七个月。</p>
+<p><img alt="中国开源模型与美国前沿差距收窄" src="https://startupfortune.com/wp-content/uploads/2026/10/qwen-deepseek-epoch-ai-840x420.jpg" /></p>
+<p>Apache 2.0 还意味着没有商业使用限制——不少开放权重发布附带与营收或用户量挂钩的使用上限，这个没有。对在「租 API」与「自建内部编码 agent」之间做权衡的团队，卖点很直接：宽松许可、agentic 基准表现，以及买得起的硬件。</p>
+<p>社区端，发布帖在 r/LocalLLaMA 快速爬过 140 分——按原文的说法，这种快速的自发热度，往往能把真正的开放权重竞争者与无人问津的「模型倾倒」区分开。当然，Qwen、Gemma 以及 DeepSeek、Kimi 的下一版几乎必然回敬，开源竞速远未到定局的时候。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>Nanbeige4.3-33B 为本周首次登陆 Hugging Face 的全新模型，无旧版本延续。本次新增量：官方模型卡基准（8 项 agentic 编程评测 7 项超 Qwen3.8-27B，含 DeepSWE 65.5 vs 42.5、Terminal-Bench 2.1 80.9 vs 73.0 等具体数字）、512K token 上下文、原生 XML/JSON 工具调用、Apache 2.0 许可以及「旗舰教师模型—后续蒸馏」的家族规划；历史日报中未出现匹配，两个二手来源（AICoder、explainx.ai）也确认为最新发布。</div>
+            <div class="tags-row"><span class="tag">开源模型</span><span class="tag">agentic-coding</span><span class="tag">Nanbeige</span><span class="tag">大模型</span></div>
+            <div class="links-row"><a class="ext-link" href="https://startupfortune.com/nanbeiges-new-33b-open-model-takes-aim-at-qwen-and-gemma-on-coding/" target="_blank" rel="noopener">Source <span class="domain">startupfortune.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">BOSS Zhipin's Nanbeige lab open-sources Nanbeige4.3-33B, a 33B dense agent model with 512K context under Apache 2.0, reporting 80.9 on Terminal-Bench 2.1 vs 73.0 for Qwen3.8-27B — AICoder</div>
+                        <div class="source-url"><a href="https://aicoder.com/news/news-20261025-nanbeige-4-3-33b-open-agentic-model" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Nanbeige4.3-33B: Open 33B Agent Model, 80.9 on Terminal-Bench | explainx.ai Blog | explainx.ai</div>
+                        <div class="source-url"><a href="https://explainx.ai/blog/nanbeige-4-3-33b-open-agentic-model-guide-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-b57096931a5f">
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">research</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://huggingface.co/papers/2610.30468" target="_blank" rel="noopener">自主科研系统 SplatLab：16 篇无人改码研究手稿</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>UCSD 的 Seemandhar Jain 与 Manmohan Chandraker 于 10 月 21 日在 arXiv 公开 SplatLab（arXiv:2610.30468，10 月 23 日提交 HuggingFace Papers，标注 NeurIPS 2026）：一个面向 3DGS 的端到端自主科研系统，从读论文、复现、提扩展、写代码到产出研究手稿全程无人工改码，共生成 16 篇手稿，最高 +3.78 dB PSNR 提升来自此前无任何 3DGS 方法的天体摄影星云渲染。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>以往自主科研系统多停留在读论文、提假设、写代码片段的阶段，且从未在活跃的计算机视觉子领域被端到端验证。SplatLab 把「复现—扩展—实验—写手稿」整条链路跑通，并用八岛屿 Elo 锦标赛、常设证伪者、数字强制绑定训练日志三套机制对抗自我欺骗，为「AI 能否做真实验而不只是编故事」提供了第一个领域内的大规模实证样本。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 21 日，UC San Diego 的 Seemandhar Jain 与 Manmohan Chandraker 在 arXiv 公开论文（arXiv:2610.30468），两天后提交至 HuggingFace Papers，提交者标注其为 NeurIPS 2026 工作。论文提出的 SplatLab 是一个面向 3D Gaussian Splatting（3DGS，三维高斯泼溅）的自主科研系统：从读论文、复现基线、提出改进、实现代码、跑 GPU 实验、做消融，到写出完整研究手稿，全程不需要人工修改代码。截至发稿，论文页获 8 个 upvote。</p>
+<p>这件事的起点是一个具体痛点：在 3DGS 这样高活跃度的计算机视觉子领域，复现一篇已发表论文通常要花掉数周专家级工程，之后才谈得上提出扩展。作者指出，此前的自主科研系统也能读论文、起草假设、写代码，但普遍受限于固定模板短、代码可执行性低、结果不可追溯，且从未在一个活跃的计算机视觉子领域里被端到端验证。SplatLab 的用法很宽：给定一个研究提示词、一篇目标论文的 URL，甚至零输入，它会自动复现已发表基线、提出扩展，在 Mip-NeRF 360 与 LLFF 两个标准数据集上训练并消融，最后写出研究手稿——并且每个报告数字都绑定到一条真实的训练日志。</p>
+<p><img alt="SplatLab 自主科研流程示意" src="https://cdn-uploads.huggingface.co/production/uploads/63ec1c3b59a46fd5f4b4ffdc/3TKE8WNSQGXg4yiDwRUzk.gif" /></p>
+<p>系统的五项设计里，两项最值得展开。其一是跨八个「岛屿」的级联加权 Elo 锦标赛：候选方法不是各自跑分排队，而是以实测 GPU PSNR 互相对抗排名，并辅以口头梯度反馈；其二是常设的「证伪者」，候选方法在压力测试中失败即被扣减 Elo 分，把「能否扛住证伪」直接写进选择压力。可信度约束同样硬：每个报告数字必须绑定训练日志，只要还有声明没有实验支撑，运行就不允许终止。此外，候选方案从经过验证的复现骨干上以插件形式变异而来，而非从零写起；一套七分类的 3DGS 分类法把 EVOLVE-BLOCK 标记包装进领域对齐的脚手架，可跨 3DGS 代码库迁移。</p>
+<p>结果可以量化：在以 PSNR 为目标的运行中，SplatLab 产出的手稿超过其复现目标 +0.18 至 +3.78 dB；最高的 +3.78 dB 来自天体摄影星云渲染——一个此前没有任何 3DGS 方法涉足的场景。作者在社区帖中给出的总量是 16 篇端到端研究手稿、单次自主运行 24–48 小时；论文摘要的表述是，研究周期从「研究生数月」压缩为「数天以自主计算为主」。代码、全部手稿、实验账本与跨运行论文库均已开源。需要注明：以上数字均为论文自报口径，暂无第三方复现。</p>
+<p>边界也要说清：这一切仅在 3DGS 一个领域内得到验证。3DGS 论文密度高、基准明确、单次实验成本可控，几乎是自主科研最容易落地的赛道。SplatLab 展示的是端到端自主科研在一个具体子领域的首次大规模实证，而不是通用「AI 科学家」已经就位的信号——锦标赛与证伪者机制能否迁移到实验更贵、评价更模糊的领域，仍是开放问题。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>论文 2026-10-21 首次公开于 arXiv（2610.30468）、10-23 提交 HuggingFace Papers，属首次亮相；16 篇无人工改码手稿、+0.18~+3.78 dB PSNR（含此前无 3DGS 方法的星云渲染）、八岛屿级联加权 Elo 锦标赛、常设证伪者机制及代码/实验账本开源均为首次披露；历史日报核查无匹配（history_check：未出现）。</div>
+            <div class="tags-row"><span class="tag">自主科研</span><span class="tag">AI科学家</span><span class="tag">3DGS</span><span class="tag">计算机视觉</span><span class="tag">UCSD</span><span class="tag">开源</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2610.30468" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Autonomous Scientific Discovery for 3DGS Research</div>
+                        <div class="source-url"><a href="https://www.themoonlight.io/en/review/splatlab-autonomous-scientific-discovery-for-3dgs-research" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Paper page - SplatLab: Autonomous Scientific Discovery for 3DGS Research</div>
+                        <div class="source-url"><a href="https://huggingface.co/papers/2610.30468" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Autonomous Scientific Discovery for 3DGS Research</div>
+                        <div class="source-url"><a href="https://arxiv.org/abs/2610.30468" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">SplatLab: Autonomous Scientific Discovery for 3DGS Research</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2610.30468v1" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">SplatLab: Autonomous Scientific Discovery for 3DGS Research | alphaXiv</div>
+                        <div class="source-url"><a href="https://www.alphaxiv.org/abs/2610.30468" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-a6feae291b1a">
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.5/10</span><span class="newness-tag">minor_update</span></div>
+            <h2><a href="https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/" target="_blank" rel="noopener">Grok《奥德赛》交出第1集：约七分钟，离全长电影还很远</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>上周末前后，xAI 的 Grok 上线 AI 生成《奥德赛》『系列第 1 集』：TechCrunch 称成片约七分钟（Variety 称片段不足两分钟，来源口径有出入），由 Grok Imagine 与 Wonder Studios、导演 Dev Walker 合作完成。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这是『历史准确』全长 AI 电影这一承诺发布约三个月后的第一个可观看交付物，可当作 AI 生成长片能力的产品化进度条：单个镜头已经足以乱真，但叙事节奏与人物塑造仍是硬伤，距全长电影目标还很远。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>上周末前后，马斯克旗下 xAI 的 Grok 发布了 AI 生成的《奥德赛》『系列第 1 集』。据 TechCrunch 报道，这集成片约七分钟（Variety 的报道则称片段不足两分钟，两家来源在时长口径上有出入）；而距离马斯克宣称 Grok 将制作『历史准确』的全长《奥德赛》电影，才过去约三个月。</p>
+<p>这一集由 Grok Imagine 与 Wonder Studios 及导演 Dev Walker 合作完成。TechCrunch 的观感是：画面还行，只要不追求艺术性、灵感或人情味。个别航海镜头足以以假乱真，乍看像真人真海；但旁白是一口奇幻游戏味的英音，一张接一张的大胡子脸喊着生硬台词，整体被评『毫无生气』，没有让人在意任何角色的理由。作者干脆下结论：『很难想象有人想再看七分钟，更别说一整部电影。』</p>
+<p><img alt="Grok 标志显示在手机屏幕上" src="https://techcrunch.com/wp-content/uploads/2026/03/grok-getty.jpg" /></p>
+<p>报道还把隔壁的对照组摆了出来：诺兰的实拍版《奥德赛》七月上映后票房大卖，IMAX 场次连月售罄，横跨六国拍摄、动用数千演职人员，被视为下届奥斯卡的领跑者。目前 xAI 未回应关于制作细节与后续发布时间表的询问——距『全长电影』的承诺，显然还有相当距离。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>项目约三个月前已高调宣布，本次增量仅为约七分钟的『第 1 集』成片及与 Wonder Studios、导演 Dev Walker 的合作确认，距『全长电影』承诺差距巨大，属已宣布项目的进展性更新。</div>
+            <div class="tags-row"><span class="tag">Grok</span><span class="tag">xAI</span><span class="tag">AI 生成视频</span><span class="tag">马斯克</span><span class="tag">AI 电影</span></div>
+            <div class="event-aggregation"><div class="event-head">事件聚合 · 2 个来源 · 已合并 1 条候选</div><div class="event-sources"><a class="event-source" href="https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Grok releases the first seven minutes of its AI-generated ‘Odyssey’</span><span class="event-domain">techcrunch.com</span></a><a class="event-source" href="https://variety.com/2026/digital/news/elon-musk-grok-odyssey-episode-ai-generated/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Elon Musk&#x27;s Grok Releases First AI-Generated &quot;Odyssey&quot; Episode - Variety</span><span class="event-domain">variety.com</span></a></div></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AI-Generated Odyssey Episode Debuts from Grok Imagine and Wonder Studios / X</div>
+                        <div class="source-url"><a href="https://x.com/i/trending/2113755018159624434" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Musk's Grok releases first seven minutes of AI-generated Odyssey series</div>
+                        <div class="source-url"><a href="https://cryptobriefing.com/xai-grok-ai-generated-odyssey-series" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Elon Musk actually follows through on Grok AI adaptation of 'The Odyssey' | Mashable</div>
+                        <div class="source-url"><a href="https://mashable.com/tech/elon-musk-grok-odyssey-ai-film-adaption" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">The $100000 Odyssey: Grok's AI Epic is anything but ...</div>
+                        <div class="source-url"><a href="https://www.tbsnews.net/splash/100000-odyssey-groks-ai-epic-anything-historically-accurate-1546781" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-cb0e6541c41d">
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">tools</span><span class="score-tag">评分 7.2/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber" target="_blank" rel="noopener">K3.1 Pro 上线三天，内行人的评测账本与安全新现实</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Interconnects 播客第 20 期（10-25 发布），主持人与评测专家 Florian 对谈上线三天的 Kimi K3.1 Pro：Artificial Analysis 排名前三、四（headline 超过 GPT-6 Astra），但 Terminal-Bench Science 落后约 20 分；同节目梳理 PHP 高危 RCE 修复与 LiteLLM 再次被入侵两起安全事件。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这是 10-24 头条发布后第一份系统性的内行评估，解释了「榜单登顶」与「长视野掉队」为何并存，并给出安全事件的生态视角：漏洞发现被 AI 指数级加速，但转化为大规模破坏的链条尚未出现。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Interconnects 播客第 20 期（10 月 25 日发布）请来刚搬去旧金山的评测专家 Florian，聊了上线三天的 Kimi K3.1 Pro。以下均为播客的观点性评估，但账算得很细。</p>
+<p><strong>评测账。</strong> K3.1 Pro 在 Artificial Analysis 榜单上排到前三、四名，headline 成绩超过 GPT-6 Astra，与两个最新的 Claude 5.5 和 Muse Wonder Full 同处最前列；但在 Terminal-Bench Science 上落后 GPT-6 Astra 约 20 分，ProgramBench 等成绩也明显参差。两人的解读是：AA 采用的基准时间视野较短，而 ProgramBench 这类长视野任务要求模型自己探索，K3.1 Pro 的 RL 后训练更偏「利用」已知解法而非「探索」，「可能有一点 RL 过度优化」。</p>
+<p><strong>部署账。</strong> 三万亿参数要良好服务，需要 B300、每个模型副本独占一个节点（播客推测是 NVL72 级机架的投入），远比能跑在 H200 上的小模型昂贵；命名从 K3 改为 K3.1 Pro，被解读为后续会有 Flash 风格的小模型。开放权重仍按官方承诺在 11 月 4 日前放出（此前有两周独家访问期，本报 10-24 头条已报，不再展开）。</p>
+<p><strong>安全账。</strong> PHP 一个存在多年的远程代码执行高危漏洞，由 OpenAI「Patch the Planet」项目联合安全研究者发现，报告 PHP Foundation 后协调各方一次性修复，大量 PHP 网站（WordPress 生态是重灾区）一度主动下线打补丁；目前多方报告显示，预期中的大规模利用并未发生。同一周，LLM 网关库 LiteLLM 再次被入侵，初步报告归因于一个在 GitHub 上暴露了五个月的 API key 被利用来传播恶意软件。播客观点认为：网络安全生态的动态并未质变，只是被 AI 整体加速；Kimi 在博客中自述通过调整中期训练数据刻意压低开放权重的攻击性网络能力、保留防御侧能力，是对「开放模型等于末日」叙事的聪明应对——网络安全从业者认为完整渗透一个组织需要长视野能力，这方面封闭模型（如 GPT-5.6 Sol）仍明显更强。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>发布本身 10-24 头条已详报，但本期增量是第一手内行评估：AA 前三四与 Terminal-Bench Science 落后约 20 分的矛盾及 RL 解读、3T 模型 B300/NVL72 级部署门槛的推测，以及 PHP RCE 修复、LiteLLM 五个月 API key 泄露两起新安全事件，均为此前未报的事实增量。</div>
+            <div class="tags-row"><span class="tag">Kimi</span><span class="tag">K3.1 Pro</span><span class="tag">模型评测</span><span class="tag">网络安全</span><span class="tag">开源权重</span><span class="tag">播客</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber" target="_blank" rel="noopener">Source <span class="domain">www.interconnects.ai</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Kimi K3.1 Pro vs K3: What Changed, What It Costs, and Who Should Switch | AIHubMix Blog</div>
+                        <div class="source-url"><a href="https://aihubmix.com/blog/kimi-k3-1-pro-vs-k3-what-changed-what-it-costs-and-who-should-switch" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Moonshot AI's New AI Model is INSANE: Kimi K3.1 Pro</div>
+                        <div class="source-url"><a href="https://www.youtube.com/watch?v=oGC8vra5rvI&vl=pl" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Moonshot AI launches Kimi K3.1 Pro with better coding skills, reduced cyber risks | Mint</div>
+                        <div class="source-url"><a href="https://www.livemint.com/ai/moonshot-ai-launches-kimi-k3-1-pro-with-better-coding-skills-reduced-cyber-risks-11792840679974.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Kimi K3.1 Pro's Mixed Reception Sparks Cybersecurity Debate</div>
+                        <div class="source-url"><a href="https://threatcluster.io/cluster/kimi-k31-pros-mixed-reception-sparks-cybersecurity-debate-ad69a2fb" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Kimi K3.1 Pro Cyber Curbs: 81.0% vs 90.5% [2026]</div>
+                        <div class="source-url"><a href="https://shattered.io/moonshot-kimi-k3-1-pro-cyber-curbs-81-vs-90-5-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-f51d522ce8c9">
+            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">community</span><span class="score-tag">评分 7.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50233325" target="_blank" rel="noopener">Jukebox-OS：能时间旅行回放的多智能体运行时</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>开源项目 Jukebox-OS 经 Hacker News 首次公开曝光（讨论热度 10 分，属初始发布阶段）。它是一个面向多智能体系统的确定性运行时，Rust 核心搭配 Python SDK，Apache 2.0 协议，作者 Marius Carlsson，主打确定性飞行记录器、写时复制 ACID 工具沙箱与时间旅行调试。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>多智能体系统当前最突出的调试痛点是故障不可复现、工具副作用难隔离：执行轨迹没有完整记录，「再跑一遍」往往得到不同结果；工具调用直接改写外部状态，出错后难以回滚。Jukebox-OS 用确定性回放对准前者，用事务化沙箱对准后者，在 agent 工具链里是少见的组合思路。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>多智能体系统跑起来像一间没有监控的后厨：出了问题不知道是哪一步出的错，agent 调工具留下的副作用更难撤销。最近经 Hacker News 首次曝光的开源项目 Jukebox-OS，想给这类系统装上「黑匣子」——一个面向多智能体系统的确定性运行时，Rust 核心搭配 Python SDK，以 Apache 2.0 协议开源，作者为 Marius Carlsson。</p>
+<p><img alt="JUKEBOX — 24-Hour Deterministic Agent Runtime" src="https://github.com/socrates6969/jukebox-os/raw/main/assets/banner-neon-diner.svg" /></p>
+<p>项目的主打能力有三块：一是确定性飞行记录器，完整记录多智能体系统的执行过程，并支持时间旅行式回放调试——出了 bug 可以「倒带」到任意时刻重看一遍；二是写时复制（Copy-on-Write）ACID 工具沙箱，把工具调用的副作用包进事务里隔离管理，可提交也可回滚；三是 MCP ACID Proxy，一个兼容 MCP 协议的代理层，现有 MCP 工具链可以直接接入。项目还提供 在线 Neon Web Inspector 实时演示，不用 clone 代码就能看运行效果。</p>
+<p>这正好对准了 agent 调试的两个老大难：故障不可复现、副作用难隔离。不过要说明的是，这是一个非常早期的项目：HN 帖子热度仅 10 分，暂无版本迭代与生产采用案例，概念价值目前大于工程成熟度，离生产环境还有相当距离。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>该项目经 HN 首次公开曝光（讨论热度仅 10 分，属初始发布阶段），本次新增量为项目初始发布本身：确定性飞行记录器、Copy-on-Write ACID 工具沙箱、时间旅行运行时、MCP ACID Proxy 及在线 Inspector 演示；历史日报无匹配记录，未发现此前的版本迭代或后续更新信息。</div>
+            <div class="tags-row"><span class="tag">AI Agent</span><span class="tag">开源项目</span><span class="tag">调试工具</span><span class="tag">运行时</span><span class="tag">MCP</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50233325" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://github.com/socrates6969/jukebox-os" target="_blank" rel="noopener">Original article <span class="domain">github.com</span></a>
+<a class="ext-link" href="https://news.ycombinator.com/item?id=raw-f51d522ce8c9" target="_blank" rel="noopener">Coverage <span class="domain">news.ycombinator.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Jukebox-OS Aims to Enable Deterministic Replay and ACID ...</div>
+                        <div class="source-url"><a href="https://www.theintelbrief.com/article/jukebox-os-deterministic-replay-acid-ai-agents" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">GitHub - socrates6969/jukebox-os: 🍒🔮 JUKEBOX-OS: Deterministic Flight-Recorder, Copy-on-Write ACID Tool Sandbox & Time-Travel Runtime for Multi-Agent Systems (Rust + Python) · GitHub</div>
+                        <div class="source-url"><a href="https://github.com/socrates6969/jukebox-os" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-24bc98a339ad">
+            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">community</span><span class="score-tag">评分 7.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50231349" target="_blank" rel="noopener">AI 审查之后，Farol 给 PR 审批者的风险地图</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Winnin 工程师 ericholiveira 在 Show HN 首发 Farol（葡萄牙语「灯塔」），HN 58 points，仓库仅 9 个 commits，属全新首发。它定位在 AI 代码审查完成之后：为 PR 的人工审批者生成风险地图，标注哪些改动风险更高、该从哪些文件读起，让低风险 PR 快速放行、高风险文件逐行精读。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>AI 写码与 AI 审查普及后，人工审批成了流水线上新的瓶颈：注意力平均分给每个 PR，审查就退化成浏览。Farol 把「按风险分配审查注意力」工程化，与 Claude Code 团队「由改动决定审查层级，而非作者」的原则同频。相比模型打分的概率性输出，基于编译器的确定性静态分析可复现、可举证（每条结论附调用链），这是它在 AI 审查工具堆里最清晰的差异点。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>Winnin 工程师 ericholiveira 开源的 Farol（葡萄牙语「灯塔」）日前在 Hacker News 的 Show HN 首发即获 58 points，仓库仅 9 个 commits，是全新项目的首次亮相。它的定位很克制：不替代 AI 代码审查，而是补在「AI 审完之后」——代码由 agent 写、由 agent 审，最后点头合并的仍然是人，而人的审批注意力是稀缺资源，平均摊在每个 PR 上就成了走马观花。</p>
+<p>Farol 给审批人的是一张风险地图：这次改动会触达哪些页面、API 操作、RPC 方法和脚本（附完整调用链），合并风险集中在哪些文件，diff 覆盖缺口与契约破坏在哪里。它刻意不用模型猜测，而是以真实编译器（TypeScript 类型检查器、go/types、Python ast）做静态分析构建声明图，同一个 PR 每次得到同一份报告；结论分 fast track / quick review / careful review 三档并附 0-100 风险评分，看不懂的部分明确标记 unknown 并要求仔细审查，而不是糊弄一个「安全」。</p>
+<p><img alt="Farol 的 PR 风险报告示例：careful review 74/100、建议优先阅读的两个文件与三处破坏性契约变更" src="https://github.com/winnin/farol/raw/main/docs/images/report-overview-light.png" /></p>
+<p>使用上是双形态：本地一条命令 npx @winninjs/farol，或在每个 PR 上跑 GitHub Action winnin/farol/action。MIT 协议，无账号、无托管服务，在本机或 CI 运行，从不执行用户代码、也从不外发代码。环境要求 Node.js 22+，Python 项目另需 3.11+。支持的栈按 README 所列：TypeScript/React 覆盖 React Router、Next.js（Pages 与 App Router）、TanStack Router 与 GraphQL/REST 后端；Go 覆盖 chi/gin/echo 与 net/http 路由、gRPC 服务方法；Python 覆盖 FastAPI/Flask/Django/Celery。仓库还附了基于 FastAPI 全栈模板真实 PR 的交互式在线 demo。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>首次以 Show HN 对外发布，GitHub 仓库仅 9 个 commits，属全新项目首发而非既有项目迭代；历史日报核查（history_check）判定「未出现」，无匹配报道。首版即提供 npx CLI 与 GitHub Action 双形态并附带在线 demo。</div>
+            <div class="tags-row"><span class="tag">代码审查</span><span class="tag">开发者工具</span><span class="tag">静态分析</span><span class="tag">开源</span><span class="tag">AI 编程</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50231349" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://github.com/winnin/farol" target="_blank" rel="noopener">Original article <span class="domain">github.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Best Farol Alternatives in 2026 | AI Kaptan | AI KAPTAN</div>
+                        <div class="source-url"><a href="https://www.aikaptan.com/alternatives/farol" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Best automated security testing tools for pull requests in 2026 | Hacktron AI</div>
+                        <div class="source-url"><a href="https://www.hacktron.ai/blog/best-automated-security-testing" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">How Many False Positives Are Too Many in AI Code Review</div>
+                        <div class="source-url"><a href="https://codeant.ai/blogs/ai-code-review-false-positives" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Show HN: Farol – a risk map of a pull request for the person who approves it | Hacker News</div>
+                        <div class="source-url"><a href="https://news.ycombinator.com/item?id=50231349" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge community">社区讨论</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-b3577a0ad362">
+            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">research</span><span class="score-tag">评分 7.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://huggingface.co/papers/2610.30043" target="_blank" rel="noopener">TARSphere：把仿真、大脑和基准打包的具身全栈框架</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>论文 TARSphere 提出面向机器人的全栈具身框架，一次打包三个组件：TARSphere-Infra（物理仿真器中运行机器人策略，配具身 NPC 与受限对话，事件驱动 FSM 判定任务状态）、TARSphere-Harness（冻结多模态大模型作决策大脑，经多级可执行技能、分层记忆与执行反馈行动）、TARSphere-Bench（30 个室内场景、360 个回合、5 组对照条件的长时程基准）。对 8 个 MLLM 的横评显示通用模型可超越具身专用模型，任务更新与人机交互仍是难点。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>它补的是评测缺口：现有具身系统多面向固定目标、或把执行抽象成符号动作，难以在物理与社会双重约束不断变化的世界里评估长时程 agent。这套框架把「环境会变、人会插话」变成可复现的考场，并把执行安全（碰撞、跌倒）提为与任务成功率并重的评价维度。对选型者也有直接提示——在该基准口径下，通用 MLLM 可以打过具身专用模型；但结论限于这套基准，不应泛化到全部具身场景。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>具身智能的评测大多止步于「给定目标、按符号动作打分」：任务一变、人一插话，就很难衡量 agent 在演化世界里的真实水平。新论文 TARSphere（arXiv 2610.30043，见 HuggingFace Papers）把这件事拆成三层打包解决——仿真基础设施、决策大脑、评测基准。</p>
+<p>三个组件分工明确。<strong>TARSphere-Infra</strong> 在物理仿真器里运行机器人策略，场内有具身 NPC 与受限对话（可理解为会说话、能被询问的仿真人）；一套事件驱动的有限状态机根据已完成动作和已传递信息更新任务状态、判定结果。<strong>TARSphere-Harness</strong> 是「大脑壳」：一个冻结的多模态大语言模型（MLLM，权重不微调、原样当决策器用）通过多级可执行技能行动，靠观测、分层记忆和执行反馈修正决策。在其之上，agent-in-the-loop 的构建流程对齐任务语义、因果依赖与场景几何，产出 <strong>TARSphere-Bench</strong>：30 个室内场景、360 个回合，5 组对照条件分别考察感知鲁棒性、干扰适应、任务更新、人机协调与意图理解，任务覆盖 navigate-and-report（导航并汇报）与 fetch-and-deliver（取物送达）两类。</p>
+<p><img alt="TARSphere 框架概览" src="https://cdn-uploads.huggingface.co/production/uploads/6843ff3a70fe0620f375f8c1/SXZIyhURcRrCbbZUf5sj4.jpeg" /></p>
+<p>最值得记的是 8 个 MLLM 横评的两个结论：其一，通用模型可以超越具身专用模型；其二，任务中途更新与人机交互仍是普遍短板。另一个信号是安全——评测中出现频繁的碰撞与跌倒，作者据此主张：即便各模型共享同一动作接口与决策预算，执行安全也必须与任务成功率一并评估。当然，这些结论的口径限于该基准的 30 个室内场景与两类任务，不必外推到全部具身场景。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>论文首次提出 TARSphere 框架，三个组件（TARSphere-Infra 仿真基础设施、TARSphere-Harness 冻结 MLLM 决策大脑、TARSphere-Bench 长时程基准）均为全新发布；首次给出该基准下 8 个 MLLM 的横向评测结论（通用模型可超越具身专用模型、任务更新与人机交互仍是难点、频繁碰撞与跌倒要求执行安全与成功率并评）。历史日报中未出现匹配（history_check：未出现）。</div>
+            <div class="tags-row"><span class="tag">具身智能</span><span class="tag">机器人</span><span class="tag">MLLM</span><span class="tag">评测基准</span><span class="tag">论文</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2610.30043" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">TARSphere: A Robot-Oriented Full-Stack Framework for Long-Horizon Embodied Agents in Evolving Physical and Social Environments</div>
+                        <div class="source-url"><a href="https://arxiv.org/html/2610.30043v1" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Paper page - TARSphere: A Robot-Oriented Full-Stack Framework for Long-Horizon Embodied Agents in Evolving Physical and Social Environments</div>
+                        <div class="source-url"><a href="https://huggingface.co/papers/2610.30043" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">TARSphere: A Robot-Oriented Full-Stack Framework for ...</div>
+                        <div class="source-url"><a href="https://www.alphaxiv.org/abs/2610.30043" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">TARSphere | Embodied Agents in an Evolving World</div>
+                        <div class="source-url"><a href="https://xuyicheng-zju.github.io/TARSphere" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">TARSPHERE</div>
+                        <div class="source-url"><a href="https://openreview.net/pdf/f567d6bd63d62cffc9d9011cee042dc05d41cec5.pdf" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-98b81d16b9ee">
+            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">tools</span><span class="score-tag">评分 6.5/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://github.com/AgriciDaniel/claude-seo" target="_blank" rel="noopener">Claude Code 的 SEO 全家桶凭 v2.5.0 登上热榜</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>2026-10-22，创建于 2026 年 2 月的老仓库 claude-seo 发布 v2.5.0：要求 Python 3.11+、包含安全性与准确性修复、新增 Claude Desktop 安装支持，同日完成最近一次推送；当前项目登上 GitHub Trending。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>SEO 工作流正在搬进 Claude Code 这类 agent 终端，优化对象也从 Google 排名扩展到被 AI 搜索引用（GEO/AEO、llms.txt、WebMCP）。一个维护约 8 个月、带 1077 项测试的技能包靠版本更新重回热榜，说明「agent 技能包」已有稳定、持续的需求，而不是一阵风。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>GitHub Trending 今天的热榜上有个「老面孔」：AgriciDaniel 开发的 claude-seo。它不是新项目——仓库创建于 2026 年 2 月 7 日，至今已维护约 8 个月，采用 MIT 许可。把它推上热榜的，是 10 月 22 日发布的 v2.5.0 版本，仓库最近一次推送也在同一天。</p>
+<p>这是一套装进 Claude Code 的 SEO「全家桶」：26 个子技能加 19 个子代理，覆盖技术 SEO、E-E-A-T（谷歌对内容经验、专业性、权威性、可信度的评估维度）、schema 结构化数据、外链、本地搜索、电商与国际化 SEO，可调用 Google API 并输出 PDF/Excel 报告，另有 9 个可选扩展用于接入实时 SEO 数据。更有时代感的是它对 AI 搜索的倾斜：专门覆盖 GEO/AEO（让内容更容易被生成式 AI 和答案引擎引用），并内置 agent 就绪性检查，包括 Lighthouse Agentic Browsing、WebMCP 与 llms.txt——即让网站对 AI 爬虫与 AI 代理「可读、可访问」。</p>
+<p><img alt="claude-seo 演示图：三个机器人通过修复爬取、速度、schema 与 AI 可访问性，排名从第 48 升到第 1" src="https://github.com/AgriciDaniel/claude-seo/raw/main/assets/readme/v3/hero.svg" /></p>
+<p>v2.5.0 本身的变化偏工程向：要求 Python 3.11+，包含安全性与准确性修复，并新增 Claude Desktop 安装支持。工程化是这个仓库的底子——README 的测试徽章显示 1077 项测试全部通过。对想把 SEO 日常检查搬进 Claude 系工具的团队，这类持续维护的技能包值得收藏；但也别误会：这是一次版本更新带火的老仓库，不是横空出世的新项目。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>仓库创建于 2026-02-07、已存在约 8 个月，并非新项目；本次新闻量是 2026-10-22 发布的 v2.5.0（要求 Python 3.11+、安全性与准确性修复、新增 Claude Desktop 安装支持），与最近一次推送同日，项目随后登上 GitHub Trending，属于老仓库的显著版本更新而非首发。</div>
+            <div class="tags-row"><span class="tag">Claude Code</span><span class="tag">SEO</span><span class="tag">开源工具</span><span class="tag">AI 搜索</span><span class="tag">开发者工具</span></div>
+            <div class="links-row"><a class="ext-link" href="https://github.com/AgriciDaniel/claude-seo" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Best Claude Code Skills in 2026 | Agrici Daniel</div>
+                        <div class="source-url"><a href="https://agricidaniel.com/blog/best-claude-code-skills-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">AgriciDaniel/claude-seo · The Skill Leaderboard</div>
+                        <div class="source-url"><a href="https://www.skillleaderboard.com/skill/AgriciDaniel-claude-seo" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Claude SEO — AI Agent Skill by Daniel Agrici | AgenticSkills</div>
+                        <div class="source-url"><a href="https://agenticskills.io/skills/claude-seo" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Automated Local SEO With Claude: Full 2026 Guide</div>
+                        <div class="source-url"><a href="https://www.get-ryze.ai/blog/how-to-do-automated-local-seo-with-claude" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">How to Use Claude Code for SEO Automation</div>
+                        <div class="source-url"><a href="https://studiohawk.com.au/blog/claude-code-seo-automation" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- ═══════ RADAR SCAN ═══════ -->
+        <section class="radar-section">
+            <div class="radar-header">📡 雷达扫描</div>
+            <div class="radar-card">
+                <div class="radar-rank">#1</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxQYnJLSG50TFZmV2JiTHhEZjVqOFRXN0plbVBTRjEyUXRlUVpYUDBjNi10OUxvd3g0WU05Q3BLRUI2b1ZNMWdCaUhGOHFWYktEOVBsbXktUlhRMnRZQ25FX25YSXdLekRxVUlXZkJ1VlZGaUU4a1FETnJpRzU2cG5ibUx6cWcyMDhHanphd2pKV0NsdU9MM29CLQ?oc=5" target="_blank" rel="noopener">Grok 登上特斯拉 Robotaxi：乘客使用须知</a> <span class="radar-category">tools</span></div>
+                    <div class="radar-blurb">Grok 语音助手进入 Robotaxi 车厢，观察 xAI 助手从手机到出行场景的延伸节奏</div>
+                </div>
+            </div>
+            <div class="radar-card">
+                <div class="radar-rank">#2</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://huggingface.co/papers/2610.31651" target="_blank" rel="noopener">BrickWright：让 agent 用积木搭出物理可行的结构</a> <span class="radar-category">research</span></div>
+                    <div class="radar-blurb">研究让智能体生成真实可搭建的积木结构，关注生成结果向物理世界约束的落地</div>
+                </div>
+            </div>
+        </section>
+
+<!-- ═══════ PICK OF THE DAY ═══════ -->
+
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+    <div class="stats">9 源<span>|</span>100 条<span>|</span>9 条精选<span>|</span>17 条候选</div>
+    <div class="generated">生成于 2026-10-26T07:56:04.940861</div>
+</footer>
+
+</div>
+<script>
+(function () {
+    function closeLightbox(overlay, escHandler) {
+        overlay.remove();
+        document.removeEventListener('keydown', escHandler);
+    }
+    function openLightbox(src, alt) {
+        var overlay = document.createElement('div');
+        overlay.className = 'img-lightbox';
+        var big = document.createElement('img');
+        big.src = src;
+        big.alt = alt || '';
+        overlay.appendChild(big);
+        var escHandler = function (e) {
+            if (e.key === 'Escape') closeLightbox(overlay, escHandler);
+        };
+        overlay.addEventListener('click', function () { closeLightbox(overlay, escHandler); });
+        document.addEventListener('keydown', escHandler);
+        document.body.appendChild(overlay);
+    }
+    document.addEventListener('click', function (e) {
+        var img = e.target;
+        if (img && img.tagName === 'IMG' && img.closest && img.closest('.article-body')) {
+            e.preventDefault();
+            openLightbox(img.src, img.alt);
+        }
+    });
+})();
+</script>
+</body>
+</html>
