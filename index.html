@@ -1,10 +1,10 @@
-<!-- ai-daily-final-sha256:d3eca208274338035e749770312818d7a01592f8e247423bb1d028f19b7cd597 -->
+<!-- ai-daily-final-sha256:abb88404110e1fe81b71d009bdeecd826547c8d9e301784fd87f78d8c446120e -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 | 2026-11-03 — AI 内容机会日报</title>
+<title>AI 日报 | 2026-11-09 — AI 内容机会日报</title>
 <style>
 /* ═══════════ CSS Reset & Base ═══════════ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
@@ -719,134 +719,56 @@ body {
 
 <!-- ═══════ HEADER ═══════ -->
 <header class="header">
-    <h1>AI 日报 | 2026-11-03</h1>
+    <h1>AI 日报 | 2026-11-09</h1>
     <div class="subtitle">AI 内容机会日报</div>
     <div class="divider"></div>
-    <div class="meta-line">2026-11-03<span>|</span>由 <strong>chief-editor-main</strong> 生成</div>
+    <div class="meta-line">2026-11-09<span>|</span>由 <strong>stan-chief-editor-zcode</strong> 生成</div>
     <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
       <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
     </div>
-    <div class="trend-callout">AI agent 规模化落地后第二波问题集中显形：Git 后端撑不住、组织要共享技能与记忆审核、模型维护开始尝试绕过训练直接改权重，而改权重的神话当天就被同行用三行 NumPy 代码拆解</div>
+    <div class="trend-callout">开源权重兑现承诺与 agent 工程反思同日出现，Kimi K3.1 Pro 权重如约落地，Lovable 删掉几乎全部 agent 代码，高盛把编码代理收回工程师手里，行业一边推进 agent 一边给自主性降温</div>
 </header>
 
 <!-- ═══════ TOP ARTICLES ═══════ -->
 <section class="articles-section">
     <div class="section-label">今日最值得关注</div>
-    <div class="article-card" data-id="raw-f7a6818237a2">
-            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">research</span><span class="score-tag">评分 9.1/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://venturebeat.com/technology/like-gene-editing-for-neural-networks-mit-researchers-used-gpt-6-astra-to-edit-qwens-open-weights-directly-boosting-math-performance" target="_blank" rel="noopener">MIT 让 GPT-6 直接改 Qwen 权重，数学成绩翻六倍</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>MIT CSAIL 四人团队 11 月 2 日发布"权重空间编程"研究，让 GPT-6 Astra 不经过梯度训练，直接检查并编辑开源模型 Qwen3.5-0.8B 的权重，MATH-500 从 7.9% 提升到 48.1%，只改动第 15、19 层的 131,072 个参数（0.016%）。实验日志与编辑产物同步公开，当天即出现同行复现与质疑。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>若这条路线被验证可靠，模型维护和审计会多一种比重新训练轻得多的选项，排查小模型的怪异行为、修复缺陷都可能省钱省时。它同时踩在 AI 改进 AI 的敏感线上，PauseAI 已发出加速风险警告，而 Goedecke 当天的复现与质疑也说明社区会立刻检验这类说法的成色。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>11 月 2 日，MIT 计算机科学与人工智能实验室（CSAIL）的研究者 Rikiya Takehi、Jayden Teoh、Alex Zhang 和 Omar Khattab 发表研究博客，公布了一种叫"权重空间编程"的做法，让 OpenAI 的 GPT-6 Astra 大模型直接检查并修改另一个开源小模型 Qwen3.5-0.8B 的内部参数，全程绕开传统的训练流程。VentureBeat 在报道标题里把它比作给神经网络做基因编辑。</p>
-<p><img alt="蓝色机器人外科医生给金色机器人做手术的复古风格插画" src="https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F77EEB307zdcJyVPG9Xt6HP%2Fb4972ddcb9ffcfa52406a571e1ecb4a0%2FRetro-Futurist_Robot_Surgery.png%3Fw%3D1000%26q%3D100&amp;w=3840&amp;q=85" /></p>
-<p>所谓权重，可以理解成神经网络里亿万颗数字零件，它们共同决定模型收到问题后给出什么回答。过去想让模型变好，要用海量算例反复计算误差，一点点调整这些数字，也就是微调或重新训练，算力和时间成本都很高。MIT 团队换了个思路，让一个训练成熟的大模型像工程师读代码那样去读权重，自己判断故障在哪，自己动手打补丁。Takehi 在 X 上表示，未来模型可以把原始权重当作可读、可改的代码来对待，由专门推演权重的 LLM 直接优化。</p>
-<p>效果最好的语言模型实验里，Astra 只动了 Qwen 第 15 层和第 19 层的 131,072 个权重，占总参数的 0.016%，MATH-500 数学基准的成绩就从 7.9% 提高到 48.1%，约六倍。同一轮测试，GSM8K 从 13.8% 升至 67.1%，指令遵循测试 IFEval 从 21.0% 升至 62.3%。</p>
-<p>这六倍的来路要说清。研究者把增益归因于 Astra 删掉了权重里一个与重复输出挂钩的数值方向。修改之前，Qwen 有 93% 的回答在原地打转，一路重复到撞上输出长度上限，题目根本答不完；修改之后这一比例降到 33.1%，模型原本就会的内容终于写得完。48.1% 是排除故障后考出的真实水平，这次实验展示的是模型修复，论文没有证明 Astra 向模型注入了六倍的新数学知识。修复的成本也写在文档里，最成功的一次尝试花了 158 轮对话、80 次 Python 运行和 20.3 小时，其中 4.7 小时在等一次服务中断恢复。</p>
-<p>团队还做了其他实验。面对四个结构完全相同的游戏网络，Astra 不借助任何工具，凭权重认出了 Breakout、Pong、Pac-Man 和 Freeway。一个总在坡道卡死的驾驶控制器，它一次回复就给出补丁，改动 3.5% 的权重后成功率报告为 100%。在简化游戏环境 MinAtar 中，它只看规则和源码、不试运行，就手写出能玩 Breakout 的网络，得分 517.4，约为训练五亿步的 PPO 强化学习基线（25.3 分）的二十倍，不过在 Seaquest 和 Asterix 两款游戏上仍落后于五亿步基线。</p>
-<p>这份成果当天就遇到同行拆解。工程师 Sean Goedecke 发文质疑大模型读写权重的能力超出人类的说法，文章随后登上 Hacker News 讨论。关于游戏识别，他指出那些网络的输入通道自带标签（比如智能体、移动物体），用三行 NumPy 代码算出一张热力图，就能看清玩家和移动物体各自待在棋盘的什么位置，肉眼即可认出游戏。关于 Qwen 修复，他说这个模型在超过三万两千个 token 后陷入循环，Astra 实际做的是写几段会循环和不会循环的文本，算出哪些权重在助推循环，再逐个削减，这基本是开源社区已有的 Heretic abliteration 技术路线，合格的人类研究者同样做得出。他打了个比方，LLM 能直接写机器码、修改编译好的二进制固然厉害，但处理二进制的正道仍然是写源码再编译，更新模型权重的正道仍然是正常训练。</p>
-<p>论文本身也如实记录了失败。在没有明显重复缺陷的 Gemma 3 270M 上，Astra 未能取得数学提升；只凭权重区分顺着用户说话的模型和认真作答的模型，它一开始也失败了，补上注意力测量数据后才成功。X 用户 @1a3orn 批评发布帖略去了 Gemma 的负面结果，同时肯定团队把失败案例写进了博客。</p>
-<p>直接编辑权重在学界早有先例，ROME（NeurIPS 2022）和 MEMIT（ICLR 2023）都做过针对特定事实关联的定点修改。MIT 这次的新意在于操刀者换成了通用大模型，由它跨任务地自主检查权重、设计修改。团队已公开实验日志与编辑产物，并表示正在开发配套的基准测试和框架。</p>
-<p>外部反应两极。Databricks 的 Yuchen Jin 与 Voyage AI 的 Chandan Singh 认为，若技术可靠，开发者会多一种维护和排查模型的手段。PauseAI 的 CEO Maxime Fournes 担心这类研究一旦属实会大幅加速危险的能力进展，称其研究方向鲁莽。而研究没有证明直接编辑在速度、成本或效果上稳定胜过传统训练，至于递归自我改进，也就是 AI 的每次改进帮它完成下一次改进，论文既没有演示这样的循环，也没有证明收益会累积。</p></div></details>
+    <div class="article-card" data-id="raw-719e9d4cdd9f">
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">tools</span><span class="score-tag">评分 8.8/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro" target="_blank" rel="noopener">Kimi K3.1 Pro 权重如约落地，架构首次全公开</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>月之暗面 11 月 2 日在 HuggingFace 上架 Kimi K3.1 Pro 的模型权重，比 10 月 24 日 API 发布时承诺的 11 月 4 日提前两天兑现开源。这是 K3.1 系列的第一个模型，完整架构细节随权重首次公开。开发者第一次可以不经过官方 API，自行部署这个在官方自报基准中摸到前沿集团的模型。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>开源权重把使用方式从租接口变成持有资产。开发者可以自己部署与微调，数据流向也掌握在自己手里，成本结构和数据安全都随之改变。对一个总参数 2.8T、官方模型卡自报成绩与 Claude Opus 5.5 及 GPT-6 Astra 同表对比的旗舰模型，这种开放显著拉低了同档能力的获取门槛。完整架构参数同步披露，外界第一次能看清月之暗面旗舰模型的内部构造，研究社区也拿到了分析与改进的一手材料。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>11 月 2 日，HuggingFace 上出现了 moonshotai/Kimi-K3.1-Pro 的模型仓库。此时距离月之暗面许下的期限还有两天。这家公司在 10 月 23 日发布 Kimi K3.1 Pro 的 API 时承诺，11 月 4 日之前放出模型权重。承诺兑现了，还提前了。</p>
+<p>权重可以理解成模型的全部"脑内参数"。AI 大模型本质上是巨大的参数文件，训练完成后这些数字固定下来，谁拿到文件，谁就能让模型跑起来。此前外界只能通过官方接口使用 K3.1 Pro，权重公开后，任何人都可以下载这套参数，在自己的服务器上部署运行，数据不必再经过官方。</p>
+<p>这次一并公开的还有完整架构。Kimi K3.1 Pro 采用混合专家架构（MoE），总参数 2.8T，每个 token 只激活 104B。它内部有 896 个"专家"网络，每处理一段输入只调用其中 16 个，外加 2 个常驻的共享专家，用轮班制扛起了大模型的容量。全模型 93 层，注意力部分由 69 层 KDA 和 24 层 Gated DSA 组成。相比上一代 Kimi K3，月之暗面用 Gated DeepSeek 稀疏注意力替换了全注意力的 Gated MLA 层，官方称目的是让长上下文建模更高效。它的上下文窗口达到 1,048,576 个 token，大致相当于一次性读入整套长篇文档或一个大型代码库。</p>
+<p>另有两个工程细节。模型采用量化感知训练，权重以 MXFP4 精度、激活以 MXFP8 精度发布，训练阶段就按压缩后的数值格式进行，发布的直接是瘦身版权重，部署时的显存压力更小。它还配备了 401M 参数的视觉编码器 MoonViT-V2，能同时读文字和图片，官方称其为原生多模态的智能体模型。</p>
+<p>能力几何？官方模型卡自报了成绩单。在考察终端真实任务完成度的 Terminal-Bench 4.0 上，K3.1 Pro 得 65.7，低于 Claude Opus 5.5 的 66.4，高于 GPT-6 Astra 的 58.2 和 Claude Fable 5.1 的 57.9。博士级科学题库 GPQA-Diamond 上它拿到 94.2，联网查资料方向的 BrowseComp 成绩为 92.1。这些分数全部出自月之暗面自己的模型卡，各对比模型的得分来源不同并附有评测协议脚注，独立第三方的复测结果还有待跟进。</p>
+<p>落地途径有两条。想省事的开发者可以直接调 platform.kimi.ai 的 API，接口兼容 OpenAI 和 Anthropic 两种格式，推理力度通过 reasoning_effort 字段在 low、high、max 三档之间调节，默认 max。想自己扛机器的，官方推荐用 vLLM、SGLang 或 TokenSpeed 三种推理引擎运行权重。另有一点需要留意，许可证是自定义的 Kimi K3.1 Pro License，具体条款需要使用者自行查阅。</p>
+<p>社区的反应速度能说明需求。上架约一周，HuggingFace 页面显示下载已达 25,569 次，点赞 1,730 个，社区已经衍生出 17 个微调版本和 12 个量化版本，另有 11 个在线应用直接调用这个模型。一个总参数 2.8T 的旗舰模型，从 API 独占到人人可下载，中间只隔了十天。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>研究博客与 VentureBeat 报道均于 2026-11-02 当天首次发布，属该成果首轮披露，历史日报查重未命中；同日的 Goedecke 复现质疑、X 上关于 Gemma 负面结果与 PauseAI 加速警告的讨论也是随发布新出现的讨论节点。</div>
-            <div class="tags-row"><span class="tag">MIT CSAIL</span><span class="tag">GPT-6 Astra</span><span class="tag">Qwen</span><span class="tag">权重空间编程</span><span class="tag">模型编辑</span><span class="tag">AI 安全</span></div>
-            <div class="event-aggregation"><div class="event-head">事件聚合 · 2 个来源 · 已合并 1 条候选</div><div class="event-sources"><a class="event-source" href="https://venturebeat.com/technology/like-gene-editing-for-neural-networks-mit-researchers-used-gpt-6-astra-to-edit-qwens-open-weights-directly-boosting-math-performance" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">&#x27;Like gene editing for neural networks&#x27;: MIT researchers used GPT-6 Astra to edit Qwen&#x27;s open weights directly</span><span class="event-domain">venturebeat.com</span></a><a class="event-source" href="https://www.seangoedecke.com/llms-are-not-superhuman-at-reading-and-writing-neural-network-weights" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">LLMs are not superhuman at reading and writing neural network weights</span><span class="event-domain">www.seangoedecke.com</span></a></div></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Chubby♨️ on X: "Absolutely incredible: MIT researchers say GPT-6 Astra improved a small Qwen model’s math score from 7.9% to 48.1% by directly editing just 0.016% of its weights, without gradient-based training. The result points toward AI systems that can diagnose and improve other models directl… / X</div>
-                        <div class="source-url"><a href="https://x.com/kimmonismus/status/2117343192245064004" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">GPT-6 Astra Edits Qwen Weights: MATH-500 7.9% to 48.1% | explainx.ai Blog | explainx.ai</div>
-                        <div class="source-url"><a href="https://explainx.ai/blog/weight-space-programming-gpt-6-astra-edits-qwen3-5-0-8b-weights-math-7-9-to-48-1-mit-csail-2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Rikiya Takehi on X: "We asked GPT-6 Astra to edit Qwen3.5-0.8B weights to improve math. It directly changed only 0.016% of weights, fixing 0.8B's reasoning loops & improving math up to 6x and even instruction following 3x, without gradients or training. We call this Weight-Space Programming: front… / X</div>
-                        <div class="source-url"><a href="https://x.com/rikiyatakehi/status/2117313742891327994" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
+            <div class="history-note"><span class="label">📌 新增量：</span>HuggingFace 元数据显示模型仓库创建于 2026-11-02，模型卡写明这是 K3.1 系列的第一个模型，属首次发布而非既有项目更新；历史日报检查结果为未出现。本期报道的增量在权重落地与架构全公开，与 10-24 期已报道的 API 发布与定价角度不重叠。</div>
+            <div class="tags-row"><span class="tag">月之暗面</span><span class="tag">Kimi</span><span class="tag">开源权重</span><span class="tag">MoE</span><span class="tag">多模态模型</span><span class="tag">HuggingFace</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
         </div>
-<div class="article-card" data-id="raw-e7397e1d6337">
-            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.9/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://venturebeat.com/technology/mistral-large-4-le-chonk-arrives-as-the-top-open-model-outside-china-with-improved-coding-performance-and-63-lower-cost-per-task" target="_blank" rel="noopener">Mistral ML4 权重开放，中国外开源登顶仍落后六分</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Mistral 于 10 月 29 日开放 Large 4（ML4）的可下载权重，比原定的 10 月 27 日晚两天。模型总参数 1.05 万亿，激活参数 520 亿，上下文 100 万 token，可用 vLLM 或 SGLang 自行部署，并新增低、中、高三档推理设置。Artificial Analysis 同日发布完整独立评测，Intelligence Index v5 给出 26 分。API 价格约减半，每百万输入 0.70 美元、输出 2.10 美元。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>ML4 成为 Artificial Analysis 评测中中国以外开发的开源权重模型最高分，这对欧洲开源权重阵营是一个里程碑。独立数据同时给宣传降了温，它落后 DeepSeek V4.1 Flash 1017 与 GLM-5.3 六分，全球有七个开源权重模型排在它前面。对想自己运行和定制模型的企业，它提供一个近前沿水平的可下载选项，核心收益是更低的成本与模型自主权。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 29 日，Mistral 把旗舰大模型 Large 4（ML4）的可下载权重放上了 Hugging Face，比原计划的 10 月 27 日晚了两天。同一天，独立评测机构 Artificial Analysis 发布了对正式版的完整评测。11 月 2 日到 3 日，海外报道把厂商说法与独立数据放在一起解读，两边各有各的读数。</p>
-<p>所谓开放权重，就是把模型学到的全部数值参数公开出来，拿到权重的人可以在自己的设备上运行、修改和继续训练这个模型。ML4 总参数 1.05 万亿，激活参数 520 亿。激活参数指模型处理每段输入时实际动用的那部分参数，这种稀疏激活设计让万亿级模型的推理成本可以接受。模型支持 100 万 token 的上下文，训练用了 3800 块 Nvidia Grace Blackwell GPU，下载后可用 vLLM 或 SGLang 自行部署。正式版还把推理分成低、中、高三档，低档替代以前的关闭模式，高档是困难请求的默认设置。</p>
-<p><img alt="Mistral ML4 多屏编程场景配图" src="https://venturebeat.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F11MSiS7xkaz326plL23nyO%2F99534d5220a1afcb8fe53771aad98fe7%2FMidcentury_collage_cat_typing_at_tilted_monitors.png%3Fw%3D1000%26q%3D100&amp;w=3840&amp;q=85" /></p>
-<p>先看独立评测。Artificial Analysis 在 10 月 29 日的评估中，给 ML4（high 档）的 Intelligence Index v5 打了 26 分，比预览版的 25 分高一分。这让它以一分优势超过 Muse Spark Open，成为该评测中中国以外开发的开源权重模型的最高分。但全球有七个开源权重模型分数更高，DeepSeek V4.1 Flash 1017 和 GLM-5.3 以 32 分并列榜首，ML4 落后六分，MiMo-V2.6-Pro 拿 30 分。评测方认为，编码和代理型知识工作是 ML4 与榜首差距的主要来源。</p>
-<p>变化更大的是账本。AA 测得 ML4 完成单个 Intelligence Index 任务的成本从预览版的 5.54 美元降到 2.06 美元，降幅 63%。API 定价大约减半，每百万输入 token 收 0.70 美元，缓存输入 0.07 美元，输出 2.10 美元。输出 token 平均每个任务 8.2 万个，比预览版少 39%，幻觉率从 41% 降到 28%。同一张成本表里，DeepSeek V4.1 Flash 1017 每任务只要 0.60 美元，MiMo-V2.6-Pro 只要 0.26 美元，两者的能力分还更高。省钱的参照系是 Mistral 自家的预览版。</p>
-<p>编码是宣传重点。AA 的编码代理指数考察模型配合代理软件完成编程任务的表现，ML4 以 48 分排在现有开源权重模型第二，第一是 49 分的 GLM-5.3，DeepSeek V4.1 Flash 1017 为 46 分。ML4 每个任务消耗 850 万 token，约为 GLM-5.3（1590 万）的一半。这是模型加代理软件整套配置的对比，一分的差距说明不了统计上的显著差别，Mistral 自己也把两者称作实质打平。</p>
-<p>厂商自报数据和独立评测的出入也需要对照着看。Terminal-Bench 4.0 上 Mistral 自报 41%，AA 测得 25%；FrontierCode 2.0 的官方图表里，Mistral 以 19.7% 排在 DeepSeek（19.3%）之前，AA 的数字是 15%，落后于 DeepSeek 的 29% 和 GLM-5.3 的 22%。两组数字来自不同的评测环境，引用时要标清口径，不能拿厂商数字顶替独立结果。</p>
-<p>网络安全是另一个卖点。AA 的 Cyber Index 给 ML4 51 分，在开源权重模型中排第三，落后于 DeepSeek V4.1 Flash 1017（57 分）和 MiMo-V2.6-Pro（56 分）。分项里 CyberGym-E2E-AA 拿 79%，高于 DeepSeek 的 76%，追平 MiMo；DeepsecBench-AA（15%）和 CWE-Bench-AA（58%）两项落后。Mistral 自报对恶意网络提示的平均拒绝率为 96.6%，官方博客同时承认模型存在被用于真实攻击的可能，正在调整护栏。Orange Cyberdefense 等设计伙伴正在受控条件下测试专用安全变体。谈到护栏，首席营收官 Marjorie Janiewicz 的立场是，客户保护自己的最好方式是拿到这些模型，自己建立并定制其中一部分护栏。</p>
-<p>许可证是这次发布里最需要读细的部分。ML4 采用 Mistral Ecosystem Open-Weight License，底层是 MIT 许可证，再加一条商业限制。它授予运行、修改和继续训练等广泛权利，但第 2 条规定，只要被许可方或其关联方经营 model-as-a-service 业务，也就是把模型以服务形式开放给第三方调用或做后训练，商业化使用前就必须另签商业协议。判断依据是业务形态和访问方式，许可证没有设收入门槛。企业内部使用，以及模型能力只嵌在自家产品功能里的终端产品，属于豁免范围。把它简单说成 MIT 开源，会漏掉这个关键条件。</p>
-<p>还有一处口径要澄清。预览期报道的激活参数是 490 亿，正式材料写 520 亿。Mistral 在 Hugging Face 页面解释，较小的数字指每个 token 实际参与的参数量，较大的数字把词嵌入层和输出层也算了进去。这只是统计口径的差异，模型没有被临时加大。</p>
-<p>对想自己持有模型的公司，ML4 提供了一个近前沿水平的可下载选项。Janiewicz 接受 VentureBeat 采访时把客户的心声归纳为三层，不想被断供、要拥有自己的模型，想通过定制从中获得价值，以及保住业务连续性。定制路径有两条，有技术实力的团队可以自己用 Mistral Forge，其他客户可以借助 Mistral 的部署工程师和应用科学家。Mistral 举的场景包括 BMW 的碰撞测试数据和 HSBC 的客户核验流程，这些属于目标案例，公司没有公布对应的生产环境结果。</p></div></details>
+<div class="article-card" data-id="raw-87ea9f6b57b1">
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">community</span><span class="score-tag">评分 8.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50415628" target="_blank" rel="noopener">高盛禁了交易员的编码代理，银行家却要承销 Anthropic</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>彭博社 11 月 8 日报道，高盛今年 10 月更新的内部指引把 Claude Code 与 GitHub Copilot 限定为工程师专用，全行约 4.7 万名员工中约 1.2 万名工程师保留权限，交易员和银行家的访问被切断，横跨交易、量化研究与软件工程的 Strats 岗位仍在名单内。调整前经过一轮生产力与风险审查。这是彭博社从知情人士处获得的单源报道，高盛未发官方公告，发言人 Nick Carcaterra 仅回应银行在向员工提供某些 AI 工具以确定最佳用例。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这件事给所有把 AI 编程工具发给全员的公司划了一条线。编码代理能以使用者本人的权限读写文件、执行代码，工程师产出的代码有审查、测试和部署流程兜底，业务人员攒出来的脚本往往直接跑在与客户数据相连的机器上。对受监管的金融机构，信息屏障这类合规要求不会因为代码来自一句提示词就豁免。高盛用角色划分给出了它的答案，谁有能力审查代理写的代码，谁才有权用它。工具收回之后，交易员盯客户流、建模的需求仍然存在，这些活最终还是要有人接。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>彭博社 11 月 8 日报道，高盛在今年 10 月更新的内部指引中，把 Anthropic 的 Claude Code 和微软的 GitHub Copilot 收回到工程师群体专用，交易员和银行家失去访问权限。高盛全行约 4.7 万人，保留权限的工程师约 1.2 万，横跨交易、量化研究与软件工程的 Strats 岗位也在名单之内。消息来自知情人士，调整前经过一轮生产力与风险审查，高盛发言人 Nick Carcaterra 的公开回应只有一句，银行向员工提供某些 AI 工具，目的是"to determine the best use cases"，摸索全行的最佳用例。</p>
+<p>受冲击最大的是交易员。他们此前用这些工具监控客户交易流、给市场走势和持仓建模，还拿它制作图文材料，新规落地后怨言不少。几个月前风气还完全不同，首席信息官 Marco Argenti 7 月对外称赞非技术员工的 vibe coding，也就是用大白话描述需求让 AI 生成可用程序，交易员和银行家搭出原型再交工程师完善；上个月在都灵的一场会议上，他把全行 AI 采用描述成一波一波推进，约 1.2 万开发者是第一波。10 月的指引把编码代理锁回了这一波人手里。</p>
+<p>收紧的账算在风险上。Claude Code 这类代理能读写文件、自己写代码并运行，权限通常与使用者本人相同。工程师用它写的代码要过审查、测试和部署流程，交易员随手搭的监控脚本可以直接进入日常使用。投行还负有信息屏障义务，做并购的银行家与可能从中获利的交易员之间必须隔墙，业务人员攒出来的工具从没按这些规矩设计过，提示注入攻击还能让代理执行藏在数据里的恶意指令。代码的可解释性也是问题，一位 Meta 工程师上月自述，他如今上线的代码连自己都无法完全解释，专业开发者尚且如此，交易员更难判断代理写的模型在极端行情下会做什么。成本同样入账，代理按 token 计费，用得越多账单越贵，亚马逊已因员工为刷榜让代理跑无意义任务而关停内部排行榜，埃森哲则给每名员工每月补贴 29 美元的 Claude。</p>
+<p>戏剧性在资本这一侧。招股书 S-1 显示高盛与摩根士丹利是 Anthropic IPO 的主承销商，文件 10 月 26 日提交，预计 11 月底前以代码 ANT 登陆纳斯达克。接下来几周，高盛的银行家要向投资者推销这家公司的股票，而他们中的大多数人刚被禁止使用其编码代理。高盛与 Anthropic 的工程合作并未中断，Anthropic 工程师今年在高盛驻场六个月，帮其搭建了贸易记账与客户入职的中后台代理，由工程团队运营。巴克莱则走在另一头，10 月刚宣布年底前一半开发者用上 Claude Code，三周后公布的 5000 人裁员名单里就有开发者。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>ML4 的能力底座已于 10 月 6 日通过 API 预览亮相，本次为可下载权重的正式开放，属于同一产品线的重大更新。新增量包括约三周额外强化学习、Hugging Face 权重下载、API 降价、修改版 MIT 许可证、激活参数从 49B 到 52B 的口径说明、新增低中高三档推理设置，以及 AA 10 月 29 日独立评测给出的编码代理开源第二与 Cyber Index 开源第三等排名。</div>
-            <div class="tags-row"><span class="tag">Mistral</span><span class="tag">ML4</span><span class="tag">开源权重</span><span class="tag">Artificial Analysis</span><span class="tag">模型许可证</span><span class="tag">大模型</span></div>
-            <div class="event-aggregation"><div class="event-head">事件聚合 · 4 个来源 · 已合并 2 条候选</div><div class="event-sources"><a class="event-source" href="https://venturebeat.com/technology/mistral-large-4-le-chonk-arrives-as-the-top-open-model-outside-china-with-improved-coding-performance-and-63-lower-cost-per-task" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Mistral releases open-weight ML4 for coding &amp; cyber - IT Brief Asia</span><span class="event-domain">venturebeat.com</span></a><a class="event-source" href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPUW5IVkNpZUNBUGlzSXFaeWRSSEdjTV9wWlFGN0VFWVkxUkZhUGp6ejNJdi03LXV6LWpLQldmNjllbWJrQ01hSmtXaEhGRzZlNkVIZTZTY3hCVmRhVFF5czd1NHNmYmdtS0JEa2lkWGl6QnZZRU5rZXBqS0hfRm4wRGVn?oc=5" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Mistral releases open-weight ML4 for coding &amp; cyber - IT Brief Asia</span><span class="event-domain">news.google.com</span></a><a class="event-source" href="https://www.theverge.com/ai-artificial-intelligence/1022184/mistral-ai-has-officially-released-its-large-4-le-chonk-model" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Mistral Large 4 AI Model Advances Open-Weight Coding Benchmarks - The Cryptonomist</span><span class="event-domain">www.theverge.com</span></a><a class="event-source" href="https://siliconangle.com/2026/10/29/mistral-releases-open-weights-for-mistral-large-4-providing-sovereign-control-for-the-companys-le-chonk-ai-model/" target="_blank" rel="noopener"><span class="event-role">媒体/作者报道</span><span class="event-title">Mistral Large 4 Goes Open Weight at 1T Parameters - Technology Org</span><span class="event-domain">siliconangle.com</span></a></div></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>核心增量是彭博社 11 月 8 日曝光的高盛 10 月内部新指引，首次将 Claude Code 与 GitHub Copilot 按角色限权到约 1.2 万名工程师，属首次报道的治理动作。4 月香港下架 Claude、6 月摩根大通跟进、7 月 Marco Argenti 推崇 vibe coding 均为已报道旧事，仅作背景。本篇还叠加 Anthropic IPO 主承销商反差这一新增量，S-1 于 10 月 26 日提交、代码 ANT、预计 11 月底前上市，判定 genuinely_new。</div>
+            <div class="tags-row"><span class="tag">高盛</span><span class="tag">Claude Code</span><span class="tag">GitHub Copilot</span><span class="tag">Anthropic</span><span class="tag">编码代理</span><span class="tag">企业 AI 治理</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50415628" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers" target="_blank" rel="noopener">Original article <span class="domain">www.thestateofai.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Mistral Large 4: Europe-Trained MoE Preview at Half List</div>
-                        <div class="source-url"><a href="https://llm-stats.com/blog/research/mistral-large-4-launch" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Mistral Large 4 Goes Open Weight: What It Means (2026) - PowerfulAI.tools</div>
-                        <div class="source-url"><a href="https://www.powerfulai.tools/blog/mistral-large-4-open-weight-release-2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Mistral Large 4: Specs, Benchmarks, Price, Weights</div>
-                        <div class="source-url"><a href="https://felloai.com/mistral-large-4" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Mistral releases 1 trillion-parameter Large 4 model under a restricted open-weight license</div>
-                        <div class="source-url"><a href="https://mlq.ai/news/mistral-releases-1-trillion-parameter-large-4-model-under-a-restricted-open-weight-license" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Goldman Sachs Is Pulling Claude Code From Its Bankers and...</div>
+                        <div class="source-url"><a href="https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -856,8 +778,19 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Mistral Large 4 Is a Trillion-Parameter Bet Against Closed AI Control</div>
-                        <div class="source-url"><a href="https://www.remio.ai/post/mistral-large-4-is-a-trillion-parameter-bet-against-closed-ai-control" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Goldman Sachs is pulling Claude Code from its bankers and traders</div>
+                        <div class="source-url"><a href="https://news.ycombinator.com/item?id=50415628" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge community">社区讨论</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">In Anthropic I.P.O., Goldman and Morgan Stanley Slug It Out for Top...</div>
+                        <div class="source-url"><a href="https://www.nytimes.com/2026/10/27/business/in-anthropic-ipo-goldman-and-morgan-stanley-slug-it-out-for-top-bank.html" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -867,154 +800,81 @@ body {
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-becc0fe7c858">
-            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">community</span><span class="score-tag">评分 8.8/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://news.ycombinator.com/item?id=50345924" target="_blank" rel="noopener">AI 编程代理撑爆 Git，OpenAI 重写后端</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>11 月 2 日 OpenAI 工程博客首次公开内部系统 Pando，一个自研的 Git 仓库后端，已支撑公司 monorepo 全部开发。它保持 Git 协议与客户端完全兼容，工程师与 agent 的既有工作流不变，生产环境中位推送延迟较之前降低近 5 倍，每天吞吐接近 1PB 的 Git 数据。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这是 AI 编程 agent 规模化之后工程代价的第一手数据。Codex 驱动 monorepo 提交量较 2024 年一季度增长约 1378%，9 月日均约 3 万次提交，把传统 Git 服务架构逼到可靠性一度跌破 90%。Cursor、GitHub、Anthropic、GitLab 同期都在攻关同一问题，OpenAI 公开的架构取舍、方案对比和负载数据给行业提供了参照，客户端改进还将回馈 Git 上游社区。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>OpenAI 昨天（11 月 2 日）发布工程博客 Scaling Git at OpenAI，首次公开了一个叫 Pando 的内部系统。它是 OpenAI 给 Git 仓库重新造的后端，目前公司 monorepo 的全部开发都跑在它上面。monorepo 指把全公司代码放进同一个巨型仓库统一管理，OpenAI 的工程师和 AI 编程代理都在这个仓库里干活。</p>
-<p>压力源头是 Codex。一名工程师现在能同时推进多个改动，每个推送又会触发 CI、研究任务和各类开发环境去拉取同一份代码，读写互相叠加。官方数据显示，monorepo 提交量较 2024 年一季度增长约 1378%，今年 9 月日均约 3 万次提交，系统每天要送出接近 1PB 的 Git 数据，1PB 相当于一百万 GB 上下。去年年底老系统明显跟不上了，拉取和推送变慢，合并也偶发失败，可靠性一度跌破 90%。</p>
-<p>改造之前，OpenAI 推演过两条常规路线。一条是三阶段提交（3PC），多台持有完整副本的机器先加锁验证，再由协调者收集多数派确认后统一更新分支，每次推送都要多轮往返，不同分支之间也得排队。另一条是写前日志（WAL，先把改动记下来再执行，用来给多台机器排顺序），所有推送都要争抢同一份共享清单的更新权，写入量一大就成了瓶颈，单纯扩容存储也绕不开。</p>
-<p>Pando 的做法分两半。写这一侧改用因果一致性，每个分支独立按顺序更新，互不相干的分支并行推送互不阻塞，只有同时推同一个分支才发生冲突，代价是同时读多个分支时可能看到各分支不同时刻的状态。读这一侧复用打包文件（packfile，Git 把大量对象压缩打包的标准格式），服务器把同一份压缩字节发给大量客户端，几乎不用为每个人单独现算一份，下载速率能跑满客户端的网络带宽。团队用 1,000 个客户端并发推送的仿真对比了几种一致性模型，以此支撑这套选型。</p>
-<p>效果直接体现在生产环境，中位推送延迟降到原来的约五分之一，相当于优化近 5 倍。使用方式完全没有变化，Pando 保持 Git 协议与客户端兼容，切换期间没有中断任何工程工作。三位作者 Aaron Friel、Taylor Blau、Ted Nyman 均为 Member of Technical Staff，他们计划把客户端侧的改进回馈给 Git 上游项目。要提醒的是，Pando 本身没有开源，这次属于内部系统的一次公开披露，外界能拿走的是架构思路与真实负载数据。</p>
-<p>这篇博客在 Hacker News 拿到 227 分。高赞评论整理了一串同类工作，Cursor、GitHub、Anthropic、GitLab 都在同期攻关 agent 时代的 Git 规模化，Entire 和 East River Source Control 等新玩家也入场，评论者好奇这些方案最终会不会收敛成同一种东西。质疑的声音同样不少，有人指出 Meta 六年前就有日均 3 万次提交的量级，也有人追问什么样的开发强度需要每天近 1PB 的代码吞吐，还有用户抱怨 agent 写出的代码能跑但架构越堆越乱。代码版本管理这块二十多年的老基建，正在被 AI 重新改造一遍。</p></div></details>
+<div class="article-card" data-id="raw-663bfef831ad">
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">community</span><span class="score-tag">评分 8.5/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50414445" target="_blank" rel="noopener">Lovable 删掉几乎全部 agent 代码的工程账</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>11 月 4 日，Lovable 联合创始人 Anton Osika 在公司新上线的技术博客发表首篇文章 How we built Lovable, and why we keep rebuilding it，首次公开团队删掉几乎全部 agent 代码的决策过程。同文披露平台代码库累计收到超过 10 万次 pull request，用户创建的项目超过 7000 万个，并首次交代异步多智能体系统的兴废、用知识文件加 RAG 替代微调的方案（Lovable Stack Overflow 使卡死率降 5%，作者数据），以及可复制整台运行中计算机的 Camille 框架等技术细节。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>行业主流做法在给智能体加更多自主性，Lovable 的复盘给出了一份反向账本。约束越少的智能体越容易钻进死胡同，完成时间不可预期，对完全不会编程的目标用户尤其致命。这家公司靠收窄问题域站稳，靠削减自主性换来可预测，又用检索知识文件替代了模型训练，每一步都在做减法，最终撑起 7000 万个项目。对正在做 agent 产品的团队，这份带着真实数据的一手取舍记录，比任何框架的宣传页都值得细读。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>一家帮人靠聊天生成软件的公司，公开讲了自己删掉几乎全部 agent 代码的经过。11 月 4 日，Lovable 联合创始人 Anton Osika 在公司新上线的技术博客发表首篇文章，复盘这个平台三年多的架构演变。agent 中文常译作智能体，指让模型自己决定下一步调用什么工具、怎么干的程序。Lovable 的产品正是靠 AI 生成整个应用，这份自曝的家底因此格外有分量。</p>
+<p>起点在 2023 年春天。Anton 把开源项目 GPT Engineer 放上 GitHub，用户描述想要的软件，程序追问几句就写出整个代码库。同年他写下 Lovable 的计划，让不会写代码的人通过聊天创建、部署并持续改进软件，实时看到结果。到今天，这个代码库累计收到超过 10 万次 pull request（开发者提交代码修改的合并请求），他与联合创始人 Fabian 带着团队把计划变成了产品，平台上用户创建的项目超过 7000 万个。</p>
+<p>第一笔账是收窄。团队只做从零开始的全新项目，避开存量代码库的各种环境差异，随后砍掉了让用户自选前端技术栈的入口，替所有人定死一套固定技术栈。问题域变小后，代码结构和运行环境都在掌控之内，一处优化能惠及所有项目。作者把方法论概括为先把问题框小，再把执行握在手里，最后让每一次结果都变成学习素材。</p>
+<p>最有戏剧性的一笔在自主性上。Anton 一直赌模型会快速变强，推动团队做更自主的智能体，工程师 Mårten Wiman 据此搭出精密的异步系统，主智能体能创建任务并委派子智能体。实际跑起来，约束越少的智能体越容易钻进技术死胡同，出错且完成时间不可预期，自由度越高产品越不可靠。团队后退一步，删掉几乎全部 agent 代码，回到一个用户请求触发一条可预测的工具链，配上聊天和实时预览。到 2024 年底，主编辑流程已是一次响应包含全部文件改动，当时模型的原生工具调用不够可靠，团队让模型把代码包进类似 XML 的标签里再事后解析。删掉的只是自主决策那一层，生成代码、一键部署的能力全部保留，下一步走哪由用户在预览页面上决定。</p>
+<p>替代训练的方案同样朴素。原计划用产品数据微调模型，也就是拿自家数据继续训练。2024 年工程师们翻看故障应用的聊天记录，把反复出现的错误写成简短笔记，比如图标只能用 lucide-react 图标库里真实存在的名字，拿不准就选通用款，检索环节再按任务把相关笔记注入模型上下文，全程无需训练。Anton 当时把这条路称作一条新的缩放定律，一个应用里踩过的坑能立刻帮到下一个用户。同一思路后来做进 Lovable Stack Overflow，为智能体检索问题与解法，早期版本让用户卡死率降低了 5%（作者数据）。</p>
+<p>速度是另一条主线。沙箱保留项目文件并让开发服务器持续运转，改动直接刷新预览，增量 TypeScript 检查复用此前的分析结果，把每次编辑、检查、修正的循环压到更短。这套有状态沙箱后来长成 Camille 框架，能对整台计算机的内存、CPU 状态和磁盘做快照，把运行中的应用连同环境与数据库整体复制或合并，多个智能体可以从同一起点分头尝试不同方案，隔几天回来也能在几秒内恢复现场。</p>
+<p>文末他留下三道开放题，生产软件的测试、部署、维护与信任，桌面端与移动端等全类型软件，以及软件栈本身的重建。按他的判断，三题全解之后得到的将超越一个 AI 软件工程师，是一个能让人把整门生意跑在上面的平台。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Pando 为 OpenAI 首次对外披露的自研 Git 后端内部系统，历史日报未见同主题（history_check 判定未出现）。本次发布带来新的生产数据（提交量较 2024 Q1 增约 1378%、9 月日均 3 万次提交、近 1PB/日吞吐、中位推送延迟降近 5 倍、2026 Q4 预计 +2442%）与新架构细节（因果一致性加 packfile 复用，与 3PC、WAL 的建模对比仿真），当日二手媒体均在转述这份一手披露。</div>
-            <div class="tags-row"><span class="tag">OpenAI</span><span class="tag">Git</span><span class="tag">Pando</span><span class="tag">Codex</span><span class="tag">开发者工具</span><span class="tag">AI 基础设施</span></div>
-            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50345924" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
-<a class="ext-link" href="https://openai.com/index/scaling-git-at-openai/" target="_blank" rel="noopener">Original article <span class="domain">openai.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Pando: OpenAI's Git-Compatible Backend Cuts Median Push Latency by About 80% - SmartScope</div>
-                        <div class="source-url"><a href="https://smartscope.blog/en/blog/pando-openais-git-compatible-backend-cuts-median-push-2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">OpenAI built itself a new Git backend, too - The New Stack</div>
-                        <div class="source-url"><a href="https://thenewstack.io/openai-pando-git-backend" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">OpenAI Launches Pando to Speed Up Git in Massive Monorepo / X</div>
-                        <div class="source-url"><a href="https://x.com/i/trending/2117420847052816882" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">OpenAI's Pando Explained: A Git Backend Serving ~1 PB a Day - FourWeekMBA</div>
-                        <div class="source-url"><a href="https://fourweekmba.com/ai-openais-pando-explained-a-git-backend-serving-1-pb-a-day" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Scaling Git at OpenAI</div>
-                        <div class="source-url"><a href="https://openai.com/index/scaling-git-at-openai" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge official">官方</span>
-                    </div>
-                </div>
-            </div>
+            <div class="history-note"><span class="label">📌 新增量：</span>该文为 Lovable 2026 年 11 月新上线技术博客的首篇，发布于 11 月 4 日，属首次对外披露的工程复盘。删除异步多智能体代码并回归单请求流程、以 <lov-write> 等 XML 标签解析代码编辑、用微调小模型挑选代码上下文、知识文件加 RAG 替代微调及 5% 卡死率数据、Camille 计算机 fork/merge 框架均为首次公开细节，历史日报未出现同事件报道，判定 genuinely_new。</div>
+            <div class="tags-row"><span class="tag">Lovable</span><span class="tag">agent</span><span class="tag">AI 编程</span><span class="tag">RAG</span><span class="tag">工程复盘</span><span class="tag">GPT Engineer</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50414445" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://lovable.dev/blog/how-we-built-lovable-and-why-we-keep-rebuilding-it" target="_blank" rel="noopener">Original article <span class="domain">lovable.dev</span></a></div>
         </div>
-<div class="article-card" data-id="raw-bc871516f12f">
-            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">announcements</span><span class="score-tag">评分 8.6/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://finance.yahoo.com/markets/stocks/articles/alibaba-soars-6-apple-sets-182457481.html" target="_blank" rel="noopener">Qwen 版苹果 AI 定档 12 月，阿里美股涨 6%</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>苹果 10 月 31 日周六官宣，Apple Intelligence 中国版 12 月上线，由阿里 Qwen 驱动并整合进 Siri。11 月 2 日周一阿里美股上涨 6%，其中一部分涨幅与中国监管层召集银行券商支持市场的消息有关，当天京东涨 3.5%，拼多多同样收高。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>Qwen 通过 Siri 内置按钮以近乎零成本触达海量中国 iPhone 用户，直接缓解 Qwen 应用市场推广带来的亏损压力。对苹果来说，这是补上与华为在中国市场 AI 功能差距的一步。市场当天就给这笔合作定了价，但定价里也掺着政策护盘的成分。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>10 月 31 日周六，苹果确认 Apple Intelligence 将于 12 月在中国上线。Apple Intelligence 是 iPhone 上的 AI 功能套件，这套功能在中国将交给阿里巴巴的 Qwen 大模型（中文名通义千问）驱动，并整合进语音助手 Siri。苹果与阿里的合作传闻此前已经流传许久，这次真正的新信息是确切的上线月份。11 月 2 日周一，据财经数据平台 TIKR 撰写、Yahoo Finance 转载的分析文章，阿里美股当天上涨 6%，这是市场对周末官宣的回应。</p>
-<p>这 6% 里混着两股力量。一股来自苹果，Qwen 拿到一个几乎零成本的分发入口，Siri 里的一个按钮就能把它送到海量中国 iPhone 用户面前。另一股来自政策，当天有报道称中国监管层召集银行和券商开会支持市场，京东上涨 3.5%，拼多多同样收高。京东和拼多多从苹果这笔合作里什么都拿不到，它们的涨幅全部来自政策消息。</p>
-<p>对阿里来说，这个入口的价值要拿亏损来对照。TIKR 文章引用的数据显示，阿里 AI 实验室及应用业务在 6 月季度录得 139 亿元人民币的调整后 EBITA 亏损（EBITA 是剔除利息、税项与摊销后衡量业务盈亏的口径），其中一部分花在 Qwen 应用的市场推广上。花钱买用户很贵，Siri 里放一个按钮便宜得多，这就是苹果入口对阿里的意义。现金流的压力更直观，6 月季度自由现金流流出 447 亿元，过去 6 个季度里有 5 个季度为负。自由现金流指公司支付完各项投入后实际留下或流出的现金。估值上，阿里上一收盘对应 12 倍前瞻市盈率（按未来十二个月预期盈利计算的估值倍数），略低于五年均值 13 倍，约为 1 月高点的一半。</p>
-<p>苹果那边的账是另一种算法。据 TIKR 报道，在完全没有 AI 功能的情况下，苹果大中华区截至 6 月 27 日的 9 个月销售额增长 30%，达到 648 亿美元。增长在 AI 到来之前已经发生，这次上线更多是为了补上与华为在中国市场的功能差距。苹果 11 月 2 日美股盘后发布财报，原文作者表示会重点听管理层谈中国区展望。</p>
-<p>这笔合作的短期效果暂时看不到答案。新版 Siri 不在第一波发布范围内，Qwen 到底能吸引多少 iPhone 用户伸手去按，要等上线后的真实数据。TIKR 的判断是，11 月底的阿里财报需要拿出 AI 业务亏损收窄的证据，当天涨上去的股价才站得住。分析师预期阿里的正常化每股收益按美国存托股份（ADS，阿里在美股的上市形式）计算，将从 2026 财年的 26.80 元人民币回升到 2028 财年约等于 2024 财年的水平。</p></div></details>
+<div class="article-card" data-id="raw-dca166094144">
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">community</span><span class="score-tag">评分 8.2/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50411961" target="_blank" rel="noopener">无显卡 64GB 内存跑 284B 大模型，量化压到 1.71 比特</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>开源项目 llama-modchip 发布 v2.4.0。这个已在 GitHub 累计 49 次提交的 CPU 推理项目，本次新增对 30B 级 MoE 模型的支持，量化位宽 3.75 bpw，开发者自报解码速度达到每秒 25 到 111.6 个 token；同时公布了 256K 上下文满载时 57.61 GiB 的峰值内存、13.1 毫秒的 KV 缓存槽位恢复速度，并放出技术论文、架构文档与可提交成绩的社区基准排行榜。项目在 Hacker News 的讨论帖收获 372 分。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>284B 参数这个量级，过去只存在于数据中心。llama-modchip 把它的运行门槛压到一台 64GB 内存的普通台式机，无 GPU 也能跑，对隐私敏感场景、断网环境和用量极大的个人用户都是一种新选项。更实际的意义在 30B 档，每秒 25 到 111.6 个 token 的自报速度说明纯 CPU 方案开始接近日常可用的区间。它同时划出了清晰边界，1.71 bpw 的激进量化换来了内存和速度，付出的是质量余量，社区对这笔交换是否值得并无共识。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>一台没有独立显卡的台式机，只靠 64GB 内存和一颗 16 核 CPU，把总参数 284.33B 的 DeepSeek-V4-Flash 跑了起来。开源项目 llama-modchip v2.4.0 公布的自报实测里，这台机器预填充速度达到每秒 44.36 个 token，生成速度在每秒 9.1 到 14.7 个 token 之间。项目讨论帖当天在 Hacker News 拿下 372 分。</p>
+<p>这笔硬件账值得细算。284B 参数的模型若按常见的 8 比特量化存放，需要近 300GB 存储，单台家用机无从谈起。llama-modchip 的解法是把每个权重平均压到 1.71 比特。bpw 这个单位衡量的是每个参数占用的比特数，主流量化方案在 8 到 4 比特之间，1.71 比特相当于把一部精装百科全书誊进一张便签。压缩后的模型文件只有 56.56 GiB，装进 64GB 内存仍有余量，项目方公布的数据显示 256K 上下文满载时峰值内存为 57.61 GiB。</p>
+<p>敢压得这么狠，前提是模型的 MoE 架构。MoE 即混合专家模型，像一个 284.33B 人规模的顾问团，每次提问只有 13.17B 位对口的专家上场，其余人待命，真正需要搬运的数据天生就少。项目还叠加了两项加速手段。SwiGLU-H2 量化对模型中的 SwiGLU 计算层单独设计编码，守住最敏感部分的精度。Stockfish-PVS L3 投机解码则安排一个小型草稿模型先猜出后续若干个词，大模型只做批量核对，好比实习生起草、总监批红，比总监逐字亲写快得多。</p>
+<p>v2.4.0 版本把这套思路延伸到了 30B 级 MoE 模型上，量化位宽 3.75 bpw，开发者自报解码速度达到每秒 25 到 111.6 个 token，已经摸到日常对话流畅度的边缘。仓库还配了技术论文、架构文档和可提交成绩的社区基准排行榜，Apple Silicon、Fedora、Windows 都在支持列表里，许可证为 Apache 2.0。</p>
+<p>边界同样清楚。上述性能全部来自开发者自报，尚无独立复测。1.71 bpw 属于激进量化，压得越狠，模型出错的概率越高，评论区对这笔交换是否划算存有实实在在的分歧。这个项目更适合被看作本地推理可行性的极限演示，普通读者照抄配置之前，需要想清楚自己愿意用什么去换这份速度。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>苹果与阿里 Qwen 的合作传闻和框架此前已存在，本次新增量是苹果 10 月 31 日首次给出 12 月的确切上线时间表并明确由 Qwen 驱动，属实质更新，未重复此前报道；11 月 2 日阿里美股上涨 6% 是这一新增量的直接市场结果，当天报道的价值在于把股价反应中的苹果因素与监管护盘因素拆开。</div>
-            <div class="tags-row"><span class="tag">苹果</span><span class="tag">阿里巴巴</span><span class="tag">Qwen</span><span class="tag">Apple Intelligence</span><span class="tag">Siri</span><span class="tag">中概股</span></div>
-            <div class="links-row"><a class="ext-link" href="https://finance.yahoo.com/markets/stocks/articles/alibaba-soars-6-apple-sets-182457481.html" target="_blank" rel="noopener">Source <span class="domain">finance.yahoo.com</span></a>
-<a class="ext-link" href="https://news.google.com/rss/articles/CBMirAFBVV95cUxPMXVaMHFIamRSS3dBeXZMUFlLT3p5U0plaTJtOXdjY0F4bHoxb0ljZVhJRXRtTTFIUHJ6TkkwTkt3YW0zX29tbXFDRldhNjJ0VGJUWlQxZHZ5VlVKMHBUM1lvYi1QRUFFcHZyQnJkeHVmS2o5ZkJFUnozV1RuQUluV1VVTGFpOUM2RzFtQmtyQ0ZEbnFvSFgyOVctel83c0h4WHp1eG5NRnZ3TEl3?oc=5" target="_blank" rel="noopener">Source <span class="domain">news.google.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Alibaba’s Qwen-powered Apple AI to launch in China in December – Asia News Network</div>
-                        <div class="source-url"><a href="https://asianews.network/alibabas-qwen-powered-apple-ai-to-launch-in-china-in-december" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Apple Intelligence China launch: iOS 27.3, Alibaba Qwen</div>
-                        <div class="source-url"><a href="https://techaiwire.com/articles/apple-intelligence-china-ios-27-3-december-alibaba-qwen" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Some topics are off limits inside popular Chinese-made free AI, researchers find - CBS News</div>
-                        <div class="source-url"><a href="https://www.cbsnews.com/news/china-ai-qwen-artificial-intelligence-bias-analysis" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
+            <div class="history-note"><span class="label">📌 新增量：</span>仓库已有 49 次提交并维护 RELEASE_NOTES，属多轮迭代项目而非首次发布。本次 v2.4.0 增量具体，包括 30B MoE 支持（3.75 bpw，25 到 111.6 token 每秒）、256K 上下文内存数据（57.61 GiB 峰值）、13.1 毫秒 KV 槽位恢复、技术论文与社区基准排行榜，配合 372 分的 HN 讨论热度，判定为有实质内容的显著版本更新。</div>
+            <div class="tags-row"><span class="tag">本地推理</span><span class="tag">模型量化</span><span class="tag">DeepSeek</span><span class="tag">开源项目</span><span class="tag">投机解码</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50411961" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://github.com/synchopate/llama-modchip" target="_blank" rel="noopener">Original article <span class="domain">github.com</span></a></div>
         </div>
-<div class="article-card" data-id="raw-e3f3f6c0c50f">
-            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">tools</span><span class="score-tag">评分 8.4/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://www.theverge.com/ai-artificial-intelligence/1024632/anthropic-claude-ai-video-game-clones" target="_blank" rel="noopener">Claude Code 提示词新增两句，明确禁止复刻现有游戏</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Anthropic 更新了 Claude Code 的系统提示词，在 Opus 5.5 上新增两句话，引导模型拒绝复刻特定现有游戏。事件链条是上周 X 用户先贴出截图，Tom's Hardware 报道，Addy Osmani 随后确认更新本身，但没有逐字确认截图中的措辞。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这是 AI 编码工具第一次把知识产权边界写成系统提示词层面的成文规则。工具强到能整个复刻一款游戏之后，参考到哪一步算抄这条线开始进入产品规则。规则的实际效果、误伤范围，以及是否会扩展到其他 Claude 提示词，都还要看后续迭代。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>事件本身很小，Anthropic 在 Claude Code 的系统提示词里加了两句话。据 Tom's Hardware 报道、The Verge 跟进，这两句话用来引导这个 AI 编程工具远离复刻特定的现有电子游戏。</p>
-<p>消息最早来自上周一位 X 用户贴出的截图。截图显示的新增内容大意是，可以做原创游戏、某个类型的游戏、基于用户自己设计和素材的游戏，不要复刻特定的现有游戏，哪怕它被改名或者宣称为原创。截图里的确切措辞没有得到官方逐字确认。</p>
-<p>Anthropic 员工 Addy Osmani 随后在回复中确认了更新本身。他解释，团队在 Opus 5.5 上 Claude Code 的提示词里加了两句话，引导它远离复刻别人的特定游戏，理由是用 Claude 侵犯知识产权违反公司的使用政策。他还写道，原创游戏、类型游戏、基于自己设计和素材的游戏应当照常可用，团队会继续迭代，如果 Claude 拒绝了本属于你的东西，可以直接发给他。</p>
-<p><img alt="Anthropic" src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/01/STK269_ANTHROPIC_2_B.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=2400" /></p>
-<p>这条边界划得比新闻标题听起来窄。Claude Code 仍然可以用来做游戏，新限制只针对复刻特定现有游戏这一种用法。背景是复古游戏社区近段时间涌进大量 AI 制作的逆向工程、重编译和移植作品，别人花几个月甚至几年做出来的游戏被快速翻版，版权争议随之升温。Anthropic 的使用政策本就禁止用 Claude 侵犯知识产权，这次修改把这条条款落进了工具的默认行为。</p>
-<p>两句提示词能拦住多少事还是未知数。提示词层面的引导可能被绕过，也可能误伤正常请求。The Verge 已经询问 Anthropic 是否会更新其他 Claude 系统提示词，目前没有得到答复。</p></div></details>
+<div class="article-card" data-id="raw-2cfa931b1480">
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">community</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50411467" target="_blank" rel="noopener">八种记忆格式互不相通，一篇博客倡议给AI助手的记忆定标准</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>开源记忆工具 LoreKit 的作者发布观点文章，倡议为 AI 编程助手的记忆建立共享标准，路径效仿 2019 年 OpenTracing 与 OpenCensus 合并为 OpenTelemetry 的先例。文章贴到 Hacker News 后收获 175 分。除论证外，作者还公开了一份记录格式草案，用带 frontmatter 的 Markdown 文件承载单条记忆，字段包括标记出处的 written_by 与管理有效期的 lifecycle。这是一篇从业者的个人倡议，行业层面尚未启动对应的标准项目。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>对普通用户而言，记忆格式碎片化的直接代价是 AI 助手的经验被锁进单个工具，换了工具就从头再学。对行业而言，标准缺失让重复造轮子成为常态，r/ClaudeAI 等社区里源源不断的“自制记忆层”帖子就是佐证。作者给出的时机判断是，各家格式都还年轻，改动成本尚低，且 MCP 与 AGENTS.md 已按原文表述归于 Linux 基金会旗下的 Agentic AI Foundation，中立托管方现成。OpenTelemetry 的先例还提示了另一层价值，底层标准统一后厂商在上层的竞争反而更充分，用户只需埋一次点，所有工具都能读。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>一台开发机上，AI 编程助手留下的“记忆”散落在好几个互不相通的地方。仓库里躺着 AGENTS.md 或 CLAUDE.md 指令文件，Anthropic 的 memory tool 把经验写进 /memories 目录，GitHub Copilot 把仓库事实存在自己那侧，某个 MCP 记忆服务器又维护着 JSONL 知识图谱。CI 流水线里的 agent 学到的教训，编辑器里的 agent 读不到，后来换上的新工具同样读不到。</p>
+<p>开源工具 LoreKit 的作者近日发布博客，倡议给 agent 记忆来一场标准化，文章发到 Hacker News 后拿到 175 分。需要说明的是，这是一位从业者的个人倡议，行业尚未启动对应的标准项目。</p>
+<p>作者用来类比的是 OpenTelemetry，可观测性领域的统一标准，可观测性可以粗略理解为给软件做监控埋点。2019 年以前，每家监控厂商都自带探针与私有数据格式，开发者换个厂商就得重新埋点。两个开源项目 OpenTracing 与 OpenCensus 各自尝试统一后，于 2019 年合并为 OpenTelemetry。厂商们商定在四层基础设施上停止竞争，即数据模型、语义约定、协议与参考实现，存储、查询、分析等上层能力继续比拼。开发者埋一次点，所有工具都能读。作者本人日常在可观测性公司 Dash0 与 OpenTelemetry 打交道。</p>
+<p><img alt="可观测性已由 OpenTelemetry 厘清，agent 记忆仍待约定" src="https://www.lorekit.io/blog/otel-parallel.svg" /></p>
+<p>在作者看来，agent 记忆正处在可观测性 2019 年之前的状态，问题的核心是共识缺失，这个领域的工具早已足够拥挤。文章把现存主流方案归成八类，AGENTS.md/CLAUDE.md 指令文件、Anthropic memory tool 的 /memories 文件、GitHub Copilot Memory、Letta 上下文块、Mem0 抽取事实、LangGraph BaseStore、MCP 知识图谱服务器与 Graphiti/Zep 时序图，彼此互不兼容，作者自家的 LoreKit 寻址记录也作为对照表里的又一行列在末尾。r/ClaudeAI 等社区里“我又造了一个记忆层”的帖子源源不断，每造一个，世界上就多一种别人读不了的格式。</p>
+<p>文章进一步区分了两个常被混同的问题。已有提案里，MacPaw 的 Portable Memory 打包成 .mem 文件，2026 年 4 月的 Open Memory Protocol 草案用 ZIP 加清单搬运记忆，Cognee 的 COGX 能导入 Mem0、Letta 与 Zep 的数据，这些方案覆盖的是“导出”场景，即把一个人的记忆从 A 厂商迁到 B 厂商。CI 任务、编辑器 agent 与 review 机器人同时在同一仓库读写同一位置的场景尚无提案覆盖，作者称其为“实时寻址”。</p>
+<p><img alt="导出解决单人记忆迁移，实时寻址解决多工具共享同一存储" src="https://www.lorekit.io/blog/export-vs-address.svg" /></p>
+<p>作为讨论起点，作者公开了一份记录格式草案。每条记忆是一个带 frontmatter 元数据头的 Markdown 文件，信封字段包括 address（在哪个范围成立）、key、id、written_by（区分人写、模型写还是服务从对话里抽取）、lifecycle（何时过期）与 attributes。规范无需在“谁来写记忆”这个分叉上选边，只需如实记录出处，读者便知道该信几分。配套设计还有地址层级约定注册表、经 MCP 暴露的 write/read/list/search/archive 操作契约，以及往返序列化不丢数据的一致性测试。存储、排序、嵌入与界面被明确划在标准之外，留给工具竞争。</p>
+<p>时机上，文章按其表述称 MCP 与 AGENTS.md 均已归于 Linux 基金会旗下的 Agentic AI Foundation，中立托管方现成。作者也坦承利益相关，LoreKit 只是对照表里的一行，若最终标准另起炉灶，LoreKit 会转而适配。面对“再立一个标准只会加剧碎片化”的 xkcd 927 式质疑，作者给出的答案是 OpenTelemetry 的先例，共识出现在现有项目合并之时，而合并的窗口只在格式还年轻的那几年。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>上周 X 用户截图披露、Tom's Hardware 报道、Addy Osmani 官方确认的 Claude Code 系统提示词 IP 相关修改，是 Anthropic 首次公开确认把使用政策中的知识产权条款写进 Claude Code 提示词，属刚发生的政策与产品行为变化；history_check 未在历史日报中找到同事件匹配，相对既有报道的增量是官方确认与边界说明。</div>
-            <div class="tags-row"><span class="tag">Anthropic</span><span class="tag">Claude Code</span><span class="tag">系统提示词</span><span class="tag">游戏版权</span><span class="tag">AI 编程工具</span></div>
-            <div class="links-row"><a class="ext-link" href="https://www.theverge.com/ai-artificial-intelligence/1024632/anthropic-claude-ai-video-game-clones" target="_blank" rel="noopener">Source <span class="domain">www.theverge.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>历史核查显示该话题未在既往日报出现。本次增量为新发布的标准化倡议文章，首次把八类记忆格式整理成对照表，将 OpenTelemetry 2019 年合并案例映射为记忆标准的四层模板，并公开含 written_by 与 lifecycle 字段的记录格式草案，观点与可操作草案兼具。</div>
+            <div class="tags-row"><span class="tag">Agent记忆</span><span class="tag">标准化</span><span class="tag">OpenTelemetry</span><span class="tag">MCP</span><span class="tag">AI编程助手</span><span class="tag">开源</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50411467" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://www.lorekit.io/blog/open-agent-memory-format" target="_blank" rel="noopener">Original article <span class="domain">www.lorekit.io</span></a></div>
+        </div>
+<div class="article-card" data-id="raw-3354046f5330">
+            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">community</span><span class="score-tag">评分 7.6/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50410107" target="_blank" rel="noopener">一年 244 个版本后，老用户告别 Claude Code 转投 Pi</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>博客作者在 caleb.software 发文《Goodbye Claude, Hello Pi》，宣布使用一年多的 Claude Code 从主力位置退役，开发环境整体迁移到开源编码工具 Pi，帖子发到 HN 引出 706 分讨论。时间差颇具戏剧性，他做完迁移决定一天后，Anthropic 宣布 Claude Code 开始支持 AGENTS.md，他在文中称这波挽留为时已晚。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>高盛把编码代理收回工程师手里是企业侧的收缩，这篇博客补上了同一生态用户侧的摩擦样本。作者的不满里有共性话题，配置文件格式分裂让跨工具用户重复维护同一套指令，存在近一年的 IDE 集成 bug 被错误关闭，反映快速上新与老问题修复之间的失衡可以被重度用户清晰感知。他算的 token 账也有参考价值，系统提示词和工具描述的膨胀在大规模调用下会折成真实推理成本，值得任何代理团队对照自查。单个作者的迁移说明不了 Claude Code 的市场走势，但被摩擦到的重度用户如今有了开源选项，换工具的门槛比想象中低。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>一位用了一年多 Claude Code 的开发者在个人博客宣布，把它从主力编码工具的位置上退下来，开发环境整体迁到开源工具 Pi，文章发到 HN 后拿到 706 分讨论。他做完迁移决定的第二天，Anthropic 宣布 Claude Code 开始支持 AGENTS.md，他的回应只有一句“too little, too late”，太迟了。</p>
+<p>积怨集中在三处。CLAUDE.md 与 AGENTS.md 两种格式并存，用户要靠复制或软链接在两套文件间来回维护；VSCode 集成同一时间只允许一个会话连接 IDE，开第二个标签页就收不到选区文本，这个 bug 最早 2025 年 12 月被报告，却被当成无关问题的重复关闭；官方 GUI 扩展里半数内置斜杠命令不可用。</p>
+<p><img alt="Claude Code 在 VSCode 中的连接断开报错" src="https://caleb.software/assets/img/claude-to-pi/vsc-disconnected.png" /></p>
+<p>按他的统计，Claude Code 今年已发布 244 个版本，超过四分之三改动了系统提示词或工具描述，这类改动可能明显改变模型行为。他称默认 Bash 工具的描述接近 3000 token，大部分内容是教模型用 git 和在 GitHub 提 PR，而按他的说法模型本来就会。他估算按每天 1 亿次请求的规模，从这里省下 1000 token 一年就是数百万美元推理成本，这些数字均出自他的博客，属作者个人主张。迁移后他用约 20 分钟给 Pi 写出了支持多标签页选区共享的扩展。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>核心增量是这篇迁移叙事本身及其引发的 706 分新讨论，HN 评论从约 20 小时前持续到抓取前几分钟，讨论正在进行中。作者因 Anthropic 宣布支持 AGENTS.md（恰在其决定迁移一天后）而动笔，文中 244 个版本、超过四分之三改动提示词或工具描述等统计为作者口径的首次公开。Claude Code 与 Pi 均非新产品，新在迁移叙事与批评本身，历史检查也未在往期日报中找到同一事件，判定 genuinely_new。</div>
+            <div class="tags-row"><span class="tag">Claude Code</span><span class="tag">Anthropic</span><span class="tag">Pi</span><span class="tag">开源编码工具</span><span class="tag">AGENTS.md</span><span class="tag">编码代理</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50410107" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://caleb.software/posts/claude-to-pi.html" target="_blank" rel="noopener">Original article <span class="domain">caleb.software</span></a>
+<a class="ext-link" href="https://news.ycombinator.com/item?id=raw-3354046f5330" target="_blank" rel="noopener">Coverage <span class="domain">news.ycombinator.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Claude Blocks Game Clones: 5 Things Devs Must Know [2026]</div>
-                        <div class="source-url"><a href="https://shattered.io/claude-game-clone-rule-legit-developers-troubleshooting-false-positives-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">从 Claude Code / Cursor 迁移到 Pi — 教程 | Piagent</div>
+                        <div class="source-url"><a href="https://piagent.fyi/zh/guides/switching-from-claude-code/" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1024,8 +884,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Claude Code Now Declines to Recreate Existing Games | CellCog</div>
-                        <div class="source-url"><a href="https://cellcog.ai/blog/claude-code-game-recreation-rule" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Claude Code vs Pi：开源编码代理迁移实战与对比-CSDN博客</div>
+                        <div class="source-url"><a href="https://blog.csdn.net/weixin_29040367/article/details/170119014" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1035,19 +895,8 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Claude Code Now Refuses to Recreate Existing Video Games</div>
-                        <div class="source-url"><a href="https://80.lv/articles/claude-code-blocks-video-game-cloning-some-reverse-engineering-tasks" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Anthropic Bans AI Game Clones and Reverse Engineering With Claude | TechPowerUp</div>
-                        <div class="source-url"><a href="https://www.techpowerup.com/354351/anthropic-bans-ai-game-clones-and-reverse-engineering-with-claude" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Goodbye Claude, Hello Pi - caleb.software</div>
+                        <div class="source-url"><a href="https://caleb.software/posts/claude-to-pi.html" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1057,38 +906,19 @@ body {
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">6 comments | ANTHROPIC JUST BANNED CLAUDE CODE FROM RECREATING EXISTING VIDEO GAMES, EVEN IF YOU CHANGE THEIR NAMES.
-
-And this is a pretty big development for developers using AI to build games.
-
-Anthropic has introduced new instructions for Claude Code running Opus 5.5, directing the AI coding agent to avoid recreating specific existing video games. The change comes amid growing concerns that AI tools are making it easier to copy games that developers spent months or years creating.
-
-And the interesting part is that simply renaming a copied game won't get around the restriction.
-
-Here's what the new rules mean:
-
-•Claude Code should avoid recreating specific existing games.
-
-•Changing a game's name doesn't make a direct copy acceptable.
-
-•Developers can still build original games and genre-inspired projects.
-
-•Games created using your own designs and assets remain supported.
-
-Anthropic's Addy Osmani confirmed that the instructions were added to discourage intellectual property infringement, which already violates the company's usage policy.
-
-However, this isn't a complete ban on AI game development. It's a prompt-level restriction, and its effectiveness remains uncertain.
-
-Some developers have also raised concerns about legitimate projects being incorrectly rejected.
-
-The bigger story is how AI coding agents are becoming powerful enough to recreate increasingly complex software, forcing companies to reconsider where inspiration ends and copying begins.
-
-Vibe coding just got a new rulebook.
-
-#anthropic #claudecode #aicoding #gamedevelopment #artificialintelligence
-
-{anthropic, claude code, claude opus 5.5, claude ai, game development, video game clones, game cloning, ai coding, vibe coding, game developers, ai generated games, copyright, intellectual property, game design, indie games, indie developers, ai agents, coding agents, software development, generative ai, artificial intelligence, game industry, game mechanics, original games, game creation, prompt rules, coding tools, developer tools, gaming news, ai news} | Askgpts</div>
-                        <div class="source-url"><a href="https://www.facebook.com/askgptss/videos/anthropic-just-banned-claude-code-from-recreating-existing-video-games-even-if-y/2952959325071802" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Goodbye Claude, Hello Pi: The Evolution of AI Coding ...</div>
+                        <div class="source-url"><a href="https://techplanet.today/post/goodbye-claude-hello-pi-the-evolution-of-ai-coding-harnesses-and-developer-preferences" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Goodbye Claude, Hello Pi | Dev Sprints Lab</div>
+                        <div class="source-url"><a href="https://www.devsprintslab.com/blogs/goodbye-claude-hello-pi-engineering-analysis" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1098,29 +928,39 @@ Vibe coding just got a new rulebook.
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-4db4e4d32bda">
-            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">tools</span><span class="score-tag">评分 8.3/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://www.unite.ai/xai-introduces-data-bot-to-bring-shared-analytics-skills-to-grok-bot/" target="_blank" rel="noopener">xAI 部署 Data Bot 实践分享，给每个团队配数据科学家</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>11 月 2 日 xAI 公开部署实践分享，SpaceXSI 数据科学团队在 Grok Bot 里构建了 Data Bot，一个全员可用的 Shared Bot。它连数据仓库，用数据团队沉淀的技能和记忆回答分析问题，结果按每个提问者的偏好格式输出。这是内部部署经验的记录，不是 Grok Bot 的产品功能更新。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>组织级 agent 的完整设计图很少被厂商公开。这份分享把两件关键事情讲透了，技能由专家团队统一维护而不是每人各调各的，记忆写入要过管理员审批才能全员可见。对准备在公司内部推 agent 的团队，这是少数能照着对照的一手参照，也说明 agent 进组织的难点在管理设计而不只在技术。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>11 月 2 日，xAI 公开了一份部署实践分享，介绍 SpaceXSI 的数据科学团队怎么在 Grok Bot 里搭起了 Data Bot。先说清楚一件事，这不是 Grok Bot 的产品功能更新，而是一家公司把组织级 agent 跑起来之后的经验记录。Data Bot 以 Shared Bot 的形式挂在 Grok Bot 里，加入的同事都能用，它连着数据仓库，按数据团队沉淀的方法论回答分析问题，输出格式会跟着每个提问的人调整。</p>
-<p><img alt="Grok Bot 中 Data Bot 回答产品使用问题的界面，附结论标题与图表" src="https://www.unite.ai/wp-content/uploads/2026/11/xai-data-bot-grok-bot-cover.jpg" /></p>
-<p>这支数据科学团队人不多，麻烦在于全公司想查个数都得排队。很多问题本身不难，比如活跃用户怎么定义、某天收入为什么波动，但要答准仍然需要专业知识。团队在发布前几个月开始试 AI agent，想法是把团队的知识持续开放给全公司，自己腾出手来专门维护和改进这个 AI 同事。</p>
-<p>具体设计分两块。第一块是共享技能，由数据团队统一维护。指标技能写清活跃用户、收入这些常用指标怎么定义，数据来自哪张表，查询逻辑是什么；遇到指标暴涨暴跌，它会先把变化按人群或地区拆开，排除节假日和埋点改动，再归因给产品变化。实验技能教它搭 A/B 测试，也就是把用户随机分成两组各看一个版本再比较效果，同时做功效分析，即事先算清楚需要多少样本结论才可信，还会检查两组用户分布是否均衡、规划放量节奏，实验攒够样本后整理读数。可视化技能规定看趋势用折线图、比类别用横向条形图，并套用团队自己的主题样式。仪表盘技能更进一步，能把聊天里生成的图变成 Databricks 或 Hex 上的正式仪表盘。数据工程技能管 dbt 模型的编写和审查，dbt 可以理解为把 SQL 写成可测试、可复用的数据加工流程的工具，这一类还约定了管道自动告警的规范，以及给新功能做埋点记录的办法。</p>
-<p>第二块是共享记忆，存的是操作层面的经验，比如某条数据管道由哪位同事负责，上个月某次指标下滑其实是某个地区的假期造成的。这类内容不由 bot 自己说了算。Team Bot 的管理员要先审核，批准或拒绝之后，一条记忆才对使用 Data Bot 的所有人可见。相当于给 agent 的共享知识库加了一道组织关卡，错误经验不会悄悄扩散给全公司。</p>
-<p>用的人已经分布在各个职能。产品经理 Kevin Niparko 在 Grok Bot 里直接发消息提问，几分钟就能拿到一张带结论标题的图表，还能接着追问而不用重开一个分析，那些现有仪表盘答不了的问题现在有了去处。做生命周期营销的 Jon Brenner 只需给一个 Braze 营销活动的编号，Data Bot 就去仓库里查收到邮件的人后来有没有使用对应功能，Braze 是一家做邮件和消息推送的营销服务商。X Subscription 上线时，Braze 自带的转化指标答不出多少人收到邮件后换了套餐，这个缺口最后由 Data Bot 查仓库补上。负责收入增长的 Katy Abbaszadeh 拿它评估活动对销售管道的贡献，每周盯目标进度，给汇报做图。再往深一层，它能独立完成一整套产品采纳分析，自己查数、自己找解释，最后写成带图表的报告，也能拉进 Slack 频道按时发周报，同事可以在频道里追问或要求它查一处异常。</p>
-<p>效果有了第一个数字。按 xAI 自己的估算，发布前一周 Data Bot 替数据科学团队承担了约 70 小时的工作量，这是官方自述口径，还没有第三方验证。边界也划得清楚，需要更多判断的复杂分析仍由人类团队处理，他们还在摸索哪些地方要给 bot 补指引。至于 Data Bot 以后能不能接管那些复杂分析，公告没有给出答案。</p></div></details>
+<div class="article-card" data-id="raw-8af66aca16fe">
+            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">tools</span><span class="score-tag">评分 7.5/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://thenewstack.io/perplexitys-ai-agents-keep-working-after-you-close-the-tab/" target="_blank" rel="noopener">关掉标签页也不中断，Perplexity 代理转后台继续干</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Perplexity 在 11 月 8 日宣布，其 AI 代理获得后台执行能力，用户关闭浏览器标签页后任务不中断，代理会在后台继续完成搜索、内容摘要和数据收集，返回时直接查看结果。The New Stack 对此做了报道，Pulse2 也有覆盖。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>长任务过去和浏览器会话绑定，用户必须一直保持标签页打开，深度研究的成本被压在使用者这一端。任务状态转由后端持久化之后，代理从会话里的工具变成可以在后台独立干活的助手，多步骤研究工作流的摩擦明显下降。这也是 AI 助手产品从快速问答走向深度研究定位的一个具体信号。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>用 AI 做研究的人大多经历过一件事，任务和浏览器标签页绑在一起，页面一关进度就没了。Perplexity 在 11 月 8 日宣布改变这个默认设定，它的代理可以在用户关掉标签页后继续在后台执行任务，搜索、摘要、收集数据都不中断。</p>
+<p>任务状态由 Perplexity 的后端基础设施持久化保存，用户回来时结果已经在那里等着。后台代理运行在与前台一致的隐私与安全护栏内，用户随时可以查看它在做什么，也可以暂停或终止。该功能目前面向 Perplexity Pro 订阅用户，公司表示未来计划扩展至免费用户，早期测试者反馈跨回合的深度研究工作流摩擦明显降低。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Data Bot 部署分享由 xAI 于 11 月 2 日首次公开，历史日报查重未出现匹配，技能五类划分、记忆审批流程与 70 小时估算均为本次新披露的一手内容。</div>
-            <div class="tags-row"><span class="tag">xAI</span><span class="tag">Grok Bot</span><span class="tag">Data Bot</span><span class="tag">AI Agent</span><span class="tag">数据分析</span><span class="tag">企业落地</span></div>
-            <div class="links-row"><a class="ext-link" href="https://www.unite.ai/xai-introduces-data-bot-to-bring-shared-analytics-skills-to-grok-bot/" target="_blank" rel="noopener">Source <span class="domain">www.unite.ai</span></a>
-<a class="ext-link" href="https://news.google.com/rss/articles/CBMiP0FVX3lxTFB3QjZSMFpSY09hLVVkNmMzdFpFR1Nvc0QyUjhJOXY0VUZhTU1Tck1objkzRHVRdENkMzh6TnZQbw?oc=5" target="_blank" rel="noopener">Source <span class="domain">news.google.com</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>本次增量是 Perplexity 代理获得关闭标签页后任务不中断的后台持久化执行能力，任务状态由后端维护并在用户返回时恢复，隐私护栏、用户控制权与 Pro 先行的开放范围均为首次披露的功能事实，历史日报未出现过该事件。</div>
+            <div class="tags-row"><span class="tag">Perplexity</span><span class="tag">AI 代理</span><span class="tag">后台任务</span><span class="tag">AI 搜索</span><span class="tag">AI 工具</span></div>
+            <div class="links-row"><a class="ext-link" href="https://thenewstack.io/perplexitys-ai-agents-keep-working-after-you-close-the-tab/" target="_blank" rel="noopener">Source <span class="domain">thenewstack.io</span></a>
+<a class="ext-link" href="https://news.google.com/rss/articles/CBMickFVX3lxTE1NOHRPWU5DTjFiWU8yTFVBWGNKYk9vc3hCbjRpT1BEOE1rNWpUdWp4ZkZZMGFCR0tjdTRURGVGUUdNLVE5bF9qWDJjb1FxUjl2NjExNXdJVGJFQVZja1gxNTJEN2phNUV6QzM3NHdXSXdNZw?oc=5" target="_blank" rel="noopener">Source <span class="domain">news.google.com</span></a>
+<a class="ext-link" href="https://www.pulse2.com/perplexity-launches-teammates-ai-agents-to-manage-complex-projects-and-automate-ongoing-business-workflows/" target="_blank" rel="noopener">Coverage <span class="domain">www.pulse2.com</span></a></div>
+        </div>
+<div class="article-card" data-id="raw-53044e44b3aa">
+            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">tools</span><span class="score-tag">评分 7.4/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic" target="_blank" rel="noopener">苹果被曝内部施压，Siri 智能体化路线图曝光</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>The Verge 于 11 月 8 日报道，转述的是彭博社记者 Mark Gurman 的爆料，并非苹果官方声明。本次新增量集中在路线图细节，iOS 27.3 预计让 Siri 精细控制第一方应用，如照片旋转裁剪、Safari 标签页整理；第三方应用集成预计明年春季，示例包括 Grubhub 下单与 OpenTable 订位；Gurman 还预测 Siri 最早明年具备跟踪目标并自主推进的智能体能力。爆料同时披露了 CEO John Ternus 向 AI 负责人 Craig Federighi 施压加速的内部动态。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这份爆料给了外界一个观察苹果追赶智能体竞赛的时间刻度。按照报道引述的能力标准，OpenAI 的 Dots、Meta 的 Muse 以及 Grok 已能跟踪目标、判断下一步并持续推进任务，而 Siri 目前只能执行单次指令，差距摆在明处。对普通用户而言，如果时间表兑现，Siri 将从会说话的快捷按钮变成能替你办具体事的助手，比如整理 Safari 标签页或者订一餐外卖。对行业而言，苹果入场意味着这类能力可能被推到数亿台 iPhone 上，智能体产品的普及门槛会随之抬高。这些判断全部来自单一记者信源，延期与调整的可能性需要保留。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>The Verge 援引彭博社记者 Mark Gurman 的爆料称，苹果 CEO John Ternus 正向 AI 负责人 Craig Federighi 施压，要求加快 Siri 的智能体化路线图，打造能与 OpenAI 的 Dots、Meta 的 Muse 抗衡的 AI 智能体。Federighi 已在极短周期内交付可用的 Siri AI 版本，但苹果清楚当前 Siri 只能执行单次指令，仍落后于对手。</p>
+<p><img alt="Siri AI 界面被唤起" src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/Siri-AI-Being-invoked-3.jpg?quality=90&amp;strip=all&amp;crop=0.0065530799475724%2C0%2C99.986893840105%2C100&amp;w=2400" /></p>
+<p>按爆料的节奏，升级分三步走。iOS 27.3 预计带来第一方应用的精细控制，比如在照片里旋转裁剪图片、整理 Safari 标签页。第三方应用集成要等到明年春季，届时 Siri 可通过 Grubhub 下单、通过 OpenTable 订位。Gurman 预测 Siri 最早明年获得跟踪目标并自主推进的智能体能力，在他看来消费者与市场的压力让苹果没有太多选择。</p>
+<p>以上时间表均出自记者爆料与个人预测，苹果官方尚未宣布，实际进度以官方发布为准。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>本次增量是 Gurman 爆料披露的路线图细节，包括 iOS 27.3 第一方应用精细控制、明年春季第三方应用集成、Siri 最早明年具备智能体能力的预测，以及 Ternus 向 Federighi 施压的内部动态。Siri 智能化是既有故事，此次为显著进展更新，不是全新发布。</div>
+            <div class="tags-row"><span class="tag">Apple</span><span class="tag">Siri</span><span class="tag">AI 智能体</span><span class="tag">Mark Gurman</span><span class="tag">iOS 27.3</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic" target="_blank" rel="noopener">Source <span class="domain">www.theverge.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">The complete guide to Grok AI (2026) | DataNorth AI</div>
-                        <div class="source-url"><a href="https://datanorth.ai/blog/the-complete-guide-to-grok-ai" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Siri's Last Stand: Apple's iOS 19.4 AI Overhaul and Cross-App...</div>
+                        <div class="source-url"><a href="https://250mm.co.kr/en/ai/apple-siri-agentic-overhaul-2026" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1130,8 +970,8 @@ Vibe coding just got a new rulebook.
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">What Is Grok Bot? xAI's Agent, Plans and Price (2026)</div>
-                        <div class="source-url"><a href="https://www.ayautomate.com/blog/grok-bot-xai-ai-agents-explained" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Apple's Agentic Leap (and a Sensible Polish): My... - Mark Ellis Reviews</div>
+                        <div class="source-url"><a href="https://markellisreviews.com/tech-news/apples-agentic-leap-and-a-sensible-polish-my-wwdc-26-rundown/" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1141,8 +981,8 @@ Vibe coding just got a new rulebook.
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">xAI Launches Grok Bot, Always-On AI Teammates With Their Own Cloud Computers – Unite.AI</div>
-                        <div class="source-url"><a href="https://www.unite.ai/xai-launches-grok-bot-always-on-ai-teammates-with-their-own-cloud-computers" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Apple Partners with Google for Siri AI Upgrade | Ali Azzam... | LinkedIn</div>
+                        <div class="source-url"><a href="https://www.linkedin.com/posts/syedaliazzam_apple-just-made-a-very-un-apple-move-it-activity-7416605198111903744-Glp2" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1152,8 +992,8 @@ Vibe coding just got a new rulebook.
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">What criticisms has xAI faced?  | Britannica</div>
-                        <div class="source-url"><a href="https://www.britannica.com/question/What-criticisms-has-xAI-faced" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Apple's delayed Siri update: A pattern of broken promises | LinkedIn</div>
+                        <div class="source-url"><a href="https://www.linkedin.com/posts/muhtasimulhaque_apple-promised-a-new-siri-in-june-2024-activity-7438872015534710784-wv-O" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1163,8 +1003,8 @@ Vibe coding just got a new rulebook.
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Grok Bot vs Grok: what should you use a Bot for? – Steal What Works</div>
-                        <div class="source-url"><a href="https://stealwhatworks.com/blogs/news/grok-bot-vs-grok" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">WWDC 2026: Siri Becomes Agentic AI — Visual Intelligence, Gemini...</div>
+                        <div class="source-url"><a href="https://saipien.org/wwdc-2026-siri-becomes-agentic-ai-visual-intelligence-gemini-tie-up-it-privacy-risks/" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1174,27 +1014,24 @@ Vibe coding just got a new rulebook.
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-f3e9b13e6c5b">
-            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">research</span><span class="score-tag">评分 8.0/10</span><span class="newness-tag">genuinely_new</span></div>
-            <h2><a href="https://huggingface.co/papers/2611.03219" target="_blank" rel="noopener">编程智能体持续自进化实测，旧任务成绩相对跌 66%</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>THU-Agent 团队 11 月 2 日在 arXiv 发布论文 2611.03219，首次系统研究编码智能体 harness 跨多任务持续自进化时的灾难性遗忘问题，并给出量化证据，全部代码在 GitHub 开源（仓库 THU-Agent/continual-harness-evolution）。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>harness 自进化是当下的热门范式，卖点是不动模型参数就能提升能力，绕开昂贵的重新训练。这篇论文首次量化了它的隐性成本，多任务连续进化时旧任务能力相对下降 66%。对正在部署自进化 agent 的团队，这是直接预警，自我进化必须配遗忘管理。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>这两年 AI 圈流行一条省钱的自我升级路线。不改大模型的参数，不重新训练，让智能体打磨自己外围的那套工作系统，练完之后单任务成绩确实更好看。11 月 2 日，THU-Agent 团队在 arXiv 挂出论文（编号 2611.03219），首次系统检验这条路线放进多任务连轴转的场景里会发生什么，答案是旧本事被大面积冲掉。</p>
-<p>先解释两个词。智能体外围的这套工作系统叫 harness，可以理解成 agent 的工作脚本与工具链，怎么读代码、怎么跑测试都写在里面，模型权重本身不动，升级全靠改这些脚本和工具。灾难性遗忘是持续学习领域的老毛病，指学新任务时把旧任务的本事挤掉。这篇论文第一次把它实锤到 harness 层面。</p>
-<p>实验这样设计。团队把 3 个软件工程任务数据集组织成 6 个进化方向，再选 2 种有代表性的 harness 进化方法，让同一个智能体在一个任务上进化完，接着换下一个任务继续进化，然后回头检查旧任务还剩多少能力。</p>
-<p>数字相当刺眼。使用 DeepSeek-V4-Flash-0731 时，Meta-Harness 方法在 SWE-Bench 上进化后成绩达到 94.0%。随后转到 FeatureBench 上继续进化，到第五轮回头再测 SWE-Bench，只剩 32.0%，相对下降 66%。这里 66% 是相对降幅的口径，不是某个绝对分数。</p>
-<p>病根在覆盖。为任务 A 进化时改写的脚本和工具配置，会把任务 B 依赖的旧能力顶掉。论文据此强调，持续自我进化必须配套遗忘管理，不能只盯着新任务的涨幅。</p>
-<p>放在更大的背景里看，harness 自进化正是当下的热门范式，业界看中它绕开训练成本的便宜。本期日报的头条讲另一条路，研究者直接改模型权重。这篇论文提醒的是，改脚本的路线同样有代价，省下的训练费会以遗忘的形式还回来。代码已经开源，仓库为 THU-Agent/continual-harness-evolution，感兴趣的读者可以自己复现这条遗忘曲线。</p></div></details>
+<div class="article-card" data-id="raw-6ec91eb53be5">
+            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.3/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://www.marktechpost.com/2026/11/08/google-elephant-goldfish-model-plugin-spec-review-coding-agents/" target="_blank" rel="noopener">谷歌工程师开源大象金鱼插件，先审规范再让 AI 写代码</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>这是 EGM 第一次对外开源，测试记录里已出现 v0.1.0 安装包。早期报道只提到 Antigravity 一个宿主，当前官方指南已覆盖 Antigravity、Claude Code、Codex、ChatGPT 等，其中 Antigravity CLI、Claude Code 和 Codex 通过了自动化端到端测试，Claude Code 需 2.1.271 及以上版本。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>AI 编码 agent 最贵的失败不是写不出代码，而是基于错误假设写出一堆能跑的代码，拖到 pull request 阶段才被人看出来。EGM 把审查关口前移到设计文档，而且评审者全是零上下文的金鱼子代理，不会被长会话里的先入之见带偏。这套流程不绑定任何模型，能派生子代理的宿主都能装。项目自述数千名谷歌工程师在用，说明这种规范先行的做法在大厂内部有真实需求，个人开发者也可以直接借鉴这套流程。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>谷歌工程师近期开源了一套编码工作流插件 Elephant-Goldfish Model（EGM），中文名大象金鱼模型。它不是新的大模型，而是 Apache 2.0 许可的插件层，模型能力由宿主 agent 自带，插件本身不含任何权重。</p>
+<p>它的核心想法很朴素。让 AI 直接写代码，错误假设往往一路混进 pull request 才被发现。EGM 把顺序倒过来，先让持有完整项目上下文的长会话「大象」起草设计文档，再派出一批不带任何对话历史的「金鱼」子代理，在写代码前用五个阶段独立评审这份规范，把错误拦在 Markdown 文件里。项目还提供 /egm-drift-report 命令，建议每周运行一次，检查代码与规范是否漂移。</p>
+<p>插件包含 7 个技能、9 个评审 persona 和 6 个头脑风暴透镜，支持 Antigravity、Claude Code、Codex 等宿主。README 特别声明它不是官方支持的谷歌产品，据项目自述已有数千名谷歌工程师在使用。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>论文于 11 月 2 日在 HuggingFace Papers 与 arXiv 首次公开（编号 2611.03219），11 月 3 日提交收录，作者在页面留言距写作约两小时，无先前版本，历史日报未出现匹配，属几天内首次对外公开的全新研究成果。</div>
-            <div class="tags-row"><span class="tag">AI Agent</span><span class="tag">harness 自进化</span><span class="tag">灾难性遗忘</span><span class="tag">清华大学</span><span class="tag">软件工程</span></div>
-            <div class="links-row"><a class="ext-link" href="https://huggingface.co/papers/2611.03219" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>EGM 此前未对外公开，本次为首次开源发布，测试记录含 v0.1.0 安装包；五阶段零上下文规范评审流程、7 技能加 9 persona 加 6 透镜的完整插件结构、多宿主端到端测试数据均为本次可核对的真实增量，而非旧项目的常规更新。</div>
+            <div class="tags-row"><span class="tag">Google</span><span class="tag">AI 编程</span><span class="tag">开源项目</span><span class="tag">Agent 工作流</span><span class="tag">规范评审</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.marktechpost.com/2026/11/08/google-elephant-goldfish-model-plugin-spec-review-coding-agents/" target="_blank" rel="noopener">Source <span class="domain">www.marktechpost.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Continual Harness: An Efficient Self-Improving Agent on ARC-AGI-3</div>
-                        <div class="source-url"><a href="https://sethkarten.substack.com/p/continual-harness-an-efficient-self" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Claude Code by Anthropic | AI Coding Agent, Terminal, IDE</div>
+                        <div class="source-url"><a href="https://claude.com/product/claude-code" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1204,19 +1041,8 @@ Vibe coding just got a new rulebook.
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">SWE-Bench-CL: Continual Learning for Coding Agents</div>
-                        <div class="source-url"><a href="https://arxiv.org/html/2507.00014v1" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Can Coding Agents Sustain Continual Evolution without ...</div>
-                        <div class="source-url"><a href="https://huggingface.co/papers/2611.03219" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">GitHub - google/elephant-goldfish-model: Open-source plugin for...</div>
+                        <div class="source-url"><a href="https://github.com/google/elephant-goldfish-model" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1226,8 +1052,8 @@ Vibe coding just got a new rulebook.
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Dissecting Coding Agent Harnesses: What Actually Drives Performance</div>
-                        <div class="source-url"><a href="https://machinelearningatscale.substack.com/p/dissecting-coding-agent-harnesses" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">Google releases Elephant-Goldfish plugin to review AI... | AI Toolcast</div>
+                        <div class="source-url"><a href="https://aitoolcast.com/articles/google-elephant-goldfish-plugin-specification-review/" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">找反证和争议</div>
                     </div>
                     <div class="source-badges">
@@ -1237,26 +1063,25 @@ Vibe coding just got a new rulebook.
                 </div>
             </div>
         </div>
-<div class="article-card" data-id="raw-364c68b0aa28">
-            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">community</span><span class="score-tag">评分 7.9/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://news.ycombinator.com/item?id=50339913" target="_blank" rel="noopener">AI 测试代理 Mo 正式商用，找 bug 数量三倍于对手但成本更高</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>Mo 结束私测 beta 转为正式可用，可从编码代理、应用、PR 评论或 qa CLI 启动会话，报告前由独立代理复现每个功能 bug。同步发布 QA Bench 基准报告，上线 PR 触发测试、四档 effort 等级（约 15 分钟到 2 小时）、CLI 分诊，托管浏览器和知识库一并转正。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>编码代理提快了产出速度，验证成为流水线的新瓶颈。Momentic 给出这个赛道第一份带对照的公开基准，还主动写明自己的劣势。往后采购测试代理的团队有了一个可复算的框架，按召回、精度、成本逐项算账，不必只信 demo。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>编码代理让写代码明显变快，判断代码能不能用成了新的瓶颈。YC W24 公司 Momentic 在 Hacker News 宣布，其 AI 测试代理 Mo 结束 beta 正式商用。Mo 像真实用户一样操作应用找 bug，可从编码代理、网页应用、PR 评论或 qa 命令行启动，报告每个功能 bug 之前，先由一个独立代理复现一遍，压低误报。</p>
-<p><img alt="Mo 会话视图，左侧是找 bug 的过程记录，右侧是提交的发现与录屏" src="https://momentic.ai/images/mo-session-clean.webp" /></p>
-<p>随 GA 一同发布的是基准报告 QA Bench。Momentic 在 Gitea、Metabase、Twenty、Saleor 四个开源项目里标注了 1,396 个已知 bug，让 Mo 与 Codex、Claude Code、Devin 同场找 bug，每个领域限时 60 分钟。Mo 找到约 269 个，次佳代理约 86 个。这组数字是官方自报口径，竞品跑在官方搭建的环境里。</p>
-<p>Momentic 的 momentichenry 在 HN 承认了交换的另一面，团队想展示的是同样时间内 Mo 找到的正确 bug 超过次佳代理的三倍，而换取更高召回的代价是更高成本，精度大体相当但略低。工程师 MGabrielDenton 给出相对 Claude Code 的口径，发现量约五倍，单 bug 成本约低 35%。团队的优先级写在同一条回复里，QA 里最糟的事是漏掉真 bug，把坏代码发上线，所以他们先优化召回。</p></div></details>
+<div class="article-card" data-id="raw-bc55171edc52">
+            <div class="article-meta"><span class="rank-badge ">#10</span><span class="category-tag">industry</span><span class="score-tag">评分 7.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/" target="_blank" rel="noopener">黄仁勋承认婚外情，英伟达董事会启动独立调查</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>11 月 8 日（周日），英伟达董事会宣布针对 CEO 黄仁勋与 Alice Huang 的关系启动独立调查，由独立董事联合外部法律顾问执行，TechCrunch 与 The Verge 双源报道。Alice Huang 是新加坡芯片公司 Megaspeed 前高管。同日公司公开黄仁勋的内部备忘录，他承认婚外情并道歉，这是其首次书面公开承认此事。据报的间谍指控尚未证实，调查要核实的正是这一疑点。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>英伟达是 AI 算力供应的核心，在中美芯片竞争的敏感时点上，CEO 的私人关系被卷入国家安全质疑，公司治理面临直接考验。董事会一边启动独立调查，一边声明对黄仁勋及其领导团队"抱有信心"，显示公司试图在透明审查与稳定运营之间取得平衡。调查结论出来之前，对间谍指控下任何定论都为时过早。原文还提到，其他 AI 公司此前已提醒员工警惕包括情感引诱在内的间谍手段，此事可能推动业内进一步收紧对高管涉外接触与信息安全的管理。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>英伟达董事会 11 月 8 日（周日）宣布，针对 CEO 黄仁勋与 Alice Huang 的关系启动独立调查，由独立董事联合外部法律顾问执行，TechCrunch 与 The Verge 均作了报道。Alice Huang 是新加坡芯片公司 Megaspeed 前高管。据今年早些时候在美国决策者中流传的一份备忘录声称，她被中国国家安全部招募，任务是监视英伟达 CEO。该说法未经证实，是此次调查要核实的核心疑点。</p>
+<p>公司同步公开了黄仁勋发给全员的内部备忘录。他承认对妻子不忠并道歉，写道："我对妻子不忠，我的行为伤害了她和我们的孩子。我的所作所为没有任何借口，我深感抱歉。"备忘录未点名对方，据 TechCrunch 核实即 Alice Huang。</p>
+<p><img alt="英伟达 CEO 黄仁勋" src="https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg" /></p>
+<p>董事会在声明中表示"没有理由相信"国家安全或公司机密已受损害，称黄仁勋"完全支持审查并承诺配合"，董事会对他和领导团队"抱有信心"。此前英伟达曾回应，两人互动"并不罕见"。调查仍在进行，结论以官方披露为准。</p></div></details>
             <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>Mo 此前处于私测 beta，本次转为 GA 并首次发布 QA Bench 对照基准，附带 PR 触发、effort 分档、CLI 分诊、托管浏览器转正等具体增量，判定为 significant_update。公司是 YC W24 批次、成立约两年，端到端测试框架与 7 万余测试的存量业务早已存在，不构成全新产品首发，不能标为 new_product。</div>
-            <div class="tags-row"><span class="tag">AI 测试</span><span class="tag">QA 代理</span><span class="tag">Momentic</span><span class="tag">开发者工具</span><span class="tag">基准测试</span></div>
-            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50339913" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
-<a class="ext-link" href="https://momentic.ai/" target="_blank" rel="noopener">Original article <span class="domain">momentic.ai</span></a></div>
+            <div class="history-note"><span class="label">📌 新增量：</span>黄仁勋与 Alice Huang 的关系此前已有报道流传，英伟达也曾回应两人互动并不罕见，但本次新增量明确，董事会 11 月 8 日正式宣布由独立董事联合外部法律顾问执行的独立调查，以及黄仁勋首次在公开的内部备忘录中书面承认婚外情并道歉，均为当天可核对的新事实，而非旧闻重提。</div>
+            <div class="tags-row"><span class="tag">英伟达</span><span class="tag">黄仁勋</span><span class="tag">公司治理</span><span class="tag">中美芯片竞争</span><span class="tag">国家安全</span></div>
+            <div class="links-row"><a class="ext-link" href="https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/" target="_blank" rel="noopener">Source <span class="domain">techcrunch.com</span></a></div>
             <div class="sources-box">
                 <div class="sources-header">📋 外部校验依据</div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Momentic Mo Review 2026: AI QA Agent, Pricing, and Limits</div>
-                        <div class="source-url"><a href="https://www.aiagentslist.io/agents/momentic-mo" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">黄仁勋承认婚外情，英伟达启动独立调查 - 2026年11月9日, 俄罗斯卫星通讯社</div>
+                        <div class="source-url"><a href="https://sputniknews.cn/20261109/1074001277.html" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1266,8 +1091,8 @@ Vibe coding just got a new rulebook.
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">Momentic Review 2026: AI Test Automation for Web Apps | QASkills.sh</div>
-                        <div class="source-url"><a href="https://qaskills.sh/blog/momentic-ai-testing-guide-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">英伟达首席执行官黄仁勋承认婚外情，董事会将对其展开独立调查</div>
+                        <div class="source-url"><a href="https://www.voachinese.com/a/nvidia-launches-investigation-into-ceo-jensen-huang-over-foreign-intelligence-concerns-20261108/8220286.html" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
@@ -1277,155 +1102,12 @@ Vibe coding just got a new rulebook.
                 </div>
                 <div class="source-row">
                     <div class="source-info">
-                        <div class="source-title">A New Era of Software Quality Starts Today | Momentic</div>
-                        <div class="source-url"><a href="https://momentic.ai/blog/a-new-era-of-software-quality" target="_blank" rel="noopener"></a></div>
+                        <div class="source-title">黄仁勋承认婚外情向家人道歉 英伟达董事会声明：将对黄仁勋与疑似中国间谍的女商人的关系展开调查 - RFI - 法国国际广播电台</div>
+                        <div class="source-url"><a href="https://www.rfi.fr/cn/%E4%B8%AD%E5%9B%BD/20261108-%E8%8B%B1%E4%BC%9F%E8%BE%BE%E8%91%A3%E4%BA%8B%E4%BC%9A%E5%8F%91%E8%A1%A8%E5%A3%B0%E6%98%8E%E5%B0%86%E5%AF%B9%E9%BB%84%E4%BB%81%E5%8B%8B%E4%B8%8E%E4%B8%80%E5%90%8D%E6%83%85%E6%8A%A5%E6%9C%BA%E6%9E%84%E7%A7%B0%E6%98%AF%E4%B8%AD%E5%9B%BD%E9%97%B4%E8%B0%8D%E7%9A%84%E5%A5%B3%E5%95%86%E4%BA%BA%E7%9A%84%E5%85%B3%E7%B3%BB%E5%B1%95%E5%BC%80%E8%B0%83%E6%9F%A5" target="_blank" rel="noopener"></a></div>
                         <div class="source-purpose">确认最新动态和时间线</div>
                     </div>
                     <div class="source-badges">
                         <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">About Momentic | Agentic QA for web and mobile</div>
-                        <div class="source-url"><a href="https://momentic.ai/about" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Where QA Went Wrong | Momentic</div>
-                        <div class="source-url"><a href="https://momentic.ai/blog/where-qa-went-wrong" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-40b1bb8d3105">
-            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">tools</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">significant_update</span></div>
-            <h2><a href="https://github.com/vercel-labs/agent-desktop" target="_blank" rel="noopener">Vercel CLI 给桌面按钮发编号，AI 操作不靠截图</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>agent-desktop 于 11 月 3 日发布 v1.1.0 并同步更新 README。本次版本固定了 skills 技能文档体系、统一的 JSON 输出契约、ref 与快照绑定的错误处理以及随版本分发的跨平台 C FFI 库。项目用 Rust 编写，Apache-2.0 协议，仓库创建于 2026 年 2 月，已积累 11.5k stars、325 次提交。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>computer use 的主流做法靠截图加视觉模型猜像素位置，猜错就点错。无障碍树路线让 AI 直接拿到结构化的界面清单，不截图、不猜位置、不抢鼠标焦点，把桌面自动化从视觉识别问题变成确定性的接口调用。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>让 AI 操作电脑上的软件，常见做法是截屏交给视觉模型，让它猜按钮在图片里的位置，再换算成坐标去点。Vercel Labs 的开源项目 agent-desktop 走了另一条路。项目用 Rust 编写，以 Apache-2.0 协议开源，仓库创建于今年 2 月，已积累 11.5k stars，11 月 3 日发布了 v1.1.0。</p>
-<p>它直接读操作系统为辅助功能准备的无障碍树。这份树相当于系统自己维护的界面清单，窗口里每个按钮、输入框都登记在册，并标明层级。snapshot 命令把清单整理成 JSON 交给 AI，每个可交互元素带一个 ref 编号。AI 想操作哪个元素，报编号即可，工具通过系统接口替它执行，全程不截图，也不移动鼠标、不抢焦点。操作完再拍一次快照核对结果，观察、行动、验证的循环留在 AI 这一侧。</p>
-<p>界面上元素一变，旧编号就作废，命令会返回 STALE_REF 错误，AI 重新拍快照拿新编号再试。v1.1.0 把输出定成统一契约，每条命令返回 ok 或带错误码的 error，只有标记为可安全重试的错误才建议重试；版本还随附 C 库供程序进程内调用，并内置与版本匹配的技能文档，方便接入各类 agent 框架。</p>
-<p>工具支持 macOS、Windows、Linux 三个平台，npm install -g agent-desktop 一条命令安装。macOS 需要授予无障碍权限，Windows 在终端同一权限级别下一般免授权，Linux 的部分鼠标与截图功能依赖 X11 或 Wayland 接口。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>仓库创建于 2026-02-19，已存在约 8 个半月、325 次提交、11.4k stars，不是全新项目。本次事件是 2026-11-03 发布的 v1.1.0 及同步 README 更新，新增 skills 文档体系、JSON envelope 输出契约、ref 与快照绑定的 STALE_REF/AMBIGUOUS_TARGET 处理和随版本分发的 C FFI 库，属于可核查的版本节点增量而非重复报道。</div>
-            <div class="tags-row"><span class="tag">AI agent</span><span class="tag">开源工具</span><span class="tag">computer use</span><span class="tag">桌面自动化</span><span class="tag">Rust</span></div>
-            <div class="links-row"><a class="ext-link" href="https://github.com/vercel-labs/agent-desktop" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">agent-desktop: Computer Use CLI With 60 Commands (Rust) | explainx.ai Blog | explainx.ai</div>
-                        <div class="source-url"><a href="https://explainx.ai/blog/vercel-agent-desktop-accessibility-tree-computer-use-cli-2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Vercel Labs Open-Sources agent-desktop for Agent Computer Use - MarkTechPost</div>
-                        <div class="source-url"><a href="https://www.marktechpost.com/2026/10/31/vercel-labs-agent-desktop-computer-use" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Vercel's agent-desktop Gives Agents Computer Use | CellCog</div>
-                        <div class="source-url"><a href="https://cellcog.ai/blog/vercel-agent-desktop" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-<div class="article-card" data-id="raw-d747ecb5894f">
-            <div class="article-meta"><span class="rank-badge ">#10</span><span class="category-tag">tools</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">minor_update</span></div>
-            <h2><a href="https://github.com/max-sixty/worktrunk" target="_blank" rel="noopener">给 AI 代理各开一间工位，worktrunk 持续更新上榜</a></h2>
-            <div class="what-box"><strong>这是什么：</strong>这不是新项目首发。仓库创建于 2025 年 10 月 17 日，运营约一年，累计 5,479 次提交，10.2k stars，371 forks。v0.81.0 在 2026 年 10 月 20 日发布，README 于 11 月 3 日更新，其中自称是当前最流行的 git worktree 管理器。本次进入 GitHub Trending 属于成熟工具持续迭代带来的热度。</div>
-            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>多代理并行开发正在从技巧变成日常，几个代理挤一个目录迟早互相覆盖。worktrunk 给出低门槛答案，四条命令就能给每个代理分出独立工作副本。同一期里 OpenAI 在重写服务端 Git 后端以扛住代理提交量，这个工具处理的是同一股压力落在开发者本地的部分。</div>
-            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>同时带五到十个 AI 编码代理干活的人，先要解决一件具体的事，别让代理们踩到彼此的文件。Git 自带的 worktree 功能可以给同一个仓库开出多个并行工作副本，每个副本检出不同分支、各有独立目录，但原生命令繁琐，新建一个要输三次分支名，还要手动 cd 过去。</p>
-<p><img alt="Worktrunk 核心命令演示" src="https://camo.githubusercontent.com/0f3be224be7eb3e95948372bdd8f42bd033463290994c59e331a766ebca61f04/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f6d61782d73697874792f776f726b7472756e6b2d617373657473406d61696e2f6173736574732f646f63732f6c696768742f77742d636f72652e676966" /></p>
-<p>GitHub Trending 上的 worktrunk 盯上的就是这个痛点。这个用 Rust 写成的工具把命令缩成 wt，wt switch、wt list、wt merge、wt remove 几条命令覆盖日常操作，README 称核心命令让 worktree 用起来和分支一样省心。它明确为 Claude Code、Codex 等代理的并行场景设计，wt switch -x claude 一条命令就能建好工作副本并把 Claude 启动进去，各代理各用各的目录互不冲突。项目 2025 年 10 月创建，运营约一年攒下 10.2k stars，10 月 20 日发布 v0.81.0，README 更新于 11 月 3 日。这次上榜是持续迭代带来的热度，不是新项目亮相。</p></div></details>
-            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
-            <div class="history-note"><span class="label">📌 新增量：</span>仓库创建于 2025-10-17 并已运营约一年，v0.81.0 发布于 2026-10-20，README 更新于 2026-11-03，本次上榜源于持续迭代与热度积累而非首次发布，与 packet 的 newness_judgment(minor_update) 一致。</div>
-            <div class="tags-row"><span class="tag">Git worktree</span><span class="tag">worktrunk</span><span class="tag">AI 编码代理</span><span class="tag">Claude Code</span><span class="tag">开发者工具</span></div>
-            <div class="links-row"><a class="ext-link" href="https://github.com/max-sixty/worktrunk" target="_blank" rel="noopener">Source <span class="domain">github.com</span></a></div>
-            <div class="sources-box">
-                <div class="sources-header">📋 外部校验依据</div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Worktrunk: Git Worktree CLI for Parallel AI Agents</div>
-                        <div class="source-url"><a href="https://www.oflight.co.jp/en/columns/worktrunk-git-worktree-cli-parallel-ai-agents-2026" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Worktrunk: Git Worktrees for Parallel Agents | Zentor Blog</div>
-                        <div class="source-url"><a href="https://zentor.ai/blog/worktrunk" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Worktrunk: The Revolutionary Git CLI for AI Agents</div>
-                        <div class="source-url"><a href="https://converter.brightcoding.dev/blog/worktrunk-the-revolutionary-git-cli-for-ai-agents" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">确认最新动态和时间线</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge newness">时效性</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">Git Worktrees for Parallel Development: 3x Throughput with AI Agents - Just Understanding Data</div>
-                        <div class="source-url"><a href="https://understandingdata.com/posts/git-worktrees-parallel-dev" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
-                        <span class="badge secondary">二手转载</span>
-                    </div>
-                </div>
-                <div class="source-row">
-                    <div class="source-info">
-                        <div class="source-title">How to Use Git Worktrees for Parallel AI Agent Execution | Augment Code</div>
-                        <div class="source-url"><a href="https://www.augmentcode.com/guides/git-worktrees-parallel-ai-agent-execution" target="_blank" rel="noopener"></a></div>
-                        <div class="source-purpose">找反证和争议</div>
-                    </div>
-                    <div class="source-badges">
-                        <span class="badge contrarian">反证</span>
                         <span class="badge secondary">二手转载</span>
                     </div>
                 </div>
@@ -1439,15 +1121,15 @@ Vibe coding just got a new rulebook.
             <div class="radar-card">
                 <div class="radar-rank">#1</div>
                 <div class="radar-info">
-                    <div class="radar-title"><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE1mMWtwb293bWJENjE0YXNkN0w3cmRwZGNrZ2RJSHZsNU1XLUNPQ05BRVppTzhrbTFpY2R1dXFuNDlwODJPNzd4a2hsSXB0V21IVEs0MHFHRFlDWEY0bFVn0gFkQVVfeXFMUE5EVFJQZDg4cDcwV2NvcUk0UGlfTnN6VzVaYjJOdnNSSUx3ZUpVWXVVdUlSR3J6dWp0YlZzYUl0M3BVQVR0ZWhnbHVSWDE0SDJvSGpSMG1jVkFyNjhRcWQ3RHJyWQ?oc=5" target="_blank" rel="noopener">开发者把 RISC-V CPU 编译进 Qwen 权重并跑通 Doom</a> <span class="radar-category">tools</span></div>
-                    <div class="radar-blurb">把 CPU 当模型权重存的极限实验，验证了权重文件本质可当通用存储用，趣味大于实用</div>
+                    <div class="radar-title"><a href="https://github.com/meta/astryx" target="_blank" rel="noopener">Meta 开源 Astryx 设计系统，宣称 agent 可用</a> <span class="radar-category">tools</span></div>
+                    <div class="radar-blurb">React 19 加 StyleX 构建的 UI 组件库，Beta 阶段，为人和 agent 协作开发场景设计，观察设计系统会不会成为 agent 操控界面的标准入口</div>
                 </div>
             </div>
             <div class="radar-card">
                 <div class="radar-rank">#2</div>
                 <div class="radar-info">
-                    <div class="radar-title"><a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxQN19wcTR0OFhDZG1YUlRnRGRFZWJUV0lUZ216azRMWVktTW0xa2tfNU9Xa2Y4NU9ZUXRZTDllQ1ctLVhTeHlyZmlDbVBqUkM5NFRveVlzbGt1MnRHYUdJOE5SNWdCWEFibU1NdENkM21xc3Z6WWgwWTRLRXRMV19hVlktRnZhTU16THBYU0pn?oc=5" target="_blank" rel="noopener">FourWeekMBA 拆解 MIT 权重编辑研究</a> <span class="radar-category">tools</span></div>
-                    <div class="radar-blurb">今日头条同一研究的商业分析视角转载，深度内容见头条正文，此条仅供交叉参考</div>
+                    <div class="radar-title"><a href="https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy" target="_blank" rel="noopener">The Verge：英伟达董事会对黄仁勋启动独立调查</a> <span class="radar-category">industry</span></div>
+                    <div class="radar-blurb">与正文第十篇同一事件的第二来源，董事会声明原文与国安背景细节更全，双源交叉印证</div>
                 </div>
             </div>
         </section>
@@ -1457,8 +1139,8 @@ Vibe coding just got a new rulebook.
 
 <!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
-    <div class="stats">17 源<span>|</span>160 条<span>|</span>10 条精选<span>|</span>19 条候选</div>
-    <div class="generated">生成于 2026-11-03T19:49:25.088291</div>
+    <div class="stats">10 源<span>|</span>96 条<span>|</span>10 条精选<span>|</span>17 条候选</div>
+    <div class="generated">生成于 2026-11-09T11:57:56.809793</div>
 </footer>
 
 </div>

@@ -1,0 +1,1177 @@
+<!-- ai-daily-final-sha256:abb88404110e1fe81b71d009bdeecd826547c8d9e301784fd87f78d8c446120e -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 | 2026-11-09 — AI 内容机会日报</title>
+<style>
+/* ═══════════ CSS Reset & Base ═══════════ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+:root {
+    --bg-page: #F7F7F5;
+    --bg-paper: #FFFFFF;
+    --text-main: #111111;
+    --text-body: #222222;
+    --text-muted: #555555;
+    --text-light: #999999;
+    --accent: #D93025;
+    --accent-soft: #FFF0EE;
+    --border-divider: #E5E5E5;
+    --border-strong: #111111;
+    --tag-bg: #F5F5F5;
+    --score-high: #0F7B4E;
+    --score-mid: #D97706;
+    --link-underline: #CCCCCC;
+    --hover-accent: #B82020;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", serif;
+    background: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-paper);
+    padding: 80px 60px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: var(--text-main);
+}
+
+/* ═══════════ Header ═══════════ */
+.header {
+    text-align: center;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--border-strong);
+}
+
+.header h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 1.2;
+    color: var(--text-main);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.header .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.header .divider {
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    margin: 0 auto 20px;
+}
+
+.header .meta-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+}
+
+.header .meta-line span {
+    margin: 0 12px;
+    color: var(--border-divider);
+}
+
+.header .trend-callout {
+    margin-top: 24px;
+    padding: 16px 24px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    font-size: 15px;
+    color: var(--text-main);
+    text-align: left;
+    line-height: 1.7;
+    border-radius: 0 4px 4px 0;
+}
+
+/* ═══════════ Article Cards ═══════════ */
+.articles-section {
+    margin-bottom: 50px;
+}
+
+.section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.article-card {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.article-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.article-body { margin: 16px 0; }
+.article-body img {
+    display: block; max-width: 100%; height: auto;
+    margin: 14px auto; border-radius: 8px;
+    cursor: zoom-in;
+}
+.img-lightbox {
+    position: fixed; inset: 0; z-index: 999;
+    background: rgba(0, 0, 0, 0.86);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; cursor: zoom-out;
+}
+.img-lightbox img {
+    max-width: 96vw; max-height: 96vh; width: auto; height: auto;
+    border-radius: 8px; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+.article-body summary {
+    cursor: pointer; color: var(--accent); font: 600 13px 'Inter', sans-serif;
+}
+.article-body[open] summary { margin-bottom: 14px; }
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.rank-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    background: var(--text-main);
+    color: #FFF;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+}
+
+.rank-badge.headline {
+    background: var(--accent);
+}
+
+.category-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: var(--tag-bg);
+    color: var(--text-muted);
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+}
+
+.score-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--score-high);
+}
+
+.newness-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 4px 8px;
+    background: #F0F9F4;
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+}
+
+.article-card h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.article-card .one-liner {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: #FAFAFA;
+    border-left: 2px solid var(--border-divider);
+    border-radius: 0 4px 4px 0;
+}
+
+.article-card .what-box {
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-body);
+}
+
+.article-card .what-box strong {
+    color: var(--accent);
+}
+
+.article-card .why-box {
+    margin-bottom: 14px;
+    padding: 14px 18px;
+    background: #FFFDF5;
+    border: 1px solid #F0EABD;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-body);
+}
+
+.article-card .body-md {
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-body);
+    text-align: justify;
+}
+
+.article-card .body-md p {
+    margin-bottom: 16px;
+}
+
+.article-card .body-md a {
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-underline);
+    transition: all 0.2s;
+}
+
+.article-card .body-md a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.article-card .body-md strong {
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.article-card .body-md code {
+    font-family: 'SF Mono', 'Consolas', monospace;
+    font-size: 13px;
+    background: #F5F5F5;
+    padding: 2px 6px;
+    border-radius: 2px;
+    color: var(--accent);
+}
+
+.article-card .body-md ul, .article-card .body-md ol {
+    margin-bottom: 16px;
+    padding-left: 20px;
+}
+
+.article-card .body-md li {
+    margin-bottom: 8px;
+}
+
+/* ═══════════ Tags ═══════════ */
+.tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: #F0F0F0;
+    color: #666;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+}
+
+/* ═══════════ Verification Sources ═══════════ */
+.sources-box {
+    margin: 16px 0;
+    border: 1px solid var(--border-divider);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.sources-box .sources-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 10px 16px;
+    background: #FAFAFA;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.sources-box .source-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 16px;
+    border-bottom: 1px solid #F5F5F5;
+    font-size: 13px;
+    gap: 12px;
+}
+
+.sources-box .source-row:last-child {
+    border-bottom: none;
+}
+
+.sources-box .source-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.sources-box .source-info .source-title {
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.sources-box .source-info .source-url {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sources-box .source-info .source-url a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.sources-box .source-info .source-url a:hover {
+    text-decoration: underline;
+}
+
+.sources-box .source-info .source-purpose {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 3px;
+    line-height: 1.5;
+}
+
+.sources-box .source-badges {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.badge.official { background: #E8F5E9; color: #2E7D32; }
+.badge.media { background: #E3F2FD; color: #1565C0; }
+.badge.community { background: #FFF3E0; color: #E65100; }
+.badge.secondary { background: #F3E5F5; color: #7B1FA2; }
+.badge.noise { background: #FFEBEE; color: #C62828; }
+
+.badge.newness { background: #E8F5E9; color: #2E7D32; }
+.badge.background { background: #E3F2FD; color: #1565C0; }
+.badge.contrarian { background: #FFF3E0; color: #E65100; }
+.badge.content { background: #F3E5F5; color: #7B1FA2; }
+
+/* ═══════════ History Check ═══════════ */
+.history-note {
+    margin: 10px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.history-note .label {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.history-note .verdict-not-seen { color: var(--score-high); }
+.history-note .verdict-seen-before { color: var(--score-mid); }
+
+/* ═══════════ Confirmed Event Aggregation ═══════════ */
+.event-aggregation {
+    margin: 16px 0;
+    padding: 14px;
+    border: 1px solid #E7DDB4;
+    border-radius: 6px;
+    background: #FFFDF5;
+}
+
+.event-head {
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.event-sources { display: grid; gap: 8px; }
+
+.event-source {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    align-items: center;
+    color: var(--text-body);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.event-role {
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: #F0EABD;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.event-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.event-domain { color: var(--text-light); font-family: 'Inter', sans-serif; font-size: 10px; }
+.event-source:hover .event-title { color: var(--accent); }
+
+/* ═══════════ Links ═══════════ */
+.links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ext-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border: 1px solid var(--border-divider);
+    border-radius: 4px;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.ext-link:hover {
+    border-color: var(--text-main);
+    background: #FAFAFA;
+}
+
+.ext-link .domain { color: var(--text-light); font-size: 10px; }
+
+/* ═══════════ Radar Scan ═══════════ */
+.radar-section {
+    margin-bottom: 50px;
+}
+
+.radar-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #A3A3A3;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--border-divider);
+}
+
+.radar-card {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    background: #FAFAFA;
+    border: 1px dashed var(--border-divider);
+    border-radius: 4px;
+    transition: all 0.15s;
+}
+
+.radar-card:hover {
+    border-color: #BBBBBB;
+    background: #F5F5F5;
+}
+
+.radar-rank {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-light);
+    flex-shrink: 0;
+}
+
+.radar-card .radar-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.radar-card .radar-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+    line-height: 1.4;
+}
+
+.radar-card .radar-title a {
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-underline);
+}
+
+.radar-card .radar-title a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.radar-card .radar-category {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.radar-card .radar-blurb {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-top: 2px;
+}
+
+.radar-empty {
+    text-align: center;
+    padding: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    border: 1px dashed var(--border-divider);
+    border-radius: 4px;
+}
+
+/* ═══════════ Pick of the Day ═══════════ */
+.pick-section {
+    margin-bottom: 50px;
+}
+
+.pick-card {
+    padding: 28px;
+    background: linear-gradient(135deg, #FFFBEB 0%, #FFF7ED 100%);
+    border: 2px solid #F59E0B;
+    border-radius: 8px;
+    position: relative;
+}
+
+.pick-card::before {
+    content: "★ 今日最佳选题";
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: #F59E0B;
+    color: #FFF;
+    padding: 4px 14px;
+    border-radius: 3px;
+}
+
+.pick-card h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 8px 0 12px;
+    line-height: 1.4;
+}
+
+.pick-card .pick-meta {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.pick-card .pick-outline {
+    margin: 12px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.pick-card .pick-outline li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-body);
+}
+
+.pick-card .pick-outline li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: monospace;
+}
+
+.pick-card .pick-closing {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed #F0EABD;
+}
+
+/* ═══════════ Footer ═══════════ */
+.footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-divider);
+    text-align: center;
+}
+
+.footer .stats {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.footer .stats span {
+    margin: 0 16px;
+}
+
+.footer .generated {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 8px;
+}
+
+/* ═══════════ Responsive ═══════════ */
+@media (max-width: 700px) {
+    body { padding: 0; background: var(--bg-paper); }
+    .container { padding: 32px 20px; box-shadow: none; }
+    .header h1 { font-size: 28px; }
+    .article-card h2 { font-size: 18px; }
+    .pick-card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="header">
+    <h1>AI 日报 | 2026-11-09</h1>
+    <div class="subtitle">AI 内容机会日报</div>
+    <div class="divider"></div>
+    <div class="meta-line">2026-11-09<span>|</span>由 <strong>stan-chief-editor-zcode</strong> 生成</div>
+    <div style="text-align:center;font-size:13px;color:#888;margin-top:6px;">
+      <a href="/ai-daily/archive.html" style="color:#888;text-decoration:underline;">📋 历史归档</a>
+    </div>
+    <div class="trend-callout">开源权重兑现承诺与 agent 工程反思同日出现，Kimi K3.1 Pro 权重如约落地，Lovable 删掉几乎全部 agent 代码，高盛把编码代理收回工程师手里，行业一边推进 agent 一边给自主性降温</div>
+</header>
+
+<!-- ═══════ TOP ARTICLES ═══════ -->
+<section class="articles-section">
+    <div class="section-label">今日最值得关注</div>
+    <div class="article-card" data-id="raw-719e9d4cdd9f">
+            <div class="article-meta"><span class="rank-badge headline">★ 头条</span><span class="category-tag">tools</span><span class="score-tag">评分 8.8/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro" target="_blank" rel="noopener">Kimi K3.1 Pro 权重如约落地，架构首次全公开</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>月之暗面 11 月 2 日在 HuggingFace 上架 Kimi K3.1 Pro 的模型权重，比 10 月 24 日 API 发布时承诺的 11 月 4 日提前两天兑现开源。这是 K3.1 系列的第一个模型，完整架构细节随权重首次公开。开发者第一次可以不经过官方 API，自行部署这个在官方自报基准中摸到前沿集团的模型。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>开源权重把使用方式从租接口变成持有资产。开发者可以自己部署与微调，数据流向也掌握在自己手里，成本结构和数据安全都随之改变。对一个总参数 2.8T、官方模型卡自报成绩与 Claude Opus 5.5 及 GPT-6 Astra 同表对比的旗舰模型，这种开放显著拉低了同档能力的获取门槛。完整架构参数同步披露，外界第一次能看清月之暗面旗舰模型的内部构造，研究社区也拿到了分析与改进的一手材料。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>11 月 2 日，HuggingFace 上出现了 moonshotai/Kimi-K3.1-Pro 的模型仓库。此时距离月之暗面许下的期限还有两天。这家公司在 10 月 23 日发布 Kimi K3.1 Pro 的 API 时承诺，11 月 4 日之前放出模型权重。承诺兑现了，还提前了。</p>
+<p>权重可以理解成模型的全部"脑内参数"。AI 大模型本质上是巨大的参数文件，训练完成后这些数字固定下来，谁拿到文件，谁就能让模型跑起来。此前外界只能通过官方接口使用 K3.1 Pro，权重公开后，任何人都可以下载这套参数，在自己的服务器上部署运行，数据不必再经过官方。</p>
+<p>这次一并公开的还有完整架构。Kimi K3.1 Pro 采用混合专家架构（MoE），总参数 2.8T，每个 token 只激活 104B。它内部有 896 个"专家"网络，每处理一段输入只调用其中 16 个，外加 2 个常驻的共享专家，用轮班制扛起了大模型的容量。全模型 93 层，注意力部分由 69 层 KDA 和 24 层 Gated DSA 组成。相比上一代 Kimi K3，月之暗面用 Gated DeepSeek 稀疏注意力替换了全注意力的 Gated MLA 层，官方称目的是让长上下文建模更高效。它的上下文窗口达到 1,048,576 个 token，大致相当于一次性读入整套长篇文档或一个大型代码库。</p>
+<p>另有两个工程细节。模型采用量化感知训练，权重以 MXFP4 精度、激活以 MXFP8 精度发布，训练阶段就按压缩后的数值格式进行，发布的直接是瘦身版权重，部署时的显存压力更小。它还配备了 401M 参数的视觉编码器 MoonViT-V2，能同时读文字和图片，官方称其为原生多模态的智能体模型。</p>
+<p>能力几何？官方模型卡自报了成绩单。在考察终端真实任务完成度的 Terminal-Bench 4.0 上，K3.1 Pro 得 65.7，低于 Claude Opus 5.5 的 66.4，高于 GPT-6 Astra 的 58.2 和 Claude Fable 5.1 的 57.9。博士级科学题库 GPQA-Diamond 上它拿到 94.2，联网查资料方向的 BrowseComp 成绩为 92.1。这些分数全部出自月之暗面自己的模型卡，各对比模型的得分来源不同并附有评测协议脚注，独立第三方的复测结果还有待跟进。</p>
+<p>落地途径有两条。想省事的开发者可以直接调 platform.kimi.ai 的 API，接口兼容 OpenAI 和 Anthropic 两种格式，推理力度通过 reasoning_effort 字段在 low、high、max 三档之间调节，默认 max。想自己扛机器的，官方推荐用 vLLM、SGLang 或 TokenSpeed 三种推理引擎运行权重。另有一点需要留意，许可证是自定义的 Kimi K3.1 Pro License，具体条款需要使用者自行查阅。</p>
+<p>社区的反应速度能说明需求。上架约一周，HuggingFace 页面显示下载已达 25,569 次，点赞 1,730 个，社区已经衍生出 17 个微调版本和 12 个量化版本，另有 11 个在线应用直接调用这个模型。一个总参数 2.8T 的旗舰模型，从 API 独占到人人可下载，中间只隔了十天。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>HuggingFace 元数据显示模型仓库创建于 2026-11-02，模型卡写明这是 K3.1 系列的第一个模型，属首次发布而非既有项目更新；历史日报检查结果为未出现。本期报道的增量在权重落地与架构全公开，与 10-24 期已报道的 API 发布与定价角度不重叠。</div>
+            <div class="tags-row"><span class="tag">月之暗面</span><span class="tag">Kimi</span><span class="tag">开源权重</span><span class="tag">MoE</span><span class="tag">多模态模型</span><span class="tag">HuggingFace</span></div>
+            <div class="links-row"><a class="ext-link" href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro" target="_blank" rel="noopener">Source <span class="domain">huggingface.co</span></a></div>
+        </div>
+<div class="article-card" data-id="raw-87ea9f6b57b1">
+            <div class="article-meta"><span class="rank-badge ">#2</span><span class="category-tag">community</span><span class="score-tag">评分 8.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50415628" target="_blank" rel="noopener">高盛禁了交易员的编码代理，银行家却要承销 Anthropic</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>彭博社 11 月 8 日报道，高盛今年 10 月更新的内部指引把 Claude Code 与 GitHub Copilot 限定为工程师专用，全行约 4.7 万名员工中约 1.2 万名工程师保留权限，交易员和银行家的访问被切断，横跨交易、量化研究与软件工程的 Strats 岗位仍在名单内。调整前经过一轮生产力与风险审查。这是彭博社从知情人士处获得的单源报道，高盛未发官方公告，发言人 Nick Carcaterra 仅回应银行在向员工提供某些 AI 工具以确定最佳用例。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这件事给所有把 AI 编程工具发给全员的公司划了一条线。编码代理能以使用者本人的权限读写文件、执行代码，工程师产出的代码有审查、测试和部署流程兜底，业务人员攒出来的脚本往往直接跑在与客户数据相连的机器上。对受监管的金融机构，信息屏障这类合规要求不会因为代码来自一句提示词就豁免。高盛用角色划分给出了它的答案，谁有能力审查代理写的代码，谁才有权用它。工具收回之后，交易员盯客户流、建模的需求仍然存在，这些活最终还是要有人接。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>彭博社 11 月 8 日报道，高盛在今年 10 月更新的内部指引中，把 Anthropic 的 Claude Code 和微软的 GitHub Copilot 收回到工程师群体专用，交易员和银行家失去访问权限。高盛全行约 4.7 万人，保留权限的工程师约 1.2 万，横跨交易、量化研究与软件工程的 Strats 岗位也在名单之内。消息来自知情人士，调整前经过一轮生产力与风险审查，高盛发言人 Nick Carcaterra 的公开回应只有一句，银行向员工提供某些 AI 工具，目的是"to determine the best use cases"，摸索全行的最佳用例。</p>
+<p>受冲击最大的是交易员。他们此前用这些工具监控客户交易流、给市场走势和持仓建模，还拿它制作图文材料，新规落地后怨言不少。几个月前风气还完全不同，首席信息官 Marco Argenti 7 月对外称赞非技术员工的 vibe coding，也就是用大白话描述需求让 AI 生成可用程序，交易员和银行家搭出原型再交工程师完善；上个月在都灵的一场会议上，他把全行 AI 采用描述成一波一波推进，约 1.2 万开发者是第一波。10 月的指引把编码代理锁回了这一波人手里。</p>
+<p>收紧的账算在风险上。Claude Code 这类代理能读写文件、自己写代码并运行，权限通常与使用者本人相同。工程师用它写的代码要过审查、测试和部署流程，交易员随手搭的监控脚本可以直接进入日常使用。投行还负有信息屏障义务，做并购的银行家与可能从中获利的交易员之间必须隔墙，业务人员攒出来的工具从没按这些规矩设计过，提示注入攻击还能让代理执行藏在数据里的恶意指令。代码的可解释性也是问题，一位 Meta 工程师上月自述，他如今上线的代码连自己都无法完全解释，专业开发者尚且如此，交易员更难判断代理写的模型在极端行情下会做什么。成本同样入账，代理按 token 计费，用得越多账单越贵，亚马逊已因员工为刷榜让代理跑无意义任务而关停内部排行榜，埃森哲则给每名员工每月补贴 29 美元的 Claude。</p>
+<p>戏剧性在资本这一侧。招股书 S-1 显示高盛与摩根士丹利是 Anthropic IPO 的主承销商，文件 10 月 26 日提交，预计 11 月底前以代码 ANT 登陆纳斯达克。接下来几周，高盛的银行家要向投资者推销这家公司的股票，而他们中的大多数人刚被禁止使用其编码代理。高盛与 Anthropic 的工程合作并未中断，Anthropic 工程师今年在高盛驻场六个月，帮其搭建了贸易记账与客户入职的中后台代理，由工程团队运营。巴克莱则走在另一头，10 月刚宣布年底前一半开发者用上 Claude Code，三周后公布的 5000 人裁员名单里就有开发者。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>核心增量是彭博社 11 月 8 日曝光的高盛 10 月内部新指引，首次将 Claude Code 与 GitHub Copilot 按角色限权到约 1.2 万名工程师，属首次报道的治理动作。4 月香港下架 Claude、6 月摩根大通跟进、7 月 Marco Argenti 推崇 vibe coding 均为已报道旧事，仅作背景。本篇还叠加 Anthropic IPO 主承销商反差这一新增量，S-1 于 10 月 26 日提交、代码 ANT、预计 11 月底前上市，判定 genuinely_new。</div>
+            <div class="tags-row"><span class="tag">高盛</span><span class="tag">Claude Code</span><span class="tag">GitHub Copilot</span><span class="tag">Anthropic</span><span class="tag">编码代理</span><span class="tag">企业 AI 治理</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50415628" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers" target="_blank" rel="noopener">Original article <span class="domain">www.thestateofai.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Goldman Sachs Is Pulling Claude Code From Its Bankers and...</div>
+                        <div class="source-url"><a href="https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Goldman Sachs is pulling Claude Code from its bankers and traders</div>
+                        <div class="source-url"><a href="https://news.ycombinator.com/item?id=50415628" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge community">社区讨论</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">In Anthropic I.P.O., Goldman and Morgan Stanley Slug It Out for Top...</div>
+                        <div class="source-url"><a href="https://www.nytimes.com/2026/10/27/business/in-anthropic-ipo-goldman-and-morgan-stanley-slug-it-out-for-top-bank.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-663bfef831ad">
+            <div class="article-meta"><span class="rank-badge ">#3</span><span class="category-tag">community</span><span class="score-tag">评分 8.5/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50414445" target="_blank" rel="noopener">Lovable 删掉几乎全部 agent 代码的工程账</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>11 月 4 日，Lovable 联合创始人 Anton Osika 在公司新上线的技术博客发表首篇文章 How we built Lovable, and why we keep rebuilding it，首次公开团队删掉几乎全部 agent 代码的决策过程。同文披露平台代码库累计收到超过 10 万次 pull request，用户创建的项目超过 7000 万个，并首次交代异步多智能体系统的兴废、用知识文件加 RAG 替代微调的方案（Lovable Stack Overflow 使卡死率降 5%，作者数据），以及可复制整台运行中计算机的 Camille 框架等技术细节。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>行业主流做法在给智能体加更多自主性，Lovable 的复盘给出了一份反向账本。约束越少的智能体越容易钻进死胡同，完成时间不可预期，对完全不会编程的目标用户尤其致命。这家公司靠收窄问题域站稳，靠削减自主性换来可预测，又用检索知识文件替代了模型训练，每一步都在做减法，最终撑起 7000 万个项目。对正在做 agent 产品的团队，这份带着真实数据的一手取舍记录，比任何框架的宣传页都值得细读。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>一家帮人靠聊天生成软件的公司，公开讲了自己删掉几乎全部 agent 代码的经过。11 月 4 日，Lovable 联合创始人 Anton Osika 在公司新上线的技术博客发表首篇文章，复盘这个平台三年多的架构演变。agent 中文常译作智能体，指让模型自己决定下一步调用什么工具、怎么干的程序。Lovable 的产品正是靠 AI 生成整个应用，这份自曝的家底因此格外有分量。</p>
+<p>起点在 2023 年春天。Anton 把开源项目 GPT Engineer 放上 GitHub，用户描述想要的软件，程序追问几句就写出整个代码库。同年他写下 Lovable 的计划，让不会写代码的人通过聊天创建、部署并持续改进软件，实时看到结果。到今天，这个代码库累计收到超过 10 万次 pull request（开发者提交代码修改的合并请求），他与联合创始人 Fabian 带着团队把计划变成了产品，平台上用户创建的项目超过 7000 万个。</p>
+<p>第一笔账是收窄。团队只做从零开始的全新项目，避开存量代码库的各种环境差异，随后砍掉了让用户自选前端技术栈的入口，替所有人定死一套固定技术栈。问题域变小后，代码结构和运行环境都在掌控之内，一处优化能惠及所有项目。作者把方法论概括为先把问题框小，再把执行握在手里，最后让每一次结果都变成学习素材。</p>
+<p>最有戏剧性的一笔在自主性上。Anton 一直赌模型会快速变强，推动团队做更自主的智能体，工程师 Mårten Wiman 据此搭出精密的异步系统，主智能体能创建任务并委派子智能体。实际跑起来，约束越少的智能体越容易钻进技术死胡同，出错且完成时间不可预期，自由度越高产品越不可靠。团队后退一步，删掉几乎全部 agent 代码，回到一个用户请求触发一条可预测的工具链，配上聊天和实时预览。到 2024 年底，主编辑流程已是一次响应包含全部文件改动，当时模型的原生工具调用不够可靠，团队让模型把代码包进类似 XML 的标签里再事后解析。删掉的只是自主决策那一层，生成代码、一键部署的能力全部保留，下一步走哪由用户在预览页面上决定。</p>
+<p>替代训练的方案同样朴素。原计划用产品数据微调模型，也就是拿自家数据继续训练。2024 年工程师们翻看故障应用的聊天记录，把反复出现的错误写成简短笔记，比如图标只能用 lucide-react 图标库里真实存在的名字，拿不准就选通用款，检索环节再按任务把相关笔记注入模型上下文，全程无需训练。Anton 当时把这条路称作一条新的缩放定律，一个应用里踩过的坑能立刻帮到下一个用户。同一思路后来做进 Lovable Stack Overflow，为智能体检索问题与解法，早期版本让用户卡死率降低了 5%（作者数据）。</p>
+<p>速度是另一条主线。沙箱保留项目文件并让开发服务器持续运转，改动直接刷新预览，增量 TypeScript 检查复用此前的分析结果，把每次编辑、检查、修正的循环压到更短。这套有状态沙箱后来长成 Camille 框架，能对整台计算机的内存、CPU 状态和磁盘做快照，把运行中的应用连同环境与数据库整体复制或合并，多个智能体可以从同一起点分头尝试不同方案，隔几天回来也能在几秒内恢复现场。</p>
+<p>文末他留下三道开放题，生产软件的测试、部署、维护与信任，桌面端与移动端等全类型软件，以及软件栈本身的重建。按他的判断，三题全解之后得到的将超越一个 AI 软件工程师，是一个能让人把整门生意跑在上面的平台。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>该文为 Lovable 2026 年 11 月新上线技术博客的首篇，发布于 11 月 4 日，属首次对外披露的工程复盘。删除异步多智能体代码并回归单请求流程、以 <lov-write> 等 XML 标签解析代码编辑、用微调小模型挑选代码上下文、知识文件加 RAG 替代微调及 5% 卡死率数据、Camille 计算机 fork/merge 框架均为首次公开细节，历史日报未出现同事件报道，判定 genuinely_new。</div>
+            <div class="tags-row"><span class="tag">Lovable</span><span class="tag">agent</span><span class="tag">AI 编程</span><span class="tag">RAG</span><span class="tag">工程复盘</span><span class="tag">GPT Engineer</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50414445" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://lovable.dev/blog/how-we-built-lovable-and-why-we-keep-rebuilding-it" target="_blank" rel="noopener">Original article <span class="domain">lovable.dev</span></a></div>
+        </div>
+<div class="article-card" data-id="raw-dca166094144">
+            <div class="article-meta"><span class="rank-badge ">#4</span><span class="category-tag">community</span><span class="score-tag">评分 8.2/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50411961" target="_blank" rel="noopener">无显卡 64GB 内存跑 284B 大模型，量化压到 1.71 比特</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>开源项目 llama-modchip 发布 v2.4.0。这个已在 GitHub 累计 49 次提交的 CPU 推理项目，本次新增对 30B 级 MoE 模型的支持，量化位宽 3.75 bpw，开发者自报解码速度达到每秒 25 到 111.6 个 token；同时公布了 256K 上下文满载时 57.61 GiB 的峰值内存、13.1 毫秒的 KV 缓存槽位恢复速度，并放出技术论文、架构文档与可提交成绩的社区基准排行榜。项目在 Hacker News 的讨论帖收获 372 分。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>284B 参数这个量级，过去只存在于数据中心。llama-modchip 把它的运行门槛压到一台 64GB 内存的普通台式机，无 GPU 也能跑，对隐私敏感场景、断网环境和用量极大的个人用户都是一种新选项。更实际的意义在 30B 档，每秒 25 到 111.6 个 token 的自报速度说明纯 CPU 方案开始接近日常可用的区间。它同时划出了清晰边界，1.71 bpw 的激进量化换来了内存和速度，付出的是质量余量，社区对这笔交换是否值得并无共识。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>一台没有独立显卡的台式机，只靠 64GB 内存和一颗 16 核 CPU，把总参数 284.33B 的 DeepSeek-V4-Flash 跑了起来。开源项目 llama-modchip v2.4.0 公布的自报实测里，这台机器预填充速度达到每秒 44.36 个 token，生成速度在每秒 9.1 到 14.7 个 token 之间。项目讨论帖当天在 Hacker News 拿下 372 分。</p>
+<p>这笔硬件账值得细算。284B 参数的模型若按常见的 8 比特量化存放，需要近 300GB 存储，单台家用机无从谈起。llama-modchip 的解法是把每个权重平均压到 1.71 比特。bpw 这个单位衡量的是每个参数占用的比特数，主流量化方案在 8 到 4 比特之间，1.71 比特相当于把一部精装百科全书誊进一张便签。压缩后的模型文件只有 56.56 GiB，装进 64GB 内存仍有余量，项目方公布的数据显示 256K 上下文满载时峰值内存为 57.61 GiB。</p>
+<p>敢压得这么狠，前提是模型的 MoE 架构。MoE 即混合专家模型，像一个 284.33B 人规模的顾问团，每次提问只有 13.17B 位对口的专家上场，其余人待命，真正需要搬运的数据天生就少。项目还叠加了两项加速手段。SwiGLU-H2 量化对模型中的 SwiGLU 计算层单独设计编码，守住最敏感部分的精度。Stockfish-PVS L3 投机解码则安排一个小型草稿模型先猜出后续若干个词，大模型只做批量核对，好比实习生起草、总监批红，比总监逐字亲写快得多。</p>
+<p>v2.4.0 版本把这套思路延伸到了 30B 级 MoE 模型上，量化位宽 3.75 bpw，开发者自报解码速度达到每秒 25 到 111.6 个 token，已经摸到日常对话流畅度的边缘。仓库还配了技术论文、架构文档和可提交成绩的社区基准排行榜，Apple Silicon、Fedora、Windows 都在支持列表里，许可证为 Apache 2.0。</p>
+<p>边界同样清楚。上述性能全部来自开发者自报，尚无独立复测。1.71 bpw 属于激进量化，压得越狠，模型出错的概率越高，评论区对这笔交换是否划算存有实实在在的分歧。这个项目更适合被看作本地推理可行性的极限演示，普通读者照抄配置之前，需要想清楚自己愿意用什么去换这份速度。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>仓库已有 49 次提交并维护 RELEASE_NOTES，属多轮迭代项目而非首次发布。本次 v2.4.0 增量具体，包括 30B MoE 支持（3.75 bpw，25 到 111.6 token 每秒）、256K 上下文内存数据（57.61 GiB 峰值）、13.1 毫秒 KV 槽位恢复、技术论文与社区基准排行榜，配合 372 分的 HN 讨论热度，判定为有实质内容的显著版本更新。</div>
+            <div class="tags-row"><span class="tag">本地推理</span><span class="tag">模型量化</span><span class="tag">DeepSeek</span><span class="tag">开源项目</span><span class="tag">投机解码</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50411961" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://github.com/synchopate/llama-modchip" target="_blank" rel="noopener">Original article <span class="domain">github.com</span></a></div>
+        </div>
+<div class="article-card" data-id="raw-2cfa931b1480">
+            <div class="article-meta"><span class="rank-badge ">#5</span><span class="category-tag">community</span><span class="score-tag">评分 7.8/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50411467" target="_blank" rel="noopener">八种记忆格式互不相通，一篇博客倡议给AI助手的记忆定标准</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>开源记忆工具 LoreKit 的作者发布观点文章，倡议为 AI 编程助手的记忆建立共享标准，路径效仿 2019 年 OpenTracing 与 OpenCensus 合并为 OpenTelemetry 的先例。文章贴到 Hacker News 后收获 175 分。除论证外，作者还公开了一份记录格式草案，用带 frontmatter 的 Markdown 文件承载单条记忆，字段包括标记出处的 written_by 与管理有效期的 lifecycle。这是一篇从业者的个人倡议，行业层面尚未启动对应的标准项目。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>对普通用户而言，记忆格式碎片化的直接代价是 AI 助手的经验被锁进单个工具，换了工具就从头再学。对行业而言，标准缺失让重复造轮子成为常态，r/ClaudeAI 等社区里源源不断的“自制记忆层”帖子就是佐证。作者给出的时机判断是，各家格式都还年轻，改动成本尚低，且 MCP 与 AGENTS.md 已按原文表述归于 Linux 基金会旗下的 Agentic AI Foundation，中立托管方现成。OpenTelemetry 的先例还提示了另一层价值，底层标准统一后厂商在上层的竞争反而更充分，用户只需埋一次点，所有工具都能读。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>一台开发机上，AI 编程助手留下的“记忆”散落在好几个互不相通的地方。仓库里躺着 AGENTS.md 或 CLAUDE.md 指令文件，Anthropic 的 memory tool 把经验写进 /memories 目录，GitHub Copilot 把仓库事实存在自己那侧，某个 MCP 记忆服务器又维护着 JSONL 知识图谱。CI 流水线里的 agent 学到的教训，编辑器里的 agent 读不到，后来换上的新工具同样读不到。</p>
+<p>开源工具 LoreKit 的作者近日发布博客，倡议给 agent 记忆来一场标准化，文章发到 Hacker News 后拿到 175 分。需要说明的是，这是一位从业者的个人倡议，行业尚未启动对应的标准项目。</p>
+<p>作者用来类比的是 OpenTelemetry，可观测性领域的统一标准，可观测性可以粗略理解为给软件做监控埋点。2019 年以前，每家监控厂商都自带探针与私有数据格式，开发者换个厂商就得重新埋点。两个开源项目 OpenTracing 与 OpenCensus 各自尝试统一后，于 2019 年合并为 OpenTelemetry。厂商们商定在四层基础设施上停止竞争，即数据模型、语义约定、协议与参考实现，存储、查询、分析等上层能力继续比拼。开发者埋一次点，所有工具都能读。作者本人日常在可观测性公司 Dash0 与 OpenTelemetry 打交道。</p>
+<p><img alt="可观测性已由 OpenTelemetry 厘清，agent 记忆仍待约定" src="https://www.lorekit.io/blog/otel-parallel.svg" /></p>
+<p>在作者看来，agent 记忆正处在可观测性 2019 年之前的状态，问题的核心是共识缺失，这个领域的工具早已足够拥挤。文章把现存主流方案归成八类，AGENTS.md/CLAUDE.md 指令文件、Anthropic memory tool 的 /memories 文件、GitHub Copilot Memory、Letta 上下文块、Mem0 抽取事实、LangGraph BaseStore、MCP 知识图谱服务器与 Graphiti/Zep 时序图，彼此互不兼容，作者自家的 LoreKit 寻址记录也作为对照表里的又一行列在末尾。r/ClaudeAI 等社区里“我又造了一个记忆层”的帖子源源不断，每造一个，世界上就多一种别人读不了的格式。</p>
+<p>文章进一步区分了两个常被混同的问题。已有提案里，MacPaw 的 Portable Memory 打包成 .mem 文件，2026 年 4 月的 Open Memory Protocol 草案用 ZIP 加清单搬运记忆，Cognee 的 COGX 能导入 Mem0、Letta 与 Zep 的数据，这些方案覆盖的是“导出”场景，即把一个人的记忆从 A 厂商迁到 B 厂商。CI 任务、编辑器 agent 与 review 机器人同时在同一仓库读写同一位置的场景尚无提案覆盖，作者称其为“实时寻址”。</p>
+<p><img alt="导出解决单人记忆迁移，实时寻址解决多工具共享同一存储" src="https://www.lorekit.io/blog/export-vs-address.svg" /></p>
+<p>作为讨论起点，作者公开了一份记录格式草案。每条记忆是一个带 frontmatter 元数据头的 Markdown 文件，信封字段包括 address（在哪个范围成立）、key、id、written_by（区分人写、模型写还是服务从对话里抽取）、lifecycle（何时过期）与 attributes。规范无需在“谁来写记忆”这个分叉上选边，只需如实记录出处，读者便知道该信几分。配套设计还有地址层级约定注册表、经 MCP 暴露的 write/read/list/search/archive 操作契约，以及往返序列化不丢数据的一致性测试。存储、排序、嵌入与界面被明确划在标准之外，留给工具竞争。</p>
+<p>时机上，文章按其表述称 MCP 与 AGENTS.md 均已归于 Linux 基金会旗下的 Agentic AI Foundation，中立托管方现成。作者也坦承利益相关，LoreKit 只是对照表里的一行，若最终标准另起炉灶，LoreKit 会转而适配。面对“再立一个标准只会加剧碎片化”的 xkcd 927 式质疑，作者给出的答案是 OpenTelemetry 的先例，共识出现在现有项目合并之时，而合并的窗口只在格式还年轻的那几年。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>历史核查显示该话题未在既往日报出现。本次增量为新发布的标准化倡议文章，首次把八类记忆格式整理成对照表，将 OpenTelemetry 2019 年合并案例映射为记忆标准的四层模板，并公开含 written_by 与 lifecycle 字段的记录格式草案，观点与可操作草案兼具。</div>
+            <div class="tags-row"><span class="tag">Agent记忆</span><span class="tag">标准化</span><span class="tag">OpenTelemetry</span><span class="tag">MCP</span><span class="tag">AI编程助手</span><span class="tag">开源</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50411467" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://www.lorekit.io/blog/open-agent-memory-format" target="_blank" rel="noopener">Original article <span class="domain">www.lorekit.io</span></a></div>
+        </div>
+<div class="article-card" data-id="raw-3354046f5330">
+            <div class="article-meta"><span class="rank-badge ">#6</span><span class="category-tag">community</span><span class="score-tag">评分 7.6/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://news.ycombinator.com/item?id=50410107" target="_blank" rel="noopener">一年 244 个版本后，老用户告别 Claude Code 转投 Pi</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>博客作者在 caleb.software 发文《Goodbye Claude, Hello Pi》，宣布使用一年多的 Claude Code 从主力位置退役，开发环境整体迁移到开源编码工具 Pi，帖子发到 HN 引出 706 分讨论。时间差颇具戏剧性，他做完迁移决定一天后，Anthropic 宣布 Claude Code 开始支持 AGENTS.md，他在文中称这波挽留为时已晚。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>高盛把编码代理收回工程师手里是企业侧的收缩，这篇博客补上了同一生态用户侧的摩擦样本。作者的不满里有共性话题，配置文件格式分裂让跨工具用户重复维护同一套指令，存在近一年的 IDE 集成 bug 被错误关闭，反映快速上新与老问题修复之间的失衡可以被重度用户清晰感知。他算的 token 账也有参考价值，系统提示词和工具描述的膨胀在大规模调用下会折成真实推理成本，值得任何代理团队对照自查。单个作者的迁移说明不了 Claude Code 的市场走势，但被摩擦到的重度用户如今有了开源选项，换工具的门槛比想象中低。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>一位用了一年多 Claude Code 的开发者在个人博客宣布，把它从主力编码工具的位置上退下来，开发环境整体迁到开源工具 Pi，文章发到 HN 后拿到 706 分讨论。他做完迁移决定的第二天，Anthropic 宣布 Claude Code 开始支持 AGENTS.md，他的回应只有一句“too little, too late”，太迟了。</p>
+<p>积怨集中在三处。CLAUDE.md 与 AGENTS.md 两种格式并存，用户要靠复制或软链接在两套文件间来回维护；VSCode 集成同一时间只允许一个会话连接 IDE，开第二个标签页就收不到选区文本，这个 bug 最早 2025 年 12 月被报告，却被当成无关问题的重复关闭；官方 GUI 扩展里半数内置斜杠命令不可用。</p>
+<p><img alt="Claude Code 在 VSCode 中的连接断开报错" src="https://caleb.software/assets/img/claude-to-pi/vsc-disconnected.png" /></p>
+<p>按他的统计，Claude Code 今年已发布 244 个版本，超过四分之三改动了系统提示词或工具描述，这类改动可能明显改变模型行为。他称默认 Bash 工具的描述接近 3000 token，大部分内容是教模型用 git 和在 GitHub 提 PR，而按他的说法模型本来就会。他估算按每天 1 亿次请求的规模，从这里省下 1000 token 一年就是数百万美元推理成本，这些数字均出自他的博客，属作者个人主张。迁移后他用约 20 分钟给 Pi 写出了支持多标签页选区共享的扩展。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>核心增量是这篇迁移叙事本身及其引发的 706 分新讨论，HN 评论从约 20 小时前持续到抓取前几分钟，讨论正在进行中。作者因 Anthropic 宣布支持 AGENTS.md（恰在其决定迁移一天后）而动笔，文中 244 个版本、超过四分之三改动提示词或工具描述等统计为作者口径的首次公开。Claude Code 与 Pi 均非新产品，新在迁移叙事与批评本身，历史检查也未在往期日报中找到同一事件，判定 genuinely_new。</div>
+            <div class="tags-row"><span class="tag">Claude Code</span><span class="tag">Anthropic</span><span class="tag">Pi</span><span class="tag">开源编码工具</span><span class="tag">AGENTS.md</span><span class="tag">编码代理</span></div>
+            <div class="links-row"><a class="ext-link" href="https://news.ycombinator.com/item?id=50410107" target="_blank" rel="noopener">Source <span class="domain">news.ycombinator.com</span></a>
+<a class="ext-link" href="https://caleb.software/posts/claude-to-pi.html" target="_blank" rel="noopener">Original article <span class="domain">caleb.software</span></a>
+<a class="ext-link" href="https://news.ycombinator.com/item?id=raw-3354046f5330" target="_blank" rel="noopener">Coverage <span class="domain">news.ycombinator.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">从 Claude Code / Cursor 迁移到 Pi — 教程 | Piagent</div>
+                        <div class="source-url"><a href="https://piagent.fyi/zh/guides/switching-from-claude-code/" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Claude Code vs Pi：开源编码代理迁移实战与对比-CSDN博客</div>
+                        <div class="source-url"><a href="https://blog.csdn.net/weixin_29040367/article/details/170119014" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Goodbye Claude, Hello Pi - caleb.software</div>
+                        <div class="source-url"><a href="https://caleb.software/posts/claude-to-pi.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Goodbye Claude, Hello Pi: The Evolution of AI Coding ...</div>
+                        <div class="source-url"><a href="https://techplanet.today/post/goodbye-claude-hello-pi-the-evolution-of-ai-coding-harnesses-and-developer-preferences" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Goodbye Claude, Hello Pi | Dev Sprints Lab</div>
+                        <div class="source-url"><a href="https://www.devsprintslab.com/blogs/goodbye-claude-hello-pi-engineering-analysis" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-8af66aca16fe">
+            <div class="article-meta"><span class="rank-badge ">#7</span><span class="category-tag">tools</span><span class="score-tag">评分 7.5/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://thenewstack.io/perplexitys-ai-agents-keep-working-after-you-close-the-tab/" target="_blank" rel="noopener">关掉标签页也不中断，Perplexity 代理转后台继续干</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>Perplexity 在 11 月 8 日宣布，其 AI 代理获得后台执行能力，用户关闭浏览器标签页后任务不中断，代理会在后台继续完成搜索、内容摘要和数据收集，返回时直接查看结果。The New Stack 对此做了报道，Pulse2 也有覆盖。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>长任务过去和浏览器会话绑定，用户必须一直保持标签页打开，深度研究的成本被压在使用者这一端。任务状态转由后端持久化之后，代理从会话里的工具变成可以在后台独立干活的助手，多步骤研究工作流的摩擦明显下降。这也是 AI 助手产品从快速问答走向深度研究定位的一个具体信号。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>用 AI 做研究的人大多经历过一件事，任务和浏览器标签页绑在一起，页面一关进度就没了。Perplexity 在 11 月 8 日宣布改变这个默认设定，它的代理可以在用户关掉标签页后继续在后台执行任务，搜索、摘要、收集数据都不中断。</p>
+<p>任务状态由 Perplexity 的后端基础设施持久化保存，用户回来时结果已经在那里等着。后台代理运行在与前台一致的隐私与安全护栏内，用户随时可以查看它在做什么，也可以暂停或终止。该功能目前面向 Perplexity Pro 订阅用户，公司表示未来计划扩展至免费用户，早期测试者反馈跨回合的深度研究工作流摩擦明显降低。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>本次增量是 Perplexity 代理获得关闭标签页后任务不中断的后台持久化执行能力，任务状态由后端维护并在用户返回时恢复，隐私护栏、用户控制权与 Pro 先行的开放范围均为首次披露的功能事实，历史日报未出现过该事件。</div>
+            <div class="tags-row"><span class="tag">Perplexity</span><span class="tag">AI 代理</span><span class="tag">后台任务</span><span class="tag">AI 搜索</span><span class="tag">AI 工具</span></div>
+            <div class="links-row"><a class="ext-link" href="https://thenewstack.io/perplexitys-ai-agents-keep-working-after-you-close-the-tab/" target="_blank" rel="noopener">Source <span class="domain">thenewstack.io</span></a>
+<a class="ext-link" href="https://news.google.com/rss/articles/CBMickFVX3lxTE1NOHRPWU5DTjFiWU8yTFVBWGNKYk9vc3hCbjRpT1BEOE1rNWpUdWp4ZkZZMGFCR0tjdTRURGVGUUdNLVE5bF9qWDJjb1FxUjl2NjExNXdJVGJFQVZja1gxNTJEN2phNUV6QzM3NHdXSXdNZw?oc=5" target="_blank" rel="noopener">Source <span class="domain">news.google.com</span></a>
+<a class="ext-link" href="https://www.pulse2.com/perplexity-launches-teammates-ai-agents-to-manage-complex-projects-and-automate-ongoing-business-workflows/" target="_blank" rel="noopener">Coverage <span class="domain">www.pulse2.com</span></a></div>
+        </div>
+<div class="article-card" data-id="raw-53044e44b3aa">
+            <div class="article-meta"><span class="rank-badge ">#8</span><span class="category-tag">tools</span><span class="score-tag">评分 7.4/10</span><span class="newness-tag">significant_update</span></div>
+            <h2><a href="https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic" target="_blank" rel="noopener">苹果被曝内部施压，Siri 智能体化路线图曝光</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>The Verge 于 11 月 8 日报道，转述的是彭博社记者 Mark Gurman 的爆料，并非苹果官方声明。本次新增量集中在路线图细节，iOS 27.3 预计让 Siri 精细控制第一方应用，如照片旋转裁剪、Safari 标签页整理；第三方应用集成预计明年春季，示例包括 Grubhub 下单与 OpenTable 订位；Gurman 还预测 Siri 最早明年具备跟踪目标并自主推进的智能体能力。爆料同时披露了 CEO John Ternus 向 AI 负责人 Craig Federighi 施压加速的内部动态。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>这份爆料给了外界一个观察苹果追赶智能体竞赛的时间刻度。按照报道引述的能力标准，OpenAI 的 Dots、Meta 的 Muse 以及 Grok 已能跟踪目标、判断下一步并持续推进任务，而 Siri 目前只能执行单次指令，差距摆在明处。对普通用户而言，如果时间表兑现，Siri 将从会说话的快捷按钮变成能替你办具体事的助手，比如整理 Safari 标签页或者订一餐外卖。对行业而言，苹果入场意味着这类能力可能被推到数亿台 iPhone 上，智能体产品的普及门槛会随之抬高。这些判断全部来自单一记者信源，延期与调整的可能性需要保留。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>The Verge 援引彭博社记者 Mark Gurman 的爆料称，苹果 CEO John Ternus 正向 AI 负责人 Craig Federighi 施压，要求加快 Siri 的智能体化路线图，打造能与 OpenAI 的 Dots、Meta 的 Muse 抗衡的 AI 智能体。Federighi 已在极短周期内交付可用的 Siri AI 版本，但苹果清楚当前 Siri 只能执行单次指令，仍落后于对手。</p>
+<p><img alt="Siri AI 界面被唤起" src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/Siri-AI-Being-invoked-3.jpg?quality=90&amp;strip=all&amp;crop=0.0065530799475724%2C0%2C99.986893840105%2C100&amp;w=2400" /></p>
+<p>按爆料的节奏，升级分三步走。iOS 27.3 预计带来第一方应用的精细控制，比如在照片里旋转裁剪图片、整理 Safari 标签页。第三方应用集成要等到明年春季，届时 Siri 可通过 Grubhub 下单、通过 OpenTable 订位。Gurman 预测 Siri 最早明年获得跟踪目标并自主推进的智能体能力，在他看来消费者与市场的压力让苹果没有太多选择。</p>
+<p>以上时间表均出自记者爆料与个人预测，苹果官方尚未宣布，实际进度以官方发布为准。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>本次增量是 Gurman 爆料披露的路线图细节，包括 iOS 27.3 第一方应用精细控制、明年春季第三方应用集成、Siri 最早明年具备智能体能力的预测，以及 Ternus 向 Federighi 施压的内部动态。Siri 智能化是既有故事，此次为显著进展更新，不是全新发布。</div>
+            <div class="tags-row"><span class="tag">Apple</span><span class="tag">Siri</span><span class="tag">AI 智能体</span><span class="tag">Mark Gurman</span><span class="tag">iOS 27.3</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic" target="_blank" rel="noopener">Source <span class="domain">www.theverge.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Siri's Last Stand: Apple's iOS 19.4 AI Overhaul and Cross-App...</div>
+                        <div class="source-url"><a href="https://250mm.co.kr/en/ai/apple-siri-agentic-overhaul-2026" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Apple's Agentic Leap (and a Sensible Polish): My... - Mark Ellis Reviews</div>
+                        <div class="source-url"><a href="https://markellisreviews.com/tech-news/apples-agentic-leap-and-a-sensible-polish-my-wwdc-26-rundown/" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Apple Partners with Google for Siri AI Upgrade | Ali Azzam... | LinkedIn</div>
+                        <div class="source-url"><a href="https://www.linkedin.com/posts/syedaliazzam_apple-just-made-a-very-un-apple-move-it-activity-7416605198111903744-Glp2" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Apple's delayed Siri update: A pattern of broken promises | LinkedIn</div>
+                        <div class="source-url"><a href="https://www.linkedin.com/posts/muhtasimulhaque_apple-promised-a-new-siri-in-june-2024-activity-7438872015534710784-wv-O" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">WWDC 2026: Siri Becomes Agentic AI — Visual Intelligence, Gemini...</div>
+                        <div class="source-url"><a href="https://saipien.org/wwdc-2026-siri-becomes-agentic-ai-visual-intelligence-gemini-tie-up-it-privacy-risks/" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-6ec91eb53be5">
+            <div class="article-meta"><span class="rank-badge ">#9</span><span class="category-tag">announcements</span><span class="score-tag">评分 7.3/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://www.marktechpost.com/2026/11/08/google-elephant-goldfish-model-plugin-spec-review-coding-agents/" target="_blank" rel="noopener">谷歌工程师开源大象金鱼插件，先审规范再让 AI 写代码</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>这是 EGM 第一次对外开源，测试记录里已出现 v0.1.0 安装包。早期报道只提到 Antigravity 一个宿主，当前官方指南已覆盖 Antigravity、Claude Code、Codex、ChatGPT 等，其中 Antigravity CLI、Claude Code 和 Codex 通过了自动化端到端测试，Claude Code 需 2.1.271 及以上版本。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>AI 编码 agent 最贵的失败不是写不出代码，而是基于错误假设写出一堆能跑的代码，拖到 pull request 阶段才被人看出来。EGM 把审查关口前移到设计文档，而且评审者全是零上下文的金鱼子代理，不会被长会话里的先入之见带偏。这套流程不绑定任何模型，能派生子代理的宿主都能装。项目自述数千名谷歌工程师在用，说明这种规范先行的做法在大厂内部有真实需求，个人开发者也可以直接借鉴这套流程。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>谷歌工程师近期开源了一套编码工作流插件 Elephant-Goldfish Model（EGM），中文名大象金鱼模型。它不是新的大模型，而是 Apache 2.0 许可的插件层，模型能力由宿主 agent 自带，插件本身不含任何权重。</p>
+<p>它的核心想法很朴素。让 AI 直接写代码，错误假设往往一路混进 pull request 才被发现。EGM 把顺序倒过来，先让持有完整项目上下文的长会话「大象」起草设计文档，再派出一批不带任何对话历史的「金鱼」子代理，在写代码前用五个阶段独立评审这份规范，把错误拦在 Markdown 文件里。项目还提供 /egm-drift-report 命令，建议每周运行一次，检查代码与规范是否漂移。</p>
+<p>插件包含 7 个技能、9 个评审 persona 和 6 个头脑风暴透镜，支持 Antigravity、Claude Code、Codex 等宿主。README 特别声明它不是官方支持的谷歌产品，据项目自述已有数千名谷歌工程师在使用。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>EGM 此前未对外公开，本次为首次开源发布，测试记录含 v0.1.0 安装包；五阶段零上下文规范评审流程、7 技能加 9 persona 加 6 透镜的完整插件结构、多宿主端到端测试数据均为本次可核对的真实增量，而非旧项目的常规更新。</div>
+            <div class="tags-row"><span class="tag">Google</span><span class="tag">AI 编程</span><span class="tag">开源项目</span><span class="tag">Agent 工作流</span><span class="tag">规范评审</span></div>
+            <div class="links-row"><a class="ext-link" href="https://www.marktechpost.com/2026/11/08/google-elephant-goldfish-model-plugin-spec-review-coding-agents/" target="_blank" rel="noopener">Source <span class="domain">www.marktechpost.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Claude Code by Anthropic | AI Coding Agent, Terminal, IDE</div>
+                        <div class="source-url"><a href="https://claude.com/product/claude-code" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">GitHub - google/elephant-goldfish-model: Open-source plugin for...</div>
+                        <div class="source-url"><a href="https://github.com/google/elephant-goldfish-model" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge official">官方</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">Google releases Elephant-Goldfish plugin to review AI... | AI Toolcast</div>
+                        <div class="source-url"><a href="https://aitoolcast.com/articles/google-elephant-goldfish-plugin-specification-review/" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">找反证和争议</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge contrarian">反证</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="article-card" data-id="raw-bc55171edc52">
+            <div class="article-meta"><span class="rank-badge ">#10</span><span class="category-tag">industry</span><span class="score-tag">评分 7.0/10</span><span class="newness-tag">genuinely_new</span></div>
+            <h2><a href="https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/" target="_blank" rel="noopener">黄仁勋承认婚外情，英伟达董事会启动独立调查</a></h2>
+            <div class="what-box"><strong>这是什么：</strong>11 月 8 日（周日），英伟达董事会宣布针对 CEO 黄仁勋与 Alice Huang 的关系启动独立调查，由独立董事联合外部法律顾问执行，TechCrunch 与 The Verge 双源报道。Alice Huang 是新加坡芯片公司 Megaspeed 前高管。同日公司公开黄仁勋的内部备忘录，他承认婚外情并道歉，这是其首次书面公开承认此事。据报的间谍指控尚未证实，调查要核实的正是这一疑点。</div>
+            <div class="why-box"><strong>🔥 为什么今天值得看：</strong>英伟达是 AI 算力供应的核心，在中美芯片竞争的敏感时点上，CEO 的私人关系被卷入国家安全质疑，公司治理面临直接考验。董事会一边启动独立调查，一边声明对黄仁勋及其领导团队"抱有信心"，显示公司试图在透明审查与稳定运营之间取得平衡。调查结论出来之前，对间谍指控下任何定论都为时过早。原文还提到，其他 AI 公司此前已提醒员工警惕包括情感引诱在内的间谍手段，此事可能推动业内进一步收紧对高管涉外接触与信息安全的管理。</div>
+            <details class="article-body"><summary>展开正文</summary><div class="body-md"><p>英伟达董事会 11 月 8 日（周日）宣布，针对 CEO 黄仁勋与 Alice Huang 的关系启动独立调查，由独立董事联合外部法律顾问执行，TechCrunch 与 The Verge 均作了报道。Alice Huang 是新加坡芯片公司 Megaspeed 前高管。据今年早些时候在美国决策者中流传的一份备忘录声称，她被中国国家安全部招募，任务是监视英伟达 CEO。该说法未经证实，是此次调查要核实的核心疑点。</p>
+<p>公司同步公开了黄仁勋发给全员的内部备忘录。他承认对妻子不忠并道歉，写道："我对妻子不忠，我的行为伤害了她和我们的孩子。我的所作所为没有任何借口，我深感抱歉。"备忘录未点名对方，据 TechCrunch 核实即 Alice Huang。</p>
+<p><img alt="英伟达 CEO 黄仁勋" src="https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg" /></p>
+<p>董事会在声明中表示"没有理由相信"国家安全或公司机密已受损害，称黄仁勋"完全支持审查并承诺配合"，董事会对他和领导团队"抱有信心"。此前英伟达曾回应，两人互动"并不罕见"。调查仍在进行，结论以官方披露为准。</p></div></details>
+            <div class="history-note"><span class="label">📜 历史日报：</span><span class="verdict-not-seen">未出现</span> — 未在历史日报中找到匹配</div>
+            <div class="history-note"><span class="label">📌 新增量：</span>黄仁勋与 Alice Huang 的关系此前已有报道流传，英伟达也曾回应两人互动并不罕见，但本次新增量明确，董事会 11 月 8 日正式宣布由独立董事联合外部法律顾问执行的独立调查，以及黄仁勋首次在公开的内部备忘录中书面承认婚外情并道歉，均为当天可核对的新事实，而非旧闻重提。</div>
+            <div class="tags-row"><span class="tag">英伟达</span><span class="tag">黄仁勋</span><span class="tag">公司治理</span><span class="tag">中美芯片竞争</span><span class="tag">国家安全</span></div>
+            <div class="links-row"><a class="ext-link" href="https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/" target="_blank" rel="noopener">Source <span class="domain">techcrunch.com</span></a></div>
+            <div class="sources-box">
+                <div class="sources-header">📋 外部校验依据</div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">黄仁勋承认婚外情，英伟达启动独立调查 - 2026年11月9日, 俄罗斯卫星通讯社</div>
+                        <div class="source-url"><a href="https://sputniknews.cn/20261109/1074001277.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">英伟达首席执行官黄仁勋承认婚外情，董事会将对其展开独立调查</div>
+                        <div class="source-url"><a href="https://www.voachinese.com/a/nvidia-launches-investigation-into-ceo-jensen-huang-over-foreign-intelligence-concerns-20261108/8220286.html" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+                <div class="source-row">
+                    <div class="source-info">
+                        <div class="source-title">黄仁勋承认婚外情向家人道歉 英伟达董事会声明：将对黄仁勋与疑似中国间谍的女商人的关系展开调查 - RFI - 法国国际广播电台</div>
+                        <div class="source-url"><a href="https://www.rfi.fr/cn/%E4%B8%AD%E5%9B%BD/20261108-%E8%8B%B1%E4%BC%9F%E8%BE%BE%E8%91%A3%E4%BA%8B%E4%BC%9A%E5%8F%91%E8%A1%A8%E5%A3%B0%E6%98%8E%E5%B0%86%E5%AF%B9%E9%BB%84%E4%BB%81%E5%8B%8B%E4%B8%8E%E4%B8%80%E5%90%8D%E6%83%85%E6%8A%A5%E6%9C%BA%E6%9E%84%E7%A7%B0%E6%98%AF%E4%B8%AD%E5%9B%BD%E9%97%B4%E8%B0%8D%E7%9A%84%E5%A5%B3%E5%95%86%E4%BA%BA%E7%9A%84%E5%85%B3%E7%B3%BB%E5%B1%95%E5%BC%80%E8%B0%83%E6%9F%A5" target="_blank" rel="noopener"></a></div>
+                        <div class="source-purpose">确认最新动态和时间线</div>
+                    </div>
+                    <div class="source-badges">
+                        <span class="badge newness">时效性</span>
+                        <span class="badge secondary">二手转载</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- ═══════ RADAR SCAN ═══════ -->
+        <section class="radar-section">
+            <div class="radar-header">📡 雷达扫描</div>
+            <div class="radar-card">
+                <div class="radar-rank">#1</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://github.com/meta/astryx" target="_blank" rel="noopener">Meta 开源 Astryx 设计系统，宣称 agent 可用</a> <span class="radar-category">tools</span></div>
+                    <div class="radar-blurb">React 19 加 StyleX 构建的 UI 组件库，Beta 阶段，为人和 agent 协作开发场景设计，观察设计系统会不会成为 agent 操控界面的标准入口</div>
+                </div>
+            </div>
+            <div class="radar-card">
+                <div class="radar-rank">#2</div>
+                <div class="radar-info">
+                    <div class="radar-title"><a href="https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy" target="_blank" rel="noopener">The Verge：英伟达董事会对黄仁勋启动独立调查</a> <span class="radar-category">industry</span></div>
+                    <div class="radar-blurb">与正文第十篇同一事件的第二来源，董事会声明原文与国安背景细节更全，双源交叉印证</div>
+                </div>
+            </div>
+        </section>
+
+<!-- ═══════ PICK OF THE DAY ═══════ -->
+
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+    <div class="stats">10 源<span>|</span>96 条<span>|</span>10 条精选<span>|</span>17 条候选</div>
+    <div class="generated">生成于 2026-11-09T11:57:56.809793</div>
+</footer>
+
+</div>
+<script>
+(function () {
+    function closeLightbox(overlay, escHandler) {
+        overlay.remove();
+        document.removeEventListener('keydown', escHandler);
+    }
+    function openLightbox(src, alt) {
+        var overlay = document.createElement('div');
+        overlay.className = 'img-lightbox';
+        var big = document.createElement('img');
+        big.src = src;
+        big.alt = alt || '';
+        overlay.appendChild(big);
+        var escHandler = function (e) {
+            if (e.key === 'Escape') closeLightbox(overlay, escHandler);
+        };
+        overlay.addEventListener('click', function () { closeLightbox(overlay, escHandler); });
+        document.addEventListener('keydown', escHandler);
+        document.body.appendChild(overlay);
+    }
+    document.addEventListener('click', function (e) {
+        var img = e.target;
+        if (img && img.tagName === 'IMG' && img.closest && img.closest('.article-body')) {
+            e.preventDefault();
+            openLightbox(img.src, img.alt);
+        }
+    });
+})();
+</script>
+</body>
+</html>
